@@ -1,6 +1,6 @@
 "use strict";
 
-const genders = ["male", "female", "neuter", "isPlural"];
+const genders = ["male", "female", "neuter", "plural"];
 const grammarCases = ["nominative", "accusative", "dative", "genitive"];
 const articleTypes = ["definite", "indefinite", "zero"];
 const isPlural = [false, true];
@@ -8,12 +8,11 @@ const isPlural = [false, true];
 
 class GrammarItem {
 
-    constructor (text, objectGender, articleType, isPlural, grammarCase) {
+    constructor (text, objectGender, articleType, grammarCase) {
         this.text = text;
         this.grammarCase = grammarCase;
         this.objectGender = objectGender;
         this.articleType = articleType;
-        this.isPlural = isPlural;
     }
 
     getGrammarCase () {
@@ -26,10 +25,6 @@ class GrammarItem {
 
     getArticleType () {
         return articleTypes[this.articleType];
-    }
-
-    getIsPlural () {
-        return isPlural[this.isPlural];
     }
 
 }

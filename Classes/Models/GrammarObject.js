@@ -4,16 +4,14 @@ const conjugationTable = require("./../../data/conjugationTable.js");
 
 class GrammarObject {
 
-    constructor (text, gender, isPlural) {
+    constructor (text, gender) {
         this.text = text;
         this.gender = gender;
-        this.isPlural = isPlural;
     };
 
     getArticle (grammarCase, articleType) {
         const find = {
             objectGender: this.gender,
-            isPlural: this.isPlural,
             grammarCase: grammarCase,
             articleType: articleType
         };

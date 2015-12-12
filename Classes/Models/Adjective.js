@@ -8,14 +8,13 @@ class Adjective {
         this.rootText = rootText;
     }
 
-    conjugate (objectGender, articleType, isPlural, grammarCase) {
+    conjugate (objectGender, articleType, grammarCase) {
         let word = "" + this.rootText;
 
         const suffix = conjugationTable.adjSuffixes.findWhere({
             grammarCase: grammarCase,
             objectGender: objectGender,
-            articleType: articleType,
-            isPlural: isPlural,
+            articleType: articleType
         });
 
 

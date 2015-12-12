@@ -1,13 +1,21 @@
 "use strict";
 
 const grammarObjects = [
-  ["Hund", 0, 0],
-  ["Hunde", 0, 1],
-  ["Mann", 0, 0],
-  ["Männer", 0, 1],
-  ["Frau", 1, 0],
-  ["Fraun", 1, 1],
-  ["Kind", 2, 0],
-  ["Kinder", 2, 1],
+    // People
+    ["Mann", 0],
+    ["Männer", 3],
+    ["Frau", 1],
+    ["Fraun", 3],
+    ["Kind",  2],
+    ["Kinder", 3],
+
+    // Animals
+    ["Hund",  0],
+    ["Hunde", 3],
+    ["Katze", 1],
+    ["Katzen",3],
+    ["Maus",  1],
+    ["Mäuse", 3]
+
 
 ];

@@ -5,8 +5,8 @@ const GrammarObject = require("./GrammarObject.js");
 
 class Phrase {
 
-    constructor (objectText, objectGender, isPlural, adjectiveText) {
-        this.object = new GrammarObject(objectText, objectGender, isPlural);
+    constructor (objectText, objectGender, adjectiveText) {
+        this.object = new GrammarObject(objectText, objectGender);
         this.adjective = new Adjective(adjectiveText);
     }
 
@@ -16,7 +16,6 @@ class Phrase {
         const adj = this.adjective.conjugate(
             this.object.gender,
             articleType,
-            this.object.isPlural,
             grammarCase
         );
 
