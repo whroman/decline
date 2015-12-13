@@ -1,13 +1,10 @@
 "use strict";
 
-const Adjective = require("./Adjective.js");
-const GrammarObject = require("./GrammarObject.js");
-
 class Phrase {
 
-    constructor (objectText, objectGender, adjectiveText) {
-        this.object = new GrammarObject(objectText, objectGender);
-        this.adjective = new Adjective(adjectiveText);
+    constructor (objectInstance, adjInstance) {
+        this.object = objectInstance;
+        this.adjective = adjInstance
     }
 
     conjugate (articleType, grammarCase) {
