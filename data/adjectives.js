@@ -3,55 +3,69 @@
 const Adjective = require("./../Classes/Models/Adjective.js");
 
 const adjectives = [
-    "schlimm",
-    "schmutzig",
     "kurz",
-    "schwach",
+    "lang",
+    "hoch",
+
+    "groß",
+    "klein",
+
+    "dunkel",
+    "hell",
+
+    "langsam",
     "schnell",
+
     "gut",
+    "schlimm",
+
+    "stark",
+    "schwach",
+
+    "kühl",
+    "warm",
+    "kalt",
+
+    "teuer",
+    "billig",
+
+    "jung",
+    "alt",
+
+    "intelligent",
+    "dumm",
+    "klug",
+
+    "dick",
+    "schlank",
+
+    "wenig",
+    "viel",
+
+    "männlichen",
+    "feminin",
+
+    "schmutzig",
     "niedrig",
     "sicher",
     "gern",
     "eng",
-    "dick",
-    "warm",
-    "wenig",
     "sparsam",
     "modisch",
-    "langsam",
     "blass",
     "beliebt",
-    "kühl",
-    "groß",
-    "kalt",
-    "viel",
     "weit",
-    "dumm",
-    "lang",
-    "klug",
     "ungedulgig",
-    "klein",
     "arm",
     "unabhängig",
-    "teuer",
     "wütend",
-    "dunkel",
     "interessant",
     "hart",
-    "hoch",
-    "intelligent",
-    "billig",
     "gesund",
-    "stark",
-    "jung",
     "ordentlich",
-    "alt",
     "verliebt",
-    "schlank",
     "komisch",
-    "sympathisch",
-    "hell",
-    "männlichen"
+    "sympathisch"
 ];
 
 const instances = adjectives.map((adj) => {
