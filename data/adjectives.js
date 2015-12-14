@@ -1,5 +1,7 @@
 "use strict";
 
+const Adjective = require("./../Classes/Models/Adjective.js");
+
 const adjectives = [
     "schlimm",
     "schmutzig",
@@ -48,5 +50,12 @@ const adjectives = [
     "schlank",
     "komisch",
     "sympathisch",
-    "hell"
+    "hell",
+    "männlichen"
 ];
+
+const instances = adjectives.map((adj) => {
+    return new Adjective(adj);
+});
+
+module.exports = instances;

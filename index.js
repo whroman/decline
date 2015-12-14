@@ -1,13 +1,10 @@
 "use strict";
 
-const Adjective = require("./Classes/Models/Adjective.js");
-const GrammarObject = require("./Classes/Models/GrammarObject.js");
+const grammarObjects = require("./data/grammarObjects.js");
+const adjectives = require("./data/adjectives.js");
 
 const Phrase = require("./Classes/Models/Phrase.js");
 
-const dog = new GrammarObject("Hunde", 0);
-const schnell = new Adjective("schnell");
-
-const foo = new Phrase(dog, schnell);
+const foo = new Phrase(grammarObjects[0], adjectives[0]);
 
 console.log(foo.conjugate(0,0));

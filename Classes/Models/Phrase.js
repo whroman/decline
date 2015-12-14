@@ -7,18 +7,25 @@ class Phrase {
         this.adjective = adjInstance
     }
 
-    conjugate (articleType, grammarCase) {
+    getArticle (grammarCase, articleType) {
         const article = this.object.getArticle(grammarCase, articleType).text;
+        return article;
+    }
 
+    getAdjective (grammarCase, articleType) {
         const adj = this.adjective.conjugate(
             this.object.gender,
             articleType,
             grammarCase
         );
 
+        return adj;
+    }
+
+    conjugate (...args) {
         const statement = [
-            article,
-            adj,
+            this.getArticle(...args),
+            this.getAdjective(...args),
             this.object.text
         ].join(" ");
 
