@@ -7,27 +7,34 @@ class Phrase {
         this.adjective = adjInstance
     }
 
-    getArticle (grammarCase, articleType) {
-        const article = this.object.getArticle(grammarCase, articleType).text;
+    getArticle (...args) {
+        const article = this.object.getArticle(...args).text;
         return article;
     }
 
-    getAdjective (grammarCase, articleType) {
+    getAdjective (grammarCase, articleType, guess) {
         const adj = this.adjective.conjugate(
             this.object.gender,
             articleType,
-            grammarCase
+            grammarCase,
+            guess
         );
 
-        return adj;
+        return adj ? adj : "";
     }
 
-    conjugate (...args) {
-        const statement = [
-            this.getArticle(...args),
-            this.getAdjective(...args),
+    conjugate (grammarCase, articleType, guess) {
+        const article = this.getArticle(grammarCase, articleType);
+        const guessAdj = guess ? guess.indexOf("adj") > -1 : false;
+
+        let statement = [
+            this.getAdjective(grammarCase, articleType, guessAdj),
             this.object.text
-        ].join(" ");
+        ];
+
+        if (article) statement.unshift(article);
+
+        statement = statement.join(" ");
 
         return statement;
     }

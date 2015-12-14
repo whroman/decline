@@ -9,14 +9,16 @@ class GrammarObject {
         this.gender = gender;
     };
 
-    getArticle (grammarCase, articleType) {
+    getArticle (grammarCase, articleType, articleRoot) {
         const find = {
             objectGender: this.gender,
             grammarCase: grammarCase,
             articleType: articleType
         };
 
-        const article = conjugationTable.articles.findWhere(find);
+        let article = conjugationTable.articles.findWhere(find);
+
+        if (articleType === 1) article = articleRoot + article;
 
         return article;
     }

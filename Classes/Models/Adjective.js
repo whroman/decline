@@ -8,18 +8,48 @@ class Adjective {
         this.rootText = rootText;
     }
 
-    conjugate (objectGender, articleType, grammarCase) {
-        let word = "" + this.rootText;
-
-        const suffix = conjugationTable.adjSuffixes.findWhere({
+    findSuffix (objectGender, articleType, grammarCase) {
+        let suffix = conjugationTable.adjSuffixes.findWhere({
             grammarCase: grammarCase,
             objectGender: objectGender,
             articleType: articleType
         });
 
+        return suffix;
+    }
+
+    conjugate (objectGender, articleType, grammarCase, stub) {
+        let word = "" + this.rootText;
+        const suffix = this.findSuffix(
+            objectGender,
+            articleType,
+            grammarCase
+        );
 
         if (suffix) {
-            word += suffix.text;
+            if (suffix.text) {
+                if (stub) {
+                    word += Array(suffix.text.length + 1).join("_");
+                } else {
+                    word += suffix.text;
+                }
+            }
+        } else {
+            console.warn("No conjugation found: ", ...arguments);
+        }
+        return word;
+    }
+
+    stubEnding (...args) {
+        let word = "" + this.rootText;
+        const suffix = this.findSuffix(...args);
+
+        if (suffix) {
+            if (suffix.text) {
+                for (var iter in suffix.text.length) {
+                    word += "_";
+                }
+            }
         } else {
             console.warn("No conjugation found: ", ...arguments);
         }
