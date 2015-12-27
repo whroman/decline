@@ -16,9 +16,9 @@ class GrammarObject {
             articleType: articleType
         };
 
-        let article = conjugationTable.articles.findWhere(find);
+        const article = conjugationTable.articles.findWhere(find);
 
-        if (articleType === 1) article = articleRoot + article;
+        if (articleType === 1) article.text = articleRoot + article.text;
 
         return article;
     }

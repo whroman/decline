@@ -8,11 +8,11 @@ const articleTypes = require("./../../data/articleTypes");
 
 const Phrase = require("./../../Classes/Phrase/Phrase.js");
 
-var randomPhrase = {
+const randomPhrase = {
 
     getOne: function () {
-        var objIndex = _.random(0, grammarObjects.length - 1);
-        var adjIndex = _.random(0, adjectives.length - 1);
+        const objIndex = _.random(0, grammarObjects.length - 1);
+        const adjIndex = _.random(0, adjectives.length - 1);
 
         const phrase = new Phrase(
             grammarObjects[objIndex],

@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --harmony index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --harmony resources/js/index.js",
+    "test": "mocha --harmony --watch $(find ./resources/js -name '*.spec.js')"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
   }
 }
