@@ -14,31 +14,26 @@ class Phrase {
         return article;
     }
 
-    getAdjective (grammarCase, articleType, guess) {
+    getAdjective (grammarCase, articleType) {
         let adj = this.adjective.conjugate(
             this.object.gender,
             articleType,
-            grammarCase,
-            guess
+            grammarCase
         );
 
         adj = adj || "";
         return adj;
     }
 
-    conjugate (grammarCase, articleType, guess) {
-        const guessAdj = guess ? guess.indexOf("adj") > -1 : false;
+    conjugate (...args) {
+        const article = this.getArticle(...args);
+        const adj = this.getAdjective(...args);
 
-        const article = this.getArticle(grammarCase, articleType)
-        const adj = this.getAdjective(grammarCase, articleType, guessAdj);
-        const object = this.object.text;
-        const statement = {};
-
-        _.each(adj, (val, key) => {
-            statement[key] = _.filter([
+        const statement = _.mapObject(adj, (val) => {
+            return _.filter([
                 article,
-                adj[key],
-                object
+                val,
+                this.object.text
             ]).join(" ");
         });
 

@@ -9,11 +9,13 @@ class Adjective {
     }
 
     findSuffix (objectGender, articleType, grammarCase) {
-        const suffix = conjugationTable.adjSuffixes.findWhere({
-            grammarCase: grammarCase,
-            objectGender: objectGender,
-            articleType: articleType
-        });
+        const find = {
+            objectGender,
+            articleType,
+            grammarCase
+        };
+
+        const suffix = conjugationTable.adjSuffixes.findWhere(find);
 
         return suffix;
     }
