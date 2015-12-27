@@ -63,7 +63,7 @@ conjugationTable.addMany(
     // Genitive
     ["des", "en",   0, 0, 3],
     ["der", "en",   1, 0, 3],
-    ["das", "en",   2, 0, 3],
+    ["des", "en",   2, 0, 3],
     ["der", "en",   3, 0, 3],
 
     ["es",  "en",   0, 1, 3],

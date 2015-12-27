@@ -35,7 +35,7 @@ class Phrase {
             return _.filter([
                 conjArticle,
                 val,
-                this.noun.text
+                this.noun.conjugate(grammarCase)
             ]).join(" ");
         });
 
