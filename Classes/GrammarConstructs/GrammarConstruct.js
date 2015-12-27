@@ -3,7 +3,6 @@
 const genders = ["male", "female", "neuter", "plural"];
 const grammarCases = ["nominative", "accusative", "dative", "genitive"];
 const articleTypes = require("./../../data/articleTypes");
-const isPlural = [false, true];
 
 class GrammarConstruct {
 

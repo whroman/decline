@@ -3,8 +3,8 @@
 const _ = require("underscore");
 
 const Collection = require("./../Collection.js");
-const Articles = require("./../GrammarConstructs/Articles/Articles.js");
-const AdjectiveSuffixes = require("./../GrammarConstructs/AdjectiveSuffixes/AdjectiveSuffixes.js");
+const Articles = require("./../GrammarConstructs/Articles.js");
+const AdjectiveSuffixes = require("./../GrammarConstructs/AdjectiveSuffixes.js");
 
 class ConjugationTable extends Collection {
 

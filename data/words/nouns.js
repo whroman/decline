@@ -1,8 +1,8 @@
 "use strict";
 
-const GrammarObject = require("./../../Classes/Models/GrammarObject.js");
+const Noun = require("./../../Classes/Noun/Noun.js");
 
-const grammarObjects = [
+const nouns = [
     // People
     ["Mann",    0],
     ["Männer",  3],
@@ -23,8 +23,8 @@ const grammarObjects = [
 
 ];
 
-const instances = grammarObjects.map((gO) => {
-    return new GrammarObject(...gO);
+const instances = nouns.map((genderedNoun) => {
+    return new Noun(...genderedNoun);
 });
 
 module.exports = instances;
