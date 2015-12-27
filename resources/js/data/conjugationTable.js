@@ -7,10 +7,10 @@ conjugationTable.addMany(
 //  Arguments
 /*
     article
-            adjective suffix
-                    objectGender
-                       articleType
-                          grammarCase
+                adjective suffix
+                        objectGender
+                           articleType
+                              grammarCase
 */
     // Nominative
     ["der",     "e",    0, 0, 0],
@@ -18,14 +18,14 @@ conjugationTable.addMany(
     ["das",     "e",    2, 0, 0],
     ["die",     "en",   3, 0, 0],
 
-    ["",     "er",      0, 1, 0],
-    ["e",    "e",       1, 1, 0],
-    ["",     "es",      2, 1, 0],
-    [null,      null,   2, 1, 0],
+    ["",        "er",   0, 1, 0],
+    ["e",       "e",    1, 1, 0],
+    ["",        "es",   2, 1, 0],
+    [null,      null,   3, 1, 0],
 
     ["",        "er",   0, 2, 0],
-    ["",        "es",   1, 2, 0],
-    ["",        "e",    2, 2, 0],
+    ["",        "e",    1, 2, 0],
+    ["",        "es",   2, 2, 0],
     ["",        "e",    3, 2, 0],
 
     // Accusative
@@ -34,15 +34,15 @@ conjugationTable.addMany(
     ["das",     "e",    2, 0, 1],
     ["die",     "en",   3, 0, 1],
 
-    ["en",   "en",      0, 1, 1],
-    ["e",    "e",       1, 1, 1],
-    ["",     "es",      2, 1, 1],
+    ["en",      "en",   0, 1, 1],
+    ["e",       "e",    1, 1, 1],
+    ["",        "es",   2, 1, 1],
     [null,      null,   3, 1, 1],
 
-    ["",    "en",   0, 2, 1],
-    ["",    "es",   1, 2, 1],
-    ["",    "e",    2, 2, 1],
-    ["",    "e",    3, 2, 1],
+    ["",        "en",   0, 2, 1],
+    ["",        "e",    1, 2, 1],
+    ["",        "es",   2, 2, 1],
+    ["",        "e",    3, 2, 1],
 
     // Dative
     ["dem", "en",   0, 0, 2],
