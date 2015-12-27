@@ -1,6 +1,6 @@
 "use strict";
 
-const GrammarObject = require("./../Classes/Models/GrammarObject.js");
+const GrammarObject = require("./../../Classes/Models/GrammarObject.js");
 
 const grammarObjects = [
     // People

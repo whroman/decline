@@ -9,7 +9,7 @@ class Adjective {
     }
 
     findSuffix (objectGender, articleType, grammarCase) {
-        let suffix = conjugationTable.adjSuffixes.findWhere({
+        const suffix = conjugationTable.adjSuffixes.findWhere({
             grammarCase: grammarCase,
             objectGender: objectGender,
             articleType: articleType
@@ -18,41 +18,30 @@ class Adjective {
         return suffix;
     }
 
-    conjugate (objectGender, articleType, grammarCase, stub) {
-        let word = "" + this.rootText;
-        const suffix = this.findSuffix(
-            objectGender,
-            articleType,
-            grammarCase
-        );
-
-        if (suffix) {
-            if (suffix.text) {
-                if (stub) {
-                    word += Array(suffix.text.length + 1).join("_");
-                } else {
-                    word += suffix.text;
-                }
-            }
-        } else {
-            console.warn("No conjugation found: ", ...arguments);
-        }
-        return word;
+    stub (word) {
+        return Array(word.length + 1).join("_");
     }
 
-    stubEnding (...args) {
-        let word = "" + this.rootText;
+    conjugate (...args) {
         const suffix = this.findSuffix(...args);
+
+        const word = {
+            text: this.rootText,
+            stubbed: this.stub(this.rootText),
+            stubbedSuffix: this.rootText
+        };
 
         if (suffix) {
             if (suffix.text) {
-                for (var iter in suffix.text.length) {
-                    word += "_";
-                }
+                const stubbedSuffix = this.stub(suffix.text);
+                word.text += suffix.text;
+                word.stubbed += stubbedSuffix;
+                word.stubbedSuffix += stubbedSuffix;
             }
         } else {
             console.warn("No conjugation found: ", ...arguments);
         }
+
         return word;
     }
 

@@ -5,7 +5,7 @@ const grammarCases = ["nominative", "accusative", "dative", "genitive"];
 const articleTypes = require("./../../data/articleTypes");
 const isPlural = [false, true];
 
-class GrammarItem {
+class GrammarConstruct {
 
     constructor (text, objectGender, articleType, grammarCase) {
         this.text = text;
@@ -28,4 +28,4 @@ class GrammarItem {
 
 }
 
-module.exports = GrammarItem;
+module.exports = GrammarConstruct;
