@@ -21,6 +21,11 @@ const tests = [
             indef: "einen kurzen Mann",
             kein: "kurzen Mann"
         },
+        dative: {
+            def: "dem kurzen Mann",
+            indef: "einem kurzen Mann",
+            kein: "kurzem Mann"
+        },
     },
     {
         noun: ["Frau", 1],
@@ -34,6 +39,11 @@ const tests = [
             def: "die kurze Frau",
             indef: "eine kurze Frau",
             kein: "kurze Frau"
+        },
+        dative: {
+            def: "der kurzen Frau",
+            indef: "einer kurzen Frau",
+            kein: "kurzer Frau"
         },
     },
     {
@@ -49,6 +59,12 @@ const tests = [
             indef: "ein kurzes Kind",
             kein: "kurzes Kind"
         },
+        dative: {
+            def: "dem kurzen Kind",
+            indef: "einem kurzen Kind",
+            kein: "kurzem Kind"
+        },
+
     },
     {
         noun: ["Kinder", 3],
@@ -63,12 +79,17 @@ const tests = [
             indef: null,
             kein: "kurze Kinder"
         },
+        dative: {
+            def: "den kurzen Kinder",
+            indef: null,
+            kein: "kurzen Kinder"
+        },
     },
 ];
 
 describe("Phrase", () => {
     describe(".conjugate()", () => {
-        ["nominative", "accusative"].forEach( (grammarCaseName, grammarCaseIndex) => {
+        ["nominative", "accusative", "dative"].forEach( (grammarCaseName, grammarCaseIndex) => {
             describe(` - ${grammarCaseName} cases -`, () => {
                 tests.forEach( (test) => {
                     const noun = new Noun(...test.noun);
