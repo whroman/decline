@@ -18,6 +18,7 @@ class GrammarObject {
 
         const article = conjugationTable.articles.findWhere(find);
 
+        console.log(find)
         if (article.text === null) throw new Error ("An article is not used under following conditions: " + JSON.stringify(find));
         if (articleType === 1) article.text = articleRoot + article.text;
 
