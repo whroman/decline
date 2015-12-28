@@ -34,9 +34,8 @@ const randomPhrase = {
     },
 
     nominative: function () {
-        const conjugation = this.handleCase(
-        (phrase) => {
-            const verb = (phrase.object.gender === 3 ? "sind " : "ist ");
+        const conjugation = this.handleCase( (phrase) => {
+            const verb = (phrase.noun.gender === 3 ? "sind " : "ist ");
             const text = "Hier " + verb;
             return text;
         }, (phrase) => {

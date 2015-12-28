@@ -27,11 +27,12 @@ class Phrase {
 
     conjugate (grammarCase, article) {
         const articleType = String(article) === article ? 1 : article;
-
         const conjArticle = this.getArticle(grammarCase, articleType, article);
         const conjAdj = this.getAdjective(grammarCase, articleType);
 
         const statement = _.mapObject(conjAdj, (val) => {
+            if (this.noun.gender === 3 && articleType === 1) return null;
+
             return _.filter([
                 conjArticle,
                 val,

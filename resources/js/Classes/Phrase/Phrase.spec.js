@@ -122,15 +122,8 @@ describe("Phrase", () => {
                     });     
 
                     it(`should work for phrases with ${gender} nouns and indefinite articles`, () => {
-                        const articleDoesntExist = genderIndex === 3;
-                        if (articleDoesntExist) {
-                            assert.throw( () => {
-                                phrase.conjugate(grammarCaseIndex, "ein")
-                            });
-                        } else {
-                            const conjugation = phrase.conjugate(grammarCaseIndex, "ein");
-                            assert.equal(conjugation.text, test[grammarCaseName].indef);                        
-                        }
+                        const conjugation = phrase.conjugate(grammarCaseIndex, "ein");
+                        assert.equal(conjugation.text, test[grammarCaseName].indef);                        
                     });     
 
                     it(`should work for phrases with ${gender} nouns and without articles`, () => {
