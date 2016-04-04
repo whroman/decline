@@ -1,6 +1,6 @@
 "use strict";
 
-const conjugationTable = require("./../../data/conjugationTable");
+const conjugationTable = require("./../../../fixtures/conjugationTable");
 
 class Adjective {
 

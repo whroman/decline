@@ -1,6 +1,6 @@
 "use strict";
 
-const ConjugationTable = require("./../Classes/ConjugationTable/ConjugationTable.js");
+const ConjugationTable = require("./../src/grammar/ConjugationTable/ConjugationTable.js");
 const conjugationTable = new ConjugationTable();
 
 conjugationTable.addMany(

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --harmony resources/js/index.js",
-    "test": "mocha --harmony $(find ./resources/js -name '*.spec.js')",
+    "start": "node --harmony src/index.js",
+    "test": "mocha --harmony $(find ./src -name '*.spec.js')",
     "test:watch": "npm test -- --watch",
     "test:w": "npm run test:watch"
   },

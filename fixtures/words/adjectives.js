@@ -1,6 +1,6 @@
 "use strict";
 
-const Adjective = require("./../../Classes/Adjective/Adjective.js");
+const Adjective = require("./../../src/grammar/Adjective/Adjective.js");
 
 const adjectives = [
     "kurz",

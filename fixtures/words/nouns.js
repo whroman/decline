@@ -1,6 +1,6 @@
 "use strict";
 
-const Noun = require("./../../Classes/Noun/Noun.js");
+const Noun = require("./../../src/grammar/Noun/Noun.js");
 
 const nouns = [
     // People

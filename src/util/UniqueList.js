@@ -1,7 +1,7 @@
 "use strict";
 
 const _ = require("underscore");
-const Collection = require("./../Collection.js");
+const Collection = require("./Collection.js");
 
 class UniqueList extends Collection {
 

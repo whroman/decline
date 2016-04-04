@@ -2,11 +2,11 @@
 
 const _ = require("underscore");
 
-const nouns = require("./../../data/words/nouns.js");
-const adjectives = require("./../../data/words/adjectives.js");
-const articleTypes = require("./../../data/articleTypes");
+const nouns = require("./../../../fixtures/words/nouns.js");
+const adjectives = require("./../../../fixtures/words/adjectives.js");
+const articleTypes = require("./../../../fixtures/articleTypes");
 
-const Phrase = require("./../../Classes/Phrase/Phrase.js");
+const Phrase = require("./Phrase.js");
 
 const randomPhrase = {
 

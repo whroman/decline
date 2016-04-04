@@ -1,6 +1,6 @@
 "use strict";
 
-const conjugationTable = require("./../../data/conjugationTable.js");
+const conjugationTable = require("./../../../fixtures/conjugationTable.js");
 
 class GrammarObject {
 
