@@ -4,14 +4,12 @@ const _ = require("underscore");
 
 class Phrase {
 
-    constructor (nounInstance, adjInstance) {
-        this.noun = nounInstance;
-        this.adjective = adjInstance
-    }
-
-    getArticle (...args) {
-        const article = this.noun.getArticle(...args);
-        return article.text;
+    constructor (nounInstance, adjInstance, articleInstance) {
+        Object.assign(this, {
+            noun: nounInstance,
+            adjective: adjInstance,
+            article: articleInstance
+        });
     }
 
     getAdjective (grammarCase, articleType) {
@@ -25,13 +23,14 @@ class Phrase {
         return adj;
     }
 
-    conjugate (grammarCase, article) {
-        const articleType = String(article) === article ? 1 : article;
-        const conjArticle = this.getArticle(grammarCase, articleType, article);
-        const conjAdj = this.getAdjective(grammarCase, articleType);
+    conjugate (grammarCase) {
+        const conjArticle = this.article.conjugate(grammarCase, this.noun.gender);
+        const conjAdj = this.getAdjective(grammarCase, this.article.type);
 
         const statement = _.mapObject(conjAdj, (val) => {
-            if (this.noun.gender === 3 && articleType === 1) return null;
+            const nounIsPlural = this.noun.gender === 3;
+            const artIsIndefinite = this.article.type === 1;
+            if (nounIsPlural && artIsIndefinite) throw Error('FUCK');
 
             return _.filter([
                 conjArticle,
@@ -40,7 +39,7 @@ class Phrase {
             ]).join(" ");
         });
 
-        return statement;
+        return Object.assign({}, this, statement);
     }
 
 }

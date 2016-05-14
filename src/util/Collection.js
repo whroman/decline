@@ -4,8 +4,8 @@ const _ = require("underscore");
 
 class Collection {
 
-    addMany () {
-        _.each(arguments, (argument) => {
+    addMany (arrayToAdd) {
+        _.each(arrayToAdd, (argument) => {
             this.add(...argument);
         });
     }

@@ -3,8 +3,8 @@
 const _ = require("underscore");
 
 const Collection = require("./../../util/Collection.js");
-const Articles = require("./../Articles/Articles.js");
-const AdjectiveSuffixes = require("./../Adjective/AdjectiveSuffix.js");
+const Articles = require("./Articles.js");
+const AdjectiveSuffixes = require("./AdjectiveSuffix.js");
 
 const GrammarConstruct = require("./../../util/GrammarConstruct.js");
 const UniqueList = require("./../../util/UniqueList.js");

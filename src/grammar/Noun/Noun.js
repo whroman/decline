@@ -34,12 +34,11 @@ class GrammarObject {
     getArticle (grammarCase, articleType, articleRoot) {
         const find = {
             objectGender: this.gender,
-            grammarCase: grammarCase,
-            articleType: articleType
+            grammarCase, articleType
         };
 
         const article = conjugationTable.articles.findWhere(find);
-        if (articleType === 1 && article.text !== null) {
+        if ((articleType === 1 || articleType === 3) && article.text !== null) {
             article.text = articleRoot + article.text;
         }
         return article;

@@ -3,7 +3,8 @@
 const articleTypes = [
     "definite",
     "indefinite",
-    "zero"
+    "zero",
+    "possesiveDeterminers",
 ];
 
 module.exports = articleTypes;

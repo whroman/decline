@@ -4,6 +4,7 @@ const assert = require("chai").assert;
 
 const Phrase = require("./Phrase.js");
 const Adjective = require("./../Adjective/Adjective.js");
+const Article = require("./../Article/Article.js");
 const Noun = require("./../Noun/Noun.js");
 const genders = ["male", "female", "neutral", "plural"];
 
@@ -108,28 +109,45 @@ const tests = [
 
 describe("Phrase", () => {
     describe(".conjugate()", () => {
-        ["nominative", "accusative", "dative", "genitive"].forEach( (grammarCaseName, grammarCaseIndex) => {
+        [
+            "nominative",
+            "accusative",
+            "dative",
+            "genitive"
+        ].forEach( (grammarCaseName, grammarCaseIndex) => {
             describe(` - ${grammarCaseName} cases -`, () => {
                 tests.forEach( (test) => {
                     const noun = new Noun(...test.noun);
                     const adj = new Adjective(test.adj);
-                    const phrase = new Phrase(noun, adj);
                     const genderIndex = test.noun[1];
                     const gender = genders[genderIndex];
                     it(`should work for phrases with ${gender} nouns and definite articles`, () => {
-                        const conjugation = phrase.conjugate(grammarCaseIndex, 0);
+                        const art = new Article('', 0);
+                        const phrase = new Phrase(noun, adj, art);
+                        const conjugation = phrase.conjugate(grammarCaseIndex);
                         assert.equal(conjugation.text, test[grammarCaseName].def);
-                    });     
+                    });
 
                     it(`should work for phrases with ${gender} nouns and indefinite articles`, () => {
-                        const conjugation = phrase.conjugate(grammarCaseIndex, "ein");
-                        assert.equal(conjugation.text, test[grammarCaseName].indef);                        
-                    });     
+                        const art = new Article('ein', 1);
+                        const phrase = new Phrase(noun, adj, art);
+                        const expectedText = test[grammarCaseName].indef;
+                        const conjugate = () => phrase.conjugate(grammarCaseIndex);
+
+                        console.log(expectedText)
+                        if (expectedText === null) {
+                            assert.throws(conjugate);
+                        } else {
+                            assert.equal(conjugate().text, expectedText);
+                        }
+                    });
 
                     it(`should work for phrases with ${gender} nouns and without articles`, () => {
-                        const conjugation = phrase.conjugate(grammarCaseIndex, 2);
+                        const art = new Article('', 2);
+                        const phrase = new Phrase(noun, adj, art);
+                        const conjugation = phrase.conjugate(grammarCaseIndex);
                         assert.equal(conjugation.text, test[grammarCaseName].kein);
-                    });  
+                    });
                 });
             })
         });
