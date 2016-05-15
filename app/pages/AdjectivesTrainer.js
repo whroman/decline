@@ -12,13 +12,26 @@ class Sentence extends Component {
     };
   }
 
+  constructor () {
+    super();
+
+    this.state = {
+      isCorrect: false,
+      isFilled: false
+    };
+  }
+
   render () {
     const { untilStub, afterStub, stub } = this.props.phrase
     const numOfChars = stub.length;
+
+    let inputState = '';
+    if (this.state.isFilled) inputState = this.state.isCorrect ? 'correct' : 'incorrect';
+
     return (
       <li className="Phrase" >
         <span>{ untilStub }</span>
-        <span className="input-wrapper">
+        <span className={`input-wrapper ${inputState}`}>
           <input
             type="text"
             maxLength={ numOfChars }
@@ -33,7 +46,12 @@ class Sentence extends Component {
   }
 
   handleChange (event) {
-    console.log(event.target.value, this.props.phrase.stubbedValue)
+    const { value } = event.target;
+    const { stubbedValue } = this.props.phrase;
+
+    const isCorrect = value.toLowerCase() === stubbedValue.toLowerCase();
+    const isFilled = value.length === stubbedValue.length;
+    this.setState({ isCorrect, isFilled });
   }
 
 }

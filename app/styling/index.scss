@@ -4,6 +4,8 @@
 @include foundation-global-styles;
 
 $blue: #0083C8;
+$green: #30AA47;
+$red: #ED5A4F;
 
 body {
     background-color: #fefefe;
@@ -30,6 +32,14 @@ body {
     .input-wrapper {
         position: relative;
         color: $blue;
+
+        &.correct {
+            color: $green;
+        }
+
+        &.incorrect {
+            color: $red;
+        }
     }
 
     .placeholder {
