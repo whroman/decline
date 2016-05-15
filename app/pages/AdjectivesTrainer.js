@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import DOM from  'react-dom';
 import { connect } from 'react-redux';
 
 import presentPhrases from './../presenters/phrases';
@@ -22,17 +23,19 @@ class Sentence extends Component {
   }
 
   render () {
-    const { untilStub, afterStub, stub } = this.props.phrase
+    const { phrase, number } = this.props;
+    const { untilStub, afterStub, stub } = phrase
     const numOfChars = stub.length;
 
     let inputState = '';
     if (this.state.isFilled) inputState = this.state.isCorrect ? 'correct' : 'incorrect';
 
     return (
-      <li className="Phrase" >
+      <div className="Phrase" >
         <span>{ untilStub }</span>
         <span className={`input-wrapper ${inputState}`}>
           <input
+          autoFocus= { number === 0 ? true : false }
             type="text"
             maxLength={ numOfChars }
             size={ numOfChars }
@@ -41,7 +44,7 @@ class Sentence extends Component {
           <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
         </span>
         <span>{ afterStub }</span>
-      </li>
+      </div>
     );
   }
 
@@ -71,13 +74,11 @@ export class AdjectivesTrainer extends Component {
   renderPhrases () {
     return this.props.phrases.map((phrase, index) => {
       return (
-        <Sentence
-          key={ index }
-          phrase={ phrase }
-        />
+        <li key={ index } >
+          <Sentence number={ index } phrase={ phrase } />
+        </li>
       );
     });
-
   }
 
   render () {
