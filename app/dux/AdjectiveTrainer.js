@@ -21,7 +21,8 @@ const reducer = handleActions({
     [TYPES.CREATE]: (state, action) => {
         const collection = [];
         while (action.payload--) {
-            collection.push(randomPhrase.nominative());
+            const phrase = randomPhrase.nominative();
+            collection.push(phrase);
         }
 
         return extendState(state, { collection });

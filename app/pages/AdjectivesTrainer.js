@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
+import presentPhrases from './../presenters/phrases';
 import { create } from './../dux/adjectiveTrainer';
 
 class Sentence {
@@ -23,25 +24,38 @@ export class AdjectivesTrainer extends Component {
     this.props.create(10);
   }
 
-  renderPhrase (phrase) {
+  renderPhrase (phrase, index) {
+    const numOfChars = phrase.stub.length;
     return (
-      <li>
-        <span>{phrase.stubbedSuffix}</span>
+      <li className="Phrase" key={ index }>
+        <span>{phrase.untilStub}</span>
+        <span className="input-wrapper">
+          <input
+            type="text"
+            maxLength={ numOfChars }
+            size={ numOfChars }
+          />
+          <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
+        </span>
+        <span>{phrase.afterStub}</span>
       </li>
     );
   }
 
   render () {
     return (
-      <ul>
-        { this.props.phrases.map(this.renderPhrase) }
-      </ul>
+      <div>
+        <ul>
+          { this.props.phrases.map(this.renderPhrase.bind(this)) }
+        </ul>
+      </div>
     );
   }
 }
 
 export function mapStateToProps(state, ownProps) {
-  return { phrases: state.adjectiveTrainer.collection };
+  const phrases = presentPhrases(state.adjectiveTrainer.collection);
+  return { phrases };
 }
 
 const mapDispatchToProps = {

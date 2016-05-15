@@ -1,7 +1,41 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen+Mono&subset=latin,latin-ext);
 
+@import 'foundation';
+@include foundation-global-styles;
+
+$blue: #0083C8;
+
 body {
-    background-color: #eee;
+    background-color: #fefefe;
     color: #222;
     font-family: 'Oxygen Mono', monospace;
+}
+
+.Phrase {
+    list-style: none;
+    font-size: 20px;
+
+    > * {
+        display: inline-block;
+    }
+
+    input {
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        outline: none;
+        padding: 0;
+    }
+
+    .input-wrapper {
+        position: relative;
+        color: $blue;
+    }
+
+    .placeholder {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
 }
