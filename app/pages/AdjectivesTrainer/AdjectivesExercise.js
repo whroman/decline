@@ -13,7 +13,7 @@ export default class AdjectivesExercise extends Component {
 
   renderPhrase (phrase, index) {
     return (
-      <tr key={ index } >
+      <tr key={ phrase.key } >
         <AdjectivesExerciseItem number={ index } phrase={ phrase } />
         { this.renderExerciseActions(index) }
       </tr>
@@ -67,15 +67,16 @@ class AdjectivesExerciseItem extends Component {
     const { untilStub, afterStub, stub } = phrase
     const numOfChars = stub.length;
 
+    const { isFilled, isCorrect } = this.state;
     let inputState = '';
-    if (this.state.isFilled) inputState = this.state.isCorrect ? 'correct' : 'incorrect';
+    if (isFilled) inputState = isCorrect ? 'correct' : 'incorrect';
 
     return (
       <td className="AdjectivesExerciseItem" >
         <span>{ untilStub }</span>
         <span className={`input-wrapper ${inputState}`}>
           <input
-          autoFocus= { number === 0 ? true : false }
+            autoFocus= { number === 0 ? true : false }
             type="text"
             maxLength={ numOfChars }
             size={ numOfChars }

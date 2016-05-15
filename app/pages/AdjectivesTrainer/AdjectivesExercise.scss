@@ -22,11 +22,10 @@ $lh: 2.5;
             }
 
             &::after{
-                background-color: rgba(0,0,0,0.1);
+                background-color: rgba(0,0,0,0.15);
             }
         }
     }
-
 
     tr::after {
         content: 'a';
