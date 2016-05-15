@@ -17,15 +17,17 @@ export default class PageWrapper extends Component {
   render () {
     return (
       <div>
-        <div className='header row collapse'>
-          <div className='column small-10 small-centered'>
-            <h1 className='float-left header-title'>Täglich Deutsch</h1>
-            <div className='float-right'>
-              <a
-                onClick={ this.handleSettingsClick }
-              >
-                <i className='wr-ico wr-ico-cogs' />
-              </a>
+        <div className='header'>
+          <div className='row collapse'>
+            <div className='column small-10 small-centered'>
+              <h1 className='float-left header-title'>Täglich Deutsch</h1>
+              <div className='float-right'>
+                <a
+                  onClick={ this.handleSettingsClick }
+                >
+                  <i className='wr-ico wr-ico-cogs' />
+                </a>
+              </div>
             </div>
           </div>
         </div>
