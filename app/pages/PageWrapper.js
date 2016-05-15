@@ -14,6 +14,19 @@ export default class PageWrapper extends Component {
     console.log('foo');
   }
 
+  renderRight () {
+    return null; // TODO: add navbar items.
+    return (
+      <div className='float-right'>
+        <a
+          onClick={ this.handleSettingsClick }
+        >
+          <i className='wr-ico wr-ico-cogs' />
+        </a>
+      </div>
+    );
+  }
+
   render () {
     return (
       <div>
@@ -21,13 +34,7 @@ export default class PageWrapper extends Component {
           <div className='row collapse'>
             <div className='column small-10 small-centered'>
               <h1 className='float-left header-title'>Täglich Deutsch</h1>
-              <div className='float-right'>
-                <a
-                  onClick={ this.handleSettingsClick }
-                >
-                  <i className='wr-ico wr-ico-cogs' />
-                </a>
-              </div>
+              { this.renderRight() }
             </div>
           </div>
         </div>
