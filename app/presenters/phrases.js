@@ -5,7 +5,9 @@ const regexi = {
 };
 
 function presentPhrase (phrase) {
-    const { text, stubbedValue } = phrase.stubbedSuffix;
+    const { noun, article, stubbedSuffix } = phrase;
+    const { text, stubbedValue } = stubbedSuffix;
+    console.log(phrase);
     const present = {
         stubbedValue,
         untilStub:  regexi.untilStub().exec(text)[1],

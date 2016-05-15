@@ -15,6 +15,11 @@ body {
     background-size: cover;
 }
 
+body a {
+    text-decoration: none;
+    color: inherit;
+}
+
 li {
     list-style: none;
 }
@@ -49,6 +54,7 @@ h1 {
     background: $modal-bg;
     border-radius: 3px;
     box-shadow: 0 0 8px 1px $shadow;
+    max-width: 600px;
 }
 
 .header {

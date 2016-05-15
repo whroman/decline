@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router'
 
 import './AdjectivesExercise.scss';
 
@@ -12,17 +13,33 @@ export default class AdjectivesExercise extends Component {
 
   renderPhrase (phrase, index) {
     return (
-      <li key={ index } >
+      <tr key={ index } >
         <AdjectivesExerciseItem number={ index } phrase={ phrase } />
-      </li>
+        { this.renderExerciseActions(index) }
+      </tr>
     );
   }
 
   render () {
     return (
-      <ul className='AdjectivesExercise'>
-        { this.props.phrases.map(this.renderPhrase) }
-      </ul>
+      <table className='AdjectivesExercise'>
+        <tbody>
+          { this.props.phrases.map(this.renderPhrase.bind(this)) }
+        </tbody>
+      </table>
+    );
+  }
+
+  renderExerciseActions (number) {
+    return (
+      <td>
+        <Link
+          to={`detail/${number}`}
+          className='detail-link'
+        >
+          <i className='wr-ico wr-ico-info-circle wr-ico-fw' />
+        </Link>
+      </td>
     );
   }
 
@@ -54,7 +71,7 @@ class AdjectivesExerciseItem extends Component {
     if (this.state.isFilled) inputState = this.state.isCorrect ? 'correct' : 'incorrect';
 
     return (
-      <div className="AdjectivesExerciseItem" >
+      <td className="AdjectivesExerciseItem" >
         <span>{ untilStub }</span>
         <span className={`input-wrapper ${inputState}`}>
           <input
@@ -67,7 +84,7 @@ class AdjectivesExerciseItem extends Component {
           <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
         </span>
         <span>{ afterStub }</span>
-      </div>
+      </td>
     );
   }
 

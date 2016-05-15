@@ -1,9 +1,43 @@
 @import 'colors';
 
+$lh: 2.5;
+
+%placeholder {
+    background-color: rgba(100,100,100,0.2);
+}
+
 .AdjectivesExercise {
-    font-size: 20px;
+    font-size: 14px;
     position: relative;
     z-index: 1;
+    width: 100%;
+    vertical-align: middle;
+
+    tr {
+        position: relative;
+
+        &:hover {
+            .placeholder {
+                @extend %placeholder;
+            }
+
+            &::after{
+                background-color: rgba(0,0,0,0.1);
+            }
+        }
+    }
+
+
+    tr::after {
+        content: 'a';
+        color: transparent;
+        right: -20px;
+        position: absolute;
+        left: -20px;
+        background-color: transparent;
+        z-index: -2;
+        line-height: $lh;
+    }
 
     input {
         background-color: transparent;
@@ -13,7 +47,7 @@
         padding: 0;
 
         &:focus + .placeholder {
-            background-color: rgba(100,100,100,0.2);
+            @extend %placeholder;
         }
     }
 
@@ -37,11 +71,21 @@
         z-index: -1;
     }
 
+    .detail-link {
+        color: #888;
+        font-size: 1.75em;
+        float: right;
+
+        &:hover {
+            color: inherit;
+        }
+    }
+
 }
 
 .AdjectivesExerciseItem {
-
-    line-height: 2;
+    line-height: $lh;
+    padding-right: 4em;
 
     > * {
         display: inline-block;
