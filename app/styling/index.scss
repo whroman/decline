@@ -1,9 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen+Mono&subset=latin,latin-ext);
 
-@import '_settings';
-@import 'foundation';
-@include foundation-global-styles;
-@include foundation-grid;
+@import './foundation-includes';
+@import './colors';
 
 body {
     background: no-repeat center center fixed;
@@ -23,6 +21,7 @@ li {
 
 ul {
     padding: 0;
+    margin: 0;
 }
 
 br {
@@ -33,8 +32,32 @@ br {
     background-color: #444;
 }
 
+h1 {
+    margin: 0;
+}
+
+%text-white {
+    color: #fff;
+}
+
+.header-title {
+    font-size: 20px;
+    @extend %text-white;
+}
+
 .modal {
-    background: rgba(255, 255, 255, 0.8);
+    background: $modal-bg;
     border-radius: 3px;
-    box-shadow: 0 0 8px 1px rgba(0,0,0,0.5);
+    box-shadow: 0 0 8px 1px $shadow;
+}
+
+.header {
+    background-color: #222;
+    box-shadow: 0 0 8px 1px $shadow;
+    padding: 8px 0;
+
+
+    .wr-ico {
+        @extend %text-white;
+    }
 }

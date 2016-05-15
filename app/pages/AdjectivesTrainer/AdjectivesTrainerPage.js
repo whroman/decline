@@ -27,25 +27,49 @@ export class AdjectivesTrainer extends Component {
       });
   }
 
+  handleSettingsClick () {
+    console.log('foo');
+  }
+
   render () {
     const { create, phrases } = this.props;
     return (
       <div>
+        <div className='header row collapse'>
+          <div className='column small-10 small-centered'>
+            <h1 className='float-left header-title'>Täglich Deutsch</h1>
+            <div className='float-right'>
+              <a
+                onClick={ this.handleSettingsClick }
+              >
+                <i className='wr-ico wr-ico-cogs' />
+              </a>
+            </div>
+          </div>
+        </div>
         <br/>
+        <div className='row'>
+          <div className='modal column small-10 small-centered  '>
+            <div className='row'>
+              <div className='column small-11 small-centered'>
+                <CreationForm create={ create } />
+              </div>
+            </div>
+          </div>
+        </div>
         <br/>
         <div className='row'>
           <div className='modal column small-10 small-centered  '>
             <div className='row'>
               <div className='column small-11 small-centered'>
                 <br/>
-                <CreationForm create={ create } />
-                <hr/>
                 <AdjectivesExercise phrases={ phrases } />
                 <br/>
               </div>
             </div>
           </div>
         </div>
+        <br/>
       </div>
     );
   }
