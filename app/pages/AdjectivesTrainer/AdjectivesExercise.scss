@@ -1,0 +1,46 @@
+@import 'colors';
+
+.AdjectivesExercise {
+    font-size: 20px;
+    position: relative;
+    z-index: 1;
+
+    input {
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        outline: none;
+        padding: 0;
+
+        &:focus + .placeholder {
+            background-color: rgba(100,100,100,0.2);
+        }
+    }
+
+    .input-wrapper {
+        position: relative;
+        color: $blue;
+
+        &.correct {
+            color: $green;
+        }
+
+        &.incorrect {
+            color: $red;
+        }
+    }
+
+    .placeholder {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+}
+
+.AdjectivesExerciseItem {
+    > * {
+        display: inline-block;
+    }
+}

@@ -15,15 +15,15 @@ const initialState = {
     collection: []
 };
 
-const CASES = [
+const DIE_KASUS = [
     'nominative',
     'accusative'
 ];
 
 function getRandomCasus () {
-    const casusIndex = _.random(0, CASES.length - 1);
-    const casus = CASES[casusIndex];
-    return casus;
+    const kasusIndex = _.random(0, DIE_KASUS.length - 1);
+    const kasus = DIE_KASUS[kasusIndex];
+    return kasus;
 }
 
 const extendState = (state, obj) => Object.assign({}, state, obj);
@@ -31,13 +31,13 @@ const extendState = (state, obj) => Object.assign({}, state, obj);
 const reducer = handleActions({
 
     [TYPES.CREATE]: (state, action) => {
-        const { amount, casus } = action.payload;
-        const casusIsValid = CASES.includes(casus);
+        const { amount, kasus } = action.payload;
+        const kasusIsValid = DIE_KASUS.includes(kasus);
 
         const collection = _
             .range(amount)
             .map(() => {
-                const methodName = casusIsValid ? casus : getRandomCasus();
+                const methodName = kasusIsValid ? kasus : getRandomCasus();
                 const phrase = randomPhrase[methodName]();
                 return phrase;
             });

@@ -1,11 +1,34 @@
 import React, { Component, PropTypes } from 'react';
-import DOM from  'react-dom';
-import { connect } from 'react-redux';
 
-import presentPhrases from './../presenters/phrases';
-import { create } from './../dux/adjectiveTrainer';
+import './AdjectivesExercise.scss';
 
-class Sentence extends Component {
+export default class AdjectivesExercise extends Component {
+
+  static get propTypes() {
+    return {
+      phrases: PropTypes.arrayOf(PropTypes.shape),
+    };
+  }
+
+  renderPhrase (phrase, index) {
+    return (
+      <li key={ index } >
+        <AdjectivesExerciseItem number={ index } phrase={ phrase } />
+      </li>
+    );
+  }
+
+  render () {
+    return (
+      <ul className='AdjectivesExercise'>
+        { this.props.phrases.map(this.renderPhrase) }
+      </ul>
+    );
+  }
+
+}
+
+class AdjectivesExerciseItem extends Component {
 
   static get propTypes() {
     return {
@@ -31,7 +54,7 @@ class Sentence extends Component {
     if (this.state.isFilled) inputState = this.state.isCorrect ? 'correct' : 'incorrect';
 
     return (
-      <div className="Phrase" >
+      <div className="AdjectivesExerciseItem" >
         <span>{ untilStub }</span>
         <span className={`input-wrapper ${inputState}`}>
           <input
@@ -58,49 +81,3 @@ class Sentence extends Component {
   }
 
 }
-
-export class AdjectivesTrainer extends Component {
-
-  static get propTypes() {
-    return {
-      phrases: PropTypes.arrayOf(PropTypes.shape),
-    };
-  }
-
-  componentWillMount () {
-    this.props.create({
-      amount: 10
-    });
-  }
-
-  renderPhrases () {
-    return this.props.phrases.map((phrase, index) => {
-      return (
-        <li key={ index } >
-          <Sentence number={ index } phrase={ phrase } />
-        </li>
-      );
-    });
-  }
-
-  render () {
-    return (
-      <div>
-        <ul>
-          { this.renderPhrases() }
-        </ul>
-      </div>
-    );
-  }
-}
-
-export function mapStateToProps(state, ownProps) {
-  const phrases = presentPhrases(state.adjectiveTrainer.collection);
-  return { phrases };
-}
-
-const mapDispatchToProps = {
-  create
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(AdjectivesTrainer);

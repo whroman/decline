@@ -1,0 +1,15 @@
+@import './react-dropdown';
+
+.CreationForm {
+    td {
+        vertical-align: middle;
+    }
+
+    .name {
+        padding-right: 1rem;
+    }
+
+    .KasusDropdown {
+        @include Dropdown();
+    }
+}

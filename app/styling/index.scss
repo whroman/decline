@@ -1,54 +1,40 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen+Mono&subset=latin,latin-ext);
 
+@import '_settings';
 @import 'foundation';
 @include foundation-global-styles;
-
-$blue: #0083C8;
-$green: #30AA47;
-$red: #ED5A4F;
+@include foundation-grid;
 
 body {
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     background-color: #fefefe;
     color: #222;
     font-family: 'Oxygen Mono', monospace;
+    background-size: cover;
 }
 
 li {
     list-style: none;
 }
 
-.Phrase {
-    font-size: 20px;
+ul {
+    padding: 0;
+}
 
-    > * {
-        display: inline-block;
-    }
+br {
+    display: block;
+    margin: 1rem 0;
+    height: 1px;
+    border: none;
+    background-color: #444;
+}
 
-    input {
-        background-color: transparent;
-        box-shadow: none;
-        border: none;
-        outline: none;
-        padding: 0;
-    }
-
-    .input-wrapper {
-        position: relative;
-        color: $blue;
-
-        &.correct {
-            color: $green;
-        }
-
-        &.incorrect {
-            color: $red;
-        }
-    }
-
-    .placeholder {
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: -1;
-    }
+.modal {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 3px;
+    box-shadow: 0 0 8px 1px rgba(0,0,0,0.5);
 }

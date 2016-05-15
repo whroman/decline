@@ -32,7 +32,10 @@ module.exports = {
     ]
   },
   sassLoader: {
-    includePaths: [path.resolve(__dirname, "./node_modules/foundation-sites/scss")]
+    includePaths: [
+      path.resolve(__dirname, "./node_modules/foundation-sites/scss"),
+      path.resolve(__dirname, "./app/styling"),
+    ]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
