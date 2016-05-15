@@ -7,7 +7,7 @@
     "start": "webpack-dev-server",
     "test": "mocha --harmony $(find ./src -name '*.spec.js')",
     "test:watch": "npm test -- --watch",
-    "test:w": "npm run test:watch"
+    "tdd": "npm run test:watch"
   },
   "author": "",
   "license": "ISC",

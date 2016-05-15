@@ -2,6 +2,14 @@
 
 const _ = require("underscore");
 
+function compose (art, adj, noun) {
+    return _.filter([
+        art,
+        adj,
+        noun
+    ]).join(" ");
+}
+
 class Phrase {
 
     constructor (nounInstance, adjInstance, articleInstance) {
@@ -25,19 +33,24 @@ class Phrase {
 
     conjugate (grammarCase) {
         const conjArticle = this.article.conjugate(grammarCase, this.noun.gender);
-        const conjAdj = this.getAdjective(grammarCase, this.article.type);
+        const conjAdjective = this.getAdjective(grammarCase, this.article.type);
+        const conjNoun = this.noun.conjugate(grammarCase);
 
-        const statement = _.mapObject(conjAdj, (val) => {
-            const nounIsPlural = this.noun.gender === 3;
-            const artIsIndefinite = this.article.type === 1;
-            if (nounIsPlural && artIsIndefinite) throw Error('FUCK');
+        const nounIsPlural = this.noun.gender === 3;
+        const artIsIndefinite = this.article.type === 1;
+        if (nounIsPlural && artIsIndefinite) throw Error('FUCK');
 
-            return _.filter([
-                conjArticle,
-                val,
-                this.noun.conjugate(grammarCase)
-            ]).join(" ");
-        });
+        const statement = {
+            text: compose(conjArticle, conjAdjective.text, conjNoun),
+            stubbed: {
+                text: compose(conjArticle, conjAdjective.stubbed.text, conjNoun),
+                stubbedValue: conjAdjective.stubbed.stubbedValue
+            },
+            stubbedSuffix: {
+                text: compose(conjArticle, conjAdjective.stubbedSuffix.text, conjNoun),
+                stubbedValue: conjAdjective.stubbedSuffix.stubbedValue
+            }
+        };
 
         return Object.assign({}, this, statement);
     }

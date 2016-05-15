@@ -4,7 +4,37 @@ import { connect } from 'react-redux';
 import presentPhrases from './../presenters/phrases';
 import { create } from './../dux/adjectiveTrainer';
 
-class Sentence {
+class Sentence extends Component {
+
+  static get propTypes() {
+    return {
+      phrase: PropTypes.shape(),
+    };
+  }
+
+  render () {
+    const { untilStub, afterStub, stub } = this.props.phrase
+    const numOfChars = stub.length;
+    return (
+      <li className="Phrase" >
+        <span>{ untilStub }</span>
+        <span className="input-wrapper">
+          <input
+            type="text"
+            maxLength={ numOfChars }
+            size={ numOfChars }
+            onChange={ this.handleChange.bind(this) }
+          />
+          <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
+        </span>
+        <span>{ afterStub }</span>
+      </li>
+    );
+  }
+
+  handleChange (event) {
+    console.log(event.target.value, this.props.phrase.stubbedValue)
+  }
 
 }
 
@@ -12,11 +42,7 @@ export class AdjectivesTrainer extends Component {
 
   static get propTypes() {
     return {
-      tracks: PropTypes.arrayOf(PropTypes.shape),
-      isLoading: PropTypes.bool,
-      locale: PropTypes.string,
-      learningLanguage: PropTypes.string,
-      _fetchGraphWithCompletions: PropTypes.func
+      phrases: PropTypes.arrayOf(PropTypes.shape),
     };
   }
 
@@ -24,29 +50,23 @@ export class AdjectivesTrainer extends Component {
     this.props.create(10);
   }
 
-  renderPhrase (phrase, index) {
-    const numOfChars = phrase.stub.length;
-    return (
-      <li className="Phrase" key={ index }>
-        <span>{phrase.untilStub}</span>
-        <span className="input-wrapper">
-          <input
-            type="text"
-            maxLength={ numOfChars }
-            size={ numOfChars }
-          />
-          <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
-        </span>
-        <span>{phrase.afterStub}</span>
-      </li>
-    );
+  renderPhrases () {
+    return this.props.phrases.map((phrase, index) => {
+      return (
+        <Sentence
+          key={ index }
+          phrase={ phrase }
+        />
+      );
+    });
+
   }
 
   render () {
     return (
       <div>
         <ul>
-          { this.props.phrases.map(this.renderPhrase.bind(this)) }
+          { this.renderPhrases() }
         </ul>
       </div>
     );

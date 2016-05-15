@@ -29,10 +29,10 @@ const randomPhrase = {
         const phrase = this.getOne();
         const start = typeof textOrTransform === "function" ? textOrTransform(phrase) : textOrTransform;
         let conjugation = transformCon(phrase);
-        conjugation = _.mapObject(conjugation, (val) => {
-            if (val === null) return val;
-            return start + val;
-        });
+
+        conjugation.text = start + conjugation.text;
+        conjugation.stubbed.text = start + conjugation.stubbed.text;
+        conjugation.stubbedSuffix.text = start + conjugation.stubbedSuffix.text;
 
         return conjugation;
     },

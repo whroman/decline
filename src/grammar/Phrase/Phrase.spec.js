@@ -134,7 +134,6 @@ describe("Phrase", () => {
                         const expectedText = test[grammarCaseName].indef;
                         const conjugate = () => phrase.conjugate(grammarCaseIndex);
 
-                        console.log(expectedText)
                         if (expectedText === null) {
                             assert.throws(conjugate);
                         } else {

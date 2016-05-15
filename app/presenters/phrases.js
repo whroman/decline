@@ -5,11 +5,12 @@ const regexi = {
 };
 
 function presentPhrase (phrase) {
-    const { stubbedSuffix } = phrase;
+    const { text, stubbedValue } = phrase.stubbedSuffix;
     const present = {
-        untilStub:  regexi.untilStub().exec(stubbedSuffix)[1],
-        afterStub:  regexi.afterStub().exec(stubbedSuffix)[1],
-        stub:       regexi.stub().exec(stubbedSuffix)[1],
+        stubbedValue,
+        untilStub:  regexi.untilStub().exec(text)[1],
+        afterStub:  regexi.afterStub().exec(text)[1],
+        stub:       regexi.stub().exec(text)[1]
     }
     return present;
 }

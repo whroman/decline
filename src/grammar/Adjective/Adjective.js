@@ -2,6 +2,10 @@
 
 const conjugationTable = require("./../../../fixtures/conjugationTable");
 
+function stub (str) {
+    return Array(str.length + 1).join("_");
+}
+
 class Adjective {
 
     constructor (rootText) {
@@ -20,25 +24,28 @@ class Adjective {
         return suffix;
     }
 
-    stub (word) {
-        return Array(word.length + 1).join("_");
-    }
-
     conjugate (...args) {
         const suffix = this.findSuffix(...args);
 
         const word = {
             text: this.rootText,
-            stubbed: this.stub(this.rootText),
-            stubbedSuffix: this.rootText
+            stubbed: {
+                text: stub(this.rootText),
+                stubbedValue: this.rootText
+            },
+            stubbedSuffix: {
+                text: this.rootText,
+                stubbedValue: ''
+            }
         };
 
         if (suffix) {
             if (suffix.text) {
-                const stubbedSuffix = this.stub(suffix.text);
+                const stubbedSuffix = stub(suffix.text);
                 word.text += suffix.text;
-                word.stubbed += stubbedSuffix;
-                word.stubbedSuffix += stubbedSuffix;
+                word.stubbed.text += stubbedSuffix;
+                word.stubbedSuffix.text += stubbedSuffix;
+                word.stubbedSuffix.stubbedValue += suffix.text;
             }
         } else {
             console.warn("No conjugation found: ", ...arguments);
