@@ -83,10 +83,14 @@ $lh: 2.5;
 }
 
 .AdjectivesExerciseItem {
-    line-height: $lh;
-    padding-right: 4em;
+    cursor: pointer;
 
-    > * {
-        display: inline-block;
+    .text {
+        line-height: $lh;
+        padding-right: 4em;
+
+        > * {
+            display: inline-block;
+        }
     }
 }

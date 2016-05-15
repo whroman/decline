@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router'
 
 import AdjectivesExerciseItem from './AdjectivesExerciseItem';
 import './AdjectivesExercise.scss';
@@ -14,10 +13,11 @@ export default class AdjectivesExercise extends Component {
 
   renderPhrase (phrase, index) {
     return (
-      <tr key={ phrase.key } >
-        <AdjectivesExerciseItem number={ index } phrase={ phrase } />
-        { this.renderExerciseActions(index) }
-      </tr>
+      <AdjectivesExerciseItem
+        number={ index }
+        phrase={ phrase }
+        key={ phrase.key }
+      />
     );
   }
 
@@ -28,19 +28,6 @@ export default class AdjectivesExercise extends Component {
           { this.props.phrases.map(this.renderPhrase.bind(this)) }
         </tbody>
       </table>
-    );
-  }
-
-  renderExerciseActions (number) {
-    return (
-      <td>
-        <Link
-          to={`detail/${number}`}
-          className='detail-link'
-        >
-          <i className='wr-ico wr-ico-info-circle wr-ico-fw' />
-        </Link>
-      </td>
     );
   }
 

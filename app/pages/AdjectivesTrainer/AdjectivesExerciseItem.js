@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router'
 
 const className = 'AdjectivesExerciseItem';
 
-function getInput (tabindex) {
-  return document.querySelector(`.${className} [tabindex='${tabindex}']`);
-}
+const getInput = (tabindex) => document.querySelector(`.${className} [tabindex='${tabindex}']`);
 
 export default class AdjectivesExerciseItem extends Component {
 
@@ -33,27 +32,52 @@ export default class AdjectivesExerciseItem extends Component {
     if (isFilled) inputState = isCorrect ? 'correct' : 'incorrect';
 
     return (
-      <td className={ className } >
-        <span>{ untilStub }</span>
-        <span className={`input-wrapper ${inputState}`}>
-          <input
-            ref={ phrase.key }
-            autoFocus={ number === 0 ? true : false }
-            type="text"
-            maxLength={ numOfChars }
-            size={ numOfChars }
-            onChange={ this.handleChange.bind(this) }
-            onKeyPress={ this.handleKeypress.bind(this) }
-            tabIndex={ number + 1 }
-          />
-          <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
-        </span>
-        <span>{ afterStub }</span>
+      <tr
+        className={ className }
+        onClick={ this.handleClick.bind(this) }
+      >
+        <td className='text'>
+          <span>{ untilStub }</span>
+          <span className={`input-wrapper ${inputState}`}>
+            <input
+              ref={ phrase.key }
+              autoFocus={ number === 0 ? true : false }
+              type="text"
+              maxLength={ numOfChars }
+              size={ numOfChars }
+              onChange={ this.handleInputChange.bind(this) }
+              onKeyPress={ this.handleInputKeyPress.bind(this) }
+              tabIndex={ number + 1 }
+            />
+            <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
+          </span>
+          <span>{ afterStub }</span>
+        </td>
+        { this.renderExerciseActions(number) }
+      </tr>
+
+    );
+  }
+
+  renderExerciseActions (number) {
+    return (
+      <td>
+        <Link
+          to={`detail/${number}`}
+          className='detail-link'
+        >
+          <i className='wr-ico wr-ico-info-circle wr-ico-fw' />
+        </Link>
       </td>
     );
   }
 
-  handleKeypress (event) {
+  handleClick () {
+    const input = getInput(this.props.number + 1);
+    input.focus();
+  }
+
+  handleInputKeyPress (event) {
     if (event.key.toLowerCase() === 'enter') {
       let nextInput = getInput(this.props.number + 2);
       if (!nextInput) nextInput = getInput(1);
@@ -61,7 +85,7 @@ export default class AdjectivesExerciseItem extends Component {
     }
   }
 
-  handleChange (event) {
+  handleInputChange (event) {
     const { value } = event.target;
     const { stubbedValue } = this.props.phrase;
 
