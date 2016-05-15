@@ -1,0 +1,22 @@
+.ExerciseItemDetail {
+    table {
+        width: 100%;
+    }
+
+    tr {
+        background-color: rgba(0,0,0,0.08);
+    }
+
+    tr:nth-of-type(even) {
+        background-color: rgba(0,0,0,0.16);
+    }
+
+    td {
+        padding: 0.25em 2em;
+    }
+
+    td:first-of-type {
+        border-right: 1px solid rgba(255,255,255,0.4);
+    }
+
+}

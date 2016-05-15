@@ -1,15 +1,15 @@
 const OBJECTS_GENDERS = [
-    'Maskuline',
+    'Maskulin',
     'Feminin',
-    'Neuter',
+    'Neutrum',
     'Plural'
 ];
 
 const ARTICLE_TYPES = [
-    'Definit',
+    'Definitiv',
     'Indefinit',
-    'Kein',
-    'Possesiv'
+    'Ohne',
+    'Possessiv'
 ];
 
 export default function presentPhrase (phrase) {

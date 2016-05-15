@@ -38,7 +38,7 @@ export default class AdjectivesExerciseItem extends Component {
       >
         <td className='text'>
           <span>{ untilStub }</span>
-          <span className={`input-wrapper ${inputState}`}>
+          <strong className={`input-wrapper ${inputState}`}>
             <input
               ref={ phrase.key }
               autoFocus={ number === 0 ? true : false }
@@ -50,7 +50,7 @@ export default class AdjectivesExerciseItem extends Component {
               tabIndex={ number + 1 }
             />
             <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
-          </span>
+          </strong>
           <span>{ afterStub }</span>
         </td>
         { this.renderExerciseActions(number) }
@@ -73,8 +73,7 @@ export default class AdjectivesExerciseItem extends Component {
   }
 
   handleClick () {
-    const input = getInput(this.props.number + 1);
-    input.focus();
+    getInput(this.props.number + 1).focus();
   }
 
   handleInputKeyPress (event) {

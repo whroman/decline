@@ -5,6 +5,7 @@ import { get } from 'axios';
 
 import { create } from './../../dux/adjectiveTrainer';
 import exerciseDetail from './../../presenters/exerciseDetail';
+import './ExerciseItemDetail.scss';
 
 export class ExerciseItemDetail extends Component {
 
@@ -31,11 +32,11 @@ export class ExerciseItemDetail extends Component {
       <table>
         <tbody>
           <tr>
-            <td>Object Gender: </td>
+            <td>Objekt Genus</td>
             <td>{ objectGender }</td>
           </tr>
           <tr>
-            <td>Article Type: </td>
+            <td>Artikel Typ</td>
             <td>{ articleType }</td>
           </tr>
         </tbody>
@@ -47,7 +48,7 @@ export class ExerciseItemDetail extends Component {
     if (!this.props.exercise) return null; // Required for routing redirect to work
 
     return (
-      <div>
+      <div className='ExerciseItemDetail'>
         <div className='row'>
           <div className='modal column small-10 small-centered  '>
             <br />
