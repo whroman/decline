@@ -13,8 +13,11 @@ body {
     font-family: 'Oxygen Mono', monospace;
 }
 
-.Phrase {
+li {
     list-style: none;
+}
+
+.Phrase {
     font-size: 20px;
 
     > * {

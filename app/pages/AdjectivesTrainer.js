@@ -68,7 +68,9 @@ export class AdjectivesTrainer extends Component {
   }
 
   componentWillMount () {
-    this.props.create(10);
+    this.props.create({
+      amount: 10
+    });
   }
 
   renderPhrases () {
