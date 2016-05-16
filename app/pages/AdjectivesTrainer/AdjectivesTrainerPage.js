@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router'
 
 import presentPhrases from './../../presenters/phrases';
 import { create } from './../../dux/adjectiveTrainer';
@@ -21,9 +22,7 @@ export class AdjectivesTrainer extends Component {
   }
 
   handleClick () {
-    this.props.create({
-      amount: 8
-    });
+    this.props.create({ amount: 8 });
   }
 
   render () {
@@ -35,16 +34,20 @@ export class AdjectivesTrainer extends Component {
           <br/>
           <div className='row'>
             <div className='column small-11 small-centered'>
-              <div className='float-left'>
-                <h1 className='float-left'>Practice</h1>
-              </div>
+              <h1>Practice</h1>
               <hr/>
               <AdjectivesExercise phrases={ phrases } />
               <br/>
-              <div
-                className='button small'
-                onClick={ this.handleClick.bind(this) }
-              >More Exercises</div>
+              <div class="row">
+                <div
+                  className='button'
+                  onClick={ this.handleClick.bind(this) }
+                >Continue Practicing</div>
+
+                <div className='button warning float-right'>
+                  <Link to='create'>Configure Exercises</Link>
+                </div>
+              </div>
             </div>
           </div>
           <br/>

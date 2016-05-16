@@ -102,7 +102,6 @@ export default class CreationForm extends Component {
                     Create Exercises
                 </div>
             </div>
-            <br />
         </div>
     );
   }

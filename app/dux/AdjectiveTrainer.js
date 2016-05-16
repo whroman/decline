@@ -10,12 +10,13 @@ export const TYPES = {
 const create = createAction(TYPES.CREATE);
 export { create };
 
+
 // Reducer
-const initialState = {
+const initialState = Object.assign({
     collection: [],
     kasus: null,
     kategorie: null
-};
+}, loadState());
 
 const DIE_KASUS = [
     'nominative',
@@ -32,6 +33,21 @@ function getRandomKasus () {
     const kasusIndex = random(0, DIE_KASUS.length - 1);
     const kasus = DIE_KASUS[kasusIndex];
     return kasus;
+}
+
+const LS_KEY = 'conjugate';
+
+function storeState (state) {
+    const { kasus, familie } = state;
+    window.localStorage.setItem(
+        LS_KEY,
+        JSON.stringify({ kasus, familie })
+    );
+}
+
+function loadState () {
+    const state = window.localStorage.getItem('conjugate');
+    return state ? JSON.parse(state) : {};
 }
 
 const extendState = (state, obj) => Object.assign({}, state, obj);
@@ -55,11 +71,15 @@ const reducer = handleActions({
                 return phrase;
             });
 
-        return extendState(state, {
+        const newState = extendState(state, {
             collection,
             kasus,
             kategorie
         });
+
+        storeState(newState);
+
+        return newState;
     }
 
 }, initialState);

@@ -27,6 +27,7 @@ export class ExerciseCreationPage extends Component {
                 <CreationForm create={ create } />
               </div>
             </div>
+            <br/>
           </div>
         </div>
         <br/>
