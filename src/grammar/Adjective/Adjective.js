@@ -18,8 +18,6 @@ class Adjective {
             grammarCase
         });
 
-        console.log(suffix)
-
         return suffix;
     }
 

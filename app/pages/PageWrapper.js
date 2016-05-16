@@ -11,10 +11,6 @@ export default class PageWrapper extends Component {
       });
   }
 
-  handleSettingsClick () {
-    console.log('foo');
-  }
-
   renderRight () {
     return (
       <div className='float-right'>

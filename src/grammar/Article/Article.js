@@ -14,8 +14,6 @@ class Article {
             articleType: type
         });
 
-        console.log(conjugationTable.articles.list)
-
         if (type === 1 || type === 3) {
             return this.root + article.text;
         }

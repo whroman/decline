@@ -20,7 +20,6 @@ const CATEGORIES = [
 
 
 export default function presentPhrase (phrase) {
-    console.log(phrase);
     const { noun, article, text } = phrase;
     const present = {
         answer:       text,
