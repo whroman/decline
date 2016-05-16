@@ -27,10 +27,14 @@ export class ExerciseItemDetail extends Component {
   }
 
   renderTable () {
-    const { objectGender, articleType } = this.props.exercise;
+    const { objectGender, articleType, aufEnglish } = this.props.exercise;
     return (
       <table>
         <tbody>
+          <tr>
+            <td>Object Auf English</td>
+            <td>{ aufEnglish }</td>
+          </tr>
           <tr>
             <td>Objekt Genus</td>
             <td>{ objectGender }</td>
@@ -55,7 +59,7 @@ export class ExerciseItemDetail extends Component {
             <div className='row'>
               <div className='column small-11 small-centered'>
                 { this.renderAnswer() }
-                <hr />
+                <br />
                 <br />
                 { this.renderTable() }
                 <br />

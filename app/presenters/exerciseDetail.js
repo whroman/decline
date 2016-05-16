@@ -13,11 +13,13 @@ const ARTICLE_TYPES = [
 ];
 
 export default function presentPhrase (phrase) {
+    console.log(phrase);
     const { noun, article, text } = phrase;
     const present = {
         answer:       text,
         objectGender: OBJECTS_GENDERS[noun.gender],
-        articleType: ARTICLE_TYPES[article.type]
+        articleType: ARTICLE_TYPES[article.type],
+        aufEnglish: noun.enText
     }
     return present;
 }
