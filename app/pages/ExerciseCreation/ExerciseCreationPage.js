@@ -21,6 +21,7 @@ export class ExerciseCreationPage extends Component {
       <div>
         <div className='row'>
           <div className='modal column small-10 small-centered  '>
+            <br/>
             <div className='row'>
               <div className='column small-11 small-centered'>
                 <CreationForm create={ create } />

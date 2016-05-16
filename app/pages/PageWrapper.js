@@ -13,8 +13,10 @@ export default class PageWrapper extends Component {
 
   renderRight () {
     return (
-      <div className='float-right'>
-        <Link to='create'>Praktizieren</Link>
+      <div className='right-links'>
+        <Link to='#'>Practice</Link>
+        <Link to='create'>Configure</Link>
+        <Link to='about'>About</Link>
       </div>
     );
   }
@@ -33,8 +35,9 @@ export default class PageWrapper extends Component {
         <br/>
 
         { this.props.children }
-
         <br/>
+        <br/>
+
       </div>
     );
   }

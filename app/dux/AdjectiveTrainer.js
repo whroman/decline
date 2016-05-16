@@ -12,7 +12,9 @@ export { create };
 
 // Reducer
 const initialState = {
-    collection: []
+    collection: [],
+    kasus: null,
+    kategorie: null
 };
 
 const DIE_KASUS = [
@@ -20,13 +22,13 @@ const DIE_KASUS = [
     'accusative'
 ];
 
-const KATEGORIEN = [
+const DIE_KATEGORIEN = [
     'menschen',
     'familie',
     'tiere'
 ];
 
-function getRandomCasus () {
+function getRandomKasus () {
     const kasusIndex = random(0, DIE_KASUS.length - 1);
     const kasus = DIE_KASUS[kasusIndex];
     return kasus;
@@ -44,16 +46,20 @@ const reducer = handleActions({
         } = action.payload;
 
         const kasusIsValid = DIE_KASUS.includes(kasus);
-        const kategorieIsValid = KATEGORIEN.includes(kategorie);
+        const kategorieIsValid = DIE_KATEGORIEN.includes(kategorie);
 
         const collection = range(amount)
             .map(() => {
-                const methodName = kasusIsValid ? kasus : getRandomCasus();
+                const methodName = kasusIsValid ? kasus : getRandomKasus();
                 const phrase = randomPhrase[methodName](kategorie);
                 return phrase;
             });
 
-        return extendState(state, { collection });
+        return extendState(state, {
+            collection,
+            kasus,
+            kategorie
+        });
     }
 
 }, initialState);

@@ -10,14 +10,22 @@ body {
     -o-background-size: cover;
     background-size: cover;
     background-color: #fefefe;
-    color: #222;
-    font-family: 'Oxygen Mono', monospace;
+    color: #111;
     background-size: cover;
 }
 
-body a, body a:hover {
+body, h1, h2, h3 {
+    font-weight: 400;
+    font-family: 'Oxygen Mono', monospace;
+}
+
+body a, body a:visited, body a:hover, body a:active {
     text-decoration: none;
     color: inherit;
+}
+
+h1 {
+    font-size: 22px;
 }
 
 li {
@@ -69,6 +77,14 @@ h1 {
 
     .wr-ico {
         @extend %text-white;
+    }
+
+    .right-links {
+        float: right;
+
+        > * {
+            margin-left: 20px;
+        }
     }
 
     a:hover {

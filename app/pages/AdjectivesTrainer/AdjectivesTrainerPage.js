@@ -17,9 +17,12 @@ export class AdjectivesTrainer extends Component {
   componentWillMount () {
     if (this.props.phrases.length > 0) return;
 
+    this.handleClick();
+  }
+
+  handleClick () {
     this.props.create({
-      amount: 10,
-      kategorie: 0
+      amount: 8
     });
   }
 
@@ -27,18 +30,24 @@ export class AdjectivesTrainer extends Component {
     const { create, phrases } = this.props;
 
     return (
-      <div>
-        <br/>
-        <div className='row'>
-          <div className='modal column small-10 small-centered  '>
-            <div className='row'>
-              <div className='column small-11 small-centered'>
-                <br/>
-                <AdjectivesExercise phrases={ phrases } />
-                <br/>
+      <div className='row'>
+        <div className='modal column small-10 small-centered  '>
+          <br/>
+          <div className='row'>
+            <div className='column small-11 small-centered'>
+              <div className='float-left'>
+                <h1 className='float-left'>Practice</h1>
               </div>
+              <hr/>
+              <AdjectivesExercise phrases={ phrases } />
+              <br/>
+              <div
+                className='button small'
+                onClick={ this.handleClick.bind(this) }
+              >More Exercises</div>
             </div>
           </div>
+          <br/>
         </div>
       </div>
     );

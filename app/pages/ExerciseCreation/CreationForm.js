@@ -58,8 +58,7 @@ export default class CreationForm extends Component {
   render () {
     return (
         <div className='CreationForm' >
-            <br />
-            <strong>Neue Sätze</strong>
+            <h1>Configure</h1>
             <hr />
             <br />
             <table>
@@ -100,7 +99,7 @@ export default class CreationForm extends Component {
                     className='button'
                     onClick={ this.handleClick.bind(this) }
                 >
-                    Neue Sätze
+                    Create Exercises
                 </div>
             </div>
             <br />
@@ -115,6 +114,7 @@ export default class CreationForm extends Component {
   }
 
   handleKategorieDropdownChange (event) {
+    console.log(event);
     this.setState({
         kategorie: event.value
     });
@@ -123,12 +123,11 @@ export default class CreationForm extends Component {
   handleClick () {
     const { kasus, kategorie } = this.state;
     this.props.create({
-        amount: 10,
+        amount: 5,
         kasus, kategorie
     });
 
-    hashHistory.pushState('#');
+    hashHistory.push('#');
   }
-
 
 }
