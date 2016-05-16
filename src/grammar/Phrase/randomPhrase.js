@@ -5,10 +5,32 @@ const _ = require("underscore");
 const nouns = require("./../../../fixtures/words/nouns.js");
 const adjectives = require("./../../../fixtures/words/adjectives.js");
 const articles = require("./../../../fixtures/words/articles");
+const subjects = require("./../../../fixtures/words/subjects");
 const articleTypes = require("./../../../fixtures/articleTypes");
 
 const Phrase = require("./Phrase.js");
 const Article = require("./../Article/Article.js");
+
+
+function ucfirst (str) {
+    return str[0].toUpperCase() + str.substring(1);
+}
+
+function getRandomSubject (type, gender) {
+    const filteredSubjects = subjects
+        .filter((subject) => {
+            // console.log(subject[2], type);
+            // console.log(subject[3], gender);
+            return (
+                subject.types.includes(type) &&
+                subject.genders.includes(gender)
+            );
+        });
+
+    const subjectIndex = _.random(0, filteredSubjects.length - 1);
+    const subject = filteredSubjects[subjectIndex];
+    return subject;
+}
 
 const randomPhrase = {
 
@@ -30,19 +52,21 @@ const randomPhrase = {
         const start = typeof textOrTransform === "function" ? textOrTransform(phrase) : textOrTransform;
         let conjugation = transformCon(phrase);
 
-        conjugation.text = start + conjugation.text;
-        conjugation.stubbed.text = start + conjugation.stubbed.text;
-        conjugation.stubbedSuffix.text = start + conjugation.stubbedSuffix.text;
+        conjugation.text = start + conjugation.text + '.';
+        conjugation.stubbed.text = start + conjugation.stubbed.text + '.';
+        conjugation.stubbedSuffix.text = start + conjugation.stubbedSuffix.text + '.';
 
         return conjugation;
     },
 
     nominative: function () {
         const conjugation = this.handleCase( (phrase) => {
-            const nounIsPlural = phrase.noun.gender === 3;
+            const { gender } = phrase.noun;
+            phrase.subject = getRandomSubject(2, gender);
+            const nounIsPlural = gender === 3;
             const verb = nounIsPlural ? "sind " : "ist ";
-            const text = "Hier " + verb;
-            return text;
+            const text = [phrase.subject.de, verb].join(' ');
+            return ucfirst(text + '');
         }, (phrase) => {
             const conjugatedPhrase = phrase.conjugate(0);
             return conjugatedPhrase;
