@@ -103,7 +103,11 @@ function getRandomArticleGivenGender (gender) {
     do {
         articleType = getRandomArticleType();
         const articleIsIndef = articleType === 1;
-        isInvalid = nounIsPlural && articleIsIndef;
+        const articleIsOhne = articleType === 2;
+        isInvalid = (
+            (nounIsPlural && articleIsIndef) ||
+            (!nounIsPlural && articleIsOhne)
+        );
     } while (isInvalid)
 
     const article = getRandomArticleGivenType(articleType);
