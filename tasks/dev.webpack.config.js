@@ -41,6 +41,13 @@ module.exports = {
       path.resolve(cwd, "./app/styling"),
     ]
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('development')
+      },
+    })
+  ],
   devtool: 'source-map',
   devServer: {
     inline: true,
