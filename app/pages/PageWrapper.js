@@ -18,7 +18,7 @@ export default class PageWrapper extends Component {
   renderRight () {
     return (
       <div className='float-right'>
-        <Link to='create'>Neue Sätze</Link>
+        <Link to='create'>Praktizieren</Link>
       </div>
     );
   }

@@ -12,6 +12,13 @@ const ARTICLE_TYPES = [
     'Possessiv'
 ];
 
+const CATEGORIES = [
+    'menschen',
+    'familie',
+    'tiere'
+];
+
+
 export default function presentPhrase (phrase) {
     console.log(phrase);
     const { noun, article, text } = phrase;
@@ -19,7 +26,8 @@ export default function presentPhrase (phrase) {
         answer:       text,
         objectGender: OBJECTS_GENDERS[noun.gender],
         articleType: ARTICLE_TYPES[article.type],
-        aufEnglish: noun.enText
+        aufEnglish: noun.enText,
+        categories: noun.categories.map((id) => CATEGORIES[id])
     }
     return present;
 }

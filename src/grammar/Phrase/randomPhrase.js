@@ -35,15 +35,11 @@ const randomPhrase = {
 
     getRandomNoun: function (category) {
         let filteredNouns = nouns;
-
-        console.log(category)
-
         if (typeof category === 'number') {
             filteredNouns = nouns.filter((noun) => noun.categories.includes(category));
         }
 
         const noun = getRandomItem(filteredNouns);
-        console.log(filteredNouns, noun)
         return noun;
     },
 

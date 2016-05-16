@@ -3,11 +3,11 @@
 $lh: 2.5;
 
 %placeholder {
-    background-color: rgba(100,100,100,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .AdjectivesExercise {
-    font-size: 14px;
+    font-size: 16px;
     position: relative;
     z-index: 1;
     width: 100%;
@@ -15,16 +15,6 @@ $lh: 2.5;
 
     tr {
         position: relative;
-
-        &:hover {
-            .placeholder {
-                @extend %placeholder;
-            }
-
-            &::after{
-                background-color: rgba(0,0,0,0.15);
-            }
-        }
     }
 
     tr::after {
@@ -36,6 +26,24 @@ $lh: 2.5;
         background-color: transparent;
         z-index: -2;
         line-height: $lh;
+    }
+
+    tr:hover {
+        .placeholder {
+            @extend %placeholder;
+        }
+
+        &::after{
+            background-color: rgba(0,0,0,0.15);
+        }
+
+        .detail-link {
+            color: #888;
+
+            &:hover {
+                color: inherit;
+            }
+        }
     }
 
     input {
@@ -71,13 +79,9 @@ $lh: 2.5;
     }
 
     .detail-link {
-        color: #888;
+        color: transparent;
         font-size: 1.75em;
         float: right;
-
-        &:hover {
-            color: inherit;
-        }
     }
 
 }

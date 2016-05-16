@@ -10,6 +10,13 @@ const Noun = require("./../../src/grammar/Noun/Noun.js");
 
 const nouns = [
     // People
+
+        // DE singular
+                // DE plural
+                          // EN singular
+                                // EN plural
+                                        // Singular gender
+                                            // Categories
     [
         "Mann", "Männer", "man", "men", 0, [0]
     ],

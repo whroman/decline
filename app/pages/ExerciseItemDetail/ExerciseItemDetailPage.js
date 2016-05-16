@@ -27,20 +27,26 @@ export class ExerciseItemDetail extends Component {
   }
 
   renderTable () {
-    const { objectGender, articleType, aufEnglish } = this.props.exercise;
+    const {
+      objectGender, articleType, aufEnglish, categories
+    } = this.props.exercise;
     return (
       <table>
         <tbody>
           <tr>
-            <td>Object Auf English</td>
+            <td>Object auf english</td>
             <td>{ aufEnglish }</td>
           </tr>
           <tr>
-            <td>Objekt Genus</td>
+            <td>Objekt genus</td>
             <td>{ objectGender }</td>
           </tr>
           <tr>
-            <td>Artikel Typ</td>
+            <td>Objekt Kategorien</td>
+            <td>{ categories.join(', ') }</td>
+          </tr>
+          <tr>
+            <td>Artikel typ</td>
             <td>{ articleType }</td>
           </tr>
         </tbody>

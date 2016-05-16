@@ -37,6 +37,10 @@ br {
     background-color: #444;
 }
 
+hr {
+    border-color: rgba(0,0,0,0.5);
+}
+
 h1 {
     margin: 0;
 }
@@ -59,11 +63,15 @@ h1 {
 
 .header {
     background-color: #222;
-    box-shadow: 0 0 8px 1px $shadow;
+    box-shadow: 0 0 8px 1px rgba(200,200,200,0.5);
     padding: 8px 0;
     @extend %text-white;
 
     .wr-ico {
         @extend %text-white;
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 }
