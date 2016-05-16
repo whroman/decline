@@ -11,6 +11,8 @@ const articleTypes = require("./../../../fixtures/articleTypes");
 const Phrase = require("./Phrase.js");
 const Article = require("./../Article/Article.js");
 
+const getRandomIndex = (arr) => _.random(0, arr.length - 1);
+const getRandomItem = (arr) => arr[getRandomIndex(arr)];
 
 function ucfirst (str) {
     return str[0].toUpperCase() + str.substring(1);
@@ -19,27 +21,21 @@ function ucfirst (str) {
 function getRandomSubject (type, gender) {
     const filteredSubjects = subjects
         .filter((subject) => {
-            // console.log(subject[2], type);
-            // console.log(subject[3], gender);
             return (
                 subject.types.includes(type) &&
                 subject.genders.includes(gender)
             );
         });
 
-    const subjectIndex = _.random(0, filteredSubjects.length - 1);
-    const subject = filteredSubjects[subjectIndex];
+    const subject = getRandomItem(filteredSubjects);
     return subject;
 }
 
 const randomPhrase = {
 
     getOne: function () {
-        const adjIndex = _.random(0, adjectives.length - 1);
-        const adj = adjectives[adjIndex];
-
-        const nounIndex = _.random(0, nouns.length - 1);
-        const noun = nouns[nounIndex];
+        const adj = getRandomItem(adjectives);
+        const noun = getRandomItem(nouns);
 
         const article = getRandomArticleGivenGender(noun.gender);
 
@@ -85,11 +81,6 @@ const randomPhrase = {
 
 };
 
-function getRandomArticleType () {
-    const artType = _.random(0, articleTypes.length - 1);
-    return artType;
-}
-
 function getRandomArticleGivenType (type) {
     const index = _.random(0, articles[type].length - 1);
     return new Article(articles[type][index], type);
@@ -101,7 +92,7 @@ function getRandomArticleGivenGender (gender) {
     const nounIsPlural = gender === 3;
 
     do {
-        articleType = getRandomArticleType();
+        articleType = getRandomIndex(articleTypes);
         const articleIsIndef = articleType === 1;
         const articleIsOhne = articleType === 2;
         isInvalid = (
