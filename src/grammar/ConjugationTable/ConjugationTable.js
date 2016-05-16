@@ -1,13 +1,9 @@
-"use strict";
+import Collection from "./../../util/Collection.js";
+import Articles from "./Articles.js";
+import AdjectiveSuffixes from "./AdjectiveSuffix.js";
 
-const _ = require("underscore");
-
-const Collection = require("./../../util/Collection.js");
-const Articles = require("./Articles.js");
-const AdjectiveSuffixes = require("./AdjectiveSuffix.js");
-
-const GrammarConstruct = require("./../../util/GrammarConstruct.js");
-const UniqueList = require("./../../util/UniqueList.js");
+import GrammarConstruct from "./../../util/GrammarConstruct.js";
+import UniqueList from "./../../util/UniqueList.js";
 
 class ConjugationTable extends Collection {
 
@@ -22,8 +18,8 @@ class ConjugationTable extends Collection {
         objectGender, articleType, grammarCase
     ) {
         const data = [objectGender, articleType, grammarCase];
-        const artData = _.clone(data);
-        const suffixData = _.clone(data);
+        const artData = data.slice();
+        const suffixData = data.slice();
         artData.unshift(articleText);
         suffixData.unshift(adjSuffixText);
 

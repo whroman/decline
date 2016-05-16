@@ -1,13 +1,9 @@
-"use strict";
-
-const _ = require("underscore");
-
 function compose (art, adj, noun) {
-    return _.filter([
-        art,
-        adj,
-        noun
-    ]).join(" ");
+    const sentence = [ art, adj, noun]
+        .filter((item) => item)
+        .join(" ");
+
+    return sentence;
 }
 
 class Phrase {

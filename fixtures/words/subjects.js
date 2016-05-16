@@ -72,4 +72,4 @@ class Subject {
 
 const subjects = RAW_SUBJECTS.map((subject) => new Subject(...subject))
 
-module.exports = subjects;
+export default subjects;

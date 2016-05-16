@@ -1,11 +1,8 @@
-"use strict";
-
-const _ = require("underscore");
 
 class Collection {
 
     addMany (arrayToAdd) {
-        _.each(arrayToAdd, (argument) => {
+        arrayToAdd.forEach((argument) => {
             this.add(...argument);
         });
     }

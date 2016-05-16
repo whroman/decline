@@ -1,6 +1,4 @@
-"use strict";
-
-const _ = require("underscore");
+import { find } from "lodash";
 
 const ConjugationTable = require("./../src/grammar/ConjugationTable/ConjugationTable.js");
 const conjugationTable = new ConjugationTable();
@@ -193,7 +191,7 @@ const articleSuffixTable = [
 ];
 
 const table = articleSuffixTable.slice().map((row) => {
-    const foundAdjRow = _.find(adjSuffixTable, (adjRow) => {
+    const foundAdjRow = find(adjSuffixTable, (adjRow) => {
         return (
             row[1] === adjRow[1] &&
             row[2] === adjRow[2] &&
@@ -206,4 +204,4 @@ const table = articleSuffixTable.slice().map((row) => {
 
 conjugationTable.addMany(table);
 
-module.exports = conjugationTable;
+export default conjugationTable;

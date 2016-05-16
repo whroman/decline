@@ -3,7 +3,9 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const DIST_PATH = path.join(__dirname, 'dist');
+const cwd = process.cwd();
+
+const DIST_PATH = path.join(cwd, 'dist');
 
 module.exports = {
   entry: './app/index',
@@ -17,9 +19,11 @@ module.exports = {
       {
         test: /\.js$/,
         include: [
-          path.resolve(__dirname, "app"),
+          path.resolve(cwd, "app"),
+          path.resolve(cwd, "src"),
+          path.resolve(cwd, "fixtures")
         ],
-        loader: 'babel'
+        loader: 'babel',
       },
       {
         test: /\.json$/,
@@ -33,21 +37,13 @@ module.exports = {
   },
   sassLoader: {
     includePaths: [
-      path.resolve(__dirname, "./node_modules/foundation-sites/scss"),
-      path.resolve(__dirname, "./app/styling"),
+      path.resolve(cwd, "./node_modules/foundation-sites/scss"),
+      path.resolve(cwd, "./app/styling"),
     ]
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.DefinePlugin({
-      __DEVELOPMENT__: true,
-      __DEVTOOLS__: true
-    })
-  ],
   devtool: 'source-map',
   devServer: {
     inline: true,
     historyApiFallback: true
   },
-  publicPath: null
 };

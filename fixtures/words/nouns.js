@@ -1,12 +1,10 @@
-"use strict";
+import Noun from "./../../src/grammar/Noun/Noun.js";
 
 const CATEGORIES = [
     'menschen',
     'familie',
     'tiere'
 ];
-
-const Noun = require("./../../src/grammar/Noun/Noun.js");
 
 const nouns = [
     // People
@@ -93,4 +91,4 @@ nouns.forEach(([deSingular, dePlural, enSingular, enPlural, gender, categories])
     instances.push(new Noun(dePlural, enPlural, 3, categories));
 });
 
-module.exports = instances;
+export default instances;

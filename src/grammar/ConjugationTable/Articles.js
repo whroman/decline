@@ -1,7 +1,5 @@
-"use strict";
-
-const GrammarConstruct = require("./../../util/GrammarConstruct.js");
-const UniqueList = require("./../../util/UniqueList.js");
+import GrammarConstruct from "./../../util/GrammarConstruct.js";
+import UniqueList from "./../../util/UniqueList.js";
 
 class Article extends GrammarConstruct {}
 

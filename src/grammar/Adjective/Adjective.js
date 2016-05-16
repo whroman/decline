@@ -1,6 +1,5 @@
-"use strict";
-
-const conjugationTable = require("./../../../fixtures/conjugationTable");
+import { find } from 'lodash';
+import conjugationTable from "./../../../fixtures/conjugationTable";
 
 function stub (str) {
     return Array(str.length + 1).join("_");
@@ -13,13 +12,13 @@ class Adjective {
     }
 
     findSuffix (objectGender, articleType, grammarCase) {
-        const find = {
+        const suffix = find(conjugationTable.adjSuffixes.list, {
             objectGender,
             articleType,
             grammarCase
-        };
+        });
 
-        const suffix = conjugationTable.adjSuffixes.findWhere(find);
+        console.log(suffix)
 
         return suffix;
     }

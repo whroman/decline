@@ -1,8 +1,7 @@
-"use strict";
+import articleTypes from "./../../fixtures/articleTypes";
 
 const genders = ["male", "female", "neuter", "plural"];
 const grammarCases = ["nominative", "accusative", "dative", "genitive"];
-const articleTypes = require("./../../fixtures/articleTypes");
 
 class GrammarConstruct {
 

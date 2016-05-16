@@ -1,5 +1,3 @@
-"use strict";
-
 const articles = [
     [ "" ],
     [ "ein" ],
@@ -15,4 +13,4 @@ const articles = [
     ],
 ];
 
-module.exports = articles;
+export default articles;

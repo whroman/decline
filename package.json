@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --progress --config tasks/dev.webpack.config.js",
+    "build": "webpack --progress --config tasks/build.webpack.config.js",
     "test": "mocha --harmony $(find ./src -name '*.spec.js')",
     "test:watch": "npm test -- --watch",
     "tdd": "npm run test:watch"
@@ -14,6 +15,7 @@
   "dependencies": {
     "axios": "^0.11.0",
     "foundation-sites": "^6.2.1",
+    "lodash": "^4.12.0",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-dropdown": "^1.0.4",
@@ -28,6 +30,7 @@
   "devDependencies": {
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
+    "babel-plugin-lodash": "^3.1.4",
     "babel-polyfill": "^6.8.0",
     "babel-preset-es2016": "^6.0.11",
     "babel-preset-react": "^6.5.0",

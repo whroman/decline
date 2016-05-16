@@ -1,5 +1,3 @@
-"use strict";
-
 const articleTypes = [
     "definite",
     "indefinite",
@@ -7,4 +5,4 @@ const articleTypes = [
     "possesiveDeterminers",
 ];
 
-module.exports = articleTypes;
+export default articleTypes;

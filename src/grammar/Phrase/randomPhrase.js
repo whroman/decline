@@ -1,18 +1,16 @@
-"use strict";
+import { random } from "lodash";
 
-const _ = require("underscore");
+import nouns from "./../../../fixtures/words/nouns.js";
+import adjectives from "./../../../fixtures/words/adjectives.js";
+import articles from "./../../../fixtures/words/articles";
+import subjects from "./../../../fixtures/words/subjects";
+import articleTypes from "./../../../fixtures/articleTypes";
 
-const nouns = require("./../../../fixtures/words/nouns.js");
-const adjectives = require("./../../../fixtures/words/adjectives.js");
-const articles = require("./../../../fixtures/words/articles");
-const subjects = require("./../../../fixtures/words/subjects");
-const articleTypes = require("./../../../fixtures/articleTypes");
+import Phrase from "./Phrase.js";
+import Article from "./../Article/Article.js";
 
-const Phrase = require("./Phrase.js");
-const Article = require("./../Article/Article.js");
-
-const getRandomIndex = (arr) => _.random(0, arr.length - 1);
-const getRandomItem = (arr) => arr[getRandomIndex(arr)];
+function getRandomIndex (arr) { return random(0, arr.length - 1); }
+function getRandomItem (arr) { return arr[getRandomIndex(arr)]; }
 
 function ucfirst (str) {
     return str[0].toUpperCase() + str.substring(1);
@@ -92,7 +90,7 @@ const randomPhrase = {
 };
 
 function getRandomArticleGivenType (type) {
-    const index = _.random(0, articles[type].length - 1);
+    const index = random(0, articles[type].length - 1);
     return new Article(articles[type][index], type);
 }
 

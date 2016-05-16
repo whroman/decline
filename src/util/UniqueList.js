@@ -1,6 +1,3 @@
-"use strict";
-
-const _ = require("underscore");
 const Collection = require("./Collection.js");
 
 class UniqueList extends Collection {
@@ -8,7 +5,6 @@ class UniqueList extends Collection {
     constructor (Model) {
         super();
         this.list = [];
-        _.extend(this, _(this.list))
         this.Model = Model;
     }
 

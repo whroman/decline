@@ -1,6 +1,5 @@
-"use strict";
-
-const conjugationTable = require("./../../../fixtures/conjugationTable.js");
+import { find } from 'lodash';
+import conjugationTable from "./../../../fixtures/conjugationTable.js";
 
 class GrammarObject {
 
@@ -33,12 +32,10 @@ class GrammarObject {
     }
 
     getArticle (grammarCase, articleType, articleRoot) {
-        const find = {
+        const article = find(conjugationTable.articles.list, {
             objectGender: this.gender,
             grammarCase, articleType
-        };
-
-        const article = conjugationTable.articles.findWhere(find);
+        });
         if ((articleType === 1 || articleType === 3) && article.text !== null) {
             article.text = articleRoot + article.text;
         }

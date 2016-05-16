@@ -1,6 +1,6 @@
 import { createAction, handleActions } from 'redux-actions';
 import randomPhrase from './../../src/grammar/Phrase/randomPhrase.js';
-import _ from 'underscore';
+import { range, random } from 'lodash';
 
 export const TYPES = {
     CREATE : 'tracks:create'
@@ -27,7 +27,7 @@ const KATEGORIEN = [
 ];
 
 function getRandomCasus () {
-    const kasusIndex = _.random(0, DIE_KASUS.length - 1);
+    const kasusIndex = random(0, DIE_KASUS.length - 1);
     const kasus = DIE_KASUS[kasusIndex];
     return kasus;
 }
@@ -46,8 +46,7 @@ const reducer = handleActions({
         const kasusIsValid = DIE_KASUS.includes(kasus);
         const kategorieIsValid = KATEGORIEN.includes(kategorie);
 
-        const collection = _
-            .range(amount)
+        const collection = range(amount)
             .map(() => {
                 const methodName = kasusIsValid ? kasus : getRandomCasus();
                 const phrase = randomPhrase[methodName](kategorie);

@@ -1,6 +1,4 @@
-"use strict";
-
-const Adjective = require("./../../src/grammar/Adjective/Adjective.js");
+import Adjective from "./../../src/grammar/Adjective/Adjective.js";
 
 const adjectives = [
     "kurz",
@@ -72,4 +70,4 @@ const instances = adjectives.map((adj) => {
     return new Adjective(adj);
 });
 
-module.exports = instances;
+export default instances;
