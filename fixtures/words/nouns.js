@@ -1,30 +1,89 @@
 "use strict";
 
+const CATEGORIES = [
+    'people',
+    'family',
+    'animals'
+];
+
 const Noun = require("./../../src/grammar/Noun/Noun.js");
 
 const nouns = [
     // People
-    ["Mann",    0],
-    ["Männer",  3],
-    ["Frau",    1],
-    ["Fraun",   3],
-    ["Kind",    2],
-    ["Kinder",  3],
+    [
+        "Mann", "Männer", "man", "men", 0, [0]
+    ],
+    [
+        "Frau", "Frauen", "woman", "women", 1, [0]
+    ],
+    [
+        "Kind", "Kinder", "child", "children", 2, [0, 1]
+    ],
+    [
+        "Tante", "Tanten", "aunt", "aunts", 1, [0, 1]
+    ],
+    [
+        "Onkel", "Onkels", "uncle", "uncles", 0, [0, 1]
+    ],
+    [
+        "Nichte", "Nichten", "niece", "nieces", 1, [0, 1]
+    ],
+    [
+        "Neffe", "Neffen", "nephew", "nephews", 0, [0, 1]
+    ],
+    [
+        "Schwager", "Schwäger", "brother-in-law", "brothers-in-law", 0, [0, 1]
+    ],
+    [
+        "Schwägerin", "Schwägerinnen", "sister-in-law", "sisters-in-law", 1, [0, 1]
+    ],
+    [
+        "Opa", "Opas", "grandpa", "grandpas", 0, [0, 1]
+    ],
+    [
+        "Oma", "Omas", "grandma", "grandmas", 1, [0, 1]
+    ],
+    [
+        "Vater", "Väter", "father", "fathers", 0, [0, 1]
+    ],
+    [
+        "Mutter", "Mütter", "mother", "mothers", 1, [0, 1]
+    ],
 
     // Animals
-    ["Hund",    0],
-    ["Hündin",  1],
-    ["Hunde",   3],
-    ["Kater",   0],
-    ["Katze",   1],
-    ["Katzen",  3],
-    ["Maus",    1],
-    ["Mäuse",   3]
+    [
+        "Hund", "Hunde", "dog", "dogs", 0, [2]
+    ],
+    [
+        "Hündin", "Hunde", "dog", "dogs", 1, [2]
+    ],
+    [
+        "Kater", "Katzen", "cat", "cats", 0, [2]
+    ],
+    [
+        "Katze", "Katzen", "cat", "cats", 1, [2]
+    ],
+    [
+        "Maus", "Mäuse", "mouse", "mice", 1, [2]
+    ],
+    [
+        "Vogel", "Vögel", "bird", "birds", 0, [2]
+    ],
+    [
+        "Taube", "Tauben", "pigeon", "pigeons", 1, [2]
+    ],
+    [
+        "Krähe", "Krähen", "crow", "crows", 1, [2]
+    ],
+
+    // Body Parts
 
 ];
 
-const instances = nouns.map((genderedNoun) => {
-    return new Noun(...genderedNoun);
+const instances = [];
+nouns.forEach(([deSingular, dePlural, enSingular, enPlural, gender, categories]) => {
+    instances.push(new Noun(deSingular, enSingular, gender, categories));
+    instances.push(new Noun(dePlural, enPlural, 3, categories));
 });
 
 module.exports = instances;

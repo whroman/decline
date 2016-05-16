@@ -4,13 +4,14 @@ const conjugationTable = require("./../../../fixtures/conjugationTable.js");
 
 class GrammarObject {
 
-    constructor (text, gender) {
-        this.text = text;
-        this.gender = gender;
+    constructor (deText, enText, gender, categories) {
+        Object.assign(this, {
+            deText, enText, gender, categories
+        });
     };
 
     conjugate (grammarCase) {
-        let text = this.text;
+        let deText = this.deText;
 
         const isDative = grammarCase === 2;
         const isGenitive = grammarCase === 3;
@@ -18,17 +19,17 @@ class GrammarObject {
         if (isDative) {
             const isPlural = this.gender === 3;
             if (isPlural) {
-                const len = text.length - 1;
-                if (text[len] === "e") text = text.substring(0, len);
+                const len = deText.length - 1;
+                if (deText[len] === "e") deText = deText.substring(0, len);
             }
         } else if (isGenitive) {
             const isMaleOrNeutral = this.gender === 0 || this.gender === 2;
             if (isMaleOrNeutral) {
-                text = text + "es";
+                deText = deText + "es";
             }
         }
 
-        return text;
+        return deText;
     }
 
     getArticle (grammarCase, articleType, articleRoot) {
