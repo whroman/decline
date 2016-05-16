@@ -15,7 +15,7 @@ export class ExerciseCreationPage extends Component {
   }
 
   render () {
-    const { create } = this.props;
+    const { create, kasus, kategorie } = this.props;
 
     return (
       <div>
@@ -24,7 +24,11 @@ export class ExerciseCreationPage extends Component {
             <br/>
             <div className='row'>
               <div className='column small-11 small-centered'>
-                <CreationForm create={ create } />
+                <CreationForm
+                  create={ create }
+                  kasus={ kasus }
+                  kategorie={ kategorie }
+                />
               </div>
             </div>
             <br/>
@@ -38,7 +42,8 @@ export class ExerciseCreationPage extends Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  return {};
+  const { kasus, kategorie } = state.adjectiveTrainer;
+  return { kasus, kategorie };
 }
 
 const mapDispatchToProps = {

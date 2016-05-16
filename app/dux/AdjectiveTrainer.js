@@ -2,6 +2,9 @@ import { createAction, handleActions } from 'redux-actions';
 import randomPhrase from './../../src/grammar/Phrase/randomPhrase.js';
 import { range, random } from 'lodash';
 
+import kasusArray from './../data/kasus';
+import kategorieArray from './../data/kategorie';
+
 export const TYPES = {
     CREATE : 'tracks:create'
 };
@@ -18,31 +21,18 @@ const initialState = Object.assign({
     kategorie: null
 }, loadState());
 
-const DIE_KASUS = [
-    'nominative',
-    'accusative'
-];
-
-const DIE_KATEGORIEN = [
-    'menschen',
-    'familie',
-    'tiere'
-];
 
 function getRandomKasus () {
-    const kasusIndex = random(0, DIE_KASUS.length - 1);
-    const kasus = DIE_KASUS[kasusIndex];
+    const kasusIndex = random(0, kasusArray.length - 1);
+    const kasus = kasusArray[kasusIndex];
     return kasus;
 }
 
-const LS_KEY = 'conjugate';
-
 function storeState (state) {
-    const { kasus, familie } = state;
-    window.localStorage.setItem(
-        LS_KEY,
-        JSON.stringify({ kasus, familie })
-    );
+    const { kasus, kategorie } = state;
+    const toStore = { kasus, kategorie };
+    const stringState = JSON.stringify(toStore);
+    window.localStorage.setItem('conjugate', stringState);
 }
 
 function loadState () {
@@ -61,8 +51,7 @@ const reducer = handleActions({
             kategorie
         } = action.payload;
 
-        const kasusIsValid = DIE_KASUS.includes(kasus);
-        const kategorieIsValid = DIE_KATEGORIEN.includes(kategorie);
+        const kasusIsValid = kasusArray.includes(kasus);
 
         const collection = range(amount)
             .map(() => {
@@ -71,14 +60,11 @@ const reducer = handleActions({
                 return phrase;
             });
 
-        const newState = extendState(state, {
-            collection,
-            kasus,
-            kategorie
-        });
+        const newState = extendState(state, { collection });
+        if (kasus !== undefined) newState.kasus = kasus;
+        if (kategorie !== undefined) newState.kategorie = kategorie;
 
         storeState(newState);
-
         return newState;
     }
 

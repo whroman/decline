@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import Dropdown from 'react-dropdown'
 import { hashHistory } from 'react-router'
+import { find } from 'lodash';
 
 import './CreationForm.scss';
 
-const KASUS_DROPDOWN_OPTIONS = [
+const KASUS_OPTIONS = [
     {
         label: 'Gemischt',
         value: null
@@ -19,7 +20,7 @@ const KASUS_DROPDOWN_OPTIONS = [
     },
 ];
 
-const KATEGORIE_DROPDOWN_OPTIONS = [
+const KATEGORIE_OPTIONS = [
     {
         label: 'Alles',
         value: null
@@ -35,7 +36,11 @@ const KATEGORIE_DROPDOWN_OPTIONS = [
     {
         label: 'Tiere',
         value: 2
-    }
+    },
+    {
+        label: 'Körper',
+        value: 3
+    },
 ];
 
 export default class CreationForm extends Component {
@@ -51,11 +56,23 @@ export default class CreationForm extends Component {
         this.state = {
             kasus: null,
             kategorie: null
-        }
+        };
     }
 
+    componentWillMount () {
+        const { kasus, kategorie } = this.props;
+        this.setState({
+            kasus: kasus,
+            kategorie: kategorie
+        });
+
+    }
 
   render () {
+    const { kasus, kategorie } = this.state;
+    const initialKasus = find(KASUS_OPTIONS, { value: kasus }) || KASUS_OPTIONS[0];
+    const initialKategorie = find(KATEGORIE_OPTIONS, { value: kategorie }) || KATEGORIE_OPTIONS[0];
+
     return (
         <div className='CreationForm' >
             <h1>Configure</h1>
@@ -71,9 +88,9 @@ export default class CreationForm extends Component {
                             className='ReactDropdown'
                         >
                             <Dropdown
-                                options={ KASUS_DROPDOWN_OPTIONS }
+                                options={ KASUS_OPTIONS }
                                 onChange={ this.handleKasusDropdownChange.bind(this) }
-                                value={ KASUS_DROPDOWN_OPTIONS[0] }
+                                value={ initialKasus }
                             />
                         </td>
 
@@ -84,9 +101,9 @@ export default class CreationForm extends Component {
                             className='ReactDropdown'
                         >
                             <Dropdown
-                                options={ KATEGORIE_DROPDOWN_OPTIONS }
+                                options={ KATEGORIE_OPTIONS }
                                 onChange={ this.handleKategorieDropdownChange.bind(this) }
-                                value={ KATEGORIE_DROPDOWN_OPTIONS[0] }
+                                value={ initialKategorie }
                             />
                         </td>
                     </tr>
@@ -113,7 +130,6 @@ export default class CreationForm extends Component {
   }
 
   handleKategorieDropdownChange (event) {
-    console.log(event);
     this.setState({
         kategorie: event.value
     });
@@ -122,7 +138,7 @@ export default class CreationForm extends Component {
   handleClick () {
     const { kasus, kategorie } = this.state;
     this.props.create({
-        amount: 5,
+        amount: 8,
         kasus, kategorie
     });
 
