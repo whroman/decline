@@ -46,7 +46,6 @@ const adjectives = [
     "schmutzig",
     "niedrig",
     "sicher",
-    "gern",
     "eng",
     "sparsam",
     "modisch",

@@ -1,11 +1,5 @@
 import Noun from "./../../src/grammar/Noun/Noun.js";
 
-const CATEGORIES = [
-    'menschen',
-    'familie',
-    'tiere'
-];
-
 const nouns = [
     // People
 
@@ -82,7 +76,30 @@ const nouns = [
     ],
 
     // Body Parts
-
+    [
+        "Arm", "Arme", "arm", "arms", 0, [3]
+    ],
+    [
+        "Bein", "Beine", "leg", "legs", 2, [3]
+    ],
+    [
+        "Fuß", "Füße", "foot", "feet", 0, [3]
+    ],
+    [
+        "Hand", "Hände", "hand", "hands", 1, [3]
+    ],
+    [
+        "Mund", "Münder", "mouth", "mouths", 0, [3]
+    ],
+    [
+        "Auge", "Augen", "eye", "eyes", 2, [3]
+    ],
+    [
+        "Finger", "Finger", "finger", "fingers", 0, [3]
+    ],
+    [
+        "Knie", "Knie", "knee", "knees", 2, [3]
+    ],
 ];
 
 const instances = [];
