@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import presentPhrases from './../../presenters/phrases';
 import { create } from './../../dux/adjectiveTrainer';
 
-import CreationForm from './CreationForm';
 import AdjectivesExercise from './AdjectivesExercise';
 
 export class AdjectivesTrainer extends Component {
@@ -16,6 +15,8 @@ export class AdjectivesTrainer extends Component {
   }
 
   componentWillMount () {
+    if (this.props.phrases.length > 0) return;
+
     this.props.create({
       amount: 10,
       kategorie: 0
@@ -27,15 +28,6 @@ export class AdjectivesTrainer extends Component {
 
     return (
       <div>
-        <div className='row'>
-          <div className='modal column small-10 small-centered  '>
-            <div className='row'>
-              <div className='column small-11 small-centered'>
-                <CreationForm create={ create } />
-              </div>
-            </div>
-          </div>
-        </div>
         <br/>
         <div className='row'>
           <div className='modal column small-10 small-centered  '>

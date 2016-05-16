@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Dropdown from 'react-dropdown'
+import { hashHistory } from 'react-router'
+
 import './CreationForm.scss';
 
 const KASUS_DROPDOWN_OPTIONS = [
@@ -56,6 +58,10 @@ export default class CreationForm extends Component {
   render () {
     return (
         <div className='CreationForm' >
+            <br />
+            <strong>Neue Sätze</strong>
+            <hr />
+            <br />
             <table>
                 <tbody>
                     <tr>
@@ -63,7 +69,7 @@ export default class CreationForm extends Component {
                             <div>Kasus</div>
                         </td>
                         <td
-                            className='KasusDropdown'
+                            className='ReactDropdown'
                         >
                             <Dropdown
                                 options={ KASUS_DROPDOWN_OPTIONS }
@@ -76,7 +82,7 @@ export default class CreationForm extends Component {
                             <div>Kategorie</div>
                         </td>
                         <td
-                            className='KasusDropdown'
+                            className='ReactDropdown'
                         >
                             <Dropdown
                                 options={ KATEGORIE_DROPDOWN_OPTIONS }
@@ -84,17 +90,20 @@ export default class CreationForm extends Component {
                                 value={ KATEGORIE_DROPDOWN_OPTIONS[0] }
                             />
                         </td>
-                        <td>
-                            <div
-                                className='button'
-                                onClick={ this.handleClick.bind(this) }
-                            >
-                                Neue Sätze
-                            </div>
-                        </td>
                     </tr>
                 </tbody>
             </table>
+            <br />
+            <br />
+            <div className='text-center'>
+                <div
+                    className='button'
+                    onClick={ this.handleClick.bind(this) }
+                >
+                    Neue Sätze
+                </div>
+            </div>
+            <br />
         </div>
     );
   }
@@ -117,6 +126,8 @@ export default class CreationForm extends Component {
         amount: 10,
         kasus, kategorie
     });
+
+    hashHistory.pushState('#');
   }
 
 

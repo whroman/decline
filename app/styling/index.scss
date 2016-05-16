@@ -15,7 +15,7 @@ body {
     background-size: cover;
 }
 
-body a {
+body a, body a:hover {
     text-decoration: none;
     color: inherit;
 }
@@ -61,7 +61,7 @@ h1 {
     background-color: #222;
     box-shadow: 0 0 8px 1px $shadow;
     padding: 8px 0;
-
+    @extend %text-white;
 
     .wr-ico {
         @extend %text-white;

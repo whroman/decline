@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router'
 import { get } from 'axios';
 
 export default class PageWrapper extends Component {
@@ -15,14 +16,9 @@ export default class PageWrapper extends Component {
   }
 
   renderRight () {
-    return null; // TODO: add navbar items.
     return (
       <div className='float-right'>
-        <a
-          onClick={ this.handleSettingsClick }
-        >
-          <i className='wr-ico wr-ico-cogs' />
-        </a>
+        <Link to='create'>Neue Sätze</Link>
       </div>
     );
   }
