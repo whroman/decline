@@ -20,6 +20,12 @@ const DIE_KASUS = [
     'accusative'
 ];
 
+const KATEGORIEN = [
+    'menschen',
+    'familie',
+    'tiere'
+];
+
 function getRandomCasus () {
     const kasusIndex = _.random(0, DIE_KASUS.length - 1);
     const kasus = DIE_KASUS[kasusIndex];
@@ -31,14 +37,20 @@ const extendState = (state, obj) => Object.assign({}, state, obj);
 const reducer = handleActions({
 
     [TYPES.CREATE]: (state, action) => {
-        const { amount, kasus } = action.payload;
+        const {
+            amount,
+            kasus,
+            kategorie
+        } = action.payload;
+
         const kasusIsValid = DIE_KASUS.includes(kasus);
+        const kategorieIsValid = KATEGORIEN.includes(kategorie);
 
         const collection = _
             .range(amount)
             .map(() => {
                 const methodName = kasusIsValid ? kasus : getRandomCasus();
-                const phrase = randomPhrase[methodName]();
+                const phrase = randomPhrase[methodName](kategorie);
                 return phrase;
             });
 

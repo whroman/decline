@@ -17,7 +17,8 @@ export class AdjectivesTrainer extends Component {
 
   componentWillMount () {
     this.props.create({
-      amount: 10
+      amount: 10,
+      kategorie: 0
     });
   }
 

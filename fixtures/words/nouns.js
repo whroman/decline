@@ -1,9 +1,9 @@
 "use strict";
 
 const CATEGORIES = [
-    'people',
-    'family',
-    'animals'
+    'menschen',
+    'familie',
+    'tiere'
 ];
 
 const Noun = require("./../../src/grammar/Noun/Noun.js");

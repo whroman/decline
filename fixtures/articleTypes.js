@@ -3,7 +3,7 @@
 const articleTypes = [
     "definite",
     "indefinite",
-    "zero",
+    "ohne",
     "possesiveDeterminers",
 ];
 

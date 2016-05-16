@@ -33,9 +33,23 @@ function getRandomSubject (type, gender) {
 
 const randomPhrase = {
 
-    getOne: function () {
+    getRandomNoun: function (category) {
+        let filteredNouns = nouns;
+
+        console.log(category)
+
+        if (typeof category === 'number') {
+            filteredNouns = nouns.filter((noun) => noun.categories.includes(category));
+        }
+
+        const noun = getRandomItem(filteredNouns);
+        console.log(filteredNouns, noun)
+        return noun;
+    },
+
+    getOne: function (category) {
         const adj = getRandomItem(adjectives);
-        const noun = getRandomItem(nouns);
+        const noun = this.getRandomNoun(category);
 
         const article = getRandomArticleGivenGender(noun.gender);
 
@@ -43,8 +57,8 @@ const randomPhrase = {
         return phrase;
     },
 
-    handleCase: function (textOrTransform, transformCon) {
-        const phrase = this.getOne();
+    handleCase: function (category, textOrTransform, transformCon) {
+        const phrase = this.getOne(category);
         const start = typeof textOrTransform === "function" ? textOrTransform(phrase) : textOrTransform;
         let conjugation = transformCon(phrase);
 
@@ -55,8 +69,8 @@ const randomPhrase = {
         return conjugation;
     },
 
-    nominative: function () {
-        const conjugation = this.handleCase( (phrase) => {
+    nominative: function (category) {
+        const conjugation = this.handleCase(category, (phrase) => {
             const { gender } = phrase.noun;
             phrase.subject = getRandomSubject(2, gender);
             const nounIsPlural = gender === 3;
@@ -71,8 +85,8 @@ const randomPhrase = {
         return conjugation;
     },
 
-    accusative: function () {
-        const conjugation = this.handleCase("Ich möchte ", (phrase) => {
+    accusative: function (category) {
+        const conjugation = this.handleCase(category, "Ich möchte ", (phrase) => {
             return phrase.conjugate(1);
         });
 
