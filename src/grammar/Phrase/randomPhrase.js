@@ -9,6 +9,26 @@ import articleTypes from "./../../../fixtures/articleTypes";
 import Phrase from "./Phrase.js";
 import Article from "./../Article/Article.js";
 
+const AKK_BEGINNINGS = [
+    'Ich mag',
+
+    'Ich möchte',
+    'Du möchtest',
+    'Er möchte',
+    'Sie möchte',
+    'Wir möchten',
+    'Ihr möchtet',
+    'Sie möchten',
+
+    'Ich habe',
+    'Du hast',
+    'Er hat',
+    'Sie hat',
+    'Wir haben',
+    'Ihr habt',
+    'Sie haben'
+];
+
 function getRandomIndex (arr) { return random(0, arr.length - 1); }
 function getRandomItem (arr) { return arr[getRandomIndex(arr)]; }
 
@@ -80,7 +100,7 @@ const randomPhrase = {
     },
 
     accusative: function (category) {
-        const conjugation = this.handleCase(category, "Ich möchte ", (phrase) => {
+        const conjugation = this.handleCase(category, getRandomItem(AKK_BEGINNINGS) + " ", (phrase) => {
             return phrase.conjugate(1);
         });
 
