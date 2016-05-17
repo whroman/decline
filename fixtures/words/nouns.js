@@ -1,5 +1,12 @@
 import Noun from "./../../src/grammar/Noun/Noun.js";
 
+const categories = [
+    'Menschen',
+    'Familie',
+    'Tiere',
+    'Körper'
+];
+
 const nouns = [
     // People
 

@@ -7,8 +7,8 @@ function stub (str) {
 
 class Adjective {
 
-    constructor (rootText) {
-        this.rootText = rootText;
+    constructor (de, en) {
+        Object.assign(this, { de, en });
     }
 
     findSuffix (objectGender, articleType, grammarCase) {
@@ -25,13 +25,13 @@ class Adjective {
         const suffix = this.findSuffix(...args);
 
         const word = {
-            text: this.rootText,
+            text: this.de,
             stubbed: {
-                text: stub(this.rootText),
-                stubbedValue: this.rootText
+                text: stub(this.de),
+                stubbedValue: this.de
             },
             stubbedSuffix: {
-                text: this.rootText,
+                text: this.de,
                 stubbedValue: ''
             }
         };

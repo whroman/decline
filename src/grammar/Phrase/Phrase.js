@@ -17,13 +17,12 @@ class Phrase {
     }
 
     getAdjective (grammarCase, articleType) {
-        let adj = this.adjective.conjugate(
+        const adj = this.adjective.conjugate(
             this.noun.gender,
             articleType,
             grammarCase
         );
 
-        adj = adj || "";
         return adj;
     }
 

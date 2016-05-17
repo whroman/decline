@@ -2,9 +2,6 @@ import Collection from "./../../util/Collection.js";
 import Articles from "./Articles.js";
 import AdjectiveSuffixes from "./AdjectiveSuffix.js";
 
-import GrammarConstruct from "./../../util/GrammarConstruct.js";
-import UniqueList from "./../../util/UniqueList.js";
-
 class ConjugationTable extends Collection {
 
     constructor () {

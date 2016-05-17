@@ -28,14 +28,18 @@ export class ExerciseItemDetail extends Component {
 
   renderTable () {
     const {
-      objectGender, articleType, aufEnglish, categories
+      objectGender, articleType, adjEnglish, objectEnglish, categories
     } = this.props.exercise;
     return (
       <table>
         <tbody>
           <tr>
+            <td>Adj. auf english</td>
+            <td>{ adjEnglish.join(', ') }</td>
+          </tr>
+          <tr>
             <td>Object auf english</td>
-            <td>{ aufEnglish }</td>
+            <td>{ objectEnglish }</td>
           </tr>
           <tr>
             <td>Objekt genus</td>

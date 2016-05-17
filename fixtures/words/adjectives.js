@@ -1,72 +1,109 @@
 import Adjective from "./../../src/grammar/Adjective/Adjective.js";
 
 const adjectives = [
-    "kurz",
-    "lang",
-    "hoch",
+    ["kurz", ['short', 'brief']],
+    ["lang", ['long']],
+    ["hoch", ['high', 'tall']],
 
-    "groß",
-    "klein",
+    ["groß", ['big', 'great', 'large']],
+    ["klein", ['small', 'little']],
 
-    "dunkel",
-    "hell",
+    ["dunkel", ['dark']],
+    ["hell", ['bright', 'clear']],
 
-    "langsam",
-    "schnell",
+    ["langsam", ['slow']],
+    ["schnell", ['fast']],
 
-    "gut",
-    "schlimm",
+    ["gut",     ['good']],
+    ["schlimm", ['bad']],
 
-    "stark",
-    "schwach",
+    ["stark",   ['strong', 'intense']],
+    ["schwach", ['weak', 'faint']],
 
-    "kühl",
-    "warm",
-    "kalt",
+    ["kühl", ['cool', 'frigid']],
+    ["warm", ['hot', 'cordial']],
+    ["kalt", ['cold', 'frigid']],
 
-    "teuer",
-    "billig",
+    ["teuer",   ['expensive']],
+    ["billig",  ['cheap', 'low-cost']],
+    ["sparsam", ['thrifty', 'frugal']],
 
-    "jung",
-    "alt",
+    ["jung",    ['young', 'youthful']],
+    ["alt",     ['old', 'aged']],
 
-    "intelligent",
-    "dumm",
-    "klug",
+    ["dumm",    ['stupid']],
+    ["klug",    ['clever', 'knowledgeable']],
 
-    "dick",
-    "schlank",
+    ["dick",    ['thick', 'fat']],
+    ["schlank",     ['slim', 'slender']],
 
-    "wenig",
-    "viel",
+    ["männlichen",  ['masculine']],
+    ["feminin",     ['feminine']],
 
-    "männlichen",
-    "feminin",
+    ["schmutzig",   ['dirty', 'filthy']],
+    ['sauber',      ['clean', 'neat']],
 
-    "schmutzig",
-    "niedrig",
-    "sicher",
-    "eng",
-    "sparsam",
-    "modisch",
-    "blass",
-    "beliebt",
-    "weit",
-    "ungedulgig",
-    "arm",
-    "unabhängig",
-    "wütend",
-    "interessant",
-    "hart",
-    "gesund",
-    "ordentlich",
-    "verliebt",
-    "komisch",
-    "sympathisch"
+    ["sicher",      ['sure', 'certain']],
+    ["unsicher",    ['unsure', 'uncertain']],
+
+    ["modisch",     ['fashionable']],
+    ["unmodisch",   ['unfashionable']],
+
+    ["beliebt",     ['popular', 'favored']],
+    ["unbeliebt",   ['unpopular', 'out-of-favor']],
+
+    ["weit",        ['far', 'wide', 'vast']],
+    ["gedulgig",    ['patient', 'uncomplaining']],
+    ["ungedulgig",  ['impatient']],
+    ["arm",         ['poor', 'low-grade']],
+
+    ["wütend",  ['angry', 'mad']],
+    ['traurig', ['sad', 'unhappy']],
+    ['nervös',  ['nervous']],
+
+    ['kräftig', ['strong', 'robust']],
+    ['stabil',  ['stable']],
+
+    ["interessant",     ['interesting']],
+    ["uninteressant",   ['dull', 'bland']],
+    ["hart",    ['hard', 'tough', 'stiff']],
+
+    ["gesund",  ['healthy', 'fit']],
+    ["ungesund",    ['unhygienic', 'not healthy']],
+
+    ["sorteirt",      ['sorted', 'assorted']],
+    ["organisiert",   ['organized']],
+    ["unorganisiert", ['unorganized']],
+
+    ["komisch",     ['funny', 'comical']],
+    ["sympathisch", ['likeable', 'personable']],
+    ["freundlich",  ['friendly', 'amiable']],
+    ["unfreundlich",['unfriendly', 'unkind']],
+
+    ['rot',         ['red']],
+    ['dunkelrot',   ['dark red']],
+    ['schwarz',     ['black']],
+    ['grau',        ['grey']],
+    ['dunkelgrau',  ['dark grey']],
+    ['violett',     ['purple']],
+    ['blau',        ['blue']],
+    ['violett',     ['purple']],
+    ['gelb',        ['yellow']],
+    ['orange',      ['orange']],
+    ['grün',        ['green']],
+    ['hellgrün',    ['light green', 'lime green']],
+    ['white',       ['weiß']],
+    ['türkis',      ['turquoise']],
+    ['rosa',        ['pink']],
+    ['braun',       ['brown']],
+    ['hellbraun',   ['beige', 'light brown']],
+    ['opak',        ['opaque']],
+    ['durchsichtig',['transparent', 'see-through']]
+
 ];
 
 const instances = adjectives.map((adj) => {
-    return new Adjective(adj);
+    return new Adjective(...adj);
 });
 
 export default instances;
