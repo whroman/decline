@@ -116,7 +116,7 @@ export default class CreationForm extends Component {
                     className='button'
                     onClick={ this.handleClick.bind(this) }
                 >
-                    Create Exercises
+                    Create Exercise Set
                 </div>
             </div>
         </div>

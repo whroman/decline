@@ -39,14 +39,20 @@ export class AdjectivesTrainer extends Component {
               <AdjectivesExercise phrases={ phrases } />
               <br/>
               <div class="row">
-                <div
+                <button
+                  role='button'
                   className='button'
                   onClick={ this.handleClick.bind(this) }
-                >Continue Practicing</div>
+                  tabIndex='100'
+                >New Exercise Set</button>
 
-                <div className='button warning float-right'>
+                <button
+                  role='button'
+                  className='button warning float-right'
+                  tabIndex='101'
+                >
                   <Link to='create'>Configure Exercises</Link>
-                </div>
+                </button>
               </div>
             </div>
           </div>

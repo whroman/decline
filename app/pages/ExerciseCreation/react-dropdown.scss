@@ -1,3 +1,4 @@
+$Dropdown-width: 180px;
 $Dropdown-vertical-padding: 8px;
 $Dropdown-horizontal-padding: 16px;
 $Dropdown-arrow-width: 12px;
@@ -13,6 +14,7 @@ $Dropdown-color-text: #333;
   }
 
   .Dropdown-control {
+    width: $Dropdown-width;
     position: relative;
     overflow: hidden;
     background-color: $Dropdown-color-bg;
