@@ -71,7 +71,7 @@ const adjectives = [
     ["gesund",  ['healthy', 'fit']],
     ["ungesund",    ['unhygienic', 'not healthy']],
 
-    ["sorteirt",      ['sorted', 'assorted']],
+    ["sortiert",      ['sorted', 'assorted']],
     ["organisiert",   ['organized']],
     ["unorganisiert", ['unorganized']],
 

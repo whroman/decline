@@ -23,7 +23,7 @@ export default class AdjectivesExerciseItem extends Component {
   }
 
   render () {
-    const { phrase, number } = this.props;
+    const { phrase, uid, setFocusedItem, shouldFocus } = this.props;
     const { untilStub, afterStub, stub } = phrase
     const numOfChars = stub.length;
 
@@ -31,39 +31,46 @@ export default class AdjectivesExerciseItem extends Component {
     let inputState = '';
     if (isFilled) inputState = isCorrect ? 'correct' : 'incorrect';
 
+    const classNames = [
+      className,
+      shouldFocus ? 'isFocused' : ''
+    ];
+
     return (
       <tr
-        className={ className }
+        className={ classNames.join(' ') }
         onClick={ this.handleClick.bind(this) }
+        onMouseEnter={ () => setFocusedItem(uid) }
       >
         <td className='text'>
           <span>{ untilStub }</span>
           <strong className={`input-wrapper ${inputState}`}>
             <input
               ref={ phrase.key }
-              autoFocus={ number === 0 ? true : false }
+              autoFocus={ uid === 0 ? true : false }
               type="text"
               maxLength={ numOfChars }
               size={ numOfChars }
               onChange={ this.handleInputChange.bind(this) }
               onKeyPress={ this.handleInputKeyPress.bind(this) }
-              tabIndex={ number + 1 }
+              onFocus={ () => setFocusedItem(uid) }
+              tabIndex={ uid + 1 }
             />
             <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
           </strong>
           <span>{ afterStub }</span>
         </td>
-        { this.renderExerciseActions(number) }
+        { this.renderExerciseActions(uid) }
       </tr>
 
     );
   }
 
-  renderExerciseActions (number) {
+  renderExerciseActions (uid) {
     return (
       <td>
         <Link
-          to={`detail/${number}`}
+          to={`detail/${uid}`}
           className='detail-link'
         >
           <i className='wr-ico wr-ico-info-circle wr-ico-fw' />
@@ -73,12 +80,12 @@ export default class AdjectivesExerciseItem extends Component {
   }
 
   handleClick () {
-    getInput(this.props.number + 1).focus();
+    getInput(this.props.uid + 1).focus();
   }
 
   handleInputKeyPress (event) {
     if (event.key.toLowerCase() === 'enter') {
-      let nextInput = getInput(this.props.number + 2);
+      let nextInput = getInput(this.props.uid + 2);
       if (!nextInput) nextInput = getInput(1);
       nextInput.focus();
     }

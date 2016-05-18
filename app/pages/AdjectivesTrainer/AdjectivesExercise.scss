@@ -28,7 +28,7 @@ $lh: 2.5;
         line-height: $lh;
     }
 
-    tr:hover {
+    tr.isFocused {
         .placeholder {
             @extend %placeholder;
         }

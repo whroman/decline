@@ -11,12 +11,22 @@ export default class AdjectivesExercise extends Component {
     };
   }
 
+  constructor () {
+    super();
+    this.state = {
+      focusedItem: 0
+    }
+  }
+
   renderPhrase (phrase, index) {
+
     return (
       <AdjectivesExerciseItem
-        number={ index }
+        uid={ index }
         phrase={ phrase }
+        shouldFocus={ this.state.focusedItem === index }
         key={ phrase.key }
+        setFocusedItem={ this.setFocusedItem.bind(this) }
       />
     );
   }
@@ -29,6 +39,13 @@ export default class AdjectivesExercise extends Component {
         </tbody>
       </table>
     );
+  }
+
+  setFocusedItem (uid) {
+    console.log(uid)
+    this.setState({
+      focusedItem: uid
+    });
   }
 
 }
