@@ -4,7 +4,8 @@ const categories = [
     'Menschen',
     'Familie',
     'Tiere',
-    'Körper'
+    'Körper',
+    'Kinder aufziehen'
 ];
 
 const nouns = [
@@ -107,6 +108,24 @@ const nouns = [
     [
         "Knie", "Knie", "knee", "knees", 2, [3]
     ],
+
+    // 'Kinder aufziehen'
+    [
+        "Spielplatz", "Spielplätze", "playground", "playgrounds", 0, [4]
+    ],
+    [
+        "Laufrad", "Laufräder", "training bike", "training bikes", 2, [4]
+    ],
+    [
+        "Schaukel", "Schaukeln", "swingset", "swingsets", 1, [4]
+    ],
+    [
+        "Zahnfee", "Zahnfeen", "toothfairy", "toothfairies", 1, [4]
+    ],
+    [
+        "Buntstift", "Buntstifte", "crayon", "crayons", 0   , [4]
+    ]
+
 ];
 
 const instances = [];

@@ -16,7 +16,8 @@ const CATEGORIES = [
     'Menschen',
     'Familie',
     'Tiere',
-    'Körper'
+    'Körper',
+    'Kinder aufziehen'
 ];
 
 export default function presentPhrase (phrase) {

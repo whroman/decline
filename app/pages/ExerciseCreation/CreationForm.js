@@ -41,6 +41,10 @@ const KATEGORIE_OPTIONS = [
         label: 'Körper',
         value: 3
     },
+    {
+        label: 'Kinder aufziehen',
+        value: 4
+    }
 ];
 
 export default class CreationForm extends Component {
