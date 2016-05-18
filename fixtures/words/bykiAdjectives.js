@@ -6,6 +6,38 @@
         - long descriptions
 */
 
+/*
+    Manual scraping code (enter in the browser console)
+    ====================
+
+    NodeList.prototype.map = Array.prototype.map;
+
+    foo = document
+        .querySelectorAll('.tblListItems tbody tr')
+        .map((el) => {
+            const slots = el.querySelectorAll('td');
+            if (!slots.length) return;
+            const de = slots[1].innerText.replace(/\n|\r/g, "");
+            const enArr = slots[2].innerText
+              .replace(/\n|\r/g, "")
+              .split(', ')
+              .filter((text) => text);
+
+            if (enArr.length === 0) {
+              // Make sure we always get a translation.
+              alert(de);
+              return;
+            }
+
+            return [
+              de, enArr
+            ];
+        })
+        .filter((item) => item);
+
+    console.log(JSON.stringify(foo));
+*/
+
 export default [
     ["bestimmt", ["exact", "definite"]],
     ["ziemlich", ["a little", "somewhat"]],
