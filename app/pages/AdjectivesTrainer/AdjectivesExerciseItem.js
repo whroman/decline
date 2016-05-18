@@ -24,7 +24,7 @@ export default class AdjectivesExerciseItem extends Component {
 
   render () {
     const { phrase, uid, setFocusedItem, shouldFocus } = this.props;
-    const { untilStub, afterStub, stub } = phrase
+    const { untilStub, afterStub, stub, key } = phrase
     const numOfChars = stub.length;
 
     const { isFilled, isCorrect } = this.state;
@@ -37,12 +37,12 @@ export default class AdjectivesExerciseItem extends Component {
     ];
 
     return (
-      <tr
+      <div
         className={ classNames.join(' ') }
         onClick={ this.handleClick.bind(this) }
-        onMouseEnter={ () => setFocusedItem(uid) }
+        onMouseEnter={ () => setFocusedItem(key) }
       >
-        <td className='text'>
+        <div className='text'>
           <span>{ untilStub }</span>
           <strong className={`input-wrapper ${inputState}`}>
             <input
@@ -53,29 +53,30 @@ export default class AdjectivesExerciseItem extends Component {
               size={ numOfChars }
               onChange={ this.handleInputChange.bind(this) }
               onKeyPress={ this.handleInputKeyPress.bind(this) }
-              onFocus={ () => setFocusedItem(uid) }
+              onFocus={ () => setFocusedItem(key) }
+              onBlur={ this.handleInputBlur.bind(this) }
               tabIndex={ uid + 1 }
             />
             <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
           </strong>
           <span>{ afterStub }</span>
-        </td>
+        </div>
         { this.renderExerciseActions(uid) }
-      </tr>
+      </div>
 
     );
   }
 
   renderExerciseActions (uid) {
     return (
-      <td>
+      <div className='actions'>
         <Link
           to={`detail/${uid}`}
           className='detail-link'
         >
           <i className='wr-ico wr-ico-info-circle wr-ico-fw' />
         </Link>
-      </td>
+      </div>
     );
   }
 
@@ -96,8 +97,21 @@ export default class AdjectivesExerciseItem extends Component {
     const { stubbedValue } = this.props.phrase;
 
     const isCorrect = value.toLowerCase() === stubbedValue.toLowerCase();
-    const isFilled = value.length === stubbedValue.length;
+    const isFilled = areSameLength(value, stubbedValue);
     this.setState({ isCorrect, isFilled });
   }
 
+  handleInputBlur (event) {
+    const { uid, phrase } = this.props;
+    const { value } = event.target;
+    const isFilled = areSameLength(value, phrase.stubbedValue);
+    if (uid >= 3 && isFilled) {
+      this.props.replace(1);
+    }
+  }
+
+}
+
+function areSameLength (str1, str2) {
+  return str1.length === str2.length
 }

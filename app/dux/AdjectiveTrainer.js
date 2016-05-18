@@ -6,12 +6,14 @@ import kasusArray from './../data/kasus';
 import kategorieArray from './../data/kategorie';
 
 export const TYPES = {
-    CREATE : 'tracks:create'
+    CREATE : 'tracks:create',
+    REPLACE : 'tracks:replace'
 };
 
 // Actions
 const create = createAction(TYPES.CREATE);
-export { create };
+const replace = createAction(TYPES.REPLACE);
+export { create, replace };
 
 
 // Reducer
@@ -51,23 +53,37 @@ const reducer = handleActions({
             kategorie
         } = action.payload;
 
-        const kasusIsValid = kasusArray.includes(kasus);
-
-        const collection = range(amount)
-            .map(() => {
-                const methodName = kasusIsValid ? kasus : getRandomKasus();
-                const phrase = randomPhrase[methodName](kategorie);
-                return phrase;
-            });
-
+        const collection = getRandomPhrases(amount, kasus, kategorie);
         const newState = extendState(state, { collection });
+
         if (kasus !== undefined) newState.kasus = kasus;
         if (kategorie !== undefined) newState.kategorie = kategorie;
 
         storeState(newState);
         return newState;
+    },
+
+    [TYPES.REPLACE]: (state, action) => {
+        const amount = action.payload
+        const { collection, kasus, kategorie } = state;
+        const replacementItems = getRandomPhrases(amount, kasus, kategorie);
+        const newCollection = collection.slice(amount).concat(replacementItems);
+
+        return extendState(state, { collection: newCollection });
     }
 
 }, initialState);
+
+function getRandomPhrases (amount, kasus, kategorie) {
+    const kasusIsValid = kasusArray.includes(kasus);
+
+    const phrases = range(amount).map(() => {
+        const methodName = kasusIsValid ? kasus : getRandomKasus();
+        const phrase = randomPhrase[methodName](kategorie);
+        return phrase;
+    });
+
+    return phrases;
+}
 
 export default reducer;

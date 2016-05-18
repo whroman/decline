@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router'
 
 import presentPhrases from './../../presenters/phrases';
-import { create } from './../../dux/adjectiveTrainer';
+import { create, replace } from './../../dux/adjectiveTrainer';
 
 import AdjectivesExercise from './AdjectivesExercise';
 
@@ -26,7 +26,7 @@ export class AdjectivesTrainer extends Component {
   }
 
   render () {
-    const { create, phrases } = this.props;
+    const { create, replace, phrases } = this.props;
 
     return (
       <div className='row'>
@@ -36,24 +36,10 @@ export class AdjectivesTrainer extends Component {
             <div className='column small-11 small-centered'>
               <h1>Practice</h1>
               <hr/>
-              <AdjectivesExercise phrases={ phrases } />
-              <br/>
-              <div class="row">
-                <button
-                  role='button'
-                  className='button'
-                  onClick={ this.handleClick.bind(this) }
-                  tabIndex='100'
-                >New Exercise Set</button>
-
-                <button
-                  role='button'
-                  className='button warning float-right'
-                  tabIndex='101'
-                >
-                  <Link to='create'>Configure Exercises</Link>
-                </button>
-              </div>
+              <AdjectivesExercise
+                phrases={ phrases }
+                replace={ replace }
+              />
             </div>
           </div>
           <br/>
@@ -70,7 +56,7 @@ export function mapStateToProps(state, ownProps) {
 }
 
 const mapDispatchToProps = {
-  create
+  create, replace
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AdjectivesTrainer);

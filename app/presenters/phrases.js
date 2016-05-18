@@ -5,7 +5,6 @@ const regexi = {
 };
 
 function presentPhrase (phrase) {
-    console.log(phrase)
     const { noun, article, stubbedSuffix } = phrase;
     const { text, stubbedValue } = stubbedSuffix;
 
