@@ -16,6 +16,7 @@
     "axios": "^0.11.0",
     "foundation-sites": "^6.2.1",
     "lodash": "^4.12.0",
+    "rc-tooltip": "^3.3.2",
     "react": "^15.0.2",
     "react-addons-css-transition-group": "^15.0.2",
     "react-dom": "^15.0.2",

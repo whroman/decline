@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
+import Tooltip from "rc-tooltip";
 
-const className = 'AdjectivesExerciseItem';
+const componentClassName = 'AdjectivesExerciseItem';
 
-const getInput = (tabindex) => document.querySelector(`.${className} [tabindex='${tabindex}']`);
+const getInput = (tabindex) => document.querySelector(`.${componentClassName} [tabindex='${tabindex}']`);
 
 export default class AdjectivesExerciseItem extends Component {
 
@@ -24,46 +25,70 @@ export default class AdjectivesExerciseItem extends Component {
 
   render () {
     const { phrase, uid, setFocusedItem, shouldFocus } = this.props;
-    const { untilStub, afterStub, stub, key } = phrase
-    const numOfChars = stub.length;
+    const { untilAdj, afterStub, key } = phrase
 
     const { isFilled, isCorrect } = this.state;
     let inputState = '';
-    if (isFilled) inputState = isCorrect ? 'correct' : 'incorrect';
+    if (isFilled) inputState = isCorrect ? 'isCorrect' : 'isIncorrect';
 
-    const classNames = [
-      className,
-      shouldFocus ? 'isFocused' : ''
-    ];
+    const componentClassNames = [ componentClassName, inputState ];
+    if (shouldFocus) componentClassNames.push('isFocused');
 
     return (
       <div
-        className={ classNames.join(' ') }
+        className={ componentClassNames.join(' ') }
         onClick={ this.handleClick.bind(this) }
         onMouseEnter={ () => setFocusedItem(key) }
       >
         <div className='text'>
-          <span>{ untilStub }</span>
-          <strong className={`input-wrapper ${inputState}`}>
-            <input
-              ref={ phrase.key }
-              autoFocus={ uid === 0 ? true : false }
-              type="text"
-              maxLength={ numOfChars }
-              size={ numOfChars }
-              onChange={ this.handleInputChange.bind(this) }
-              onKeyPress={ this.handleInputKeyPress.bind(this) }
-              onFocus={ () => setFocusedItem(key) }
-              onBlur={ this.handleInputBlur.bind(this) }
-              tabIndex={ uid + 1 }
-            />
-            <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
-          </strong>
+          <span>{ untilAdj }</span>
+          { this.renderAdjective() }
+          { this.renderInput() }
           <span>{ afterStub }</span>
         </div>
         { this.renderExerciseActions(uid) }
       </div>
+    );
+  }
 
+  renderAdjective () {
+    const { en, de } = this.props.phrase.adjective;
+
+    const tooltip = en.map((trans) => (
+      <div key={ trans }>{ trans }</div>
+    ));
+
+    return (
+      <Tooltip
+        placement="top"
+        trigger={['hover']}
+        overlay={ tooltip }
+      >
+        <span>{ de }</span>
+      </Tooltip>
+    );
+  }
+
+  renderInput () {
+    const { phrase, uid, setFocusedItem } = this.props;
+    const { stub, key } = phrase
+    const numOfChars = stub.length;
+
+    return (
+      <strong className='input-wrapper'>
+        <input
+          autoFocus={ uid === 0 ? true : false }
+          type="text"
+          maxLength={ numOfChars }
+          size={ numOfChars }
+          onChange={ this.handleInputChange.bind(this) }
+          onKeyPress={ this.handleInputKeyPress.bind(this) }
+          onFocus={ () => setFocusedItem(key) }
+          onBlur={ this.handleInputBlur.bind(this) }
+          tabIndex={ uid + 1 }
+        />
+        <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
+      </strong>
     );
   }
 

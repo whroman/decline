@@ -1,35 +1,35 @@
 @import 'colors';
 
 $lh: 2.5;
+$row-focused-bg: rgba(100, 100, 100, 0.4);
+$row-correct-bg: rgba(152, 216, 104, 0.4);
+$row-incorrect-bg: rgba(213,120,72, 0.4);
+$placeholder-bg: rgba(255, 255, 255, 0.6);
 
 %placeholder {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: $placeholder-bg;
 }
+
+$trans-displacement: -40px;
 
 .example-leave {
     margin-top: 0;
     opacity: 1;
 }
 
-%transition {
-    transition: 300ms linear;
-}
-
 .example-leave.example-leave-active {
     opacity: 0;
-    margin-top: -40px;
-    @extend %transition;
+    margin-top: $trans-displacement;
 }
 
 .example-enter {
     opacity: 0;
-    margin-bottom: -40px;
+    margin-bottom: $trans-displacement;
 }
 
 .example-enter.example-enter-active {
     margin-bottom: 0;
     opacity: 1;
-    @extend %transition;
 }
 
 .AdjectivesExercise {
@@ -47,24 +47,42 @@ $lh: 2.5;
     }
 
     .AdjectivesExerciseItem {
+        transition: 300ms ease-in;
         position: relative;
         padding: 0 24px;
-    }
 
-    .AdjectivesExerciseItem.isFocused {
-        background-color: rgba(0,0,0,0.15);
 
-        .placeholder {
-            @extend %placeholder;
+        .input-wrapper {
+            position: relative;
         }
 
-        .detail-link {
-            color: #888;
-
-            &:hover {
-                color: inherit;
+        &.isCorrect, &.isIncorrect, &.isFocused {
+            .placeholder {
+                @extend %placeholder;
             }
         }
+
+        &.isFocused {
+            background-color: $row-focused-bg;
+
+            .detail-link {
+                color: #888;
+
+                &:hover {
+                    color: inherit;
+                }
+            }
+        }
+
+        &.isCorrect {
+            background-color: $row-correct-bg;
+        }
+
+
+        &.isIncorrect {
+            background-color: $row-incorrect-bg;
+        }
+
     }
 
     input {
@@ -73,30 +91,18 @@ $lh: 2.5;
         border: none;
         outline: none;
         padding: 0;
+        position: absolute;
+        z-index: 2;
+        line-height: 2.5em;
 
         &:focus + .placeholder {
             @extend %placeholder;
         }
     }
 
-    .input-wrapper {
-        position: relative;
-        color: $blue;
-
-        &.correct {
-            color: $green;
-        }
-
-        &.incorrect {
-            color: $red;
-        }
-    }
-
     .placeholder {
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: -1;
+        display: inline-block;
+        z-index: 1;
     }
 
     .detail-link {
@@ -118,9 +124,10 @@ $lh: 2.5;
     .text {
         line-height: $lh;
         width: 80%;
+        letter-spacing: 0.05em;
 
         > * {
-            display: inline-block;
+            display: inline;
         }
     }
 
