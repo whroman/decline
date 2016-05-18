@@ -3,7 +3,7 @@
 $lh: 2.5;
 
 %placeholder {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .example-leave {
@@ -48,26 +48,14 @@ $lh: 2.5;
 
     .AdjectivesExerciseItem {
         position: relative;
-    }
-
-    .AdjectivesExerciseItem::after {
-        content: 'a';
-        color: transparent;
-        right: -20px;
-        position: absolute;
-        left: -20px;
-        background-color: transparent;
-        z-index: -2;
-        line-height: $lh;
+        padding: 0 24px;
     }
 
     .AdjectivesExerciseItem.isFocused {
+        background-color: rgba(0,0,0,0.15);
+
         .placeholder {
             @extend %placeholder;
-        }
-
-        &::after{
-            background-color: rgba(0,0,0,0.15);
         }
 
         .detail-link {
@@ -113,7 +101,7 @@ $lh: 2.5;
 
     .detail-link {
         color: transparent;
-        font-size: 1.75em;
+        font-size: 1.6em;
         float: right;
     }
 

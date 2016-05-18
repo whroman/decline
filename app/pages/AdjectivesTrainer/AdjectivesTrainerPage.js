@@ -36,6 +36,10 @@ export class AdjectivesTrainer extends Component {
             <div className='column small-11 small-centered'>
               <h1>Practice</h1>
               <hr/>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='column small-12'>
               <AdjectivesExercise
                 phrases={ phrases }
                 replace={ replace }
