@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --config tasks/dev.webpack.config.js",
     "build": "webpack --progress --config tasks/build.webpack.config.js",
-    "test": "mocha --harmony $(find ./src -name '*.spec.js')",
+    "test": "babel-node node_modules/.bin/_mocha $(find ./src -name '*.spec.js')",
     "test:watch": "npm test -- --watch",
     "tdd": "npm run test:watch"
   },
@@ -30,6 +30,7 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
+    "babel-cli": "^6.9.0",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
     "babel-plugin-lodash": "^3.1.4",

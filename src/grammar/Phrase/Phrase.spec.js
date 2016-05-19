@@ -8,7 +8,7 @@ const genders = ["male", "female", "neutral", "plural"];
 
 const tests = [
     {
-        noun: ["Mann", 0],
+        noun: ["Mann", "man", 0, [0]],
         adj: "kurz",
         nominative: {
             def: "der kurze Mann",
@@ -32,7 +32,7 @@ const tests = [
         },
     },
     {
-        noun: ["Frau", 1],
+        noun: ["Frau", 'woman', 1, [1]],
         adj: "kurz",
         nominative: {
             def: "die kurze Frau",
@@ -56,7 +56,7 @@ const tests = [
         },
     },
     {
-        noun: ["Kind", 2],
+        noun: ["Kind", 'child', 2, [2]],
         adj: "kurz",
         nominative: {
             def: "das kurze Kind",
@@ -80,7 +80,7 @@ const tests = [
         },
     },
     {
-        noun: ["Kinder", 3],
+        noun: ["Kinder", 'children', 3, [4]],
         adj: "kurz",
         nominative: {
             def: "die kurzen Kinder",
