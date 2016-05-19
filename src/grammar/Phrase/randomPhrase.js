@@ -89,7 +89,7 @@ const randomPhrase = {
             phrase.subject = getRandomSubject(2, gender);
             const nounIsPlural = gender === 3;
             const verb = nounIsPlural ? "sind " : "ist ";
-            const text = [phrase.subject.de, verb].join(' ');
+            const text = [phrase.subject.deText, verb].join(' ');
             return ucfirst(text + '');
         }, (phrase) => {
             const conjugatedPhrase = phrase.conjugate(0);

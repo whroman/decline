@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import Tooltip from "rc-tooltip";
 
+import genders from "./../../../fixtures/genders";
+
 const componentClassName = 'AdjectivesExerciseItem';
 
 const getInput = (tabindex) => document.querySelector(`.${componentClassName} [tabindex='${tabindex}']`);
@@ -25,7 +27,7 @@ export default class AdjectivesExerciseItem extends Component {
 
   render () {
     const { phrase, uid, setFocusedItem, shouldFocus } = this.props;
-    const { untilAdj, afterStub, key } = phrase
+    const { untilAdj, key } = phrase
 
     const { isFilled, isCorrect } = this.state;
     let inputState = '';
@@ -44,7 +46,7 @@ export default class AdjectivesExerciseItem extends Component {
           <span>{ untilAdj }</span>
           { this.renderAdjective() }
           { this.renderInput() }
-          <span>{ afterStub }</span>
+          { this.renderDirectObject() }
         </div>
         { this.renderExerciseActions(uid) }
       </div>
@@ -60,7 +62,7 @@ export default class AdjectivesExerciseItem extends Component {
 
     return (
       <Tooltip
-        placement="top"
+        placement="bottom"
         trigger={['hover']}
         overlay={ tooltip }
       >
@@ -90,6 +92,26 @@ export default class AdjectivesExerciseItem extends Component {
         <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
       </strong>
     );
+  }
+
+  renderDirectObject () {
+    const { afterStub, noun: { gender, enText} } = this.props.phrase;
+
+    const tooltip = (<div className='text-center'>
+      <div>{ enText }</div>
+      <div>{ `{ ${genders[gender]} }` }</div>
+    </div>);
+
+    return (
+      <Tooltip
+        placement="bottom"
+        trigger={['hover']}
+        overlay={ tooltip }
+      >
+        <span>{ afterStub }</span>
+      </Tooltip>
+    );
+
   }
 
   renderExerciseActions (uid) {

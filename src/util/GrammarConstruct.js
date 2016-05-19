@@ -1,6 +1,6 @@
 import articleTypes from "./../../fixtures/articleTypes";
+import genders from "./../../fixtures/genders";
 
-const genders = ["male", "female", "neuter", "plural"];
 const grammarCases = ["nominative", "accusative", "dative", "genitive"];
 
 class GrammarConstruct {

@@ -13,7 +13,7 @@ function presentPhrase (phrase) {
     const afterStub =  regexi.afterStub().exec(text)[1];
 
     const present = {
-        untilAdj, afterStub, stub, stubbedValue, adjective,
+        untilAdj, afterStub, stub, stubbedValue, adjective, noun,
         key: untilAdj + afterStub + stub + stubbedValue
      };
 

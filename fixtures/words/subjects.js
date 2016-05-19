@@ -64,8 +64,8 @@ const RAW_SUBJECTS = [
 
 class Subject {
 
-    constructor (de, en, types, genders) {
-        Object.assign(this, { de, en, types, genders});
+    constructor (deText, enText, types, genders) {
+        Object.assign(this, { deText, enText, types, genders});
     }
 
 }

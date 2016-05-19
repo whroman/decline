@@ -134,7 +134,7 @@ export default [
     ["verwirrt", ["confused"]],
     ["konsequent", ["consistent"]],
     ["zufrieden", ["contented"]],
-    ["beherrscht", ["controlled"]],
+    ["beherrscht", ["restrained", "controlled"]],
     ["herkömmlich", ["conventional"]],
     ["überzeugt", ["convinced"]],
     ["schon gar", ["cooked"]],

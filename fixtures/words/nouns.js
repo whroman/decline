@@ -123,7 +123,7 @@ const nouns = [
         "Zahnfee", "Zahnfeen", "toothfairy", "toothfairies", 1, [4]
     ],
     [
-        "Buntstift", "Buntstifte", "crayon", "crayons", 0   , [4]
+        "Buntstift", "Buntstifte", "crayon", "crayons", 0, [4]
     ]
 
 ];
