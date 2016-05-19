@@ -14,7 +14,7 @@ export class About extends Component {
               <div className='column small-11 small-centered'>
                 <h1>About</h1>
                 <hr/>
-                Every sentence you see if being randomly, programmatically generated in roughly 1 milliscond before you see it. If it speaks poorly about your mother, I will ask it to apologize.
+                Each sentence that appears is randomly generated 1 milliscond before you see it. If it speaks poorly about your mother, I will ask it to apologize.
                 <br/>
                 <br/>
                 Learn more about how this works by looking at <a href='https://github.com/whroman/conjugate/blob/gh-pages/README.md'>the README of this project's open-source codebase</a>.
