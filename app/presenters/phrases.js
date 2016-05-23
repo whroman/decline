@@ -5,15 +5,23 @@ const regexi = {
 };
 
 function presentPhrase (phrase) {
-    const { noun, article, stubbedSuffix, stubbed, adjective } = phrase;
-    const { text, stubbedValue } = stubbedSuffix;
+    const { start, statement, noun } = phrase;
+    const untilAdj = [
+        start,
+        statement[0].text
+    ].filter((item) => item)
+    .join(' ') + ' ';
 
-    const untilAdj =   regexi.untilAdj().exec(stubbed.text)[1];
-    const stub =       regexi.stub().exec(text)[1];
-    const afterStub =  regexi.afterStub().exec(text)[1];
+    const adjSuffix = statement[1].chunks[1].text;
+    const stub = Array(adjSuffix.length + 1).join('_');
+    const stubbedValue = adjSuffix;
+    const adjective = statement[1];
+    adjective.text = statement[1].chunks[0].text
+
+    const afterStub = ' ' + statement[2].text;
 
     const present = {
-        untilAdj, afterStub, stub, stubbedValue, adjective, noun,
+        untilAdj, afterStub, stub, stubbedValue, noun, adjective,
         key: untilAdj + afterStub + stub + stubbedValue
      };
 

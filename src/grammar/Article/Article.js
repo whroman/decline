@@ -14,11 +14,17 @@ class Article {
             articleType: type
         });
 
+        if (article.text === null) {
+            const errObj = { type, objectGender };
+            throw Error(`Article: Given gender and type are incompatable ${errObj}`)
+        };
+        const text = article.text
+
         if (type === 1 || type === 3) {
-            return this.root + article.text;
+            return this.root + text;
         }
 
-        return article.text;
+        return text;
     }
 
 }

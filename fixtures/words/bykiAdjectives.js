@@ -295,7 +295,7 @@ export default [
     ["unmöglich", ["impossible"]],
     ["eindrucksvoll", ["impressive"]],
     ["fit", ["in good shape"]],
-    ["schließlich", ["in the end"]],
+    ["schließlich", ["eventual"]],
     ["unangemessen", ["inappropriate"]],
     ["inklusiv", ["inclusive"]],
     ["inkompetent", ["incompetent"]],

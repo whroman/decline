@@ -54,9 +54,10 @@ export default class AdjectivesExerciseItem extends Component {
   }
 
   renderAdjective () {
-    const { en, de } = this.props.phrase.adjective;
+    console.log(this.props.phrase);
+    const { text, translations } = this.props.phrase.adjective;
 
-    const tooltip = en.map((trans) => (
+    const tooltip = translations.eng.map((trans) => (
       <div key={ trans }>{ trans }</div>
     ));
 
@@ -66,7 +67,7 @@ export default class AdjectivesExerciseItem extends Component {
         trigger={['hover']}
         overlay={ tooltip }
       >
-        <span>{ de }</span>
+        <span>{ text }</span>
       </Tooltip>
     );
   }
@@ -95,12 +96,15 @@ export default class AdjectivesExerciseItem extends Component {
   }
 
   renderDirectObject () {
-    const { afterStub, noun: { gender, enText} } = this.props.phrase;
-
-    const tooltip = (<div className='text-center'>
-      <div>{ enText }</div>
-      <div>{ `{ ${genders[gender]} }` }</div>
-    </div>);
+    const { afterStub, noun: { gender, translations } } = this.props.phrase;
+    const tooltip = (
+      <div className='text-center'>
+        { translations.eng.map((translation) => {
+          return (<div key={ translation }>{ translation }</div>);
+        }) }
+        <div>{ `{ ${genders[gender]} }` }</div>
+      </div>
+    );
 
     return (
       <Tooltip

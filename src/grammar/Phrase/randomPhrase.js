@@ -74,34 +74,37 @@ const randomPhrase = {
     handleCase: function (category, textOrTransform, transformCon) {
         const phrase = this.getOne(category);
         const start = typeof textOrTransform === "function" ? textOrTransform(phrase) : textOrTransform;
-        let conjugation = transformCon(phrase);
+        let { statement } = transformCon(phrase);
 
-        conjugation.text = start + conjugation.text + '.';
-        conjugation.stubbed.text = start + conjugation.stubbed.text + '.';
-        conjugation.stubbedSuffix.text = start + conjugation.stubbedSuffix.text + '.';
-
-        return conjugation;
+        return Object.assign(phrase, { start, statement });
     },
 
     nominative: function (category) {
         const conjugation = this.handleCase(category, (phrase) => {
+            console.log(phrase)
             const { gender } = phrase.noun;
             phrase.subject = getRandomSubject(2, gender);
             const nounIsPlural = gender === 3;
-            const verb = nounIsPlural ? "sind " : "ist ";
+            const verb = nounIsPlural ? "sind" : "ist";
             const text = [phrase.subject.deText, verb].join(' ');
-            return ucfirst(text + '');
+            return ucfirst(text);
         }, (phrase) => {
             const conjugatedPhrase = phrase.conjugate(0);
+
             return conjugatedPhrase;
         });
+
+        console.log('conjugation')
+        console.log(conjugation)
 
         return conjugation;
     },
 
     accusative: function (category) {
-        const conjugation = this.handleCase(category, getRandomItem(AKK_BEGINNINGS) + " ", (phrase) => {
-            return phrase.conjugate(1);
+        const conjugation = this.handleCase(
+            category,
+            getRandomItem(AKK_BEGINNINGS) + " ", (phrase) => {
+                return phrase.conjugate(1);
         });
 
         return conjugation;

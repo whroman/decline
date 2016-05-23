@@ -119,14 +119,18 @@ describe("Phrase", () => {
                     const adj = new Adjective(test.adj);
                     const genderIndex = test.noun[1];
                     const gender = genders[genderIndex];
+                    console.log('gender');
+                    console.log(gender);
                     it(`should work for phrases with ${gender} nouns and definite articles`, () => {
                         const art = new Article('', 0);
                         const phrase = new Phrase(noun, adj, art);
                         const conjugation = phrase.conjugate(grammarCaseIndex);
-                        assert.equal(conjugation.text, test[grammarCaseName].def);
+                        console.log('conjugation');
+                        console.log(conjugation);
+                        assert.equal(conjugation.statement.text, test[grammarCaseName].def);
                     });
 
-                    it(`should work for phrases with ${gender} nouns and indefinite articles`, () => {
+                    it.only(`should work for phrases with ${gender} nouns and indefinite articles`, () => {
                         const art = new Article('ein', 1);
                         const phrase = new Phrase(noun, adj, art);
                         const expectedText = test[grammarCaseName].indef;
@@ -135,7 +139,7 @@ describe("Phrase", () => {
                         if (expectedText === null) {
                             assert.throws(conjugate);
                         } else {
-                            assert.equal(conjugate().text, expectedText);
+                            assert.equal(conjugate().statement.text, expectedText);
                         }
                     });
 

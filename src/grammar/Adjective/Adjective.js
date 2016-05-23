@@ -7,8 +7,13 @@ function stub (str) {
 
 class Adjective {
 
-    constructor (de, en) {
-        Object.assign(this, { de, en });
+    constructor (deu, eng) {
+        Object.assign(this, {
+            text: deu,
+            translations: {
+                eng
+            }
+        });
     }
 
     findSuffix (objectGender, articleType, grammarCase) {
@@ -22,16 +27,17 @@ class Adjective {
     }
 
     conjugate (...args) {
+        const { text } = this;
         const suffix = this.findSuffix(...args);
 
         const word = {
-            text: this.de,
+            text,
             stubbed: {
-                text: stub(this.de),
-                stubbedValue: this.de
+                text: stub(text),
+                stubbedValue: text
             },
             stubbedSuffix: {
-                text: this.de,
+                text,
                 stubbedValue: ''
             }
         };
@@ -47,6 +53,8 @@ class Adjective {
         } else {
             console.warn("No conjugation found: ", ...arguments);
         }
+
+        console.log(word)
 
         return word;
     }
