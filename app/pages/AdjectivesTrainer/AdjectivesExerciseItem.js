@@ -54,7 +54,7 @@ export default class AdjectivesExerciseItem extends Component {
   }
 
   renderAdjective () {
-    console.log(this.props.phrase);
+    // console.log(this.props.phrase);
     const { text, translations } = this.props.phrase.adjective;
 
     const tooltip = translations.eng.map((trans) => (

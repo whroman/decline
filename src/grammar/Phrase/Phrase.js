@@ -1,11 +1,3 @@
-function compose (adj, noun) {
-    const sentence = [ adj, noun]
-        .filter((item) => item)
-        .join(" ");
-
-    return sentence;
-}
-
 class Phrase {
 
     constructor (nounInstance, adjInstance, articleInstance) {

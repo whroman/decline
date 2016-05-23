@@ -1,16 +1,6 @@
 import { find } from 'lodash';
 import conjugationTable from "./../../../fixtures/conjugationTable.js";
 
-function compose (art, adj, noun) {
-    const sentence = [ art, adj, noun]
-        // Strip out undefined values
-        .filter((item) => item)
-        // Return string
-        .join(" ");
-
-    return sentence;
-}
-
 class Noun {
 
     constructor (text, eng, gender, categories) {
@@ -29,6 +19,7 @@ class Noun {
         const adjWords = this.adjectiveInstances.map((adj) => {
             const { text, translations } = adj;
             const suffix = adj.findSuffix(this.gender, article.articleType, grammarCase)
+
             return {
                 type: 'adjective',
                 translations,
@@ -45,31 +36,17 @@ class Noun {
             }
         });
 
-        // console.log(article)
 
         const words = [
             {
                 type: 'article',
+                id: article.articleType,
                 text: article.conjugation
             }
         ].concat(adjWords).concat([{
             type: 'object',
             text: this.conjugation
         }]);
-
-        // const sentence = {
-        //     words,
-        //     text: words
-        //         .map((partOfSpeech) => {
-        //             partOfSpeech.text
-        //         })
-        //         // Strip out undefined values
-        //         .filter((item) => item)
-        //         .join(' ')
-        // };
-
-        // console.log('sentence');
-        // console.log(sentence);
 
         return words;
     }
@@ -95,7 +72,6 @@ class Noun {
             }
         }
 
-        console.log('nounText', nounText)
         this.conjugation = nounText;
 
         const { type, root } = this.articleInstance;
@@ -106,33 +82,6 @@ class Noun {
         if (isPlural && artIsIndefinite) throw Error('FUCK');
 
         const text = this.compose(grammarCase, this.adjectiveInstances);
-
-
-        // const conjugation = {
-        //     text: text.text,
-        //     stubbed: {
-        //         text: this.compose(grammarCase, conjugatedAdjectives.reduce((memo, conjAdj) => {
-        //             return memo + conjAdj.stubbed.text
-        //         }, '')).text,
-        //         stubbedValue: this.compose(grammarCase, conjugatedAdjectives.reduce((memo, conjAdj) => {
-        //             return memo + conjAdj.stubbed.stubbedValue
-        //         }, '')).text
-        //     },
-        //     stubbedSuffix: {
-        //         text: this.compose(grammarCase, conjugatedAdjectives.reduce((memo, conjAdj) => {
-        //             return memo + conjAdj.stubbedSuffix.text
-        //         }, '')).text,
-        //         stubbedValue: this.compose(grammarCase, conjugatedAdjectives.reduce((memo, conjAdj) => {
-        //             return memo + conjAdj.stubbedSuffix.stubbedValue
-        //         }, '')).text
-        //         // conjugatedAdjectives.stubbedSuffix.stubbedValue
-        //     }
-        // };
-
-        console.log('99123i4123182383')
-        console.log(text)
-        // console.log(conjugation)
-        console.log(article)
 
         return text;
     }
@@ -149,14 +98,15 @@ class Noun {
             grammarCase, articleType
         });
 
+        let conjugation;
+
         if ((articleType === 1 || articleType === 3) && article.text !== null) {
-            article.conjugation = articleRoot + article.text;
+            conjugation = articleRoot + article.text;
+        } else {
+            conjugation = article.text;
         }
 
-        // console.log(articleRoot, articleType, article.conjugation, article.text);
-        article.conjugation = article.conjugation || '';
-
-        return article;
+        return Object.assign(article, { conjugation });
     }
 
     setAdjective (adjInstance) {

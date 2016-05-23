@@ -8,8 +8,10 @@ const genders = ["male", "female", "neutral", "plural"];
 
 const tests = [
     {
-        noun: ["Mann", "man", 0, [0]],
-        adj: "kurz",
+        noun: [
+            "Mann", "man", 0, [0]
+        ],
+        adj: ["kurz", ["short"]],
         nominative: {
             def: "der kurze Mann",
             indef: "ein kurzer Mann",
@@ -32,8 +34,10 @@ const tests = [
         },
     },
     {
-        noun: ["Frau", 'woman', 1, [1]],
-        adj: "kurz",
+        noun: [
+            "Frau", "woman", 1, [0]
+        ],
+        adj: ["kurz", ["short"]],
         nominative: {
             def: "die kurze Frau",
             indef: "eine kurze Frau",
@@ -56,8 +60,10 @@ const tests = [
         },
     },
     {
-        noun: ["Kind", 'child', 2, [2]],
-        adj: "kurz",
+        noun: [
+            "Kind", "child", 2, [0]
+        ],
+        adj: ["kurz", ["short"]],
         nominative: {
             def: "das kurze Kind",
             indef: "ein kurzes Kind",
@@ -80,8 +86,10 @@ const tests = [
         },
     },
     {
-        noun: ["Kinder", 'children', 3, [4]],
-        adj: "kurz",
+        noun: [
+            "Kinder", "children", 3, [0]
+        ],
+        adj: ["kurz", ["short"]],
         nominative: {
             def: "die kurzen Kinder",
             indef: null,
@@ -105,6 +113,21 @@ const tests = [
     },
 ];
 
+function printStatement (conjugation) {
+    const statement = conjugation.statement.map((val) => {
+        let text = val.text;
+        if (val.chunks) text = val.chunks.reduce((_memo, _val) => {
+            return _memo + _val.text;
+        }, '');
+
+        return text;
+    })
+    .filter((item) => item)
+    .join(' ');
+
+    return statement;
+}
+
 describe("Phrase", () => {
     describe(".conjugate()", () => {
         [
@@ -115,22 +138,24 @@ describe("Phrase", () => {
         ].forEach( (grammarCaseName, grammarCaseIndex) => {
             describe(` - ${grammarCaseName} cases -`, () => {
                 tests.forEach( (test) => {
-                    const noun = new Noun(...test.noun);
-                    const adj = new Adjective(test.adj);
+                    let noun, adj;
+                    beforeEach(() => {
+                        noun = new Noun(...test.noun);
+                        adj = new Adjective(...test.adj);
+                    });
                     const genderIndex = test.noun[1];
                     const gender = genders[genderIndex];
-                    console.log('gender');
-                    console.log(gender);
+
                     it(`should work for phrases with ${gender} nouns and definite articles`, () => {
                         const art = new Article('', 0);
                         const phrase = new Phrase(noun, adj, art);
                         const conjugation = phrase.conjugate(grammarCaseIndex);
-                        console.log('conjugation');
-                        console.log(conjugation);
-                        assert.equal(conjugation.statement.text, test[grammarCaseName].def);
+                        const text = printStatement(conjugation);
+
+                        assert.equal(text, test[grammarCaseName].def);
                     });
 
-                    it.only(`should work for phrases with ${gender} nouns and indefinite articles`, () => {
+                    it(`should work for phrases with ${gender} nouns and indefinite articles`, () => {
                         const art = new Article('ein', 1);
                         const phrase = new Phrase(noun, adj, art);
                         const expectedText = test[grammarCaseName].indef;
@@ -139,7 +164,8 @@ describe("Phrase", () => {
                         if (expectedText === null) {
                             assert.throws(conjugate);
                         } else {
-                            assert.equal(conjugate().statement.text, expectedText);
+                            const text = printStatement(conjugate());
+                            assert.equal(text, expectedText);
                         }
                     });
 
@@ -147,7 +173,8 @@ describe("Phrase", () => {
                         const art = new Article('', 2);
                         const phrase = new Phrase(noun, adj, art);
                         const conjugation = phrase.conjugate(grammarCaseIndex);
-                        assert.equal(conjugation.text, test[grammarCaseName].kein);
+                        const text = printStatement(conjugation);
+                        assert.equal(text, test[grammarCaseName].kein);
                     });
                 });
             })

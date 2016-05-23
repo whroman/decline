@@ -22,7 +22,7 @@ function presentPhrase (phrase) {
 
     const present = {
         untilAdj, afterStub, stub, stubbedValue, noun, adjective,
-        key: untilAdj + afterStub + stub + stubbedValue
+        key: untilAdj + afterStub + stub + adjective.text
      };
 
     return present;

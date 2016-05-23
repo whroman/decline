@@ -14,9 +14,9 @@ const nouns = [
         // DE singular
                 // DE plural
                           // EN singular
-                                // EN plural
-                                        // Singular gender
-                                            // Categories
+                                    // EN plural
+                                            // Singular gender
+                                                // Categories
     [
         "Mann", "Männer", ["man"], ["men"], 0, [0]
     ],
