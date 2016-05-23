@@ -1,5 +1,3 @@
-import Noun from "./../../src/grammar/Noun/Noun.js";
-
 const categories = [
     'Menschen',
     'Familie',
@@ -127,6 +125,15 @@ const nouns = [
     ]
 
 ];
+
+class Noun {
+    constructor (text, eng, gender, categories) {
+        Object.assign(this, {
+            text, gender, categories,
+            translations: { eng }
+        });
+    };
+}
 
 const instances = [];
 nouns.forEach(([deSingular, dePlural, enSingular, enPlural, gender, categories]) => {

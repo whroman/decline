@@ -21,7 +21,9 @@ export default class AdjectivesExerciseItem extends Component {
 
     this.state = {
       isCorrect: false,
-      isFilled: false
+      isFilled: false,
+      tooltipShow: false,
+      tooltipJSX: null
     };
   }
 
@@ -42,33 +44,50 @@ export default class AdjectivesExerciseItem extends Component {
         onClick={ this.handleClick.bind(this) }
         onMouseEnter={ () => setFocusedItem(key) }
       >
+        { this.renderTooltip() }
         <div className='text'>
           <span>{ untilAdj }</span>
+          <span>&nbsp;</span>
           { this.renderAdjective() }
           { this.renderInput() }
+          <span>&nbsp;</span>
           { this.renderDirectObject() }
+          <span>.</span>
         </div>
         { this.renderExerciseActions(uid) }
       </div>
     );
   }
 
+  renderTooltip () {
+    const { tooltipJSX } = this.state;
+    return tooltipJSX === null ? null : (
+      <div className='tooltip'>
+        { this.state.tooltipJSX }
+      </div>
+    );
+  }
+
   renderAdjective () {
-    // console.log(this.props.phrase);
     const { text, translations } = this.props.phrase.adjective;
 
-    const tooltip = translations.eng.map((trans) => (
-      <div key={ trans }>{ trans }</div>
-    ));
+    const tooltip = (
+      <div>
+        <strong>Adjektiv</strong>
+        {
+          translations.eng.map((trans) => (
+            <div key={ trans }>{ trans }</div>
+          ))
+        }
+      </div>
+    );
 
     return (
-      <Tooltip
-        placement="bottom"
-        trigger={['hover']}
-        overlay={ tooltip }
-      >
-        <span>{ text }</span>
-      </Tooltip>
+      <span
+        className='triggersTooltip'
+        onMouseEnter={ () => this.toggleTooltip(true, tooltip) }
+        onMouseLeave={ () => this.toggleTooltip(false) }
+      >{ text }</span>
     );
   }
 
@@ -96,24 +115,24 @@ export default class AdjectivesExerciseItem extends Component {
   }
 
   renderDirectObject () {
-    const { afterStub, noun: { gender, translations } } = this.props.phrase;
+    const { text, gender, translations } = this.props.phrase.noun;
+
     const tooltip = (
-      <div className='text-center'>
+      <div>
+        <strong>Direktes Objekt</strong>
+        <div>{ `{ ${genders[gender]} }` }</div>
         { translations.eng.map((translation) => {
           return (<div key={ translation }>{ translation }</div>);
         }) }
-        <div>{ `{ ${genders[gender]} }` }</div>
       </div>
     );
 
     return (
-      <Tooltip
-        placement="bottom"
-        trigger={['hover']}
-        overlay={ tooltip }
-      >
-        <span>{ afterStub }</span>
-      </Tooltip>
+      <span
+        className='triggersTooltip'
+        onMouseEnter={ () => this.toggleTooltip(true, tooltip) }
+        onMouseLeave={ () => this.toggleTooltip(false) }
+      >{ text }</span>
     );
 
   }
@@ -153,12 +172,18 @@ export default class AdjectivesExerciseItem extends Component {
   }
 
   handleInputBlur (event) {
-    const { uid, phrase } = this.props;
     const { value } = event.target;
+    const { uid, phrase, replace } = this.props;
     const isFilled = areSameLength(value, phrase.stubbedValue);
-    if (uid >= 3 && isFilled) {
-      this.props.replace(1);
-    }
+    if (uid >= 3 && isFilled) replace(1);
+    this.toggleTooltip(false);
+  }
+
+  toggleTooltip (show, tooltipJSX=null) {
+    this.setState({
+      tooltipShow: show,
+      tooltipJSX
+    });
   }
 
 }

@@ -1,17 +1,16 @@
 import { find } from 'lodash';
 import conjugationTable from "./../../../fixtures/conjugationTable.js";
 
-class Noun {
+export default class Noun {
 
-    constructor (text, eng, gender, categories) {
+    constructor (rawNoun) {
+        const { text, gender, translations, categories } = rawNoun;
         Object.assign(this, {
-            text, gender, categories,
-            translations: { eng },
+            text, gender, translations, categories,
             articleInstance: null,
             adjectiveInstances: []
         });
     };
-
 
     compose (grammarCase, adj) {
         const article = this.getArticle(grammarCase);
@@ -19,7 +18,6 @@ class Noun {
         const adjWords = this.adjectiveInstances.map((adj) => {
             const { text, translations } = adj;
             const suffix = adj.findSuffix(this.gender, article.articleType, grammarCase)
-
             return {
                 type: 'adjective',
                 translations,
@@ -36,7 +34,6 @@ class Noun {
             }
         });
 
-
         const words = [
             {
                 type: 'article',
@@ -50,7 +47,6 @@ class Noun {
 
         return words;
     }
-
 
     conjugate (grammarCase) {
         const { gender } = this;
@@ -93,18 +89,24 @@ class Noun {
 
         const foo = this.articleInstance.conjugate(grammarCase, this.gender);
 
-        const article = find(conjugationTable.articles.list, {
-            objectGender: this.gender,
-            grammarCase, articleType
-        });
+        const article = find(
+            conjugationTable.articles.list, {
+                grammarCase, articleType,
+                objectGender: this.gender
+            }
+        );
+
 
         let conjugation;
+
 
         if ((articleType === 1 || articleType === 3) && article.text !== null) {
             conjugation = articleRoot + article.text;
         } else {
             conjugation = article.text;
         }
+
+        console.log(conjugation, articleRoot, article.text);
 
         return Object.assign(article, { conjugation });
     }
@@ -116,7 +118,4 @@ class Noun {
     setArticle (articleInstance) {
         Object.assign(this, { articleInstance });
     }
-
 }
-
-module.exports = Noun;

@@ -1,9 +1,3 @@
-const regexi = {
-    untilAdj:  () => /(^.*?)(?=_+\s)/g,
-    stub:       () => /^.*?(\_+)\s.*$/g,
-    afterStub:  () => /^.*?_+(.*)/g,
-};
-
 function presentPhrase (phrase) {
     const { start, statement, noun } = phrase;
     const untilAdj = [
@@ -18,11 +12,16 @@ function presentPhrase (phrase) {
     const adjective = statement[1];
     adjective.text = statement[1].chunks[0].text
 
-    const afterStub = ' ' + statement[2].text;
+    if(!statement[2].text) console.log('FUC', statement)
 
     const present = {
-        untilAdj, afterStub, stub, stubbedValue, noun, adjective,
-        key: untilAdj + afterStub + stub + adjective.text
+        untilAdj, stub, stubbedValue, adjective,
+        noun: {
+            text: statement[2].text,
+            gender: noun.gender,
+            translations: noun.translations
+        },
+        key: untilAdj + stub + adjective.text
      };
 
     return present;

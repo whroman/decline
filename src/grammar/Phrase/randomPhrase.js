@@ -6,6 +6,7 @@ import articles from "./../../../fixtures/words/articles";
 import subjects from "./../../../fixtures/words/subjects";
 import articleTypes from "./../../../fixtures/articleTypes";
 
+import Noun from "./../Noun/Noun.js";
 import Phrase from "./Phrase.js";
 import Article from "./../Article/Article.js";
 
@@ -57,7 +58,8 @@ const randomPhrase = {
             filteredNouns = nouns.filter((noun) => noun.categories.includes(category));
         }
 
-        const noun = getRandomItem(filteredNouns);
+        const rawNoun = getRandomItem(filteredNouns);
+        const noun = new Noun(rawNoun);
         return noun;
     },
 
@@ -81,7 +83,6 @@ const randomPhrase = {
 
     nominative: function (category) {
         const conjugation = this.handleCase(category, (phrase) => {
-            console.log(phrase)
             const { gender } = phrase.noun;
             phrase.subject = getRandomSubject(2, gender);
             const nounIsPlural = gender === 3;
@@ -93,9 +94,6 @@ const randomPhrase = {
 
             return conjugatedPhrase;
         });
-
-        console.log('conjugation')
-        console.log(conjugation)
 
         return conjugation;
     },

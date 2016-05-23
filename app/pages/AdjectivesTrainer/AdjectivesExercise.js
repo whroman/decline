@@ -39,8 +39,8 @@ export default class AdjectivesExercise extends Component {
           <ReactCSSTransitionGroup
             transitionName="example"
             component='ul'
-            transitionEnterTimeout={300}
-            transitionLeaveTimeout={300}
+            transitionEnterTimeout={ 300 }
+            transitionLeaveTimeout={ 300 }
           >
             { this.props.phrases.map(this.renderPhrase.bind(this)) }
           </ReactCSSTransitionGroup>

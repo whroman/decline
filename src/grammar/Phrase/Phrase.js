@@ -9,15 +9,6 @@ class Phrase {
         this.noun.setAdjective(adjInstance)
     }
 
-    getAdjective (grammarCase, articleType) {
-        const adj = this.adjective.conjugate(
-            this.noun.gender,
-            articleType,
-            grammarCase
-        );
-
-        return adj;
-    }
 
     conjugate (grammarCase) {
         const statement = this.noun.conjugate(grammarCase);
