@@ -1,9 +1,9 @@
 const assert = require("chai").assert;
 
-const Phrase = require("./Phrase.js");
-const Adjective = require("./../Adjective/Adjective.js");
-const Article = require("./../Article/Article.js");
-const Noun = require("./../Noun/Noun.js");
+const Phrase = require("./Phrase.js").default;
+const Adjective = require("./../Adjective/Adjective.js").default;
+const Article = require("./../Article/Article.js").default;
+const Noun = require("./../Noun/Noun.js").default;
 const genders = ["male", "female", "neutral", "plural"];
 
 const tests = [
@@ -140,10 +140,18 @@ describe("Phrase", () => {
                 tests.forEach( (test) => {
                     let noun, adj;
                     beforeEach(() => {
-                        noun = new Noun(...test.noun);
+                        noun = new Noun({
+                            text: test.noun[0],
+                            translations:  {
+                                eng: test.noun[1]
+                            },
+                            gender: test.noun[2],
+                            categories: test.noun[3]
+                        });
                         adj = new Adjective(...test.adj);
                     });
-                    const genderIndex = test.noun[1];
+
+                    const genderIndex = test.noun[2];
                     const gender = genders[genderIndex];
 
                     it(`should work for phrases with ${gender} nouns and definite articles`, () => {

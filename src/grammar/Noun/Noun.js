@@ -85,28 +85,21 @@ export default class Noun {
     getArticle (grammarCase) {
         const articleType = this.articleInstance.type;
         const articleRoot = this.articleInstance.root;
+        const findParams = {
+            grammarCase, articleType,
+            objectGender: this.gender
+        };
+        const article = find(conjugationTable.articles.list, findParams);
 
-
-        const foo = this.articleInstance.conjugate(grammarCase, this.gender);
-
-        const article = find(
-            conjugationTable.articles.list, {
-                grammarCase, articleType,
-                objectGender: this.gender
-            }
-        );
-
+        if (article.text === null) throw Error('Invalid `findParams`: ' + JSON.stringify(findParams));
 
         let conjugation;
-
 
         if ((articleType === 1 || articleType === 3) && article.text !== null) {
             conjugation = articleRoot + article.text;
         } else {
             conjugation = article.text;
         }
-
-        console.log(conjugation, articleRoot, article.text);
 
         return Object.assign(article, { conjugation });
     }

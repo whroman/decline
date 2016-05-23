@@ -5,7 +5,7 @@ function stub (str) {
     return Array(str.length + 1).join("_");
 }
 
-class Adjective {
+export default class Adjective {
 
     constructor (deu, eng) {
         Object.assign(this, {
@@ -60,5 +60,3 @@ class Adjective {
     }
 
 }
-
-module.exports = Adjective;

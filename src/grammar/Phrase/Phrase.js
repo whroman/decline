@@ -1,4 +1,4 @@
-class Phrase {
+export default class Phrase {
 
     constructor (nounInstance, adjInstance, articleInstance) {
         Object.assign(this, {
@@ -17,5 +17,3 @@ class Phrase {
     }
 
 }
-
-module.exports = Phrase;

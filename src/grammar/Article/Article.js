@@ -1,7 +1,7 @@
 import { find } from 'lodash';
 import conjugationTable from "./../../../fixtures/conjugationTable.js";
 
-class Article {
+export default class Article {
 
     constructor (root, type) {
         Object.assign(this, { root, type })
@@ -28,5 +28,3 @@ class Article {
     }
 
 }
-
-module.exports = Article;
