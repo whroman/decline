@@ -1,8 +1,8 @@
 import { find } from 'lodash';
-import conjugationTable from "./../conjugationTable/data.js";
+import conjugationTable from './../conjugationTable/data.js';
 
 function stub (str) {
-    return Array(str.length + 1).join("_");
+    return Array(str.length + 1).join('_');
 }
 
 export default class Adjective {
@@ -51,10 +51,8 @@ export default class Adjective {
                 word.stubbedSuffix.stubbedValue += suffix.text;
             }
         } else {
-            console.warn("No conjugation found: ", ...arguments);
+            throw Error('No conjugation found: ', ...arguments);
         }
-
-        console.log(word)
 
         return word;
     }

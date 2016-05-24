@@ -1,15 +1,15 @@
 const articles = [
-    [ "" ],
-    [ "ein" ],
-    [ "" ],
+    [ '' ],
+    [ 'ein' ],
+    [ '' ],
     [
-        "mein",
-        "dein",
-        "sein",
-        "ihr",
-        "unser",
-        "euer",
-        "Ihr"
+        'mein',
+        'dein',
+        'sein',
+        'ihr',
+        'unser',
+        'euer',
+        'Ihr'
     ],
 ];
 

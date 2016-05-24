@@ -1,4 +1,4 @@
-import { find } from "lodash";
+import { find } from 'lodash';
 
 import ConjugationTable from './ConjugationTable.js';
 import articleSuffixes from './../articleSuffixes/data.js';

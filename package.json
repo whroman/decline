@@ -8,7 +8,8 @@
     "build": "webpack --progress --config tasks/build.webpack.config.js",
     "test": "babel-node node_modules/.bin/_mocha $(find ./src -name '*.spec.js')",
     "test:watch": "npm test -- --watch",
-    "tdd": "npm run test:watch"
+    "tdd": "npm run test:watch",
+    "lint": "eslint ./tables"
   },
   "author": "",
   "license": "ISC",

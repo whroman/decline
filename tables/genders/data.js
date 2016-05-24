@@ -1,3 +1,3 @@
-const genders = ["masculine", "feminine", "neuter", "plural"];
+const genders = ['masculine', 'feminine', 'neuter', 'plural'];
 
 export default genders;

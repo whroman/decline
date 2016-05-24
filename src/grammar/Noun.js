@@ -1,5 +1,5 @@
 import { find } from 'lodash';
-import conjugationTable from "./../../tables/conjugationTable/data.js";
+import conjugationTable from './../../tables/conjugationTable/data.js';
 
 export default class Noun {
 
@@ -23,7 +23,7 @@ export default class Noun {
                 translations,
                 chunks: [
                     {
-                        type: "root",
+                        type: 'root',
                         text
                     },
                     {
@@ -59,12 +59,12 @@ export default class Noun {
         if (isDative) {
             if (isPlural) {
                 const len = nounText.length - 1;
-                if (nounText[len] === "e") nounText = nounText.substring(0, len);
+                if (nounText[len] === 'e') nounText = nounText.substring(0, len);
             }
         } else if (isGenitive) {
             const isMaleOrNeutral = gender === 0 || gender === 2;
             if (isMaleOrNeutral) {
-                nounText = nounText + "es";
+                nounText = nounText + 'es';
             }
         }
 

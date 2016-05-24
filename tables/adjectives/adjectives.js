@@ -1,84 +1,82 @@
-import Adjective from './Adjective.js';
-
 const adjectives = [
-    ["kurz", ['short', 'brief']],
-    ["lang", ['long']],
-    ["hoch", ['high', 'tall']],
+    ['kurz', ['short', 'brief']],
+    ['lang', ['long']],
+    ['hoch', ['high', 'tall']],
 
-    ["groß", ['big', 'great', 'large']],
-    ["klein", ['small', 'little']],
+    ['groß', ['big', 'great', 'large']],
+    ['klein', ['small', 'little']],
 
-    ["dunkel", ['dark']],
-    ["hell", ['bright', 'clear']],
+    ['dunkel', ['dark']],
+    ['hell', ['bright', 'clear']],
 
-    ["langsam", ['slow']],
-    ["schnell", ['fast']],
+    ['langsam', ['slow']],
+    ['schnell', ['fast']],
 
-    ["gut",     ['good']],
-    ["schlimm", ['bad']],
+    ['gut',     ['good']],
+    ['schlimm', ['bad']],
 
-    ["stark",   ['strong', 'intense']],
-    ["schwach", ['weak', 'faint']],
+    ['stark',   ['strong', 'intense']],
+    ['schwach', ['weak', 'faint']],
 
-    ["kühl", ['cool', 'frigid']],
-    ["warm", ['hot', 'cordial']],
-    ["kalt", ['cold', 'frigid']],
+    ['kühl', ['cool', 'frigid']],
+    ['warm', ['hot', 'cordial']],
+    ['kalt', ['cold', 'frigid']],
 
-    ["teuer",   ['expensive']],
-    ["billig",  ['cheap', 'low-cost']],
-    ["sparsam", ['thrifty', 'frugal']],
+    ['teuer',   ['expensive']],
+    ['billig',  ['cheap', 'low-cost']],
+    ['sparsam', ['thrifty', 'frugal']],
 
-    ["jung",    ['young', 'youthful']],
-    ["alt",     ['old', 'aged']],
+    ['jung',    ['young', 'youthful']],
+    ['alt',     ['old', 'aged']],
 
-    ["dumm",    ['stupid']],
-    ["klug",    ['clever', 'knowledgeable']],
+    ['dumm',    ['stupid']],
+    ['klug',    ['clever', 'knowledgeable']],
 
-    ["dick",    ['thick', 'fat']],
-    ["schlank",     ['slim', 'slender']],
+    ['dick',    ['thick', 'fat']],
+    ['schlank',     ['slim', 'slender']],
 
-    ["männlichen",  ['masculine']],
-    ["feminin",     ['feminine']],
+    ['männlichen',  ['masculine']],
+    ['feminin',     ['feminine']],
 
-    ["schmutzig",   ['dirty', 'filthy']],
+    ['schmutzig',   ['dirty', 'filthy']],
     ['sauber',      ['clean', 'neat']],
 
-    ["sicher",      ['sure', 'certain']],
-    ["unsicher",    ['unsure', 'uncertain']],
+    ['sicher',      ['sure', 'certain']],
+    ['unsicher',    ['unsure', 'uncertain']],
 
-    ["modisch",     ['fashionable']],
-    ["unmodisch",   ['unfashionable']],
+    ['modisch',     ['fashionable']],
+    ['unmodisch',   ['unfashionable']],
 
-    ["beliebt",     ['popular', 'favored']],
-    ["unbeliebt",   ['unpopular', 'out-of-favor']],
+    ['beliebt',     ['popular', 'favored']],
+    ['unbeliebt',   ['unpopular', 'out-of-favor']],
 
-    ["weit",        ['far', 'wide', 'vast']],
-    ["gedulgig",    ['patient', 'uncomplaining']],
-    ["ungedulgig",  ['impatient']],
-    ["arm",         ['poor', 'low-grade']],
+    ['weit',        ['far', 'wide', 'vast']],
+    ['gedulgig',    ['patient', 'uncomplaining']],
+    ['ungedulgig',  ['impatient']],
+    ['arm',         ['poor', 'low-grade']],
 
-    ["wütend",  ['angry', 'mad']],
+    ['wütend',  ['angry', 'mad']],
     ['traurig', ['sad', 'unhappy']],
     ['nervös',  ['nervous']],
 
     ['kräftig', ['strong', 'robust']],
     ['stabil',  ['stable']],
 
-    ["interessant",     ['interesting']],
-    ["uninteressant",   ['dull', 'bland']],
-    ["hart",    ['hard', 'tough', 'stiff']],
+    ['interessant',     ['interesting']],
+    ['uninteressant',   ['dull', 'bland']],
+    ['hart',    ['hard', 'tough', 'stiff']],
 
-    ["gesund",  ['healthy', 'fit']],
-    ["ungesund",    ['unhygienic', 'not healthy']],
+    ['gesund',  ['healthy', 'fit']],
+    ['ungesund',    ['unhygienic', 'not healthy']],
 
-    ["sortiert",      ['sorted', 'assorted']],
-    ["organisiert",   ['organized']],
-    ["unorganisiert", ['unorganized']],
+    ['sortiert',      ['sorted', 'assorted']],
+    ['organisiert',   ['organized']],
+    ['unorganisiert', ['unorganized']],
 
-    ["komisch",     ['funny', 'comical']],
-    ["sympathisch", ['likeable', 'personable']],
-    ["freundlich",  ['friendly', 'amiable']],
-    ["unfreundlich",['unfriendly', 'unkind']],
+    ['komisch',     ['funny', 'comical']],
+    ['sympathisch', ['likeable', 'personable']],
+    ['freundlich',  ['friendly', 'amiable']],
+    ['unfreundlich',['unfriendly', 'unkind']],
 
     ['rot',         ['red']],
     ['dunkelrot',   ['dark red']],
@@ -102,4 +100,4 @@ const adjectives = [
 
 ];
 
-export default adjectives
+export default adjectives;

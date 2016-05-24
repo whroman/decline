@@ -1,17 +1,10 @@
-const SUBJECT_TYPES = [
-    'ich',
-    'du',
-    'es',
-    'sie',
-    'ihr'
-];
-
-const SUBJECT_GENDERS = [
-    'der',
-    'die',
-    'das',
-    'plural'
-];
+// const SUBJECT_TYPES = [
+//     'ich',
+//     'du',
+//     'es',
+//     'sie',
+//     'ihr'
+// ];
 
 const RAW_SUBJECTS = [
     [
@@ -68,6 +61,6 @@ class Subject {
     }
 }
 
-const subjects = RAW_SUBJECTS.map((subject) => new Subject(...subject))
+const subjects = RAW_SUBJECTS.map((subject) => new Subject(...subject));
 
 export default subjects;

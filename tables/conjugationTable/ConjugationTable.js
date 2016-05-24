@@ -1,6 +1,6 @@
-import Collection from "./../util/Collection.js";
-import Articles from "./Articles.js";
-import AdjectiveSuffixes from "./AdjectiveSuffix.js";
+import Collection from './../util/Collection.js';
+import Articles from './Articles.js';
+import AdjectiveSuffixes from './AdjectiveSuffix.js';
 
 export default class ConjugationTable extends Collection {
 

@@ -1,7 +1,7 @@
-import articleTypes from "./../articleTypes/data";
-import genders from "./../genders/data";
+import articleTypes from './../articleTypes/data';
+import genders from './../genders/data';
 
-const grammarCases = ["nominative", "accusative", "dative", "genitive"];
+const grammarCases = ['nominative', 'accusative', 'dative', 'genitive'];
 
 export default class GrammarConstruct {
 

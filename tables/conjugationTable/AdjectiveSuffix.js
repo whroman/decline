@@ -1,5 +1,5 @@
-import GrammarConstruct from "./../util/GrammarConstruct.js";
-import UniqueList from "./../util/UniqueList.js";
+import GrammarConstruct from './../util/GrammarConstruct.js';
+import UniqueList from './../util/UniqueList.js';
 
 class AdjectiveSuffix extends GrammarConstruct {}
 
