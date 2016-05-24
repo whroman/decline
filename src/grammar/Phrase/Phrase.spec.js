@@ -1,114 +1,114 @@
-const assert = require("chai").assert;
+const assert = require('chai').assert;
 
-const Phrase = require("./Phrase.js").default;
-const Adjective = require("./../../../tables/adjectives/Adjective.js").default;
-const Article = require("./../Article.js").default;
-const Noun = require("./../Noun.js").default;
-const genders = ["male", "female", "neutral", "plural"];
+const Phrase = require('./Phrase.js').default;
+const Adjective = require('./../../../tables/adjectives/Adjective.js').default;
+const Article = require('./../Article.js').default;
+const Noun = require('./../Noun.js').default;
+const genders = ['male', 'female', 'neutral', 'plural'];
 
 const tests = [
     {
         noun: [
-            "Mann", "man", 0, [0]
+            'Mann', 'man', 0, [0]
         ],
-        adj: ["kurz", ["short"]],
+        adj: ['kurz', ['short']],
         nominative: {
-            def: "der kurze Mann",
-            indef: "ein kurzer Mann",
-            kein: "kurzer Mann"
+            def: 'der kurze Mann',
+            indef: 'ein kurzer Mann',
+            kein: 'kurzer Mann'
         },
         accusative: {
-            def: "den kurzen Mann",
-            indef: "einen kurzen Mann",
-            kein: "kurzen Mann"
+            def: 'den kurzen Mann',
+            indef: 'einen kurzen Mann',
+            kein: 'kurzen Mann'
         },
         dative: {
-            def: "dem kurzen Mann",
-            indef: "einem kurzen Mann",
-            kein: "kurzem Mann"
+            def: 'dem kurzen Mann',
+            indef: 'einem kurzen Mann',
+            kein: 'kurzem Mann'
         },
         genitive: {
-            def: "des kurzen Mannes",
-            indef: "eines kurzen Mannes",
-            kein: "kurzen Mannes"
+            def: 'des kurzen Mannes',
+            indef: 'eines kurzen Mannes',
+            kein: 'kurzen Mannes'
         },
     },
     {
         noun: [
-            "Frau", "woman", 1, [0]
+            'Frau', 'woman', 1, [0]
         ],
-        adj: ["kurz", ["short"]],
+        adj: ['kurz', ['short']],
         nominative: {
-            def: "die kurze Frau",
-            indef: "eine kurze Frau",
-            kein: "kurze Frau"
+            def: 'die kurze Frau',
+            indef: 'eine kurze Frau',
+            kein: 'kurze Frau'
         },
         accusative: {
-            def: "die kurze Frau",
-            indef: "eine kurze Frau",
-            kein: "kurze Frau"
+            def: 'die kurze Frau',
+            indef: 'eine kurze Frau',
+            kein: 'kurze Frau'
         },
         dative: {
-            def: "der kurzen Frau",
-            indef: "einer kurzen Frau",
-            kein: "kurzer Frau"
+            def: 'der kurzen Frau',
+            indef: 'einer kurzen Frau',
+            kein: 'kurzer Frau'
         },
         genitive: {
-            def: "der kurzen Frau",
-            indef: "einer kurzen Frau",
-            kein: "kurzer Frau"
+            def: 'der kurzen Frau',
+            indef: 'einer kurzen Frau',
+            kein: 'kurzer Frau'
         },
     },
     {
         noun: [
-            "Kind", "child", 2, [0]
+            'Kind', 'child', 2, [0]
         ],
-        adj: ["kurz", ["short"]],
+        adj: ['kurz', ['short']],
         nominative: {
-            def: "das kurze Kind",
-            indef: "ein kurzes Kind",
-            kein: "kurzes Kind"
+            def: 'das kurze Kind',
+            indef: 'ein kurzes Kind',
+            kein: 'kurzes Kind'
         },
         accusative: {
-            def: "das kurze Kind",
-            indef: "ein kurzes Kind",
-            kein: "kurzes Kind"
+            def: 'das kurze Kind',
+            indef: 'ein kurzes Kind',
+            kein: 'kurzes Kind'
         },
         dative: {
-            def: "dem kurzen Kind",
-            indef: "einem kurzen Kind",
-            kein: "kurzem Kind"
+            def: 'dem kurzen Kind',
+            indef: 'einem kurzen Kind',
+            kein: 'kurzem Kind'
         },
         genitive: {
-            def: "des kurzen Kindes",
-            indef: "eines kurzen Kindes",
-            kein: "kurzen Kindes"
+            def: 'des kurzen Kindes',
+            indef: 'eines kurzen Kindes',
+            kein: 'kurzen Kindes'
         },
     },
     {
         noun: [
-            "Kinder", "children", 3, [0]
+            'Kinder', 'children', 3, [0]
         ],
-        adj: ["kurz", ["short"]],
+        adj: ['kurz', ['short']],
         nominative: {
-            def: "die kurzen Kinder",
+            def: 'die kurzen Kinder',
             indef: null,
-            kein: "kurze Kinder"
+            kein: 'kurze Kinder'
         },
         accusative: {
-            def: "die kurzen Kinder",
+            def: 'die kurzen Kinder',
             indef: null,
-            kein: "kurze Kinder"
+            kein: 'kurze Kinder'
         },
         dative: {
-            def: "den kurzen Kinder",
+            def: 'den kurzen Kinder',
             indef: null,
-            kein: "kurzen Kinder"
+            kein: 'kurzen Kinder'
         },
         genitive: {
-            def: "der kurzen Kinder",
+            def: 'der kurzen Kinder',
             indef: null,
-            kein: "kurzer Kinder"
+            kein: 'kurzer Kinder'
         },
     },
 ];
@@ -128,13 +128,13 @@ function printStatement (conjugation) {
     return statement;
 }
 
-describe("Phrase", () => {
-    describe(".conjugate()", () => {
+describe('Phrase', () => {
+    describe('.conjugate()', () => {
         [
-            "nominative",
-            "accusative",
-            "dative",
-            "genitive"
+            'nominative',
+            'accusative',
+            'dative',
+            'genitive'
         ].forEach( (grammarCaseName, grammarCaseIndex) => {
             describe(` - ${grammarCaseName} cases -`, () => {
                 tests.forEach( (test) => {
@@ -185,7 +185,7 @@ describe("Phrase", () => {
                         assert.equal(text, test[grammarCaseName].kein);
                     });
                 });
-            })
+            });
         });
     });
 });

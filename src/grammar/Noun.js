@@ -10,14 +10,14 @@ export default class Noun {
             articleInstance: null,
             adjectiveInstances: []
         });
-    };
+    }
 
-    compose (grammarCase, adj) {
+    compose (grammarCase) {
         const article = this.getArticle(grammarCase);
 
         const adjWords = this.adjectiveInstances.map((adj) => {
             const { text, translations } = adj;
-            const suffix = adj.findSuffix(this.gender, article.articleType, grammarCase)
+            const suffix = adj.findSuffix(this.gender, article.articleType, grammarCase);
             return {
                 type: 'adjective',
                 translations,
@@ -31,7 +31,7 @@ export default class Noun {
                         text: suffix.text
                     }
                 ]
-            }
+            };
         });
 
         const words = [
@@ -70,7 +70,6 @@ export default class Noun {
 
         this.conjugation = nounText;
 
-        const { type, root } = this.articleInstance;
         const article = this.getArticle(grammarCase);
 
 
@@ -89,7 +88,7 @@ export default class Noun {
             grammarCase, articleType,
             objectGender: this.gender
         };
-        console.log(findParams)
+
         const article = find(conjugationTable.articles.list, findParams);
 
         if (article.text === null) throw Error('Invalid `findParams`: ' + JSON.stringify(findParams));

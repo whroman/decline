@@ -5,10 +5,9 @@ export default class Phrase {
             noun: nounInstance
         });
 
-        this.noun.setArticle(articleInstance)
-        this.noun.setAdjective(adjInstance)
+        this.noun.setArticle(articleInstance);
+        this.noun.setAdjective(adjInstance);
     }
-
 
     conjugate (grammarCase) {
         const statement = this.noun.conjugate(grammarCase);

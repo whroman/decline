@@ -1,14 +1,14 @@
-import { random } from "lodash";
+import { random } from 'lodash';
 
-import nouns from "./../../../tables/nouns/data.js";
-import adjectives from "./../../../tables/adjectives/data.js";
-import articles from "./../../../tables/articles/data.js";
-import subjects from "./../../../tables/subjects/data.js";
-import articleTypes from "./../../../tables/articleTypes/data.js";
+import nouns from './../../../tables/nouns/data.js';
+import adjectives from './../../../tables/adjectives/data.js';
+import articles from './../../../tables/articles/data.js';
+import subjects from './../../../tables/subjects/data.js';
+import articleTypes from './../../../tables/articleTypes/data.js';
 
-import Noun from "./../Noun.js";
-import Phrase from "./Phrase.js";
-import Article from "./../Article.js";
+import Noun from './../Noun.js';
+import Phrase from './Phrase.js';
+import Article from './../Article.js';
 
 const AKK_BEGINNINGS = [
     'Ich mag',
@@ -59,7 +59,6 @@ const randomPhrase = {
         }
 
         const rawNoun = getRandomItem(filteredNouns);
-        console.log(rawNoun)
         const noun = new Noun(rawNoun);
         return noun;
     },
@@ -76,7 +75,7 @@ const randomPhrase = {
 
     handleCase: function (category, textOrTransform, transformCon) {
         const phrase = this.getOne(category);
-        const start = typeof textOrTransform === "function" ? textOrTransform(phrase) : textOrTransform;
+        const start = typeof textOrTransform === 'function' ? textOrTransform(phrase) : textOrTransform;
         let { statement } = transformCon(phrase);
 
         return Object.assign(phrase, { start, statement });
@@ -87,7 +86,7 @@ const randomPhrase = {
             const { gender } = phrase.noun;
             phrase.subject = getRandomSubject(2, gender);
             const nounIsPlural = gender === 3;
-            const verb = nounIsPlural ? "sind" : "ist";
+            const verb = nounIsPlural ? 'sind' : 'ist';
             const text = [phrase.subject.deText, verb].join(' ');
             return ucfirst(text);
         }, (phrase) => {
@@ -100,11 +99,14 @@ const randomPhrase = {
     },
 
     accusative: function (category) {
+        const randomItem = getRandomItem(AKK_BEGINNINGS) + ' ';
         const conjugation = this.handleCase(
             category,
-            getRandomItem(AKK_BEGINNINGS) + " ", (phrase) => {
+            randomItem,
+            (phrase) => {
                 return phrase.conjugate(1);
-        });
+            }
+        );
 
         return conjugation;
     }
@@ -129,7 +131,7 @@ function getRandomArticleGivenGender (gender) {
             (nounIsPlural && articleIsIndef) ||
             (!nounIsPlural && articleIsOhne)
         );
-    } while (isInvalid)
+    } while (isInvalid);
 
     const article = getRandomArticleGivenType(articleType);
 

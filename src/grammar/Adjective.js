@@ -51,7 +51,7 @@ export default class Adjective {
                 word.stubbedSuffix.stubbedValue += suffix.text;
             }
         } else {
-            console.warn('No conjugation found: ', ...arguments);
+            throw Error('No conjugation found: ', ...arguments);
         }
 
         return word;

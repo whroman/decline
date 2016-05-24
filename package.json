@@ -3,13 +3,22 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "config": {
+    "lint_client": "",
+    "lint_specs": "--config ./.eslintrc.mocha.js '\"./tables/**/*.spec.js\"' '\"./src/**/*.spec.js\"'"
+  },
   "scripts": {
     "start": "webpack-dev-server --progress --config tasks/dev.webpack.config.js",
     "build": "webpack --progress --config tasks/build.webpack.config.js",
     "test": "babel-node node_modules/.bin/_mocha $(find ./src -name '*.spec.js')",
     "test:watch": "npm test -- --watch",
     "tdd": "npm run test:watch",
-    "lint": "eslint ./tables"
+    "lint": "npm run lint:client && npm run lint:specs",
+    "lint:client": "esw --ignore-pattern *.spec.js --config ./.eslintrc.client.js ./tables ./src",
+    "lint:specs": "esw --config ./.eslintrc.mocha.js './tables/**/*.spec.js' './src/**/*.spec.js'",
+    "lint:watch": "npm run lint:watch:client & npm run lint:watch:specs",
+    "lint:watch:client": "npm run lint:client -- --watch",
+    "lint:watch:specs": "npm run lint:specs -- --watch"
   },
   "author": "",
   "license": "ISC",
@@ -43,6 +52,7 @@
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-mocha": "^2.2.0",
     "eslint-plugin-react": "^5.1.1",
+    "eslint-watch": "^2.1.11",
     "mocha": "^2.3.4",
     "node-sass": "^3.7.0",
     "sass-loader": "^3.2.0",
