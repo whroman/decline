@@ -1,8 +1,8 @@
-import Collection from "./../../util/Collection.js";
+import Collection from "./../util/Collection.js";
 import Articles from "./Articles.js";
 import AdjectiveSuffixes from "./AdjectiveSuffix.js";
 
-class ConjugationTable extends Collection {
+export default class ConjugationTable extends Collection {
 
     constructor () {
         super();
@@ -25,5 +25,3 @@ class ConjugationTable extends Collection {
     }
 
 }
-
-module.exports = ConjugationTable;

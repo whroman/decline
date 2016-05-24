@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-import Tooltip from "rc-tooltip";
 
-import genders from "./../../../fixtures/genders";
+import genders from "./../../../tables/genders/data.js";
 
 const componentClassName = 'AdjectivesExerciseItem';
 

@@ -136,7 +136,9 @@ class Noun {
 }
 
 const instances = [];
-nouns.forEach(([deSingular, dePlural, enSingular, enPlural, gender, categories]) => {
+nouns.forEach(([
+    deSingular, dePlural, enSingular, enPlural, gender, categories
+]) => {
     instances.push(new Noun(deSingular, enSingular, gender, categories));
     instances.push(new Noun(dePlural, enPlural, 3, categories));
 });

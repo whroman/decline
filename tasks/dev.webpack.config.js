@@ -21,7 +21,7 @@ module.exports = {
         include: [
           path.resolve(cwd, "app"),
           path.resolve(cwd, "src"),
-          path.resolve(cwd, "fixtures")
+          path.resolve(cwd, "tables")
         ],
         loader: 'babel',
       },

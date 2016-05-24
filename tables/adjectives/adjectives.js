@@ -1,7 +1,6 @@
-import Adjective from "./../../src/grammar/Adjective/Adjective.js";
-import bykiAdjectives from './bykiAdjectives';
+import Adjective from './Adjective.js';
 
-const adjectives = bykiAdjectives.concat([
+const adjectives = [
     ["kurz", ['short', 'brief']],
     ["lang", ['long']],
     ["hoch", ['high', 'tall']],
@@ -101,12 +100,6 @@ const adjectives = bykiAdjectives.concat([
     ['opak',        ['opaque']],
     ['durchsichtig',['transparent', 'see-through']]
 
-]);
+];
 
-console.log(adjectives.length)
-
-const instances = adjectives.map((adj) => {
-    return new Adjective(...adj);
-});
-
-export default instances;
+export default adjectives

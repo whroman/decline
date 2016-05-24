@@ -1,5 +1,5 @@
 import { find } from 'lodash';
-import conjugationTable from "./../../../fixtures/conjugationTable.js";
+import conjugationTable from "./../../tables/conjugationTable/data.js";
 
 export default class Article {
 

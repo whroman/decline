@@ -1,9 +1,9 @@
 const assert = require("chai").assert;
 
 const Phrase = require("./Phrase.js").default;
-const Adjective = require("./../Adjective/Adjective.js").default;
-const Article = require("./../Article/Article.js").default;
-const Noun = require("./../Noun/Noun.js").default;
+const Adjective = require("./../../../tables/adjectives/Adjective.js").default;
+const Article = require("./../Article.js").default;
+const Noun = require("./../Noun.js").default;
 const genders = ["male", "female", "neutral", "plural"];
 
 const tests = [

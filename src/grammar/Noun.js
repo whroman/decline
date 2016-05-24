@@ -1,5 +1,5 @@
 import { find } from 'lodash';
-import conjugationTable from "./../../../fixtures/conjugationTable.js";
+import conjugationTable from "./../../tables/conjugationTable/data.js";
 
 export default class Noun {
 
@@ -89,6 +89,7 @@ export default class Noun {
             grammarCase, articleType,
             objectGender: this.gender
         };
+        console.log(findParams)
         const article = find(conjugationTable.articles.list, findParams);
 
         if (article.text === null) throw Error('Invalid `findParams`: ' + JSON.stringify(findParams));

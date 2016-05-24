@@ -1,5 +1,4 @@
-
-class Collection {
+export default class Collection {
 
     addMany (arrayToAdd) {
         arrayToAdd.forEach((argument) => {
@@ -8,5 +7,3 @@ class Collection {
     }
 
 }
-
-module.exports = Collection;

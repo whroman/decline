@@ -1,14 +1,14 @@
 import { random } from "lodash";
 
-import nouns from "./../../../fixtures/words/nouns.js";
-import adjectives from "./../../../fixtures/words/adjectives.js";
-import articles from "./../../../fixtures/words/articles";
-import subjects from "./../../../fixtures/words/subjects";
-import articleTypes from "./../../../fixtures/articleTypes";
+import nouns from "./../../../tables/nouns/data.js";
+import adjectives from "./../../../tables/adjectives/data.js";
+import articles from "./../../../tables/articles/data.js";
+import subjects from "./../../../tables/subjects/data.js";
+import articleTypes from "./../../../tables/articleTypes/data.js";
 
-import Noun from "./../Noun/Noun.js";
+import Noun from "./../Noun.js";
 import Phrase from "./Phrase.js";
-import Article from "./../Article/Article.js";
+import Article from "./../Article.js";
 
 const AKK_BEGINNINGS = [
     'Ich mag',
@@ -59,6 +59,7 @@ const randomPhrase = {
         }
 
         const rawNoun = getRandomItem(filteredNouns);
+        console.log(rawNoun)
         const noun = new Noun(rawNoun);
         return noun;
     },
@@ -135,4 +136,4 @@ function getRandomArticleGivenGender (gender) {
     return article;
 }
 
-module.exports = randomPhrase;
+export default randomPhrase;

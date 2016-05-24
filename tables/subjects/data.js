@@ -63,11 +63,9 @@ const RAW_SUBJECTS = [
 ];
 
 class Subject {
-
     constructor (deText, enText, types, genders) {
         Object.assign(this, { deText, enText, types, genders});
     }
-
 }
 
 const subjects = RAW_SUBJECTS.map((subject) => new Subject(...subject))

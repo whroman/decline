@@ -1,6 +1,6 @@
-const Collection = require("./Collection.js");
+import Collection from './Collection.js';
 
-class UniqueList extends Collection {
+export default class UniqueList extends Collection {
 
     constructor (Model) {
         super();
@@ -15,5 +15,3 @@ class UniqueList extends Collection {
     }
 
 }
-
-module.exports = UniqueList;

@@ -1,9 +1,9 @@
-import articleTypes from "./../../fixtures/articleTypes";
-import genders from "./../../fixtures/genders";
+import articleTypes from "./../articleTypes/data";
+import genders from "./../genders/data";
 
 const grammarCases = ["nominative", "accusative", "dative", "genitive"];
 
-class GrammarConstruct {
+export default class GrammarConstruct {
 
     constructor (text, objectGender, articleType, grammarCase) {
         this.text = text;
@@ -25,5 +25,3 @@ class GrammarConstruct {
     }
 
 }
-
-module.exports = GrammarConstruct;
