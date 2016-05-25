@@ -2,6 +2,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const webpackConfig = require('./dev.webpack.config.js');
 
@@ -15,7 +16,8 @@ webpackConfig.plugins = [
         compress: {
             warnings: false
         }
-    })
+    }),
+    new ExtractTextPlugin('build.css')
 ];
 
 module.exports = webpackConfig;

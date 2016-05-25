@@ -2,9 +2,9 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const cwd = process.cwd();
-
 const DIST_PATH = path.join(cwd, 'dist');
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: DIST_PATH,
     publicPath: 'dist/',
-    filename: 'application.js'
+    filename: 'build.js'
   },
   module: {
     loaders: [
@@ -26,12 +26,12 @@ module.exports = {
         loader: 'babel',
       },
       {
-        test: /\.json$/,
+        test: /\.json$/i,
         loader: 'json'
       },
       {
-        test: /\.scss$/,
-        loaders: ["style", "css?sourceMap", "sass?sourceMap"]
+        test: /\.scss$/i,
+        loader: ExtractTextPlugin.extract(["css?sourceMap", "sass?sourceMap"])
       }
     ]
   },
@@ -46,7 +46,8 @@ module.exports = {
       'process.env': {
         'NODE_ENV': JSON.stringify('development')
       },
-    })
+    }),
+    new ExtractTextPlugin('build.css')
   ],
   devtool: 'source-map',
   devServer: {
