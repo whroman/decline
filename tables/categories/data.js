@@ -3,7 +3,9 @@ const categories = [
     'Familie',
     'Tiere',
     'Körper',
-    'Kinder aufziehen'
+    'Kinder aufziehen',
+    'Essen ausgehen',
+    'In der Küche'
 ];
 
 export default categories;
