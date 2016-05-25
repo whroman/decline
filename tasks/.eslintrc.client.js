@@ -2,7 +2,8 @@ module.exports = {
     "parser": "babel-eslint", // I want to use babel-eslint for parsing!
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "node": true
     },
     "plugins": [
         "react"
