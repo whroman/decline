@@ -5,23 +5,23 @@ import ExerciseCreationPage from './components/pages/ExerciseCreation/ExerciseCr
 import AboutPage from './components/pages/About/AboutPage';
 
 export default {
-  component: PageWrapper,
-  childRoutes: [
-    {
-        component: AdjectivesTrainerPage,
-        path: '/'
-    },
-    {
-        component: ExerciseItemDetailPage,
-        path: '/detail/:id'
-    },
-    {
-        component: ExerciseCreationPage,
-        path: '/create'
-    },
-    {
-        component: AboutPage,
-        path: '/about'
-    },
-  ]
+    component: PageWrapper,
+    childRoutes: [
+        {
+            component: AdjectivesTrainerPage,
+            path: '/'
+        },
+        {
+            component: ExerciseItemDetailPage,
+            path: '/detail/:id'
+        },
+        {
+            component: ExerciseCreationPage,
+            path: '/create'
+        },
+        {
+            component: AboutPage,
+            path: '/about'
+        },
+    ]
 };

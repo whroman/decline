@@ -1,5 +1,6 @@
 function presentPhrase (phrase) {
     const { start, statement, noun } = phrase;
+
     const untilAdj = [
         start,
         statement[0].text
@@ -10,9 +11,9 @@ function presentPhrase (phrase) {
     const stub = Array(adjSuffix.length + 1).join('_');
     const stubbedValue = adjSuffix;
     const adjective = statement[1];
-    adjective.text = statement[1].chunks[0].text
+    adjective.text = statement[1].chunks[0].text;
 
-    if(!statement[2].text) console.log('FUC', statement)
+    if (!statement[2].text) throw Error('shouldn\'t occur');
 
     const present = {
         untilAdj, stub, stubbedValue, adjective,
@@ -22,7 +23,7 @@ function presentPhrase (phrase) {
             translations: noun.translations
         },
         key: untilAdj + stub + adjective.text
-     };
+    };
 
     return present;
 }

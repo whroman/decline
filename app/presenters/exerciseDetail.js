@@ -23,10 +23,10 @@ const CATEGORIES = [
 export default function presentPhrase (phrase) {
     const { gender, translations, categories, adjectiveInstances, articleInstance } = phrase.noun;
     const statement = phrase.statement.map((item) => {
-        if (!item.chunks) return item.text
+        if (!item.chunks) return item.text;
         const text = item.chunks
             .map((chunk) => chunk.text)
-            .join('')
+            .join('');
         return text;
     }).join(' ');
 
@@ -39,6 +39,6 @@ export default function presentPhrase (phrase) {
         adjEnglish: adjectiveInstances[0].translations.eng.join(', '),
         articleType: ARTICLE_TYPES[articleInstance.type],
         categories: categories.map((id) => CATEGORIES[id]).join(', ')
-    }
+    };
     return present;
 }

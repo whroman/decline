@@ -14,6 +14,6 @@ const rootReducer = combineReducers({
 });
 
 export default function configureStore(initialState = {}) {
-  const store = createStore(rootReducer, initialState, storeEnhancer);
-  return store;
+    const store = createStore(rootReducer, initialState, storeEnhancer);
+    return store;
 }

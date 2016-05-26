@@ -50,7 +50,6 @@ const reducer = handleActions({
         const { amount, kasus, kategorie, gender } = action.payload;
 
         const newState = Object.assign({}, state);
-        console.log(newState)
         if (typeof kasus === 'string') newState.kasus = kasus;
         if (typeof kategorie === 'string') newState.kategorie = kategorie;
         if (typeof gender === 'string') newState.gender = gender;
@@ -63,7 +62,7 @@ const reducer = handleActions({
     },
 
     [TYPES.REPLACE]: (state, action) => {
-        const amount = action.payload
+        const amount = action.payload;
         const { collection, kasus, kategorie, gender } = state;
         const replacementItems = getRandomPhrases({ amount, kasus, kategorie, gender });
         const newCollection = collection.slice(amount).concat(replacementItems);

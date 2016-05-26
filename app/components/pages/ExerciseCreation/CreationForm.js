@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import Dropdown from 'react-dropdown'
-import { hashHistory } from 'react-router'
+import { hashHistory } from 'react-router';
 import { find } from 'lodash';
 
 import categories from 'tables/categories/data';
+import CreationDropdown from './CreationDropdown';
 import './CreationForm.scss';
 
 const GENDER_OPTIONS = [
@@ -57,8 +57,6 @@ KATEGORIE_OPTIONS.unshift({
     value: Infinity
 });
 
-
-
 function getInitialValue (options, value) {
     return find(options, { value }) || options[0];
 }
@@ -68,6 +66,9 @@ export default class CreationForm extends Component {
     static get propTypes() {
         return {
             create: PropTypes.func,
+            kasus:  PropTypes.string,
+            kategorie:  PropTypes.string,
+            gender:  PropTypes.string,
         };
     }
 
@@ -76,8 +77,10 @@ export default class CreationForm extends Component {
         this.state = {
             kasus: null,
             kategorie: null,
-            gender: null
+            gender: null,
         };
+
+        this.updateDropdownValue = this.updateDropdownValue.bind(this);
     }
 
     componentWillMount () {
@@ -89,88 +92,65 @@ export default class CreationForm extends Component {
         });
     }
 
-  render () {
-    const { kasus, kategorie, gender } = this.state;
-    const initialKasus = getInitialValue(KASUS_OPTIONS, kasus);
-    const initialKategorie = getInitialValue(KATEGORIE_OPTIONS, kategorie);
-    const initialGender = getInitialValue(GENDER_OPTIONS, gender);
+    render () {
+        const { kasus, kategorie, gender } = this.state;
+        const initialKasus = getInitialValue(KASUS_OPTIONS, kasus);
+        const initialKategorie = getInitialValue(KATEGORIE_OPTIONS, kategorie);
+        const initialGender = getInitialValue(GENDER_OPTIONS, gender);
 
-    return (
-        <div className='CreationForm' >
-            <h1>Configure</h1>
-            <hr />
-            <br />
-            <div className='dropdowns'>
-                <div className='dropdown'>
-                    <div className='name'>
-                        <div>Kasus</div>
-                    </div>
-                    <div className='ReactDropdown'>
-                        <Dropdown
-                            options={ KASUS_OPTIONS }
-                            onChange={ this.handleKasusDropdownChange.bind(this) }
-                            value={ initialKasus }
-                        />
-                    </div>
+        return (
+            <div className='CreationForm' >
+                <h1>{ 'Configure' }</h1>
+                <hr />
+                <br />
+                <div className='dropdowns'>
+                    <CreationDropdown
+                        label='Kasus'
+                        options={ KASUS_OPTIONS }
+                        namespace={ 'kasus' }
+                        updateDropdownValue={ this.updateDropdownValue }
+                        initialValue={ initialKasus }
+                    />
+                    <CreationDropdown
+                        label='Genus'
+                        options={ GENDER_OPTIONS }
+                        namespace={ 'gender' }
+                        updateDropdownValue={ this.updateDropdownValue }
+                        initialValue={ initialGender }
+                    />
+                    <CreationDropdown
+                        label='Kategorie'
+                        options={ KATEGORIE_OPTIONS }
+                        namespace={ 'kategorie' }
+                        updateDropdownValue={ this.updateDropdownValue }
+                        initialValue={ initialKategorie }
+                    />
                 </div>
-                <div className='dropdown'>
-                    <div className='name'>
-                        <div>Genus</div>
-                    </div>
-                    <div className='ReactDropdown'>
-                        <Dropdown
-                            options={ GENDER_OPTIONS }
-                            onChange={ this.handleGenderDropdownChange.bind(this) }
-                            value={ initialGender }
-                        />
-                    </div>
-                </div>
-                <div className='dropdown'>
-                    <div className='name'>
-                        <div>Kategorie</div>
-                    </div>
-                    <div className='ReactDropdown'>
-                        <Dropdown
-                            options={ KATEGORIE_OPTIONS }
-                            onChange={ this.handleKategorieDropdownChange.bind(this) }
-                            value={ initialKategorie }
-                        />
+                <div className='text-center'>
+                    <div
+                        className='button'
+                        onClick={ this.handleClick.bind(this) }
+                    >
+                        { 'Save & Create' }
                     </div>
                 </div>
             </div>
-            <div className='text-center'>
-                <div
-                    className='button'
-                    onClick={ this.handleClick.bind(this) }
-                >
-                    Save & Create
-                </div>
-            </div>
-        </div>
-    );
-  }
+        );
+    }
 
-  handleKasusDropdownChange (event) {
-    this.setState({ kasus: event.value });
-  }
+    updateDropdownValue(event, namespace) {
+        this.setState({ [namespace]: event.value });
+    }
 
-  handleKategorieDropdownChange (event) {
-    this.setState({ kategorie: event.value });
-  }
+    handleClick () {
+        const { kasus, kategorie, gender } = this.state;
 
-  handleGenderDropdownChange (event) {
-    this.setState({ gender: event.value });
-  }
+        this.props.create({
+            amount: 8,
+            kasus, gender, kategorie
+        });
 
-  handleClick () {
-    const { kasus, kategorie, gender } = this.state;
-
-    this.props.create({
-        amount: 8,
-        kasus, gender, kategorie
-    });
-
-    hashHistory.push('#');
-  }
+        hashHistory.push('#');
+    }
 
 }

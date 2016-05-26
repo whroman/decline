@@ -9,10 +9,11 @@ import './styling/index.scss';
 
 const store = new Store();
 const history = syncHistoryWithStore(hashHistory, store);
+const routerProps = { routes, history };
 
 render(
-  <Provider store={ store }>
-    <Router history={ history } routes={ routes } />
-  </Provider>,
-  document.getElementById('app')
+    <Provider store={ store } >
+        <Router { ...routerProps } />
+    </Provider>,
+    document.getElementById('app')
 );

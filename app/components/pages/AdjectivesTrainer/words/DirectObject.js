@@ -1,39 +1,39 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import genders from 'tables/genders/data.js';
 import Tooltip from 'app/components/Tooltip//Tooltip';
-import WithTooltip from "./WithTooltip";
+import WithTooltip from './WithTooltip';
 
 export default class DirectObject extends WithTooltip {
 
-  static get propTypes() {
-    return {
-      text: PropTypes.string.isRequired,
-      gender: PropTypes.string.isRequired,
-      translations: PropTypes.arrayOf(PropTypes.string).isRequired,
-    };
-  }
+    static get propTypes() {
+        return {
+            text: PropTypes.string.isRequired,
+            gender: PropTypes.string.isRequired,
+            translations: PropTypes.arrayOf(PropTypes.string).isRequired,
+        };
+    }
 
-  renderTranslation(translation) {
-    return (<div key={ translation }>{ translation }</div>);
-  }
+    renderTranslation(translation) {
+        return (<div key={ translation }>{ translation }</div>);
+    }
 
-  render() {
-    const { text, gender, translations } = this.props;
+    render() {
+        const { text, gender, translations } = this.props;
 
-    return (
-      <span
-        className='triggersTooltip'
-        onMouseEnter={ this.showTooltip.bind(this) }
-        onMouseLeave={ this.hideTooltip.bind(this) }
-      >
-        <Tooltip show={ this.state.show } >
-          <strong>Direktes Objekt</strong>
-          <div>{ `{ ${genders[gender]} }` }</div>
-          { translations.map(this.renderTranslation.bind(this)) }
-        </Tooltip>
-        <span>{ text }</span>
-      </span>
-    );
-  }
+        return (
+            <span
+                className='triggersTooltip'
+                onMouseEnter={ this.showTooltip.bind(this) }
+                onMouseLeave={ this.hideTooltip.bind(this) }
+            >
+                <Tooltip show={ this.state.show } >
+                    <strong>{ 'Direktes Objekt' }</strong>
+                    <div>{ `{ ${genders[gender]} }` }</div>
+                    { translations.map(this.renderTranslation.bind(this)) }
+                </Tooltip>
+                <span>{ text }</span>
+            </span>
+        );
+    }
 
 }

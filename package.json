@@ -10,7 +10,7 @@
     "test:watch": "npm test -- --watch",
     "tdd": "npm run test:watch",
     "lint": "npm run lint:client && npm run lint:specs",
-    "lint:client": "esw --ignore-pattern *.spec.js --config ./tasks/.eslintrc.client.js ./tables ./src ./tasks",
+    "lint:client": "esw --ignore-pattern *.spec.js --config ./tasks/.eslintrc.client.js ./tables ./src ./tasks ./app",
     "lint:specs": "esw --config ./tasks/.eslintrc.mocha.js './tables/**/*.spec.js' './src/**/*.spec.js'",
     "lint:watch": "run-p lint:watch:client lint:watch:specs",
     "lint:watch:client": "npm run lint:client -- --watch",

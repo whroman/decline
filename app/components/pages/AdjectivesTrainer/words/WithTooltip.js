@@ -1,21 +1,21 @@
-import React, { Component, PropTypes } from 'react';
+import { Component } from 'react';
 
 export default class WithTooltip extends Component {
 
-  constructor () {
-    super();
+    constructor () {
+        super();
 
-    this.state = {
-      show: false
-    };
-  }
+        this.state = {
+            show: false
+        };
+    }
 
-  showTooltip() {
-    this.setState({ show: true });
-  }
+    showTooltip() {
+        this.setState({ show: true });
+    }
 
-  hideTooltip() {
-    this.setState({ show: false });
-  }
+    hideTooltip() {
+        this.setState({ show: false });
+    }
 
 }
