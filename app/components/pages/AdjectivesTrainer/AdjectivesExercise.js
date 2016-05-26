@@ -6,53 +6,53 @@ import './AdjectivesExercise.scss';
 
 export default class AdjectivesExercise extends Component {
 
-  static get propTypes() {
-    return {
-      phrases: PropTypes.arrayOf(PropTypes.shape),
-      replace: PropTypes.func
-    };
-  }
-
-  constructor () {
-    super();
-    this.state = {
-      focusedKey: 0
+    static get propTypes() {
+        return {
+            phrases: PropTypes.arrayOf(PropTypes.shape),
+            replace: PropTypes.func.required
+        };
     }
-  }
 
-  renderPhrase (phrase, index) {
-    const { replace } = this.props;
-    return (
-      <AdjectivesExerciseItem
-        uid={ index }
-        phrase={ phrase }
-        shouldFocus={ this.state.focusedKey === phrase.key }
-        key={ phrase.key }
-        setFocusedItem={ this.setFocusedItem.bind(this) }
-        replace={ replace }
-      />
-    );
-  }
+    constructor () {
+        super();
+        this.state = {
+            focusedKey: 0
+        };
+    }
 
-  render () {
-    return (
-      <div className='AdjectivesExercise'>
-          <ReactCSSTransitionGroup
-            transitionName="example"
-            component='ul'
-            transitionEnterTimeout={ 300 }
-            transitionLeaveTimeout={ 300 }
-          >
-            { this.props.phrases.map(this.renderPhrase.bind(this)) }
-          </ReactCSSTransitionGroup>
-      </div>
-    );
-  }
+    renderPhrase (phrase, index) {
+        const { replace } = this.props;
+        return (
+            <AdjectivesExerciseItem
+                uid={ index }
+                phrase={ phrase }
+                shouldFocus={ this.state.focusedKey === phrase.key }
+                key={ phrase.key }
+                setFocusedItem={ this.setFocusedItem.bind(this) }
+                replace={ replace }
+            />
+        );
+    }
 
-  setFocusedItem (uid) {
-    this.setState({
-      focusedKey: uid
-    });
-  }
+    render () {
+        return (
+            <div className='AdjectivesExercise'>
+                    <ReactCSSTransitionGroup
+                        transitionName='example'
+                        component='ul'
+                        transitionEnterTimeout={ 300 }
+                        transitionLeaveTimeout={ 300 }
+                    >
+                        { this.props.phrases.map(this.renderPhrase.bind(this)) }
+                    </ReactCSSTransitionGroup>
+            </div>
+        );
+    }
+
+    setFocusedItem (uid) {
+        this.setState({
+            focusedKey: uid
+        });
+    }
 
 }

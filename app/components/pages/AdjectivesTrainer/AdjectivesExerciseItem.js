@@ -1,9 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
-import genders from 'tables/genders/data.js';
-import AdjectiveRoot from "./words/AdjectiveRoot"
-import DirectObject from "./words/DirectObject"
+import AdjectiveRoot from './words/AdjectiveRoot';
+import DirectObject from './words/DirectObject';
 
 const componentClassName = 'AdjectivesExerciseItem';
 
@@ -14,7 +13,10 @@ export default class AdjectivesExerciseItem extends Component {
     static get propTypes() {
         return {
             phrase: PropTypes.shape(),
-            replace: PropTypes.func
+            replace: PropTypes.func,
+            setFocusedItem: PropTypes.func.required,
+            shouldFocus: PropTypes.func.required,
+            uid: PropTypes.number.required,
         };
     }
 
@@ -29,7 +31,7 @@ export default class AdjectivesExerciseItem extends Component {
 
     render () {
         const { phrase, uid, setFocusedItem, shouldFocus } = this.props;
-        const { untilAdj, key, adjective, noun } = phrase
+        const { untilAdj, key, adjective, noun } = phrase;
 
         const { isFilled, isCorrect } = this.state;
         let inputState = '';
@@ -58,7 +60,7 @@ export default class AdjectivesExerciseItem extends Component {
                         translations={ noun.translations.eng }
                         gender={ noun.gender }
                     />
-                    <span>.</span>
+                    <span>{ '.' }</span>
                 </div>
                 { this.renderExerciseActions(uid) }
             </div>
@@ -67,7 +69,7 @@ export default class AdjectivesExerciseItem extends Component {
 
     renderInput () {
         const { phrase, uid, setFocusedItem } = this.props;
-        const { stub, key } = phrase
+        const { stub, key } = phrase;
         const numOfChars = stub.length;
 
         return (
@@ -83,7 +85,7 @@ export default class AdjectivesExerciseItem extends Component {
                     onBlur={ this.handleInputBlur.bind(this) }
                     tabIndex={ uid + 1 }
                 />
-                <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
+                <div className='placeholder'>{ Array(numOfChars + 1).join('_') }</div>
             </strong>
         );
     }
