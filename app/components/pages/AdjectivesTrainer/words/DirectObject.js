@@ -13,6 +13,10 @@ export default class DirectObject extends WithTooltip {
     };
   }
 
+  renderTranslation(translation) {
+    return (<div key={ translation }>{ translation }</div>);
+  }
+
   render() {
     const { text, gender, translations } = this.props;
 
@@ -25,9 +29,7 @@ export default class DirectObject extends WithTooltip {
         <Tooltip show={ this.state.show } >
           <strong>Direktes Objekt</strong>
           <div>{ `{ ${genders[gender]} }` }</div>
-          { translations.map((translation) => {
-            return (<div key={ translation }>{ translation }</div>);
-          }) }
+          { translations.map(this.renderTranslation.bind(this)) }
         </Tooltip>
         <span>{ text }</span>
       </span>
