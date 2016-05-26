@@ -82,45 +82,42 @@ export default class CreationForm extends Component {
             <h1>Configure</h1>
             <hr />
             <br />
-            <table>
-                <tbody>
-                    <tr>
-                        <td className='name'>
-                            <div>Kasus</div>
-                        </td>
-                        <td
-                            className='ReactDropdown'
-                        >
-                            <Dropdown
-                                options={ KASUS_OPTIONS }
-                                onChange={ this.handleKasusDropdownChange.bind(this) }
-                                value={ initialKasus }
-                            />
-                        </td>
-
-                        <td className='name'>
-                            <div>Kategorie</div>
-                        </td>
-                        <td
-                            className='ReactDropdown'
-                        >
-                            <Dropdown
-                                options={ KATEGORIE_OPTIONS }
-                                onChange={ this.handleKategorieDropdownChange.bind(this) }
-                                value={ initialKategorie }
-                            />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <br />
-            <br />
+            <div className='dropdowns'>
+                <div className='dropdown'>
+                    <div className='name'>
+                        <div>Kasus</div>
+                    </div>
+                    <div
+                        className='ReactDropdown'
+                    >
+                        <Dropdown
+                            options={ KASUS_OPTIONS }
+                            onChange={ this.handleKasusDropdownChange.bind(this) }
+                            value={ initialKasus }
+                        />
+                    </div>
+                </div>
+                <div className='dropdown'>
+                    <div className='name'>
+                        <div>Kategorie</div>
+                    </div>
+                    <div
+                        className='ReactDropdown'
+                    >
+                        <Dropdown
+                            options={ KATEGORIE_OPTIONS }
+                            onChange={ this.handleKategorieDropdownChange.bind(this) }
+                            value={ initialKategorie }
+                        />
+                    </div>
+                </div>
+            </div>
             <div className='text-center'>
                 <div
                     className='button'
                     onClick={ this.handleClick.bind(this) }
                 >
-                    Create Exercise Set
+                    Save & Create
                 </div>
             </div>
         </div>

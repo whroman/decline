@@ -14,6 +14,7 @@ export default class AdjectivesExerciseItem extends Component {
   static get propTypes() {
     return {
       phrase: PropTypes.shape(),
+      replace: PropTypes.func
     };
   }
 

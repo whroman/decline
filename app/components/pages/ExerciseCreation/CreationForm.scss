@@ -3,16 +3,27 @@
 .CreationForm {
     font-size: 14px;
 
-    td {
+    .dropdowns {
         vertical-align: middle;
+        float: left;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .dropdown {
+        display: inline-block;
+        float: left;
+
+        &:nth-of-type(even) {
+            float: right;
+        }
     }
 
     .name {
-        padding-right: 1rem;
+        padding-bottom: 4px;
     }
 
     .ReactDropdown {
-        padding-right: 3em;
         @include Dropdown();
     }
 }

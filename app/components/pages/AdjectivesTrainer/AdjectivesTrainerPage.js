@@ -16,17 +16,13 @@ export class AdjectivesTrainer extends Component {
   }
 
   componentWillMount () {
-    if (this.props.phrases.length > 0) return;
-
-    this.handleClick();
-  }
-
-  handleClick () {
-    this.props.create({ amount: 8 });
+    const { phrases, create } = this.props;
+    if (phrases.length > 0) return;
+    create({ amount: 8 });
   }
 
   render () {
-    const { create, replace, phrases } = this.props;
+    const { replace, phrases } = this.props;
 
     return (
       <div className='row'>
