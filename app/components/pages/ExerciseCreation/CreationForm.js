@@ -5,6 +5,29 @@ import { find } from 'lodash';
 
 import './CreationForm.scss';
 
+const GENDER_OPTIONS = [
+    {
+        label: 'Gemischt',
+        value: null
+    },
+    {
+        label: 'Maskulin',
+        value: 0
+    },
+    {
+        label: 'Feminin',
+        value: 1
+    },
+    {
+        label: 'Neutrum',
+        value: 2
+    },
+    {
+        label: 'Pluralisch',
+        value: 3
+    }
+];
+
 const KASUS_OPTIONS = [
     {
         label: 'Gemischt',
@@ -47,6 +70,10 @@ const KATEGORIE_OPTIONS = [
     }
 ];
 
+function getInitialValue (options, value) {
+    return find(options, { value }) || options[0];
+}
+
 export default class CreationForm extends Component {
 
     static get propTypes() {
@@ -59,23 +86,21 @@ export default class CreationForm extends Component {
         super();
         this.state = {
             kasus: null,
-            kategorie: null
+            kategorie: null,
+            gender: null
         };
     }
 
     componentWillMount () {
-        const { kasus, kategorie } = this.props;
-        this.setState({
-            kasus: kasus,
-            kategorie: kategorie
-        });
-
+        const { kasus, kategorie, gender } = this.props;
+        this.setState({ kasus, kategorie, gender });
     }
 
   render () {
-    const { kasus, kategorie } = this.state;
-    const initialKasus = find(KASUS_OPTIONS, { value: kasus }) || KASUS_OPTIONS[0];
-    const initialKategorie = find(KATEGORIE_OPTIONS, { value: kategorie }) || KATEGORIE_OPTIONS[0];
+    const { kasus, kategorie, gender } = this.state;
+    const initialKasus = getInitialValue(KASUS_OPTIONS, kasus);
+    const initialKategorie = getInitialValue(KATEGORIE_OPTIONS, kategorie);
+    const initialGender = getInitialValue(GENDER_OPTIONS, gender);
 
     return (
         <div className='CreationForm' >
@@ -87,9 +112,7 @@ export default class CreationForm extends Component {
                     <div className='name'>
                         <div>Kasus</div>
                     </div>
-                    <div
-                        className='ReactDropdown'
-                    >
+                    <div className='ReactDropdown'>
                         <Dropdown
                             options={ KASUS_OPTIONS }
                             onChange={ this.handleKasusDropdownChange.bind(this) }
@@ -99,11 +122,21 @@ export default class CreationForm extends Component {
                 </div>
                 <div className='dropdown'>
                     <div className='name'>
+                        <div>Genus</div>
+                    </div>
+                    <div className='ReactDropdown'>
+                        <Dropdown
+                            options={ GENDER_OPTIONS }
+                            onChange={ this.handleGenderDropdownChange.bind(this) }
+                            value={ initialGender }
+                        />
+                    </div>
+                </div>
+                <div className='dropdown'>
+                    <div className='name'>
                         <div>Kategorie</div>
                     </div>
-                    <div
-                        className='ReactDropdown'
-                    >
+                    <div className='ReactDropdown'>
                         <Dropdown
                             options={ KATEGORIE_OPTIONS }
                             onChange={ this.handleKategorieDropdownChange.bind(this) }
@@ -125,22 +158,22 @@ export default class CreationForm extends Component {
   }
 
   handleKasusDropdownChange (event) {
-    this.setState({
-        kasus: event.value
-    });
+    this.setState({ kasus: event.value });
   }
 
   handleKategorieDropdownChange (event) {
-    this.setState({
-        kategorie: event.value
-    });
+    this.setState({ kategorie: event.value });
+  }
+
+  handleGenderDropdownChange (event) {
+    this.setState({ gender: event.value });
   }
 
   handleClick () {
-    const { kasus, kategorie } = this.state;
+    const { kasus, kategorie, gender } = this.state;
     this.props.create({
         amount: 8,
-        kasus, kategorie
+        kasus, kategorie, gender
     });
 
     hashHistory.push('#');

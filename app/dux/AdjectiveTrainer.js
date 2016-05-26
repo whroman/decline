@@ -20,7 +20,8 @@ export { create, replace };
 const initialState = Object.assign({
     collection: [],
     kasus: null,
-    kategorie: null
+    kategorie: null,
+    gender: null
 }, loadState());
 
 
@@ -31,8 +32,8 @@ function getRandomKasus () {
 }
 
 function storeState (state) {
-    const { kasus, kategorie } = state;
-    const toStore = { kasus, kategorie };
+    const { kasus, kategorie, gender } = state;
+    const toStore = { kasus, kategorie, gender };
     const stringState = JSON.stringify(toStore);
     window.localStorage.setItem('conjugate', stringState);
 }
@@ -50,7 +51,8 @@ const reducer = handleActions({
         const {
             amount,
             kasus,
-            kategorie
+            kategorie,
+            gender
         } = action.payload;
 
         const collection = getRandomPhrases(amount, kasus, kategorie);
@@ -58,6 +60,7 @@ const reducer = handleActions({
 
         if (kasus !== undefined) newState.kasus = kasus;
         if (kategorie !== undefined) newState.kategorie = kategorie;
+        if (gender !== undefined) newState.gender = gender;
 
         storeState(newState);
         return newState;
