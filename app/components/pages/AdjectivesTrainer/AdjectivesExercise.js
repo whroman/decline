@@ -9,7 +9,7 @@ export default class AdjectivesExercise extends Component {
     static get propTypes() {
         return {
             phrases: PropTypes.arrayOf(PropTypes.shape),
-            replace: PropTypes.func.required
+            replace: PropTypes.func.isRequired
         };
     }
 

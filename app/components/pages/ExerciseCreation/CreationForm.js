@@ -103,28 +103,36 @@ export default class CreationForm extends Component {
                 <h1>{ 'Configure' }</h1>
                 <hr />
                 <br />
-                <div className='dropdowns'>
-                    <CreationDropdown
-                        label='Kasus'
-                        options={ KASUS_OPTIONS }
-                        namespace={ 'kasus' }
-                        updateDropdownValue={ this.updateDropdownValue }
-                        initialValue={ initialKasus }
-                    />
-                    <CreationDropdown
-                        label='Genus'
-                        options={ GENDER_OPTIONS }
-                        namespace={ 'gender' }
-                        updateDropdownValue={ this.updateDropdownValue }
-                        initialValue={ initialGender }
-                    />
-                    <CreationDropdown
-                        label='Kategorie'
-                        options={ KATEGORIE_OPTIONS }
-                        namespace={ 'kategorie' }
-                        updateDropdownValue={ this.updateDropdownValue }
-                        initialValue={ initialKategorie }
-                    />
+                <div className='dropdowns row'>
+                    <div className='column small-4'>
+                        <CreationDropdown
+                            label='Kasus'
+                            options={ KASUS_OPTIONS }
+                            namespace={ 'kasus' }
+                            updateDropdownValue={ this.updateDropdownValue }
+                            initialValue={ initialKasus }
+                        />
+                    </div>
+
+                    <div className='column small-4'>
+                        <CreationDropdown
+                            label='Genus'
+                            options={ GENDER_OPTIONS }
+                            namespace={ 'gender' }
+                            updateDropdownValue={ this.updateDropdownValue }
+                            initialValue={ initialGender }
+                        />
+                    </div>
+
+                    <div className='column small-4'>
+                        <CreationDropdown
+                            label='Kategorie'
+                            options={ KATEGORIE_OPTIONS }
+                            namespace={ 'kategorie' }
+                            updateDropdownValue={ this.updateDropdownValue }
+                            initialValue={ initialKategorie }
+                        />
+                    </div>
                 </div>
                 <div className='text-center'>
                     <div

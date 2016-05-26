@@ -6,7 +6,6 @@ export default class PageWrapper extends Component {
 
     static get propTypes() {
         return {
-            create: PropTypes.func.isRequired,
             children: PropTypes.element.isRequired
         };
     }

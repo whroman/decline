@@ -4,15 +4,13 @@
     font-size: 14px;
 
     .dropdowns {
-        vertical-align: middle;
-        float: left;
-        width: 100%;
         margin-bottom: 40px;
     }
 
     .dropdown {
         display: inline-block;
         float: left;
+        width: 100%;
 
         &:nth-of-type(even) {
             float: right;

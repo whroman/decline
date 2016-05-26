@@ -1,11 +1,11 @@
-$Dropdown-width: 180px;
+$Dropdown-width: 100%;
 $Dropdown-vertical-padding: 8px;
 $Dropdown-horizontal-padding: 16px;
 $Dropdown-arrow-width: 12px;
 $Dropdown-arrow-height: 6px;
 $Dropdown-border: 1px solid #999;
 $Dropdown-color-bg: rgba(0,0,0,0.1);
-$Dropdown-color-option-select: #f2f9fc;
+$Dropdown-color-option-select: #e2e9ec;
 $Dropdown-color-text: #333;
 
 @mixin Dropdown () {

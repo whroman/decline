@@ -13,10 +13,10 @@ export default class AdjectivesExerciseItem extends Component {
     static get propTypes() {
         return {
             phrase: PropTypes.shape(),
-            replace: PropTypes.func,
-            setFocusedItem: PropTypes.func.required,
-            shouldFocus: PropTypes.func.required,
-            uid: PropTypes.number.required,
+            replace: PropTypes.func.isRequired,
+            setFocusedItem: PropTypes.func.isRequired,
+            shouldFocus: PropTypes.bool.isRequired,
+            uid: PropTypes.number.isRequired,
         };
     }
 

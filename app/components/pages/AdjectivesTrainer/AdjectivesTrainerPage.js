@@ -11,8 +11,8 @@ export class AdjectivesTrainer extends Component {
     static get propTypes() {
         return {
             phrases: PropTypes.arrayOf(PropTypes.shape),
-            create: PropTypes.func.required,
-            replace: PropTypes.func.required,
+            create: PropTypes.func.isRequired,
+            replace: PropTypes.func.isRequired,
         };
     }
 
