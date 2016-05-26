@@ -35,7 +35,7 @@ export class ExerciseItemDetail extends Component {
         <tbody>
           <tr>
             <td>Adj. auf english</td>
-            <td>{ adjEnglish.join(', ') }</td>
+            <td>{ adjEnglish }</td>
           </tr>
           <tr>
             <td>Object auf english</td>
@@ -47,7 +47,7 @@ export class ExerciseItemDetail extends Component {
           </tr>
           <tr>
             <td>Objekt Kategorien</td>
-            <td>{ categories.join(', ') }</td>
+            <td>{ categories }</td>
           </tr>
           <tr>
             <td>Artikel typ</td>

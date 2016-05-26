@@ -21,14 +21,24 @@ const CATEGORIES = [
 ];
 
 export default function presentPhrase (phrase) {
-    const { noun, article, text, adjective } = phrase;
+    const { gender, translations, categories, adjectiveInstances, articleInstance } = phrase.noun;
+    const statement = phrase.statement.map((item) => {
+        if (!item.chunks) return item.text
+        const text = item.chunks
+            .map((chunk) => chunk.text)
+            .join('')
+        return text;
+    }).join(' ');
+
+    answer = `${phrase.start}${answer}.`;
+
     const present = {
-        answer:       text,
-        objectGender: OBJECTS_GENDERS[noun.gender],
-        objectEnglish: noun.enText,
-        adjEnglish: adjective.en,
-        articleType: ARTICLE_TYPES[article.type],
-        categories: noun.categories.map((id) => CATEGORIES[id])
+        answer,
+        objectGender: OBJECTS_GENDERS[gender],
+        objectEnglish: translations.eng.join(', '),
+        adjEnglish: adjectiveInstances[0].translations.eng.join(', '),
+        articleType: ARTICLE_TYPES[articleInstance.type],
+        categories: categories.map((id) => CATEGORIES[id]).join(', ')
     }
     return present;
 }

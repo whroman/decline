@@ -83,7 +83,7 @@ $trans-displacement: -40px;
                 color: rgba(255,255,255,0.4);
 
                 &:hover {
-                    color: rgba(255,255,255,0.8);
+                    color: $sea-green;
                 }
             }
         }
@@ -120,6 +120,7 @@ $trans-displacement: -40px;
     }
 
     .detail-link {
+        transition: $transition;
         color: transparent;
         font-size: 1.6em;
         float: right;
