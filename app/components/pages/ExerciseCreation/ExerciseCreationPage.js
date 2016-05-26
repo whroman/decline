@@ -40,7 +40,8 @@ export class ExerciseCreationPage extends Component {
 
 function mapStateToProps(state, ownProps) {
   const { kasus, kategorie, gender } = state.adjectiveTrainer;
-  return { kasus, kategorie, gender };
+  const props = { kasus, kategorie, gender };
+  return props;
 }
 
 const mapDispatchToProps = {

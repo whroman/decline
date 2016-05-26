@@ -3,8 +3,7 @@ import conjugationTable from './../../tables/conjugationTable/data.js';
 
 export default class Noun {
 
-    constructor (rawNoun) {
-        const { text, gender, translations, categories } = rawNoun;
+    constructor ({ text, gender, translations, categories }) {
         Object.assign(this, {
             text, gender, translations, categories,
             articleInstance: null,
@@ -52,9 +51,9 @@ export default class Noun {
         const { gender } = this;
         let nounText = this.text;
 
-        const isDative = grammarCase === 2;
-        const isGenitive = grammarCase === 3;
-        const isPlural = gender === 3;
+        const isDative = grammarCase === '2';
+        const isGenitive = grammarCase === '3';
+        const isPlural = gender === '3';
 
         if (isDative) {
             if (isPlural) {
@@ -62,7 +61,7 @@ export default class Noun {
                 if (nounText[len] === 'e') nounText = nounText.substring(0, len);
             }
         } else if (isGenitive) {
-            const isMaleOrNeutral = gender === 0 || gender === 2;
+            const isMaleOrNeutral = gender === '0' || gender === '2';
             if (isMaleOrNeutral) {
                 nounText = nounText + 'es';
             }
@@ -70,10 +69,11 @@ export default class Noun {
 
         this.conjugation = nounText;
 
+
         const article = this.getArticle(grammarCase);
 
 
-        const artIsIndefinite = article.type === 1;
+        const artIsIndefinite = article.type === '1';
         if (isPlural && artIsIndefinite) throw Error('FUCK');
 
         const text = this.compose(grammarCase, this.adjectiveInstances);
@@ -89,13 +89,14 @@ export default class Noun {
             objectGender: this.gender
         };
 
+
         const article = find(conjugationTable.articles.list, findParams);
 
         if (article.text === null) throw Error('Invalid `findParams`: ' + JSON.stringify(findParams));
 
         let conjugation;
 
-        if ((articleType === 1 || articleType === 3) && article.text !== null) {
+        if ((articleType === '1' || articleType === '3') && article.text !== null) {
             conjugation = articleRoot + article.text;
         } else {
             conjugation = article.text;

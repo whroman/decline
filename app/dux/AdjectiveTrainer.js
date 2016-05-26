@@ -48,28 +48,25 @@ const extendState = (state, obj) => Object.assign({}, state, obj);
 const reducer = handleActions({
 
     [TYPES.CREATE]: (state, action) => {
-        const {
-            amount,
-            kasus,
-            kategorie,
-            gender
-        } = action.payload;
+        const { amount, kasus, kategorie, gender } = action.payload;
 
-        const collection = getRandomPhrases(amount, kasus, kategorie);
-        const newState = extendState(state, { collection });
+        const newState = Object.assign({}, state);
+        console.log(newState)
+        if (typeof kasus === 'string') newState.kasus = kasus;
+        if (typeof kategorie === 'string') newState.kategorie = kategorie;
+        if (typeof gender === 'string') newState.gender = gender;
 
-        if (kasus !== undefined) newState.kasus = kasus;
-        if (kategorie !== undefined) newState.kategorie = kategorie;
-        if (gender !== undefined) newState.gender = gender;
-
+        const getPhraseParams = Object.assign({ amount }, newState);
+        const collection = getRandomPhrases(getPhraseParams);
+        Object.assign(newState, { collection });
         storeState(newState);
         return newState;
     },
 
     [TYPES.REPLACE]: (state, action) => {
         const amount = action.payload
-        const { collection, kasus, kategorie } = state;
-        const replacementItems = getRandomPhrases(amount, kasus, kategorie);
+        const { collection, kasus, kategorie, gender } = state;
+        const replacementItems = getRandomPhrases({ amount, kasus, kategorie, gender });
         const newCollection = collection.slice(amount).concat(replacementItems);
 
         return extendState(state, { collection: newCollection });
@@ -77,12 +74,12 @@ const reducer = handleActions({
 
 }, initialState);
 
-function getRandomPhrases (amount, kasus, kategorie) {
+function getRandomPhrases({ amount, kasus, kategorie, gender }) {
     const kasusIsValid = kasusArray.includes(kasus);
 
     const phrases = range(amount).map(() => {
         const methodName = kasusIsValid ? kasus : getRandomKasus();
-        const phrase = randomPhrase[methodName](kategorie);
+        const phrase = randomPhrase[methodName]({ category: kategorie, gender });
         return phrase;
     });
 

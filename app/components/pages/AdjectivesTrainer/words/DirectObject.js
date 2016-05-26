@@ -8,7 +8,7 @@ export default class DirectObject extends WithTooltip {
   static get propTypes() {
     return {
       text: PropTypes.string.isRequired,
-      gender: PropTypes.number.isRequired,
+      gender: PropTypes.string.isRequired,
       translations: PropTypes.arrayOf(PropTypes.string).isRequired,
     };
   }

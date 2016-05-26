@@ -3,35 +3,36 @@ import Dropdown from 'react-dropdown'
 import { hashHistory } from 'react-router'
 import { find } from 'lodash';
 
+import categories from './../../../../tables/categories/data';
 import './CreationForm.scss';
 
 const GENDER_OPTIONS = [
     {
         label: 'Gemischt',
-        value: null
+        value: Infinity
     },
     {
         label: 'Maskulin',
-        value: 0
+        value: '0'
     },
     {
         label: 'Feminin',
-        value: 1
+        value: '1'
     },
     {
         label: 'Neutrum',
-        value: 2
+        value: '2'
     },
     {
         label: 'Pluralisch',
-        value: 3
+        value: '3'
     }
 ];
 
 const KASUS_OPTIONS = [
     {
         label: 'Gemischt',
-        value: null
+        value: Infinity
     },
     {
         label: 'Nominativ',
@@ -43,32 +44,20 @@ const KASUS_OPTIONS = [
     },
 ];
 
-const KATEGORIE_OPTIONS = [
-    {
-        label: 'Alles',
-        value: null
-    },
-    {
-        label: 'Menschen',
-        value: 0
-    },
-    {
-        label: 'Familie',
-        value: 1
-    },
-    {
-        label: 'Tiere',
-        value: 2
-    },
-    {
-        label: 'Körper',
-        value: 3
-    },
-    {
-        label: 'Kinder aufziehen',
-        value: 4
-    }
-];
+const KATEGORIE_OPTIONS = categories
+    .map(({ uid, translations }) => {
+        return {
+            label: translations.deu,
+            value: uid
+        };
+    });
+
+KATEGORIE_OPTIONS.unshift({
+    label: 'Alles',
+    value: Infinity
+});
+
+
 
 function getInitialValue (options, value) {
     return find(options, { value }) || options[0];
@@ -93,7 +82,11 @@ export default class CreationForm extends Component {
 
     componentWillMount () {
         const { kasus, kategorie, gender } = this.props;
-        this.setState({ kasus, kategorie, gender });
+        this.setState({
+            kasus,
+            kategorie: typeof kategorie === 'string' ? kategorie : null,
+            gender: typeof gender === 'string' ? gender : null
+        });
     }
 
   render () {
@@ -171,9 +164,10 @@ export default class CreationForm extends Component {
 
   handleClick () {
     const { kasus, kategorie, gender } = this.state;
+
     this.props.create({
         amount: 8,
-        kasus, kategorie, gender
+        kasus, gender, kategorie
     });
 
     hashHistory.push('#');
