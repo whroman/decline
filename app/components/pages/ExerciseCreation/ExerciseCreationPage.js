@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import presentPhrases from './../../../presenters/phrases';
-import { create } from './../../../dux/adjectiveTrainer';
+import presentPhrases from 'app/presenters/phrases';
+import { create } from 'app/dux/adjectiveTrainer';
 
 import CreationForm from './CreationForm';
 

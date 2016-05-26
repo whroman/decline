@@ -1,5 +1,5 @@
 import { find } from 'lodash';
-import conjugationTable from './../../tables/ConjugationTable/data';
+import conjugationTable from 'tables/ConjugationTable/data';
 
 function stub (str) {
     return Array(str.length + 1).join('_');

@@ -3,7 +3,7 @@ import Dropdown from 'react-dropdown'
 import { hashHistory } from 'react-router'
 import { find } from 'lodash';
 
-import categories from './../../../../tables/categories/data';
+import categories from 'tables/categories/data';
 import './CreationForm.scss';
 
 const GENDER_OPTIONS = [

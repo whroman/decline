@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
-import genders from "./../../../../tables/genders/data.js";
+import genders from 'tables/genders/data.js';
 import AdjectiveRoot from "./words/AdjectiveRoot"
 import DirectObject from "./words/DirectObject"
 

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import genders from "./../../../../../tables/genders/data.js";
-import Tooltip from "./../../../Tooltip//Tooltip";
+import genders from 'tables/genders/data.js';
+import Tooltip from 'app/components/Tooltip//Tooltip';
 import WithTooltip from "./WithTooltip";
 
 export default class DirectObject extends WithTooltip {

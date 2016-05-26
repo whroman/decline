@@ -20,8 +20,8 @@ module.exports = {
                 test: /\.js$/,
                 include: [
                     path.resolve(cwd, 'app'),
-                    path.resolve(cwd, 'src'),
-                    path.resolve(cwd, 'tables')
+                    path.resolve(cwd, 'tables'),
+                    path.resolve(cwd, 'sentenceGenerator')
                 ],
                 loader: 'babel',
             },
@@ -37,8 +37,8 @@ module.exports = {
     },
     sassLoader: {
         includePaths: [
-            path.resolve(cwd, './node_modules/foundation-sites/scss'),
-            path.resolve(cwd, './app/styling'),
+            path.resolve(cwd, 'node_modules', 'foundation-sites', 'scss'),
+            path.resolve(cwd, 'app', 'styling'),
         ]
     },
     plugins: [
@@ -49,6 +49,13 @@ module.exports = {
         }),
         new ExtractTextPlugin('build.css')
     ],
+    resolve: {
+        alias: {
+            app: path.resolve(cwd, 'app'),
+            tables: path.resolve(cwd, 'tables'),
+            sentenceGenerator: path.resolve(cwd, 'sentenceGenerator')
+        }
+    },
     devtool: 'source-map',
     devServer: {
         inline: true,

@@ -1,14 +1,14 @@
 import { random } from 'lodash';
 
-import nouns from './../../../tables/nouns/data.js';
-import adjectives from './../../../tables/adjectives/data.js';
-import articles from './../../../tables/articles/data.js';
-import subjects from './../../../tables/subjects/data.js';
-import articleTypes from './../../../tables/articleTypes/data.js';
+import nouns from 'tables/nouns/data.js';
+import adjectives from 'tables/adjectives/data.js';
+import articles from 'tables/articles/data.js';
+import subjects from 'tables/subjects/data.js';
+import articleTypes from 'tables/articleTypes/data.js';
 
-import Noun from './../Noun.js';
-import Phrase from './Phrase.js';
-import Article from './../Article.js';
+import Noun from './../models/noun/Noun.js';
+import Phrase from './../models/phrase/Phrase.js';
+import Article from './../models/article/Article.js';
 
 const AKK_BEGINNINGS = [
     'Ich mag',

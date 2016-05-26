@@ -1,9 +1,8 @@
 import { createAction, handleActions } from 'redux-actions';
-import randomPhrase from './../../src/grammar/Phrase/randomPhrase.js';
+import randomPhrase from 'sentenceGenerator/randomPhrase/randomPhrase';
 import { range, random } from 'lodash';
 
 import kasusArray from './../data/kasus';
-import kategorieArray from './../data/kategorie';
 
 export const TYPES = {
     CREATE : 'tracks:create',

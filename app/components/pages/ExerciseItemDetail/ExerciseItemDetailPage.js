@@ -3,8 +3,8 @@ import { Link, hashHistory } from 'react-router'
 import { connect } from 'react-redux';
 import { get } from 'axios';
 
-import { create } from './../../../dux/adjectiveTrainer';
-import exerciseDetail from './../../../presenters/exerciseDetail';
+import { create } from 'app/dux/adjectiveTrainer';
+import exerciseDetail from 'app/presenters/exerciseDetail';
 import './ExerciseItemDetail.scss';
 
 export class ExerciseItemDetail extends Component {

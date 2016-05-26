@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import Tooltip from "./../../../Tooltip//Tooltip";
+import Tooltip from 'app/components/Tooltip//Tooltip';
 import WithTooltip from "./WithTooltip";
 
 export default class AdjectiveRoot extends WithTooltip {
