@@ -30,7 +30,7 @@ export default function presentPhrase (phrase) {
         return text;
     }).join(' ');
 
-    answer = `${phrase.start}${answer}.`;
+    const answer = `${phrase.start}${statement}.`;
 
     const present = {
         answer,
