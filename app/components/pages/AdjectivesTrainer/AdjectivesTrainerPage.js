@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router'
 
-import presentPhrases from './../../presenters/phrases';
-import { create, replace } from './../../dux/adjectiveTrainer';
+import presentPhrases from './../../../presenters/phrases';
+import { create, replace } from './../../../dux/adjectiveTrainer';
 
 import AdjectivesExercise from './AdjectivesExercise';
 

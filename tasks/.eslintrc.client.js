@@ -13,7 +13,6 @@ module.exports = {
         "comma-dangle": 0, // dangling commas are ok
         "indent": [2, 4, { "SwitchCase": 1 }],
         "jsx-quotes": 1,
-        "linebreak-style": [2, "unix"],
         "quotes": [2, "single"],
         "react/display-name": 1,
         "react/forbid-prop-types": 0,

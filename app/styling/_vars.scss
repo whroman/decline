@@ -1,0 +1,5 @@
+$transition: 250ms ease-in;
+
+%bg-transition {
+    transition: background-color $transition;
+}

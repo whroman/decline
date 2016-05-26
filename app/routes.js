@@ -1,8 +1,8 @@
-import PageWrapper from './pages/PageWrapper';
-import AdjectivesTrainerPage from './pages/AdjectivesTrainer/AdjectivesTrainerPage';
-import ExerciseItemDetailPage from './pages/ExerciseItemDetail/ExerciseItemDetailPage';
-import ExerciseCreationPage from './pages/ExerciseCreation/ExerciseCreationPage';
-import AboutPage from './pages/About/AboutPage';
+import PageWrapper from './components/pages/PageWrapper';
+import AdjectivesTrainerPage from './components/pages/AdjectivesTrainer/AdjectivesTrainerPage';
+import ExerciseItemDetailPage from './components/pages/ExerciseItemDetail/ExerciseItemDetailPage';
+import ExerciseCreationPage from './components/pages/ExerciseCreation/ExerciseCreationPage';
+import AboutPage from './components/pages/About/AboutPage';
 
 export default {
   component: PageWrapper,

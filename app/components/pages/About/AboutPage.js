@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-
 import './AboutPage.scss';
 
 export class About extends Component {

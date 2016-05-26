@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
-import genders from "./../../../tables/genders/data.js";
+import genders from "./../../../../tables/genders/data.js";
+import AdjectiveRoot from "./words/AdjectiveRoot"
+import DirectObject from "./words/DirectObject"
 
 const componentClassName = 'AdjectivesExerciseItem';
 
@@ -20,15 +22,13 @@ export default class AdjectivesExerciseItem extends Component {
 
     this.state = {
       isCorrect: false,
-      isFilled: false,
-      tooltipShow: false,
-      tooltipJSX: null
+      isFilled: false
     };
   }
 
   render () {
     const { phrase, uid, setFocusedItem, shouldFocus } = this.props;
-    const { untilAdj, key } = phrase
+    const { untilAdj, key, adjective, noun } = phrase
 
     const { isFilled, isCorrect } = this.state;
     let inputState = '';
@@ -43,50 +43,24 @@ export default class AdjectivesExerciseItem extends Component {
         onClick={ this.handleClick.bind(this) }
         onMouseEnter={ () => setFocusedItem(key) }
       >
-        { this.renderTooltip() }
         <div className='text'>
           <span>{ untilAdj }</span>
           <span>&nbsp;</span>
-          { this.renderAdjective() }
+          <AdjectiveRoot
+            text={ adjective.text }
+            translations={ adjective.translations.eng }
+          />
           { this.renderInput() }
           <span>&nbsp;</span>
-          { this.renderDirectObject() }
+          <DirectObject
+            text={ noun.text }
+            translations={ noun.translations.eng }
+            gender={ noun.gender }
+          />
           <span>.</span>
         </div>
         { this.renderExerciseActions(uid) }
       </div>
-    );
-  }
-
-  renderTooltip () {
-    const { tooltipJSX } = this.state;
-    return tooltipJSX === null ? null : (
-      <div className='tooltip'>
-        { this.state.tooltipJSX }
-      </div>
-    );
-  }
-
-  renderAdjective () {
-    const { text, translations } = this.props.phrase.adjective;
-
-    const tooltip = (
-      <div>
-        <strong>Adjektiv</strong>
-        {
-          translations.eng.map((trans) => (
-            <div key={ trans }>{ trans }</div>
-          ))
-        }
-      </div>
-    );
-
-    return (
-      <span
-        className='triggersTooltip'
-        onMouseEnter={ () => this.toggleTooltip(true, tooltip) }
-        onMouseLeave={ () => this.toggleTooltip(false) }
-      >{ text }</span>
     );
   }
 
@@ -111,29 +85,6 @@ export default class AdjectivesExerciseItem extends Component {
         <div className="placeholder">{ Array(numOfChars + 1).join('_') }</div>
       </strong>
     );
-  }
-
-  renderDirectObject () {
-    const { text, gender, translations } = this.props.phrase.noun;
-
-    const tooltip = (
-      <div>
-        <strong>Direktes Objekt</strong>
-        <div>{ `{ ${genders[gender]} }` }</div>
-        { translations.eng.map((translation) => {
-          return (<div key={ translation }>{ translation }</div>);
-        }) }
-      </div>
-    );
-
-    return (
-      <span
-        className='triggersTooltip'
-        onMouseEnter={ () => this.toggleTooltip(true, tooltip) }
-        onMouseLeave={ () => this.toggleTooltip(false) }
-      >{ text }</span>
-    );
-
   }
 
   renderExerciseActions (uid) {
