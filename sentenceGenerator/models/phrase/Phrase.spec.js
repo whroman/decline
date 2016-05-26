@@ -1,15 +1,16 @@
-const assert = require('chai').assert;
+import { assert } from 'chai';
 
-const Phrase = require('./Phrase.js').default;
-const Adjective = require('./../../../tables/adjectives/Adjective.js').default;
-const Article = require('./../Article.js').default;
-const Noun = require('./../Noun.js').default;
+import Phrase from './Phrase.js';
+import Adjective from 'tables/adjectives/Adjective.js';
+import Article from './../article/Article.js';
+import Noun from './../noun/Noun.js';
+
 const genders = ['male', 'female', 'neutral', 'plural'];
 
 const tests = [
     {
         noun: [
-            'Mann', 'man', 0, [0]
+            'Mann', 'man', '0', ['0']
         ],
         adj: ['kurz', ['short']],
         nominative: {
@@ -35,7 +36,7 @@ const tests = [
     },
     {
         noun: [
-            'Frau', 'woman', 1, [0]
+            'Frau', 'woman', '1', ['0']
         ],
         adj: ['kurz', ['short']],
         nominative: {
@@ -61,7 +62,7 @@ const tests = [
     },
     {
         noun: [
-            'Kind', 'child', 2, [0]
+            'Kind', 'child', '2', ['0']
         ],
         adj: ['kurz', ['short']],
         nominative: {
@@ -87,7 +88,7 @@ const tests = [
     },
     {
         noun: [
-            'Kinder', 'children', 3, [0]
+            'Kinder', 'children', '3', ['0']
         ],
         adj: ['kurz', ['short']],
         nominative: {
@@ -136,6 +137,8 @@ describe('Phrase', () => {
             'dative',
             'genitive'
         ].forEach( (grammarCaseName, grammarCaseIndex) => {
+            const grammarCaseUID = String(grammarCaseIndex);
+
             describe(` - ${grammarCaseName} cases -`, () => {
                 tests.forEach( (test) => {
                     let noun, adj;
@@ -155,20 +158,19 @@ describe('Phrase', () => {
                     const gender = genders[genderIndex];
 
                     it(`should work for phrases with ${gender} nouns and definite articles`, () => {
-                        const art = new Article('', 0);
+                        const art = new Article('', '0');
                         const phrase = new Phrase(noun, adj, art);
-                        const conjugation = phrase.conjugate(grammarCaseIndex);
+                        const conjugation = phrase.conjugate(grammarCaseUID);
                         const text = printStatement(conjugation);
 
                         assert.equal(text, test[grammarCaseName].def);
                     });
 
                     it(`should work for phrases with ${gender} nouns and indefinite articles`, () => {
-                        const art = new Article('ein', 1);
+                        const art = new Article('ein', '1');
                         const phrase = new Phrase(noun, adj, art);
                         const expectedText = test[grammarCaseName].indef;
-                        const conjugate = () => phrase.conjugate(grammarCaseIndex);
-
+                        const conjugate = () => phrase.conjugate(grammarCaseUID);
                         if (expectedText === null) {
                             assert.throws(conjugate);
                         } else {
@@ -178,9 +180,9 @@ describe('Phrase', () => {
                     });
 
                     it(`should work for phrases with ${gender} nouns and without articles`, () => {
-                        const art = new Article('', 2);
+                        const art = new Article('', '2');
                         const phrase = new Phrase(noun, adj, art);
-                        const conjugation = phrase.conjugate(grammarCaseIndex);
+                        const conjugation = phrase.conjugate(grammarCaseUID);
                         const text = printStatement(conjugation);
                         assert.equal(text, test[grammarCaseName].kein);
                     });

@@ -1,4 +1,9 @@
 {
-  "plugins": ["lodash"],
+  "plugins": [
+    "lodash",
+    [
+      "babel-plugin-webpack-alias", { "config": "./tasks/build.webpack.config.js" }
+    ]
+  ],
   "presets": ["es2016", "react"]
 }

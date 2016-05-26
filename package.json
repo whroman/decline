@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --config tasks/dev.webpack.config.js",
     "build": "webpack --progress --config tasks/build.webpack.config.js",
-    "test": "babel-node node_modules/.bin/_mocha $(find ./src -name '*.spec.js')",
+    "test": "mocha --compilers js:babel-register $(find ./sentenceGenerator -name '*.spec.js')",
     "test:watch": "npm test -- --watch",
     "tdd": "npm run test:watch",
     "lint": "npm run lint:client && npm run lint:specs",
@@ -34,13 +34,13 @@
     "redux-logger": "^2.6.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.9.0",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
     "babel-plugin-lodash": "^3.1.4",
     "babel-polyfill": "^6.8.0",
     "babel-preset-es2016": "^6.0.11",
     "babel-preset-react": "^6.5.0",
+    "babel-register": "^6.9.0",
     "chai": "^3.4.1",
     "css-loader": "^0.23.1",
     "eslint": "^2.10.2",
