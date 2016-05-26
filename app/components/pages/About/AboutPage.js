@@ -24,10 +24,7 @@ export class About extends Component {
             <div className='column small-11 small-centered'>
                 <h1>{ 'About' }</h1>
                 <hr />
-                <span>{ 'Each sentence that appears is randomly generated 1 milliscond before you see it. If it speaks poorly about your mother, I will ask it to apologize.' }</span>
-                <br />
-                <br />
-                <span>{ 'Learn more about how this works by looking at ' }</span>
+                <span>{ 'All sentences are randomly generated. Learn more about how this works by looking at ' }</span>
                 <a href='https://github.com/whroman/conjugate/blob/gh-pages/README.md'>
                     { 'the README of this project\'s open-source codebase' }
                 </a>
@@ -37,7 +34,7 @@ export class About extends Component {
                 <span>{ 'The daily background image is National Geographic\'s photo of the day.' }</span>
                 <br />
                 <br />
-                <span>{ 'Questions? Comments? Email' }</span>
+                <span>{ 'Questions? Comments? Email ' }</span>
                 <a href='mailto:me@walterroman.com'>{ 'me@walterroman.com' }</a>
                 <span>{ '.' }</span>
             </div>
