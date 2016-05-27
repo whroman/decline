@@ -2,7 +2,7 @@ import { random } from 'lodash';
 
 import nouns from 'tables/nouns/data.js';
 import adjectives from 'tables/adjectives/data.js';
-import articles from 'tables/articles/data.js';
+import articleRoots from 'tables/articles/data.js';
 import subjects from 'tables/subjects/data.js';
 import articleTypes from 'tables/articleTypes/data.js';
 
@@ -115,8 +115,8 @@ const randomPhrase = {
 };
 
 function getRandomArticleGivenType (type) {
-    const index = random(0, articles[type].length - 1);
-    return new Article(articles[type][index], type);
+    const articleRoot = getRandomItem(articleRoots[type]);
+    return new Article(articleRoot, type);
 }
 
 function getRandomArticleByGender (genderUID) {

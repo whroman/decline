@@ -15,11 +15,8 @@ export default class ConjugationTable extends Collection {
         objectGender, articleType, grammarCase
     ) {
         const data = [objectGender, articleType, grammarCase];
-        const artData = data.slice();
-        const suffixData = data.slice();
-        artData.unshift(articleText);
-        suffixData.unshift(adjSuffixText);
-
+        const artData = [articleText].concat(data);
+        const suffixData = [adjSuffixText].concat(data);
         this.articles.add(...artData);
         this.adjSuffixes.add(...suffixData);
     }

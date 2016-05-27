@@ -8,18 +8,19 @@ export default class Article {
     }
 
     conjugate (grammarCase, objectGender) {
-        const articleType = this.type;
-        const article = find(conjugationTable.articles.list, {
-            objectGender, grammarCase, articleType
+        const { type } = this;
+        const articleSuffix = find(conjugationTable.articles.list, {
+            objectGender, grammarCase, articleType: type
         });
 
-        if (article.text === null) {
-            const errObj = { articleType, objectGender };
+        if (articleSuffix.text === null) {
+            const errObj = { type, objectGender };
             throw Error(`Article: Given gender and type are incompatable ${errObj}`);
         }
 
-        const text = article.text;
-        if (articleType === 1 || articleType === 3) {
+        const text = articleSuffix.text;
+        console.log
+        if (type === '1' || type === '3') {
             return this.root + text;
         }
 

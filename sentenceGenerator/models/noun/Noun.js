@@ -16,7 +16,7 @@ export default class Noun {
 
         const adjWords = this.adjectiveInstances.map((adj) => {
             const { text, translations } = adj;
-            const suffix = adj.findSuffix(this.gender, article.articleType, grammarCase);
+            const suffix = adj.findSuffix(this.gender, article.type, grammarCase);
             return {
                 type: 'adjective',
                 translations,
@@ -84,25 +84,8 @@ export default class Noun {
     getArticle (grammarCase) {
         const articleType = this.articleInstance.type;
         const articleRoot = this.articleInstance.root;
-        const findParams = {
-            grammarCase, articleType,
-            objectGender: this.gender
-        };
-
-
-        const article = find(conjugationTable.articles.list, findParams);
-
-        if (article.text === null) throw Error('Invalid `findParams`: ' + JSON.stringify(findParams));
-
-        let conjugation;
-
-        if ((articleType === '1' || articleType === '3') && article.text !== null) {
-            conjugation = articleRoot + article.text;
-        } else {
-            conjugation = article.text;
-        }
-
-        return Object.assign(article, { conjugation });
+        const conjugation = this.articleInstance.conjugate(grammarCase, this.gender);
+        return Object.assign(this.articleInstance, { conjugation });
     }
 
     setAdjective (adjInstance) {
