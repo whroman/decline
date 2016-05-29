@@ -1,38 +1,44 @@
 @import 'colors';
 @import 'vars';
 
-$tooltip-width: 180px;
+$Tooltip-width: 180px;
+$Tooltip-offset: 15px;
 
 .Tooltip {
     position: absolute;
-    width: $tooltip-width;
-    @extend %bg-transition;
+    width: $Tooltip-width;
+    transition: 200ms ease;
     background-color: rgba(100, 100, 100, 0.9);
     bottom: 100%;
     right: -20px;
-    margin-bottom: 15px;
+    margin-bottom: $Tooltip-offset;
     padding: 0.6em 0;
-    margin-left: -$tooltip-width;
+    margin-left: -$Tooltip-width;
     text-align: center;
     color: #fff;
     z-index: 3;
     font-size: 12px;
     border-radius: 3px;
+
+    opacity: 0;
+    z-index: -1;
+
+    &.show {
+        opacity: 1;
+        z-index: 1;
+    }
 }
+
+$Tooltip-arrow-height: 10px;
 
 .Tooltip::after {
     content: ' ';
     position: absolute;
-    bottom: -10px;
+    bottom: -$Tooltip-arrow-height;
     right: 35px;
-    width: 10px;
-    height: 10px;
-    border-width: 10px 10px 0 10px;
+    border-width: $Tooltip-arrow-height 10px 0 10px;
     border-style: solid;
-    border-color: (
-        rgba(100, 100, 100, 0.9)
-        transparent
-        #0f0
-        transparent
-    );
+    border-color: transparent;
+    border-top-color: rgba(100, 100, 100, 0.9)
+
 }

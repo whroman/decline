@@ -11,8 +11,7 @@ export default class Tooltip extends Component {
     }
 
     render() {
-        if (!this.props.show) return null;
-        return (<div className='Tooltip'>{ this.props.children }</div>);
+        return (<div className={ `Tooltip ${ this.props.show ? 'show' : '' }` } >{ this.props.children }</div>);
     }
 
 }
