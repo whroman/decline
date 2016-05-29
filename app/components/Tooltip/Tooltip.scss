@@ -2,12 +2,13 @@
 @import 'vars';
 
 $Tooltip-width: 180px;
-$Tooltip-offset: 15px;
+$Tooltip-offset: 22px;
+$Tooltip-arrow-height: 10px;
 
 .Tooltip {
     position: absolute;
     width: $Tooltip-width;
-    transition: 200ms ease;
+    transition: 100ms ease;
     background-color: rgba(100, 100, 100, 0.9);
     bottom: 100%;
     right: -20px;
@@ -17,19 +18,10 @@ $Tooltip-offset: 15px;
     text-align: center;
     color: #fff;
     z-index: 3;
-    font-size: 12px;
     border-radius: 3px;
-
-    opacity: 0;
-    z-index: -1;
-
-    &.show {
-        opacity: 1;
-        z-index: 1;
-    }
+    font-size: 12px;
+    opacity: 1;
 }
-
-$Tooltip-arrow-height: 10px;
 
 .Tooltip::after {
     content: ' ';
@@ -41,4 +33,16 @@ $Tooltip-arrow-height: 10px;
     border-color: transparent;
     border-top-color: rgba(100, 100, 100, 0.9)
 
+}
+
+.Tooltip-leave.Tooltip-leave-active {
+    opacity: 0;
+}
+
+.Tooltip-enter {
+    opacity: 0;
+}
+
+.Tooltip-enter.Tooltip-enter-active {
+    opacity: 1;
 }

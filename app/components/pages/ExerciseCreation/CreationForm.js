@@ -151,18 +151,21 @@ export default class CreationForm extends Component {
         );
     }
 
-    updateDropdownValue({ value }, namespace) {
+    updateDropdownValue ({ value }, namespace) {
         this.setState({ [namespace]: value });
     }
 
     handleClick () {
         const { kasus, kategorie, gender } = this.state;
 
-        this.props.create({
+        const createParams = {
             amount: 8,
-            kasus, gender, kategorie
-        });
+            kasus: kasus === ' ' ? undefined : kasus,
+            kategorie: kategorie === ' ' ? undefined : kategorie,
+            gender: gender === ' ' ? undefined : gender
+        };
 
+        this.props.create(createParams);
         hashHistory.push('#');
     }
 

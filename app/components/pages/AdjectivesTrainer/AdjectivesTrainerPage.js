@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import presentPhrases from 'app/presenters/phrases';
-import { create, replace } from 'app/dux/adjectiveTrainer';
+import { create, load, replace } from 'app/dux/adjectiveTrainer';
 
 import AdjectivesExercise from './AdjectivesExercise';
 
@@ -13,11 +13,13 @@ export class AdjectivesTrainer extends Component {
             phrases: PropTypes.arrayOf(PropTypes.shape),
             create: PropTypes.func.isRequired,
             replace: PropTypes.func.isRequired,
+            load: PropTypes.func.isRequired,
         };
     }
 
     componentWillMount () {
-        const { phrases, create } = this.props;
+        const { phrases, create, load } = this.props;
+        load();
         if (phrases.length > 0) return;
         create({ amount: 8 });
     }
@@ -57,7 +59,7 @@ export function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-    create, replace
+    create, load, replace
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AdjectivesTrainer);

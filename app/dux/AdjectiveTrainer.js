@@ -17,12 +17,12 @@ export const load = createAction(TRACKS_LOAD);
 
 
 // Reducer
-const initialState = Object.assign({
+const initialState = {
     collection: [],
-    kasus: ' ',
-    kategorie: ' ',
-    gender: ' '
-});
+    kasus: undefined,
+    kategorie: undefined,
+    gender: undefined
+};
 
 
 function getRandomKasus () {
@@ -54,7 +54,6 @@ const reducer = handleActions({
 
     [TRACKS_CREATE]: (state, action) => {
         const { amount, kasus, kategorie, gender } = action.payload;
-
         const newState = Object.assign({}, state);
         if (typeof kasus === 'string') newState.kasus = kasus;
         if (typeof kategorie === 'string') newState.kategorie = kategorie;
@@ -76,9 +75,10 @@ const reducer = handleActions({
         const amount = action.payload;
         const { collection, kasus, kategorie, gender } = state;
         const replacementItems = getRandomPhrases({ amount, kasus, kategorie, gender });
-        const newCollection = collection.slice(amount).concat(replacementItems);
-
-        return extendState(state, { collection: newCollection });
+        const newState = extendState(state, {
+            collection: collection.slice(amount).concat(replacementItems)
+        });
+        return newState;
     }
 
 }, initialState);

@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import './Tooltip.scss';
 
 export default class Tooltip extends Component {
@@ -11,7 +13,14 @@ export default class Tooltip extends Component {
     }
 
     render() {
-        return (<div className={ `Tooltip ${ this.props.show ? 'show' : '' }` } >{ this.props.children }</div>);
+        const tooltip = (!this.props.show) ? null : (<div className='Tooltip' >{ this.props.children }</div>);
+        const transitionProps = {
+            transitionName: "Tooltip",
+            transitionEnterTimeout: 100,
+            transitionLeaveTimeout: 100,
+        };
+
+        return (<ReactCSSTransitionGroup { ...transitionProps } >{ tooltip }</ReactCSSTransitionGroup>);
     }
 
 }
