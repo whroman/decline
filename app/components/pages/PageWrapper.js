@@ -33,7 +33,7 @@ export default class PageWrapper extends Component {
                 <div className='header'>
                     <div className='row collapse'>
                         <div className='column small-10 small-centered'>
-                            <h1 className='float-left header-title'>{ 'Täglich Deutsch' }</h1>
+                            <h1 className='float-left header-title'>{ 'Tägliches Deutsch' }</h1>
                             { this.renderRight() }
                         </div>
                     </div>
