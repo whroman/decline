@@ -4,24 +4,25 @@ import { range, random } from 'lodash';
 
 import kasusArray from './../data/kasus';
 
-export const TYPES = {
-    CREATE : 'tracks:create',
-    REPLACE : 'tracks:replace'
-};
+// Action Types
+export const TRACKS_CREATE = 'TRACKS_CREATE';
+export const TRACKS_REPLACE = 'TRACKS_REPLACE';
+export const TRACKS_LOAD = 'TRACKS_LOAD';
+
 
 // Actions
-const create = createAction(TYPES.CREATE);
-const replace = createAction(TYPES.REPLACE);
-export { create, replace };
+export const create = createAction(TRACKS_CREATE);
+export const replace = createAction(TRACKS_REPLACE);
+export const load = createAction(TRACKS_LOAD);
 
 
 // Reducer
 const initialState = Object.assign({
     collection: [],
-    kasus: null,
-    kategorie: null,
-    gender: null
-}, loadState());
+    kasus: ' ',
+    kategorie: ' ',
+    gender: ' '
+});
 
 
 function getRandomKasus () {
@@ -46,7 +47,12 @@ const extendState = (state, obj) => Object.assign({}, state, obj);
 
 const reducer = handleActions({
 
-    [TYPES.CREATE]: (state, action) => {
+    [TRACKS_LOAD]: (state) => {
+        return extendState(state, loadState());
+    },
+
+
+    [TRACKS_CREATE]: (state, action) => {
         const { amount, kasus, kategorie, gender } = action.payload;
 
         const newState = Object.assign({}, state);
@@ -54,14 +60,19 @@ const reducer = handleActions({
         if (typeof kategorie === 'string') newState.kategorie = kategorie;
         if (typeof gender === 'string') newState.gender = gender;
 
-        const getPhraseParams = Object.assign({ amount }, newState);
-        const collection = getRandomPhrases(getPhraseParams);
+        const randomPhraseParams = {
+            amount,
+            kasus: newState.kasus === initialState.kasus ? undefined : newState.kasus,
+            kategorie: newState.kategorie === initialState.kategorie ? undefined : newState.kategorie,
+            gender: newState.gender === initialState.gender ? undefined : newState.gender,
+        };
+        const collection = getRandomPhrases(randomPhraseParams);
         Object.assign(newState, { collection });
         storeState(newState);
         return newState;
     },
 
-    [TYPES.REPLACE]: (state, action) => {
+    [TRACKS_REPLACE]: (state, action) => {
         const amount = action.payload;
         const { collection, kasus, kategorie, gender } = state;
         const replacementItems = getRandomPhrases({ amount, kasus, kategorie, gender });

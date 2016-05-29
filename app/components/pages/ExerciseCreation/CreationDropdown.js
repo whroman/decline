@@ -8,7 +8,7 @@ class CreationDropdown extends Component {
             label: PropTypes.string.isRequired,
             options: PropTypes.array.isRequired,
             namespace: PropTypes.string.isRequired,
-            initialValue: PropTypes.string.isRequired,
+            initialValue: PropTypes.shape({}).isRequired,
             updateDropdownValue: PropTypes.func.isRequired,
         };
     }
@@ -28,7 +28,7 @@ class CreationDropdown extends Component {
                 <div className='ReactDropdown'>
                     <Dropdown
                         options={ options }
-                        onChange={ this.handleChange.bind(this) }
+                        onChange={ this.handleChange() }
                         value={ initialValue }
                     />
                 </div>

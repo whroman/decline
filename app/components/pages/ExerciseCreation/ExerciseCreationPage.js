@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { create } from 'app/dux/adjectiveTrainer';
+import { create, load } from 'app/dux/adjectiveTrainer';
 
 import CreationForm from './CreationForm';
 
@@ -10,10 +10,15 @@ export class ExerciseCreationPage extends Component {
     static get propTypes() {
         return {
             create: PropTypes.func,
+            load: PropTypes.func,
             kasus: PropTypes.string,
             kategorie: PropTypes.string,
             gender: PropTypes.string
         };
+    }
+
+    componentWillMount() {
+        this.props.load();
     }
 
     render () {
@@ -46,7 +51,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-    create
+    create, load
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExerciseCreationPage);

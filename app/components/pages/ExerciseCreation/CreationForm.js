@@ -9,7 +9,7 @@ import './CreationForm.scss';
 const GENDER_OPTIONS = [
     {
         label: 'Gemischt',
-        value: Infinity
+        value: ' '
     },
     {
         label: 'Maskulin',
@@ -32,7 +32,7 @@ const GENDER_OPTIONS = [
 const KASUS_OPTIONS = [
     {
         label: 'Gemischt',
-        value: Infinity
+        value: ' '
     },
     {
         label: 'Nominativ',
@@ -53,8 +53,8 @@ const KATEGORIE_OPTIONS = categories
     });
 
 KATEGORIE_OPTIONS.unshift({
-    label: 'Alles',
-    value: Infinity
+    label: 'Gemischt',
+    value: ' '
 });
 
 function getInitialValue (options, value) {
@@ -75,21 +75,26 @@ export default class CreationForm extends Component {
     constructor () {
         super();
         this.state = {
-            kasus: null,
-            kategorie: null,
-            gender: null,
+            kasus: ' ',
+            kategorie: ' ',
+            gender: ' ',
         };
 
         this.updateDropdownValue = this.updateDropdownValue.bind(this);
     }
 
-    componentWillMount () {
-        const { kasus, kategorie, gender } = this.props;
-        this.setState({
+    componentWillMount (props) {
+        const { kasus, kategorie, gender } = props || this.props;
+        const update = {
             kasus,
-            kategorie: typeof kategorie === 'string' ? kategorie : null,
-            gender: typeof gender === 'string' ? gender : null
-        });
+            kategorie: typeof kategorie === 'string' ? kategorie : ' ',
+            gender: typeof gender === 'string' ? gender : ' '
+        };
+        this.setState(update);
+    }
+
+    componentWillReceiveProps (nextProps) {
+        this.componentWillMount(nextProps);
     }
 
     render () {
@@ -146,8 +151,8 @@ export default class CreationForm extends Component {
         );
     }
 
-    updateDropdownValue(event, namespace) {
-        this.setState({ [namespace]: event.value });
+    updateDropdownValue({ value }, namespace) {
+        this.setState({ [namespace]: value });
     }
 
     handleClick () {

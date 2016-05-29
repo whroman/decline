@@ -3,7 +3,11 @@
   "version": "0.0.11",
   "description": "",
   "main": "index.js",
+  "config": {
+    "foo": "./app"
+  },
   "scripts": {
+    "bar": "ls $npm_package_config_foo",
     "start": "webpack-dev-server --progress --config tasks/dev.webpack.config.js",
     "build": "webpack --progress --config tasks/build.webpack.config.js",
     "test": "mocha --compilers js:babel-register $(find ./sentenceGenerator -name '*.spec.js')",
@@ -22,9 +26,6 @@
     "axios": "^0.11.0",
     "foundation-sites": "^6.2.1",
     "lodash": "^4.12.0",
-    "react": "^15.0.2",
-    "react-addons-css-transition-group": "^15.0.2",
-    "react-dom": "^15.0.2",
     "react-dropdown": "^1.0.4",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.0",
