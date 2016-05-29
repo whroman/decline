@@ -15,7 +15,7 @@ export default class Tooltip extends Component {
     render() {
         const tooltip = (!this.props.show) ? null : (<div className='Tooltip' >{ this.props.children }</div>);
         const transitionProps = {
-            transitionName: "Tooltip",
+            transitionName: 'Tooltip',
             transitionEnterTimeout: 100,
             transitionLeaveTimeout: 100,
         };
