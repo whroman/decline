@@ -19,9 +19,9 @@ export const load = createAction(TRACKS_LOAD);
 // Reducer
 const initialState = {
     collection: [],
-    kasus: undefined,
-    kategorie: undefined,
-    gender: undefined
+    kasus: null,
+    kategorie: null,
+    gender: null
 };
 
 
@@ -31,7 +31,7 @@ function getRandomKasus () {
     return kasus;
 }
 
-function storeState (state) {
+function saveState (state) {
     const { kasus, kategorie, gender } = state;
     const toStore = { kasus, kategorie, gender };
     const stringState = JSON.stringify(toStore);
@@ -54,20 +54,16 @@ const reducer = handleActions({
 
     [TRACKS_CREATE]: (state, action) => {
         const { amount, kasus, kategorie, gender } = action.payload;
-        const newState = Object.assign({}, state);
-        if (typeof kasus === 'string') newState.kasus = kasus;
-        if (typeof kategorie === 'string') newState.kategorie = kategorie;
-        if (typeof gender === 'string') newState.gender = gender;
-
         const randomPhraseParams = {
             amount,
-            kasus: newState.kasus === initialState.kasus ? undefined : newState.kasus,
-            kategorie: newState.kategorie === initialState.kategorie ? undefined : newState.kategorie,
-            gender: newState.gender === initialState.gender ? undefined : newState.gender,
+            kasus: kasus === undefined ? state.kasus : kasus,
+            kategorie: kategorie === undefined ? state.kategorie : kategorie,
+            gender: gender === undefined ? state.gender : gender
         };
-        const collection = getRandomPhrases(randomPhraseParams);
-        Object.assign(newState, { collection });
-        storeState(newState);
+        const newState = Object.assign({}, randomPhraseParams, {
+            collection: getRandomPhrases(randomPhraseParams)
+        });
+        saveState(newState);
         return newState;
     },
 
