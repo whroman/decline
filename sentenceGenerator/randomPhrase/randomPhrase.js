@@ -47,29 +47,29 @@ function getRandomSubject (type, gender) {
     return subject;
 }
 
+function getRandomNoun ({ gender, category }) {
+    const filteredNouns = nouns
+        .filter((noun) => {
+            if (typeof gender !== 'string') return true;
+            const nounBelongs = noun.gender === gender;
+            return nounBelongs;
+        })
+        .filter((noun) => {
+            if (typeof category !== 'string') return true;
+            const nounBelongs = noun.categories.includes(category);
+            return nounBelongs;
+        });
+
+    const nounData = getRandomItem(filteredNouns);
+    const noun = new Noun(nounData);
+    return noun;
+}
+
 const randomPhrase = {
-
-    getRandomNoun: function ({ gender, category }) {
-        const filteredNouns = nouns
-            .filter((noun) => {
-                if (typeof gender !== 'string') return true;
-                const nounBelongs = noun.gender === gender;
-                return nounBelongs;
-            })
-            .filter((noun) => {
-                if (typeof category !== 'string') return true;
-                const nounBelongs = noun.categories.includes(category);
-                return nounBelongs;
-            });
-
-        const nounData = getRandomItem(filteredNouns);
-        const noun = new Noun(nounData);
-        return noun;
-    },
 
     getOne: function ({ gender, category }) {
         const adj = getRandomItem(adjectives);
-        const noun = this.getRandomNoun({ gender, category });
+        const noun = getRandomNoun({ gender, category });
         const article = getRandomArticleByGender(noun.gender);
         const phrase = new Phrase(noun, adj, article);
         return phrase;
