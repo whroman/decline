@@ -17,18 +17,29 @@ export const load = createAction(TRACKS_LOAD);
 
 
 // Reducer
-const initialState = {
+export const initialState = {
     collection: [],
     kasus: null,
     kategorie: null,
     gender: null
 };
 
-
 function getRandomKasus () {
     const kasusIndex = random(0, kasusArray.length - 1);
     const kasus = kasusArray[kasusIndex];
     return kasus;
+}
+
+function getRandomPhrases({ amount, kasus, kategorie, gender }) {
+    const kasusIsValid = kasusArray.includes(kasus);
+
+    const phrases = range(amount).map(() => {
+        const methodName = kasusIsValid ? kasus : getRandomKasus();
+        const phrase = randomPhrase[methodName]({ category: kategorie, gender });
+        return phrase;
+    });
+
+    return phrases;
 }
 
 function saveState (state) {
@@ -43,12 +54,10 @@ function loadState () {
     return state ? JSON.parse(state) : {};
 }
 
-const extendState = (state, obj) => Object.assign({}, state, obj);
-
 const reducer = handleActions({
 
     [TRACKS_LOAD]: (state) => {
-        return extendState(state, loadState());
+        return Object.assign({}, state, loadState());
     },
 
 
@@ -71,24 +80,12 @@ const reducer = handleActions({
         const amount = action.payload;
         const { collection, kasus, kategorie, gender } = state;
         const replacementItems = getRandomPhrases({ amount, kasus, kategorie, gender });
-        const newState = extendState(state, {
+        const newState = Object.assign({}, state, {
             collection: collection.slice(amount).concat(replacementItems)
         });
         return newState;
     }
 
 }, initialState);
-
-function getRandomPhrases({ amount, kasus, kategorie, gender }) {
-    const kasusIsValid = kasusArray.includes(kasus);
-
-    const phrases = range(amount).map(() => {
-        const methodName = kasusIsValid ? kasus : getRandomKasus();
-        const phrase = randomPhrase[methodName]({ category: kategorie, gender });
-        return phrase;
-    });
-
-    return phrases;
-}
 
 export default reducer;
