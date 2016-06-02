@@ -11,12 +11,17 @@ export default class Noun {
         });
     }
 
+    getComposedAdjectives (articleType, grammarCase) {
+        const composed = this.adjectiveInstances.map((adj) => {
+            return adj.compose(this.gender, articleType, grammarCase);
+        });
+
+        return composed;
+    }
+
     compose (grammarCase) {
         const article = this.getArticle(grammarCase);
-
-        const adjWords = this.adjectiveInstances.map((adj) => {
-            return adj.compose(this.gender, article.type, grammarCase);
-        });
+        const composedAdjs = this.getComposedAdjectives(article.type, grammarCase);
 
         const words = [
             {
@@ -24,7 +29,7 @@ export default class Noun {
                 id: article.type,
                 text: article.conjugation
             }
-        ].concat(adjWords).concat([{
+        ].concat(composedAdjs).concat([{
             type: 'object',
             text: this.conjugation
         }]);
