@@ -1,56 +1,75 @@
 import { assert } from 'chai';
-import AdjectiveTrainer, {
+import rewire from 'rewire';
+const AdjectiveTrainer = rewire('./AdjectiveTrainer.js');
+const {
     initialState,
-    mergeCreationParams
-} from 'app/dux/AdjectiveTrainer.js';
+    mergeCreationParams,
+    loadState
+} = AdjectiveTrainer;
 
-describe('Dux', () => {
-    describe('AdjectiveTrainer', () => {
-        describe('reducer', () => {
-            it('returns unaltered state when given an unexpected action', () => {
-                assert.deepEqual(
-                    AdjectiveTrainer(initialState, { type: 'foo' }),
-                    initialState
-                );
-            });
-        });
-
-        describe('#mergeCreationParams(state, payload)', () => {
-            context('when all payload keys are defined', () => {
-                it('returns `payload`', () => {
-                    const payload = {
-                        amount: 10,
-                        gender: null,
-                        kasus: null,
-                        kategorie: null
-                    };
-                    assert.deepEqual(
-                        mergeCreationParams(initialState, payload),
-                        payload
-                    )
-                });
-            });
-
-            context('when all payload keys are undefined', () => {
-                it('returns a merged object between `state` and `payload`', () => {
-                    const payload = {
-                        amount: undefined,
-                        gender: undefined,
-                        kasus: undefined,
-                        kategorie: undefined
-                    };
-                    assert.deepEqual(
-                        mergeCreationParams(initialState, payload),
-                        {
-                            amount: undefined,
-                            gender: initialState.gender,
-                            kasus: initialState.kasus,
-                            kategorie: initialState.kategorie
-                        }
-                    )
-                });
-            });
-
+describe.only('Dux', () => describe('AdjectiveTrainer', () => {
+    describe('reducer', () => {
+        it('returns unaltered state when given an unexpected action', () => {
+            assert.deepEqual(
+                AdjectiveTrainer.default(initialState, { type: 'foo' }),
+                initialState
+            );
         });
     });
-});
+
+    describe('#mergeCreationParams(state, payload)', () => {
+        context('when all payload keys are defined', () => {
+            it('returns `payload`', () => {
+                const payload = {
+                    amount: 10,
+                    gender: null,
+                    kasus: null,
+                    kategorie: null
+                };
+                assert.deepEqual(
+                    mergeCreationParams(initialState, payload),
+                    payload
+                )
+            });
+        });
+
+        context('when all payload keys are undefined', () => {
+            it('returns a merged object between `state` and `payload`', () => {
+                const payload = {
+                    amount: undefined,
+                    gender: undefined,
+                    kasus: undefined,
+                    kategorie: undefined
+                };
+                assert.deepEqual(
+                    mergeCreationParams(initialState, payload),
+                    {
+                        amount: undefined,
+                        gender: initialState.gender,
+                        kasus: initialState.kasus,
+                        kategorie: initialState.kategorie
+                    }
+                )
+            });
+        });
+    });
+
+    describe('#loadState', () => {
+        it('returns an empty object if localStorage is not available', () => {
+            assert.deepEqual(loadState(), {})
+        });
+
+        it('returns a parsed JSON from localStorage if localStorage is available', () => {
+            const json = { testKey: 'testVal' };
+            AdjectiveTrainer.__with__({
+                window: {
+                    localStorage: {
+                        getItem: () => JSON.stringify(json)
+                    }
+                }
+            })(() => {
+                assert.deepEqual(loadState(), json);
+            });
+        });
+    });
+}));

@@ -1,8 +1,11 @@
 import { createAction, handleActions } from 'redux-actions';
 import randomPhrase from 'sentenceGenerator/randomPhrase/randomPhrase';
 import { range, random } from 'lodash';
-
 import kasusArray from './../data/kasus';
+
+// window is declared here for testing purposes.
+const window = global.window;
+
 
 // Action Types
 export const TRACKS_CREATE = 'TRACKS_CREATE';
@@ -23,6 +26,10 @@ export const initialState = {
     kategorie: null,
     gender: null
 };
+
+export function localStorageExists () {
+    return (window && window.localStorage);
+}
 
 export function getRandomKasus () {
     const kasusIndex = random(0, kasusArray.length - 1);
@@ -46,15 +53,13 @@ export function saveState (state) {
     const { kasus, kategorie, gender } = state;
     const stateToSave = { kasus, kategorie, gender };
     const stringState = JSON.stringify(stateToSave);
-    if (window && window.localStorage) {
-        window.localStorage.setItem('conjugate', stringState);
-    }
+    if (localStorageExists()) window.localStorage.setItem('conjugate', stringState);
     return stateToSave;
 }
 
 export function loadState () {
-    if (window && window.localStorage) return window.localStorage.getItem('conjugate');
-    return {};
+    if (!localStorageExists()) return {};
+    return JSON.parse(window.localStorage.getItem('conjugate'));
 }
 
 export function mergeCreationParams (state, payload) {
@@ -73,7 +78,6 @@ const reducer = handleActions({
     [TRACKS_LOAD]: (state) => {
         return Object.assign({}, state, loadState());
     },
-
 
     [TRACKS_CREATE]: (state, action) => {
         const randomPhraseParams = mergeCreationParams(state, action.payload);
