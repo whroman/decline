@@ -158,9 +158,6 @@ export default class CreationForm extends Component {
     handleClick () {
         const { kasus, kategorie, gender } = this.state;
 
-        console.log('click')
-        console.log(this.state)
-
         const createParams = {
             amount: 8,
             kasus: kasus === ' ' ? null : kasus,

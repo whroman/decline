@@ -24,13 +24,13 @@ export const initialState = {
     gender: null
 };
 
-function getRandomKasus () {
+export function getRandomKasus () {
     const kasusIndex = random(0, kasusArray.length - 1);
     const kasus = kasusArray[kasusIndex];
     return kasus;
 }
 
-function getRandomPhrases({ amount, kasus, kategorie, gender }) {
+export function getRandomPhrases({ amount, kasus, kategorie, gender }) {
     const kasusIsValid = kasusArray.includes(kasus);
 
     const phrases = range(amount).map(() => {
@@ -42,16 +42,30 @@ function getRandomPhrases({ amount, kasus, kategorie, gender }) {
     return phrases;
 }
 
-function saveState (state) {
+export function saveState (state) {
     const { kasus, kategorie, gender } = state;
-    const toStore = { kasus, kategorie, gender };
-    const stringState = JSON.stringify(toStore);
-    window.localStorage.setItem('conjugate', stringState);
+    const stateToSave = { kasus, kategorie, gender };
+    const stringState = JSON.stringify(stateToSave);
+    if (window && window.localStorage) {
+        window.localStorage.setItem('conjugate', stringState);
+    }
+    return stateToSave;
 }
 
-function loadState () {
-    const state = window.localStorage.getItem('conjugate');
-    return state ? JSON.parse(state) : {};
+export function loadState () {
+    if (window && window.localStorage) return window.localStorage.getItem('conjugate');
+    return {};
+}
+
+export function mergeCreationParams (state, payload) {
+    const { amount, kasus, kategorie, gender } = payload;
+    // Undefined payload values should be overwritten by default values. A payload value for "no filter" is `null`.
+    return {
+        amount,
+        kasus: kasus === undefined ? state.kasus : kasus,
+        kategorie: kategorie === undefined ? state.kategorie : kategorie,
+        gender: gender === undefined ? state.gender : gender
+    };
 }
 
 const reducer = handleActions({
@@ -62,16 +76,11 @@ const reducer = handleActions({
 
 
     [TRACKS_CREATE]: (state, action) => {
-        const { amount, kasus, kategorie, gender } = action.payload;
-        const randomPhraseParams = {
-            amount,
-            kasus: kasus === undefined ? state.kasus : kasus,
-            kategorie: kategorie === undefined ? state.kategorie : kategorie,
-            gender: gender === undefined ? state.gender : gender
-        };
+        const randomPhraseParams = mergeCreationParams(state, action.payload);
         const newState = Object.assign({}, randomPhraseParams, {
             collection: getRandomPhrases(randomPhraseParams)
         });
+
         saveState(newState);
         return newState;
     },
