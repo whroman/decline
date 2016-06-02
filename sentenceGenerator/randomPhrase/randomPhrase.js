@@ -100,11 +100,11 @@ const randomPhrase = {
     },
 
     accusative: function ({ category, gender }) {
-        const randomItem = getRandomItem(AKK_BEGINNINGS) + ' ';
+        const randomAkkStart = getRandomItem(AKK_BEGINNINGS) + ' ';
         const conjugation = this.handleCase(
             gender,
             category,
-            randomItem,
+            randomAkkStart,
             (phrase) => {
                 return phrase.conjugate('1');
             }

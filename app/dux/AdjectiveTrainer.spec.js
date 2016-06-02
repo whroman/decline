@@ -7,7 +7,7 @@ const {
     loadState
 } = AdjectiveTrainer;
 
-describe.only('Dux', () => describe('AdjectiveTrainer', () => {
+describe('Dux', () => describe('AdjectiveTrainer', () => {
     describe('reducer', () => {
         it('returns unaltered state when given an unexpected action', () => {
             assert.deepEqual(

@@ -15,28 +15,13 @@ export default class Noun {
         const article = this.getArticle(grammarCase);
 
         const adjWords = this.adjectiveInstances.map((adj) => {
-            const { text, translations } = adj;
-            const suffix = adj.findSuffix(this.gender, article.type, grammarCase);
-            return {
-                type: 'adjective',
-                translations,
-                chunks: [
-                    {
-                        type: 'root',
-                        text
-                    },
-                    {
-                        type: 'suffix',
-                        text: suffix.text
-                    }
-                ]
-            };
+            return adj.compose(this.gender, article.type, grammarCase);
         });
 
         const words = [
             {
                 type: 'article',
-                id: article.articleType,
+                id: article.type,
                 text: article.conjugation
             }
         ].concat(adjWords).concat([{
@@ -68,11 +53,7 @@ export default class Noun {
         }
 
         this.conjugation = nounText;
-
-
         const article = this.getArticle(grammarCase);
-
-
         const artIsIndefinite = article.type === '1';
         if (isPlural && artIsIndefinite) throw Error('FUCK');
 

@@ -57,4 +57,24 @@ export default class Adjective {
         return word;
     }
 
+    compose (objectGender, articleType, grammarCase) {
+        const { text, translations } = this;
+        const suffix = this.findSuffix(objectGender, articleType, grammarCase);
+        return {
+            type: 'adjective',
+            translations,
+            chunks: [
+                {
+                    type: 'root',
+                    text
+                },
+                {
+                    type: 'suffix',
+                    text: suffix.text
+                }
+            ]
+        };
+    }
+
+
 }
