@@ -34,15 +34,3 @@ $Tooltip-arrow-height: 10px;
     border-top-color: rgba(100, 100, 100, 0.9)
 
 }
-
-.Tooltip-leave.Tooltip-leave-active {
-    opacity: 0;
-}
-
-.Tooltip-enter {
-    opacity: 0;
-}
-
-.Tooltip-enter.Tooltip-enter-active {
-    opacity: 1;
-}
