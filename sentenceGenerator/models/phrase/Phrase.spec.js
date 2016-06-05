@@ -138,7 +138,7 @@ describe('Phrase', () => {
             'genitive'
         ].forEach( (grammarCaseName, grammarCaseIndex) => {
             const grammarCaseUID = String(grammarCaseIndex);
-
+            console.log('omg')
             describe(` - ${grammarCaseName} cases -`, () => {
                 tests.forEach( (test) => {
                     let noun, adj;
