@@ -1,9 +1,7 @@
 import { find } from 'lodash';
-import conjugationTable from './../conjugationTable/data.js';
-
-function stub (str) {
-    return Array(str.length + 1).join('_');
-}
+import assertStringsDefined from './../util/assertStringsDefined.js';
+import conjugationTable from 'tables/conjugationTable/data.js';
+import WordChunk from './../WordChunk/WordChunk.js';
 
 export default class Adjective {
 
@@ -13,7 +11,7 @@ export default class Adjective {
     }
 
 
-    findSuffix (objectGender, articleType, grammarCase) {
+    getSuffix (objectGender, articleType, grammarCase) {
         const suffix = find(conjugationTable.adjSuffixes.list, {
             objectGender,
             articleType,
@@ -25,7 +23,7 @@ export default class Adjective {
 
     conjugate (...args) {
         const { text } = this;
-        const suffix = this.findSuffix(...args);
+        const suffix = this.getSuffix(...args);
 
         const word = {
             text,
@@ -55,12 +53,14 @@ export default class Adjective {
     }
 
     compose (objectGender, articleType, grammarCase) {
-        const suffix = this.findSuffix(objectGender, articleType, grammarCase);
-        return {
-            root: this.root,
-            suffix: suffix.text,
-            fullText: this.root + suffix.text
-        };
+        const { text } = this.getSuffix(objectGender, articleType, grammarCase);
+
+        const composition = [
+            new WordChunk(this.root),
+            new WordChunk(text)
+        ];
+
+        return composition;
     }
 
 

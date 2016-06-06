@@ -20,13 +20,17 @@ describe.only('Generator', () => describe('Article', () => {
             const getSuffixStub = sinon.stub(article, 'getSuffix', () => ({
                 text: SUFFIX_TEXT
             }));
-            assert.deepEqual(article.compose('fakeArg1', 'fakeArg2'), {
-                root: ROOT,
-                suffix: SUFFIX_TEXT,
-                suffixStub: '______________',
-                fullText: ROOT + SUFFIX_TEXT,
-                fullStub: '______________________',
-            });
+
+            assert.deepEqual(article.compose('fakeArg1', 'fakeArg2'), [
+                {
+                    text: ROOT,
+                    stub: ROOT.replace(/./gi, '_')
+                },
+                {
+                    text: SUFFIX_TEXT,
+                    stub: SUFFIX_TEXT.replace(/./gi, '_')
+                }
+            ]);
 
             getSuffixStub.restore();
         });

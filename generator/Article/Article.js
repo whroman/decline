@@ -1,10 +1,7 @@
 import { find, isString } from 'lodash';
 import conjugationTable from 'tables/conjugationTable/data.js';
 import assertStringsDefined from './../util/assertStringsDefined.js';
-
-function stub (str) {
-    return Array(str.length + 1).join('_');
-}
+import WordChunk from './../WordChunk/WordChunk.js';
 
 export default class Article {
 
@@ -31,14 +28,12 @@ export default class Article {
     compose (grammarCase, objectGender) {
         const { text } = this.getSuffix(grammarCase, objectGender);
 
-        const fullText = this.root + text;
-        return {
-            root: this.root,
-            suffix: text,
-            suffixStub: stub(text),
-            fullText,
-            fullStub: stub(fullText)
-        };
+        const composition = [
+            new WordChunk(this.root),
+            new WordChunk(text)
+        ];
+
+        return composition;
     }
 
 }
