@@ -12,44 +12,18 @@ export default class Adjective {
 
 
     getSuffix (objectGender, articleType, grammarCase) {
-        const suffix = find(conjugationTable.adjSuffixes.list, {
+        const adjSuffix = find(conjugationTable.adjSuffixes.list, {
             objectGender,
             articleType,
             grammarCase
         });
 
-        return suffix;
-    }
-
-    conjugate (...args) {
-        const { text } = this;
-        const suffix = this.getSuffix(...args);
-
-        const word = {
-            text,
-            stubbed: {
-                text: stub(text),
-                stubbedValue: text
-            },
-            stubbedSuffix: {
-                text,
-                stubbedValue: ''
-            }
-        };
-
-        if (suffix) {
-            if (suffix.text) {
-                const stubbedSuffix = stub(suffix.text);
-                word.text += suffix.text;
-                word.stubbed.text += stubbedSuffix;
-                word.stubbedSuffix.text += stubbedSuffix;
-                word.stubbedSuffix.stubbedValue += suffix.text;
-            }
-        } else {
-            throw Error('No conjugation found: ', ...arguments);
+        if (adjSuffix.text === null) {
+            const errObj = { objectGender, articleType };
+            throw Error(`Adjective Suffix: Given object gender and article type are incompatable ${errObj}`);
         }
 
-        return word;
+        return adjSuffix;
     }
 
     compose (objectGender, articleType, grammarCase) {

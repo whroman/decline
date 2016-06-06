@@ -16,9 +16,7 @@ describe('Generator', () => describe('ObjectGroup', () => {
 
     describe('#compose', () => {
         it('returns an Array of `composition` objects', () => {
-            const adjective = {
-                compose: () => 'composedAdjective'
-            };
+            const adjective = { compose: () => 'composedAdjective' };
 
             const article = {
                 compose: () => 'composedArticle',
