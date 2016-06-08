@@ -5,9 +5,9 @@ import WordChunk from './../WordChunk/WordChunk.js';
 
 export default class Adjective {
 
-    constructor (root) {
+    constructor ({ root, translations={} }) {
         assertStringsDefined({ root });
-        Object.assign(this, { root });
+        Object.assign(this, { root, translations });
     }
 
 
@@ -20,13 +20,13 @@ export default class Adjective {
 
         if (adjSuffix.text === null) {
             const errObj = { objectGender, articleType };
-            throw Error(`Adjective Suffix: Given object gender and article type are incompatable ${errObj}`);
+            throw Error(`Adjective Suffix: Given object gender and article type are incompatable ${ JSON.stringify(errObj) }`);
         }
 
         return adjSuffix;
     }
 
-    compose (objectGender, articleType, grammarCase) {
+    compose (grammarCase, objectGender, articleType) {
         const { text } = this.getSuffix(objectGender, articleType, grammarCase);
 
         const composition = [
@@ -36,6 +36,5 @@ export default class Adjective {
 
         return composition;
     }
-
 
 }

@@ -6,7 +6,8 @@ const ROOT = 'fakeRoot';
 const TYPE = 'fakeType';
 const SUFFIX_TEXT = 'fakeSuffixText';
 
-describe.only('Generator', () => describe('Article', () => {
+describe('Generator', () =>
+describe('Article', () => {
     describe('#constructor', () => {
         it('declares `root` and `type` properties', () => {
             const article = new Article(ROOT, TYPE);

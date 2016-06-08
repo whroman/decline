@@ -5,7 +5,7 @@ import WordChunk from './../WordChunk/WordChunk.js';
 
 export default class Article {
 
-    constructor (root, type) {
+    constructor ({ root, type }) {
         const props = { root, type }
         assertStringsDefined(props);
         Object.assign(this, props);
@@ -19,7 +19,7 @@ export default class Article {
 
         if (articleSuffix.text === null) {
             const errObj = { type, objectGender };
-            throw Error(`Article: Given object gender and article type are incompatable ${errObj}`);
+            throw Error(`Article: Given object gender and article type are incompatable ${ JSON.stringify(errObj) }`);
         }
 
         return articleSuffix;

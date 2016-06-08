@@ -4,7 +4,7 @@ import WordChunk from '../WordChunk/WordChunk';
 
 export default class Noun {
 
-    constructor ({ root, gender, translations, categories }) {
+    constructor ({ root, gender, translations={}, categories=[] }) {
         Object.assign(this, { root, gender, translations, categories });
     }
 

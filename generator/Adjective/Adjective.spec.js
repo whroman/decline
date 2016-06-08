@@ -7,18 +7,23 @@ const Adjective = proxyquire('./Adjective', {
 
 const ROOT = 'fakeRoot';
 const SUFFIX_TEXT = 'fakeSuffixText';
+const props = { root: ROOT };
 
-describe.only('Generator', () => describe('Adjective', () => {
+describe('Generator', () =>
+describe('Adjective', () => {
     describe('#constructor', () => {
         it('declares `root` property', () => {
-            const adjective = new Adjective(ROOT);
-            assert.deepEqual(adjective, { root: ROOT });
+            const adjective = new Adjective(props);
+            assert.deepEqual(adjective, {
+                root: ROOT,
+                translations: {}
+            });
         });
     });
 
     describe('#compose', () => {
         it('returns a `composition` object', () => {
-            const adjective = new Adjective(ROOT);
+            const adjective = new Adjective(props);
             const getSuffixStub = sinon.stub(adjective, 'getSuffix', () => ({
                 text: SUFFIX_TEXT
             }));

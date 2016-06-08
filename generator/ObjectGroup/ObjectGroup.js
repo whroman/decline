@@ -1,20 +1,20 @@
 export default class ObjectGroup {
 
-    constructor ({ article, adjective, directObject }) {
+    constructor ({ article, adjective, noun }) {
         Object.assign(this, {
             article,
             adjective,
-            directObject
+            noun
         });
     }
 
     compose (kasus) {
-        const { gender } = this.directObject;
+        const { gender } = this.noun;
         const { type } = this.article;
         const items = [
             this.article.compose(kasus, gender),
             this.adjective.compose(kasus, gender, type),
-            this.directObject.compose(kasus)
+            this.noun.compose(kasus)
         ];
         return items;
     }

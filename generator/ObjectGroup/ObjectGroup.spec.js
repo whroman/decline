@@ -8,7 +8,7 @@ describe('Generator', () => describe('ObjectGroup', () => {
             const props = {
                 article: 0,
                 adjective: 1,
-                directObject: 2
+                noun: 2
             };
             assert.deepEqual(new ObjectGroup(props), props)
         })
@@ -24,7 +24,7 @@ describe('Generator', () => describe('ObjectGroup', () => {
                 compose: () => 'composedArticle',
                 type: 'fakeArticleType'
             };
-            const directObject = {
+            const noun = {
                 compose: () => 'composedDO',
                 gender: 'fakeGender'
             };
@@ -32,7 +32,7 @@ describe('Generator', () => describe('ObjectGroup', () => {
             const oGroup = new ObjectGroup({
                 adjective,
                 article,
-                directObject
+                noun
             });
 
             assert.deepEqual(oGroup.compose(), [
