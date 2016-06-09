@@ -10,7 +10,7 @@ describe('Generator', () => describe('WordChunk', () => {
 
             before(() => {
                 wordChunk = new WordChunk(TEXT);
-            })
+            });
 
             it('binds `text', () => {
                 assert.equal(wordChunk.text, TEXT);

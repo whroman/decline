@@ -115,12 +115,9 @@ const tests = [
 ];
 
 function printStatement (conjugation) {
-    console.log(conjugation)
     const statement = conjugation
         .map((val) => {
             let text;
-            console.log('val')
-            console.log(val)
             if (val.length) {
                 text = val.reduce((_memo, _val) => {
                     return _memo + _val.text;

@@ -10,8 +10,8 @@ describe('Generator', () => describe('ObjectGroup', () => {
                 adjective: 1,
                 noun: 2
             };
-            assert.deepEqual(new ObjectGroup(props), props)
-        })
+            assert.deepEqual(new ObjectGroup(props), props);
+        });
     });
 
     describe('#compose', () => {
@@ -40,6 +40,6 @@ describe('Generator', () => describe('ObjectGroup', () => {
                 'composedAdjective',
                 'composedDO'
             ]);
-        })
+        });
     });
 }));
