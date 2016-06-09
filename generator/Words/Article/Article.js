@@ -6,8 +6,8 @@ import WordChunk from 'generator/WordChunk/WordChunk.js';
 export default class Article {
 
     constructor ({ root, type }) {
-        const props = { root, type };
-        assertStringsDefined(props);
+        const props = { root, type, chunks: [], translations: {} };
+        assertStringsDefined({ root, type });
         Object.assign(this, props);
     }
 
@@ -28,10 +28,14 @@ export default class Article {
     compose (grammarCase, objectGender) {
         const { text } = this.getSuffix(grammarCase, objectGender);
 
-        const composition = [
-            new WordChunk(this.root),
-            new WordChunk(text)
-        ];
+        const composition = {
+            translations: this.translations,
+            chunks: [
+                new WordChunk(this.root),
+                new WordChunk(text)
+            ]
+        };
+
 
         return composition;
     }

@@ -54,10 +54,12 @@ export default class Noun {
     compose (grammarCase) {
         const text = this.conjugate(grammarCase);
         const composition = {
+            translations: this.translations,
             chunks: [
                 new WordChunk(text)
             ]
         };
+
         return composition;
     }
 }

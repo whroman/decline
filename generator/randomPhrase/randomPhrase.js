@@ -8,6 +8,7 @@ import articleTypes from 'tables/articleTypes/data.js';
 
 import Noun from './../Words/Noun/Noun.js';
 import ObjectGroup from './../WordGroups/ObjectGroup/ObjectGroup.js';
+import Adjective from './../Words/Adjective/Adjective.js';
 import Article from './../Words/Article/Article.js';
 
 const AKK_BEGINNINGS = [
@@ -71,10 +72,20 @@ function getRandomNoun ({ gender, category }) {
     return noun;
 }
 
+function getRandomAdjective () {
+    const foo = getRandomItem(adjectives);
+    const adj = new Adjective({
+        root: foo.text,
+        translations: foo.translations
+    });
+
+    return adj;
+}
+
 const randomPhrase = {
 
     getOne: function ({ gender, category }) {
-        const adjective = getRandomItem(adjectives);
+        const adjective = getRandomAdjective();
         const noun = getRandomNoun({ gender, category });
         const article = getRandomArticleByGender(noun.gender);
         const phrase = new ObjectGroup({

@@ -1,5 +1,5 @@
 function presentPhrase ({ start, statement, noun }) {
-    const article = statement[0].reduce((memo, { text }) => {
+    const article = statement[0].chunks.reduce((memo, { text }) => {
         return memo + text;
     }, '');
 
@@ -9,18 +9,22 @@ function presentPhrase ({ start, statement, noun }) {
     ].filter((item) => item)
     .join(' ') + ' ';
 
+    console.log(statement);
+
     const adjective = statement[1];
+    console.log(adjective)
     const adjSuffix = adjective.chunks[1].text;
     const stub = Array(adjSuffix.length + 1).join('_');
     const stubbedValue = adjSuffix;
     adjective.text = adjective.chunks[0].text;
+    const object = statement[2].chunks;
 
-    if (!statement[2].chunks) throw Error('shouldn\'t occur');
+    if (!object) throw Error('shouldn\'t occur');
 
     const present = {
         untilAdj, stub, stubbedValue, adjective,
         noun: {
-            text: statement[2].chunks[0].text,
+            text: object[0].text,
             gender: noun.gender,
             translations: noun.translations
         },

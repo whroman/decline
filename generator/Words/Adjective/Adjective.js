@@ -29,10 +29,13 @@ export default class Adjective {
     compose (grammarCase, objectGender, articleType) {
         const { text } = this.getSuffix(objectGender, articleType, grammarCase);
 
-        const composition = [
-            new WordChunk(this.root),
-            new WordChunk(text)
-        ];
+        const composition = {
+            translations: this.translations,
+            chunks: [
+                new WordChunk(this.root),
+                new WordChunk(text)
+            ]
+        };
 
         return composition;
     }

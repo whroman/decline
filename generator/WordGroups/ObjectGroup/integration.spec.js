@@ -118,6 +118,8 @@ function printStatement (conjugation) {
     const statement = conjugation
         .map((val) => {
             let text;
+
+            console.log(val);
             if (val.length) {
                 text = val.reduce((_memo, _val) => {
                     return _memo + _val.text;
