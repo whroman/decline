@@ -139,7 +139,7 @@ function printStatement (conjugation) {
 }
 
 describe('ObjectGroup', () => {
-    describe.only('.conjugate()', () => {
+    describe('.conjugate()', () => {
         [
             'nominative',
             'accusative',
