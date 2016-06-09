@@ -67,9 +67,7 @@ export default class Noun {
 
     compose (grammarCase) {
         const text = this.conjugate(grammarCase);
-        const composition = [
-            new WordChunk(text)
-        ];
+        const composition = new WordChunk(text);
         return composition;
     }
 }

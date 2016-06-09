@@ -1,9 +1,11 @@
-function presentPhrase (phrase) {
-    const { start, statement, noun } = phrase;
+function presentPhrase ({ start, statement, noun }) {
+    const article = statement[0].reduce((memo, { text }) => {
+        return memo + text;
+    }, '');
 
     const untilAdj = [
         start,
-        statement[0].text
+        article
     ].filter((item) => item)
     .join(' ') + ' ';
 

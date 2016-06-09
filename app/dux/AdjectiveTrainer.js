@@ -1,5 +1,5 @@
 import { createAction, handleActions } from 'redux-actions';
-import randomPhrase from 'sentenceGenerator/randomPhrase/randomPhrase';
+import randomPhrase from 'generator/randomPhrase/randomPhrase';
 import { range, random } from 'lodash';
 import kasusArray from './../data/kasus';
 

@@ -21,7 +21,8 @@ module.exports = {
                 include: [
                     path.resolve(cwd, 'app'),
                     path.resolve(cwd, 'tables'),
-                    path.resolve(cwd, 'sentenceGenerator')
+                    path.resolve(cwd, 'generator'),
+                    path.resolve(cwd, 'sentenceGenerator'),
                 ],
                 loader: 'babel',
             },
@@ -53,6 +54,7 @@ module.exports = {
         alias: {
             app: path.resolve(cwd, 'app'),
             tables: path.resolve(cwd, 'tables'),
+            generator: path.resolve(cwd, 'generator'),
             sentenceGenerator: path.resolve(cwd, 'sentenceGenerator')
         }
     },
