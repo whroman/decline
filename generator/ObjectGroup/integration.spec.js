@@ -108,9 +108,9 @@ const tests = [
             kein: 'kurze Kinder'
         },
         dative: {
-            def: 'den kurzen Kinder',
+            def: 'den kurzen Kindern',
             indef: null,
-            kein: 'kurzen Kinder'
+            kein: 'kurzen Kindern'
         },
         genitive: {
             def: 'der kurzen Kinder',
