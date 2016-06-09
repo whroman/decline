@@ -48,24 +48,16 @@ export default class Noun {
             }
         }
 
-        // const finalChar = nounText[nounText.length - 1];
-        // const isNominative = grammarCase === '0';
-        // const isMale = gender === '0';
-
-        // const shouldAlterWeakMale = (
-        //     finalChar === 'e' &&
-        //     !isNominative &&
-        //     isMale
-        // );
-
-        // if (shouldAlterWeakMale) nounText += 'n';
-
         return nounText;
     }
 
     compose (grammarCase) {
         const text = this.conjugate(grammarCase);
-        const composition = new WordChunk(text);
+        const composition = {
+            chunks: [
+                new WordChunk(text)
+            ]
+        };
         return composition;
     }
 }

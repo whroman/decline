@@ -47,11 +47,11 @@ function getRandomSubject (type, gender) {
     return subject;
 }
 
-function getRandomNoun ({ objectGender, category }) {
+function getRandomNoun ({ gender, category }) {
     const filteredNouns = nouns
         .filter((noun) => {
-            if (typeof objectGender !== 'string') return true;
-            const nounBelongs = noun.gender === objectGender;
+            if (typeof gender !== 'string') return true;
+            const nounBelongs = noun.gender === gender;
             return nounBelongs;
         })
         .filter((noun) => {
@@ -60,10 +60,12 @@ function getRandomNoun ({ objectGender, category }) {
             return nounBelongs;
         });
 
-    const { text, gender, translations, categories } = getRandomItem(filteredNouns);
+    const filteredNoun = getRandomItem(filteredNouns);
     const props = {
-        root: text,
-        gender, translations, categories
+        root: filteredNoun.text,
+        gender: filteredNoun.gender,
+        translations: filteredNoun.translations,
+        categories: filteredNoun.categories
     };
     const noun = new Noun(props);
     return noun;
@@ -90,12 +92,13 @@ const randomPhrase = {
     },
 
     nominative: function ({ category, gender }) {
-        const conjugation = this.handleCase(gender, category, (phrase) => {
-            const { gender } = phrase.noun;
-            phrase.subject = getRandomSubject('2', gender);
-            const nounIsPlural = gender === '3';
+        const conjugation = this.handleCase(gender, category,
+        (phrase) => {
+            const objectGender = phrase.noun.gender;
+            const subject = getRandomSubject('2', objectGender);
+            const nounIsPlural = objectGender === '3';
             const verb = nounIsPlural ? 'sind' : 'ist';
-            const text = [phrase.subject.deText, verb].join(' ');
+            const text = [subject.deText, verb].join(' ');
             return ucfirst(text);
         }, (phrase) => {
             const conjugatedPhrase = phrase.compose('0');

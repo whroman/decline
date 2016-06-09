@@ -115,9 +115,11 @@ const tests = [
 ];
 
 function printStatement (conjugation) {
+    console.log(conjugation)
     const statement = conjugation
         .map((val) => {
             let text;
+            console.log('val')
             console.log(val)
             if (val.length) {
                 text = val.reduce((_memo, _val) => {
@@ -134,7 +136,7 @@ function printStatement (conjugation) {
 }
 
 describe('ObjectGroup', () => {
-    describe('.conjugate()', () => {
+    describe.only('.conjugate()', () => {
         [
             'nominative',
             'accusative',
@@ -166,7 +168,9 @@ describe('ObjectGroup', () => {
                         const conjugation = phrase.compose(grammarCaseUID);
                         const text = printStatement(conjugation);
 
-                        assert.equal(text, test[grammarCaseName].def);
+                        assert.equal(text, test[grammarCaseName].def, JSON.stringify({
+                            text, conjugation
+                        }));
                     });
 
                     it(`should work for phrases with ${gender} nouns and indefinite articles`, () => {

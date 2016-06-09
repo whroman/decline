@@ -9,18 +9,18 @@ function presentPhrase ({ start, statement, noun }) {
     ].filter((item) => item)
     .join(' ') + ' ';
 
-    const adjSuffix = statement[1].chunks[1].text;
+    const adjective = statement[1];
+    const adjSuffix = adjective.chunks[1].text;
     const stub = Array(adjSuffix.length + 1).join('_');
     const stubbedValue = adjSuffix;
-    const adjective = statement[1];
-    adjective.text = statement[1].chunks[0].text;
+    adjective.text = adjective.chunks[0].text;
 
-    if (!statement[2].text) throw Error('shouldn\'t occur');
+    if (!statement[2].chunks) throw Error('shouldn\'t occur');
 
     const present = {
         untilAdj, stub, stubbedValue, adjective,
         noun: {
-            text: statement[2].text,
+            text: statement[2].chunks[0].text,
             gender: noun.gender,
             translations: noun.translations
         },
