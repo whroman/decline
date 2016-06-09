@@ -120,7 +120,7 @@ const testCases = [
 
 describe('Generator', () =>
 describe('Noun', () =>
-describe.only('#conjugate', () => {
+describe('#conjugate', () => {
     testCases.forEach(({
         gender, grammarCase,
         conjugation = ROOT,

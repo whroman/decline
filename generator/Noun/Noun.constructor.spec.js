@@ -9,8 +9,8 @@ describe('#constructor', () => {
         assert.deepEqual(new Noun({}), {
             root: undefined,
             gender: undefined,
-            translations: undefined,
-            categories: undefined
+            translations: {},
+            categories: []
         });
     });
 })));
