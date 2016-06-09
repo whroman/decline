@@ -97,7 +97,7 @@ const adjSuffixes = [
 
 describe('Generator', () =>
 describe('Adjective', () => {
-    describe.only('#getSuffix', () => {
+    describe('#getSuffix', () => {
         it('returns correct suffix', () => {
             adjSuffixes.forEach( (testCase) => {
 
