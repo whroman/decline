@@ -1,12 +1,12 @@
-import { find, isString } from 'lodash';
+import { find } from 'lodash';
 import conjugationTable from 'tables/conjugationTable/data.js';
-import assertStringsDefined from './../util/assertStringsDefined.js';
-import WordChunk from './../WordChunk/WordChunk.js';
+import assertStringsDefined from 'generator/util/assertStringsDefined.js';
+import WordChunk from 'generator/WordChunk/WordChunk.js';
 
 export default class Article {
 
     constructor ({ root, type }) {
-        const props = { root, type }
+        const props = { root, type };
         assertStringsDefined(props);
         Object.assign(this, props);
     }

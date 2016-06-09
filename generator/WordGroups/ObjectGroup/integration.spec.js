@@ -1,16 +1,10 @@
 import { assert } from 'chai';
 
 import ObjectGroup from './ObjectGroup';
-import Article from '../Article/Article';
-import Adjective from '../Adjective/Adjective';
-import Noun from '../Noun/Noun';
+import Article from 'generator/Words/Article/Article';
+import Adjective from 'generator/Words/Adjective/Adjective';
+import Noun from 'generator/Words/Noun/Noun';
 
-/*
-import ObjectGroup from './ObjectGroup.js';
-import Adjective from 'tables/adjectives/Adjective.js';
-import Article from './../article/Article.js';
-import Noun from './../noun/Noun.js';
-*/
 const genders = ['male', 'female', 'neutral', 'plural'];
 
 const tests = [
@@ -124,6 +118,7 @@ function printStatement (conjugation) {
     const statement = conjugation
         .map((val) => {
             let text;
+            console.log(val)
             if (val.length) {
                 text = val.reduce((_memo, _val) => {
                     return _memo + _val.text;

@@ -1,6 +1,4 @@
-import { find } from 'lodash';
-import conjugationTable from 'tables/conjugationTable/data.js';
-import WordChunk from '../WordChunk/WordChunk';
+import WordChunk from 'generator/WordChunk/WordChunk';
 
 export default class Noun {
 

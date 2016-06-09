@@ -6,9 +6,9 @@ import articleRoots from 'tables/articles/data.js';
 import subjects from 'tables/subjects/data.js';
 import articleTypes from 'tables/articleTypes/data.js';
 
-import Noun from './../Noun/Noun.js';
-import ObjectGroup from './../ObjectGroup/ObjectGroup.js';
-import Article from './../Article/Article.js';
+import Noun from './../Words/Noun/Noun.js';
+import ObjectGroup from './../WordGroups/ObjectGroup/ObjectGroup.js';
+import Article from './../Words/Article/Article.js';
 
 const AKK_BEGINNINGS = [
     'Ich mag',

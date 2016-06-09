@@ -1,7 +1,7 @@
 import { find } from 'lodash';
-import assertStringsDefined from './../util/assertStringsDefined.js';
 import conjugationTable from 'tables/conjugationTable/data.js';
-import WordChunk from './../WordChunk/WordChunk.js';
+import assertStringsDefined from 'generator/util/assertStringsDefined.js';
+import WordChunk from 'generator/WordChunk/WordChunk.js';
 
 export default class Adjective {
 
