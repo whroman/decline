@@ -1,37 +1,36 @@
+const space = () => ({
+    type: 'space',
+    text: ' '
+});
+
+
 function presentPhrase ({ start, statement, noun }) {
     const article = statement[0].chunks.reduce((memo, { text }) => {
         return memo + text;
     }, '');
 
-    const untilAdj = [
-        start,
-        article
-    ].filter((item) => item)
-    .join(' ') + ' ';
-
     const adjective = statement[1];
-    const adjSuffix = adjective.chunks[1].text;
-    const stub = Array(adjSuffix.length + 1).join('_');
-    const stubbedValue = adjSuffix;
-    adjective.text = adjective.chunks[0].text;
+    const adjSuffix = adjective.chunks[1];
     const object = statement[2].chunks;
 
     if (!object) throw Error('shouldn\'t occur');
 
     const present = {
-        key: untilAdj + stub + adjective.text,
+        key: start + article.text + adjSuffix.text + object.text,
         values: {
-            3: stubbedValue
+            5: adjSuffix.text
         },
         statement: [
             {
-                type: 'untilAdj',
-                text: untilAdj
+                type: 'start',
+                text: start
             },
+            space(),
             {
-                type: 'space',
-                text: ' '
+                type: 'article',
+                text: article
             },
+            space(),
             {
                 type: 'adjectiveRoot',
                 text: adjective.chunks[0].text,
@@ -39,12 +38,9 @@ function presentPhrase ({ start, statement, noun }) {
             },
             {
                 type: 'input',
-                text: stub
+                text: adjSuffix.stub
             },
-            {
-                type: 'space',
-                text: ' '
-            },
+            space(),
             {
                 type: 'noun',
                 text: object[0].text,

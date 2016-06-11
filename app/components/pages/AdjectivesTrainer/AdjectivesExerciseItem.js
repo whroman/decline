@@ -147,7 +147,7 @@ export default class AdjectivesExerciseItem extends Component {
     handleInputBlur (event, key) {
         const { value } = event.target;
         const { uid, phrase, replace } = this.props;
-        const isFilled = areSameLength(value, this.props.phrase.values[key]);
+        const isFilled = areSameLength(value, phrase.values[key]);
         if (uid >= 3 && isFilled) replace(1);
     }
 
