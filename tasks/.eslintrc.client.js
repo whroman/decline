@@ -6,10 +6,12 @@ module.exports = {
         "node": true
     },
     "plugins": [
-        "react"
+        "react",
+        "mocha"
     ],
     "extends": "eslint:recommended",
     "rules": {
+        "mocha/no-exclusive-tests": "error",
         "comma-dangle": 0, // dangling commas are ok
         "indent": [2, 4, { "SwitchCase": 1 }],
         "jsx-quotes": [2, "prefer-single"],
