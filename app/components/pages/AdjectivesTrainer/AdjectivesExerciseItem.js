@@ -31,7 +31,7 @@ export default class AdjectivesExerciseItem extends Component {
 
     render () {
         const { phrase, uid, setFocusedItem, shouldFocus } = this.props;
-        const { untilAdj, key, adjective, noun } = phrase;
+        const { statement, key } = phrase;
 
         const { isFilled, isCorrect } = this.state;
         let inputState = '';
@@ -47,42 +47,63 @@ export default class AdjectivesExerciseItem extends Component {
                 onMouseEnter={ () => setFocusedItem(key) }
             >
                 <div className='text'>
-                    <span>{ untilAdj }</span>
-                    <span>&nbsp;</span>
-                    <AdjectiveRoot
-                        text={ adjective.text }
-                        translations={ adjective.translations.eng }
-                    />
-                    { this.renderInput() }
-                    <span>&nbsp;</span>
-                    <DirectObject
-                        text={ noun.text }
-                        translations={ noun.translations.eng }
-                        gender={ noun.gender }
-                    />
-                    <span>{ '.' }</span>
+                    { statement.map(this.renderStatementItem.bind(this)) }
                 </div>
                 { this.renderExerciseActions(uid) }
             </div>
         );
     }
 
-    renderInput () {
-        const { phrase, uid, setFocusedItem } = this.props;
-        const { stub, key } = phrase;
-        const numOfChars = stub.length;
+    renderStatementItem (item, index) {
+        const { type, text, translations, gender } = item;
+        switch (type) {
+            case 'noun':
+                return (
+                    <DirectObject
+                        key={ index }
+                        text={ text }
+                        translations={ translations.eng }
+                        gender={ gender }
+                    />
+                );
+
+            case 'adjectiveRoot':
+                return (
+                    <AdjectiveRoot
+                        key={ index }
+                        text={ text }
+                        translations={ translations.eng }
+                    />
+                );
+
+            case 'input':
+                return this.renderInput(item.text, index);
+
+            default:
+                return (
+                    <span key={ index }>{ text }</span>
+                );
+        }
+    }
+
+    renderInput (text, key) {
+        const { uid, setFocusedItem } = this.props;
+        const numOfChars = text.length;
 
         return (
-            <strong className='input-wrapper'>
+            <strong
+                key={ key }
+                className='input-wrapper'
+            >
                 <input
                     autoFocus={ uid === 0 ? true : false }
                     type='text'
                     maxLength={ numOfChars }
                     size={ numOfChars }
-                    onChange={ this.handleInputChange.bind(this) }
+                    onChange={ ((event) => this.handleInputChange(event, key)).bind(this) }
                     onKeyPress={ this.handleInputKeyPress.bind(this) }
                     onFocus={ () => setFocusedItem(key) }
-                    onBlur={ this.handleInputBlur.bind(this) }
+                    onBlur={ ((event) => this.handleInputBlur(event, key)).bind(this) }
                     tabIndex={ uid + 1 }
                 />
                 <div className='placeholder'>{ Array(numOfChars + 1).join('_') }</div>
@@ -115,28 +136,19 @@ export default class AdjectivesExerciseItem extends Component {
         }
     }
 
-    handleInputChange (event) {
+    handleInputChange (event, key) {
         const { value } = event.target;
-        const { stubbedValue } = this.props.phrase;
-
+        const stubbedValue = this.props.phrase.values[key];
         const isCorrect = value.toLowerCase() === stubbedValue.toLowerCase();
         const isFilled = areSameLength(value, stubbedValue);
         this.setState({ isCorrect, isFilled });
     }
 
-    handleInputBlur (event) {
+    handleInputBlur (event, key) {
         const { value } = event.target;
         const { uid, phrase, replace } = this.props;
-        const isFilled = areSameLength(value, phrase.stubbedValue);
+        const isFilled = areSameLength(value, this.props.phrase.values[key]);
         if (uid >= 3 && isFilled) replace(1);
-        this.toggleTooltip(false);
-    }
-
-    toggleTooltip (show, tooltipJSX=null) {
-        this.setState({
-            tooltipShow: show,
-            tooltipJSX
-        });
     }
 
 }

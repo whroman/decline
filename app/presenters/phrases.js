@@ -9,10 +9,7 @@ function presentPhrase ({ start, statement, noun }) {
     ].filter((item) => item)
     .join(' ') + ' ';
 
-    console.log(statement);
-
     const adjective = statement[1];
-    console.log(adjective)
     const adjSuffix = adjective.chunks[1].text;
     const stub = Array(adjSuffix.length + 1).join('_');
     const stubbedValue = adjSuffix;
@@ -22,13 +19,42 @@ function presentPhrase ({ start, statement, noun }) {
     if (!object) throw Error('shouldn\'t occur');
 
     const present = {
-        untilAdj, stub, stubbedValue, adjective,
-        noun: {
-            text: object[0].text,
-            gender: noun.gender,
-            translations: noun.translations
+        key: untilAdj + stub + adjective.text,
+        values: {
+            3: stubbedValue
         },
-        key: untilAdj + stub + adjective.text
+        statement: [
+            {
+                type: 'untilAdj',
+                text: untilAdj
+            },
+            {
+                type: 'space',
+                text: ' '
+            },
+            {
+                type: 'adjectiveRoot',
+                text: adjective.chunks[0].text,
+                translations: adjective.translations
+            },
+            {
+                type: 'input',
+                text: stub
+            },
+            {
+                type: 'space',
+                text: ' '
+            },
+            {
+                type: 'noun',
+                text: object[0].text,
+                gender: noun.gender,
+                translations: noun.translations
+            }, {
+                type: 'punctuation',
+                text: '.'
+            }
+        ]
     };
 
     return present;
