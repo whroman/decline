@@ -16,7 +16,7 @@ function presentPhrase ({ start, statement, noun }) {
     if (!object) throw Error('shouldn\'t occur');
 
     const present = {
-        key: start + article.text + adjSuffix.text + object.text,
+        key: start + article + adjSuffix.text + object[0].text,
         values: {
             5: adjSuffix.text
         },
