@@ -1,15 +1,17 @@
-import { random } from 'lodash';
+import getRandomItem from './../util/getRandomItem';
 
-import nouns from 'tables/nouns/data.js';
-import adjectives from 'tables/adjectives/data.js';
-import articleRoots from 'tables/articles/data.js';
-import subjects from 'tables/subjects/data.js';
-import articleTypes from 'tables/articleTypes/data.js';
+// Tables
+import nouns from 'tables/nouns/data';
+import adjectives from 'tables/adjectives/data';
+import subjects from 'tables/subjects/data';
 
-import Noun from './../Words/Noun/Noun.js';
-import ObjectGroup from './../WordGroups/ObjectGroup/ObjectGroup.js';
-import Adjective from './../Words/Adjective/Adjective.js';
-import Article from './../Words/Article/Article.js';
+// Models
+import Noun from './../Words/Noun/Noun';
+import ObjectGroup from './../WordGroups/ObjectGroup/ObjectGroup';
+import Adjective from './../Words/Adjective/Adjective';
+
+// Randomizers
+import { byGender } from './randomArticle';
 
 const AKK_BEGINNINGS = [
     'Ich mag',
@@ -31,8 +33,6 @@ const AKK_BEGINNINGS = [
     'Sie haben'
 ];
 
-function getRandomIndex (arr) { return random(0, arr.length - 1); }
-function getRandomItem (arr) { return arr[getRandomIndex(arr)]; }
 function ucfirst (str) { return str[0].toUpperCase() + str.substring(1); }
 
 function getRandomSubject (type, gender) {
@@ -87,7 +87,7 @@ const randomPhrase = {
     getOne: function ({ gender, category }) {
         const adjective = getRandomAdjective();
         const noun = getRandomNoun({ gender, category });
-        const article = getRandomArticleByGender(noun.gender);
+        const article = byGender(noun.gender);
         const phrase = new ObjectGroup({
             article, adjective, noun
         });
@@ -134,28 +134,6 @@ const randomPhrase = {
 
 };
 
-function getRandomArticleGivenType (type) {
-    const root = getRandomItem(articleRoots[type]);
-    return new Article({ root, type });
-}
 
-function getRandomArticleByGender (genderUID) {
-    let articleTypeUID;
-    let isInvalid = true;
-    const nounIsPlural = genderUID === '3';
-
-    do {
-        articleTypeUID = getRandomItem(articleTypes).uid;
-        const articleIsIndef = articleTypeUID === '1';
-        const articleIsOhne = articleTypeUID === '2';
-        isInvalid = (
-            (nounIsPlural && articleIsIndef) ||
-            (!nounIsPlural && articleIsOhne)
-        );
-    } while (isInvalid);
-
-    const article = getRandomArticleGivenType(articleTypeUID);
-    return article;
-}
 
 export default randomPhrase;

@@ -16,7 +16,6 @@ export default class ObjectGroup {
             this.adjective.compose(kasus, gender, type),
             this.noun.compose(kasus)
         ];
-        console.log(items);
         return items;
     }
 
