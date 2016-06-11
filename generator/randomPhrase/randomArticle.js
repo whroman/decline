@@ -12,7 +12,7 @@ function byType (type) {
     return new Article({ root, type });
 }
 
-export function byGender (genderUID) {
+export default function byGender (genderUID) {
     let articleTypeUID;
     let isInvalid = true;
     const nounIsPlural = genderUID === '3';

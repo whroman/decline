@@ -1,17 +1,16 @@
 import getRandomItem from './../util/getRandomItem';
 
 // Tables
-import nouns from 'tables/nouns/data';
 import adjectives from 'tables/adjectives/data';
 import subjects from 'tables/subjects/data';
 
 // Models
-import Noun from './../Words/Noun/Noun';
 import ObjectGroup from './../WordGroups/ObjectGroup/ObjectGroup';
 import Adjective from './../Words/Adjective/Adjective';
 
-// Randomizers
-import { byGender } from './randomArticle';
+// Word Generators
+import randomArticle from './randomArticle';
+import randomNoun from './randomNoun';
 
 const AKK_BEGINNINGS = [
     'Ich mag',
@@ -48,29 +47,6 @@ function getRandomSubject (type, gender) {
     return subject;
 }
 
-function getRandomNoun ({ gender, category }) {
-    const filteredNouns = nouns
-        .filter((noun) => {
-            if (typeof gender !== 'string') return true;
-            const nounBelongs = noun.gender === gender;
-            return nounBelongs;
-        })
-        .filter((noun) => {
-            if (typeof category !== 'string') return true;
-            const nounBelongs = noun.categories.includes(category);
-            return nounBelongs;
-        });
-
-    const filteredNoun = getRandomItem(filteredNouns);
-    const props = {
-        root: filteredNoun.text,
-        gender: filteredNoun.gender,
-        translations: filteredNoun.translations,
-        categories: filteredNoun.categories
-    };
-    const noun = new Noun(props);
-    return noun;
-}
 
 function getRandomAdjective () {
     const foo = getRandomItem(adjectives);
@@ -86,8 +62,8 @@ const randomPhrase = {
 
     getOne: function ({ gender, category }) {
         const adjective = getRandomAdjective();
-        const noun = getRandomNoun({ gender, category });
-        const article = byGender(noun.gender);
+        const noun = randomNoun({ gender, category });
+        const article = randomArticle(noun.gender);
         const phrase = new ObjectGroup({
             article, adjective, noun
         });

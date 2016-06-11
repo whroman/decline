@@ -56,7 +56,6 @@ export default class AdjectivesExerciseItem extends Component {
 
     renderStatementItem (item, index) {
         const { type, text, translations, gender } = item;
-        console.log(index);
         switch (type) {
             case 'noun':
                 return (
