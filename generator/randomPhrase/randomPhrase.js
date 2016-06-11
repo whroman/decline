@@ -1,9 +1,6 @@
 import getRandomItem from './../util/getRandomItem';
-
-// Models
 import ObjectGroup from './../WordGroups/ObjectGroup/ObjectGroup';
 
-// Word Generators
 import randomArticle from './randomArticle';
 import randomNoun from './randomNoun';
 import randomSubject from './randomSubject';
@@ -30,8 +27,6 @@ const AKK_BEGINNINGS = [
 ];
 
 function ucfirst (str) { return str[0].toUpperCase() + str.substring(1); }
-
-
 
 const randomPhrase = {
 
@@ -84,7 +79,5 @@ const randomPhrase = {
     }
 
 };
-
-
 
 export default randomPhrase;

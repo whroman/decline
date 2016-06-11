@@ -1,5 +1,4 @@
 import { assert } from 'chai';
-import sinon from 'sinon';
 import Noun from './Noun';
 
 describe('Generator', () =>

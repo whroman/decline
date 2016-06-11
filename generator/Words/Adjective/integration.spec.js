@@ -1,5 +1,4 @@
 import { assert } from 'chai';
-import sinon from 'sinon';
 import Adjective from './Adjective';
 
 const adjSuffixes = [

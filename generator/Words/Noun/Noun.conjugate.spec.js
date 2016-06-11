@@ -1,9 +1,7 @@
 import { expect } from 'chai';
-import sinon from 'sinon';
 import Noun from './Noun';
 
 const ROOT = 'Foo';
-const CONJUGATION = 'asdf';
 const testCases = [
 // Maskulin
     {
