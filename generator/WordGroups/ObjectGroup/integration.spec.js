@@ -116,11 +116,11 @@ const tests = [
 
 function printStatement (conjugation) {
     const statement = conjugation
-        .map((val) => {
+        .map((item) => {
             let text;
 
-            if (val.length) {
-                text = val.reduce((_memo, _val) => {
+            if (item.chunks) {
+                text = item.chunks.reduce((_memo, _val) => {
                     return _memo + _val.text;
                 }, '');
             }
