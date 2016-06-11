@@ -10,7 +10,7 @@ const RAW_SUBJECTS = [
     [
 /*      DE      EN */
         'hier', 'here',
-/*      Types   Genders */
+/*      Types       "Applicable Genders" */
         ['2', '3'], ['0', '1', '2', '3']
     ],
     [

@@ -1,16 +1,13 @@
 import getRandomItem from './../util/getRandomItem';
 
-// Tables
-import adjectives from 'tables/adjectives/data';
-import subjects from 'tables/subjects/data';
-
 // Models
 import ObjectGroup from './../WordGroups/ObjectGroup/ObjectGroup';
-import Adjective from './../Words/Adjective/Adjective';
 
 // Word Generators
 import randomArticle from './randomArticle';
 import randomNoun from './randomNoun';
+import randomSubject from './randomSubject';
+import randomAdjective from './randomAdjective';
 
 const AKK_BEGINNINGS = [
     'Ich mag',
@@ -34,34 +31,12 @@ const AKK_BEGINNINGS = [
 
 function ucfirst (str) { return str[0].toUpperCase() + str.substring(1); }
 
-function getRandomSubject (type, gender) {
-    const filteredSubjects = subjects
-        .filter((subject) => {
-            return (
-                subject.types.includes(type) &&
-                subject.genders.includes(gender)
-            );
-        });
 
-    const subject = getRandomItem(filteredSubjects);
-    return subject;
-}
-
-
-function getRandomAdjective () {
-    const foo = getRandomItem(adjectives);
-    const adj = new Adjective({
-        root: foo.text,
-        translations: foo.translations
-    });
-
-    return adj;
-}
 
 const randomPhrase = {
 
     getOne: function ({ gender, category }) {
-        const adjective = getRandomAdjective();
+        const adjective = randomAdjective();
         const noun = randomNoun({ gender, category });
         const article = randomArticle(noun.gender);
         const phrase = new ObjectGroup({
@@ -82,7 +57,7 @@ const randomPhrase = {
         const conjugation = this.handleCase(gender, category,
         (phrase) => {
             const objectGender = phrase.noun.gender;
-            const subject = getRandomSubject('2', objectGender);
+            const subject = randomSubject('2', objectGender);
             const nounIsPlural = objectGender === '3';
             const verb = nounIsPlural ? 'sind' : 'ist';
             const text = [subject.deText, verb].join(' ');
