@@ -1,7 +1,16 @@
 const DIE_KASUS = [
-    // 'nominative',
-    // 'accusative',
-    'genitive',
+    {
+        name: 'nominative',
+        uid: '0'
+    },
+    {
+        name: 'accusative',
+        uid: '1'
+    },
+    {
+        name: 'genitive',
+        uid: '3'
+    }
 ];
 
 export default DIE_KASUS;

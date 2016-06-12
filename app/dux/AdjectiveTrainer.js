@@ -1,7 +1,7 @@
 import { createAction, handleActions } from 'redux-actions';
 import randomPhrase from 'generator/randomPhrase/randomPhrase';
-import { range, random } from 'lodash';
-import kasusArray from './../data/kasus';
+import { find, range, random } from 'lodash';
+import kasusData from './../data/kasus';
 
 // window is declared here for testing purposes.
 const window = global.window;
@@ -31,17 +31,16 @@ export function localStorageExists () {
     return (window && window.localStorage);
 }
 
-export function getRandomKasus () {
-    const kasusIndex = random(0, kasusArray.length - 1);
-    const kasus = kasusArray[kasusIndex];
+export function getRandomKasusName () {
+    const kasusIndex = random(0, kasusData.length - 1);
+    const kasus = kasusData[kasusIndex].name;
     return kasus;
 }
 
 export function getRandomPhrases({ amount, kasus, kategorie, gender }) {
-    const kasusIsValid = kasusArray.includes(kasus);
-
+    const kasusIsValid = find(kasusData, { name: kasus });
     const phrases = range(amount).map(() => {
-        const methodName = kasusIsValid ? kasus : getRandomKasus();
+        const methodName = kasusIsValid ? kasus : getRandomKasusName();
         const phrase = randomPhrase[methodName]({ category: kategorie, gender });
         return phrase;
     });

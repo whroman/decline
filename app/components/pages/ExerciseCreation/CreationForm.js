@@ -42,6 +42,10 @@ const KASUS_OPTIONS = [
         label: 'Akkusativ',
         value: 'accusative'
     },
+    {
+        label: 'Genitiv',
+        value: 'genitive'
+    },
 ];
 
 const KATEGORIE_OPTIONS = categories
