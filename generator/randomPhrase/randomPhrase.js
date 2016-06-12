@@ -6,69 +6,28 @@ import Noun from './../Words/Noun/Noun';
 import Adjective from './../Words/Adjective/Adjective';
 import randomSubject from './randomSubject';
 
-
-
-
 const space = () => ({
     type: 'space',
     text: ' '
 });
 
+function compose ({ kasus, start, objectGroup }) {
+    const statement = [ start ]
+        .concat(space())
+        .concat(objectGroup.flattenWithStubbedAdjSuffix(kasus))
+        .concat({
+            type: 'punctuation',
+            text: '.'
+        });
 
-function presentPhrase ({ start, statement }) {
-    const { adjective, noun } = statement;
-    const article = statement.article.chunks.reduce((memo, { text }) => {
-        return memo + text;
-    }, '');
+    const key = statement.reduce((memo, item) => (memo += item.text), '');
 
-    const adjRoot = adjective.chunks[0];
-    const adjSuffix = adjective.chunks[1];
-    const nounText = noun.chunks[0].text;
+    const { adjective } = objectGroup.compose(kasus);
+    const values = { 5: adjective.chunks[1].text };
 
-    if (!noun) throw Error('shouldn\'t occur');
-
-    const present = {
-        key: start + article + adjSuffix.text + nounText,
-        values: {
-            5: adjSuffix.text
-        },
-        statement: [
-            {
-                type: 'start',
-                text: start
-            },
-            space(),
-            {
-                type: 'article',
-                text: article
-            },
-            space(),
-            {
-                type: 'adjectiveRoot',
-                text: adjRoot.text,
-                translations: adjective.translations
-            },
-            {
-                type: 'input',
-                text: adjSuffix.stub
-            },
-            space(),
-            {
-                type: 'noun',
-                text: nounText,
-                gender: noun.gender,
-                translations: noun.translations
-            }, {
-                type: 'punctuation',
-                text: '.'
-            }
-        ]
-    };
-
+    const present = { key, values, statement };
     return present;
 }
-
-
 
 const AKK_BEGINNINGS = [
     'Ich mag',
@@ -94,7 +53,7 @@ function ucfirst (str) { return str[0].toUpperCase() + str.substring(1); }
 
 const randomPhrase = {
 
-    getOne: function ({ gender, category }) {
+    getRandomObjectGroup: function ({ gender, category }) {
         const adjective = Adjective.random();
         const noun = Noun.random({ gender, category });
         const article = Article.randomByGender(noun.gender);
@@ -104,45 +63,36 @@ const randomPhrase = {
         return objectGroup;
     },
 
-    handleCase: function (gender, category, textOrTransform, composeObjectGroup) {
-        const objectGroup = this.getOne({ gender, category });
+    handleCase: function (kasus, gender, category, textOrTransform) {
+        const objectGroup = this.getRandomObjectGroup({ gender, category });
         const start = typeof textOrTransform === 'function' ? textOrTransform(objectGroup) : textOrTransform;
-        const statement = composeObjectGroup(objectGroup);
-
-        // const clause = Object.assign({}, objectGroup, { start, statement });
-        console.log(statement)
-        const clause = presentPhrase({ start, statement })
-        console.log(clause);
+        const clause = compose({ kasus, start, objectGroup })
         return clause;
     },
 
     nominative: function ({ category, gender }) {
-        const conjugation = this.handleCase(gender, category,
+        const conjugation = this.handleCase('0', gender, category,
         (objectGroup) => {
-            const objectGender = objectGroup.noun.gender;
-            const subject = randomSubject('2', objectGender);
-            const nounIsPlural = objectGender === '3';
+            const { gender } = objectGroup.noun;
+            const subject = randomSubject('2', gender);
+            const nounIsPlural = gender === '3';
             const verb = nounIsPlural ? 'sind' : 'ist';
             const text = [subject.deText, verb].join(' ');
-            return ucfirst(text);
-        }, (objectGroup) => {
-            const conjugatedPhrase = objectGroup.compose('0');
-            return conjugatedPhrase;
+            return {
+                type: 'start',
+                text: ucfirst(text)
+            };
         });
 
         return conjugation;
     },
 
     accusative: function ({ category, gender }) {
-        const randomAkkStart = getRandomItem(AKK_BEGINNINGS) + ' ';
-        const conjugation = this.handleCase(
-            gender,
-            category,
-            randomAkkStart,
-            (objectGroup) => {
-                return objectGroup.compose('1');
-            }
-        );
+        const randomAkkStart = getRandomItem(AKK_BEGINNINGS);
+        const conjugation = this.handleCase( '1', gender, category, {
+            type: 'start',
+            text: randomAkkStart
+        });
         return conjugation;
     }
 
