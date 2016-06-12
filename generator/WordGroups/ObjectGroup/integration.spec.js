@@ -115,20 +115,9 @@ const tests = [
 ];
 
 function printStatement (conjugation) {
-    const statement = conjugation
-        .map((item) => {
-            let text;
-
-            if (item.chunks) {
-                text = item.chunks.reduce((_memo, _val) => {
-                    return _memo + _val.text;
-                }, '');
-            }
-
-            return text;
-        })
-        .filter((item) => item)
-        .join(' ');
+    const statement = conjugation.reduce((_memo, _val) => {
+        return _memo + _val.text;
+    }, '');
 
     return statement;
 }
@@ -163,7 +152,7 @@ describe('ObjectGroup', () => {
                         });
                         const phrase = new ObjectGroup({ noun, adjective, article });
 
-                        const conjugation = phrase.compose(grammarCaseUID);
+                        const conjugation = phrase.flatten(grammarCaseUID);
                         const text = printStatement(conjugation);
 
                         assert.equal(text, test[grammarCaseName].def, JSON.stringify({
@@ -178,7 +167,7 @@ describe('ObjectGroup', () => {
                         });
                         const phrase = new ObjectGroup({ noun, adjective, article });
                         const expectedText = test[grammarCaseName].indef;
-                        const conjugate = () => phrase.compose(grammarCaseUID);
+                        const conjugate = () => phrase.flatten(grammarCaseUID);
                         if (expectedText === null) {
                             assert.throws(conjugate);
                         } else {
@@ -193,7 +182,7 @@ describe('ObjectGroup', () => {
                             type: '2'
                         });
                         const phrase = new ObjectGroup({ noun, adjective, article });
-                        const conjugation = phrase.compose(grammarCaseUID);
+                        const conjugation = phrase.flatten(grammarCaseUID);
                         const text = printStatement(conjugation);
                         assert.equal(text, test[grammarCaseName].kein);
                     });
