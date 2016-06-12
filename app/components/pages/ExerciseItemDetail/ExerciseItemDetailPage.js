@@ -39,11 +39,11 @@ export class ExerciseItemDetail extends Component {
             <table>
                 <tbody>
                     <tr>
-                        <td>{ 'Adj. auf english' }</td>
+                        <td>{ 'Adj. auf Englisch' }</td>
                         <td>{ adjEnglish }</td>
                     </tr>
                     <tr>
-                        <td>{ 'Object auf english' }</td>
+                        <td>{ 'Objekt auf Englisch' }</td>
                         <td>{ objectEnglish }</td>
                     </tr>
                     <tr>
