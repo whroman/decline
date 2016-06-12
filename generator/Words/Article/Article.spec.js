@@ -14,18 +14,21 @@ describe('Article', () => {
     describe('#constructor', () => {
         it('declares `root` and `type` properties', () => {
             const article = new Article(PROPS);
-            assert.deepEqual(article, { root: PROPS.root, type: PROPS.type });
+            assert.equal(article.root, PROPS.root);
+            assert.equal(article.type, PROPS.type);
         });
     });
 
     describe('#compose', () => {
         it('returns a `composition` object', () => {
             const article = new Article(PROPS);
-            const getSuffixStub = sinon.stub(article, 'getSuffix', () => ({
-                text: SUFFIX_TEXT
-            }));
+            const getSuffixStub = sinon.stub(
+                article,
+                'getSuffix',
+                () => ({ text: SUFFIX_TEXT })
+            );
 
-            assert.deepEqual(article.compose('fakeArg1', 'fakeArg2'), [
+            assert.deepEqual(article.compose('fakeArg1', 'fakeArg2').chunks, [
                 {
                     text: PROPS.root,
                     stub: PROPS.root.replace(/./gi, '_')

@@ -27,7 +27,8 @@ describe('Adjective', () => {
             const getSuffixStub = sinon.stub(adjective, 'getSuffix', () => ({
                 text: SUFFIX_TEXT
             }));
-            assert.deepEqual(adjective.compose('fakeArg1', 'fakeArg2'), [
+            const { chunks } = adjective.compose('fakeArg1', 'fakeArg2');
+            assert.deepEqual(chunks, [
                 {
                     text: ROOT,
                     stub: ROOT.replace(/./gi, '_')

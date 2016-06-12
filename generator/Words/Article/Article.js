@@ -1,7 +1,12 @@
 import { find } from 'lodash';
-import conjugationTable from 'tables/conjugationTable/data.js';
+import getRandomItem from 'generator/util/getRandomItem';
 import assertStringsDefined from 'generator/util/assertStringsDefined.js';
 import WordChunk from 'generator/WordChunk/WordChunk.js';
+
+// Tables
+import articleRoots from 'tables/articles/data.js';
+import articleTypes from 'tables/articleTypes/data.js';
+import conjugationTable from 'tables/conjugationTable/data.js';
 
 export default class Article {
 
@@ -9,6 +14,30 @@ export default class Article {
         const props = { root, type, chunks: [], translations: {} };
         assertStringsDefined({ root, type });
         Object.assign(this, props);
+    }
+
+    static randomByType (type) {
+        const root = getRandomItem(articleRoots[type]);
+        return new Article({ root, type });
+    }
+
+    static randomByGender (genderUID) {
+        let articleTypeUID;
+        let isInvalid = true;
+        const nounIsPlural = genderUID === '3';
+
+        do {
+            articleTypeUID = getRandomItem(articleTypes).uid;
+            const articleIsIndef = articleTypeUID === '1';
+            const articleIsOhne = articleTypeUID === '2';
+            isInvalid = (
+                (nounIsPlural && articleIsIndef) ||
+                (!nounIsPlural && articleIsOhne)
+            );
+        } while (isInvalid);
+
+        const article = this.randomByType(articleTypeUID);
+        return article;
     }
 
     getSuffix (grammarCase, objectGender) {

@@ -1,10 +1,10 @@
 import getRandomItem from './../util/getRandomItem';
 import ObjectGroup from './../WordGroups/ObjectGroup/ObjectGroup';
 
-import randomArticle from './randomArticle';
-import randomNoun from './randomNoun';
+import Article from './../Words/Article/Article';
+import Noun from './../Words/Noun/Noun';
+import Adjective from './../Words/Adjective/Adjective';
 import randomSubject from './randomSubject';
-import randomAdjective from './randomAdjective';
 
 const AKK_BEGINNINGS = [
     'Ich mag',
@@ -31,34 +31,34 @@ function ucfirst (str) { return str[0].toUpperCase() + str.substring(1); }
 const randomPhrase = {
 
     getOne: function ({ gender, category }) {
-        const adjective = randomAdjective();
-        const noun = randomNoun({ gender, category });
-        const article = randomArticle(noun.gender);
-        const phrase = new ObjectGroup({
+        const adjective = Adjective.random();
+        const noun = Noun.random({ gender, category });
+        const article = Article.randomByGender(noun.gender);
+        const objectGroup = new ObjectGroup({
             article, adjective, noun
         });
-        return phrase;
+        return objectGroup;
     },
 
     handleCase: function (gender, category, textOrTransform, transformCon) {
-        const phrase = this.getOne({ gender, category });
-        const start = typeof textOrTransform === 'function' ? textOrTransform(phrase) : textOrTransform;
-        const statement = transformCon(phrase);
+        const objectGroup = this.getOne({ gender, category });
+        const start = typeof textOrTransform === 'function' ? textOrTransform(objectGroup) : textOrTransform;
+        const statement = transformCon(objectGroup);
 
-        return Object.assign(phrase, { start, statement });
+        return Object.assign(objectGroup, { start, statement });
     },
 
     nominative: function ({ category, gender }) {
         const conjugation = this.handleCase(gender, category,
-        (phrase) => {
-            const objectGender = phrase.noun.gender;
+        (objectGroup) => {
+            const objectGender = objectGroup.noun.gender;
             const subject = randomSubject('2', objectGender);
             const nounIsPlural = objectGender === '3';
             const verb = nounIsPlural ? 'sind' : 'ist';
             const text = [subject.deText, verb].join(' ');
             return ucfirst(text);
-        }, (phrase) => {
-            const conjugatedPhrase = phrase.compose('0');
+        }, (objectGroup) => {
+            const conjugatedPhrase = objectGroup.compose('0');
             return conjugatedPhrase;
         });
 
@@ -71,8 +71,8 @@ const randomPhrase = {
             gender,
             category,
             randomAkkStart,
-            (phrase) => {
-                return phrase.compose('1');
+            (objectGroup) => {
+                return objectGroup.compose('1');
             }
         );
         return conjugation;
