@@ -11,22 +11,25 @@ const space = () => ({
     text: ' '
 });
 
-function compose ({ kasus, start, objectGroup }) {
-    const statement = [ start ]
-        .concat(space())
-        .concat(objectGroup.flattenWithStubbedAdjSuffix(kasus))
+function composeWordGroups (wordGroups) {
+    const statement = wordGroups.reduce((memo, wordGroup, index) => {
+        if (index === 0) return memo.concat([wordGroup]);
+        return memo.concat(
+            space(),
+            wordGroup
+        );
+    }, []);
+
+    return statement;
+}
+
+function composeSentence (wordGroups) {
+    const statement = composeWordGroups(wordGroups)
         .concat({
             type: 'punctuation',
             text: '.'
         });
-
-    const key = statement.reduce((memo, item) => (memo += item.text), '');
-
-    const { adjective } = objectGroup.compose(kasus);
-    const values = { 5: adjective.chunks[1].text };
-
-    const present = { key, values, statement };
-    return present;
+    return statement
 }
 
 const AKK_BEGINNINGS = [
@@ -63,15 +66,26 @@ const randomPhrase = {
         return objectGroup;
     },
 
-    handleCase: function (kasus, gender, category, textOrTransform) {
+    handleCase: function (kasus, gender, category, startTextOrTransform) {
         const objectGroup = this.getRandomObjectGroup({ gender, category });
-        const start = typeof textOrTransform === 'function' ? textOrTransform(objectGroup) : textOrTransform;
-        const clause = compose({ kasus, start, objectGroup })
-        return clause;
+        const start = typeof startTextOrTransform === 'function' ? startTextOrTransform(objectGroup) : startTextOrTransform;
+
+        const statement = composeSentence([
+            start,
+            objectGroup.flattenWithStubbedAdjSuffix(kasus)
+        ]);
+
+        const key = statement.reduce((memo, item) => (memo += item.text), '');
+
+        const { adjective } = objectGroup.compose(kasus);
+        const values = { 5: adjective.chunks[1].text };
+
+        const present = { key, values, statement };
+        return present;
     },
 
     nominative: function ({ category, gender }) {
-        const conjugation = this.handleCase('0', gender, category,
+        const sentence = this.handleCase('0', gender, category,
         (objectGroup) => {
             const { gender } = objectGroup.noun;
             const subject = randomSubject('2', gender);
@@ -84,16 +98,16 @@ const randomPhrase = {
             };
         });
 
-        return conjugation;
+        return sentence;
     },
 
     accusative: function ({ category, gender }) {
         const randomAkkStart = getRandomItem(AKK_BEGINNINGS);
-        const conjugation = this.handleCase( '1', gender, category, {
+        const sentence = this.handleCase( '1', gender, category, {
             type: 'start',
             text: randomAkkStart
         });
-        return conjugation;
+        return sentence;
     }
 
 };
