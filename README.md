@@ -7,3 +7,15 @@
 Most adjectives were scraped from [byki.com](http://www.byki.com/lists/german/greg's-basic-german-adjectives.html).
 
 All nouns have been entered manually.
+
+
+## Executables
+
+```bash
+npm install # Install project dependencies
+npm start   # Run a dev server at http://localhost:8080
+npm test    # Run unit tests once
+npm lint    # Lint all JS files
+npm tdd     # Run unit tests when a JS file is changed
+npm build   # Compile JS and CSS and dump them into `./dist`
+```
