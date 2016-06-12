@@ -2,7 +2,8 @@ import { assert } from 'chai';
 
 import ObjectGroup from './ObjectGroup';
 
-describe('Generator', () => describe('ObjectGroup', () => {
+describe('Generator', () =>
+describe('ObjectGroup', () => {
     describe('#constructor', () => {
         it('binds given properties to `this`', () => {
             const props = {
@@ -35,11 +36,11 @@ describe('Generator', () => describe('ObjectGroup', () => {
                 noun
             });
 
-            assert.deepEqual(oGroup.compose(), [
-                'composedArticle',
-                'composedAdjective',
-                'composedDO'
-            ]);
+            assert.deepEqual(oGroup.compose(), {
+                article: 'composedArticle',
+                adjective: 'composedAdjective',
+                noun: 'composedDO'
+            });
         });
     });
 }));
