@@ -9,28 +9,32 @@ const space = () => ({
 
 export default class ObjectGroup {
 
-    constructor ({ article, adjective, noun }) {
+    constructor ({ article = null, adjective = null, noun = null }) {
         Object.assign(this, { article, adjective, noun });
     }
 
-    static random ({ gender, category }) {
-        const adjective = Adjective.random();
-        const noun = Noun.random({ gender, category });
-        const article = Article.randomByGender(noun.gender);
-        const objectGroup = new ObjectGroup({
-            article, adjective, noun
-        });
+    static random ({ gender, category, include = [
+        'adjective', 'noun', 'article'
+    ] }) {
+        const props = {
+            adjective: include.includes('adjective') ? Adjective.random() : null,
+            noun: include.includes('noun') ? Noun.random({ gender, category }) : null,
+            article: include.includes('article') ? Article.randomByGender(gender) : null,
+        };
+
+        const objectGroup = new ObjectGroup(props);
         return objectGroup;
     }
 
     compose (kasus) {
         const { gender } = this.noun;
         const { type } = this.article;
-        const items = {
-            article: this.article.compose(kasus, gender),
-            adjective: this.adjective.compose(kasus, gender, type),
-            noun: this.noun.compose(kasus)
-        };
+
+        console.log(this);
+        const items = {};
+        if (this.article) items.article = this.article.compose(kasus, gender);
+        if (this.adjective) items.adjective = this.adjective.compose(kasus, gender, type);
+        if (this.noun) items.noun = this.noun.compose(kasus);
 
         return items;
     }
@@ -44,8 +48,6 @@ export default class ObjectGroup {
             return memo + text;
         }, '');
 
-        const adjRoot = adjective.chunks[0];
-        const adjSuffix = adjective.chunks[1];
         const nounText = noun.chunks[0].text;
 
         const startChunks = article ? [
@@ -56,25 +58,30 @@ export default class ObjectGroup {
             space()
         ] : [];
 
-        const flattened = startChunks.concat([
+        const adjChunks = adjective ? [
             {
                 type: 'adjectiveRoot',
-                text: adjRoot.text,
+                text: adjective.chunks[0].text,
                 translations: adjective.translations
             },
             {
                 type: 'adjectiveSuffix',
-                text: adjSuffix.text,
-                stub: adjSuffix.stub
-            },
-            space(),
-            {
-                type: 'noun',
-                text: nounText,
-                gender: noun.gender,
-                translations: noun.translations
+                text: adjective.chunks[1].text,
+                stub: adjective.chunks[1].stub
             }
-        ]);
+        ] : [];
+
+        const flattened = startChunks
+            .concat(adjChunks)
+            .concat([
+                space(),
+                {
+                    type: 'noun',
+                    text: nounText,
+                    gender: noun.gender,
+                    translations: noun.translations
+                }
+            ]);
 
         return flattened;
     }

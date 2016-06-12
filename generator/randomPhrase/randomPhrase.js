@@ -98,7 +98,11 @@ const randomPhrase = {
 
     genitive: function ({ category, gender }) {
         const kasus = '3';
-        const owned = ObjectGroup.random({ gender, category });
+
+        const owned = ObjectGroup.random({ gender, category,
+            include: [ 'noun', 'article' ]
+        });
+
         const owner = ObjectGroup.random({ gender, category });
 
         const statement = composeSentence([
@@ -114,9 +118,7 @@ const randomPhrase = {
 
         const key = statement.reduce((memo, item) => (memo += item.text), '');
 
-        const { adjective } = owned.compose(kasus);
         const values = {
-            3: owned.compose(kasus).adjective.chunks[1].text,
             12: owner.compose(kasus).adjective.chunks[1].text
         };
 
