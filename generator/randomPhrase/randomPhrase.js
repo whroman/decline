@@ -13,7 +13,7 @@ const space = () => ({
 
 function composeWordGroups (wordGroups) {
     const statement = wordGroups.reduce((memo, wordGroup, index) => {
-        if (index === 0) return memo.concat([wordGroup]);
+        if (index === 0) return memo.concat(wordGroup);
         return memo.concat(
             space(),
             wordGroup
@@ -71,7 +71,7 @@ const randomPhrase = {
         const start = typeof startTextOrTransform === 'function' ? startTextOrTransform(objectGroup) : startTextOrTransform;
 
         const statement = composeSentence([
-            start,
+            [ start ],
             objectGroup.flattenWithStubbedAdjSuffix(kasus)
         ]);
 
@@ -108,6 +108,34 @@ const randomPhrase = {
             text: randomAkkStart
         });
         return sentence;
+    },
+
+    genitive: function ({ category, gender }) {
+        const kasus = '3';
+        const owned = this.getRandomObjectGroup({ gender, category });
+        const owner = this.getRandomObjectGroup({ gender, category });
+
+        const statement = composeSentence([
+            owned.flatten('0'),
+            {
+                type: 'particle',
+                'text': 'von'
+            },
+            owner.flattenWithStubbedAdjSuffix(kasus)
+        ]);
+
+        statement[0].text = ucfirst(statement[0].text);
+
+        const key = statement.reduce((memo, item) => (memo += item.text), '');
+
+        const { adjective } = owned.compose(kasus);
+        const values = {
+            3: owned.compose(kasus).adjective.chunks[1].text,
+            12: owner.compose(kasus).adjective.chunks[1].text
+        };
+
+        const present = { key, values, statement };
+        return present;
     }
 
 };

@@ -77,7 +77,7 @@ export default class AdjectivesExerciseItem extends Component {
                 );
 
             case 'input':
-                return this.renderInput(item.text, index);
+                return this.renderInput(item, index);
 
             default:
                 return (
@@ -86,7 +86,7 @@ export default class AdjectivesExerciseItem extends Component {
         }
     }
 
-    renderInput (text, key) {
+    renderInput ({ text, value }, key) {
         const { uid, setFocusedItem } = this.props;
         const numOfChars = text.length;
 
@@ -100,10 +100,10 @@ export default class AdjectivesExerciseItem extends Component {
                     type='text'
                     maxLength={ numOfChars }
                     size={ numOfChars }
-                    onChange={ ((event) => this.handleInputChange(event, key)).bind(this) }
+                    onChange={ ((event) => this.handleInputChange(event, value)).bind(this) }
                     onKeyPress={ this.handleInputKeyPress.bind(this) }
                     onFocus={ () => setFocusedItem(key) }
-                    onBlur={ ((event) => this.handleInputBlur(event, key)).bind(this) }
+                    onBlur={ ((event) => this.handleInputBlur(event, value)).bind(this) }
                     tabIndex={ uid + 1 }
                 />
                 <div className='placeholder'>{ Array(numOfChars + 1).join('_') }</div>
@@ -136,18 +136,17 @@ export default class AdjectivesExerciseItem extends Component {
         }
     }
 
-    handleInputChange (event, key) {
+    handleInputChange (event, expectedValue) {
         const { value } = event.target;
-        const stubbedValue = this.props.phrase.values[key];
-        const isCorrect = value.toLowerCase() === stubbedValue.toLowerCase();
-        const isFilled = areSameLength(value, stubbedValue);
+        const isCorrect = value.toLowerCase() === expectedValue.toLowerCase();
+        const isFilled = areSameLength(value, expectedValue);
         this.setState({ isCorrect, isFilled });
     }
 
-    handleInputBlur (event, key) {
+    handleInputBlur (event, expectedValue) {
         const { value } = event.target;
         const { uid, phrase, replace } = this.props;
-        const isFilled = areSameLength(value, phrase.values[key]);
+        const isFilled = areSameLength(value, expectedValue);
         if (uid >= 3 && isFilled) replace(1);
     }
 

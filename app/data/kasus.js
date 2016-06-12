@@ -1,6 +1,7 @@
 const DIE_KASUS = [
-    'nominative',
-    'accusative'
+    // 'nominative',
+    // 'accusative',
+    'genitive',
 ];
 
 export default DIE_KASUS;

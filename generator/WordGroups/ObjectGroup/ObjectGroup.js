@@ -21,7 +21,7 @@ export default class ObjectGroup {
         return items;
     }
 
-    flattenWithStubbedAdjSuffix (kasus) {
+    flatten (kasus) {
         const composition = this.compose(kasus);
         const { adjective, noun } = composition;
         if (!noun) throw Error('shouldn\'t occur');
@@ -34,20 +34,24 @@ export default class ObjectGroup {
         const adjSuffix = adjective.chunks[1];
         const nounText = noun.chunks[0].text;
 
-        const flattened = [
+        const startChunks = article ? [
             {
                 type: 'article',
                 text: article
             },
-            space(),
+            space()
+        ] : [];
+
+        const flattened = startChunks.concat([
             {
                 type: 'adjectiveRoot',
                 text: adjRoot.text,
                 translations: adjective.translations
             },
             {
-                type: 'input',
-                text: adjSuffix.stub
+                type: 'adjectiveSuffix',
+                text: adjSuffix.text,
+                stub: adjSuffix.stub
             },
             space(),
             {
@@ -56,7 +60,21 @@ export default class ObjectGroup {
                 gender: noun.gender,
                 translations: noun.translations
             }
-        ];
+        ]);
+
+        return flattened;
+    }
+
+    flattenWithStubbedAdjSuffix (kasus) {
+        const flattened = this.flatten(kasus).map((item) => {
+            if (item.type === 'adjectiveSuffix') {
+                item.type = 'input';
+                item.value = item.text;
+                item.text = item.stub;
+            }
+
+            return item;
+        });
 
         return flattened;
     }
