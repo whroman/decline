@@ -1,34 +1,7 @@
-import getRandomItem from './../../util/getRandomItem';
-import nouns from 'tables/nouns/data';
-
+import getRandomItem from 'generator/util/getRandomItem';
+import getNumberOfSyllables from 'generator/util/getNumberOfSyllables';
 import WordChunk from 'generator/WordChunk/WordChunk';
-
-const dipthongs = [
-    'ai',
-    'au',
-    'äu',
-    'ei',
-    'eu',
-    'ie'
-];
-
-const syllableIndicators = dipthongs.concat([
-    'a', 'e', 'i', 'o', 'u', 'ä', 'ö', 'ü'
-]);
-
-function getNumberOfSyllables (str) {
-    const numberOfSyllables = syllableIndicators.reduce((memo, syllable) => {
-        const exists = str.toLocaleLowerCase().indexOf(syllable) > -1;
-        const modifier = exists ? 1 : 0;
-        if (exists) {
-            str = str.replace(syllable, '');
-        }
-
-        return memo + modifier;
-    }, 0);
-
-    return numberOfSyllables;
-}
+import nouns from 'tables/nouns/data';
 
 export default class Noun {
 
