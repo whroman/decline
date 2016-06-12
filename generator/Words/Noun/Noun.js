@@ -3,6 +3,33 @@ import nouns from 'tables/nouns/data';
 
 import WordChunk from 'generator/WordChunk/WordChunk';
 
+const dipthongs = [
+    'ai',
+    'au',
+    'äu',
+    'ei',
+    'eu',
+    'ie'
+];
+
+const syllableIndicators = dipthongs.concat([
+    'a', 'e', 'i', 'o', 'u', 'ä', 'ö', 'ü'
+]);
+
+function getNumberOfSyllables (str) {
+    const numberOfSyllables = syllableIndicators.reduce((memo, syllable) => {
+        const exists = str.toLocaleLowerCase().indexOf(syllable) > -1;
+        const modifier = exists ? 1 : 0;
+        if (exists) {
+            str = str.replace(syllable, '');
+        }
+
+        return memo + modifier;
+    }, 0);
+
+    return numberOfSyllables
+}
+
 export default class Noun {
 
     constructor ({ root, gender, translations={}, categories=[] }) {
@@ -69,11 +96,14 @@ export default class Noun {
 
             if (isGenitive) {
                 if (isMasculine || isNeuter) {
-                    if (finalLetter !== 'e') nounText += 'e';
+                    if (getNumberOfSyllables(nounText) === 1) {
+                        nounText += 'e';
+                    }
                     nounText += 's';
                 }
             }
         }
+
 
         return nounText;
     }
