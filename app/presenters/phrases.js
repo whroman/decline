@@ -9,7 +9,10 @@ function presentPhrase ({ start, statement, noun }) {
         return memo + text;
     }, '');
 
+    console.log(statement);
+
     const adjective = statement[1];
+    const adjRoot = adjective.chunks[0];
     const adjSuffix = adjective.chunks[1];
     const object = statement[2].chunks;
 
@@ -33,7 +36,7 @@ function presentPhrase ({ start, statement, noun }) {
             space(),
             {
                 type: 'adjectiveRoot',
-                text: adjective.chunks[0].text,
+                text: adjRoot.text,
                 translations: adjective.translations
             },
             {

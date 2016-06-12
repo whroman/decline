@@ -11,11 +11,12 @@ export default class ObjectGroup {
     compose (kasus) {
         const { gender } = this.noun;
         const { type } = this.article;
-        const items = [
-            this.article.compose(kasus, gender),
-            this.adjective.compose(kasus, gender, type),
-            this.noun.compose(kasus)
-        ];
+        const items = {
+            article: this.article.compose(kasus, gender),
+            adjective: this.adjective.compose(kasus, gender, type),
+            noun: this.noun.compose(kasus)
+        };
+
         return items;
     }
 

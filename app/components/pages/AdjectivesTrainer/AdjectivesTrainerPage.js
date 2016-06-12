@@ -54,8 +54,9 @@ export class AdjectivesTrainer extends Component {
 }
 
 export function mapStateToProps(state) {
-    const phrases = presentPhrases(state.adjectiveTrainer.collection);
-    return { phrases };
+    // const phrases = presentPhrases(state.adjectiveTrainer.collection);
+    // return { phrases };
+    return { phrases: state.adjectiveTrainer.collection };
 }
 
 const mapDispatchToProps = {

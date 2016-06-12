@@ -81,6 +81,7 @@ export default class Noun {
     compose (grammarCase) {
         const text = this.conjugate(grammarCase);
         const composition = {
+            gender: this.gender,
             translations: this.translations,
             chunks: [
                 new WordChunk(text)
