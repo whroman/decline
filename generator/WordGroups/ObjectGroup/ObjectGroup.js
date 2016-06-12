@@ -1,3 +1,7 @@
+import Article from 'generator/Words/Article/Article';
+import Noun from 'generator/Words/Noun/Noun';
+import Adjective from 'generator/Words/Adjective/Adjective';
+
 const space = () => ({
     type: 'space',
     text: ' '
@@ -7,6 +11,16 @@ export default class ObjectGroup {
 
     constructor ({ article, adjective, noun }) {
         Object.assign(this, { article, adjective, noun });
+    }
+
+    static random ({ gender, category }) {
+        const adjective = Adjective.random();
+        const noun = Noun.random({ gender, category });
+        const article = Article.randomByGender(noun.gender);
+        const objectGroup = new ObjectGroup({
+            article, adjective, noun
+        });
+        return objectGroup;
     }
 
     compose (kasus) {

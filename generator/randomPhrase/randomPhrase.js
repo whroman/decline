@@ -1,9 +1,5 @@
 import getRandomItem from './../util/getRandomItem';
 import ObjectGroup from './../WordGroups/ObjectGroup/ObjectGroup';
-
-import Article from './../Words/Article/Article';
-import Noun from './../Words/Noun/Noun';
-import Adjective from './../Words/Adjective/Adjective';
 import randomSubject from './randomSubject';
 
 const space = () => ({
@@ -56,18 +52,8 @@ function ucfirst (str) { return str[0].toUpperCase() + str.substring(1); }
 
 const randomPhrase = {
 
-    getRandomObjectGroup: function ({ gender, category }) {
-        const adjective = Adjective.random();
-        const noun = Noun.random({ gender, category });
-        const article = Article.randomByGender(noun.gender);
-        const objectGroup = new ObjectGroup({
-            article, adjective, noun
-        });
-        return objectGroup;
-    },
-
     handleCase: function (kasus, gender, category, startTextOrTransform) {
-        const objectGroup = this.getRandomObjectGroup({ gender, category });
+        const objectGroup = ObjectGroup.random({ gender, category });
         const start = typeof startTextOrTransform === 'function' ? startTextOrTransform(objectGroup) : startTextOrTransform;
 
         const statement = composeSentence([
@@ -112,8 +98,8 @@ const randomPhrase = {
 
     genitive: function ({ category, gender }) {
         const kasus = '3';
-        const owned = this.getRandomObjectGroup({ gender, category });
-        const owner = this.getRandomObjectGroup({ gender, category });
+        const owned = ObjectGroup.random({ gender, category });
+        const owner = ObjectGroup.random({ gender, category });
 
         const statement = composeSentence([
             owned.flatten('0'),
