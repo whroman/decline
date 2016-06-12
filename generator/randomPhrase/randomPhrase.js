@@ -25,7 +25,7 @@ function composeSentence (wordGroups) {
             type: 'punctuation',
             text: '.'
         });
-    return statement
+    return statement;
 }
 
 const AKK_BEGINNINGS = [

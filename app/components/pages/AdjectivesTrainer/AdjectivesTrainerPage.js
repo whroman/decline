@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import presentPhrases from 'app/presenters/phrases';
 import { create, load, replace } from 'app/dux/adjectiveTrainer';
 
 import AdjectivesExercise from './AdjectivesExercise';
@@ -54,8 +53,6 @@ export class AdjectivesTrainer extends Component {
 }
 
 export function mapStateToProps(state) {
-    // const phrases = presentPhrases(state.adjectiveTrainer.collection);
-    // return { phrases };
     return { phrases: state.adjectiveTrainer.collection };
 }
 

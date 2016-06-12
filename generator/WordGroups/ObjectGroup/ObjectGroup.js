@@ -30,7 +30,6 @@ export default class ObjectGroup {
         const { gender } = this.noun;
         const { type } = this.article;
 
-        console.log(this);
         const items = {};
         if (this.article) items.article = this.article.compose(kasus, gender);
         if (this.adjective) items.adjective = this.adjective.compose(kasus, gender, type);

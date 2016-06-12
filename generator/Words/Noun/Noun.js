@@ -27,7 +27,7 @@ function getNumberOfSyllables (str) {
         return memo + modifier;
     }, 0);
 
-    return numberOfSyllables
+    return numberOfSyllables;
 }
 
 export default class Noun {
