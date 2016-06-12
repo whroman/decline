@@ -13,7 +13,7 @@ const syllableIndicators = dipthongs.concat([
 
 export default function getNumberOfSyllables (str) {
     const numberOfSyllables = syllableIndicators.reduce((memo, syllable) => {
-        const re = new RegExp(syllable,"gi");
+        const re = new RegExp(syllable, 'gi');
         const matches = (str.match(re) || []).length;
         str = str.replace(re, '');
 
