@@ -23,7 +23,8 @@ const testCases = [
     [ 'ia', 2 ],
     [ 'aba', 2 ],
     [ 'ababa', 3 ],
-    [ 'AbAbA', 3 ]
+    [ 'AbAbA', 3 ],
+    [ 'foo', 2 ]
 ];
 
 describe('getNumberOfSyllables()', () => {

@@ -19,7 +19,7 @@ const testCases = [
     {
         gender: '0',
         grammarCase: '3',
-        conjugation: 'Fooes'
+        conjugation: 'Foos'
     },
 // Maskulin with `e` ending
     {
@@ -81,7 +81,7 @@ const testCases = [
     {
         gender: '2',
         grammarCase: '3',
-        conjugation: 'Fooes'
+        conjugation: 'Foos'
     },
 // Plural
     {
