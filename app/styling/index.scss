@@ -2,6 +2,7 @@
 
 @import './foundation-includes';
 @import './colors';
+@import './vars';
 
 body {
     background: no-repeat center center fixed;
@@ -66,7 +67,7 @@ h1 {
     background: $modal-bg;
     border-radius: 3px;
     box-shadow: 0 0 8px 1px $shadow;
-    max-width: 700px;
+    width: $page-width;
 }
 
 .header {
@@ -74,6 +75,10 @@ h1 {
     box-shadow: 0 0 8px 1px rgba(100, 100, 100, 0.5);
     padding: 8px 0;
     @extend %text-white;
+
+    .row {
+        width: $page-width;
+    }
 
     .wr-ico {
         @extend %text-white;
