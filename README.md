@@ -8,17 +8,21 @@ All nouns have been entered manually.
 
 ## Non-Technical Overview
 
-### `Interface`
+- [Interface](#interface)
+- [Generator](#generator)
+- [Tables](#tables)
+- [How Do These Components Interact?](#component-interaction)
+
+
+#### [`Interface`](#interface)
 
 `./app` contains the code for [the interface](http://whroman.github.io/conjugate). It interprets the computer-readable format of a Sentence returned by `Generator` and makes it human-readable.
 
-### `Generator`
-
-#### Overview
+#### [`Generator`](#generator)
 
 `./generator` contains the language-data-model-ish code for generating random German sentences. The program randomly selects parameters required to create a German sentence and then returns a sentence in a computer-readable format.
 
-#### Example of a computer-readable phrase
+##### Example of a computer-readable phrase
 
 ```json
 [{
@@ -38,25 +42,25 @@ All nouns have been entered manually.
 ```
 
 
-### `Tables`
+#### [`Tables`](#tables)
 
-#### Which Tables Currently Exist?
+##### Which Tables Currently Exist?
 
 - Words
     - Nouns
     - Adjectives
 
 
-- Grammer Shit
+- Grammar
     - Possible Genders
     - Article Suffixes
     - Adjective Suffixes
 
-- Implementation Specific
+- Implementation-specific
     - Noun Categories
 
 
-## How Do These Components Interact?
+#### [How Do These Components Interact?](#component-interaction)
 1. `Interface` asks `Generator` for a `Sentence`.
 2. `Generator` randomly decides three variables.
 
@@ -115,7 +119,9 @@ All nouns have been entered manually.
     - "Deine kleine Tochter. Deine kleinere Tochter. Deine kleinste Tochter."
 
 
-## Executables
+## Development
+
+#### Executables
 
 ```bash
 npm install # Install project dependencies
