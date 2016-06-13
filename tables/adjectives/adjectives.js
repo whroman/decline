@@ -96,8 +96,13 @@ const adjectives = [
     ['braun',       ['brown']],
     ['hellbraun',   ['beige', 'light brown']],
     ['opak',        ['opaque']],
-    ['durchsichtig',['transparent', 'see-through']]
+    ['durchsichtig',['transparent', 'see-through']],
 
+    // "Mein Körper weiß alles"
+    ['gegenwärtig', ['current', 'present']],
+    ['vollkommen',  ['ideal', 'perfect']],
+    ['fest',        ['firm', 'solid']],
+    ['eingefroren', ['frozen']]
 ];
 
 export default adjectives;

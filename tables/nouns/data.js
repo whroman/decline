@@ -198,8 +198,101 @@ const nouns = [
     [
         'Serviette', 'Servietten', ['napkin'], ['napkins'],
         '1', ['5', '6']
-    ]
+    ],
+    [
+        'Pfanne', 'Pfannen', ['frying pan'], ['frying pans'],
+        '1', ['6']
+    ],
+    [
+        'Topf', 'Töpfe', ['saucepan'], ['saucepans'],
+        '0', ['6']
+    ],
+    [
+        'Schneidbrett', 'Schneidbretter', ['cutting board'], ['cutting boards'],
+        '2', ['6']
+    ],
+    [
+        'Backofen', 'Backöfen', ['baking oven'], ['baking oven'],
+        '0', ['6']
+    ],
+    [
+        'Mikrowelle', 'Mikrowellen', ['microwave'], ['microwaves'],
+        '1', ['6']
+    ],
+    [
+        'Kühlschrank', 'Kühlschränke', ['refrigerator'], ['refrigerators'],
+        '2', ['6']
+    ],
+    [
+        'Wasserkocher', 'Wasserkocher', ['electric kettle'], ['electric kettles'],
+        '0', ['6']
+    ],
 
+    // Obst
+    [
+        'Kiwi', 'Kiwis', ['kiwi'], ['kiwis'],
+        '1', ['7']
+    ],
+    [
+        'Kirsche', 'Kirschen', ['cherry'], ['cherries'],
+        '1', ['7']
+    ],
+    [
+        'Aprikose', 'Aprikosen', ['apricot'], ['apricots'],
+        '1', ['7']
+    ],
+    [
+        'Persimone', 'Persimonen', ['persimmon'], ['persimmons'],
+        '1', ['7']
+    ],
+    [
+        'Melone', 'Melonen', ['melon'], ['melons'],
+        '1', ['7']
+    ],
+    [
+        'Wassermelone', 'Wassermelonen', ['watermelon'], ['watermelons'],
+        '1', ['7']
+    ],
+    [
+        'Nektarine', 'Nektarinen', ['nectarine'], ['nectarines'],
+        '1', ['7']
+    ],
+    [
+        'Erdbeere', 'Erdbeeren', ['strawberry'], ['strawberries'],
+        '1', ['7']
+    ],
+    [
+        'Blaubeere', 'Blaubeeren', ['blueberry'], ['blueberries'],
+        '1', ['7']
+    ],
+    [
+        'Brombeere', 'Brombeeren', ['blackberry'], ['blackberries'],
+        '1', ['7']
+    ],
+    [
+        'Himbeere', 'Himbeeren', ['raspberry'], ['raspberries'],
+        '1', ['7']
+    ],
+    [
+        'Persimone', 'Persimonen', ['persimmon'], ['persimmons'],
+        '1', ['7']
+    ],
+    [
+        'Zitron', 'Zitronen', ['lemon'], ['lemons'],
+        '1', ['7']
+    ],
+    [
+        'Limette', 'Limetten', ['lime'], ['limes'],
+        '1', ['7']
+    ],
+    [
+        'Pfirsich', 'Pfirsiche', ['peach'], ['peaches'],
+        '0', ['7']
+    ],
+    [
+        'Apfel', 'Äpfel', ['apple'], ['apples'],
+        '0', ['7']
+    ]
 ];
 
 class Noun {

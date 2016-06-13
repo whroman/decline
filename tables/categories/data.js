@@ -1,13 +1,14 @@
 let uid = 0;
 
 const categories = [
-    ['Menschen'],
-    ['Familie'],
-    ['Tiere'],
-    ['Körper'],
-    ['Kinder aufziehen'],
-    ['Essen ausgehen'],
-    ['In der Küche'],
+    ['Menschen'],         // 0
+    ['Familie'],          // 1
+    ['Tiere'],            // 2
+    ['Körper'],           // 3
+    ['Kinder aufziehen'], // 4
+    ['Essen ausgehen'],   // 5
+    ['In der Küche'],     // 6
+    ['Obst']              // 7
 ].map((translationsList) => {
     const translations = {
         deu: translationsList[0]
