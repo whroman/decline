@@ -93,7 +93,7 @@ All nouns have been entered manually.
                 - Welchen Sprachen kann deine kluge Tochter sprechen?
 
     - [ ] DAT
-        - [ ] Statements
+        - [x] Statements
         - [ ] Y/N Questions
         - [ ] SUBJ Questions
 
