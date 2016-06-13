@@ -1,4 +1,4 @@
-# [Conjugate](http://whroman.github.io/conjugate)
+# [Decline](http://whroman.github.io/decline)
 
 This is the code for a browser app that helps you practice German adjective declensions.
 
@@ -16,7 +16,7 @@ All nouns have been entered manually.
 
 #### [`Interface`](#interface)
 
-`./app` contains the code for [the interface](http://whroman.github.io/conjugate). It interprets the computer-readable format of a Sentence returned by `Generator` and makes it human-readable.
+`./app` contains the code for [the interface](http://whroman.github.io/decline). It interprets the computer-readable format of a Sentence returned by `Generator` and makes it human-readable.
 
 #### [`Generator`](#generator)
 
