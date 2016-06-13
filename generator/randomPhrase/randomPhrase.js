@@ -1,6 +1,9 @@
 import getRandomItem from './../util/getRandomItem';
 import ObjectGroup from './../WordGroups/ObjectGroup/ObjectGroup';
+
 import randomSubject from './randomSubject';
+import accusativeBeginnings from './accusativeBeginnings';
+import dativeBeginnings from './dativeBeginnings';
 
 const space = () => ({
     type: 'space',
@@ -27,26 +30,6 @@ function composeSentence (wordGroups) {
         });
     return statement;
 }
-
-const AKK_BEGINNINGS = [
-    'Ich mag',
-
-    'Ich möchte',
-    'Du möchtest',
-    'Er möchte',
-    'Sie möchte',
-    'Wir möchten',
-    'Ihr möchtet',
-    'Sie möchten',
-
-    'Ich habe',
-    'Du hast',
-    'Er hat',
-    'Sie hat',
-    'Wir haben',
-    'Ihr habt',
-    'Sie haben'
-];
 
 function ucfirst (str) { return str[0].toUpperCase() + str.substring(1); }
 
@@ -88,7 +71,7 @@ const randomPhrase = {
     },
 
     accusative: function ({ category, gender }) {
-        const randomAkkStart = getRandomItem(AKK_BEGINNINGS);
+        const randomAkkStart = getRandomItem(accusativeBeginnings);
         const sentence = this.handleCase( '1', gender, category, {
             type: 'start',
             text: randomAkkStart
@@ -96,11 +79,35 @@ const randomPhrase = {
         return sentence;
     },
 
+    dative: function ({ category, gender }) {
+        const kasus = '2';
+        const randomDatStart = getRandomItem(dativeBeginnings);
+        const indirectObjectGroup = ObjectGroup.random({ gender, category });
+
+        const directObjectGroup = ObjectGroup.random({ gender, category,
+            include: [ 'article', 'noun' ]
+        });
+
+        const statement = composeSentence([
+            [ {
+                type: 'start',
+                text: randomDatStart
+            } ],
+            indirectObjectGroup.flattenWithStubbedAdjSuffix(kasus),
+            directObjectGroup.flatten('0')
+        ]);
+
+        const key = statement.reduce((memo, item) => (memo += item.text), '');
+        const values = { 5: indirectObjectGroup.compose(kasus).adjective.chunks[1].text };
+        const present = { key, values, statement };
+        return present;
+    },
+
     genitive: function ({ category, gender }) {
         const kasus = '3';
 
         const owned = ObjectGroup.random({ gender, category,
-            include: [ 'noun', 'article' ]
+            include: [ 'article', 'noun' ]
         });
 
         const owner = ObjectGroup.random({ gender, category });

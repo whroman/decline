@@ -8,6 +8,10 @@ const DIE_KASUS = [
         uid: '1'
     },
     {
+        name: 'dative',
+        uid: '2'
+    },
+    {
         name: 'genitive',
         uid: '3'
     }

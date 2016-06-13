@@ -43,6 +43,10 @@ const KASUS_OPTIONS = [
         value: 'accusative'
     },
     {
+        label: 'Dativ',
+        value: 'dative'
+    },
+    {
         label: 'Genitiv',
         value: 'genitive'
     },
