@@ -16,12 +16,10 @@ export default class ObjectGroup {
     static random ({ gender, category, include = [
         'adjective', 'noun', 'article'
     ] }) {
-        const props = {
-            adjective: include.includes('adjective') ? Adjective.random() : null,
-            noun: include.includes('noun') ? Noun.random({ gender, category }) : null,
-            article: include.includes('article') ? Article.randomByGender(gender) : null,
-        };
-
+        const props = {};
+        props.adjective = include.includes('adjective') ? Adjective.random() : null;
+        props.noun = include.includes('noun') ? Noun.random({ gender, category }) : null;
+        props.article = include.includes('article') ? Article.randomByGender(props.noun.gender) : null;
         const objectGroup = new ObjectGroup(props);
         return objectGroup;
     }
