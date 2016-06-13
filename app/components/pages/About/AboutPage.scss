@@ -3,5 +3,9 @@
     a {
         text-decoration: underline;
     }
+    .about-text * {
+        font-size: inherit;
+        display: inline;
+    }
 
 }

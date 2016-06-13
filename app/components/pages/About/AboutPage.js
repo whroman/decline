@@ -24,19 +24,24 @@ export class About extends Component {
             <div className='column small-11 small-centered'>
                 <h1>{ 'About' }</h1>
                 <hr />
-                <span>{ 'This is a German declension trainer. All sentences are randomly generated. Learn more about how this works by looking at ' }</span>
-                <a href='https://github.com/whroman/conjugate/blob/gh-pages/README.md'>
-                    { 'this project\'s open-source codebase' }
-                </a>
-                <span>{ '.' }</span>
-                <br />
-                <br />
-                <span>{'The daily background image is NatGeo\'s '}<a href="http://photography.nationalgeographic.com/photography/photo-of-the-day/">{'photo of the day'}</a>{'.'}</span>
-                <br />
-                <br />
-                <span>{ 'Questions? Comments? Feedback? Send a note to ' }</span>
-                <a href='mailto:me@walterroman.com'>{ 'me@walterroman.com' }</a>
-                <span>{ '.' }</span>
+                <div className='about-text'>
+                    <h2>{ 'This is a German declension trainer. ' }</h2>
+                    <h3>
+                        <span>{ 'Learn more about how this works by looking at ' }</span>
+                        <a href='https://github.com/whroman/decline/blob/gh-pages/README.md'>
+                            { 'this project\'s open-source codebase' }
+                        </a>
+                        <span>{ '.' }</span>
+                    </h3>
+                    <br />
+                    <br />
+                    <span>{'The daily background image is NatGeo\'s '}<a href="http://photography.nationalgeographic.com/photography/photo-of-the-day/">{'photo of the day'}</a>{'.'}</span>
+                    <br />
+                    <br />
+                    <span>{ 'Questions? Comments? Feedback? Send a note to ' }</span>
+                    <a href='mailto:me@walterroman.com'>{ 'me@walterroman.com' }</a>
+                    <span>{ '.' }</span>
+                </div>
             </div>
         );
     }
