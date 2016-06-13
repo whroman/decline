@@ -7,6 +7,8 @@ import Store from './Store';
 import routes from './routes';
 import './styling/index.scss';
 
+if (process.env.NODE_ENV === 'production') require('./thirdPartyScripts/analytics');
+
 const store = new Store();
 const history = syncHistoryWithStore(hashHistory, store);
 const routerProps = { routes, history };
