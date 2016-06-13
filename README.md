@@ -11,7 +11,7 @@ All nouns have been entered manually.
 - [Interface](#interface)
 - [Generator](#generator)
 - [Tables](#tables)
-- [How Do These Components Interact?](#componentInteraction)
+- [How Do These Components Interact?](#how-do-these-components-interact)
 
 
 #### [`Interface`](#interface)
@@ -60,7 +60,7 @@ All nouns have been entered manually.
     - Noun Categories
 
 
-#### [How Do These Components Interact?](#componentInteraction)
+#### [How Do These Components Interact?](#how-do-these-components-interact)
 1. `Interface` asks `Generator` for a `Sentence`.
 2. `Generator` randomly decides three variables.
 
