@@ -125,11 +125,13 @@ const randomPhrase = {
 
         const key = statement.reduce((memo, item) => (memo += item.text), '');
 
+        const { adjective, noun, article } = owner.compose(kasus);
+
         const values = {
-            12: owner.compose(kasus).adjective.chunks[1].text
+            12: adjective.chunks[1].text
         };
 
-        const present = { key, values, statement };
+        const present = { key, values, statement, noun, article, adjective };
         return present;
     }
 

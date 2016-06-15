@@ -1,3 +1,5 @@
+import categories from 'tables/categories/data';
+
 const OBJECTS_GENDERS = [
     'Maskulin',
     'Feminin',
@@ -12,33 +14,22 @@ const ARTICLE_TYPES = [
     'Possessiv'
 ];
 
-const CATEGORIES = [
-    'Menschen',
-    'Familie',
-    'Tiere',
-    'Körper',
-    'Kinder aufziehen'
-];
+const CATEGORIES = categories.map((item) => item.translations.deu );
 
 export default function presentPhrase (phrase) {
-    const { gender, translations, categories, adjectiveInstances, articleInstance } = phrase.noun;
-    const statement = phrase.statement.map((item) => {
-        if (!item.chunks) return item.text;
-        const text = item.chunks
-            .map((chunk) => chunk.text)
-            .join('');
-        return text;
-    }).join(' ');
-
-    const answer = `${phrase.start}${statement}.`;
+    const { statement, noun, article, adjective } = phrase;
+    const answer = statement.map((item) => {
+        return item.value || item.text;
+    }).join('');
 
     const present = {
         answer,
-        objectGender: OBJECTS_GENDERS[gender],
-        objectEnglish: translations.eng.join(', '),
-        adjEnglish: adjectiveInstances[0].translations.eng.join(', '),
-        articleType: ARTICLE_TYPES[articleInstance.type],
-        categories: categories.map((id) => CATEGORIES[id]).join(', ')
+        objectGender: OBJECTS_GENDERS[noun.gender],
+        objectEnglish: noun.translations.eng.join(', '),
+        adjEnglish: adjective.translations.eng.join(', '),
+        articleType: ARTICLE_TYPES[article.type],
+        categories: noun.categories.map((id) => CATEGORIES[id]).join(', ')
     };
+
     return present;
 }

@@ -3,8 +3,8 @@ const articleSuffixes = [
 /*
     article
                 objectGender
-                   articleType
-                      grammarCase
+                      articleType
+                           grammarCase
 */
     // Nominative
     ['der',     '0', '0', '0'],
