@@ -90,7 +90,7 @@ const adjectives = [
     ['orange',      ['orange']],
     ['grün',        ['green']],
     ['hellgrün',    ['light green', 'lime green']],
-    ['white',       ['weiß']],
+    ['weiß',        ['white']],
     ['türkis',      ['turquoise']],
     ['rosa',        ['pink']],
     ['braun',       ['brown']],
