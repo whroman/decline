@@ -89,6 +89,7 @@ export default class AdjectivesExerciseItem extends Component {
     renderInput ({ text, value }, key) {
         const { uid, setFocusedItem } = this.props;
         const numOfChars = text.length;
+        const placeholderText = text.replace(/./gi, '_')
 
         return (
             <strong
@@ -106,7 +107,7 @@ export default class AdjectivesExerciseItem extends Component {
                     onBlur={ ((event) => this.handleInputBlur(event, value)).bind(this) }
                     tabIndex={ uid + 1 }
                 />
-                <div className='placeholder'>{ Array(numOfChars + 1).join('_') }</div>
+                <div className='placeholder'>{ placeholderText }</div>
             </strong>
         );
     }
@@ -129,10 +130,16 @@ export default class AdjectivesExerciseItem extends Component {
     }
 
     handleInputKeyPress (event) {
-        if (event.key.toLowerCase() === 'enter') {
-            let nextInput = getInput(this.props.uid + 2);
-            if (!nextInput) nextInput = getInput(1);
-            nextInput.focus();
+        const { key, shiftKey } = event;
+        const { uid } = this.props;
+        if (key.toLowerCase() === 'enter') {
+            if (shiftKey) {
+                const previousInput = getInput(uid);
+                if (previousInput) previousInput.focus();
+            } else {
+                const nextInput = getInput(uid + 2) || getInput(1);
+                nextInput.focus();
+            }
         }
     }
 
