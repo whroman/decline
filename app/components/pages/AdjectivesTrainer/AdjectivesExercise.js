@@ -16,8 +16,16 @@ export default class AdjectivesExercise extends Component {
     constructor () {
         super();
         this.state = {
-            focusedKey: 0
+            focusedKey: null
         };
+    }
+
+    componentWillReceiveProps (props) {
+        if (this.state.focusedKey !== null) return;
+
+        this.setState({
+            focusedKey: props.phrases[0].key
+        });
     }
 
     renderPhrase (phrase, index) {
@@ -49,9 +57,9 @@ export default class AdjectivesExercise extends Component {
         );
     }
 
-    setFocusedItem (uid) {
+    setFocusedItem (key) {
         this.setState({
-            focusedKey: uid
+            focusedKey: key
         });
     }
 

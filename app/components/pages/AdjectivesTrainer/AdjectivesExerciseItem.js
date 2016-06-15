@@ -47,14 +47,14 @@ export default class AdjectivesExerciseItem extends Component {
                 onMouseEnter={ () => setFocusedItem(key) }
             >
                 <div className='text'>
-                    { statement.map(this.renderStatementItem.bind(this)) }
+                    { statement.map((item, index) => this.renderStatementItem(item, index, key)) }
                 </div>
                 { this.renderExerciseActions(uid) }
             </div>
         );
     }
 
-    renderStatementItem (item, index) {
+    renderStatementItem (item, index, key) {
         const { type, text, translations, gender } = item;
         switch (type) {
             case 'noun':
@@ -77,7 +77,7 @@ export default class AdjectivesExerciseItem extends Component {
                 );
 
             case 'input':
-                return this.renderInput(item, index);
+                return this.renderInput(item, key);
 
             default:
                 return (

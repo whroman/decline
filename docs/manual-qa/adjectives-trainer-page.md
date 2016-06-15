@@ -21,6 +21,7 @@
 |---|---
 | Focus | Add row focus
 | Blur  | Remove row focus
+| Blur  | Hide all word tooltips
 
 
 ### Translated Word
