@@ -57,7 +57,6 @@ export default class Article {
     compose (grammarCase, objectGender) {
         const { text, articleType } = this.getSuffix(grammarCase, objectGender);
 
-        console.log(this.getSuffix(grammarCase, objectGender));
         const composition = {
             type: articleType,
             translations: this.translations,

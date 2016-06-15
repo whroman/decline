@@ -89,7 +89,7 @@ export default class AdjectivesExerciseItem extends Component {
     renderInput ({ text, value }, key) {
         const { uid, setFocusedItem } = this.props;
         const numOfChars = text.length;
-        const placeholderText = text.replace(/./gi, '_')
+        const placeholderText = text.replace(/./gi, '_');
 
         return (
             <strong
