@@ -1,14 +1,6 @@
-const generator = (set) => [
-    'Ich '  + set[0],
-    'Du '   + set[1],
-    'Er '   + set[2],
-    'Sie '  + set[3],
-    'Wir '  + set[4],
-    'Ihr '  + set[5],
-    'Sie '  + set[6],
-];
+import create from './beginningGenerator';
 
-const accusativeBeginnings = generator([
+const accusativeBeginnings = create([
     'möchte',
     'möchtest',
     'möchte',
@@ -16,7 +8,7 @@ const accusativeBeginnings = generator([
     'möchten',
     'möchtet',
     'möchten'
-]).concat(generator([
+]).concat(create([
     'will',
     'willst',
     'will',
@@ -24,7 +16,7 @@ const accusativeBeginnings = generator([
     'wollen',
     'wollt',
     'wollen'
-])).concat(generator([
+])).concat(create([
     'habe',
     'hast',
     'hat',
@@ -32,7 +24,7 @@ const accusativeBeginnings = generator([
     'haben',
     'habt',
     'haben',
-])).concat(generator([
+])).concat(create([
     'sehe',
     'siehst',
     'sieht',
@@ -40,7 +32,7 @@ const accusativeBeginnings = generator([
     'sehen',
     'seht',
     'sehen',
-])).concat(generator([
+])).concat(create([
     'höre',
     'hörst',
     'hört',

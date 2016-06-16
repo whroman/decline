@@ -1,34 +1,35 @@
-export default [
-    'Ich schickte',
-    'Du schickst',
-    'Er schickt',
-    'Sie schickt',
-    'Wir schicken',
-    'Ihr schickt',
-    'Sie schicken',
+import create from './beginningGenerator';
 
-    'Ich schenke',
-    'Du schenkst',
-    'Er schenkt',
-    'Sie schenkt',
-    'Wir schenken',
-    'Ihr schenkt',
-    'Sie schenken',
-
-    'Ich zeige',
-    'Du zeigst',
-    'Er zeigt',
-    'Sie zeigt',
-    'Wir zeigen',
-    'Ihr zeigt',
-    'Sie zeigen',
-
-
-    'Ich gebe',
-    'Du gibst',
-    'Er gibt',
-    'Sie gibt',
-    'Wir geben',
-    'Ihr gebt',
-    'Sie geben'
-];
+export default create([
+    'schickte',
+    'schickst',
+    'schickt',
+    'schickt',
+    'schicken',
+    'schickt',
+    'schicken',
+]).concat([
+    'schenke',
+    'schenkst',
+    'schenkt',
+    'schenkt',
+    'schenken',
+    'schenkt',
+    'schenken',
+]).concat([
+    'zeige',
+    'zeigst',
+    'zeigt',
+    'zeigt',
+    'zeigen',
+    'zeigt',
+    'zeigen',
+]).concat([
+    'gebe',
+    'gibst',
+    'gibt',
+    'gibt',
+    'geben',
+    'gebt',
+    'geben'
+]);
