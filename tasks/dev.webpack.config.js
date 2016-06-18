@@ -7,7 +7,18 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const cwd = process.cwd();
 const DIST_PATH = path.join(cwd, 'dist');
 
+const GA_NAMESPACE = 'DECLINE_GOOGLE_ANALYTICS_TOKEN';
+const plugins = [
+    new webpack.DefinePlugin({
+        'process.env': {
+            [GA_NAMESPACE]: JSON.stringify(process.env[GA_NAMESPACE])
+        },
+    }),
+    new ExtractTextPlugin('build.css')
+];
+
 module.exports = {
+    plugins,
     entry: './app/index',
     output: {
         path: DIST_PATH,
@@ -42,14 +53,6 @@ module.exports = {
             path.resolve(cwd, 'app', 'styling'),
         ]
     },
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('development')
-            },
-        }),
-        new ExtractTextPlugin('build.css')
-    ],
     resolve: {
         alias: {
             app: path.resolve(cwd, 'app'),
