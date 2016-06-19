@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import genders from 'tables/genders/data.js';
+import nounGenders from 'tables/nouns/genders/data.js';
 import Tooltip from 'app/components/Tooltip//Tooltip';
 import WithTooltip from './WithTooltip';
 
@@ -28,7 +28,7 @@ export default class DirectObject extends WithTooltip {
             >
                 <Tooltip show={ this.state.show } >
                     <strong>{ 'Direktes Objekt' }</strong>
-                    <div>{ `{ ${genders[gender]} }` }</div>
+                    <div>{ `{ ${nounGenders[gender]} }` }</div>
                     { translations.map(this.renderTranslation.bind(this)) }
                 </Tooltip>
                 <span>{ text }</span>

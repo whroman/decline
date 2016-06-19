@@ -1,5 +1,5 @@
 import articleTypes from './../articles/types/data';
-import genders from './../genders/data';
+import nounGenders from './../nouns/genders/data';
 
 const grammarCases = ['nominative', 'accusative', 'dative', 'genitive'];
 
@@ -17,7 +17,7 @@ export default class GrammarConstruct {
     }
 
     getGender () {
-        return genders[this.objectGender];
+        return nounGenders[this.objectGender];
     }
 
     getArticleType () {
