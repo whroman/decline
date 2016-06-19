@@ -4,8 +4,8 @@ import assertStringsDefined from 'generator/util/assertStringsDefined.js';
 import WordChunk from 'generator/WordChunk/WordChunk.js';
 
 // Tables
-import articleRoots from 'tables/articles/data.js';
-import articleTypes from 'tables/articleTypes/data.js';
+import articleRoots from 'tables/articles/roots/data.js';
+import articleTypes from 'tables/articles/types/data.js';
 import conjugationTable from 'tables/conjugationTable/data.js';
 
 export default class Article {

@@ -4,7 +4,7 @@ import assertStringsDefined from 'generator/util/assertStringsDefined.js';
 import WordChunk from 'generator/WordChunk/WordChunk.js';
 
 // Tables
-import adjectives from 'tables/adjectives/data';
+import adjectives from 'tables/adjectives/roots/data';
 import conjugationTable from 'tables/conjugationTable/data.js';
 
 export default class Adjective {

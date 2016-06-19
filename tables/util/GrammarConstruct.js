@@ -1,4 +1,4 @@
-import articleTypes from './../articleTypes/data';
+import articleTypes from './../articles/types/data';
 import genders from './../genders/data';
 
 const grammarCases = ['nominative', 'accusative', 'dative', 'genitive'];

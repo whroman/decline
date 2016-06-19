@@ -1,8 +1,8 @@
 import { find } from 'lodash';
 
 import ConjugationTable from './ConjugationTable.js';
-import articleSuffixes from './../articleSuffixes/data.js';
-import adjectiveSuffixes from './../adjectiveSuffixes/data.js';
+import articleSuffixes from './../articles/suffixes/data.js';
+import adjectiveSuffixes from './../adjectives/suffixes/data.js';
 
 const conjugationTable = new ConjugationTable();
 

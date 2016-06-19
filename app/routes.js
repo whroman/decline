@@ -1,4 +1,3 @@
-import { Redirect } from 'react-router';
 import PageWrapper from './components/pages/PageWrapper';
 import AdjectivesTrainerPage from './components/pages/AdjectivesTrainer/AdjectivesTrainerPage';
 import ExerciseItemDetailPage from './components/pages/ExerciseItemDetail/ExerciseItemDetailPage';
