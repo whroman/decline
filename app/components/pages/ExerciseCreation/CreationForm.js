@@ -3,6 +3,7 @@ import { hashHistory } from 'react-router';
 import { find } from 'lodash';
 
 import nounCategories from 'tables/nouns/categories/data';
+import adjectiveCategories from 'tables/adjectives/categories/data';
 import CreationDropdown from './CreationDropdown';
 import './CreationForm.scss';
 
@@ -52,7 +53,7 @@ const KASUS_OPTIONS = [
     },
 ];
 
-const KATEGORIE_OPTIONS = nounCategories
+const NOUN_KATEGORIE_OPTIONS = nounCategories
     .map(({ uid, translations }) => {
         return {
             label: translations.deu,
@@ -60,7 +61,21 @@ const KATEGORIE_OPTIONS = nounCategories
         };
     });
 
-KATEGORIE_OPTIONS.unshift({
+NOUN_KATEGORIE_OPTIONS.unshift({
+    label: 'Gemischt',
+    value: ' '
+});
+
+
+const ADJECTIVE_KATEGORIE_OPTIONS = adjectiveCategories
+    .map(({ uid, translations }) => {
+        return {
+            label: translations.eng,
+            value: uid
+        };
+    });
+
+ADJECTIVE_KATEGORIE_OPTIONS.unshift({
     label: 'Gemischt',
     value: ' '
 });
@@ -75,7 +90,7 @@ export default class CreationForm extends Component {
         return {
             create: PropTypes.func,
             kasus:  PropTypes.string,
-            kategorie:  PropTypes.string,
+            nounKategorie:  PropTypes.string,
             gender:  PropTypes.string,
         };
     }
@@ -84,7 +99,7 @@ export default class CreationForm extends Component {
         super();
         this.state = {
             kasus: ' ',
-            kategorie: ' ',
+            nounKategorie: ' ',
             gender: ' ',
         };
 
@@ -92,10 +107,11 @@ export default class CreationForm extends Component {
     }
 
     componentWillMount (props) {
-        const { kasus, kategorie, gender } = props || this.props;
+        const { kasus, nounKategorie, adjectiveKategorie, gender } = props || this.props;
         const update = {
             kasus,
-            kategorie: typeof kategorie === 'string' ? kategorie : ' ',
+            nounKategorie: typeof nounKategorie === 'string' ? nounKategorie : ' ',
+            adjectiveKategorie: typeof adjectiveKategorie === 'string' ? adjectiveKategorie : ' ',
             gender: typeof gender === 'string' ? gender : ' '
         };
         this.setState(update);
@@ -106,9 +122,10 @@ export default class CreationForm extends Component {
     }
 
     render () {
-        const { kasus, kategorie, gender } = this.state;
+        const { kasus, nounKategorie, adjectiveKategorie, gender } = this.state;
         const initialKasus = getInitialValue(KASUS_OPTIONS, kasus);
-        const initialKategorie = getInitialValue(KATEGORIE_OPTIONS, kategorie);
+        const initialNounKategorie = getInitialValue(NOUN_KATEGORIE_OPTIONS, nounKategorie);
+        const initialAdjectiveKategorie = getInitialValue(ADJECTIVE_KATEGORIE_OPTIONS, adjectiveKategorie);
         const initialGender = getInitialValue(GENDER_OPTIONS, gender);
 
         return (
@@ -117,7 +134,7 @@ export default class CreationForm extends Component {
                 <hr />
                 <br />
                 <div className='dropdowns row'>
-                    <div className='column small-4'>
+                    <div className='column small-6'>
                         <CreationDropdown
                             label='Kasus'
                             options={ KASUS_OPTIONS }
@@ -127,7 +144,7 @@ export default class CreationForm extends Component {
                         />
                     </div>
 
-                    <div className='column small-4'>
+                    <div className='column small-6'>
                         <CreationDropdown
                             label='Genus'
                             options={ GENDER_OPTIONS }
@@ -137,13 +154,23 @@ export default class CreationForm extends Component {
                         />
                     </div>
 
-                    <div className='column small-4'>
+                    <div className='column small-6'>
                         <CreationDropdown
-                            label='Kategorie'
-                            options={ KATEGORIE_OPTIONS }
-                            namespace={ 'kategorie' }
+                            label='Nomen Kategorie'
+                            options={ NOUN_KATEGORIE_OPTIONS }
+                            namespace={ 'nounKategorie' }
                             updateDropdownValue={ this.updateDropdownValue }
-                            initialValue={ initialKategorie }
+                            initialValue={ initialNounKategorie }
+                        />
+                    </div>
+
+                    <div className='column small-6'>
+                        <CreationDropdown
+                            label='Adjektiven Kategorie'
+                            options={ ADJECTIVE_KATEGORIE_OPTIONS }
+                            namespace={ 'adjectiveKategorie' }
+                            updateDropdownValue={ this.updateDropdownValue }
+                            initialValue={ initialAdjectiveKategorie }
                         />
                     </div>
                 </div>
@@ -164,12 +191,13 @@ export default class CreationForm extends Component {
     }
 
     handleClick () {
-        const { kasus, kategorie, gender } = this.state;
+        const { kasus, nounKategorie, adjectiveKategorie, gender } = this.state;
 
         const createParams = {
             amount: 8,
             kasus: kasus === ' ' ? null : kasus,
-            kategorie: kategorie === ' ' ? null : kategorie,
+            nounKategorie: nounKategorie === ' ' ? null : nounKategorie,
+            adjectiveKategorie: adjectiveKategorie === ' ' ? null : adjectiveKategorie,
             gender: gender === ' ' ? null : gender
         };
 

@@ -12,7 +12,8 @@ export class ExerciseCreationPage extends Component {
             create: PropTypes.func,
             load: PropTypes.func,
             kasus: PropTypes.string,
-            kategorie: PropTypes.string,
+            nounKategorie: PropTypes.string,
+            adjectiveKategorie: PropTypes.string,
             gender: PropTypes.string
         };
     }
@@ -22,8 +23,8 @@ export class ExerciseCreationPage extends Component {
     }
 
     render () {
-        const { create, kasus, kategorie, gender } = this.props;
-        const creationFormProps = { create, kasus, kategorie, gender };
+        const { create, kasus, nounKategorie, adjectiveKategorie, gender } = this.props;
+        const creationFormProps = { create, kasus, nounKategorie, adjectiveKategorie, gender };
 
         return (
             <div>
@@ -46,8 +47,8 @@ export class ExerciseCreationPage extends Component {
 }
 
 function mapStateToProps(state) {
-    const { kasus, kategorie, gender } = state.adjectiveTrainer;
-    return { kasus, kategorie, gender };
+    const { kasus, nounKategorie, adjectiveKategorie, gender } = state.adjectiveTrainer;
+    return { kasus, nounKategorie, adjectiveKategorie, gender };
 }
 
 const mapDispatchToProps = {

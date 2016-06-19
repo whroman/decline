@@ -7,9 +7,10 @@ function stub (str) {
 
 export default class Adjective {
 
-    constructor (deu, eng) {
+    constructor (deu, categories, eng) {
         Object.assign(this, {
             text: deu,
+            categories,
             translations: {
                 eng
             }

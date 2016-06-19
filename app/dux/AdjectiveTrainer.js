@@ -23,7 +23,8 @@ export const load = createAction(TRACKS_LOAD);
 export const initialState = {
     collection: [],
     kasus: null,
-    kategorie: null,
+    nounKategorie: null,
+    adjectiveKategorie: null,
     gender: null
 };
 
@@ -37,11 +38,15 @@ export function getRandomKasusName () {
     return kasus;
 }
 
-export function getRandomPhrases({ amount, kasus, kategorie, gender }) {
+export function getRandomPhrases({ amount, kasus, nounKategorie, adjectiveKategorie, gender }) {
     const kasusIsValid = find(kasusData, { name: kasus });
     const phrases = range(amount).map(() => {
         const methodName = kasusIsValid ? kasus : getRandomKasusName();
-        const phrase = randomPhrase[methodName]({ category: kategorie, gender });
+        const phrase = randomPhrase[methodName]({
+            gender,
+            adjectiveCategory: adjectiveKategorie,
+            nounCategory: nounKategorie
+        });
         return phrase;
     });
 
@@ -49,8 +54,8 @@ export function getRandomPhrases({ amount, kasus, kategorie, gender }) {
 }
 
 export function saveState (state) {
-    const { kasus, kategorie, gender } = state;
-    const stateToSave = { kasus, kategorie, gender };
+    const { kasus, nounKategorie, adjectiveKategorie, gender } = state;
+    const stateToSave = { kasus, nounKategorie, adjectiveKategorie, gender };
     const stringState = JSON.stringify(stateToSave);
     if (localStorageExists()) window.localStorage.setItem('conjugate', stringState);
     return stateToSave;
@@ -62,12 +67,13 @@ export function loadState () {
 }
 
 export function mergeCreationParams (state, payload) {
-    const { amount, kasus, kategorie, gender } = payload;
+    const { amount, kasus, nounKategorie, adjectiveKategorie, gender } = payload;
     // Undefined payload values should be overwritten by default values. A payload value for "no filter" is `null`.
     return {
         amount,
         kasus: kasus === undefined ? state.kasus : kasus,
-        kategorie: kategorie === undefined ? state.kategorie : kategorie,
+        nounKategorie: nounKategorie === undefined ? state.nounKategorie : nounKategorie,
+        adjectiveKategorie: adjectiveKategorie === undefined ? state.adjectiveKategorie : adjectiveKategorie,
         gender: gender === undefined ? state.gender : gender
     };
 }
@@ -90,10 +96,12 @@ const reducer = handleActions({
 
     [TRACKS_REPLACE]: (state, action) => {
         const amount = action.payload;
-        const { collection, kasus, kategorie, gender } = state;
-        const replacementItems = getRandomPhrases({ amount, kasus, kategorie, gender });
+        const { collection, kasus, nounKategorie, adjectiveKategorie, gender } = state;
+        const replacementItems = getRandomPhrases({ amount, kasus, nounKategorie, adjectiveKategorie, gender });
         const newState = Object.assign({}, state, {
-            collection: collection.slice(amount).concat(replacementItems)
+            collection: collection
+                .slice(amount)
+                .concat(replacementItems)
         });
         return newState;
     }

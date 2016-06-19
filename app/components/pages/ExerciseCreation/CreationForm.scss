@@ -3,14 +3,11 @@
 .CreationForm {
     font-size: 14px;
 
-    .dropdowns {
-        margin-bottom: 40px;
-    }
-
     .dropdown {
         display: inline-block;
         float: left;
         width: 100%;
+        margin-bottom: 40px;
 
         &:nth-of-type(even) {
             float: right;

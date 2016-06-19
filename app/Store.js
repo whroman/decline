@@ -5,7 +5,7 @@ import createLogger from 'redux-logger';
 import adjectiveTrainerReducer from './dux/adjectiveTrainer';
 
 const middleware = [];
-if (process.env.NODE_ENV === 'development') middleware.push(createLogger());
+if (process.env.NODE_ENV !== 'production') middleware.push(createLogger());
 
 const storeEnhancer = compose(applyMiddleware(...middleware));
 const rootReducer = combineReducers({

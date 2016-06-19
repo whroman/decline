@@ -35,8 +35,8 @@ function ucfirst (str) { return str[0].toUpperCase() + str.substring(1); }
 
 const randomPhrase = {
 
-    handleCase: function (kasus, gender, category, startTextOrTransform) {
-        const objectGroup = ObjectGroup.random({ gender, category });
+    handleCase: function (kasus, gender, nounCategory, adjectiveCategory, startTextOrTransform) {
+        const objectGroup = ObjectGroup.random({ gender, nounCategory, adjectiveCategory });
         const start = typeof startTextOrTransform === 'function' ? startTextOrTransform(objectGroup) : startTextOrTransform;
 
         const statement = composeSentence([
@@ -53,8 +53,8 @@ const randomPhrase = {
         return present;
     },
 
-    nominative: function ({ category, gender }) {
-        const sentence = this.handleCase('0', gender, category,
+    nominative: function ({ nounCategory, adjectiveCategory, gender }) {
+        const sentence = this.handleCase('0', gender, nounCategory, adjectiveCategory,
         (objectGroup) => {
             const { gender } = objectGroup.noun;
             const subject = randomSubject('2', gender);
@@ -70,21 +70,21 @@ const randomPhrase = {
         return sentence;
     },
 
-    accusative: function ({ category, gender }) {
+    accusative: function ({ nounCategory, adjectiveCategory, gender }) {
         const randomAkkStart = getRandomItem(accusativeBeginnings);
-        const sentence = this.handleCase( '1', gender, category, {
+        const sentence = this.handleCase( '1', gender, nounCategory, adjectiveCategory, {
             type: 'start',
             text: randomAkkStart
         });
         return sentence;
     },
 
-    dative: function ({ category, gender }) {
+    dative: function ({ nounCategory, adjectiveCategory, gender }) {
         const kasus = '2';
         const randomDatStart = getRandomItem(dativeBeginnings);
-        const indirectObjectGroup = ObjectGroup.random({ gender, category });
+        const indirectObjectGroup = ObjectGroup.random({ gender, nounCategory, adjectiveCategory });
 
-        const directObjectGroup = ObjectGroup.random({ gender, category,
+        const directObjectGroup = ObjectGroup.random({ gender, nounCategory,
             include: [ 'article', 'noun' ]
         });
 
@@ -103,14 +103,14 @@ const randomPhrase = {
         return present;
     },
 
-    genitive: function ({ category, gender }) {
+    genitive: function ({ nounCategory, adjectiveCategory, gender }) {
         const kasus = '3';
 
-        const owned = ObjectGroup.random({ gender, category,
+        const owned = ObjectGroup.random({ gender, nounCategory,
             include: [ 'article', 'noun' ]
         });
 
-        const owner = ObjectGroup.random({ gender, category });
+        const owner = ObjectGroup.random({ gender, nounCategory, adjectiveCategory });
 
         const statement = composeSentence([
             owned.flatten('0'),

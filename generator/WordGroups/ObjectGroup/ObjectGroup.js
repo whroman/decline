@@ -13,12 +13,12 @@ export default class ObjectGroup {
         Object.assign(this, { article, adjective, noun });
     }
 
-    static random ({ gender, category, include = [
+    static random ({ gender, nounCategory, adjectiveCategory, include = [
         'adjective', 'noun', 'article'
     ] }) {
         const props = {};
-        props.adjective = include.includes('adjective') ? Adjective.random() : null;
-        props.noun = include.includes('noun') ? Noun.random({ gender, category }) : null;
+        props.adjective = include.includes('adjective') ? Adjective.random({ category: adjectiveCategory }) : null;
+        props.noun = include.includes('noun') ? Noun.random({ gender, category: nounCategory }) : null;
         props.article = include.includes('article') ? Article.randomByGender(props.noun.gender) : null;
         const objectGroup = new ObjectGroup(props);
         return objectGroup;

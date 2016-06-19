@@ -14,11 +14,17 @@ export default class Adjective {
         Object.assign(this, { root, translations });
     }
 
-    static random () {
-        const foo = getRandomItem(adjectives);
+    static random ({ category }) {
+        const filteredAdjectives = adjectives.filter((adjective) => {
+                if (typeof category !== 'string') return true;
+                const itBelongs = adjective.categories.includes(0);
+                return itBelongs;
+            });
+
+        const rawAdj = getRandomItem(filteredAdjectives);
         const adj = new Adjective({
-            root: foo.text,
-            translations: foo.translations
+            root: rawAdj.text,
+            translations: rawAdj.translations
         });
 
         return adj;
