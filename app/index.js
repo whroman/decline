@@ -13,7 +13,10 @@ const store = new Store();
 ReactGA.initialize(process.env.DECLINE_GOOGLE_ANALYTICS_TOKEN);
 
 const history = syncHistoryWithStore(hashHistory, store);
-history.listen((location) => ReactGA.pageview(location.pathname));
+history.listen((location) => {
+    console.log(location.pathname);
+    ReactGA.pageview(location.pathname);
+});
 
 const routerProps = { routes, history };
 render(
