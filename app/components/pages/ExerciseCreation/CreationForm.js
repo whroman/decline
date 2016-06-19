@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { hashHistory } from 'react-router';
 import { find } from 'lodash';
 
-import categories from 'tables/categories/data';
+import nounCategories from 'tables/nouns/categories/data';
 import CreationDropdown from './CreationDropdown';
 import './CreationForm.scss';
 
@@ -52,7 +52,7 @@ const KASUS_OPTIONS = [
     },
 ];
 
-const KATEGORIE_OPTIONS = categories
+const KATEGORIE_OPTIONS = nounCategories
     .map(({ uid, translations }) => {
         return {
             label: translations.deu,

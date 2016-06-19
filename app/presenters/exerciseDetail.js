@@ -1,4 +1,4 @@
-import categories from 'tables/categories/data';
+import nounCategories from 'tables/nouns/categories/data';
 
 const OBJECTS_GENDERS = [
     'Maskulin',
@@ -14,7 +14,7 @@ const ARTICLE_TYPES = [
     'Possessiv'
 ];
 
-const CATEGORIES = categories.map((item) => item.translations.deu );
+const CATEGORIES = nounCategories.map((item) => item.translations.deu );
 
 export default function presentPhrase (phrase) {
     const { statement, noun, article, adjective } = phrase;
