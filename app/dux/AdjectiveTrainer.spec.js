@@ -24,7 +24,8 @@ describe('Dux', () => describe('AdjectiveTrainer', () => {
                     amount: 10,
                     gender: null,
                     kasus: null,
-                    kategorie: null
+                    nounKategorie: null,
+                    adjectiveKategorie: null
                 };
                 assert.deepEqual(
                     mergeCreationParams(initialState, payload),
@@ -39,7 +40,8 @@ describe('Dux', () => describe('AdjectiveTrainer', () => {
                     amount: undefined,
                     gender: undefined,
                     kasus: undefined,
-                    kategorie: undefined
+                    nounKategorie: undefined,
+                    adjectiveKategorie: undefined,
                 };
                 assert.deepEqual(
                     mergeCreationParams(initialState, payload),
@@ -47,7 +49,8 @@ describe('Dux', () => describe('AdjectiveTrainer', () => {
                         amount: undefined,
                         gender: initialState.gender,
                         kasus: initialState.kasus,
-                        kategorie: initialState.kategorie
+                        nounKategorie: initialState.nounKategorie,
+                        adjectiveKategorie: initialState.adjectiveKategorie,
                     }
                 )
             });
