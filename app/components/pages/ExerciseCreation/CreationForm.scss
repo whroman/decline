@@ -21,4 +21,39 @@
     .ReactDropdown {
         @include Dropdown();
     }
+
+}
+
+.row {
+    width: 100%;
+}
+
+.col1 {
+    display: inline-block;
+}
+
+.col-header {
+    display: inline-block;
+    width: 120px;
+}
+
+.col1-header {
+    width: 120px;
+}
+
+.col2-header {
+    display: inline-block;
+    width: 33.33%;
+    transform: rotate(-45deg);
+}
+
+
+.row-header {
+    display: inline-block;
+    width: 120px;
+}
+
+.col2 {
+    display: inline-block;
+    width: 40px;
 }
