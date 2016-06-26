@@ -2,13 +2,13 @@ const articleTypes = [
     {
         uid: '0',
         translations: {
-            deu: 'definitiv'
+            deu: 'definit'
         }
     },
     {
         uid: '1',
         translations: {
-            deu: 'indefinitiv'
+            deu: 'indefinit'
         }
     },
     {

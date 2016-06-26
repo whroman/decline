@@ -32,28 +32,29 @@
     display: inline-block;
 }
 
+$col-width: 40px;
+
 .col-header {
     display: inline-block;
-    width: 120px;
+    width: $col-width * 4;
 }
 
 .col1-header {
-    width: 120px;
+    width: $col-width * 4;
 }
 
 .col2-header {
     display: inline-block;
-    width: 33.33%;
+    width: 25%;
     transform: rotate(-45deg);
 }
 
-
 .row-header {
     display: inline-block;
-    width: 120px;
+    width: $col-width * 3;
 }
 
 .col2 {
     display: inline-block;
-    width: 40px;
+    width: $col-width;
 }
