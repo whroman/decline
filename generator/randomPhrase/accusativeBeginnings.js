@@ -37,9 +37,9 @@ const accusativeBeginnings = create([
     'hörst',
     'hört',
     'hört',
-    'höben',
+    'hören',
     'hört',
-    'höben',
+    'hören',
 ]));
 
 export default accusativeBeginnings;
