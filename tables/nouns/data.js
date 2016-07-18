@@ -292,6 +292,64 @@ const nouns = [
     [
         'Apfel', 'Äpfel', ['apple'], ['apples'],
         '0', ['7']
+    ],
+
+    // Riding a Bike
+    [
+        'Fahrrad', 'Fahrräder', ['bicycle'], ['bicycles'],
+        '2', ['8']
+    ],
+    [
+        'Schaltwerk', 'Schaltwerke', ['rear derailleur'], ['rear derailleurs'],
+        '2', ['8']
+    ],
+    [
+        'Pedal', 'Pedale', ['pedal'], ['pedals'],
+        '2', ['8']
+    ],
+    [
+        'Fahrradschloss', 'Fahrradschlösser', ['bike lock'], ['bike locks'],
+        '2', ['8']
+    ],
+    [
+        'Ampel', 'Ampeln', ['traffic light'], ['traffic lights'],
+        '1', ['8']
+    ],
+    [
+        'Fahrradtasche', 'Fahrradtaschen', ['pannier'], ['panniers'],
+        '1', ['8']
+    ],
+    [
+        'Kette', 'Ketten', ['chain'], ['chains'],
+        '1', ['8']
+    ],
+    [
+        'Scheibenbremse', 'Scheibenbremsen', ['disk brake'], ['disk brakes'],
+        '1', ['8']
+    ],
+    [
+        'Helm', 'Helme', ['helmet'], ['helmets'],
+        '0', ['8']
+    ],
+    [
+        'Fahrradweg', 'Fahrradwege', ['bike path'], ['bike paths'],
+        '0', ['8']
+    ],
+    [
+        'Sattel', 'Sattele', ['saddle'], ['saddles'],
+        '0', ['8']
+    ],
+    [
+        'Rahmen', 'Rahmene', ['frame'], ['frames'],
+        '0', ['8']
+    ],
+    [
+        'Gepäckträger', 'Gepäckträger', ['bike rack'], ['bike racks'],
+        '0', ['8']
+    ],
+    [
+        'Lenker', 'Lenker', ['handlebar'], ['handlebars'],
+        '0', ['8']
     ]
 ];
 
