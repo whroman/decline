@@ -96,11 +96,36 @@ const nouns = [
         '1', ['2']
     ],
 
-    // Body Parts
+    // Human Anatomy
+    // Organs
     [
-        'Arm', 'Arme', ['arm'], ['arms'],
+        'Lunge', 'Lungen', ['lung'], ['lungs'],
+        '1', ['3']
+    ],
+    [
+        'Haut', 'Häute', ['skin'], ['skins'],
+        '1', ['3']
+    ],
+
+    // Core
+    [
+        'Bauch', 'Bäuche', ['stomach'], ['stomachs'],
         '0', ['3']
     ],
+    [
+        'Brust', 'Brüste', ['breast', 'chest'], ['breasts', 'chests'],
+        '1', ['3']
+    ],
+    [
+        'Brustwarze', 'Brustwarzen', ['nipple'], ['nipples'],
+        '1', ['3']
+    ],
+    [
+        'Nippel', 'Nippel', ['nipple'], ['nipples'],
+        '0', ['3']
+    ],
+
+    // Legs
     [
         'Bein', 'Beine', ['leg'], ['legs'],
         '2', ['3']
@@ -110,9 +135,36 @@ const nouns = [
         '0', ['3']
     ],
     [
+        'Knie', 'Knie', ['knee'], ['knees'],
+        '2', ['3']
+    ],
+
+    // Arms
+    [
         'Hand', 'Hände', ['hand'], ['hands'],
         '1', ['3']
     ],
+    [
+        'Finger', 'Finger', ['finger'], ['fingers'],
+        '0', ['3']
+    ],
+    [
+        'Arm', 'Arme', ['arm'], ['arms'],
+        '0', ['3']
+    ],
+    [
+        'Handgelenk', 'Handgelenke', ['wrist'], ['wrists'],
+        '2', ['3']
+    ],
+    [
+        'Unterarm', 'Unterarme', ['forearm'], ['forearms'],
+        '0', ['3']
+    ],
+    [
+        'Ellbogen', 'Ellbogen', ['elbow'], ['elbows'],
+        '0', ['3']
+    ],
+    // Head
     [
         'Mund', 'Münder', ['mouth'], ['mouths'],
         '0', ['3']
@@ -122,12 +174,12 @@ const nouns = [
         '2', ['3']
     ],
     [
-        'Finger', 'Finger', ['finger'], ['fingers'],
-        '0', ['3']
+        'Gesicht', 'Gesichter', ['face'], ['faces'],
+        '2', ['3']
     ],
     [
-        'Knie', 'Knie', ['knee'], ['knees'],
-        '2', ['3']
+        'Hals', 'Hälse', ['throat', 'neck'], ['throats', 'necks'],
+        '0', ['3']
     ],
 
     // 'Kinder aufziehen'
@@ -312,6 +364,10 @@ const nouns = [
         '2', ['8']
     ],
     [
+        'Schloss', 'Schlösser', ['castle', 'palace', 'lock'], ['castles', 'palaces', 'locks'],
+        '2', ['8']
+    ],
+    [
         'Ampel', 'Ampeln', ['traffic light'], ['traffic lights'],
         '1', ['8']
     ],
@@ -321,6 +377,14 @@ const nouns = [
     ],
     [
         'Kette', 'Ketten', ['chain'], ['chains'],
+        '1', ['8']
+    ],
+    [
+        'Scheibe', 'Scheiben', ['disk', 'slice', 'pane'], ['disks', 'slices', 'panes'],
+        '1', ['8']
+    ],
+    [
+        'Bremse', 'Bremsen', ['brake'], ['brakes'],
         '1', ['8']
     ],
     [
