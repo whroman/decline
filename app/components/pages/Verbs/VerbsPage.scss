@@ -1,0 +1,50 @@
+$correct-bg: rgba(68, 157, 54, 0.3);
+$incorrect-bg: rgba(171, 32, 15, 0.3);
+$placeholder-bg: rgba(255, 255, 255, 0.6);
+$row-focused-bg: rgba(100, 100, 100, 0.4);
+
+.VerbSentence {
+    position: relative;
+    line-height: 1.5em;
+    background-color: transparent;
+
+    &:hover {
+        background-color: $row-focused-bg;
+    }
+
+    .verb-word-input {
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        outline: none;
+        padding: 0;
+        position: absolute;
+        z-index: 2;
+        line-height: 1.5em;
+        bottom: 0;
+    }
+
+    .Tooltip {
+        margin-left: 20px;
+        right: auto;
+    }
+
+    .placeholder {
+        background-color: $placeholder-bg;
+
+        &.isCorrect {
+            background-color: $correct-bg;
+        }
+
+
+        &.isIncorrect {
+            background-color: $incorrect-bg;
+        }
+    }
+
+    .wr-ico {
+        font-size: 1.5em;
+        padding: 0 0.5em;
+        box-sizing: initial;
+    }
+}

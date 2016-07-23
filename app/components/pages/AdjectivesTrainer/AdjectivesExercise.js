@@ -28,18 +28,16 @@ export default class AdjectivesExercise extends Component {
         });
     }
 
-    renderPhrase (phrase, index) {
-        const { replace } = this.props;
-        return (
-            <AdjectivesExerciseItem
-                uid={ index }
-                phrase={ phrase }
-                shouldFocus={ this.state.focusedKey === phrase.key }
-                key={ phrase.key }
-                setFocusedItem={ this.setFocusedItem.bind(this) }
-                replace={ replace }
-            />
-        );
+    renderPhrase (phrase, uid) {
+        const { key } = phrase;
+        const props = {
+            key, phrase, uid,
+            shouldFocus: this.state.focusedKey === key,
+            setFocusedItem: this.setFocusedItem.bind(this),
+            replace: this.props.replace
+        };
+
+        return (<AdjectivesExerciseItem { ...props } />);
     }
 
     render () {
