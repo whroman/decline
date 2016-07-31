@@ -56,7 +56,7 @@ export default [
     },
     {
         text: 'Wir sind über den Unfall informiert',
-        stubs: [2, 3, 5],
+        stubs: [1, 2, 3, 5],
         translations: {
             eng: 'We are informed about the accident'
         },
@@ -122,7 +122,7 @@ export default [
     },
     {
         text: 'Ich freue mich auf die Reise',
-        stubs: [2, 3, 4],
+        stubs: [3, 4],
         translations: {
             eng: 'I\'m looking forward to the trip'
         },
@@ -232,7 +232,7 @@ export default [
     },
     {
         text: 'Kann ich dich um Rat fragen',
-        stubs: [2, 3, 4, 6],
+        stubs: [2, 3, 4],
         translations: {
             eng: 'Can I ask you for advice?'
         },
@@ -315,7 +315,7 @@ export default [
     },
     {
         text: 'Die Buntstiften sind auf den Boden gefallen',
-        stubs: [3, 4, 6],
+        stubs: [2, 3, 4, 6],
         translations: {
             eng: 'The crayons fell to the ground.'
         },
@@ -364,9 +364,32 @@ export default [
             eng: 'You can place the papers in my drawer.'
         },
         tags: [
-            'liegen',
+            'legen',
             'in'
         ]
     },
-
+    {
+        text: 'Die Perser glaubten sogar, dass die Erde aus einem riesigen Ei geschlüpft ist',
+        stubs: [7, 8, 11, 12],
+        translations: {
+            eng: 'The Persians even believed that Earth hatched from a giant egg.'
+        },
+        tags: [
+            'schlüpfen',
+            'aus'
+        ]
+    },
+    {
+        text: 'Die alten Ägypter glaubten an ein Weiterleben nach dem Tod und an eine Art Seele, die im Augenblick des Todes den Körper verlässt',
+        stubs: [3, 4, 5, 7, 8, 11, 12, 15, 16, 18, 20, 22],
+        translations: {
+            eng: 'The ancient Egyptians believed in a life after death and a kind of soul that leaves the body at the moment of death.'
+        },
+        tags: [
+            'glauben',
+            'verlassen',
+            'an',
+            'nach'
+        ]
+    }
 ];
