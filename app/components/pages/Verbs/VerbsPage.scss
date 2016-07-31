@@ -3,25 +3,16 @@ $incorrect-bg: rgba(171, 32, 15, 0.3);
 $placeholder-bg: rgba(255, 255, 255, 0.6);
 $row-focused-bg: rgba(100, 100, 100, 0.4);
 
-.VerbSentence {
+.VerbExercise {
     position: relative;
     line-height: 1.5em;
     background-color: transparent;
+    float: left;
+    clear: left;
+    margin-bottom: 0.5em;
 
     &:hover {
         background-color: $row-focused-bg;
-    }
-
-    .verb-word-input {
-        background-color: transparent;
-        box-shadow: none;
-        border: none;
-        outline: none;
-        padding: 0;
-        position: absolute;
-        z-index: 2;
-        line-height: 1.5em;
-        bottom: 0;
     }
 
     .Tooltip {
@@ -44,7 +35,31 @@ $row-focused-bg: rgba(100, 100, 100, 0.4);
 
     .wr-ico {
         font-size: 1.5em;
-        padding: 0 0.5em;
+        float: right;
         box-sizing: initial;
+    }
+
+    .VerbExercise-details {
+        float: left;
+        width: 94px;
+    }
+
+    .VerbExercise-sentence {
+        margin-left: 100px;
+    }
+}
+
+.VerbWord {
+    position: relative;
+
+    .VerbWord-input {
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        outline: none;
+        padding: 0;
+        position: absolute;
+        z-index: 2;
+        line-height: 1.5em;
     }
 }
