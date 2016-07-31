@@ -243,7 +243,7 @@ export default [
     },
     {
         text: 'Die Touristen fragen einen Passanten nach dem Weg',
-        stubs: [2, 5, 6],
+        stubs: [2, 3, 5, 6],
         translations: {
             eng: 'The tourists are asking a passerby for directions.'
         },
@@ -390,6 +390,185 @@ export default [
             'verlassen',
             'an',
             'nach'
+        ]
+
+    },
+    {
+        text: 'Wussten Sie schon, dass Sie in Berlin nie weiter als 500 Meter von der nächsten Haltestelle, dem nächsten Bahnhof oder der nächsten Station entfernt sind',
+        stubs: [5, 12, 13, 16, 20, 23, 24],
+        translations: {
+            eng: 'Did you know that in Berlin you are never more than 500 meters from the next bus stop, the next rail station or the train station?'
+        },
+        tags: [
+            'entfernen',
+            'von',
+            'in',
+        ]
+    },
+    {
+        text: 'Heute habe ich endlich mit Englisch Sprechen aufgehört',
+        stubs: [4, 7],
+        translations: {
+            eng: 'Today I finally stopped speaking English.'
+        },
+        tags: [
+            'aufhören',
+            'mit'
+        ]
+    },
+    {
+        text: 'Sie filmt mit ihrem Smartphone die Menschenmenge und die Redner auf der Leinwand',
+        stubs: [1, 2, 3, 5, 8, 10, 11],
+        translations: {
+            eng: 'She\'s filming the crowd and the speakers on the screen with her smartphone.'
+        },
+        tags: [
+            'filmen',
+            'mit',
+            'auf'
+        ]
+    },
+    {
+        text: 'Aus allen Richtungen strömen Menschen auf den Platz am Rheinufer',
+        stubs: [0, 1, 3, 5, 6, 8],
+        translations: {
+            eng: 'People from all over flock to the plaza on the banks of the Rhine'
+        },
+        tags: [
+            'strömen',
+            'aus',
+            'auf',
+            'an'
+        ]
+    },
+    {
+        text: 'Kleine Kinder sitzen auf den Schultern ihrer Eltern',
+        stubs: [2, 3, 4, 6],
+        translations: {
+            eng: 'Small children are sitting on the shoulders of their parents'
+        },
+        tags: [
+            'sitzen',
+            'auf'
+        ]
+    },
+    {
+        text: 'Sie gedenken an die Opfer in München',
+        stubs: [1, 2, 3, 5],
+        translations: {
+            eng: 'They are commemorating the victims in Munich.'
+        },
+        tags: [
+            'gedenken',
+            'an',
+            'in'
+        ]
+    },
+    {
+        text: 'Der Politiker spricht sich für Reformen aus',
+        stubs: [2, 3, 4, 6],
+        translations: {
+            eng: 'The politician is calling for reforms.'
+        },
+        tags: [
+            'aussprechen',
+            'für',
+            'sich'
+        ]
+    },
+    {
+        text: 'Wer strebt nicht nach einem besseren Leben',
+        stubs: [1, 3, 4, 5],
+        translations: {
+            eng: 'Who doesn\'t strive for a better life?'
+        },
+        tags: [
+            'streben',
+            'nach'
+        ]
+    },
+    {
+        text: 'Er ist an einem Herzinfarkt gestorben',
+        stubs: [1, 2, 3, 5],
+        translations: {
+            eng: 'He died of a heart attack.'
+        },
+        tags: [
+            'sterben',
+            'an',
+            'sein'
+        ]
+    },
+    {
+        text: 'Wir teilen den Kuchen in acht Stücke',
+        stubs: [1, 2, 4],
+        translations: {
+            eng: 'We are dividing the cake into eight pieces.'
+        },
+        tags: [
+            'teilen',
+            'in'
+        ]
+    },
+    {
+        text: 'Er hat sich von seiner Freundin getrennt',
+        stubs: [1, 2, 3, 4, 6],
+        translations: {
+            eng: 'He broke up with his girlfriend.'
+        },
+        tags: [
+            'trennen',
+            'von',
+            'haben',
+            'sich'
+        ]
+    },
+    {
+        text: 'Später treffe ich mich mit meinem Mann',
+        stubs: [1, 3, 4, 5],
+        translations: {
+            eng: 'I\'m meeting with my husband later.'
+        },
+        tags: [
+            'treffen',
+            'mit',
+            'sich'
+        ]
+    },
+    {
+        text: 'Das kann noch zu einem Problem werden',
+        stubs: [3, 4, 6],
+        translations: {
+            eng: 'That can still become a problem.'
+        },
+        tags: [
+            'werden',
+            'zu'
+        ]
+    },
+    {
+        text: 'Was weißt du über den Skandal',
+        stubs: [1, 3, 4],
+        translations: {
+            eng: 'What do you know about the skandal?'
+        },
+        tags: [
+            'wissen',
+            'über'
+        ]
+    },
+    {
+        text: 'Zwei Wochen nach dem Putschversuch in der Türkei sind fast 1400 Soldaten aus den Streitkräften entlassen worden',
+        stubs: [2, 3, 5, 6, 12, 13, 15, 16],
+        translations: {
+            eng: 'Two weeks after the failed coup in Turkey, almost 1400 soldiers have been dismissed from the armed forces.'
+        },
+        tags: [
+            'nach',
+            'in',
+            'aus',
+            'entlassen',
+            'worden'
         ]
     }
 ];
