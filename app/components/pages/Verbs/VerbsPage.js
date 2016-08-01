@@ -4,19 +4,33 @@ import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 import Tooltip from 'app/components/Tooltip//Tooltip';
 import './VerbsPage.scss';
 
-const forViewConsumption = shuffle(verbsWithPrepositions.map((sentence) => {
-  const wordList = sentence.text.split(' ').map((word, index) => {
-    const wordConstruct = {
-      answer: word,
-      text: word
-    };
-    if (sentence.stubs.includes(index)) {
-      wordConstruct.text = word.replace(/./gi, '_')
-    }
-    return wordConstruct;
-  });
+const presentWord = (text) => ({
+    text, answer: text,
+});
 
-  return Object.assign(sentence, { wordList });
+const verbsForViewConsumption = shuffle(verbsWithPrepositions.map((sentence) => {
+    const { text, stubs } = sentence;
+    const finalCharacterIndex = text.length - 1;
+    const punctuation = text[finalCharacterIndex];
+    const wordList = text
+        .slice(0, finalCharacterIndex)
+        .split(' ')
+        .reduce((memo, word, index) => {
+            const wordConstruct = presentWord(word);
+
+            if (stubs.includes(index)) {
+                wordConstruct.text = word.replace(/./gi, '_')
+            }
+
+            if (index > 0) memo.push(presentWord(' '));
+            memo.push(wordConstruct);
+
+            return memo;
+        }, [])
+        .concat([presentWord(punctuation)])
+
+
+    return Object.assign(sentence, { wordList });
 }));
 
 class VerbWord extends Component {
@@ -42,19 +56,21 @@ class VerbWord extends Component {
         if (text !== answer) {
             word.push(
                 <input
+                    key={ answer + index + '-input' }
                     className={ 'VerbWord-input' }
                     type='text'
                     maxLength={ answer.length }
                     size={ answer.length }
                     onChange={ ((event) => this.handleInputChange(event, answer)).bind(this) }
                 />,
-                <span className={ `placeholder ${inputState}` } >{ text }</span>
+                <span
+                    key={ answer + index + '-placeholder' }
+                    className={ `placeholder ${inputState}` }
+                >{ text }</span>
             )
         } else {
-            word.push(<span>{ text }</span>);
+            word.push(<span key={ text + index + '-text'}>{ text }</span>);
         }
-
-        if (index > 0) word.unshift(<span> </span>);
 
         return (<span className='VerbWord'>{ word }</span>);
     }
@@ -110,11 +126,14 @@ class VerbExercise extends Component {
 
                 <div className='VerbExercise-sentence'>
                     {
-                        wordList.map((word, wordIndex) => (
-                            <VerbWord { ...Object.assign(word, { index: wordIndex }) } />
-                        ))
+                        wordList.map((word, wordIndex) => {
+                            const props = Object.assign(word, {
+                                index: wordIndex,
+                                key: word.answer + wordIndex
+                            });
+                            return (<VerbWord { ...props } />);
+                        })
                     }
-                    <span>{ '.' }</span>
                 </div>
             </div>
         );
@@ -160,8 +179,8 @@ export class Verbs extends Component {
                 <h1>{ 'Verbs & Prepositions' }</h1>
                 <hr />
                 {
-                    forViewConsumption.map((item, index) => (
-                        <VerbExercise { ...Object.assign(item, { index }) } />
+                    verbsForViewConsumption.map((item, index) => (
+                        <VerbExercise { ...Object.assign(item, { index, key: item.text }) } />
                     ))
                 }
             </div>
