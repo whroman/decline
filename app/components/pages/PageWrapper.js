@@ -20,9 +20,7 @@ export default class PageWrapper extends Component {
     renderRight () {
         return (
             <div className='right-links'>
-                <Link to='/adjectives'>{ 'Adjectives' }</Link>
-                <Link to='/verbs'>{ 'Verbs' }</Link>
-                <Link to='/create'>{ 'Configure' }</Link>
+                <Link to='/practice'>{ 'Practice' }</Link>
                 <Link to='/about'>{ 'About' }</Link>
             </div>
         );

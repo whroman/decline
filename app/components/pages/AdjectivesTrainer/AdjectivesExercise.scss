@@ -15,6 +15,22 @@ $component-height: 320px;
 
 $trans-displacement: -40px;
 
+.Adjective-header {
+    position: relative;
+}
+
+.Adjective-settings-link {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    line-height: 1em;
+    font-size: 2em;
+
+    &:hover {
+        color: #888;
+    }
+}
+
 .triggersTooltip {
     @extend %bg-transition;
     position: relative;

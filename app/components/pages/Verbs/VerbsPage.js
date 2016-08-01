@@ -136,11 +136,11 @@ class VerbExercise extends Component {
 
 }
 
-export class About extends Component {
+export class Verbs extends Component {
 
     render() {
         return (
-            <div className='About'>
+            <div className='Verbs'>
                 <div className='row'>
                     <div className='modal column small-10 small-centered  '>
                         <br />
@@ -157,7 +157,7 @@ export class About extends Component {
     renderContent() {
         return (
             <div className='column small-11 small-centered'>
-                <h1>{ 'Verbs' }</h1>
+                <h1>{ 'Verbs & Prepositions' }</h1>
                 <hr />
                 {
                     forViewConsumption.map((item, index) => (
@@ -170,4 +170,4 @@ export class About extends Component {
 
 }
 
-export default About;
+export default Verbs;

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 import { create, load, replace } from 'app/dux/adjectiveTrainer';
 
@@ -31,8 +32,14 @@ export class AdjectivesTrainer extends Component {
                 <div className='modal column small-10 small-centered  '>
                     <br/>
                     <div className='row'>
-                        <div className='column small-11 small-centered'>
-                            <h1>{ 'Practice' }</h1>
+                        <div className='column small-11 small-centered Adjective-header'>
+                            <h1>{ 'Adjective Declension' }</h1>
+                            <Link
+                                to='practice/adjective-declension/settings'
+                                className='Adjective-settings-link '
+                            >
+                                <i className='wr-ico wr-ico-cogs' />
+                            </Link>
                             <hr/>
                         </div>
                     </div>
