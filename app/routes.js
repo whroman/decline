@@ -4,7 +4,8 @@ import ExerciseItemDetailPage from './components/pages/ExerciseItemDetail/Exerci
 import ExerciseCreationPage from './components/pages/ExerciseCreation/ExerciseCreationPage';
 import PracticePage from './components/pages/Practice/PracticePage';
 import AboutPage from './components/pages/About/AboutPage';
-import VerbsPage from './components/pages/Verbs/VerbsPage';
+import VerbsWithPrepositionsPage from './components/pages/Verbs/VerbsWithPrepositionsPage';
+import ReflexiveVerbsPage from './components/pages/Verbs/ReflexiveVerbsPage';
 
 const defaultRoute = '/practice/adjective-declension';
 
@@ -36,8 +37,12 @@ export default {
             path: '/practice/adjective-declension/settings'
         },
         {
-            component: VerbsPage,
-            path: '/practice/verbs-and-prepositions'
+            component: VerbsWithPrepositionsPage,
+            path: '/practice/verbs/prepositions'
+        },
+        {
+            component: ReflexiveVerbsPage,
+            path: '/practice/verbs/reflexive'
         }
     ]
 };

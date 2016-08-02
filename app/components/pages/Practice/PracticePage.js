@@ -22,10 +22,17 @@ export class Practice extends Component {
                                 </Link>
                                 <br/><br/>
                                 <Link
-                                    to='/practice/verbs-and-prepositions'
+                                    to='/practice/verbs/prepositions'
                                     className='button'
                                 >
                                     { 'Verbs & Prepositions' }
+                                </Link>
+                                <br/><br/>
+                                <Link
+                                    to='/practice/verbs/reflexive'
+                                    className='button'
+                                >
+                                    { 'Reflexive Verbs' }
                                 </Link>
                             </div>
                         </div>

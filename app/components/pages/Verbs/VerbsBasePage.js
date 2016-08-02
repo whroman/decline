@@ -1,37 +1,6 @@
 import React, { Component } from 'react';
-import { shuffle } from 'lodash';
-import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 import Tooltip from 'app/components/Tooltip//Tooltip';
 import './VerbsPage.scss';
-
-const presentWord = (text) => ({
-    text, answer: text,
-});
-
-const verbsForViewConsumption = shuffle(verbsWithPrepositions.map((sentence) => {
-    const { text, stubs } = sentence;
-    const finalCharacterIndex = text.length - 1;
-    const punctuation = text[finalCharacterIndex];
-    const wordList = text
-        .slice(0, finalCharacterIndex)
-        .split(' ')
-        .reduce((memo, word, index) => {
-            const wordConstruct = presentWord(word);
-
-            if (stubs.includes(index)) {
-                wordConstruct.text = word.replace(/./gi, '_')
-            }
-
-            if (index > 0) memo.push(presentWord(' '));
-            memo.push(wordConstruct);
-
-            return memo;
-        }, [])
-        .concat([presentWord(punctuation)])
-
-
-    return Object.assign(sentence, { wordList });
-}));
 
 class VerbWord extends Component {
 
@@ -179,7 +148,7 @@ export class Verbs extends Component {
                 <h1>{ 'Verbs & Prepositions' }</h1>
                 <hr />
                 {
-                    verbsForViewConsumption.map((item, index) => (
+                    this.props.exercises.map((item, index) => (
                         <VerbExercise { ...Object.assign(item, { index, key: item.text }) } />
                     ))
                 }
