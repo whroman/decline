@@ -133,7 +133,11 @@ export class Verbs extends Component {
                     <div className='modal column small-10 small-centered  '>
                         <br />
                         <div className='row'>
-                            { this.renderContent() }
+                            <div className='column small-11 small-centered'>
+                                <h1>{ this.props.title }</h1>
+                                <hr />
+                                { this.renderExercises() }
+                            </div>
                         </div>
                         <br />
                     </div>
@@ -142,18 +146,11 @@ export class Verbs extends Component {
         );
     }
 
-    renderContent() {
-        return (
-            <div className='column small-11 small-centered'>
-                <h1>{ 'Verbs & Prepositions' }</h1>
-                <hr />
-                {
-                    this.props.exercises.map((item, index) => (
-                        <VerbExercise { ...Object.assign(item, { index, key: item.text }) } />
-                    ))
-                }
-            </div>
-        );
+    renderExercises() {
+        return this.props.exercises.map((item, index) => {
+            const props = Object.assign(item, { index, key: item.text });
+            return (<VerbExercise { ...props } />);
+        });
     }
 
 }

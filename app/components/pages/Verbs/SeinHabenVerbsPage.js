@@ -3,14 +3,19 @@ import VerbBasePage from './VerbsBasePage';
 import presentVerbExercises from './presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const reflexiveVerbExercises = verbsWithPrepositions
-    .filter((exercise) => exercise.tags.includes('sich'));
+const verbs = ['sein', 'haben'];
+
+const exercises = verbsWithPrepositions.filter(
+    (exercise) => verbs.some(
+        (item) => exercise.tags.includes(item)
+    )
+);
 
 export default class ReflexiveVerbsPage extends Component {
     render () {
         const props = {
-            title: 'Reflexive Verbs',
-            exercises: presentVerbExercises(reflexiveVerbExercises)
+            title: 'Sein & Haben Verbs',
+            exercises: presentVerbExercises(exercises)
         };
         return (<VerbBasePage { ...props } />);
     }

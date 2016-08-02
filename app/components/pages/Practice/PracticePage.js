@@ -34,6 +34,13 @@ export class Practice extends Component {
                                 >
                                     { 'Reflexive Verbs' }
                                 </Link>
+                                <br/><br/>
+                                <Link
+                                    to='/practice/verbs/sein-haben'
+                                    className='button'
+                                >
+                                    { 'Sein & Haben Verbs' }
+                                </Link>
                             </div>
                         </div>
                         <br />

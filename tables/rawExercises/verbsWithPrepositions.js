@@ -45,32 +45,33 @@ export default [
     },
     {
         text: 'Der Vater hat sich bei der Schule informiert.',
-        stubs: [3, 4, 5, 7],
+        stubs: [2, 3, 4, 5, 7],
         translations: {
             eng: 'The father was informed by the school'
         },
         tags: [
             'informieren',
             'bei',
-            'sich'
+            'sich',
+            'haben'
         ]
     },
     {
         text: 'Wir sind über den Unfall informiert.',
-        stubs: [1, 2, 3, 5],
+        stubs: [1, 2, 3],
         translations: {
-            eng: 'We are informed about the accident'
+            eng: 'We are informed about the accident.'
         },
         tags: [
-            'informieren',
-            'über'
+            'über',
+            'sein'
         ]
     },
     {
         text: 'Ich bleibe bei meiner Meinung.',
         stubs: [1, 2, 3],
         translations: {
-            eng: 'I stand by my opinion'
+            eng: 'I stand by my opinion.'
         },
         tags: [
             'bleiben',
@@ -81,11 +82,12 @@ export default [
         text: 'Du musst noch beim Reisebüro anrufen.',
         stubs: [3, 5],
         translations: {
-            eng: 'You must still call the travel agency'
+            eng: 'You must still call the travel agency.'
         },
         tags: [
             'anrufen',
-            'bei'
+            'bei',
+            'müssen'
         ]
     },
     {
@@ -107,18 +109,20 @@ export default [
         },
         tags: [
             'sprechen',
-            'über'
+            'über',
+            'müssen'
         ]
     },
     {
         text: 'Sie hat von dir gesprochen.',
-        stubs: [2, 3, 4],
+        stubs: [1, 2, 3, 4],
         translations: {
             eng: 'She has spoken of you'
         },
         tags: [
             'sprechen',
-            'von'
+            'von',
+            'haben'
         ]
     },
     {
@@ -135,14 +139,15 @@ export default [
     },
     {
         text: 'Ich habe mich auf mein neues Leben gefreut.',
-        stubs: [2, 3, 4, 5, 7],
+        stubs: [1, 2, 3, 4, 5, 7],
         translations: {
             eng: 'I was looking forward to my new life.'
         },
         tags: [
             'freuen',
             'auf',
-            'sich'
+            'sich',
+            'haben'
         ]
     },
     {
@@ -186,7 +191,8 @@ export default [
         },
         tags: [
             'denken',
-            'an'
+            'an',
+            'dass'
         ]
     },
     {
@@ -202,26 +208,28 @@ export default [
     },
     {
         text: 'Ich möchte mich für deine Hilfe bedanken.',
-        stubs: [2, 3, 4, 6],
+        stubs: [1, 2, 3, 4, 6],
         translations: {
             eng: 'I would like to thank you for your help.'
         },
         tags: [
             'bedanken',
             'für',
-            'sich'
+            'sich',
+            'möchten'
         ]
     },
     {
         text: 'Wir möchten uns bei Ihnen bedanken.',
-        stubs: [2, 3, 4, 5],
+        stubs: [1, 2, 3, 4, 5],
         translations: {
             eng: 'We would like to thank you (formal).'
         },
         tags: [
             'bedanken',
             'bei',
-            'sich'
+            'sich',
+            'möchten'
         ]
     },
     {
@@ -232,7 +240,8 @@ export default [
         },
         tags: [
             'fragen',
-            'nach'
+            'nach',
+            'müssen'
         ]
     },
     {
@@ -244,7 +253,8 @@ export default [
         tags: [
             'fragen',
             'um',
-            'reflexive'
+            'reflexive',
+            'können'
         ]
     },
     {
@@ -266,7 +276,8 @@ export default [
         },
         tags: [
             'schließen',
-            'aus'
+            'aus',
+            'dass'
         ]
     },
     {
@@ -277,7 +288,8 @@ export default [
         },
         tags: [
             'erschließen',
-            'aus'
+            'aus',
+            'können'
         ]
     },
     {
@@ -302,12 +314,6 @@ export default [
             'auf'
         ]
     },
-
-
-
-
-
-
     {
         text: 'Ich wollte die Blumen auf das Fensterbrett stellen.',
         stubs: [4, 5, 7],
@@ -316,7 +322,8 @@ export default [
         },
         tags: [
             'stellen',
-            'auf'
+            'auf',
+            'wollen'
         ]
     },
     {
@@ -327,7 +334,8 @@ export default [
         },
         tags: [
             'fallen',
-            'auf'
+            'auf',
+            'sein'
         ]
     },
     {
@@ -338,7 +346,8 @@ export default [
         },
         tags: [
             'lernen',
-            'an'
+            'an',
+            'können'
         ]
     },
     {
@@ -359,7 +368,7 @@ export default [
             eng: 'The paper is under the table.'
         },
         tags: [
-            'lernen',
+            'liegen',
             'unter'
         ]
     },
@@ -371,7 +380,8 @@ export default [
         },
         tags: [
             'legen',
-            'in'
+            'in',
+            'können'
         ]
     },
     {
@@ -382,7 +392,8 @@ export default [
         },
         tags: [
             'schlüpfen',
-            'aus'
+            'aus',
+            'dass'
         ]
     },
     {
@@ -409,17 +420,19 @@ export default [
             'entfernen',
             'von',
             'in',
+            'dass'
         ]
     },
     {
         text: 'Heute habe ich endlich mit Englisch Sprechen aufgehört.',
-        stubs: [4, 7],
+        stubs: [1, 4, 7],
         translations: {
             eng: 'Today I finally stopped speaking English.'
         },
         tags: [
             'aufhören',
-            'mit'
+            'mit',
+            'haben'
         ]
     },
     {
@@ -549,7 +562,8 @@ export default [
         },
         tags: [
             'werden',
-            'zu'
+            'zu',
+            'können'
         ]
     },
     {
@@ -574,7 +588,8 @@ export default [
             'in',
             'aus',
             'entlassen',
-            'worden'
+            'worden',
+            'sein'
         ]
     },
     {
@@ -601,7 +616,136 @@ export default [
             'bei',
             'mit',
             'aus',
-            'herausreißen'
+            'herausreißen',
+            'werden'
+        ]
+    },
+    {
+        text: 'Ich bin oft gefragt worden.',
+        stubs: [1, 3, 4, 5],
+        translations: {
+            eng: 'I have often been asked.'
+        },
+        tags: [
+            'fragen',
+            'sein',
+            'werden'
+        ]
+    },
+    {
+        text: 'Ich bin in Deutschland gewesen.',
+        stubs: [1, 2, 4],
+        translations: {
+            eng: 'I have been in Germany.'
+        },
+        tags: [
+            'sein',
+            'in'
+        ]
+    },
+    {
+        text: 'Meine Mutter ist lange bei uns geblieben.',
+        stubs: [2, 4, 6],
+        translations: {
+            eng: 'My mother stayed with us for a long time.'
+        },
+        tags: [
+            'sein',
+            'bleiben',
+            'bei'
+        ]
+    },
+    {
+        text: 'Er ist mehr schüchtern geworden.',
+        stubs: [1, 4],
+        translations: {
+            eng: 'He has become more timid.'
+        },
+        tags: [
+            'sein'
+        ]
+    },
+    {
+        text: 'Wir sind durch den Saal getanzt.',
+        stubs: [1, 2, 3, 5],
+        translations: {
+            eng: 'We danced through the hall.'
+        },
+        tags: [
+            'sein',
+            'durch',
+            'tanzen'
+        ]
+    },
+    {
+        text: 'Wir haben die ganze Nacht im Saal getanzt.',
+        stubs: [1, 5, 7],
+        translations: {
+            eng: 'We danced in the hall the whole night.'
+        },
+        tags: [
+            'haben',
+            'in',
+            'tanzen'
+        ]
+    },
+    {
+        text: 'Das Kind hat die Schokolade kaufen wollen.',
+        stubs: [1, 2, 5, 6],
+        translations: {
+            eng: 'The child wanted to buy the chocolate.'
+        },
+        tags: [
+            'haben',
+            'kaufen',
+            'wollen'
+        ]
+    },
+    {
+        text: 'Die Verwandten haben sich gezankt.',
+        stubs: [2, 3, 4],
+        translations: {
+            eng: 'The relatives quarreled.'
+        },
+        tags: [
+            'zanken',
+            'haben',
+            'sich'
+        ]
+    },
+    {
+        text: 'Ich bin nach Italien gereist.',
+        stubs: [1, 2, 4],
+        translations: {
+            eng: 'I traveled to Italy.'
+        },
+        tags: [
+            'sein',
+            'nach',
+            'reisen'
+        ]
+    },
+    {
+        text: 'Er hat sich geduscht.',
+        stubs: [1, 2, 3],
+        translations: {
+            eng: 'He showered.'
+        },
+        tags: [
+            'haben',
+            'sich',
+            'duschen'
+        ]
+    },
+    {
+        text: 'Haben Sie das Auto gekauft?',
+        stubs: [0, 4],
+        translations: {
+            eng: 'Did you (formal) buy a car?'
+        },
+        tags: [
+            'haben',
+            'kaufen'
         ]
     }
 ];

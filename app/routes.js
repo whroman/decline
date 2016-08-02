@@ -6,6 +6,7 @@ import PracticePage from './components/pages/Practice/PracticePage';
 import AboutPage from './components/pages/About/AboutPage';
 import VerbsWithPrepositionsPage from './components/pages/Verbs/VerbsWithPrepositionsPage';
 import ReflexiveVerbsPage from './components/pages/Verbs/ReflexiveVerbsPage';
+import SeinHabenVerbsPage from './components/pages/Verbs/SeinHabenVerbsPage';
 
 const defaultRoute = '/practice/adjective-declension';
 
@@ -43,6 +44,10 @@ export default {
         {
             component: ReflexiveVerbsPage,
             path: '/practice/verbs/reflexive'
+        },
+        {
+            component: SeinHabenVerbsPage,
+            path: '/practice/verbs/sein-haben'
         }
     ]
 };
