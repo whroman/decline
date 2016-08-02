@@ -51,7 +51,8 @@ export default [
         },
         tags: [
             'informieren',
-            'bei'
+            'bei',
+            'sich'
         ]
     },
     {
@@ -89,7 +90,7 @@ export default [
     },
     {
         text: 'Ich spreche mit deiner Schwester.',
-        stubs: [2, 3],
+        stubs: [1, 2, 3],
         translations: {
             eng: 'I am speaking with your sister'
         },
@@ -122,13 +123,14 @@ export default [
     },
     {
         text: 'Ich freue mich auf die Reise.',
-        stubs: [3, 4],
+        stubs: [2, 3, 4],
         translations: {
             eng: 'I\'m looking forward to the trip'
         },
         tags: [
             'freuen',
-            'auf'
+            'auf',
+            'sich'
         ]
     },
     {
@@ -139,7 +141,8 @@ export default [
         },
         tags: [
             'freuen',
-            'auf'
+            'auf',
+            'sich'
         ]
     },
     {
@@ -166,7 +169,7 @@ export default [
     },
     {
         text: 'Er spricht von den Nachrichten.',
-        stubs: [1, 2],
+        stubs: [1, 2, 3],
         translations: {
             eng: 'He speaks about the news.'
         },
@@ -205,18 +208,20 @@ export default [
         },
         tags: [
             'bedanken',
-            'für'
+            'für',
+            'sich'
         ]
     },
     {
         text: 'Wir möchten uns bei Ihnen bedanken.',
-        stubs: [3, 4, 6],
+        stubs: [2, 3, 4, 5],
         translations: {
             eng: 'We would like to thank you (formal).'
         },
         tags: [
             'bedanken',
-            'bei'
+            'bei',
+            'sich'
         ]
     },
     {
@@ -232,13 +237,14 @@ export default [
     },
     {
         text: 'Kann ich dich um Rat fragen?',
-        stubs: [2, 3, 4],
+        stubs: [2, 3, 5],
         translations: {
             eng: 'Can I ask you for advice?'
         },
         tags: [
             'fragen',
-            'um'
+            'um',
+            'reflexive'
         ]
     },
     {
@@ -569,6 +575,33 @@ export default [
             'aus',
             'entlassen',
             'worden'
+        ]
+    },
+    {
+        text: 'Bei den Bienen sind nur die Weibchen mit einem Stachel bewaffnet, den sie in Notwehr gegen ihre Feinde einsetzen.',
+        stubs: [0, 1, 7, 8, 13, 15, 16, 18],
+        translations: {
+            eng: 'Among bees only the females are armed with a sting, which they use in self-defense against their enemies.'
+        },
+        tags: [
+            'bei',
+            'mit',
+            'in',
+            'gegen',
+            'einsetzen'
+        ]
+    },
+    {
+        text: 'Beim Abflug wird der komplette Stechapparat mit der Giftblase aus dem Hinterleib der Biene herausgerissen.',
+        stubs: [0, 6, 7, 9, 10, 12, 14],
+        translations: {
+            eng: 'On departure, the entire stinging apparatus, along with the poison sac, is torn out of the abdomen of the bee.'
+        },
+        tags: [
+            'bei',
+            'mit',
+            'aus',
+            'herausreißen'
         ]
     }
 ];
