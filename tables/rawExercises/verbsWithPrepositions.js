@@ -747,5 +747,96 @@ export default [
             'haben',
             'kaufen'
         ]
+    },
+    {
+        text: 'Ich habe nichts sagen dürfen.',
+        stubs: [1, 3, 4],
+        translations: {
+            eng: 'I wasn\'t allowed to say anything.'
+        },
+        tags: [
+            'haben',
+            'sagen',
+            'dürfen',
+            'double-infinitive'
+        ]
+    },
+    {
+        text: 'Wer hat das wissen können?',
+        stubs: [1, 3, 4],
+        translations: {
+            eng: 'Who could\'ve known that?'
+        },
+        tags: [
+            'haben',
+            'wissen',
+            'können',
+            'double-infinitive'
+        ]
+    },
+    {
+        text: 'Alle Kinder haben helfen müssen.',
+        stubs: [1, 3, 4],
+        translations: {
+            eng: 'All the children had to help.'
+        },
+        tags: [
+            'haben',
+            'helfen',
+            'müssen',
+            'double-infinitive'
+        ]
+    },
+    {
+        text: 'Er hat mehr tun sollen.',
+        stubs: [1, 3, 4],
+        translations: {
+            eng: 'He was supposed to do more.'
+        },
+        tags: [
+            'haben',
+            'tun',
+            'sollen',
+            'double-infinitive'
+        ]
+    },
+    {
+        text: 'Ich habe so etwas immer machen wollen.',
+        stubs: [1, 5, 6],
+        translations: {
+            eng: 'I always wanted to do something like that.'
+        },
+        tags: [
+            'haben',
+            'machen',
+            'wollen',
+            'double-infinitive'
+        ]
+    },
+    {
+        text: 'Sie haben mich nach Hause tragen müssen.',
+        stubs: [1, 2, 5, 6],
+        translations: {
+            eng: 'They had to carry me home.'
+        },
+        tags: [
+            'haben',
+            'tragen',
+            'müssen',
+            'double-infinitive'
+        ]
+    },
+    {
+        text: 'Sie müssen mich nach Hause getragen haben.',
+        stubs: [1, 2, 5, 6],
+        translations: {
+            eng: 'They must have carried me home.'
+        },
+        tags: [
+            'haben',
+            'sagen',
+            'dürfen',
+            'double-infinitive'
+        ]
     }
 ];
