@@ -3,7 +3,7 @@ import VerbBasePage from './VerbsBasePage';
 import presentVerbExercises from './presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const verbs = ['sein', 'haben'];
+const verbs = ['dass', 'weil'];
 
 const exercises = verbsWithPrepositions.filter(
     (exercise) => verbs.some(
@@ -11,10 +11,10 @@ const exercises = verbsWithPrepositions.filter(
     )
 );
 
-export default class SeinHabenVerbsPage extends Component {
+export default class dassAndWeilExercisesPage extends Component {
     render () {
         const props = {
-            title: 'Sein & Haben Verbs',
+            title: 'Dass & Weil Clauses',
             exercises: presentVerbExercises(exercises)
         };
         return (<VerbBasePage { ...props } />);

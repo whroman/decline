@@ -58,12 +58,13 @@ export default [
     },
     {
         text: 'Wir sind über den Unfall informiert.',
-        stubs: [1, 2, 3],
+        stubs: [1, 2, 3, 5],
         translations: {
             eng: 'We are informed about the accident.'
         },
         tags: [
             'über',
+            'informieren',
             'sein'
         ]
     },
@@ -386,7 +387,7 @@ export default [
     },
     {
         text: 'Die Perser glaubten sogar, dass die Erde aus einem riesigen Ei geschlüpft ist.',
-        stubs: [7, 8, 11, 12],
+        stubs: [4, 7, 8, 11, 12],
         translations: {
             eng: 'The Persians even believed that Earth hatched from a giant egg.'
         },
@@ -412,7 +413,7 @@ export default [
     },
     {
         text: 'Wussten Sie schon, dass Sie in Berlin nie weiter als 500 Meter von der nächsten Haltestelle, dem nächsten Bahnhof oder der nächsten Station entfernt sind?',
-        stubs: [5, 12, 13, 16, 20, 23, 24],
+        stubs: [3, 5, 12, 13, 16, 20, 23, 24],
         translations: {
             eng: 'Did you know that in Berlin you are never more than 500 meters from the next bus stop, the next rail station or the train station?'
         },
@@ -579,7 +580,7 @@ export default [
     },
     {
         text: 'Zwei Wochen nach dem Putschversuch in der Türkei sind fast 1400 Soldaten aus den Streitkräften entlassen worden.',
-        stubs: [2, 3, 5, 6, 12, 13, 15, 16],
+        stubs: [2, 3, 5, 6, 8, 12, 13, 15, 16],
         translations: {
             eng: 'Two weeks after the failed coup in Turkey, almost 1400 soldiers have been dismissed from the armed forces.'
         },
@@ -629,7 +630,7 @@ export default [
         tags: [
             'fragen',
             'sein',
-            'werden'
+            'worden'
         ]
     },
     {
@@ -691,14 +692,15 @@ export default [
     },
     {
         text: 'Das Kind hat die Schokolade kaufen wollen.',
-        stubs: [1, 2, 5, 6],
+        stubs: [2, 3, 5, 6],
         translations: {
             eng: 'The child wanted to buy the chocolate.'
         },
         tags: [
             'haben',
             'kaufen',
-            'wollen'
+            'wollen',
+            'double-infinitive'
         ]
     },
     {
@@ -776,7 +778,7 @@ export default [
     },
     {
         text: 'Alle Kinder haben helfen müssen.',
-        stubs: [1, 3, 4],
+        stubs: [2, 3, 4],
         translations: {
             eng: 'All the children had to help.'
         },
@@ -837,6 +839,43 @@ export default [
             'sagen',
             'dürfen',
             'double-infinitive'
+        ]
+    },
+    {
+        text: 'Ich gehe heute nicht in die Schule, weil ich krank bin.',
+        stubs: [1, 4, 5, 7, 10],
+        translations: {
+            eng: 'I\'m not going to school today because I am sick'
+        },
+        tags: [
+            'gehen',
+            'in',
+            'weil'
+        ]
+    },
+    {
+        text: 'Mein Vater geht früh ins Bett, weil er morgen aufstehen muss.',
+        stubs: [2, 4, 6, 9, 10],
+        translations: {
+            eng: 'My dad is going to bed early because he has to wake up early.'
+        },
+        tags: [
+            'gehen',
+            'in',
+            'weil',
+            'aufstehen',
+            'müssen'
+        ]
+    },
+    {
+        text: 'Er isst einen Apfel, weil er Hunger hat.',
+        stubs: [1, 2, 4, 7],
+        translations: {
+            eng: 'He\'s eating an apple because he\'s hungry.'
+        },
+        tags: [
+            'essen',
+            'weil'
         ]
     }
 ];

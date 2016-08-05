@@ -7,6 +7,7 @@ import AboutPage from './components/pages/About/AboutPage';
 import VerbsWithPrepositionsPage from './components/pages/Verbs/VerbsWithPrepositionsPage';
 import ReflexiveVerbsPage from './components/pages/Verbs/ReflexiveVerbsPage';
 import SeinHabenVerbsPage from './components/pages/Verbs/SeinHabenVerbsPage';
+import dassAndWeilExercisesPage from './components/pages/Verbs/dassAndWeilExercisesPage';
 
 const defaultRoute = '/practice/adjective-declension';
 
@@ -48,6 +49,10 @@ export default {
         {
             component: SeinHabenVerbsPage,
             path: '/practice/verbs/sein-haben'
+        },
+        {
+            component: dassAndWeilExercisesPage,
+            path: '/practice/verbs/dass-weil'
         }
     ]
 };

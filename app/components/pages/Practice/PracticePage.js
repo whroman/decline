@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Tooltip from 'app/components/Tooltip//Tooltip';
+import './PracticePage.scss';
 
 export class Practice extends Component {
 
@@ -40,6 +41,13 @@ export class Practice extends Component {
                                     className='button'
                                 >
                                     { 'Sein & Haben Verbs' }
+                                </Link>
+                                <br/><br/>
+                                <Link
+                                    to='/practice/verbs/dass-weil'
+                                    className='button'
+                                >
+                                    { 'Dass and Weil Clauses' }
                                 </Link>
                             </div>
                         </div>

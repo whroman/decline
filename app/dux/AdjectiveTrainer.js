@@ -22,9 +22,9 @@ export const load = createAction(TRACKS_LOAD);
 // Reducer
 export const initialState = {
     collection: [],
-    kasus: null,
+    kasus: 'nominative',
     nounKategorie: null,
-    adjectiveKategorie: null,
+    adjectiveKategorie: '0',
     gender: null
 };
 
