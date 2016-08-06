@@ -271,7 +271,7 @@ export default [
     },
     {
         text: 'Aus deinem Verhalten schließe ich, dass du schuld bist.',
-        stubs: [0, 1, 3],
+        stubs: [0, 1, 3, 5, 8],
         translations: {
             eng: 'From your behavior I conclude that you are to blame.'
         },
@@ -944,10 +944,10 @@ export default [
         ]
     },
     {
-        text: 'Meine Freundinnen will Sushi essen, aber ich bin dagegen.',
+        text: 'Meine Freundin will Sushi essen, aber ich bin dagegen.',
         stubs: [8],
         translations: {
-            eng: 'My girlfriends wants to eat sushi but I\'m against that.'
+            eng: 'My girlfriend wants to eat sushi but I\'m against that.'
         },
         tags: [
             'da-'
@@ -965,6 +965,16 @@ export default [
     },
     {
         text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
+        stubs: [10],
+        translations: {
+            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+        },
+        tags: [
+            'da-'
+        ]
+    },
+    {
+        text: 'Ich glaube, dass wir genug Geld für diese Wohnung haben.',
         stubs: [3],
         translations: {
             eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
@@ -972,5 +982,56 @@ export default [
         tags: [
             'da-'
         ]
-    }
+    },
+    {
+        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
+        stubs: [3],
+        translations: {
+            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+        },
+        tags: [
+            'da-'
+        ]
+    },
+    {
+        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
+        stubs: [3],
+        translations: {
+            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+        },
+        tags: [
+            'da-'
+        ]
+    },
+    {
+        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
+        stubs: [3],
+        translations: {
+            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+        },
+        tags: [
+            'da-'
+        ]
+    },
+    {
+        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
+        stubs: [3],
+        translations: {
+            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+        },
+        tags: [
+            'da-'
+        ]
+    },
+    {
+        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
+        stubs: [3],
+        translations: {
+            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+        },
+        tags: [
+            'da-'
+        ]
+    },
+
 ];
