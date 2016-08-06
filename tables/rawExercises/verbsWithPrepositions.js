@@ -877,5 +877,100 @@ export default [
             'essen',
             'weil'
         ]
+    },
+
+
+
+
+    {
+        text: 'Maria wartet darauf, dass der Bus kommt.',
+        stubs: [2],
+        translations: {
+            eng: 'Maria is waiting for the bus to come.'
+        },
+        tags: [
+            'da-'
+        ]
+    },
+    {
+        text: 'Ich freue mich darauf, von dir zu hören.',
+        stubs: [3],
+        translations: {
+            eng: 'I\'m looking forward to hearing from you.'
+        },
+        tags: [
+            'da-'
+        ]
+    },
+    {
+        text: 'Ich freue mich darüber, von dir zu hören.',
+        stubs: [3],
+        translations: {
+            eng: 'I\'m happy to hear from you.'
+        },
+        tags: [
+            'da-'
+        ]
+    },
+    {
+        text: 'Ich bin sauer darauf, dass mein Mitbewohner nie saubermacht.',
+        stubs: [3],
+        translations: {
+            eng: 'I\'m angry that my flatmate never cleans.'
+        },
+        tags: [
+            'da-'
+        ]
+    },
+    {
+        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
+        stubs: [10],
+        translations: {
+            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+        },
+        tags: [
+            'da-'
+        ]
+    },
+
+    {
+        text: 'Im Kino kommen erst Trailer. Der Film kommt danach.',
+        stubs: [8],
+        translations: {
+            eng: 'In the cinema, first come the trailers. The movie comes after that.'
+        },
+        tags: [
+            'da-'
+        ]
+    },
+    {
+        text: 'Meine Freundinnen will Sushi essen, aber ich bin dagegen.',
+        stubs: [8],
+        translations: {
+            eng: 'My girlfriends wants to eat sushi but I\'m against that.'
+        },
+        tags: [
+            'da-'
+        ]
+    },
+    {
+        text: 'Ich bestehe darauf, dass du dich entschuldigst.',
+        stubs: [2],
+        translations: {
+            eng: 'I am insisting (thereon), that you apologize.'
+        },
+        tags: [
+            'da-'
+        ]
+    },
+    {
+        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
+        stubs: [3],
+        translations: {
+            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+        },
+        tags: [
+            'da-'
+        ]
     }
 ];

@@ -3,6 +3,33 @@ import { Link } from 'react-router';
 import Tooltip from 'app/components/Tooltip//Tooltip';
 import './PracticePage.scss';
 
+const links = [
+    {
+        to: '/practice/adjective-declension',
+        name: 'Adjective Declension'
+    },
+    {
+        to: '/practice/verbs/prepositions',
+        name: 'Verbs & Prepositions'
+    },
+    {
+        to: '/practice/verbs/reflexive',
+        name: 'Reflexive Verbs'
+    },
+    {
+        to: '/practice/verbs/sein-haben',
+        name: 'Sein & Haben Verbs'
+    },
+    {
+        to: '/practice/verbs/dass-weil',
+        name: 'Dass and Weil Clauses'
+    },
+    {
+        to: '/practice/verbs/da-words',
+        name: '"da-" Words'
+    }
+];
+
 export class Practice extends Component {
 
     render() {
@@ -13,42 +40,22 @@ export class Practice extends Component {
                         <br />
                         <div className='row'>
                             <div className="column small-11 small-centered">
-                                <h1>{ 'Practice' }</h1>
-                                <hr />
-                                <Link
-                                    to='/practice/adjective-declension'
-                                    className='button'
-                                >
-                                    { 'Adjective Declension' }
-                                </Link>
-                                <br/><br/>
-                                <Link
-                                    to='/practice/verbs/prepositions'
-                                    className='button'
-                                >
-                                    { 'Verbs & Prepositions' }
-                                </Link>
-                                <br/><br/>
-                                <Link
-                                    to='/practice/verbs/reflexive'
-                                    className='button'
-                                >
-                                    { 'Reflexive Verbs' }
-                                </Link>
-                                <br/><br/>
-                                <Link
-                                    to='/practice/verbs/sein-haben'
-                                    className='button'
-                                >
-                                    { 'Sein & Haben Verbs' }
-                                </Link>
-                                <br/><br/>
-                                <Link
-                                    to='/practice/verbs/dass-weil'
-                                    className='button'
-                                >
-                                    { 'Dass and Weil Clauses' }
-                                </Link>
+                                    <h1>{ 'Practice' }</h1>
+                                    <hr />
+
+                                <div className='row'>
+
+                                    { links.map(({ to, name }) => {
+                                        const className = 'button';
+                                        const props  = { to, className };
+                                        return (
+                                            <div className='column small-6'>
+                                                <Link { ...props } >{ name }</Link>
+                                                <br/><br/>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
                             </div>
                         </div>
                         <br />

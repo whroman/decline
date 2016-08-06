@@ -13,16 +13,24 @@ export default function (verbExercises) {
             .slice(0, finalCharacterIndex)
             .split(' ')
             .reduce((memo, word, index) => {
+                const toPush = [];
+                const lastCharacter = word[word.length - 1];
+
+                if (lastCharacter === ',') {
+                    word = word.slice(0, word.length - 1);
+                    toPush.push(presentWord(lastCharacter));
+                }
+
                 const wordConstruct = presentWord(word);
 
                 if (stubs.includes(index)) {
                     wordConstruct.text = word.replace(/./gi, '_')
                 }
 
-                if (index > 0) memo.push(presentWord(' '));
-                memo.push(wordConstruct);
+                toPush.unshift(wordConstruct);
+                if (index > 0) toPush.unshift(presentWord(' '));
 
-                return memo;
+                return memo.concat(toPush);
             }, [])
             .concat([presentWord(punctuation)])
 
