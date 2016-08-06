@@ -964,74 +964,83 @@ export default [
         ]
     },
     {
-        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
-        stubs: [10],
+        text: 'Bist du sicher, dass sie das Buch hat lesen können?',
+        stubs: [3, 7, 8, 9],
         translations: {
-            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+            eng: 'Are you sure that she was able to read the book?'
         },
         tags: [
-            'da-'
+            'dass',
+            'lesen',
+            'haben',
+            'können'
         ]
     },
     {
-        text: 'Ich glaube, dass wir genug Geld für diese Wohnung haben.',
-        stubs: [3],
+        text: 'Wir sind nach Hause gegangen, weil wir keine Karten haben kaufen können.',
+        stubs: [1, 4, 5, 9, 10, 11],
         translations: {
-            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+            eng: 'We went home because we couldn\'t buy any tickets.'
         },
         tags: [
-            'da-'
+            'sein',
+            'gehen',
+            'weil',
+            'haben',
+            'kaufen',
+            'können'
         ]
     },
     {
-        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
-        stubs: [3],
+        text: 'Er hatte kein Geld mehr, weil er ein neues Haus hatte bauen lassen.',
+        stubs: [1, 5, 10, 11, 12],
         translations: {
-            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+            eng: 'He didn\'t have any more money, because he had had a new house built.'
         },
         tags: [
-            'da-'
+            'weil',
+            'bauen',
+            'lassen',
+            'hatten'
         ]
     },
     {
-        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
-        stubs: [3],
+        text: 'Sie erinnert sich nicht daran, dass ich ihr habe kochen helfen.',
+        stubs: [1, 2, 4, 5, 9, 10],
         translations: {
-            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+            eng: 'She doesn\'t remember that I helped her cook.'
         },
         tags: [
-            'da-'
+            'da-',
+            'erinnern',
+            'sich',
+            'dass',
+            'kochen',
+            'helfen'
         ]
     },
     {
-        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
-        stubs: [3],
+        text: 'Ich will, dass du dein Zimmer aufräumst.',
+        stubs: [1, 2, 6],
         translations: {
-            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+            eng: 'I want you to clean up your room.'
         },
         tags: [
-            'da-'
+            'wollen',
+            'dass',
+            'aufräumen'
         ]
     },
     {
-        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
-        stubs: [3],
+        text: 'Die Idee, dass ich plötzlich für alles verantwortlich sein sollte, war mir neu.',
+        stubs: [2, 8, 9],
         translations: {
-            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+            eng: 'The idea that I was suddenly supposed to be responsible for everything was new to me.'
         },
         tags: [
-            'da-'
+            'dass',
+            'sein',
+            'sollten'
         ]
-    },
-    {
-        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
-        stubs: [3],
-        translations: {
-            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
-        },
-        tags: [
-            'da-'
-        ]
-    },
-
+    }
 ];
