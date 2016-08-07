@@ -32,8 +32,6 @@ const childRoutes = [
 ].concat(exercisePages)
 .concat([wildCardRoute])
 
-console.log(exercisePages, childRoutes)
-
 export default {
     path: '/',
     component: PageWrapper,
