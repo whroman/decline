@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import VerbBasePage from './VerbsBasePage';
-import presentVerbExercises from './presentVerbExercises';
+import VerbBasePage from '../VerbsBasePage';
+import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
 const reflexiveVerbExercises = verbsWithPrepositions

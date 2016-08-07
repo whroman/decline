@@ -1,67 +1,42 @@
 import PageWrapper from './components/pages/PageWrapper';
-import AdjectivesTrainerPage from './components/pages/AdjectivesTrainer/AdjectivesTrainerPage';
-import ExerciseItemDetailPage from './components/pages/ExerciseItemDetail/ExerciseItemDetailPage';
-import ExerciseCreationPage from './components/pages/ExerciseCreation/ExerciseCreationPage';
+import ExerciseItemDetailPage from './components/pages/exercisePages/AdjectiveDeclension/ExerciseItemDetail/ExerciseItemDetailPage';
+import ExerciseCreationPage from './components/pages/exercisePages/AdjectiveDeclension/ExerciseCreation/ExerciseCreationPage';
 import PracticePage from './components/pages/Practice/PracticePage';
 import AboutPage from './components/pages/About/AboutPage';
-import VerbsWithPrepositionsPage from './components/pages/Verbs/VerbsWithPrepositionsPage';
-import ReflexiveVerbsPage from './components/pages/Verbs/ReflexiveVerbsPage';
-import SeinHabenVerbsPage from './components/pages/Verbs/SeinHabenVerbsPage';
-import dassAndWeilExercisesPage from './components/pages/Verbs/dassAndWeilExercisesPage';
-import daPage from './components/pages/Verbs/daPage';
+import exercisePages from './exercisePages';
 
 const defaultPath = '/practice';
 const indexRoute = {
     onEnter: (nextState, replace) => replace(defaultPath)
 };
 
+const wildCardRoute = Object.assign({ path: '*' }, indexRoute);
+
+const childRoutes = [
+    {
+        component: PracticePage,
+        path: defaultPath
+    },
+    {
+        component: AboutPage,
+        path: '/about'
+    },
+    {
+        component: ExerciseItemDetailPage,
+        path: '/practice/adjective-declension/detail/:id'
+    },
+    {
+        component: ExerciseCreationPage,
+        path: '/practice/adjective-declension/settings'
+    }
+].concat(exercisePages)
+.concat([wildCardRoute])
+
+console.log(exercisePages, childRoutes)
+
 export default {
     path: '/',
-    indexRoute,
     component: PageWrapper,
-    childRoutes: [
-        {
-            component: AboutPage,
-            path: '/about'
-        },
-        {
-            component: PracticePage,
-            path: defaultPath
-        },
-        {
-            component: AdjectivesTrainerPage,
-            path: '/practice/adjective-declension'
-        },
-        {
-            component: ExerciseItemDetailPage,
-            path: '/practice/adjective-declension/detail/:id'
-        },
-        {
-            component: ExerciseCreationPage,
-            path: '/practice/adjective-declension/settings'
-        },
-        {
-            component: VerbsWithPrepositionsPage,
-            path: '/practice/verbs/prepositions'
-        },
-        {
-            component: ReflexiveVerbsPage,
-            path: '/practice/verbs/reflexive'
-        },
-        {
-            component: SeinHabenVerbsPage,
-            path: '/practice/verbs/sein-haben'
-        },
-        {
-            component: dassAndWeilExercisesPage,
-            path: '/practice/conjugations/dass-weil'
-        },
-        {
-            component: daPage,
-            path: '/practice/adverbs/da-words'
-        },
-        Object.assign({
-            path: '*'
-        }, indexRoute)
-    ]
+    indexRoute,
+    childRoutes
 };
