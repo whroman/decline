@@ -1006,7 +1006,7 @@ export default [
     },
     {
         text: 'Sie erinnert sich nicht daran, dass ich ihr habe kochen helfen.',
-        stubs: [1, 2, 4, 5, 9, 10],
+        stubs: [1, 2, 4, 5, 8, 9, 10],
         translations: {
             eng: 'She doesn\'t remember that I helped her cook.'
         },
