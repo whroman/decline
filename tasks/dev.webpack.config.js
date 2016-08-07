@@ -38,10 +38,6 @@ module.exports = {
                 loader: 'babel',
             },
             {
-                test: /\.json$/i,
-                loader: 'json'
-            },
-            {
                 test: /\.scss$/i,
                 loader: ExtractTextPlugin.extract(['css?sourceMap', 'sass?sourceMap'])
             }
