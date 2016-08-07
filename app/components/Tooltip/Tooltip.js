@@ -6,12 +6,14 @@ export default class Tooltip extends Component {
     static get propTypes() {
         return {
             show: PropTypes.bool.isRequired,
-            children: PropTypes.node.isRequired
+            children: PropTypes.node.isRequired,
+            className: PropTypes.string
         };
     }
 
     render() {
-        const tooltip = (!this.props.show) ? null : (<div className='Tooltip' >{ this.props.children }</div>);
+        const { show, children, className } = this.props;
+        const tooltip = (!show) ? null : (<div className={ `Tooltip ${className}` } >{ children }</div>);
         return tooltip;
     }
 

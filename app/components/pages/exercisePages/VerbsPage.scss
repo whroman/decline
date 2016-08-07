@@ -10,14 +10,29 @@ $row-focused-bg: rgba(100, 100, 100, 0.4);
     float: left;
     clear: left;
     margin-bottom: 0.5em;
+    cursor: pointer;
 
     &:hover {
         background-color: $row-focused-bg;
     }
 
     .Tooltip {
-        margin-left: 20px;
-        right: auto;
+        right: initial;
+        max-width: 360px;
+
+        &::after {
+            left: 35px;
+            right: initial;
+        }
+
+        &.translation {
+            left: 222px;
+        }
+
+        &.answer {
+            left: 186px;
+        }
+
     }
 
     .placeholder {
@@ -34,18 +49,19 @@ $row-focused-bg: rgba(100, 100, 100, 0.4);
     }
 
     .wr-ico {
-        font-size: 1.5em;
+        font-size: 1.4em;
+        padding: 0 4px;
         float: right;
         box-sizing: initial;
     }
 
     .VerbExercise-details {
         float: left;
-        width: 94px;
+        width: 106px;
     }
 
     .VerbExercise-sentence {
-        margin-left: 100px;
+        margin-left: 120px;
     }
 }
 

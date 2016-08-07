@@ -61,19 +61,35 @@ class VerbExercise extends Component {
             showTranslationTooltip: false,
             showAnswerTooltip: false
         };
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(event) {
+        const firstInput = this.refs.sentence.querySelector('input');
+        firstInput.focus();
     }
 
     render() {
         const { text, wordList, translations, index } = this.props;
 
         return (
-            <div className='VerbExercise'>
+            <div
+                className='VerbExercise'
+                onClick={ this.handleClick }
+            >
 
-                <Tooltip show={ this.state.showTranslationTooltip } >
+                <Tooltip
+                    show={ this.state.showTranslationTooltip }
+                    className='translation'
+                >
                     <div>{ translations.eng }</div>
                 </Tooltip>
 
-                <Tooltip show={ this.state.showAnswerTooltip } >
+                <Tooltip
+                    show={ this.state.showAnswerTooltip }
+                    className='answer'
+                >
                     <div>{ text }</div>
                 </Tooltip>
 
@@ -89,11 +105,14 @@ class VerbExercise extends Component {
                     <i
                         onMouseOver={ this.showAnswerTooltip.bind(this, true) }
                         onMouseOut={ this.showAnswerTooltip.bind(this, false) }
-                        className='wr-ico wr-ico-unlock-alt wr-ico-fw'
+                        className='wr-ico wr-ico-eye wr-ico-fw'
                     />
                 </div>
 
-                <div className='VerbExercise-sentence'>
+                <div
+                    className='VerbExercise-sentence'
+                    ref='sentence'
+                >
                     {
                         wordList.map((word, wordIndex) => {
                             const props = Object.assign(word, {
