@@ -975,17 +975,17 @@ export default [
     },
     {
         text: 'Ich glaube, dass wir genug Geld für diese Wohnung haben.',
-        stubs: [3],
+        stubs: [2],
         translations: {
-            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+            eng: 'I think that we have enough money for this apartment.'
         },
         tags: [
-            'da-'
+            'dass'
         ]
     },
     {
         text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
-        stubs: [3],
+        stubs: [10],
         translations: {
             eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
         },
@@ -993,45 +993,4 @@ export default [
             'da-'
         ]
     },
-    {
-        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
-        stubs: [3],
-        translations: {
-            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
-        },
-        tags: [
-            'da-'
-        ]
-    },
-    {
-        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
-        stubs: [3],
-        translations: {
-            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
-        },
-        tags: [
-            'da-'
-        ]
-    },
-    {
-        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
-        stubs: [3],
-        translations: {
-            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
-        },
-        tags: [
-            'da-'
-        ]
-    },
-    {
-        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
-        stubs: [3],
-        translations: {
-            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
-        },
-        tags: [
-            'da-'
-        ]
-    },
-
 ];
