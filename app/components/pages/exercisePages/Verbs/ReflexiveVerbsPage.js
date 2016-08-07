@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
@@ -6,12 +6,10 @@ import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 const reflexiveVerbExercises = verbsWithPrepositions
     .filter((exercise) => exercise.tags.includes('sich'));
 
-export default class ReflexiveVerbsPage extends Component {
-    render () {
-        const props = {
-            title: 'Reflexive Verbs',
-            exercises: presentVerbExercises(reflexiveVerbExercises)
-        };
-        return (<VerbBasePage { ...props } />);
-    }
+export default function () {
+    const props = {
+        title: 'Reflexive Verbs',
+        exercises: presentVerbExercises(reflexiveVerbExercises)
+    };
+    return (<VerbBasePage { ...props } />);
 }

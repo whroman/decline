@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
@@ -11,12 +11,10 @@ const exercises = verbsWithPrepositions.filter(
     )
 );
 
-export default class dassAndWeilExercisesPage extends Component {
-    render () {
-        const props = {
-            title: 'Dass & Weil Clauses',
-            exercises: presentVerbExercises(exercises)
-        };
-        return (<VerbBasePage { ...props } />);
-    }
+export default function () {
+    const props = {
+        title: 'Dass & Weil Clauses',
+        exercises: presentVerbExercises(exercises)
+    };
+    return (<VerbBasePage { ...props } />);
 }

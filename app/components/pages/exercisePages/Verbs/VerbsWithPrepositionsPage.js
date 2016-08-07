@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
@@ -44,12 +44,10 @@ const exercises = verbsWithPrepositions.filter((exercise) => [
         (item) => exercise.tags.includes(item)
     ));
 
-export default class VerbsWithPrepositionsPage extends Component {
-    render () {
-        const props = {
-            title: 'Verbs & Prepositions',
-            exercises: presentVerbExercises(exercises)
-        };
-        return (<VerbBasePage { ...props } />);
-    }
+export default function () {
+    const props = {
+        title: 'Verbs & Prepositions',
+        exercises: presentVerbExercises(exercises)
+    };
+    return (<VerbBasePage { ...props } />);
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
@@ -11,12 +11,10 @@ const exercises = verbsWithPrepositions.filter(
     )
 );
 
-export default class daPage extends Component {
-    render () {
-        const props = {
-            title: '"da-" Words',
-            exercises: presentVerbExercises(exercises)
-        };
-        return (<VerbBasePage { ...props } />);
-    }
+export default function () {
+    const props = {
+        title: '"da-" Words',
+        exercises: presentVerbExercises(exercises)
+    };
+    return (<VerbBasePage { ...props } />);
 }

@@ -18,7 +18,9 @@ $row-focused-bg: rgba(100, 100, 100, 0.4);
 
     .Tooltip {
         right: initial;
+        width: auto;
         max-width: 360px;
+        margin-bottom: 12px;
 
         &::after {
             left: 35px;
