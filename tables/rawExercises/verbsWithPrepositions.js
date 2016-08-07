@@ -1042,5 +1042,15 @@ export default [
             'sein',
             'sollten'
         ]
+    },
+    {
+        text: 'Ich glaube, dass wir genug Geld für diese Wohnung haben.',
+        stubs: [2],
+        translations: {
+            eng: 'I think that we have enough money for this apartment.'
+        },
+        tags: [
+            'dass'
+        ]
     }
 ];
