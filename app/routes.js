@@ -10,14 +10,15 @@ import SeinHabenVerbsPage from './components/pages/Verbs/SeinHabenVerbsPage';
 import dassAndWeilExercisesPage from './components/pages/Verbs/dassAndWeilExercisesPage';
 import daPage from './components/pages/Verbs/daPage';
 
-const defaultRoute = '/practice/adjective-declension';
+const defaultPath = '/practice';
+const indexRoute = {
+    onEnter: (nextState, replace) => replace(defaultPath)
+};
 
 export default {
     path: '/',
+    indexRoute,
     component: PageWrapper,
-    indexRoute: {
-        onEnter: (nextState, replace) => replace(defaultRoute)
-    },
     childRoutes: [
         {
             component: AboutPage,
@@ -25,11 +26,11 @@ export default {
         },
         {
             component: PracticePage,
-            path: '/practice'
+            path: defaultPath
         },
         {
             component: AdjectivesTrainerPage,
-            path: defaultRoute
+            path: '/practice/adjective-declension'
         },
         {
             component: ExerciseItemDetailPage,
@@ -53,11 +54,14 @@ export default {
         },
         {
             component: dassAndWeilExercisesPage,
-            path: '/practice/verbs/dass-weil'
+            path: '/practice/conjugations/dass-weil'
         },
         {
             component: daPage,
-            path: '/practice/verbs/da-words'
-        }
+            path: '/practice/adverbs/da-words'
+        },
+        Object.assign({
+            path: '*'
+        }, indexRoute)
     ]
 };

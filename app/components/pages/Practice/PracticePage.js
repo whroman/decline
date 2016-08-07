@@ -21,11 +21,11 @@ const links = [
         name: 'Sein & Haben Verbs'
     },
     {
-        to: '/practice/verbs/dass-weil',
+        to: '/practice/conjugations/dass-weil',
         name: 'Dass and Weil Clauses'
     },
     {
-        to: '/practice/verbs/da-words',
+        to: '/practice/adverbs/da-words',
         name: '"da-" Words'
     }
 ];
@@ -46,10 +46,13 @@ export class Practice extends Component {
                                 <div className='row'>
 
                                     { links.map(({ to, name }) => {
-                                        const className = 'button';
-                                        const props  = { to, className };
+                                        const props  = {
+                                            to,
+                                            className: 'button',
+                                        };
+
                                         return (
-                                            <div className='column small-6'>
+                                            <div key={ to } className='column small-6'>
                                                 <Link { ...props } >{ name }</Link>
                                                 <br/><br/>
                                             </div>
