@@ -479,7 +479,7 @@ export default [
         ]
     },
     {
-        text: 'Sie gedenken an die Opfer in München.',
+        text: 'Sie gedenken der Opfer in München.',
         stubs: [1, 2, 3, 5],
         translations: {
             eng: 'They are commemorating the victims in Munich.'
