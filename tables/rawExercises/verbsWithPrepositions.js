@@ -87,6 +87,7 @@ export default [
         },
         tags: [
             'anrufen',
+            'an-',
             'bei',
             'müssen'
         ]
@@ -214,6 +215,7 @@ export default [
             eng: 'I would like to thank you for your help.'
         },
         tags: [
+            'be-',
             'bedanken',
             'für',
             'sich',
@@ -227,6 +229,7 @@ export default [
             eng: 'We would like to thank you (formal).'
         },
         tags: [
+            'be-',
             'bedanken',
             'bei',
             'sich',
@@ -289,6 +292,7 @@ export default [
         },
         tags: [
             'erschließen',
+            'er-',
             'aus',
             'können'
         ]
@@ -406,6 +410,7 @@ export default [
         tags: [
             'glauben',
             'verlassen',
+            'ver-',
             'an',
             'nach'
         ]
@@ -432,6 +437,7 @@ export default [
         },
         tags: [
             'aufhören',
+            'auf-',
             'mit',
             'haben'
         ]
@@ -480,6 +486,7 @@ export default [
         },
         tags: [
             'gedenken',
+            'ge-',
             'an',
             'in'
         ]
@@ -492,6 +499,7 @@ export default [
         },
         tags: [
             'aussprechen',
+            'aus-',
             'für',
             'sich'
         ]
@@ -589,6 +597,7 @@ export default [
             'in',
             'aus',
             'entlassen',
+            'ent-',
             'worden',
             'sein'
         ]
@@ -604,7 +613,8 @@ export default [
             'mit',
             'in',
             'gegen',
-            'einsetzen'
+            'einsetzen',
+            'ein-'
         ]
     },
     {
@@ -864,6 +874,7 @@ export default [
             'in',
             'weil',
             'aufstehen',
+            'auf-',
             'müssen'
         ]
     },
@@ -878,10 +889,6 @@ export default [
             'weil'
         ]
     },
-
-
-
-
     {
         text: 'Maria wartet darauf, dass der Bus kommt.',
         stubs: [2],
@@ -1028,7 +1035,8 @@ export default [
         tags: [
             'wollen',
             'dass',
-            'aufräumen'
+            'aufräumen',
+            'auf-'
         ]
     },
     {
@@ -1052,5 +1060,186 @@ export default [
         tags: [
             'dass'
         ]
-    }
+    },
+
+    {
+        text: 'Bei der Ausgrabungsstätte, müssen wir Gegenstände in der Erde freischaufeln.',
+        stubs: [5, 9],
+        translations: {
+            eng: 'At the excavation site, we have to dig objects out of the ground.'
+        },
+        tags: [
+            'vocab-cristina'
+        ]
+    },
+    {
+        text: 'Der Organisation, die mich an diese Projekt vermittelt hat, muss ich eine Gebühr von 100 Euro bezahlen.',
+        stubs: [7, 12],
+        translations: {
+            eng: 'I have to pay the organization that organized this project a 100 Euro fee.'
+        },
+        tags: [
+            'vocab-cristina'
+        ]
+    },
+    {
+        text: 'Ich hatte heute morgen eine Behandlung mit Akupunkturnadeln.',
+        stubs: [5],
+        translations: {
+            eng: 'I had an acupuncture needle treatment this morning.'
+        },
+        tags: [
+            'vocab-cristina'
+        ]
+    },
+    {
+        text: 'Im nächsten Frühling machen wir einen Spaziergang über die Wiesen.',
+        stubs: [9],
+        translations: {
+            eng: 'Next spring we\'ll go for a walk in the meadows.'
+        },
+        tags: [
+            'vocab-cristina'
+        ]
+    },
+    {
+        text: 'Du strahlst ja so. Hast du im Lotto gewonnen?',
+        stubs: [1],
+        translations: {
+            eng: 'You are beaming. Did you win the lottery?'
+        },
+        tags: [
+            'vocab-cristina'
+        ]
+    },
+    {
+        text: 'Ich bin nicht sicher. Ich schätze mal so 20 kilometer von hier.',
+        stubs: [5],
+        translations: {
+            eng: 'I\'m not sure. I guess something like 20 kilometers from here.'
+        },
+        tags: [
+            'vocab-cristina'
+        ]
+    },
+    {
+        text: 'Die Pfosten sind im Abstand von einem Meter aufgestellt.',
+        stubs: [2, 3, 5, 6, 8],
+        translations: {
+            eng: 'The posts are spaced at intervals of one meter.'
+        },
+        tags: [
+            'aufstellen',
+            'auf-',
+            'sein'
+        ]
+    },
+    ///
+    {
+        text: 'Das Auto lässt sich leicht reparieren.',
+        stubs: [2, 3, 5],
+        translations: {
+            eng: 'The car can be repaired easily.'
+        },
+        tags: [
+            'lassen',
+            'sich',
+            'reparieren'
+        ]
+    },
+    {
+        text: 'Lassen uns morgen schwimmen gehen.',
+        stubs: [0, 3, 4],
+        translations: {
+            eng: 'Let\'s go swimming tomorrow.'
+        },
+        tags: [
+            'lassen',
+            'schwimmen',
+            'gehen'
+        ]
+    },
+    {
+        text: 'Lässt du ein Haus bauen?',
+        stubs: [0, 4],
+        translations: {
+            eng: 'Are you having a house built?'
+        },
+        tags: [
+            'lassen',
+            'bauen'
+        ]
+    },
+    {
+        text: 'Ich lasse das Kind bei meinen Eltern.',
+        stubs: [1, 4, 5],
+        translations: {
+            eng: 'I\'m leaving the kid with my parents.'
+        },
+        tags: [
+            'lassen',
+            'bei'
+        ]
+    },
+    {
+        text: 'Sie hat ihr Buch im Büro gelassen.',
+        stubs: [1, 2, 4, 6],
+        translations: {
+            eng: 'She left her book at the office.'
+        },
+        tags: [
+            'lassen',
+            'in',
+            'haben'
+        ]
+    },
+    {
+        text: 'Wir lassen alles beim Alten.',
+        stubs: [1, 3],
+        translations: {
+            eng: 'We\'re leaving everything as it was.'
+        },
+        tags: [
+            'lassen',
+            'bei'
+        ]
+    },
+    {
+        text: 'Ich ließ er etwas anderes machen.',
+        stubs: [1, 5],
+        translations: {
+            eng: 'I let him do something else.'
+        },
+        tags: [
+            'lassen',
+            'machen'
+        ]
+    },
+    {
+        text: 'Lassen Sie uns wissen, wie es Ihnen geht.',
+        stubs: [0, 3, 6, 7],
+        translations: {
+            eng: 'Let us know how you\'re doing.'
+        },
+        tags: [
+            'lassen',
+            'wissen',
+            'gehen'
+        ]
+    },
+    {
+        text: 'Ihre Antwort lässt mich glauben, dass er nichts verstanden hat.',
+        stubs: [2, 3, 4, 5, 8, 9],
+        translations: {
+            eng: 'Her answer leads me to believe that he didn\'t understand anything.'
+        },
+        tags: [
+            'lassen',
+            'glauben',
+            'dass',
+            'verstehen',
+            'ver-'
+        ]
+    },
+
 ];

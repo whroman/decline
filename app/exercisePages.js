@@ -4,6 +4,8 @@ import ReflexiveVerbsPage from './components/pages/exercisePages/Verbs/Reflexive
 import SeinHabenVerbsPage from './components/pages/exercisePages/Verbs/SeinHabenVerbsPage';
 import DassAndWeilPage from './components/pages/exercisePages/Conjunctions/DassAndWeilPage';
 import DaAdverbsPage from './components/pages/exercisePages/Adverbs/DaAdverbsPage';
+import LassenPage from './components/pages/exercisePages/Verbs/LassenPage';
+import CristinaVocabPage from './components/pages/exercisePages/Vocab/CristinaVocabPage';
 
 export default [
     {
@@ -27,6 +29,11 @@ export default [
         component: SeinHabenVerbsPage
     },
     {
+        name: 'Uses of "lassen"',
+        path: '/practice/verbs/lassen',
+        component: LassenPage
+    },
+    {
         name: 'Dass and Weil Clauses',
         path: '/practice/conjugations/dass-weil',
         component: DassAndWeilPage
@@ -35,5 +42,10 @@ export default [
         name: '"da-" Adverbs',
         path: '/practice/adverbs/da-words',
         component: DaAdverbsPage
+    },
+    {
+        name: 'Vocab for Cristina',
+        path: '/vocab/cristina',
+        component: CristinaVocabPage
     }
 ];
