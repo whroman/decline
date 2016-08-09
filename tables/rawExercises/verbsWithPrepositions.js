@@ -410,6 +410,7 @@ export default [
         tags: [
             'glauben',
             'verlassen',
+            '-lassen',
             'ver-',
             'an',
             'nach'
@@ -598,6 +599,7 @@ export default [
             'aus',
             'entlassen',
             'ent-',
+            '-lassen',
             'worden',
             'sein'
         ]
@@ -1041,13 +1043,14 @@ export default [
     },
     {
         text: 'Die Idee, dass ich plötzlich für alles verantwortlich sein sollte, war mir neu.',
-        stubs: [2, 8, 9],
+        stubs: [2, 8, 9, 10, 11],
         translations: {
             eng: 'The idea that I was suddenly supposed to be responsible for everything was new to me.'
         },
         tags: [
             'dass',
             'sein',
+            'war',
             'sollten'
         ]
     },
@@ -1131,6 +1134,7 @@ export default [
         tags: [
             'aufstellen',
             'auf-',
+            '-stellen',
             'sein'
         ]
     },
@@ -1241,5 +1245,193 @@ export default [
             'ver-'
         ]
     },
-
+    {
+        text: 'Darf ich dich fragen, wie viel du berechnest?',
+        stubs: [0, 2, 3, 4, 7],
+        translations: {
+            eng: 'May I ask how much you charge?'
+        },
+        tags: [
+            'dürfen',
+            'fragen',
+            'berechnen',
+            'be-',
+            'wie'
+        ]
+    },
+    // {
+    //     text: 'Hat man in letzter Zeit häufiger die Nachrichten verfolgt, wird man festgestellt haben, dass die <Flüchtlingsthematik> an der Spitze der wichtigsten Tagesordnungspunkte in den europäischen Länder steht.',
+    //     stubs: [],
+    //     translations: {
+    //         eng: 'One who has been frequently following recent news will have noticed that the refugee topic has been at the top of most important topics'
+    //     }
+    // }
+    // {
+    //     text: 'Unterdessen wurde im Rahmen des Flüchtlingsdiskurses das von der deutschen Regierung entworfene Asylpaket zur weiteren Verschärfung des Asylrechtes vom Ministerrat bestätigt.',
+    //     stubs: [],
+    //     translations: {
+    //         eng: ''
+    //     }
+    // }
+    {
+        text: 'Als man Stoffe noch per Hand färbte, gab es eine Farbe, die während des Färbens ziemlich eklig gestunken hat: die Farbe Blau.',
+        stubs: [0, 6, 7, 11, 13, 17, 18],
+        translations: {
+            eng: 'When one still had to dye fabric by hand, there was a color that stunk quite disgustingly during the staining: the color blue.'
+        },
+        tags: [
+            'als',
+            'farben',
+            'stinken'
+        ]
+    },
+    {
+        text: 'Tabakrauch enthält über 70 Stoffe, die erwiesenermaßen krebserregend sind.',
+        stubs: [1, 2, 5, 6, 8],
+        translations: {
+            eng: 'Tobacco smoke contains more than 70 substances that have been proved to be carcinogenic.'
+        },
+        tags: [
+            'enthalten',
+            'über',
+            'sein'
+        ]
+    },
+    {
+        text: 'Er wurde dort bekannt, als er die Drogengangs aus vielen Favelas der Stadt verdrängen ließ.',
+        stubs: [1, 4, 8, 11, 13, 14],
+        translations: {
+            eng: 'He became known there when he displaced the drug gangs out of many favelas in the city.'
+        },
+        tags: [
+            'werden',
+            'als',
+            'verdrängen',
+            'aus',
+            'lassen'
+        ]
+    },
+    {
+        text: 'Viele Athleten machen sich ernste Sorgen wegen der Sicherheit während der Spiele.',
+        stubs: [2, 3, 6, 7, 9, 10],
+        translations: {
+            eng: 'Many athletes are seriously concerned about security during the games.'
+        },
+        tags: [
+            'machen',
+            'sich',
+            'wegen',
+            'während'
+        ]
+    },
+    {
+        text: 'Das wusste er schon vor den Anschlägen, die sich in den Monaten davor in Europa ereignet hatten.',
+        stubs: [1, 4, 5, 7, 8, 9, 10, 12, 13, 15, 16],
+        translations: {
+            eng: 'He was already aware of that before the attacks that have occurred in recent months in Europe.'
+        },
+        tags: [
+            'wissen',
+            'wussten',
+            'ereignen',
+            'vor',
+            'da-',
+            'in',
+            'hatten',
+        ]
+    },
+    {
+        text: 'Deshalb bereiten sich die Verantwortlichen schon lange auf Anschläge vor.',
+        stubs: [1, 7, 9],
+        translations: {
+            eng: 'Therefore, those in charge are already preparing themselves for attacks.'
+        },
+        tags: [
+            'bereiten',
+            'auf',
+            'vor'
+        ]
+    },
+    {
+        text: 'Manche Athleten glauben, dass es während der Olympischen Spiele gefährlich werden könnte.',
+        stubs: [2, 3, 5, 6, 10, 11],
+        translations: {
+            eng: 'Some athletes believe that it could be dangerous during the Olympics.'
+        },
+        tags: [
+            'glauben',
+            'dass',
+            'während',
+            'werden',
+            'könnten',
+            'können'
+        ]
+    },
+    {
+        text: 'Die schwierigste Aufgabe ist es, während der Spiele die Polizeigewalt zu verhindern.',
+        stubs: [5, 6, 8, 10, 11],
+        translations: {
+            eng: 'The most difficult task is to prevent police violence during the game.'
+        },
+        tags: [
+            'während',
+            'verhindern',
+            'ver-',
+            'zu'
+        ]
+    },
+    {
+        text: 'Er will zeigen, dass Rio nicht so gefährlich ist, wie die Welt glaubt.',
+        stubs: [1, 2, 3, 8, 9, 12],
+        translations: {
+            eng: 'He wants to demonstrate that Rio is not as dangerious as the world thinks.'
+        },
+        tags: [
+            'wollen',
+            'zeigen',
+            'dass',
+            'sind',
+            'wie',
+            'glauben'
+        ]
+    },
+    {
+        text: 'Seit den Anschlägen in Europa bereitet sich die Polizei auch auf Terrorismus vor.',
+        stubs: [0, 1, 3, 5, 10, 12],
+        translations: {
+            eng: 'Since the attacks in Europe, the police have also been preparing for terrorism.'
+        },
+        tags: [
+            'seit',
+            'vorbereiten',
+            'in',
+            'auf'
+        ]
+    },
+    {
+        text: 'Welche Wörter müssen in die Lücken eingesetzt werden?',
+        stubs: [2, 3, 4, 6, 7],
+        translations: {
+            eng: 'Which words need to be inserted in the gaps?'
+        },
+        tags: [
+            'müssen',
+            'in',
+            'einsetzen',
+            'ein-',
+            'werden'
+        ]
+    },
+    {
+        text: 'Das liegt daran, dass ich kein Französisch spreche.',
+        stubs: [2, 3],
+        translations: {
+            eng: 'This is due to the fact that I can\'t speak French.'
+        },
+        tags: [
+            'liegen',
+            'da-',
+            'dass'
+        ]
+    }
 ];

@@ -4,7 +4,10 @@ import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
 const exercises = verbsWithPrepositions
-    .filter((exercise) => exercise.tags.includes('lassen'));
+    .filter((exercise) => (
+        exercise.tags.includes('lassen') ||
+        exercise.tags.includes('-lassen')
+    ));
 
 export default function () {
     const props = {
