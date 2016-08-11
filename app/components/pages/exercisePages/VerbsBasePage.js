@@ -66,8 +66,10 @@ class VerbExercise extends Component {
     }
 
     handleClick(event) {
-        const firstInput = this.refs.sentence.querySelector('input');
-        firstInput.focus();
+        if (event.target.tagName === 'INPUT') return;
+        this.refs.sentence
+            .querySelector('input')
+            .focus();
     }
 
     render() {

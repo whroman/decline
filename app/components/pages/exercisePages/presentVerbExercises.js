@@ -16,7 +16,8 @@ export default function (verbExercises) {
                 const toPush = [];
                 const lastCharacter = word[word.length - 1];
 
-                if (lastCharacter === ',') {
+                const nonLetterCharacters = [',', ':', '.'];
+                if (nonLetterCharacters.includes(lastCharacter)) {
                     word = word.slice(0, word.length - 1);
                     toPush.push(presentWord(lastCharacter));
                 }

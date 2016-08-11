@@ -3,20 +3,14 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 import twoWayPrepositions from './twoWayPrepositions'
-import accusativePrepositions from './accusativePrepositions'
-import dativePrepositions from './dativePrepositions'
 
-const prepositions = twoWayPrepositions
-    .concat(accusativePrepositions)
-    .concat(dativePrepositions);
-
-const exercises = verbsWithPrepositions.filter((exercise) => prepositions.some(
+const exercises = verbsWithPrepositions.filter((exercise) => twoWayPrepositions.some(
         (item) => exercise.tags.includes(item)
     ));
 
 export default function () {
     const props = {
-        title: 'Verbs & Prepositions',
+        title: 'Two-Way Prepositions',
         exercises: presentVerbExercises(exercises)
     };
     return (<VerbBasePage { ...props } />);
