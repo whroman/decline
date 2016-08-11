@@ -34,7 +34,7 @@ export default [
     },
     {
         text: 'Meine Tante hilft meiner Schwester bei ihren Hausaufgaben.',
-        stubs: [2, 3, 5, 6],
+        stubs: [0, 2, 3, 5, 6],
         translations: {
             eng: 'My aunt helps my sister with her homework'
         },
@@ -45,7 +45,7 @@ export default [
     },
     {
         text: 'Der Vater hat sich bei der Schule informiert.',
-        stubs: [2, 3, 4, 5, 7],
+        stubs: [0, 2, 3, 4, 5, 7],
         translations: {
             eng: 'The father was informed by the school'
         },
@@ -154,7 +154,7 @@ export default [
     },
     {
         text: 'Bei der Wohnungssuche hat mir ein Bekannter geholfen.',
-        stubs: [0, 1, 7],
+        stubs: [0, 1, 4, 5, 7],
         translations: {
             eng: 'An acquaintance helped me with the house hunting.'
         },
@@ -403,7 +403,7 @@ export default [
     },
     {
         text: 'Die alten Ägypter glaubten an ein Weiterleben nach dem Tod und an eine Art Seele, die im Augenblick des Todes den Körper verlässt.',
-        stubs: [3, 4, 5, 7, 8, 11, 12, 15, 16, 18, 20, 22],
+        stubs: [3, 4, 5, 7, 8, 10, 11, 12, 15, 16, 18, 20, 22],
         translations: {
             eng: 'The ancient Egyptians believed in a life after death and a kind of soul that leaves the body at the moment of death.'
         },
@@ -419,15 +419,16 @@ export default [
     },
     {
         text: 'Wussten Sie schon, dass Sie in Berlin nie weiter als 500 Meter von der nächsten Haltestelle, dem nächsten Bahnhof oder der nächsten Station entfernt sind?',
-        stubs: [3, 5, 12, 13, 16, 20, 23, 24],
+        stubs: [0, 3, 5, 9, 12, 13, 16, 20, 23, 24],
         translations: {
-            eng: 'Did you know that in Berlin you are never more than 500 meters from the next bus stop, the next rail station or the train station?'
+            eng: 'Did you (formal) know that in Berlin you are never more than 500 meters from the next bus stop, the next rail station or the train station?'
         },
         tags: [
             'entfernen',
             'von',
             'in',
-            'dass'
+            'dass',
+            'als'
         ]
     },
     {
@@ -445,7 +446,7 @@ export default [
     },
     {
         text: 'Sie filmt mit ihrem Smartphone die Menschenmenge und die Redner auf der Leinwand.',
-        stubs: [1, 2, 3, 5, 8, 10, 11],
+        stubs: [1, 2, 3, 5, 7, 8, 10, 11],
         translations: {
             eng: 'She\'s filming the crowd and the speakers on the screen with her smartphone.'
         },
@@ -621,7 +622,7 @@ export default [
     },
     {
         text: 'Beim Abflug wird der komplette Stechapparat mit der Giftblase aus dem Hinterleib der Biene herausgerissen.',
-        stubs: [0, 6, 7, 9, 10, 12, 14],
+        stubs: [0, 2, 6, 7, 9, 10, 12, 14],
         translations: {
             eng: 'On departure, the entire stinging apparatus, along with the poison sac, is torn out of the abdomen of the bee.'
         },
@@ -658,7 +659,7 @@ export default [
     },
     {
         text: 'Meine Mutter ist lange bei uns geblieben.',
-        stubs: [2, 4, 6],
+        stubs: [0, 2, 4, 6],
         translations: {
             eng: 'My mother stayed with us for a long time.'
         },
@@ -675,7 +676,8 @@ export default [
             eng: 'He has become more timid.'
         },
         tags: [
-            'sein'
+            'sein',
+            'geworden'
         ]
     },
     {
@@ -753,7 +755,7 @@ export default [
     },
     {
         text: 'Haben Sie das Auto gekauft?',
-        stubs: [0, 4],
+        stubs: [0, 2, 4],
         translations: {
             eng: 'Did you (formal) buy a car?'
         },
@@ -867,7 +869,7 @@ export default [
     },
     {
         text: 'Mein Vater geht früh ins Bett, weil er morgen aufstehen muss.',
-        stubs: [2, 4, 6, 9, 10],
+        stubs: [0, 2, 4, 6, 9, 10],
         translations: {
             eng: 'My dad is going to bed early because he has to wake up early.'
         },
@@ -932,12 +934,15 @@ export default [
         ]
     },
     {
-        text: 'Das Portrait ist zwar nicht perfekt, aber ich bin zufrieden damit.',
-        stubs: [10],
+        text: 'Das Portrait ist nicht perfekt, aber ich bin zufrieden damit.',
+        stubs: [5, 6, 7, 8, 9],
         translations: {
             eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
         },
         tags: [
+            ', aber',
+            'zufrieden',
+            'sein',
             'da-'
         ]
     },
@@ -987,7 +992,7 @@ export default [
     },
     {
         text: 'Wir sind nach Hause gegangen, weil wir keine Karten haben kaufen können.',
-        stubs: [1, 4, 5, 9, 10, 11],
+        stubs: [1, 4, 5, 7, 9, 10, 11],
         translations: {
             eng: 'We went home because we couldn\'t buy any tickets.'
         },
@@ -1002,7 +1007,7 @@ export default [
     },
     {
         text: 'Er hatte kein Geld mehr, weil er ein neues Haus hatte bauen lassen.',
-        stubs: [1, 5, 10, 11, 12],
+        stubs: [1, 2, 5, 7, 8, 10, 11, 12],
         translations: {
             eng: 'He didn\'t have any more money, because he had had a new house built.'
         },
@@ -1030,7 +1035,7 @@ export default [
     },
     {
         text: 'Ich will, dass du dein Zimmer aufräumst.',
-        stubs: [1, 2, 6],
+        stubs: [1, 2, 4, 6],
         translations: {
             eng: 'I want you to clean up your room.'
         },
@@ -1056,12 +1061,13 @@ export default [
     },
     {
         text: 'Ich glaube, dass wir genug Geld für diese Wohnung haben.',
-        stubs: [2],
+        stubs: [2, 6, 7, 9],
         translations: {
             eng: 'I think that we have enough money for this apartment.'
         },
         tags: [
-            'dass'
+            'dass',
+            'für'
         ]
     },
 
@@ -1228,14 +1234,15 @@ export default [
         tags: [
             'lassen',
             'wissen',
-            'gehen'
+            'gehen',
+            'wie'
         ]
     },
     {
-        text: 'Ihre Antwort lässt mich glauben, dass er nichts verstanden hat.',
-        stubs: [2, 3, 4, 5, 8, 9],
+        text: 'Seine Antwort lässt mich glauben, dass er nichts verstanden hat.',
+        stubs: [0, 2, 3, 4, 5, 8, 9],
         translations: {
-            eng: 'Her answer leads me to believe that he didn\'t understand anything.'
+            eng: 'His answer leads me to believe that he didn\'t understand anything.'
         },
         tags: [
             'lassen',
@@ -1259,20 +1266,6 @@ export default [
             'wie'
         ]
     },
-    // {
-    //     text: 'Hat man in letzter Zeit häufiger die Nachrichten verfolgt, wird man festgestellt haben, dass die <Flüchtlingsthematik> an der Spitze der wichtigsten Tagesordnungspunkte in den europäischen Länder steht.',
-    //     stubs: [],
-    //     translations: {
-    //         eng: 'One who has been frequently following recent news will have noticed that the refugee topic has been at the top of most important topics'
-    //     }
-    // }
-    // {
-    //     text: 'Unterdessen wurde im Rahmen des Flüchtlingsdiskurses das von der deutschen Regierung entworfene Asylpaket zur weiteren Verschärfung des Asylrechtes vom Ministerrat bestätigt.',
-    //     stubs: [],
-    //     translations: {
-    //         eng: ''
-    //     }
-    // }
     {
         text: 'Als man Stoffe noch per Hand färbte, gab es eine Farbe, die während des Färbens ziemlich eklig gestunken hat: die Farbe Blau.',
         stubs: [0, 6, 7, 11, 13, 17, 18],
@@ -1280,6 +1273,7 @@ export default [
             eng: 'When one still had to dye fabric by hand, there was a color that stunk quite disgustingly during the staining: the color blue.'
         },
         tags: [
+            ', als',
             'als',
             'farben',
             'stinken'
@@ -1299,14 +1293,15 @@ export default [
     },
     {
         text: 'Er wurde dort bekannt, als er die Drogengangs aus vielen Favelas der Stadt verdrängen ließ.',
-        stubs: [1, 4, 8, 11, 13, 14],
+        stubs: [1, 4, 8, 9, 11, 13, 14],
         translations: {
             eng: 'He became known there when he displaced the drug gangs out of many favelas in the city.'
         },
         tags: [
             'werden',
-            'als',
+            ', als',
             'verdrängen',
+            'ver-',
             'aus',
             'lassen'
         ]
@@ -1354,7 +1349,7 @@ export default [
     },
     {
         text: 'Manche Athleten glauben, dass es während der Olympischen Spiele gefährlich werden könnte.',
-        stubs: [2, 3, 5, 6, 10, 11],
+        stubs: [0, 2, 3, 5, 6, 10, 11],
         translations: {
             eng: 'Some athletes believe that it could be dangerous during the Olympics.'
         },
@@ -1375,6 +1370,7 @@ export default [
         },
         tags: [
             'während',
+            ', während',
             'verhindern',
             'ver-',
             'zu'
@@ -1424,7 +1420,7 @@ export default [
     },
     {
         text: 'Das liegt daran, dass ich kein Französisch spreche.',
-        stubs: [2, 3],
+        stubs: [1, 2, 3, 5, 7],
         translations: {
             eng: 'This is due to the fact that I can\'t speak French.'
         },
@@ -1432,6 +1428,280 @@ export default [
             'liegen',
             'da-',
             'dass'
+        ]
+    },
+    {
+        text: 'Weißt du, wann die Gebäude dort gebaut wurden?',
+        stubs: [0, 2, 6, 7],
+        translations: {
+            eng: 'Do you know when the buildings there were built?'
+        },
+        tags: [
+            'wissen',
+            'wann',
+            'bauen',
+            'werden'
+        ]
+    },
+    {
+        text: 'Die Bürokratie war sehr hoch, sodass ich die Entscheidung getroffen habe, in einer anderen Firma zu arbeiten.',
+        stubs: [2, 5, 9, 10, 11, 12, 13, 15, 16],
+        translations: {
+            eng: 'The bureaucracy was very strong, so I made the decision to work with another company.'
+        },
+        tags: [
+            'war',
+            ', sodass',
+            'treffen',
+            'haben',
+            'in',
+            'zu',
+            'arbeiten',
+            'vocab-walter'
+        ]
+    },
+    {
+        text: 'Gestern war mein letzter Arbeitstag bei meiner Firma.',
+        stubs: [1, 2, 3, 5, 6],
+        translations: {
+            eng: 'Yesterday was my last day of work at my company.'
+        },
+        tags: [
+            'war',
+            'bei'
+        ]
+    },
+    {
+        text: 'Es war die größte Firma, bei der ich gearbeitet habe.',
+        stubs: [1, 2, 3, 5, 6, 8, 9],
+        translations: {
+            eng: 'That was the largest company that I\'ve worked for.'
+        },
+        tags: [
+            'war',
+            'bei',
+            ', bei',
+            'haben'
+        ]
+    },
+    {
+        text: 'In meinen vorherigen Firmen hatte ich um die 15 Kollegen, aber in dieser letzten Firma hatte ich über 400.',
+        stubs: [0, 1, 2, 4, 6, 7, 10, 11, 12, 13, 15, 17],
+        translations: {
+            eng: 'In my previous companies I had about 15 colleagues, but in this last company I had over 400.'
+        },
+        tags: [
+            'in',
+            'hatten',
+            'um',
+            ', aber',
+            'in'
+        ]
+    },
+    {
+        text: 'Da habe ich die Arbeit sehr träge gefunden, weil jede Entscheidung viele Kollegen gebraucht hat.',
+        stubs: [7, 8, 9, 11, 13, 14],
+        translations: {
+            eng: 'There I found the work to be very slow because every decision required many colleagues.'
+        },
+        tags: [
+            'finden',
+            'weil',
+            'brauchen',
+            'haben'
+        ]
+    },
+    {
+        text: 'Meine neue Firma verkauft Möbel, was ich nicht interessant finde, aber ich finde die Arbeiter klug.',
+        stubs: [0, 1, 5, 9, 10, 11],
+        translations: {
+            eng: 'My new company sells furniture, which I don\'t find interesting, but I think the workers are smart.'
+        },
+        tags: [
+            ', was',
+            'finden',
+            ', aber'
+        ]
+    },
+    {
+        text: 'Das hat mir sehr geholfen.',
+        stubs: [1, 2, 4],
+        translations: {
+            eng: 'That helped me very much.'
+        },
+        tags: [
+            'haben',
+            'helfen',
+            'vocab-walter'
+        ]
+    },
+    {
+        text: 'Es steht zwar in Text, aber er hat das nicht gesagt.',
+        stubs: [1, 2, 3, 5, 7, 10],
+        translations: {
+            eng: 'That\'s indeed in the text, but he didn\'t say that.'
+        },
+        tags: [
+            'stehen',
+            'in',
+            ', aber',
+            'haben',
+            'sagen'
+        ]
+    },
+    {
+        text: 'Es ist richtig, weil er für andere Veranstaltungen verantwortlich sein wird.',
+        stubs: [3, 5, 6, 9, 10],
+        translations: {
+            eng: 'That\'s true because he will be in charge of other events.'
+        },
+        tags: [
+            'weil',
+            'für',
+            'sein',
+            'werden'
+        ]
+    },
+    {
+        text: 'Es ist falsch, weil er für andere Veranstaltungen verantwortlich war.',
+        stubs: [3, 5, 6, 9],
+        translations: {
+            eng: 'That\'s false because he has been in charge of other events before.'
+        },
+        tags: [
+            'weil',
+            'für',
+            'war'
+        ]
+
+    },
+    {
+        text: 'Wir haben die Chance zu zeigen, dass wir nicht nur die gewalttätige Stadt sind, wie uns die Welt kennt.',
+        stubs: [4, 5, 6, 10, 11, 13, 14, 15, 18],
+        translations: {
+            eng: 'We have the chance to show that we\'re not just the violent city that the world knows us as.'
+        },
+        tags: [
+            'zu',
+            'zeigen',
+            'dass',
+            ', wie',
+            'kennen'
+        ]
+    },
+    {
+        text: 'Journalisten haben bei solchen Ereignissen eine schwierige Aufgabe.',
+        stubs: [1, 2, 3, 5, 6],
+        translations: {
+            eng: 'Journalists have a difficult task in such incidents.'
+        },
+        tags: [
+            'bei'
+        ]
+    },
+    {
+        text: 'Als in einem Einkaufszentrum in München Schüsse zu hören waren, wusste niemand, was passiert war.',
+        stubs: [0, 1, 2, 4, 7, 8, 9, 10, 14],
+        translations: {
+            eng: 'As shots were heard in a shopping center in Munich, no one knew what had happened.'
+        },
+        tags: [
+            'als',
+            'in',
+            'zu',
+            'hören',
+            'waren',
+            'war',
+            'wussten'
+        ]
+    },
+    {
+        text: 'Während die Polizei dort im Einsatz war, forderte sie die Öffentlichkeit über Twitter dringend auf: <Keine Videos oder Bilder von Polizeikräften im Einsatz online stellen. Helft nicht den Tätern!".',
+        stubs: [0, 1, 4, 6, 7, 8, 9, 11, 14, 19, 21, 24, 25, 27],
+        translations: {
+            eng: 'While the police were deployed there, they urged the public through Twitter: "Place no videos or images online of the deployed police. Do not help the perpetrators!"'
+        },
+        tags: [
+            'während',
+            'in',
+            'war',
+            'auffordern',
+            'auf-',
+            'über',
+            'von',
+            'stellen',
+            'helfen'
+        ]
+    },
+    {
+        text: 'Sowohl Bürger als auch Medien stellten weiter Bilder ins Internet oder sendeten sie live.',
+        stubs: [0, 2, 5, 8, 11, 12],
+        translations: {
+            eng: 'Both citizens and also the media continued to place images on the Internet or to broadcast them.'
+        },
+        tags: [
+            'sowohl',
+            'als',
+            'stellten',
+            'sendeten',
+            'in'
+        ]
+    },
+    {
+        text: 'Besonders die Medien stehen bei solchen Ereignissen wie in München unter gewaltigem Druck.',
+        stubs: [3, 4, 5, 7, 8, 10, 11],
+        translations: {
+            eng: 'In particular, the media is under huge pressure in such incidents as in Munich.'
+        },
+        tags: [
+            'stehen',
+            'bei',
+            'wie',
+            'in',
+            'unter'
+        ]
+    },
+    {
+        text: 'Erst später stellte sich heraus, dass es der Amoklauf eines einzelnen Täters gewesen war.',
+        stubs: [2, 3, 4, 5, 9, 10, 12, 13],
+        translations: {
+            eng: 'Only later did it turn out that it had been the rampage of a single perpetrator.'
+        },
+        tags: [
+            'herausstellen',
+            'heraus-',
+            '-stellen',
+            ', dass',
+            'gewesen',
+            'war'
+        ]
+    },
+    {
+        text: 'Die Journalisten haben in so einer Situation das Problem, dass sie ihre Aufgabe, Informationen zu besorgen, einfach nicht erfüllen können.',
+        stubs: [0, 2, 3, 4, 5, 7, 9, 10, 11, 14, 15, 18, 19],
+        translations: {
+            eng: 'In such a situation, the journalists have the problem that they cannot fulfill their duty to obtain information.'
+        },
+        tags: [
+            'in',
+            ', dass',
+            'zu',
+            'besorgen',
+            'erfüllen',
+            'können'
+        ]
+    },
+    {
+        text: 'Unter diesem Druck ist die Versuchung groß, besonders sensationelle Bilder zu zeigen: etwas vom Täter oder von den Opfern.',
+        stubs: [0, 1, 3, 4, 8, 10, 11, 13, 16, 17],
+        translations: {
+            eng: 'Under this pressure, the temptation is great to show especially sensational images: something from the perpetrator or the victims.'
+        },
+        tags: [
+            'unter',
+            'zu',
+            'zeigen',
+            'von'
         ]
     }
 ];
