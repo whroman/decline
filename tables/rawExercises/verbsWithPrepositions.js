@@ -670,10 +670,10 @@ export default [
         ]
     },
     {
-        text: 'Er ist mehr schüchtern geworden.',
+        text: 'Er ist schüchtern geworden.',
         stubs: [1, 4],
         translations: {
-            eng: 'He has become more timid.'
+            eng: 'He has become timid.'
         },
         tags: [
             'sein',
@@ -1671,6 +1671,7 @@ export default [
             'herausstellen',
             'heraus-',
             '-stellen',
+            'dass',
             ', dass',
             'gewesen',
             'war'
@@ -1684,6 +1685,7 @@ export default [
         },
         tags: [
             'in',
+            'dass',
             ', dass',
             'zu',
             'besorgen',
@@ -1702,6 +1704,159 @@ export default [
             'zu',
             'zeigen',
             'von'
+        ]
+    },
+    {
+        text: 'Laut Polizei darf man bestimmte Videos und Bilder nicht ins Internet stellen, weil sie den Tätern helfen können.',
+        stubs: [0, 2, 4, 9, 11, 12, 13, 14, 16, 17],
+        translations: {
+            eng: 'According to police, one should not post specific videos or images on the internet because they could help the perpetrators.'
+        },
+        tags: [
+            'laut',
+            'dürfen',
+            'in',
+            'stellen',
+            'weil',
+            ', weil',
+            'helfen',
+            'können'
+        ]
+    },
+    {
+        text: 'Die Medien müssen berichten, wenn sie eine Chance gegen die Konkurrenz haben wollen.',
+        stubs: [2, 3, 4, 5, 6, 8, 9, 11, 12],
+        translations: {
+            eng: 'The media must report if they want to have a chance against the competition.'
+        },
+        tags: [
+            'müssen',
+            'berichten',
+            'wenn',
+            ', wenn',
+            'gegen',
+            'haben',
+            'wollen'
+        ]
+    },
+    {
+        text: 'Journalisten können oft einfach keine neue Informationen besorgen.',
+        stubs: [1, 4, 5, 7],
+        translations: {
+            eng: 'Journalists often simply can\'t obtain new information.'
+        },
+        tags: [
+            'können',
+            'besorgen'
+        ]
+    },
+    {
+        text: 'Wenn sie nicht wissen, was passiert ist, können sie nur spekulieren.',
+        stubs: [0, 3, 4, 5, 6, 7, 10],
+        translations: {
+            eng: 'If they don\'t know what has happened, they can only speculate.'
+        },
+        tags: [
+            'wenn',
+            ', wenn',
+            'wissen',
+            'passieren',
+            ', was',
+            'haben',
+            'können',
+            'spekulieren'
+        ]
+    },
+    {
+        text: 'Sie denken alles, was in Deutschland passiert betrifft mich, weil sie sich nicht über die deutsche Geographie auskennen.',
+        stubs: [1, 3, 4, 6, 7, 8, 9, 10, 11, 13, 14, 15, 17],
+        translations: {
+            eng: 'They think that everything that happens in Germany affects me because they don\'t know anything about German geography.'
+        },
+        tags: [
+            'denken',
+            ', was',
+            'passieren',
+            'betriffen',
+            'weil',
+            ', weil',
+            'sich',
+            'über',
+            'auskennen'
+        ]
+    },
+    {
+        text: 'Jetzt kann ich über meine Familie lästern.',
+        stubs: [1, 3, 4, 6],
+        translations: {
+            eng: 'Now I can gossip about my family.'
+        },
+        tags: [
+            'können',
+            'über',
+            'lästern'
+        ]
+    },
+    {
+        text: 'Es ist falsch, weil es nicht die Aufgabe der Polizei ist.',
+        stubs: [3, 6, 8, 10],
+        translations: {
+            eng: 'That\'s false because that\'s not the duty of the police.'
+        },
+        tags: [
+            'weil',
+            ', weil'
+        ]
+    },
+    {
+        text: 'Ich gehe nach Hause, damit ich nicht nass werde.',
+        stubs: [1, 2, 4, 8],
+        translations: {
+            eng: 'I\'m going home in order to not get wet.'
+        },
+        tags: [
+            'gehen',
+            'nach',
+            'da-',
+            'werden'
+        ]
+    },
+    {
+        text: 'Ich gehe nach Hause, weil ich nicht nass werde möchte.',
+        stubs: [1, 2, 4, 8, 9],
+        translations: {
+            eng: 'I\'m going home because I don\'t want to get wet'
+        },
+        tags: [
+            'gehen',
+            'nach',
+            'weil',
+            ', weil',
+            'möchten'
+        ]
+    },
+    {
+        text: 'Im Artikel steht, dass Journalisten oft nur spekulieren können.',
+        stubs: [0, 2, 3, 7, 8],
+        translations: {
+            eng: 'The article states that journalists can often only speculate.'
+        },
+        tags: [
+            'in',
+            'stehen',
+            ', dass',
+            'spekulieren',
+            'können'
+        ]
+    },
+    {
+        text: 'Der Kaffee ist getrunken worden.',
+        stubs: [0, 3, 4],
+        translations: {
+            eng: 'The coffee has been drunk.'
+        },
+        tags: [
+            'worden'
         ]
     }
 ];
