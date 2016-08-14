@@ -5,13 +5,15 @@ import DativePrepositionsPage from './components/pages/exercisePages/Verbs/Dativ
 import ReflexiveVerbsPage from './components/pages/exercisePages/Verbs/ReflexiveVerbsPage';
 import WerdenPage from './components/pages/exercisePages/Verbs/WerdenPage';
 import SeinHabenVerbsPage from './components/pages/exercisePages/Verbs/SeinHabenVerbsPage';
-import SubordinatingPage from './components/pages/exercisePages/Conjunctions/SubordinatingPage';
 import DaAdverbsPage from './components/pages/exercisePages/Adverbs/DaAdverbsPage';
 import WieAlsPage from './components/pages/exercisePages/Adverbs/WieAlsPage';
 import LassenPage from './components/pages/exercisePages/Verbs/LassenPage';
 import StellenPage from './components/pages/exercisePages/Verbs/StellenPage';
 import ErVerPage from './components/pages/exercisePages/Prefixes/ErVerPage';
 import CristinaVocabPage from './components/pages/exercisePages/Vocab/CristinaVocabPage';
+import AkkDatPage from './components/pages/exercisePages/Pronouns/AkkDatPage';
+import SubordinatingPage from './components/pages/exercisePages/Clauses/SubordinatingPage';
+import RelativeClausesPage from './components/pages/exercisePages/Clauses/RelativeClausesPage';
 
 export default [
     {
@@ -50,14 +52,19 @@ export default [
         component: LassenPage
     },
     {
-        name: 'Uses of "stellen" & "liegen"',
+        name: 'Stellen, Stehen, Liegen, Legen',
         path: '/practice/verbs/stellen-liegen',
         component: StellenPage
     },
     {
         name: 'Subordinating Conjunctions',
-        path: '/practice/conjugations/subordinating',
+        path: '/practice/clauses/subordinating-conjunctions',
         component: SubordinatingPage
+    },
+    {
+        name: 'Relative Clauses',
+        path: '/practice/clauses/relative',
+        component: RelativeClausesPage
     },
     {
         name: '"da-" Adverbs',
@@ -75,9 +82,14 @@ export default [
         component: WerdenPage
     },
     {
-        name: '"er-" & "ver-" Prefixes',
+        name: '"er-", "vor-", "ver-" Prefixes',
         path: '/vocab/prefixes/er-ver',
         component: ErVerPage
+    },
+    {
+        name: 'Accusative & Dative Pronouns',
+        path: '/vocab/pronouns/akk-dat',
+        component: AkkDatPage
     },
     {
         name: 'Vocab for Cristina',

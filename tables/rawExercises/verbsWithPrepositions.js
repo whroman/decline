@@ -353,6 +353,7 @@ export default [
         tags: [
             'lernen',
             'an',
+            'hängen',
             'können'
         ]
     },
@@ -414,7 +415,8 @@ export default [
             '-lassen',
             'ver-',
             'an',
-            'nach'
+            'nach',
+            ', article'
         ]
 
     },
@@ -617,8 +619,9 @@ export default [
             'mit',
             'in',
             'gegen',
-            'einsetzen',
-            'ein-'
+            'ein-',
+            '-setzen',
+            'einsetzen'
         ]
     },
     {
@@ -881,6 +884,7 @@ export default [
             'weil',
             'aufstehen',
             'auf-',
+            '-stehen',
             'müssen'
         ]
     },
@@ -1085,11 +1089,12 @@ export default [
     },
     {
         text: 'Der Organisation, die mich an diese Projekt vermittelt hat, muss ich eine Gebühr von 100 Euro bezahlen.',
-        stubs: [7, 12],
+        stubs: [2, 7, 12],
         translations: {
             eng: 'I have to pay the organization that organized this project a 100 Euro fee.'
         },
         tags: [
+            ', article',
             'vocab-cristina'
         ]
     },
@@ -1251,7 +1256,8 @@ export default [
             'glauben',
             'dass',
             'verstehen',
-            'ver-'
+            'ver-',
+            '-stehen'
         ]
     },
     {
@@ -1278,7 +1284,8 @@ export default [
             ', als',
             'als',
             'farben',
-            'stinken'
+            'stinken',
+            ', article'
         ]
     },
     {
@@ -1290,7 +1297,8 @@ export default [
         tags: [
             'enthalten',
             'über',
-            'sein'
+            'sein',
+            ', article'
         ]
     },
     {
@@ -1335,6 +1343,7 @@ export default [
             'da-',
             'in',
             'hatten',
+            ', article'
         ]
     },
     {
@@ -1346,7 +1355,7 @@ export default [
         tags: [
             'bereiten',
             'auf',
-            'vor'
+            'vor-'
         ]
     },
     {
@@ -1401,6 +1410,8 @@ export default [
         },
         tags: [
             'seit',
+            'vor-',
+            '-bereiten',
             'vorbereiten',
             'in',
             'auf'
@@ -1417,6 +1428,7 @@ export default [
             'in',
             'einsetzen',
             'ein-',
+            '-setzen',
             'werden'
         ]
     },
@@ -1495,6 +1507,7 @@ export default [
         tags: [
             'in',
             'hatten',
+            'vor-',
             'um',
             ', aber',
             'in'
@@ -1621,7 +1634,7 @@ export default [
         text: 'Während die Polizei dort im Einsatz war, forderte sie die Öffentlichkeit über Twitter dringend auf: <Keine Videos oder Bilder von Polizeikräften im Einsatz online stellen. Helft nicht den Tätern!".',
         stubs: [0, 1, 4, 6, 7, 8, 9, 11, 14, 19, 21, 24, 25, 27],
         translations: {
-            eng: 'While the police were deployed there, they strongly urged the public through Twitter: "Place no videos or images online of the deployed police. Do not help the perpetrators!"'
+            eng: 'While the police were deployed there, they strongly urged the public through Twitter: "Place no videos or images online of the deployed police forces. Do not help the perpetrators!"'
         },
         tags: [
             'während',
@@ -1936,6 +1949,427 @@ export default [
             'auf-',
             '-hören',
             'aufhören'
+        ]
+    },
+    {
+        text: 'Politiker benutzen sie auch, um die Meinung des Volkes in umstrittenen Fragen zu beeinflussen oder um für sich Werbung zu machen.',
+        stubs: [1, 4, 5, 7, 9, 10, 12, 13, 15, 16, 17, 19, 20],
+        translations: {
+            eng: 'Politicians also make use of them in order to influence the public\'s opinion in controversial issues or in order to advertise themselves.'
+        },
+        tags: [
+            'be-',
+            '-nutzen',
+            'nutzen',
+            'um zu',
+            'in',
+            'be-',
+            'ein-',
+            '-flussen',
+            'beeinflussen',
+            'für',
+            'machen'
+        ]
+    },
+    {
+        text: 'Sie können auch konstruktiv gebraucht werden.',
+        stubs: [1, 4, 5],
+        translations: {
+            eng: 'They can also be used constructively.'
+        },
+        tags: [
+            'können',
+            'gebraucht',
+            'werden'
+        ]
+    },
+    {
+        text: 'Der Bot sucht und findet zum Beispiel User, die über Korruption klagen. Und dann fragt der Bot die User, wie wir Korruption bekämpfen können.',
+        stubs: [0, 2, 4, 8, 9, ],
+        translations: {
+            eng: 'The bot searches and finds, for example, users who complain about corruption. And then, the bot asks the users how we can fight corruption.'
+        },
+        tags: [
+            'suchen',
+            'finden',
+            'über',
+            'klagen',
+            'fragen',
+            'be-',
+            '-kämpfen',
+            'bekämpfen',
+            ', wie',
+            ', article'
+        ]
+    },
+    {
+        text: 'Sie ist sich sicher, dass solche Aktivistenbots in Zukunft sehr erfolgreich sein werden.',
+        stubs: [1, 2, 3, 4, 5, 7, 11, 12],
+        translations: {
+            eng: 'She is certain that such activist-bots, in the future, will be very successful.'
+        },
+        tags: [
+            ', dass',
+            'in',
+            'werden'
+        ]
+    },
+    {
+        text: 'Er erzählt seinen Kindern eine Geschichte.',
+        stubs: [1, 2, 4],
+        translations: {
+            eng: 'He\'s telling his children a story.'
+        },
+        tags: [
+            'er-',
+            '-zählen',
+            'erzählen',
+            'dative'
+        ]
+    },
+    {
+        text: 'Sie schreibt mir eine E-mail.',
+        stubs: [1, 2, 3],
+        translations: {
+            eng: 'She\'s writing me an email.'
+        },
+        tags: [
+            'schreiben',
+            'dative'
+        ]
+    },
+    {
+        text: 'Er erklärte seiner Frau, warum er ihr ganzes Geld auf dieses Pferd setzte.',
+        stubs: [1, 2, 4, 5, 6, 7, 9, 10, 12],
+        translations: {
+            eng: 'He explained to his wife why he put all her money on this horse.'
+        },
+        tags: [
+            'er-',
+            'erklären',
+            ', warum',
+            'auf',
+            'setzen',
+            'dative'
+        ]
+    },
+    {
+        text: 'Was schenken Sie Ihrem Vater zum Geburtstag?',
+        stubs: [1, 3, 5],
+        translations: {
+            eng: 'What are you (formal) gifting your (formal) father for his birthday?'
+        },
+        tags: [
+            'schenken',
+            'zu',
+            'dative'
+        ]
+    },
+    {
+        text: 'Kannst du das der Polizei beweisen?',
+        stubs: [0, 3, 5],
+        translations: {
+            eng: 'Can you prove that to the police?'
+        },
+        tags: [
+            'können',
+            'be-',
+            '-weisen',
+            'beweisen',
+            'dative'
+        ]
+    },
+    {
+        text: 'Sie glaubt meine Antwort nicht.',
+        stubs: [1, 2],
+        translations: {
+            eng: 'She doesn\'t believe my answer.'
+        },
+        tags: [
+            'glauben',
+            'accusative'
+        ]
+    },
+    {
+        text: 'Sie glaubt mir nicht.',
+        stubs: [1, 2],
+        translations: {
+            eng: 'She doesn\'t believe me.'
+        },
+        tags: [
+            'glauben',
+            'dative'
+        ]
+    },
+    {
+        text: 'Kannst du mir verzeihen?',
+        stubs: [0, 2, 3],
+        translations: {
+            eng: 'Can you forgive me?'
+        },
+        tags: [
+            'können',
+            'ver-',
+            '-zeihen',
+            'verzeihen',
+            'dative'
+        ]
+    },
+    {
+        text: 'Es gibt ein paar Möglichkeiten, wie man einen Bot identifizieren kann.',
+        stubs: [5, 7, 9, 10],
+        translations: {
+            eng: 'There are a few ways that one can identify a bot.',
+        },
+        tags: [
+            ', wie',
+            'identifizieren',
+            'können'
+        ]
+    },
+    {
+        text: 'Es kann passieren, dass Bots die Beliebtheit eines Politikers größer erscheinen lassen.',
+        stubs: [1, 2, 3, 5, 7, 9, 10, 11],
+        translations: {
+            eng: 'It\'s possible for bots to make the popularity of a politician appear larger.'
+        },
+        tags: [
+            'können',
+            'passieren',
+            ', dass',
+            'genitive',
+            'er-',
+            '-scheinen',
+            'erscheinen',
+            'lassen'
+        ]
+    },
+    // {
+    //     text: 'Bots sind für Politiker nützlich, um bei Wahlen Stimmen können zu sammeln.',
+    //     stubs: [2, 4, 5, 6, 9, 10, 11],
+    //     translations: {
+    //         eng: 'Bots are useful for politicians in order to gather'
+    //     }
+    // }
+    {
+        text: 'Die Frage ist, ob in Zukunft nur die Parteien mit den besseren Bots gewinnen werden.',
+        stubs: [3, 4, 7, 9, 10, 11, 13, 14],
+        translations: {
+            eng: 'The question is whether, in the future, only the parties with the best bots will win.',
+        },
+        tags: [
+            ', ob',
+            'ob',
+            'mit',
+            'gewinnen',
+            'werden'
+        ]
+    },
+    {
+        text: 'Bots sind gefährlich, weil sie Diskussionen im Internet stark beeinflussen können.',
+        stubs: [3, 4, 6, 9, 10],
+        translations: {
+            eng: 'Bots are dangerous because they can strongly influence discussions on the internet.'
+        },
+        tags: [
+            ', weil',
+            'weil',
+            'in',
+            'be-',
+            'ein-',
+            'beeinflussen',
+            'können'
+        ]
+    },
+    {
+        text: 'Sie stellt das Glas auf den Tisch.',
+        stubs: [1, 2, 4, 5],
+        translations: {
+            eng: 'She is placing (upright) the glass on the table.'
+        },
+        tags: [
+            'stellen',
+            'auf'
+        ]
+    },
+    {
+        text: 'Das Glas steht auf dem Tisch.',
+        stubs: [0, 2, 3, 4],
+        translations: {
+            eng: 'The glass is (upright) on the table.'
+        },
+        tags: [
+            'stehen',
+            'auf'
+        ]
+    },
+    {
+        text: 'Ich lege die Gabel auf den Tisch.',
+        stubs: [1, 2, 4, 5],
+        translations: {
+            eng: 'I\'m placing (horizontally) the fork on the table'
+        },
+        tags: [
+            'legen',
+            'auf'
+        ]
+    },
+    {
+        text: 'Die Gabel liegt auf dem Tisch.',
+        stubs: [0, 2, 3, 4],
+        translations: {
+            eng: 'The fork is lying on the table.'
+        },
+        tags: [
+            'liegen',
+            'auf'
+        ]
+    },
+    {
+        text: 'Ich hänge den Spiegel an die Wand.',
+        stubs: [1, 2, 4, 5],
+        translations: {
+            eng: 'I\'m hanging the mirror on the wall.'
+        },
+        tags: [
+            'hängen',
+            'an',
+            'accusative'
+        ]
+    },
+    {
+        text: 'Der Spiegel hängt an der Wand.',
+        stubs: [2, 3, 4],
+        translations: {
+            eng: 'The mirror is hanging on the wall.'
+        },
+        tags: [
+            'hängen',
+            'an',
+            'dative'
+        ]
+    },
+    {
+        text: 'Sie ist sauer auf er, denn er hat ihr etwas verheimlicht.',
+        stubs: [3, 4, 5, 6, 7, 8, 10],
+        translations: {
+            eng: 'She is mad at him because he had kept a secret from her.'
+        },
+        tags: [
+            'accusative',
+            'pronoun-accusative',
+            'dative',
+            'pronoun-dative',
+            'auf',
+            'ver-',
+            '-heimlichen',
+            'verheimlichen',
+            ', denn'
+        ]
+    },
+    {
+        text: 'Er hat ihr nicht erzählt, dass sie seine Ex-Freundin ist.',
+        stubs: [2, 4, 5, 7, 9],
+        translations: {
+            eng: 'He hadn\'t told her that she is his ex-girlfriend.'
+        },
+        tags: [
+            'dative',
+            'pronoun-dative',
+            'er-',
+            '-zählen',
+            'erzählen',
+            ', dass'
+        ]
+    },
+    {
+        text: 'Es gibt etwas, das er ihr nicht gesagt hat.',
+        stubs: [3, 4, 5, 7, 8],
+        translations: {
+            eng: 'There is something that he hasn\'t told her'
+        },
+        tags: [
+            'dative',
+            'pronoun-dative',
+            'sagen',
+            ', article'
+        ]
+    },
+    {
+        text: 'Ihr Vater hat sie als Fotografin für das Projekt empfohlen!',
+        stubs: [0, 3, 4, 6, 7, 9],
+        translations: {
+            eng: 'Her father has chosen her as the photographer for the project.'
+        },
+        tags: [
+            'accusative',
+            'pronoun-accusative',
+            'für',
+            'als',
+            'empfohlen',
+            'emp-',
+            '-fohlen'
+        ]
+    },
+    {
+        text: 'Die anderen wissen nicht, dass sie seine Tochter ist. Und sie möchte es ihnen auf keinen Fall erzählen.',
+        stubs: [1, 4, 5, 6, 13, 14, 15, 17],
+        translations: {
+            eng: 'The others don\'t know that she is his daughter. And she doesn\'t want to tell them on any account.'
+        },
+        tags: [
+            'dative',
+            'pronoun-dative',
+            ', dass',
+            'auf',
+            'er-',
+            '-zählen',
+            'erzählen'
+        ]
+    },
+    {
+        text: 'Sie hat ihm nicht gleich gesagt, dass sie schwanger ist.',
+        stubs: [2, 4, 5, 6],
+        translations: {
+            eng: 'She hasn\'t already told him that she\'s pregnant.'
+        },
+        tags: [
+            'sagen',
+            'pronoun',
+            'pronoun-dative',
+            ', dass',
+            'gleich'
+        ]
+    },
+    {
+        text: 'Es tut ihm leid, dass er nicht gleich für sie da war.',
+        stubs: [2, 4, 8, 9, 11],
+        translations: {
+            eng: 'He\'s sorry that he wasn\'t there for her sooner.'
+        },
+        tags: [
+            ', dass',
+            'pronoun',
+            'pronoun-dative',
+            'für',
+            'war',
+            'gleich'
+        ]
+    },
+    {
+        text: 'Sie werden nie die Woche vergessen, die sie danach krank im Bett verbracht haben.',
+        stubs: [1, 5, 6, 8, 10, 12],
+        translations: 'They\'ll never forget the week they spent sick in bed after that.',
+        tags: [
+            'werden',
+            'ver-',
+            '-gessen',
+            'vergessen',
+            ', article',
+            'da-',
+            'in',
+            '-brachen',
+            'verbrachen'
         ]
     }
 ];

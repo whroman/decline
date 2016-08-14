@@ -3,12 +3,19 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const exercises = verbsWithPrepositions
-    .filter((exercise) => (
-        exercise.tags.includes('stellen') ||
-        exercise.tags.includes('-stellen') ||
-        exercise.tags.includes('liegen') ||
-        exercise.tags.includes('-liegen')
+const verbs = [
+    'stellen',
+    '-stellen',
+    'stehen',
+    '-stehen',
+    'liegen',
+    '-liegen',
+    'legen',
+    '-legen'
+];
+
+const exercises = verbsWithPrepositions.filter((exercise) => verbs.some(
+        (item) => exercise.tags.includes(item)
     ));
 
 export default function () {

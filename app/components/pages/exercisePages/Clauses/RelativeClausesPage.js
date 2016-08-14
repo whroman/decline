@@ -3,15 +3,13 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const prefixes = ['er-', 'ver-'];
+const item = ', article';
 
-const exercises = verbsWithPrepositions.filter((exercise) => prefixes.some(
-        (item) => exercise.tags.includes(item)
-    ));
+const exercises = verbsWithPrepositions.filter((exercise) => exercise.tags.includes(item));
 
 export default function () {
     const props = {
-        title: '"er-", "vor", "ver-" Prefixes',
+        title: 'Relative Clauses',
         exercises: presentVerbExercises(exercises)
     };
     return (<VerbBasePage { ...props } />);

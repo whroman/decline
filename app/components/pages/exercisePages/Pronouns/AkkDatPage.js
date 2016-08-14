@@ -3,15 +3,18 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const prefixes = ['er-', 'ver-'];
+const pronouns = [
+    'pronoun-dative',
+    'pronoun-accusative'
+];
 
-const exercises = verbsWithPrepositions.filter((exercise) => prefixes.some(
+const exercises = verbsWithPrepositions.filter((exercise) => pronouns.some(
         (item) => exercise.tags.includes(item)
     ));
 
 export default function () {
     const props = {
-        title: '"er-", "vor", "ver-" Prefixes',
+        title: 'Accussative and Dative Pronouns',
         exercises: presentVerbExercises(exercises)
     };
     return (<VerbBasePage { ...props } />);
