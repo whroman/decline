@@ -53,7 +53,7 @@ export default [
     },
     {
         name: 'Stellen, Stehen, Liegen, Legen',
-        path: '/practice/verbs/stellen-liegen',
+        path: '/practice/verbs/stellen-stehen-liegen-legen',
         component: StellenPage
     },
     {
