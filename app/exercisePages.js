@@ -9,6 +9,8 @@ import SubordinatingPage from './components/pages/exercisePages/Conjunctions/Sub
 import DaAdverbsPage from './components/pages/exercisePages/Adverbs/DaAdverbsPage';
 import WieAlsPage from './components/pages/exercisePages/Adverbs/WieAlsPage';
 import LassenPage from './components/pages/exercisePages/Verbs/LassenPage';
+import StellenPage from './components/pages/exercisePages/Verbs/StellenPage';
+import ErVerPage from './components/pages/exercisePages/Prefixes/ErVerPage';
 import CristinaVocabPage from './components/pages/exercisePages/Vocab/CristinaVocabPage';
 
 export default [
@@ -48,6 +50,11 @@ export default [
         component: LassenPage
     },
     {
+        name: 'Uses of "stellen" & "liegen"',
+        path: '/practice/verbs/stellen-liegen',
+        component: StellenPage
+    },
+    {
         name: 'Subordinating Conjunctions',
         path: '/practice/conjugations/subordinating',
         component: SubordinatingPage
@@ -66,6 +73,11 @@ export default [
         name: 'Werden, Worden, Geworden, War',
         path: '/vocab/verbs/werden',
         component: WerdenPage
+    },
+    {
+        name: '"er-" & "ver-" Prefixes',
+        path: '/vocab/prefixes/er-ver',
+        component: ErVerPage
     },
     {
         name: 'Vocab for Cristina',

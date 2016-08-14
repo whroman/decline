@@ -321,14 +321,15 @@ export default [
     },
     {
         text: 'Ich wollte die Blumen auf das Fensterbrett stellen.',
-        stubs: [4, 5, 7],
+        stubs: [1, 2, 4, 5, 7],
         translations: {
             eng: 'I wanted to put the flowers on the windowsill.'
         },
         tags: [
             'stellen',
             'auf',
-            'wollen'
+            'wollen',
+            'wollten'
         ]
     },
     {
@@ -421,7 +422,7 @@ export default [
         text: 'Wussten Sie schon, dass Sie in Berlin nie weiter als 500 Meter von der nächsten Haltestelle, dem nächsten Bahnhof oder der nächsten Station entfernt sind?',
         stubs: [0, 3, 5, 9, 12, 13, 16, 20, 23, 24],
         translations: {
-            eng: 'Did you (formal) know that in Berlin you are never more than 500 meters from the next bus stop, the next rail station or the train station?'
+            eng: 'Did you (formal) already know that in Berlin you are never more than 500 meters from the next bus stop, the next rail station or the train station?'
         },
         tags: [
             'entfernen',
@@ -622,7 +623,7 @@ export default [
     },
     {
         text: 'Beim Abflug wird der komplette Stechapparat mit der Giftblase aus dem Hinterleib der Biene herausgerissen.',
-        stubs: [0, 2, 6, 7, 9, 10, 12, 14],
+        stubs: [0, 2, 3, 4, 6, 7, 9, 10, 12, 14],
         translations: {
             eng: 'On departure, the entire stinging apparatus, along with the poison sac, is torn out of the abdomen of the bee.'
         },
@@ -654,7 +655,8 @@ export default [
         },
         tags: [
             'sein',
-            'in'
+            'in',
+            'gewesen'
         ]
     },
     {
@@ -671,7 +673,7 @@ export default [
     },
     {
         text: 'Er ist schüchtern geworden.',
-        stubs: [1, 4],
+        stubs: [1, 3],
         translations: {
             eng: 'He has become timid.'
         },
@@ -757,7 +759,7 @@ export default [
         text: 'Haben Sie das Auto gekauft?',
         stubs: [0, 2, 4],
         translations: {
-            eng: 'Did you (formal) buy a car?'
+            eng: 'Did you (formal) buy the car?'
         },
         tags: [
             'haben',
@@ -1619,7 +1621,7 @@ export default [
         text: 'Während die Polizei dort im Einsatz war, forderte sie die Öffentlichkeit über Twitter dringend auf: <Keine Videos oder Bilder von Polizeikräften im Einsatz online stellen. Helft nicht den Tätern!".',
         stubs: [0, 1, 4, 6, 7, 8, 9, 11, 14, 19, 21, 24, 25, 27],
         translations: {
-            eng: 'While the police were deployed there, they urged the public through Twitter: "Place no videos or images online of the deployed police. Do not help the perpetrators!"'
+            eng: 'While the police were deployed there, they strongly urged the public through Twitter: "Place no videos or images online of the deployed police. Do not help the perpetrators!"'
         },
         tags: [
             'während',
@@ -1637,13 +1639,13 @@ export default [
         text: 'Sowohl Bürger als auch Medien stellten weiter Bilder ins Internet oder sendeten sie live.',
         stubs: [0, 2, 5, 8, 11, 12],
         translations: {
-            eng: 'Both citizens and also the media continued to place images on the Internet or to broadcast them.'
+            eng: 'Both citizens and also the media continued to place images on the Internet or to broadcast them live.'
         },
         tags: [
             'sowohl',
             'als',
-            'stellten',
-            'sendeten',
+            'stellen',
+            'senden',
             'in'
         ]
     },
@@ -1651,7 +1653,7 @@ export default [
         text: 'Besonders die Medien stehen bei solchen Ereignissen wie in München unter gewaltigem Druck.',
         stubs: [3, 4, 5, 7, 8, 10, 11],
         translations: {
-            eng: 'In particular, the media is under huge pressure in such incidents as in Munich.'
+            eng: 'In particular, the media is, in such incidents as in Munich, under huge pressure.'
         },
         tags: [
             'stehen',
@@ -1665,7 +1667,7 @@ export default [
         text: 'Erst später stellte sich heraus, dass es der Amoklauf eines einzelnen Täters gewesen war.',
         stubs: [2, 3, 4, 5, 9, 10, 12, 13],
         translations: {
-            eng: 'Only later did it turn out that it had been the rampage of a single perpetrator.'
+            eng: 'Not until later did it turn out that it had been the rampage of a single perpetrator.'
         },
         tags: [
             'herausstellen',
@@ -1689,7 +1691,9 @@ export default [
             ', dass',
             'zu',
             'besorgen',
+            'be-',
             'erfüllen',
+            'er-',
             'können'
         ]
     },
@@ -1704,23 +1708,6 @@ export default [
             'zu',
             'zeigen',
             'von'
-        ]
-    },
-    {
-        text: 'Laut Polizei darf man bestimmte Videos und Bilder nicht ins Internet stellen, weil sie den Tätern helfen können.',
-        stubs: [0, 2, 4, 9, 11, 12, 13, 14, 16, 17],
-        translations: {
-            eng: 'According to police, one should not post specific videos or images on the internet because they could help the perpetrators.'
-        },
-        tags: [
-            'laut',
-            'dürfen',
-            'in',
-            'stellen',
-            'weil',
-            ', weil',
-            'helfen',
-            'können'
         ]
     },
     {
@@ -1822,10 +1809,10 @@ export default [
         ]
     },
     {
-        text: 'Ich gehe nach Hause, weil ich nicht nass werde möchte.',
+        text: 'Ich gehe nach Hause, weil ich nicht nass werden möchte.',
         stubs: [1, 2, 4, 8, 9],
         translations: {
-            eng: 'I\'m going home because I don\'t want to get wet'
+            eng: 'I\'m going home because I wouldn\'t like to get wet.'
         },
         tags: [
             'gehen',
@@ -1857,6 +1844,98 @@ export default [
         },
         tags: [
             'worden'
+        ]
+    },
+    {
+        text: 'Die Berichterstattung während des Amoklaufs in München wurde stark kritisiert.',
+        stubs: [2, 3, 5, 7, 9],
+        translations: {
+            eng: 'The news coverage during the rampage in Munich has been heavily criticized.'
+        },
+        tags: [
+            'in',
+            'wurden',
+            'kritisieren'
+        ]
+    },
+    {
+        text: 'Mein Opa hat seine Brille verlegt.',
+        stubs: [0, 2, 3, 5],
+        translations: {
+            eng: 'My grandpa misplaced his glasses.'
+        },
+        tags: [
+            'ver-',
+            'verlegen'
+        ]
+    },
+    {
+        text: 'Wann stehst du normalerweise auf?',
+        stubs: [0, 1, 4],
+        translations: {
+            eng: 'When do you normally wake up?'
+        },
+        tags: [
+            'auf-',
+            '-stehen',
+            'aufstehen'
+        ]
+    },
+    {
+        text: 'Ich habe dort meine Tante besucht.',
+        stubs: [0, 1, 3, 5],
+        translations: {
+            eng: 'I was visiting my aunt there.'
+        },
+        tags: [
+            'haben',
+            'be-',
+            '-suchen',
+            'besuchen'
+        ]
+    },
+    {
+        text: 'Gestern habe ich mich erkältet.',
+        stubs: [1, 3, 4],
+        translations: {
+            eng: 'Yesterday I caught a cold'
+        },
+        tags: [
+            'haben',
+            'er-',
+            '-kälten',
+            'erkälten',
+            'sich'
+        ]
+    },
+    {
+        text: 'Wen wollt ihr zur Party einladen?',
+        stubs: [0, 1, 2, 3, 5],
+        translations: {
+            eng: 'Who do you (plural) want to invite to the party?'
+        },
+        tags: [
+            'wen',
+            'wollen',
+            'ihr',
+            'zu',
+            'ein-',
+            '-laden',
+            'einladen'
+        ]
+    },
+    {
+        text: 'Leider muss ich mit meinem Yogakurs aufhören.',
+        stubs: [1, 3, 4, 6],
+        translations: {
+            eng: 'Unfortunately I have to quit my yoga class.'
+        },
+        tags: [
+            'müssen',
+            'mit',
+            'auf-',
+            '-hören',
+            'aufhören'
         ]
     }
 ];
