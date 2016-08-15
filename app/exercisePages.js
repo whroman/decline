@@ -52,8 +52,8 @@ export default [
         component: LassenPage
     },
     {
-        name: 'Stellen, Stehen, Liegen, Legen',
-        path: '/practice/verbs/stellen-stehen-liegen-legen',
+        name: 'Stellen, Stehen, Legen, Liegen',
+        path: '/practice/verbs/stellen-stehen-legen-liegen',
         component: StellenPage
     },
     {

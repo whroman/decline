@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --config tasks/dev.webpack.config.js",
     "build": "webpack --progress --config tasks/build.webpack.config.js",
-    "test": "mocha --compilers js:babel-register $(find ./generator ./app -name '*.spec.js')",
+    "test": "mocha --compilers js:babel-register $(find ./generator ./app ./tables -name '*.spec.js')",
     "test:watch": "npm test -- --watch",
     "tdd": "npm run test:watch",
     "lint": "npm run lint:client && npm run lint:specs",

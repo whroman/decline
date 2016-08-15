@@ -20,7 +20,7 @@ const exercises = verbsWithPrepositions.filter((exercise) => verbs.some(
 
 export default function () {
     const props = {
-        title: 'Uses of "stellen", "stehen", "liegen", "legen"',
+        title: 'Uses of "stellen", "stehen", "legen", "liegen"',
         exercises: presentVerbExercises(exercises)
     };
     return (<VerbBasePage { ...props } />);

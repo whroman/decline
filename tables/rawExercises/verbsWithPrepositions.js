@@ -122,6 +122,7 @@ export default [
             eng: 'She has spoken of you'
         },
         tags: [
+            'past-participle',
             'sprechen',
             'von',
             'haben'
@@ -146,6 +147,7 @@ export default [
             eng: 'I was looking forward to my new life.'
         },
         tags: [
+            'past-participle',
             'freuen',
             'auf',
             'sich',
@@ -159,6 +161,7 @@ export default [
             eng: 'An acquaintance helped me with the house hunting.'
         },
         tags: [
+            'past-participle',
             'helfen',
             'bei'
         ]
@@ -339,6 +342,7 @@ export default [
             eng: 'The crayons fell to the ground.'
         },
         tags: [
+            'past-participle',
             'fallen',
             'auf',
             'sein'
@@ -398,6 +402,7 @@ export default [
             eng: 'The Persians even believed that Earth hatched from a giant egg.'
         },
         tags: [
+            'past-participle',
             'schlüpfen',
             'aus',
             'dass'
@@ -527,6 +532,7 @@ export default [
             eng: 'He died of a heart attack.'
         },
         tags: [
+            'past-participle',
             'sterben',
             'an',
             'sein'
@@ -550,6 +556,7 @@ export default [
             eng: 'He broke up with his girlfriend.'
         },
         tags: [
+            'past-participle',
             'trennen',
             'von',
             'haben',
@@ -645,6 +652,7 @@ export default [
             eng: 'I have often been asked.'
         },
         tags: [
+            'past-participle',
             'fragen',
             'sein',
             'worden'
@@ -657,6 +665,7 @@ export default [
             eng: 'I have been in Germany.'
         },
         tags: [
+            'past-participle',
             'sein',
             'in',
             'gewesen'
@@ -669,6 +678,7 @@ export default [
             eng: 'My mother stayed with us for a long time.'
         },
         tags: [
+            'past-participle',
             'sein',
             'bleiben',
             'bei'
@@ -681,6 +691,7 @@ export default [
             eng: 'He has become timid.'
         },
         tags: [
+            'past-participle',
             'sein',
             'geworden'
         ]
@@ -692,6 +703,7 @@ export default [
             eng: 'We danced through the hall.'
         },
         tags: [
+            'past-participle',
             'sein',
             'durch',
             'tanzen'
@@ -704,6 +716,7 @@ export default [
             eng: 'We danced in the hall the whole night.'
         },
         tags: [
+            'past-participle',
             'haben',
             'in',
             'tanzen'
@@ -729,6 +742,7 @@ export default [
             eng: 'The relatives quarreled.'
         },
         tags: [
+            'past-participle',
             'zanken',
             'haben',
             'sich'
@@ -741,6 +755,7 @@ export default [
             eng: 'I traveled to Italy.'
         },
         tags: [
+            'past-participle',
             'sein',
             'nach',
             'reisen'
@@ -753,6 +768,7 @@ export default [
             eng: 'He showered.'
         },
         tags: [
+            'past-participle',
             'haben',
             'sich',
             'duschen'
@@ -765,6 +781,7 @@ export default [
             eng: 'Did you (formal) buy the car?'
         },
         tags: [
+            'past-participle',
             'haben',
             'kaufen'
         ]
@@ -854,6 +871,7 @@ export default [
             eng: 'They must have carried me home.'
         },
         tags: [
+            'past-participle',
             'haben',
             'sagen',
             'dürfen',
@@ -1003,6 +1021,7 @@ export default [
             eng: 'We went home because we couldn\'t buy any tickets.'
         },
         tags: [
+            'past-participle',
             'sein',
             'gehen',
             'weil',
@@ -1205,6 +1224,7 @@ export default [
             eng: 'She left her book at the office.'
         },
         tags: [
+            'past-participle',
             'lassen',
             'in',
             'haben'
@@ -1234,7 +1254,7 @@ export default [
     },
     {
         text: 'Lassen Sie uns wissen, wie es Ihnen geht.',
-        stubs: [0, 3, 6, 7],
+        stubs: [0, 3, 4, 6, 7],
         translations: {
             eng: 'Let us know how you\'re doing.'
         },
@@ -1961,6 +1981,7 @@ export default [
             'be-',
             '-nutzen',
             'nutzen',
+            ', preposition',
             'um zu',
             'in',
             'be-',
@@ -2145,12 +2166,12 @@ export default [
         ]
     },
     // {
-    //     text: 'Bots sind für Politiker nützlich, um bei Wahlen Stimmen können zu sammeln.',
+    //     text: 'Bots sind für Politiker nützlich, um bei Wahlen Stimmen sammeln zu können.',
     //     stubs: [2, 4, 5, 6, 9, 10, 11],
     //     translations: {
-    //         eng: 'Bots are useful for politicians in order to gather'
+    //         eng: 'Bots are useful for politicians in order to gather votes in elections.'
     //     }
-    // }
+    // },
     {
         text: 'Die Frage ist, ob in Zukunft nur die Parteien mit den besseren Bots gewinnen werden.',
         stubs: [3, 4, 7, 9, 10, 11, 13, 14],
@@ -2359,7 +2380,9 @@ export default [
     {
         text: 'Sie werden nie die Woche vergessen, die sie danach krank im Bett verbracht haben.',
         stubs: [1, 5, 6, 8, 10, 12],
-        translations: 'They\'ll never forget the week they spent sick in bed after that.',
+        translations: {
+            eng: 'They\'ll never forget the week they spent sick in bed after that.',
+        },
         tags: [
             'werden',
             'ver-',
@@ -2370,6 +2393,632 @@ export default [
             'in',
             '-brachen',
             'verbrachen'
+        ]
+    },
+    {
+        text: 'Sie hat sich verliebt: in jemanden, den sie noch nie gesehen hat.',
+        stubs: [1, 2, 3, 4, 5, 6, 10, 11],
+        translations: {
+            eng: 'She has fallen in love with someone that she has never seen.'
+        },
+        tags: [
+            'sich',
+            'ver-',
+            '-lieben',
+            'verlieben',
+            'in',
+            ', article',
+            'sehen'
+        ]
+    },
+    {
+        text: 'Können Sie vielleicht auch ein Foto von mir machen?',
+        stubs: [4, 6, 7, 8],
+        translations: {
+            eng: "Can you (formal) take a picture of me?"
+        },
+        tags: [
+            'von',
+            'pronoun-dative',
+            'machen'
+        ]
+    },
+    {
+        text: 'Sie ist gerade in Köln angekommen und findet die Stadt sehr schön.',
+        stubs: [3, 5, 7, 8],
+        translations: {
+            eng: 'She has just arrived in Cologne and found the city very nice.'
+        },
+        tags: [
+            'in',
+            'an-',
+            '-kommen',
+            'ankommen',
+            'finden'
+        ]
+    },
+    {
+        text: 'Hier merkt sie, dass auch in Deutschland nicht alle Leute freundlich sind.',
+        stubs: [3, 5, 11],
+        translations: {
+            eng: 'Here she takes note that, also in Germany, not all people are friendly.'
+        },
+        tags: [
+            'merken',
+            ', dass',
+            'in'
+        ]
+    },
+    {
+        text: 'Aber sie ist froh, dass ihr Geld nicht weg ist.',
+        stubs: [0, 1, 2, 4, 5, 8, 9],
+        translations: {
+            eng: 'But she\'s happy that her money isn\'t gone.'
+        },
+        tags: [
+            ', dass',
+            ', aber'
+        ]
+    },
+    {
+        text: 'Danach nimmt sie ein Taxi, weil sie eine Verabredung hat.',
+        stubs: [0, 1, 3, 5, 7, 9],
+        translations: {
+            eng: 'After that, she takes a taxi because she has an appointment.'
+        },
+        tags: [
+            'da-',
+            'nehmen',
+            ', weil'
+        ]
+    },
+    {
+        text: 'Auch der Taxifahrer muss um fünf zu Hause sein.',
+        stubs: [3, 4, 6, 8],
+        translations: {
+            eng: 'The taxi-driver also needs to be home in five.'
+        },
+        tags: [
+            'müssen',
+            'um',
+            'zu',
+            'sein'
+        ]
+    },
+    {
+        text: 'Wir haben den Zug genommen',
+        stubs: [1, 2, 4],
+        translations: {
+            eng: 'We took the train.',
+            spa: 'Hemos tomado el tren.'
+        },
+        tags: [
+            'nehmen',
+            'past-participle',
+            'haben'
+        ]
+    },
+    {
+        text: 'Jemand hat das Geld gefunden.',
+        stubs: [0, 1, 4],
+        translations: {
+            eng: 'Someone found the money.',
+            spa: 'Alguien ha encontrado el dinero.'
+        },
+        tags: [
+            'jemand',
+            'past-participle',
+            'finden',
+            'haben'
+        ]
+    },
+    {
+        text: 'Niemand hat mir geholfen',
+        stubs: [1, 3],
+        translations: {
+            eng: 'Noone helped me.',
+            spa: 'Nadie me ha ayudado'
+        },
+        tags: [
+            'niemand',
+            'haben',
+            'past-participle',
+            'helfen'
+        ]
+    },
+    {
+        text: 'Das Wetter ist besser geworden.',
+        stubs: [2, 4],
+        translations: {
+            eng: 'The weather\'s improved.',
+            spa: 'El clima ha mejorado.'
+        },
+        tags: [
+            'sein',
+            'past-participle',
+            'geworden'
+        ]
+    },
+    {
+        text: 'Ich habe mir den Film angesehen.',
+        stubs: [1, 2, 3, 5],
+        translations: {
+            eng: 'I saw the Film.',
+            spa: 'He visto la pelicula.'
+        },
+        tags: [
+            'sich',
+            'haben',
+            'past-participle',
+            'an-',
+            '-sehen',
+            'ansehen'
+        ]
+    },
+    {
+        text: 'Sie haben die Kinder nicht mitgenommen.',
+        stubs: [1, 2, 5],
+        translations: {
+            eng: 'They haven\'t taken the kids with them.'
+        },
+        tags: [
+            'haben',
+            'past-participle',
+            'mit-',
+            '-nehmen',
+            'mitnehmen'
+        ]
+    },
+    {
+        text: 'Er hat einfach weitergeschrieben.',
+        stubs: [1, 3],
+        translations: {
+            eng: 'He has simply continued writing.',
+            spa: 'Él simplemente ha continuado escribiendo.'
+        },
+        tags: [
+            'haben',
+            'weiter-',
+            '-schreiben',
+            'weiterschreiben',
+            'past-participle'
+        ]
+    },
+    {
+        text: 'Wir haben den Brief gestern bekommen.',
+        stubs: [1, 2, 5],
+        translations: {
+            eng: 'We received the letter yesterday.',
+            spa: 'Recibimos la carta ayer.'
+        },
+        tags: [
+            'haben',
+            'past-participle',
+            'be-',
+            '-kommen',
+            'bekommen'
+        ]
+    },
+    {
+        text: 'Wir haben uns lange unterhalten.',
+        stubs: [1, 5],
+        translations: {
+            eng: 'We talked for a long time.',
+            spa: 'Hemos conversado durante mocho tiempo.'
+        },
+        tags: [
+            'sich',
+            'haben',
+            'unter-',
+            '-halten',
+            'unterhalten',
+            'past-participle'
+        ]
+    },
+    {
+        text: 'Der Artzt hat mir das Rauchen verboten',
+        stubs: [2, 3, 6],
+        translations: {
+            eng: 'The doctor has forbidden me from smoking.',
+            spa: 'El médico me ha prohibido fumar.'
+        },
+        tags: [
+            'haben',
+            'verbieten',
+            'ver-',
+            '-bieten',
+            'past-participle'
+
+        ]
+    },
+    {
+        text: 'Am Wochenende sind wir in die Berge gefahren.',
+        stubs: [0, 2, 4, 5, 7],
+        translations: {
+            eng: 'On the weekend we went to the mountains.',
+            spa: 'Durante el fin de semana hemos ido a la montaña.'
+
+        },
+        tags: [
+            'an',
+            'sein',
+            'past-participle',
+            'in',
+            'fahren'
+        ]
+    },
+    {
+        text: 'Der Zug ist mit Verspätung abgefahren.',
+        stubs: [2, 3, 5],
+        translations: {
+            eng: 'The train departed with a delay.',
+            spa: 'El tren ha salido con retraso.'
+        },
+        tags: [
+            'sein',
+            'past-participle',
+            'mit',
+            'ab-',
+            '-fahren',
+            'abfahren'
+        ]
+    },
+    {
+        text: 'Heute sind nicht viele Schüler gekommen.',
+        stubs: [1, 3, 5],
+        translations: {
+            eng: 'Today not many kids have come.',
+            spa: 'Hoy no han venido muchos alumnos.'
+
+        },
+        tags: [
+            'sein',
+            'past-participle',
+            'kommen'
+        ]
+    },
+    {
+        text: 'Die Kinder sind nicht mitgekommen.',
+        stubs: [2, 4],
+        translations: {
+            eng: 'The kids didn\'t come along.',
+            spa: 'Los niños no han venido.'
+        },
+        tags: [
+            'sein',
+            'past-participle',
+            'mit-',
+            '-kommen',
+            'mitkommen'
+        ]
+    },
+    {
+        text: 'Wir sind um den ganzen See gelaufen.',
+        stubs: [1, 2, 3, 4, 6],
+        translations: {
+            eng: 'We ran around the entire lake.',
+            spa: 'Hemos corrido alrededor de todo el lago.'
+        },
+        tags: [
+            'sein',
+            'um',
+            'laufen',
+            'past-participle'
+        ]
+    },
+    {
+        text: 'Oma ist die Treppe hinuntergefallen.',
+        stubs: [1, 2, 4],
+        translations: {
+            eng: 'Grandma fell down the stairs.'
+        },
+        tags: [
+            'sein',
+            'past-participle',
+            'hin-',
+            'unter-',
+            'fallen',
+            'hinunterfallen'
+        ]
+    },
+    {
+        text: 'Gestern sind wir ins Theater gegangen.',
+        stubs: [1, 2, 3, 5],
+        translations: {
+            eng: 'Yesterday we went to the theater.',
+            spa: 'Ayer fuimos al teatro.'
+        },
+        tags: [
+            'sein',
+            'in',
+            'gehen',
+            'past-participle'
+        ]
+    },
+    {
+        text: 'Er ist um 6 Uhr aufgestanden.',
+        stubs: [1, 2, 5],
+        translations: {
+            eng: 'He woke up at 6 am.',
+            spa: 'Él se ha levantado a las 6.'
+        },
+        tags: [
+            'sein',
+            'um',
+            'auf-',
+            '-stehen',
+            'aufstehen',
+            'past-participle'
+        ]
+    },
+    {
+        text: 'Wir sind ihm im Park begegnet.',
+        stubs: [1, 2, 3, 5],
+        translations: {
+            eng: 'We came across each other at the park.',
+            spa: 'Le hemos encontrado (casualmente) en el parque.'
+        },
+        tags: [
+            'sein',
+            'past-participle',
+            'in',
+            'pronoun-dative',
+            'begegnen'
+        ]
+    },
+    {
+        text: 'Die Gruppe ist nach Buenos Aires geflogen.',
+        stubs: [2, 3, 6],
+        translations: {
+            eng: 'The group flew to Buenos Aires.',
+            spa: 'El grupo ha volado a Buenos Aires.'
+        },
+        tags: [
+            'sein',
+            'past-participle',
+            'fliegen',
+            'nach'
+        ]
+    },
+    {
+        text: 'Früher sind wir gern gereist.',
+        stubs: [1, 4],
+        translations: {
+            eng: 'We used to enjoy traveling.',
+            spa: 'Antes nos gustaba mucho viajar.'
+        },
+        tags: [
+            'sein',
+            'reisen',
+            'past-participle'
+        ]
+    },
+    {
+        text: 'Ich bin um 3 Uhr eingeschlafen.',
+        stubs: [1, 2, 5],
+        translations: {
+            eng: 'I fell asleep at 3 am.'
+        },
+        tags: [
+            'sein',
+            'past-participle',
+            'ein-',
+            '-schlafen',
+            'einschlafen',
+            'um'
+        ]
+    },
+    {
+        text: 'Wir sind um 11 Uhr aufgewacht.',
+        stubs: [1, 2, 5],
+        translations: {
+            eng: 'I woke up at 11 am.'
+        },
+        tags: [
+            'auf-',
+            '-wachen',
+            'aufwachen',
+            'sein',
+            'past-participle',
+            'um'
+        ]
+    },
+    {
+        text: 'Das Unkraut ist schnell gewachsen.',
+        stubs: [2, 4],
+        translations: {
+            eng: 'The weed grew quickly.'
+        },
+        tags: [
+            'sein',
+            'wachsen',
+            'past-participle'
+        ]
+    },
+    {
+        text: 'Im letzten Jahr ist hier ein neuer Stadtteil entstanden.',
+        stubs: [0, 1, 3, 5, 6, 8],
+        translations: {
+            eng: 'In the last year a new city district was developed.'
+        },
+        tags: [
+            'sein',
+            'past-participle',
+            'ent-',
+            '-stehen',
+            'entstehen',
+            'in'
+        ]
+    },
+    {
+        text: 'Fast jeder Nutzer eines sozialen Netzwerkes begegnet irgendwann Bots – das sind Programme, die ohne menschliche Hilfe funktionieren.',
+        stubs: [1, 3, 4, 6, 7, 10, 13, 15, 17],
+        translations: {
+            eng: 'Almost every user of a social network eventually encounters bots - which are programs that work without human assistance.'
+        },
+        tags: [
+            'jede',
+            'begegnen',
+            'irgend-',
+            ', article',
+            'funktionieren'
+        ]
+    },
+    {
+        text: 'Meist werden sie für Werbung genutzt, doch mittlerweile sind Bots auch bei Politikern beliebt.',
+        stubs: [1, 3, 5, 6, 7, 11, 13],
+        translations: {
+            eng: 'Most are used for advertisement, but by now Bots are also favored by politicians.'
+        },
+        tags: [
+            'werden',
+            'für',
+            'nutzen',
+            'past-participle',
+            'bei'
+        ]
+    },
+    {
+        text: 'Wenn ein User in deinem Netzwerk tausende Follower zu haben scheint, aber selbst nur einer Person folgt, dann ist es wahrscheinlich ein Bot.',
+        stubs: [0, 1, 3, 4, 8, 9, 10, 11, 14, 16, 17, 18, 19, 21],
+        translations: {
+            eng: 'If a user in your network appears to have thousands of followers, but it only follows one person, then it is probably a bot.'
+        },
+        tags: [
+            ', wenn',
+            'in',
+            'zu',
+            'haben',
+            'scheinen',
+            ', aber',
+            'folgen',
+            ', dann'
+        ]
+    },
+    {
+        text: 'Automatisierte Accounts können als Follower die Unterstützung eines Politikers höher erscheinen lassen, als sie tatsächlich ist.',
+        stubs: [0, 2, 3, 5, 7, 9, 10, 11, 12, 13, 15],
+        translations: {
+            eng: 'Automated accounts can, as a follower, make the support of a politician appear larger than it really is.'
+        },
+        tags: [
+            'können',
+            'als',
+            ', als',
+            'comparative-adj',
+            'er-',
+            '-scheinen',
+            'erscheinen'
+        ]
+    },
+    {
+        text: 'Es gibt aber einige Hinweise, mit denen man sie identifizieren kann.',
+        stubs: [2, 3, 5, 6, 8, 9, 10],
+        translations: {
+            eng: 'But there are some clues with which one can identify them.'
+        },
+        tags: [
+            'aber',
+            ', preposition',
+            'identifizieren',
+            'können'
+        ]
+    },
+    {
+        text: 'Sie nutzt sie, um die Bürger politisch zu mobilisieren.',
+        stubs: [1, 3, 4, 7, 8],
+        translations: {
+            eng: 'She uses them in order to politically mobilize citizens.'
+        },
+        tags: [
+            'nutzen',
+            ', preposition',
+            'mobilisieren',
+            'um zu'
+        ]
+    },
+    {
+        text: 'Bots benutzt man nicht nur in der Werbung, sondern auch in der Politik.',
+        stubs: [1, 5, 6, 8, 10, 11],
+        translations: {
+            eng: 'Bots are used not only in advertisement but also in politics.'
+        },
+        tags: [
+            'be-',
+            '-nutzen',
+            'benutzen',
+            'in',
+            ', sondern'
+        ]
+    },
+    {
+        text: 'Wird in Zukunft etwa nur noch der Politiker mit den besten Bots gewählt?',
+        stubs: [0, 1, 6, 8, 9, 10, 11],
+        translations: {
+            eng: 'In the future will, for instance, only the politicians with the best bots be elected?'
+        },
+        tags: [
+            'werden',
+            'in',
+            'mit',
+            'wählen',
+            'past-participle'
+        ]
+    },
+    {
+        text: 'Manche Wissenschaftler glauben nicht, dass man mit den automatisierten Accounts die Meinung des Volkes verändern kann.',
+        stubs: [0, 2, 4, 6, 7, 8, 10, 12, 14, 15],
+        translations: {
+            eng: 'Some scientists don\'t think that one can alter the opinion of the public with the automated accounts.'
+        },
+        tags: [
+            'glauben',
+            ', dass',
+            'mit',
+            'verändern',
+            'ver-',
+            '-ändern',
+            'können'
+        ]
+    },
+    {
+        text: 'Aber die Bots können die Debatte über ein Thema behindern oder die Aussagen der gegnerischen Partei kritisieren.',
+        stubs: [0, 1, 3, 4, 6, 7, 9, 11, 13, 14, 16],
+        translations: {
+            eng: 'But the bots can impede the debate of an issue or can criticize the statements of an opposing party.'
+        },
+        tags: [
+            'aber',
+            'können',
+            'über',
+            'be-',
+            '-hindern',
+            'behindern',
+            'kritisieren'
+        ]
+    },
+    {
+        text: 'Trotzdem kann der Gebrauch von Bots auch konstruktiv sein.',
+        stubs: [0, 1, 2, 4, 7, 8],
+        translations: {
+            eng: 'Nevertheless, the purpose of bots can also be constructive.'
+        },
+        tags: [
+            'können',
+            'von',
+            'trotzdem'
+        ]
+    },
+    {
+        text: 'Sie will die User und Userinnen mit den Aktivistenbots mobilisieren.',
+        stubs: [1, 2, 6, 7, 9],
+        translations: {
+            eng: 'She wants to mobilize the male and female users with the activist-bots.'
+        },
+        tags: [
+            'wollen',
+            'mit',
+            'mobilisieren'
         ]
     }
 ];
