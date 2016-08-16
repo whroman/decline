@@ -88,6 +88,7 @@ export default [
         tags: [
             'anrufen',
             'an-',
+            '-rufen',
             'bei',
             'müssen'
         ]
@@ -485,7 +486,8 @@ export default [
         },
         tags: [
             'sitzen',
-            'auf'
+            'auf',
+            'genitive'
         ]
     },
     {
@@ -510,6 +512,8 @@ export default [
         tags: [
             'aussprechen',
             'aus-',
+            '-sprechen',
+            'sprechen',
             'für',
             'sich'
         ]
@@ -949,19 +953,23 @@ export default [
     },
     {
         text: 'Ich bin sauer darauf, dass mein Mitbewohner nie saubermacht.',
-        stubs: [3],
+        stubs: [3, 4, 5, 8],
         translations: {
             eng: 'I\'m angry that my flatmate never cleans.'
         },
         tags: [
-            'da-'
+            'da-',
+            'sauber-',
+            '-machen',
+            'saubermachen',
+            ', dass'
         ]
     },
     {
         text: 'Das Portrait ist nicht perfekt, aber ich bin zufrieden damit.',
-        stubs: [5, 6, 7, 8, 9],
+        stubs: [0, 5, 6, 7, 8, 9],
         translations: {
-            eng: 'The portrait is not all perfect, but I\'m satisfied with it.'
+            eng: 'The portrait is not perfect, but I\'m satisfied with it.'
         },
         tags: [
             ', aber',
@@ -1073,7 +1081,7 @@ export default [
     },
     {
         text: 'Die Idee, dass ich plötzlich für alles verantwortlich sein sollte, war mir neu.',
-        stubs: [2, 8, 9, 10, 11],
+        stubs: [2, 5, 8, 9, 10, 11],
         translations: {
             eng: 'The idea that I was suddenly supposed to be responsible for everything was new to me.'
         },
@@ -1161,7 +1169,7 @@ export default [
         text: 'Die Pfosten sind im Abstand von einem Meter aufgestellt.',
         stubs: [2, 3, 5, 6, 8],
         translations: {
-            eng: 'The posts are spaced at intervals of one meter.'
+            eng: 'The posts were set up in intervals of one meter.'
         },
         tags: [
             'aufstellen',
@@ -1170,7 +1178,6 @@ export default [
             'sein'
         ]
     },
-    ///
     {
         text: 'Das Auto lässt sich leicht reparieren.',
         stubs: [2, 3, 5],
@@ -1295,20 +1302,6 @@ export default [
         ]
     },
     {
-        text: 'Als man Stoffe noch per Hand färbte, gab es eine Farbe, die während des Färbens ziemlich eklig gestunken hat: die Farbe Blau.',
-        stubs: [0, 6, 7, 11, 13, 17, 18],
-        translations: {
-            eng: 'When one still had to dye fabric by hand, there was a color that stunk quite disgustingly during the staining: the color blue.'
-        },
-        tags: [
-            ', als',
-            'als',
-            'farben',
-            'stinken',
-            ', article'
-        ]
-    },
-    {
         text: 'Tabakrauch enthält über 70 Stoffe, die erwiesenermaßen krebserregend sind.',
         stubs: [1, 2, 5, 6, 8],
         translations: {
@@ -1368,14 +1361,16 @@ export default [
     },
     {
         text: 'Deshalb bereiten sich die Verantwortlichen schon lange auf Anschläge vor.',
-        stubs: [1, 7, 9],
+        stubs: [1, 2, 3, 7, 9],
         translations: {
             eng: 'Therefore, those in charge are already preparing themselves for attacks.'
         },
         tags: [
             'bereiten',
             'auf',
-            'vor-'
+            'vor-',
+            'vorbereiten',
+            'sich'
         ]
     },
     {
@@ -1424,7 +1419,7 @@ export default [
     },
     {
         text: 'Seit den Anschlägen in Europa bereitet sich die Polizei auch auf Terrorismus vor.',
-        stubs: [0, 1, 3, 5, 10, 12],
+        stubs: [0, 1, 3, 5, 6, 10, 12],
         translations: {
             eng: 'Since the attacks in Europe, the police have also been preparing for terrorism.'
         },
@@ -1434,7 +1429,8 @@ export default [
             '-bereiten',
             'vorbereiten',
             'in',
-            'auf'
+            'auf',
+            'sich'
         ]
     },
     {
@@ -1571,7 +1567,7 @@ export default [
         ]
     },
     {
-        text: 'Es steht zwar in Text, aber er hat das nicht gesagt.',
+        text: 'Es steht zwar im Text, aber er hat das nicht gesagt.',
         stubs: [1, 2, 3, 5, 7, 10],
         translations: {
             eng: 'That\'s indeed in the text, but he didn\'t say that.'
@@ -1636,7 +1632,7 @@ export default [
     },
     {
         text: 'Als in einem Einkaufszentrum in München Schüsse zu hören waren, wusste niemand, was passiert war.',
-        stubs: [0, 1, 2, 4, 7, 8, 9, 10, 14],
+        stubs: [0, 1, 2, 4, 7, 8, 9, 10, 12, 14],
         translations: {
             eng: 'As shots were heard in a shopping center in Munich, no one knew what had happened.'
         },
@@ -1647,6 +1643,7 @@ export default [
             'hören',
             'waren',
             'war',
+            ', was',
             'wussten'
         ]
     },
@@ -1654,7 +1651,7 @@ export default [
         text: 'Während die Polizei dort im Einsatz war, forderte sie die Öffentlichkeit über Twitter dringend auf: <Keine Videos oder Bilder von Polizeikräften im Einsatz online stellen. Helft nicht den Tätern!".',
         stubs: [0, 1, 4, 6, 7, 8, 9, 11, 14, 19, 21, 24, 25, 27],
         translations: {
-            eng: 'While the police were deployed there, they strongly urged the public through Twitter: "Place no videos or images online of the deployed police forces. Do not help the perpetrators!"'
+            eng: 'While the police were deployed there, they strongly urged the public through Twitter: "Place no videos or images of the deployed police forces online. Do not help the perpetrators!"'
         },
         tags: [
             'während',
@@ -1662,6 +1659,7 @@ export default [
             'war',
             'auffordern',
             'auf-',
+            '-fordern',
             'über',
             'von',
             'stellen',
@@ -2006,7 +2004,7 @@ export default [
     },
     {
         text: 'Der Bot sucht und findet zum Beispiel User, die über Korruption klagen. Und dann fragt der Bot die User, wie wir Korruption bekämpfen können.',
-        stubs: [0, 2, 4, 8, 9, ],
+        stubs: [0, 2, 4, 8, 9, 11, 14, 15, 17, 19, 22, 23],
         translations: {
             eng: 'The bot searches and finds, for example, users who complain about corruption. And then, the bot asks the users how we can fight corruption.'
         },
@@ -2378,10 +2376,10 @@ export default [
         ]
     },
     {
-        text: 'Sie werden nie die Woche vergessen, die sie danach krank im Bett verbracht haben.',
-        stubs: [1, 5, 6, 8, 10, 12],
+        text: 'Sie werden nie die Woche vergessen, die sie krank im Bett verbracht haben.',
+        stubs: [1, 5, 6, 7, 9, 11],
         translations: {
-            eng: 'They\'ll never forget the week they spent sick in bed after that.',
+            eng: 'They\'ll never forget the week they spent sick in bed.',
         },
         tags: [
             'werden',
@@ -2389,7 +2387,6 @@ export default [
             '-gessen',
             'vergessen',
             ', article',
-            'da-',
             'in',
             '-brachen',
             'verbrachen'
@@ -2438,10 +2435,10 @@ export default [
         ]
     },
     {
-        text: 'Hier merkt sie, dass auch in Deutschland nicht alle Leute freundlich sind.',
-        stubs: [3, 5, 11],
+        text: 'Hier merkt sie, dass in Deutschland nicht alle Leute freundlich sind.',
+        stubs: [3, 4, 10],
         translations: {
-            eng: 'Here she takes note that, also in Germany, not all people are friendly.'
+            eng: 'Here she takes note that in Germany not all people are friendly.'
         },
         tags: [
             'merken',
@@ -2951,20 +2948,20 @@ export default [
             ', sondern'
         ]
     },
-    {
-        text: 'Wird in Zukunft etwa nur noch der Politiker mit den besten Bots gewählt?',
-        stubs: [0, 1, 6, 8, 9, 10, 11],
-        translations: {
-            eng: 'In the future will, for instance, only the politicians with the best bots be elected?'
-        },
-        tags: [
-            'werden',
-            'in',
-            'mit',
-            'wählen',
-            'past-participle'
-        ]
-    },
+    // {
+    //     text: 'Wird in Zukunft etwa nur noch der Politiker mit den besten Bots gewählt?',
+    //     stubs: [0, 1, 6, 8, 9, 10, 11],
+    //     translations: {
+    //         eng: 'In the future will, for instance, only the politicians with the best bots be elected?'
+    //     },
+    //     tags: [
+    //         'werden',
+    //         'in',
+    //         'mit',
+    //         'wählen',
+    //         'past-participle'
+    //     ]
+    // },
     {
         text: 'Manche Wissenschaftler glauben nicht, dass man mit den automatisierten Accounts die Meinung des Volkes verändern kann.',
         stubs: [0, 2, 4, 6, 7, 8, 10, 12, 14, 15],
@@ -2985,7 +2982,7 @@ export default [
         text: 'Aber die Bots können die Debatte über ein Thema behindern oder die Aussagen der gegnerischen Partei kritisieren.',
         stubs: [0, 1, 3, 4, 6, 7, 9, 11, 13, 14, 16],
         translations: {
-            eng: 'But the bots can impede the debate of an issue or can criticize the statements of an opposing party.'
+            eng: 'But the bots can impede the debate of an issue or can criticize the statements of the opposing party.'
         },
         tags: [
             'aber',
@@ -3019,6 +3016,217 @@ export default [
             'wollen',
             'mit',
             'mobilisieren'
+        ]
+    },
+    {
+        text: 'Dieser Bot hat ihn sehr bekannt gemacht.',
+        stubs: [0, 2, 3, 6],
+        translations: {
+            eng: 'This bot has made him very popular.'
+        },
+        tags: [
+            'haben',
+            'past-participle',
+            'machen',
+            'pronoun-accusative'
+        ]
+    },
+    {
+        text: 'Es ist ein Hinweis um Bots zu erkennen.',
+        stubs: [2, 4, 6, 7],
+        translations: {
+            eng: 'It\'s a clue so as to recognize bots.'
+        },
+        tags: [
+            'um zu',
+            'er-',
+            '-kennen',
+            'erkennen'
+        ]
+    },
+    {
+        text: 'Ich bin nicht sicher, ob er es gesagt hat.',
+        stubs: [4, 5, 6, 7, 8],
+        translations: {
+            eng: 'I\'m not sure whether he said that.',
+        },
+        tags: [
+            ', ob',
+            'past-participle',
+            'sagen'
+        ]
+    },
+    {
+        text: 'Wir haben keinen Bot identifizieren können, der die öffentliche Meinung in einer bestimmten Frage in eine besondere Richtung drehen konnte.',
+        stubs: [1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 14, 15, 16, 17, 18, 19],
+        translations: {
+            eng: 'We haven\'t been able to identify a bot that could turn the public opinion of a specific issue in a particular direction.',
+        },
+        tags: [
+            'können',
+            'double-infinitive',
+            ', article',
+            'in',
+            'drehen',
+            'könnten'
+        ]
+    },
+    {
+        text: 'Das ist richtig, weil es im Text steht, dass er es gesagt hat.',
+        stubs: [3, 4, 5, 7, 8, 9, 10, 11, 12],
+        translations: {
+            eng: 'That is correct because it states in the text that he said that.'
+        },
+        tags: [
+            ', weil',
+            'in',
+            ', dass',
+            'sagen',
+            'past-participle'
+        ]
+    },
+    {
+        text: 'Ich habe den Grund genannt, warum es falsch ist.',
+        stubs: [1, 2, 4, 5, 6, 8],
+        translations: {
+            eng: 'I mentioned the reason why it\'s wrong.'
+        },
+        tags: [
+            ', warum',
+            'past-participle',
+            'nennen'
+        ]
+    },
+    // {
+    //     text: 'Sie möchte mit diesen Bots die Leute politisch mobilisieren, und sie anregen, dass sie mehr über Korruption sprechen.',
+    //     stubs: [],
+    //     translations: {
+    //         eng: 'She would like to politically mobilize the people with these bots and make them '
+    //     }
+    // },
+    {
+        text: 'Es ist falsch, weil sie nichts darüber gesagt hat.',
+        stubs: [3, 6, 7, 8],
+        translations: {
+            eng: 'It\'s false because she didn\'t say anything about that.'
+        },
+        tags: [
+            ', weil',
+            'da-',
+            'sagen',
+            'past-participle'
+        ]
+    },
+    {
+        text: 'Ich habe das Backblech mit Margarine eingefettet.',
+        stubs: [1, 2, 4, 6],
+        translations: {
+            eng: 'I have greased the baking tray with margarine.'
+        },
+        tags: [
+            'mit',
+            'einfetten',
+            'ein-',
+            '-fetten',
+            'past-participle'
+        ]
+    },
+    {
+        text: 'Sie müssen zwei Teigblätter mit vorbereitete Sauce befeuchten und auf Backblech schichten.',
+        stubs: [4, 5, 7, 9, 11],
+        translations: {
+            eng: 'You (formal) must moisten two sheets of dough with prepared sauce and layer them on the baking sheet.'
+        },
+        tags: [
+            'mit',
+            'vor-',
+            '-bereiten',
+            'vorbereiten',
+            'be-',
+            'befeuchten',
+            'auf',
+            'schichten'
+        ]
+    },
+    {
+        text: 'Die vorbereitete Füllung über die Teigblätter verteilen.',
+        stubs: [1, 3, 4, 6],
+        translations: {
+            eng: 'Spread the prepared filling on the dough sheets.'
+        },
+        tags: [
+            'vor-',
+            '-bereiten',
+            'vorbereiten',
+            'über',
+            'verteilen',
+            'ver-',
+            '-teilen',
+            'verteilen'
+        ]
+    },
+    {
+        text: 'Sie sucht die Wohnung, in der sie ein Zimmer gemietet hat.',
+        stubs: [4, 5, 6, 7, 9, 10],
+        translations: {
+            eng: 'She\'s searching for the flat in which she has rented a flat.'
+        },
+        tags: [
+            'suchen',
+            'in',
+            'mieten',
+            'past-participle'
+        ]
+    },
+    {
+        text: 'Er möchte nicht, dass sie in die Wohnung einzieht, weil er schlechte Erfahrungen mit Frauen gemacht hat.',
+        stubs: [1, 3, 5, 8, 9, 11, 13, 15, 16],
+        translations: {
+            eng: 'He wouldn\'t like that she moves in to the flat because he has had bad experiences with women.'
+        },
+        tags: [
+            'möchten',
+            ', dass',
+            'in',
+            'ein-',
+            '-ziehen',
+            'einziehen',
+            ', weil',
+            'mit',
+            'machen',
+            'past-participle'
+        ]
+    },
+    {
+        text: 'Er hat sich vor Kurzem von seiner Freundin getrennt.',
+        stubs: [1, 2, 3, 5, 6, 8],
+        translations: {
+            eng: 'He has recently broken up with his girlfriend.'
+        },
+        tags: [
+            'sich',
+            'past-participle',
+            'vor',
+            'von',
+            'trennen'
+        ]
+    },
+    {
+        text: 'Am Ende darf er bleiben, weil sie dringend Geld brauchen, um die Miete zu bezahlen.',
+        stubs: [0, 2, 4, 5, 9, 10, 13, 14],
+        translations: {
+            eng: 'In the end he\'s allowed to stay because they desperately need the money in order to pay the rent.'
+        },
+        tags: [
+            'dürfen',
+            'bleiben',
+            ', weil',
+            'brauchen',
+            'um zu',
+            ' be-',
+            '-zahlen',
+            'bezahlen',
+            'am'
         ]
     }
 ];
