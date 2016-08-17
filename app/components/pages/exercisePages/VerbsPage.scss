@@ -9,8 +9,10 @@ $row-focused-bg: rgba(100, 100, 100, 0.4);
     background-color: transparent;
     float: left;
     clear: left;
-    margin-bottom: 0.5em;
     cursor: pointer;
+    width: 100%;
+    padding: 0.5em 10px;
+    margin: 0 -14px 1em -14px;
 
     &:hover {
         background-color: $row-focused-bg;
@@ -27,12 +29,8 @@ $row-focused-bg: rgba(100, 100, 100, 0.4);
             right: initial;
         }
 
-        &.translation {
-            left: 222px;
-        }
-
         &.answer {
-            left: 186px;
+            left: 192px;
         }
 
     }
@@ -59,11 +57,15 @@ $row-focused-bg: rgba(100, 100, 100, 0.4);
 
     .VerbExercise-details {
         float: left;
-        width: 106px;
+        width: 66px;
+    }
+
+    .VerbExercise-translation {
+        margin-bottom: 1em;
     }
 
     .VerbExercise-sentence {
-        margin-left: 120px;
+        margin-left: 80px;
     }
 }
 

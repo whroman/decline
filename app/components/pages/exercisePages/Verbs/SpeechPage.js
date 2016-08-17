@@ -10,7 +10,8 @@ const tags = [
     'erzählen',
     '-rufen',
     'sagen',
-    '-sagen'
+    '-sagen',
+    'nennenv'
 ]
 
 const exercises = verbsWithPrepositions.filter((exercise) =>

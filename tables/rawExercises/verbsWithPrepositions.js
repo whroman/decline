@@ -554,10 +554,10 @@ export default [
         ]
     },
     {
-        text: 'Er hat sich von seiner Freundin getrennt.',
+        text: 'Sie hat sich von ihrem Freund getrennt.',
         stubs: [1, 2, 3, 4, 6],
         translations: {
-            eng: 'He broke up with his girlfriend.'
+            eng: 'She broke up with her boyfriend.'
         },
         tags: [
             'present-perfect',
@@ -2483,7 +2483,7 @@ export default [
         ]
     },
     {
-        text: 'Wir haben den Zug genommen',
+        text: 'Wir haben den Zug genommen.',
         stubs: [1, 2, 4],
         translations: {
             eng: 'We took the train.',
@@ -2510,7 +2510,7 @@ export default [
         ]
     },
     {
-        text: 'Niemand hat mir geholfen',
+        text: 'Niemand hat mir geholfen.',
         stubs: [1, 3],
         translations: {
             eng: 'Noone helped me.',
@@ -2613,7 +2613,7 @@ export default [
         ]
     },
     {
-        text: 'Der Artzt hat mir das Rauchen verboten',
+        text: 'Der Artzt hat mir das Rauchen verboten.',
         stubs: [2, 3, 6],
         translations: {
             eng: 'The doctor has forbidden me from smoking.',
@@ -2752,7 +2752,7 @@ export default [
         text: 'Wir sind ihm im Park begegnet.',
         stubs: [1, 2, 3, 5],
         translations: {
-            eng: 'We came across each other at the park.',
+            eng: 'We came across him at the park.',
             spa: 'Le hemos encontrado (casualmente) en el parque.'
         },
         tags: [
@@ -2829,22 +2829,8 @@ export default [
         tags: [
             'sein',
             'wachsen',
-            'present-perfect'
-        ]
-    },
-    {
-        text: 'Im letzten Jahr ist hier ein neuer Stadtteil entstanden.',
-        stubs: [0, 1, 3, 5, 6, 8],
-        translations: {
-            eng: 'In the last year a new city district was developed.'
-        },
-        tags: [
-            'sein',
             'present-perfect',
-            'ent-',
-            '-stehen',
-            'entstehen',
-            'in'
+            'passive-voice'
         ]
     },
     {
@@ -2872,6 +2858,7 @@ export default [
             'für',
             'nutzen',
             'present-perfect',
+            'passive-voice',
             'bei'
         ]
     },
@@ -3290,7 +3277,7 @@ export default [
         ]
     },
     {
-        text: 'Sie stehen vor dem Restaurant und reden',
+        text: 'Sie stehen vor dem Restaurant und reden.',
         stubs: [1, 2, 3, 6],
         translations: {
             eng: 'They are standing in front of the restuarant and talking.'
@@ -3552,7 +3539,7 @@ export default [
         ]
     },
     {
-        text: 'Sie wird in Urlaub gewesen sein',
+        text: 'Sie wird in Urlaub gewesen sein.',
         stubs: [1, 2, 4, 5],
         translations: {
             eng: 'She will have been on vacation.'
@@ -3602,49 +3589,49 @@ export default [
             'future-perfect'
         ]
     },
-    {
-        text: 'Der Kanzler habe an den Verhandlungen teilgenommen.',
-        stubs: [2, 3, 4, 6],
-        translations: {
-            eng: 'The chancellor participated in teh negotiations.'
-        },
-        tags: [
-            'haben',
-            'present-perfect',
-            'teil-',
-            '-nehmen',
-            'teilnehmen',
-            'an'
-        ]
-    },
-    {
-        text: 'Der Präsident sei zu Verhandlungen bereit gewesen.',
-        stubs: [2, 3, 6],
-        translations: {
-            eng: 'The president was ready to negotiate'
-        },
-        tags: [
-            'sein',
-            'present-perfect',
-            'zu',
-            'ver-',
-            'gewesen'
-        ]
-    },
-    {
-        text: 'Im Pazifik sei Gold gefunden worden.',
-        stubs: [0, 2, 4, 5],
-        translations: {
-            eng: 'In the Pacific, gold was found.'
-        },
-        tags: [
-            'in',
-            'sein',
-            'present-perfect',
-            'finden',
-            'worden'
-        ]
-    },
+    // {
+    //     text: 'Der Kanzler nahm an den Verhandlungen teil.',
+    //     stubs: [2, 3, 4, 6],
+    //     translations: {
+    //         eng: 'The chancellor participated in the negotiations.'
+    //     },
+    //     tags: [
+    //         'haben',
+    //         'present-perfect',
+    //         'teil-',
+    //         '-nehmen',
+    //         'teilnehmen',
+    //         'an'
+    //     ]
+    // },
+    // {
+    //     text: 'Der Präsident sei zu Verhandlungen bereit gewesen.',
+    //     stubs: [2, 3, 6],
+    //     translations: {
+    //         eng: 'The president was ready to negotiate.'
+    //     },
+    //     tags: [
+    //         'sein',
+    //         'present-perfect',
+    //         'zu',
+    //         'ver-',
+    //         'gewesen'
+    //     ]
+    // },
+    // {
+    //     text: 'Im Pazifik sei Gold gefunden worden.',
+    //     stubs: [0, 2, 4, 5],
+    //     translations: {
+    //         eng: 'In the Pacific, gold was found.'
+    //     },
+    //     tags: [
+    //         'in',
+    //         'sein',
+    //         'present-perfect',
+    //         'finden',
+    //         'worden'
+    //     ]
+    // },
     {
         text: 'Wer rastet der rostet.',
         stubs: [0, 1, 2, 3],
@@ -3801,7 +3788,7 @@ export default [
         ]
     },
     {
-        text: 'Ich habe gesagt, dass ich nicht gestört werden wollte',
+        text: 'Ich habe gesagt, dass ich nicht gestört werden wollte.',
         stubs: [1, 2, 3, 6, 7, 8],
         translations: {
             eng: 'I said that I didn\'t want to be bothered.'

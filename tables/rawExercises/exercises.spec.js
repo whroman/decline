@@ -9,6 +9,14 @@ describe('exercises', () => {
             });
         });
 
+        it('each `text` string should have punctuation as the final character', () => {
+            exercises.forEach((exercise) => {
+                const { text } = exercise;
+                const assertion = ['.', '!', '?'].includes(text[text.length - 1]);
+                assert.equal(assertion, true, JSON.stringify(exercise));
+            });
+        });
+
         it('should have a populated array declared for `stubs` in each exercise', () => {
             exercises.forEach((exercise) => {
                 const { stubs } = exercise;
