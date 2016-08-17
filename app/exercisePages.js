@@ -14,10 +14,11 @@ import ErVerVorPage from './components/pages/exercisePages/Prefixes/ErVerVorPage
 import AufAusHerausPage from './components/pages/exercisePages/Prefixes/AufAusHerausPage';
 import CristinaVocabPage from './components/pages/exercisePages/Vocab/CristinaVocabPage';
 import AkkDatPage from './components/pages/exercisePages/Pronouns/AkkDatPage';
-import SubordinatingPage from './components/pages/exercisePages/Clauses/SubordinatingPage';
-import RelativeClausesPage from './components/pages/exercisePages/Clauses/RelativeClausesPage';
-import ArticleClausesPage from './components/pages/exercisePages/Clauses/ArticleClausesPage';
-import PastParticiplePage from './components/pages/exercisePages/Clauses/PastParticiplePage';
+import SubordinatingPage from './components/pages/exercisePages/Composition/SubordinatingPage';
+import RelativeClausesPage from './components/pages/exercisePages/Composition/RelativeClausesPage';
+import ArticleClausesPage from './components/pages/exercisePages/Composition/ArticleClausesPage';
+import PresentPerfectPage from './components/pages/exercisePages/Composition/PresentPerfectPage';
+import FuturePerfectPage from './components/pages/exercisePages/Composition/FuturePerfectPage';
 
 export default [
     {
@@ -76,27 +77,33 @@ export default [
     },
     {
         name: 'Subordinating Conjunctions',
-        path: '/practice/clauses/subordinating-conjunctions',
+        path: '/practice/composition/subordinating-conjunctions',
         component: SubordinatingPage,
-        tags: ['structure']
+        tags: ['composition']
     },
     {
         name: 'Relative Clauses',
-        path: '/practice/clauses/relative',
+        path: '/practice/composition/relative',
         component: RelativeClausesPage,
-        tags: ['structure']
+        tags: ['composition']
     },
     {
-        name: 'Past Participle',
-        path: '/practice/clauses/past-participle',
-        component: PastParticiplePage,
-        tags: ['structure']
+        name: 'Present Perfect Tense',
+        path: '/practice/composition/present-perfect',
+        component: PresentPerfectPage,
+        tags: ['composition']
     },
     {
         name: 'Clauses Begun By An Article',
-        path: '/practice/clauses/article',
+        path: '/practice/composition/article',
         component: ArticleClausesPage,
-        tags: ['structure']
+        tags: ['composition']
+    },
+    {
+        name: 'Future Perfect Tense',
+        path: '/practice/composition/future-perfect',
+        component: FuturePerfectPage,
+        tags: ['composition']
     },
     {
         name: '"da-" Adverbs',

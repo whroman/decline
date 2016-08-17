@@ -3,17 +3,17 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const verbs = ['werden', 'worden', 'geworden', 'war', 'gewesen'];
+const tags = ['future-perfect'];
 
 const exercises = verbsWithPrepositions.filter(
-    (exercise) => verbs.some(
+    (exercise) => tags.some(
         (item) => exercise.tags.includes(item)
     )
 );
 
 export default function () {
     const props = {
-        title: 'Werden, Worden, Geworden, War',
+        title: 'Future Perfect Tense',
         exercises: presentVerbExercises(exercises)
     };
     return (<VerbBasePage { ...props } />);

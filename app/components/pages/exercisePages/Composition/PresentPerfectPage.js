@@ -3,7 +3,7 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const tags = ['past-participle'];
+const tags = ['present-perfect'];
 
 const exercises = verbsWithPrepositions.filter(
     (exercise) => tags.some(
@@ -13,7 +13,7 @@ const exercises = verbsWithPrepositions.filter(
 
 export default function () {
     const props = {
-        title: 'Past Participle',
+        title: 'Present Perfect Tense',
         exercises: presentVerbExercises(exercises)
     };
     return (<VerbBasePage { ...props } />);

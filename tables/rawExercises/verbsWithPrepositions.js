@@ -123,7 +123,7 @@ export default [
             eng: 'She has spoken of you'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'sprechen',
             'von',
             'haben'
@@ -148,7 +148,7 @@ export default [
             eng: 'I was looking forward to my new life.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'freuen',
             'auf',
             'sich',
@@ -162,7 +162,7 @@ export default [
             eng: 'An acquaintance helped me with the house hunting.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'helfen',
             'bei'
         ]
@@ -343,7 +343,7 @@ export default [
             eng: 'The crayons fell to the ground.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'fallen',
             'auf',
             'sein'
@@ -403,7 +403,7 @@ export default [
             eng: 'The Persians even believed that Earth hatched from a giant egg.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'schlüpfen',
             'aus',
             'dass'
@@ -536,7 +536,7 @@ export default [
             eng: 'He died of a heart attack.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'sterben',
             'an',
             'sein'
@@ -560,7 +560,7 @@ export default [
             eng: 'He broke up with his girlfriend.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'trennen',
             'von',
             'haben',
@@ -656,7 +656,7 @@ export default [
             eng: 'I have often been asked.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'fragen',
             'sein',
             'worden'
@@ -669,7 +669,7 @@ export default [
             eng: 'I have been in Germany.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'sein',
             'in',
             'gewesen'
@@ -682,7 +682,7 @@ export default [
             eng: 'My mother stayed with us for a long time.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'sein',
             'bleiben',
             'bei'
@@ -695,7 +695,7 @@ export default [
             eng: 'He has become timid.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'sein',
             'geworden'
         ]
@@ -707,7 +707,7 @@ export default [
             eng: 'We danced through the hall.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'sein',
             'durch',
             'tanzen'
@@ -720,7 +720,7 @@ export default [
             eng: 'We danced in the hall the whole night.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'haben',
             'in',
             'tanzen'
@@ -746,7 +746,7 @@ export default [
             eng: 'The relatives quarreled.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'zanken',
             'haben',
             'sich'
@@ -759,7 +759,7 @@ export default [
             eng: 'I traveled to Italy.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'sein',
             'nach',
             'reisen'
@@ -772,7 +772,7 @@ export default [
             eng: 'He showered.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'haben',
             'sich',
             'duschen'
@@ -785,7 +785,7 @@ export default [
             eng: 'Did you (formal) buy the car?'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'haben',
             'kaufen'
         ]
@@ -875,7 +875,7 @@ export default [
             eng: 'They must have carried me home.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'haben',
             'sagen',
             'dürfen',
@@ -1029,7 +1029,7 @@ export default [
             eng: 'We went home because we couldn\'t buy any tickets.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'sein',
             'gehen',
             'weil',
@@ -1231,7 +1231,7 @@ export default [
             eng: 'She left her book at the office.'
         },
         tags: [
-            'past-participle',
+            'present-perfect',
             'lassen',
             'in',
             'haben'
@@ -2491,7 +2491,7 @@ export default [
         },
         tags: [
             'nehmen',
-            'past-participle',
+            'present-perfect',
             'haben'
         ]
     },
@@ -2504,7 +2504,7 @@ export default [
         },
         tags: [
             'jemand',
-            'past-participle',
+            'present-perfect',
             'finden',
             'haben'
         ]
@@ -2519,7 +2519,7 @@ export default [
         tags: [
             'niemand',
             'haben',
-            'past-participle',
+            'present-perfect',
             'helfen'
         ]
     },
@@ -2532,7 +2532,7 @@ export default [
         },
         tags: [
             'sein',
-            'past-participle',
+            'present-perfect',
             'geworden'
         ]
     },
@@ -2546,7 +2546,7 @@ export default [
         tags: [
             'sich',
             'haben',
-            'past-participle',
+            'present-perfect',
             'an-',
             '-sehen',
             'ansehen'
@@ -2560,7 +2560,7 @@ export default [
         },
         tags: [
             'haben',
-            'past-participle',
+            'present-perfect',
             'mit-',
             '-nehmen',
             'mitnehmen'
@@ -2578,7 +2578,7 @@ export default [
             'weiter-',
             '-schreiben',
             'weiterschreiben',
-            'past-participle'
+            'present-perfect'
         ]
     },
     {
@@ -2590,7 +2590,7 @@ export default [
         },
         tags: [
             'haben',
-            'past-participle',
+            'present-perfect',
             'be-',
             '-kommen',
             'bekommen'
@@ -2609,7 +2609,7 @@ export default [
             'unter-',
             '-halten',
             'unterhalten',
-            'past-participle'
+            'present-perfect'
         ]
     },
     {
@@ -2624,7 +2624,7 @@ export default [
             'verbieten',
             'ver-',
             '-bieten',
-            'past-participle'
+            'present-perfect'
 
         ]
     },
@@ -2639,7 +2639,7 @@ export default [
         tags: [
             'an',
             'sein',
-            'past-participle',
+            'present-perfect',
             'in',
             'fahren'
         ]
@@ -2653,7 +2653,7 @@ export default [
         },
         tags: [
             'sein',
-            'past-participle',
+            'present-perfect',
             'mit',
             'ab-',
             '-fahren',
@@ -2670,7 +2670,7 @@ export default [
         },
         tags: [
             'sein',
-            'past-participle',
+            'present-perfect',
             'kommen'
         ]
     },
@@ -2683,7 +2683,7 @@ export default [
         },
         tags: [
             'sein',
-            'past-participle',
+            'present-perfect',
             'mit-',
             '-kommen',
             'mitkommen'
@@ -2700,7 +2700,7 @@ export default [
             'sein',
             'um',
             'laufen',
-            'past-participle'
+            'present-perfect'
         ]
     },
     {
@@ -2711,7 +2711,7 @@ export default [
         },
         tags: [
             'sein',
-            'past-participle',
+            'present-perfect',
             'hin-',
             'unter-',
             'fallen',
@@ -2729,7 +2729,7 @@ export default [
             'sein',
             'in',
             'gehen',
-            'past-participle'
+            'present-perfect'
         ]
     },
     {
@@ -2745,7 +2745,7 @@ export default [
             'auf-',
             '-stehen',
             'aufstehen',
-            'past-participle'
+            'present-perfect'
         ]
     },
     {
@@ -2757,7 +2757,7 @@ export default [
         },
         tags: [
             'sein',
-            'past-participle',
+            'present-perfect',
             'in',
             'pronoun-dative',
             'begegnen'
@@ -2772,7 +2772,7 @@ export default [
         },
         tags: [
             'sein',
-            'past-participle',
+            'present-perfect',
             'fliegen',
             'nach'
         ]
@@ -2787,7 +2787,7 @@ export default [
         tags: [
             'sein',
             'reisen',
-            'past-participle'
+            'present-perfect'
         ]
     },
     {
@@ -2798,7 +2798,7 @@ export default [
         },
         tags: [
             'sein',
-            'past-participle',
+            'present-perfect',
             'ein-',
             '-schlafen',
             'einschlafen',
@@ -2816,7 +2816,7 @@ export default [
             '-wachen',
             'aufwachen',
             'sein',
-            'past-participle',
+            'present-perfect',
             'um'
         ]
     },
@@ -2829,7 +2829,7 @@ export default [
         tags: [
             'sein',
             'wachsen',
-            'past-participle'
+            'present-perfect'
         ]
     },
     {
@@ -2840,7 +2840,7 @@ export default [
         },
         tags: [
             'sein',
-            'past-participle',
+            'present-perfect',
             'ent-',
             '-stehen',
             'entstehen',
@@ -2862,7 +2862,7 @@ export default [
         ]
     },
     {
-        text: 'Meist werden sie für Werbung genutzt, doch mittlerweile sind Bots auch bei Politikern beliebt.',
+        text: 'Meist werden sie für Werbung genutzt, doch mittlerweile sind Bots auch bei Politikern beliebt.',
         stubs: [1, 3, 5, 6, 7, 11, 13],
         translations: {
             eng: 'Most are used for advertisement, but by now Bots are also favored by politicians.'
@@ -2871,7 +2871,7 @@ export default [
             'werden',
             'für',
             'nutzen',
-            'past-participle',
+            'present-perfect',
             'bei'
         ]
     },
@@ -2959,7 +2959,7 @@ export default [
     //         'in',
     //         'mit',
     //         'wählen',
-    //         'past-participle'
+    //         'present-perfect'
     //     ]
     // },
     {
@@ -3026,7 +3026,7 @@ export default [
         },
         tags: [
             'haben',
-            'past-participle',
+            'present-perfect',
             'machen',
             'pronoun-accusative'
         ]
@@ -3052,7 +3052,7 @@ export default [
         },
         tags: [
             ', ob',
-            'past-participle',
+            'present-perfect',
             'sagen'
         ]
     },
@@ -3082,7 +3082,7 @@ export default [
             'in',
             ', dass',
             'sagen',
-            'past-participle'
+            'present-perfect'
         ]
     },
     {
@@ -3093,7 +3093,7 @@ export default [
         },
         tags: [
             ', warum',
-            'past-participle',
+            'present-perfect',
             'nennen'
         ]
     },
@@ -3114,7 +3114,7 @@ export default [
             ', weil',
             'da-',
             'sagen',
-            'past-participle'
+            'present-perfect'
         ]
     },
     {
@@ -3128,7 +3128,7 @@ export default [
             'einfetten',
             'ein-',
             '-fetten',
-            'past-participle'
+            'present-perfect'
         ]
     },
     {
@@ -3175,7 +3175,7 @@ export default [
             'suchen',
             'in',
             'mieten',
-            'past-participle'
+            'present-perfect'
         ]
     },
     {
@@ -3194,7 +3194,7 @@ export default [
             ', weil',
             'mit',
             'machen',
-            'past-participle'
+            'present-perfect'
         ]
     },
     {
@@ -3205,7 +3205,7 @@ export default [
         },
         tags: [
             'sich',
-            'past-participle',
+            'present-perfect',
             'vor',
             'von',
             'trennen'
@@ -3228,5 +3228,591 @@ export default [
             'bezahlen',
             'am'
         ]
+    },
+    {
+        text: 'Achte auf die Szenen, die in den Bildern dargestellt sind.',
+        stubs: [0, 1, 2, 4, 5, 6, 8, 9],
+        translations: {
+            eng: 'Pay attention to the scenes that are depicted in the images.'
+        },
+        tags: [
+            'achten',
+            'auf',
+            'in',
+            ', article',
+            'dar-',
+            '-stellen',
+            'darstellen',
+            'present-perfect'
+        ]
+    },
+    {
+        text: 'Lese die Sätze und wähle die richtigen Begriffe aus.',
+        stubs: [0, 1, 4, 5, 6, 8],
+        translations: {
+            eng: 'Read the sentences and pick out the correct terms.'
+        },
+        tags: [
+            'lesen',
+            '-wählen',
+            'aus-',
+            'auswählen'
+        ]
+    },
+    {
+        text: 'Das Wichtigste ist, nicht die Geduld zu verlieren.',
+        stubs: [0, 2, 4, 6, 7],
+        translations: {
+            eng: 'The most important thing is not to lose patience.'
+        },
+        tags: [
+            'zu',
+            'ver-',
+            '-lieren',
+            'verlieren'
+        ]
+    },
+    {
+        text: 'Viele Ausländer verbringen in den ersten Wochen in Deutschland viel Zeit, Formulare auszufüllen.',
+        stubs: [0, 2, 3, 4, 5, 7, 12],
+        translations: {
+            eng: 'Many foreigners spend a lot of time during their first weeks in Germany filling out forms.'
+        },
+        tags: [
+            'ver-',
+            '-bringen',
+            'verbringen',
+            'in',
+            'aus-',
+            'zu-',
+            'füllen',
+            'auszufüllen'
+        ]
+    },
+    {
+        text: 'Sie stehen vor dem Restaurant und reden',
+        stubs: [1, 2, 3, 6],
+        translations: {
+            eng: 'They are standing in front of the restuarant and talking.'
+        },
+        tags: [
+            'stehen',
+            'vor',
+            'reden'
+        ]
+    },
+    {
+        text: 'Der Umweg hat sich ja gelohnt.',
+        stubs: [2, 3, 4, 5],
+        translations: {
+            eng: 'The detour was indeed worth it.'
+        },
+        tags: [
+            'lohnen',
+            'present-perfect',
+            'ja'
+        ]
+    },
+    {
+        text: 'Sie reden darüber, wer den Einkauf macht.',
+        stubs: [1, 2, 3, 4, 6],
+        translations: {
+            eng: 'They are talking about who will do the shopping.'
+        },
+        tags: [
+            'reden',
+            'darüber',
+            'wer',
+            'machen'
+        ]
+    },
+    {
+        text: 'Er legt viel Wert auf gesunde Ernährung.',
+        stubs: [1, 4, 5],
+        translations: {
+            eng: 'He places much importance on healthy eating.'
+        },
+        tags: [
+            '-legen',
+            'auf-',
+            'auflegen'
+        ]
+    },
+    {
+        text: 'Das kann ich mir vorstellen, dass das kompliziert ist.',
+        stubs: [3, 4, 5, 6, 8],
+        translations: {
+            eng: 'I can imagine that that\'s complicated.'
+        },
+        tags: [
+            'vor-',
+            '-stellen',
+            'vorstellen',
+            'sich'
+        ]
+    },
+    {
+        text: 'Wer durchfällt, muss sein Glück an einer anderen Hochschule versuchen oder sich einen anderen Studiengang suchen.',
+        stubs: [0, 1, 2, 5, 6, 7, 9, 11, 12, 13, 15],
+        translations: {
+            eng: 'Who fails must try their luck at another university or find another degree program.'
+        },
+        tags: [
+            'wer',
+            'durch-',
+            '-fallen',
+            'durchfallen',
+            'müssen',
+            'an',
+            'ver-',
+            '-suchen',
+            'versuchen',
+            'sich',
+            'suchen'
+        ]
+    },
+    {
+        text: 'Es wurde vor drei Jahren von Freds Onkel erbaut, der Architekt ist.',
+        stubs: [1, 2, 5, 8, 9, 11],
+        translations: {
+            eng: 'It was built three years ago by Fred\'s uncle, who\'s an architect.'
+        },
+        tags: [
+            'wurden',
+            'von',
+            'vor',
+            ', article'
+        ]
+    },
+    {
+        text: 'Besonders an den Wochenenden übernachten viele Touristen aus verschiedenen Ländern in dem Hotel.',
+        stubs: [1, 2, 4, 5, 7, 8, 10, 11],
+        translations: {
+            eng: 'Especially on weekends, many tourists from different countries stay at the hotel.'
+        },
+        tags: [
+            'über-',
+            '-nachten',
+            'übernachten',
+            'an',
+            'aus',
+            'ver-',
+            '-schieden',
+            'verschieden',
+            'in'
+        ]
+    },
+    {
+        text: 'Das Hotel befindet sich außerhalb des Stadtzentrums, aber die Touristen können mit dem Bus in die Stadt fahren.',
+        stubs: [2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 17],
+        translations: {
+            eng: 'The hotel is located outside the city center but the tourists can ride the bus to the city.'
+        },
+        tags: [
+            'be-',
+            '-finden',
+            'befinden',
+            'außerhalb',
+            'sich',
+            'genitive',
+            ', aber',
+            'können',
+            'mit',
+            'in',
+            'fahren'
+        ]
+    },
+    {
+        text: 'Die Bushaltestelle ist auf der anderen Seite der Straße, also müssen die Touristen erst über die Straße gehen.',
+        stubs: [3, 4, 5, 7, 9, 10, 11, 14, 15, 17],
+        translations: {
+            eng: 'The bus stop is on the other side of the street, so the tourists first have to go across the road.'
+        },
+        tags: [
+            'auf',
+            'genitive',
+            ', also',
+            'müssen',
+            'über',
+            'gehen'
+        ]
+    },
+    {
+        text: 'Aber außerhalb der Wochenenden nutzt fast niemand diesen Bus, außer Fred, der oft zu seiner Bibliothek fährt.',
+        stubs: [0, 1, 2, 4, 7, 9, 11, 13, 14, 16],
+        translations: {
+            eng: 'But apart from weekends, almost noone uses the bus except for Fred, who often goes to the library.'
+        },
+        tags: [
+            ', aber',
+            'außerhalb',
+            'außer',
+            ', article',
+            'zu',
+            'fahren'
+        ]
+    },
+    {
+        text: 'Am Wochenende fahren wir in die Berge.',
+        stubs: [0, 2, 4, 5],
+        translations: {
+            eng: 'On the weekend we\'re going to the mountains.'
+        },
+        tags: [
+            'an',
+            'in',
+            'fahren'
+        ]
+    },
+    {
+        text: 'Am Wochenende werden wir in die Berge fahren.',
+        stubs: [0, 2, 4, 5, 7],
+        translations: {
+            eng: 'On the weekend we\'ll go to the mountains.'
+        },
+        tags: [
+            'an',
+            'in',
+            'werden',
+            'future-imperfect',
+            'fahren'
+        ]
+    },
+    {
+        text: 'Du wirst die Prüfung nicht bestehen.',
+        stubs: [1, 5],
+        translations: {
+            eng: 'You won\'t pass the exam.'
+        },
+        tags: [
+            'werden',
+            'be-',
+            '-stehen',
+            'future-imperfect',
+            'bestehen'
+        ]
+    },
+    {
+        text: 'Morgen wird es noch kälter werden.',
+        stubs: [1, 2, 3, 4, 5],
+        translations: {
+            eng: 'Tomorrow it\'ll be even colder.'
+        },
+        tags: [
+            'werden',
+            'noch',
+            'comparison',
+            'future-imperfect'
+        ]
+    },
+    {
+        text: 'Ich werde dir das Buch morgen zurückgeben.',
+        stubs: [1, 2, 3, 6],
+        translations: {
+            eng: 'I\'ll give you back the book tomorrow.'
+        },
+        tags: [
+            'pronoun-dative',
+            'werden',
+            'zurückgeben',
+            'zurück-',
+            'future-imperfect',
+            '-geben'
+        ]
+    },
+    {
+        text: 'Wenn du dich nicht beeilst, wirst du den Zug verpassen.',
+        stubs: [0, 2, 4, 5, 7, 9],
+        translations: {
+            eng: 'If you don\'t hurry, you\'ll miss the train.'
+        },
+        tags: [
+            'wenn',
+            'sich',
+            'be-',
+            '-eilen',
+            'beeilen',
+            'werden',
+            'ver-',
+            '-passen',
+            'future-imperfect',
+            'verpassen'
+        ]
+    },
+    {
+        text: 'Er wird viel Arbeit gehabt haben.',
+        stubs: [1, 4, 5],
+        translations: {
+            eng: 'He will have had a lot of work.'
+        },
+        tags: [
+            'werden',
+            'haben',
+            'future-perfect'
+        ]
+    },
+    {
+        text: 'Sie wird in Urlaub gewesen sein',
+        stubs: [1, 2, 4, 5],
+        translations: {
+            eng: 'She will have been on vacation.'
+        },
+        tags: [
+            'werden',
+            'in',
+            'gewesen',
+            'sein',
+            'future-perfect'
+        ]
+    },
+    {
+        text: 'Wenn du zurückkommst, werde ich die Koffer gepackt haben.',
+        stubs: [0, 2, 3, 5, 7, 8],
+        translations: {
+            eng: 'When you come back, I will have packed the bags.'
+        },
+        tags: [
+            ', wenn',
+            'werden',
+            ', werden',
+            'future-perfect',
+            'packen',
+            'zurückkommen',
+            'zurück-',
+            '-kommen'
+        ]
+    },
+    {
+        text: 'Wenn Sie um 5 Uhr noch einmal anrufen, wird Herr Dr. Schmitt inzwischen gekommen sein.',
+        stubs: [0, 2, 5, 6, 7, 8, 12, 13, 14],
+        translations: {
+            eng: 'If you (formal) call once again at 5am, Dr. Schmitt will have already come.'
+        },
+        tags: [
+            ', wenn',
+            'um',
+            'noch',
+            'an-',
+            '-rufen',
+            'anrufen',
+            'werden',
+            'inzwischen',
+            'kommen',
+            'sein',
+            'future-perfect'
+        ]
+    },
+    {
+        text: 'Der Kanzler habe an den Verhandlungen teilgenommen.',
+        stubs: [2, 3, 4, 6],
+        translations: {
+            eng: 'The chancellor participated in teh negotiations.'
+        },
+        tags: [
+            'haben',
+            'present-perfect',
+            'teil-',
+            '-nehmen',
+            'teilnehmen',
+            'an'
+        ]
+    },
+    {
+        text: 'Der Präsident sei zu Verhandlungen bereit gewesen.',
+        stubs: [2, 3, 6],
+        translations: {
+            eng: 'The president was ready to negotiate'
+        },
+        tags: [
+            'sein',
+            'present-perfect',
+            'zu',
+            'ver-',
+            'gewesen'
+        ]
+    },
+    {
+        text: 'Im Pazifik sei Gold gefunden worden.',
+        stubs: [0, 2, 4, 5],
+        translations: {
+            eng: 'In the Pacific, gold was found.'
+        },
+        tags: [
+            'in',
+            'sein',
+            'present-perfect',
+            'finden',
+            'worden'
+        ]
+    },
+    {
+        text: 'Wer rastet der rostet.',
+        stubs: [0, 1, 2, 3],
+        translations: {
+            eng: 'Who rests, rusts.'
+        },
+        tags: [
+            'wer',
+            'rasten',
+            'rosten'
+        ]
+    },
+    {
+        text: 'Wem kaufst du den Computer?',
+        stubs: [0, 1, 3],
+        translations: {
+            eng: 'For whom are you buying the computer?'
+        },
+        tags: [
+            'wem',
+            'kaufen'
+        ]
+    },
+    {
+        text: 'Wen hast du gesehen?',
+        stubs: [0, 1, 3],
+        translations: {
+            eng: 'Who have you seen?'
+        },
+        tags: [
+            'wen',
+            'present-perfect',
+            'sehen'
+        ]
+    },
+    {
+        text: 'Wer kommt morgen zur Party?',
+        stubs: [0, 1, 3],
+        translations: {
+            eng: 'Who\'s comming tomorrow to the party?'
+        },
+        tags: [
+            'wer',
+            'kommen',
+            'zu'
+        ]
+    },
+    {
+        text: 'Wen hast du eingeladen?',
+        stubs: [0, 1, 3],
+        translations: {
+            eng: 'Who have you invited?'
+        },
+        tags: [
+            'wen',
+            'present-perfect',
+            'ein-',
+            'laden',
+            'einladen'
+        ]
+    },
+    {
+        text: 'Wem hast du das Buch gegeben?',
+        stubs: [0, 1, 3, 5],
+        translations: {
+            eng: 'To whom have you given the book?'
+        },
+        tags: [
+            'wem',
+            'present-perfect',
+            'geben'
+        ]
+    },
+    {
+        text: 'Die Rechnungen müssen noch bezahlt werden.',
+        stubs: [2, 3, 4, 5],
+        translations: {
+            eng: 'The invoices still need to be paid.'
+        },
+        tags: [
+            'müssen',
+            'noch',
+            'be-',
+            '-zahlen',
+            'bezahlen',
+            'werden',
+            'passive-voice'
+        ]
+    },
+    {
+        text: 'Das Auto kann nicht mehr reparieren werden.',
+        stubs: [2, 5, 6],
+        translations: {
+            eng: 'The car can\'t be repaired anymore.'
+        },
+        tags: [
+            'passive-voice',
+            'reparieren',
+            'können',
+            'werden'
+        ]
+    },
+    {
+        text: 'Der Koffer kann nicht abgeschlossen werden.',
+        stubs: [2, 4, 5],
+        translations: {
+            eng: 'The suitcase can\'t be opened.'
+        },
+        tags: [
+            'können',
+            'ab-',
+            '-schließen',
+            'abschließen',
+            'werden',
+            'passive-voice'
+        ]
+    },
+    {
+        text: 'Das Angebot kann nicht akzeptiert werden.',
+        stubs: [2, 4, 5],
+        translations: {
+            eng: 'The offer can\'t be accepted.'
+        },
+        tags: [
+            'passive-voice',
+            'werden',
+            'können',
+            'akzeptieren'
+        ]
+    },
+    {
+        text: 'Die Bank war gestern nicht geöffnet.',
+        stubs: [2, 5],
+        translations: {
+            eng: 'The bank was not open yesterday.'
+        },
+        tags: [
+            'passive-voice',
+            'war'
+        ]
+    },
+    {
+        text: 'Ich wollte nicht gestört werden.',
+        stubs: [1, 3, 4],
+        translations: {
+            eng: 'I didn\'t want to be bothered.'
+        },
+        tags: [
+            'wollten',
+            'stören',
+            'werden',
+            'passive-voice',
+            'present-perfect'
+        ]
+    },
+    {
+        text: 'Ich habe gesagt, dass ich nicht gestört werden wollte',
+        stubs: [1, 2, 3, 6, 7, 8],
+        translations: {
+            eng: 'I said that I didn\'t want to be bothered.'
+        },
+        tags: [
+            ', dass',
+            'present-perfect',
+            'stören',
+            'werden',
+            'wollten'
+        ]
     }
+
 ];

@@ -11,8 +11,8 @@ const groups = [
         title: 'Verbs'
     },
     {
-        tag: 'structure',
-        title: 'Sentence Structure'
+        tag: 'composition',
+        title: 'Composition'
     },
     {
         tag: 'adverb',
