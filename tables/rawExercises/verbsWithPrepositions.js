@@ -2540,7 +2540,7 @@ export default [
         text: 'Ich habe mir den Film angesehen.',
         stubs: [1, 2, 3, 5],
         translations: {
-            eng: 'I saw the Film.',
+            eng: 'I watched the Film.',
             spa: 'He visto la pelicula.'
         },
         tags: [
@@ -2598,7 +2598,7 @@ export default [
     },
     {
         text: 'Wir haben uns lange unterhalten.',
-        stubs: [1, 5],
+        stubs: [1, 4],
         translations: {
             eng: 'We talked for a long time.',
             spa: 'Hemos conversado durante mocho tiempo.'
@@ -2664,7 +2664,7 @@ export default [
         text: 'Heute sind nicht viele Schüler gekommen.',
         stubs: [1, 3, 5],
         translations: {
-            eng: 'Today not many kids have come.',
+            eng: 'Today not many schoolkids have come.',
             spa: 'Hoy no han venido muchos alumnos.'
 
         },
@@ -2809,7 +2809,7 @@ export default [
         text: 'Wir sind um 11 Uhr aufgewacht.',
         stubs: [1, 2, 5],
         translations: {
-            eng: 'I woke up at 11 am.'
+            eng: 'We woke up at 11 am.'
         },
         tags: [
             'auf-',
@@ -3156,7 +3156,7 @@ export default [
         text: 'Sie sucht die Wohnung, in der sie ein Zimmer gemietet hat.',
         stubs: [4, 5, 6, 7, 9, 10],
         translations: {
-            eng: 'She\'s searching for the flat in which she has rented a flat.'
+            eng: 'She\'s searching for the flat in which she has rented a room.'
         },
         tags: [
             'suchen',
@@ -3527,6 +3527,19 @@ export default [
         ]
     },
     {
+        text: 'Die Kinder werden wohl schon zu Hause sein.',
+        stubs: [2, 5, 7],
+        translations: {
+            eng: 'The children will probably already be home.'
+        },
+        tags: [
+            'future-imperfect',
+            'werden',
+            'zu',
+            'sein'
+        ]
+    },
+    {
         text: 'Er wird viel Arbeit gehabt haben.',
         stubs: [1, 4, 5],
         translations: {
@@ -3589,49 +3602,70 @@ export default [
             'future-perfect'
         ]
     },
-    // {
-    //     text: 'Der Kanzler nahm an den Verhandlungen teil.',
-    //     stubs: [2, 3, 4, 6],
-    //     translations: {
-    //         eng: 'The chancellor participated in the negotiations.'
-    //     },
-    //     tags: [
-    //         'haben',
-    //         'present-perfect',
-    //         'teil-',
-    //         '-nehmen',
-    //         'teilnehmen',
-    //         'an'
-    //     ]
-    // },
-    // {
-    //     text: 'Der Präsident sei zu Verhandlungen bereit gewesen.',
-    //     stubs: [2, 3, 6],
-    //     translations: {
-    //         eng: 'The president was ready to negotiate.'
-    //     },
-    //     tags: [
-    //         'sein',
-    //         'present-perfect',
-    //         'zu',
-    //         'ver-',
-    //         'gewesen'
-    //     ]
-    // },
-    // {
-    //     text: 'Im Pazifik sei Gold gefunden worden.',
-    //     stubs: [0, 2, 4, 5],
-    //     translations: {
-    //         eng: 'In the Pacific, gold was found.'
-    //     },
-    //     tags: [
-    //         'in',
-    //         'sein',
-    //         'present-perfect',
-    //         'finden',
-    //         'worden'
-    //     ]
-    // },
+    {
+        text: 'Bevor wir nach Hause kommen, werden sie alles aufgegessen haben.',
+        stubs: [0, 2, 4, 5, 8, 9],
+        translations: {
+            eng: 'Before we get home they will have eaten everything up.'
+        },
+        tags: [
+            'bevor',
+            'nach',
+            'kommen',
+            'werden',
+            'auf-',
+            '-essen',
+            'aufessen',
+            'haben',
+            'future-perfect'
+        ]
+    },
+    {
+        text: 'Sie wird schon weggegangen sein.',
+        stubs: [1, 2, 3, 4],
+        translations: {
+            eng: 'She will have already left.'
+        },
+        tags: [
+            'werden',
+            'schon',
+            'weg-',
+            '-gehen',
+            'weggehen',
+            'sein',
+            'future-perfect'
+        ]
+    },
+    {
+        text: 'Werden Sie das gemacht haben, bevor wir Sie abholen?',
+        stubs: [0, 3, 4, 5, 8],
+        translations: {
+            eng: 'Will you have done that before we pick you up?'
+        },
+        tags: [
+            'werden',
+            'machen',
+            'haben',
+            'bevor',
+            'ab-',
+            '-holen',
+            'abholen',
+            'future-perfect'
+        ]
+    },
+    {
+        text: 'Er wird das wohl gewusst haben.',
+        stubs: [1, 4, 5],
+        translations: {
+            eng: 'He will probably have already known that.'
+        },
+        tags: [
+            'werden',
+            'wissen',
+            'haben',
+            'future-perfect'
+        ]
+    },
     {
         text: 'Wer rastet der rostet.',
         stubs: [0, 1, 2, 3],
@@ -3800,6 +3834,162 @@ export default [
             'werden',
             'wollten'
         ]
+    },
+    {
+        text: 'Andere Flüsse fließen ins Landesinnere, wo sie dann verdunsten.',
+        stubs: [0, 2, 3, 5, 7, 8],
+        translations: {
+            eng: 'Other rivers flow inland, where they then evaporate.'
+        },
+        tags: [
+            'fließen',
+            'in',
+            'dann',
+            ', wo',
+            'verdunsten',
+            'ver-',
+            '-dunsten'
+        ]
+    },
+    {
+        text: 'Das Wasser der Donau versickert teilweise und taucht an anderer Stelle wieder auf.',
+        stubs: [4, 7, 8, 9, 12],
+        translations: {
+            eng: 'The water of the Danube partly drains out and then reemerges in another location.'
+        },
+        tags: [
+            'ver-',
+            '-sickern',
+            '-tauchen',
+            'auf-',
+            'auftauchen',
+            'wieder',
+            'an'
+        ]
+    },
+    {
+        text: 'Hier geht jedes Elektron eine Verbindung mit einem anderen Teilchen ein und bildet ein Molekül.',
+        stubs: [0, 1, 2, 4, 6, 7, 8, 9, 12, 15],
+        translations: {
+            eng: 'Here, every electron enters a bond with another particle and creates a molecule.'
+        },
+        tags: [
+            'jede',
+            'ver-',
+            'mit',
+            'ein-',
+            '-gehen',
+            'eingehen',
+            'bilden'
+        ]
+    },
+    {
+        text: 'Dazwischen entstehen Hohlräume, die das für uns sichtbare Licht ungehindert durchdringen kann.',
+        stubs: [0, 1, 3, 4, 5, 7, 9, 10, 11],
+        translations: {
+            eng: 'Cavities form in between, where light that\'s visible to us can penetrate unhindered.'
+        },
+        tags: [
+            'dazwischen',
+            'ent-',
+            '-stehen',
+            'entstehen',
+            ', article',
+            'für',
+            'un-',
+            '-hindern',
+            'unhindern',
+            'durch-',
+            '-dringen',
+            'durchdringen',
+            'können'
+        ]
+    },
+    {
+        text: 'Du wirst beobachtet.',
+        stubs: [1, 2],
+        translations: {
+            eng: 'You are being observed.'
+        },
+        tags: [
+            'werden',
+            'beobachten',
+            'passive-voice',
+            'passive-present'
+        ]
+    },
+    {
+        text: 'Das Auto wird abgeschleppt.',
+        stubs: [2, 3],
+        translations: {
+            eng: 'The car is being towed away.'
+        },
+        tags: [
+            'werden',
+            'ab-',
+            '-schleppen',
+            'abschleppen',
+            'passive-voice',
+            'passive-present'
+        ]
+    },
+    {
+        text: 'Der Diebstahl wird angezeigt.',
+        stubs: [2, 3],
+        translations: {
+            eng: 'The burglary is being reported.'
+        },
+        tags: [
+            'werden',
+            'an-',
+            '-zeigen',
+            'anzeigen',
+            'passive-voice',
+            'passive-present'
+        ]
+    },
+    {
+        text: 'Du wurdest gesehen.',
+        stubs: [1, 2],
+        translations: {
+            eng: 'You were seen.'
+        },
+        tags: [
+            'wurden',
+            'sehen',
+            'passive-voice',
+            'passive-past'
+        ]
+    },
+    {
+        text: 'Ein Fehler wurde begangen.',
+        stubs: [2, 3],
+        translations: {
+            eng: 'A mistake was committed.'
+        },
+        tags: [
+            'wurden',
+            'be-',
+            '-gehen',
+            'begehen',
+            'passive-voice',
+            'passive-past'
+        ]
+    },
+    {
+        text: 'Rom wurde nicht an einem Tag erbaut.',
+        stubs: [1, 3, 4, 6],
+        translations: {
+            eng: 'Rome wasn\'t built in one day.'
+        },
+        tags: [
+            'wurden',
+            'an',
+            'er-',
+            '-bauen',
+            'erbauen',
+            'passive-voice',
+            'passive-past'
+        ]
     }
-
 ];
