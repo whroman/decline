@@ -3,17 +3,22 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const verbs = ['dass', 'weil', ', dass', ', weil', ', aber', ', sodass', ', als'];
+const tags = [
+    'erfahren',
+    'wissen',
+    'wussten',
+    'glauben',
+    'glaubten',
+    'denken'
+]
 
-const exercises = verbsWithPrepositions.filter(
-    (exercise) => verbs.some(
-        (item) => exercise.tags.includes(item)
-    )
+const exercises = verbsWithPrepositions.filter((exercise) =>
+    tags.some((item) => exercise.tags.includes(item))
 );
 
 export default function () {
     const props = {
-        title: 'Subordinating Conjunctions',
+        title: 'Knowledge Verbs',
         exercises: presentVerbExercises(exercises)
     };
     return (<VerbBasePage { ...props } />);

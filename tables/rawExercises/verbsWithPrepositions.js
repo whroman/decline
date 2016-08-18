@@ -426,20 +426,20 @@ export default [
         ]
 
     },
-    {
-        text: 'Wussten Sie schon, dass Sie in Berlin nie weiter als 500 Meter von der nächsten Haltestelle, dem nächsten Bahnhof oder der nächsten Station entfernt sind?',
-        stubs: [0, 3, 5, 9, 12, 13, 16, 20, 23, 24],
-        translations: {
-            eng: 'Did you (formal) already know that in Berlin you are never more than 500 meters from the next bus stop, the next rail station or the train station?'
-        },
-        tags: [
-            'entfernen',
-            'von',
-            'in',
-            'dass',
-            'als'
-        ]
-    },
+    // {
+    //     text: 'Wussten Sie schon, dass Sie in Berlin nie weiter als 500 Meter von der nächsten Haltestelle, dem nächsten Bahnhof oder der nächsten Station entfernt sind?',
+    //     stubs: [0, 3, 5, 9, 12, 13, 16, 20, 23, 24],
+    //     translations: {
+    //         eng: 'Did you (formal) already know that in Berlin you are never more than 500 meters from the next bus stop, the next rail station or the train station?'
+    //     },
+    //     tags: [
+    //         'entfernen',
+    //         'von',
+    //         'in',
+    //         'dass',
+    //         'als'
+    //     ]
+    // },
     {
         text: 'Heute habe ich endlich mit Englisch Sprechen aufgehört.',
         stubs: [1, 4, 7],
@@ -886,7 +886,7 @@ export default [
         text: 'Ich gehe heute nicht in die Schule, weil ich krank bin.',
         stubs: [1, 4, 5, 7, 10],
         translations: {
-            eng: 'I\'m not going to school today because I am sick'
+            eng: 'I\'m not going to school today because I am sick.'
         },
         tags: [
             'gehen',
@@ -951,20 +951,20 @@ export default [
             'da-'
         ]
     },
-    {
-        text: 'Ich bin sauer darauf, dass mein Mitbewohner nie saubermacht.',
-        stubs: [3, 4, 5, 8],
-        translations: {
-            eng: 'I\'m angry that my flatmate never cleans.'
-        },
-        tags: [
-            'da-',
-            'sauber-',
-            '-machen',
-            'saubermachen',
-            ', dass'
-        ]
-    },
+    // {
+    //     text: 'Ich bin sauer darauf, dass mein Mitbewohner nie saubermacht.',
+    //     stubs: [3, 4, 5, 8],
+    //     translations: {
+    //         eng: 'I\'m angry that my flatmate never cleans.'
+    //     },
+    //     tags: [
+    //         'da-',
+    //         'sauber-',
+    //         '-machen',
+    //         'saubermachen',
+    //         ', dass'
+    //     ]
+    // },
     {
         text: 'Das Portrait ist nicht perfekt, aber ich bin zufrieden damit.',
         stubs: [0, 5, 6, 7, 8, 9],
@@ -1053,7 +1053,7 @@ export default [
     },
     {
         text: 'Sie erinnert sich nicht daran, dass ich ihr habe kochen helfen.',
-        stubs: [1, 2, 4, 5, 8, 9, 10],
+        stubs: [1, 2, 4, 5, 7, 8, 9, 10],
         translations: {
             eng: 'She doesn\'t remember that I helped her cook.'
         },
@@ -1063,7 +1063,8 @@ export default [
             'sich',
             'dass',
             'kochen',
-            'helfen'
+            'helfen',
+            'pronoun-dative'
         ]
     },
     {
@@ -1377,7 +1378,7 @@ export default [
         text: 'Manche Athleten glauben, dass es während der Olympischen Spiele gefährlich werden könnte.',
         stubs: [0, 2, 3, 5, 6, 10, 11],
         translations: {
-            eng: 'Some athletes believe that it could be dangerous during the Olympics.'
+            eng: 'Some athletes believe that, during the Olympics, it could become dangerous.'
         },
         tags: [
             'glauben',
@@ -1469,6 +1470,7 @@ export default [
         tags: [
             'wissen',
             'wann',
+            ', wann',
             'bauen',
             'werden'
         ]
@@ -1544,7 +1546,7 @@ export default [
     },
     {
         text: 'Meine neue Firma verkauft Möbel, was ich nicht interessant finde, aber ich finde die Arbeiter klug.',
-        stubs: [0, 1, 5, 9, 10, 11],
+        stubs: [0, 1, 5, 9, 10, 11, 13],
         translations: {
             eng: 'My new company sells furniture, which I don\'t find interesting, but I think the workers are smart.'
         },
@@ -1714,7 +1716,7 @@ export default [
         text: 'Die Journalisten haben in so einer Situation das Problem, dass sie ihre Aufgabe, Informationen zu besorgen, einfach nicht erfüllen können.',
         stubs: [0, 2, 3, 4, 5, 7, 9, 10, 11, 14, 15, 18, 19],
         translations: {
-            eng: 'In such a situation, the journalists have the problem that they cannot fulfill their duty to obtain information.'
+            eng: 'The journalists have, in such a situation, the problem that they simply can\'t fulfill their duty to obtain information.'
         },
         tags: [
             'in',
@@ -1789,7 +1791,7 @@ export default [
         text: 'Sie denken alles, was in Deutschland passiert betrifft mich, weil sie sich nicht über die deutsche Geographie auskennen.',
         stubs: [1, 3, 4, 6, 7, 8, 9, 10, 11, 13, 14, 15, 17],
         translations: {
-            eng: 'They think that everything that happens in Germany affects me because they don\'t know anything about German geography.'
+            eng: 'They think everything which occurs in Germany applies to me because they don\'t know anything about German geography.'
         },
         tags: [
             'denken',
@@ -2023,7 +2025,7 @@ export default [
     },
     {
         text: 'Sie ist sich sicher, dass solche Aktivistenbots in Zukunft sehr erfolgreich sein werden.',
-        stubs: [1, 2, 3, 4, 5, 7, 11, 12],
+        stubs: [1, 2, 4, 5, 7, 11, 12],
         translations: {
             eng: 'She is certain that such activist-bots, in the future, will be very successful.'
         },
@@ -2148,9 +2150,9 @@ export default [
     },
     {
         text: 'Es kann passieren, dass Bots die Beliebtheit eines Politikers größer erscheinen lassen.',
-        stubs: [1, 2, 3, 5, 7, 9, 10, 11],
+        stubs: [2, 3, 5, 7, 9, 10, 11],
         translations: {
-            eng: 'It\'s possible for bots to make the popularity of a politician appear larger.'
+            eng: 'It\'s possible for bots to make the popularity of a politician appear higher.'
         },
         tags: [
             'können',
@@ -2332,7 +2334,7 @@ export default [
     },
     {
         text: 'Die anderen wissen nicht, dass sie seine Tochter ist. Und sie möchte es ihnen auf keinen Fall erzählen.',
-        stubs: [1, 4, 5, 6, 13, 14, 15, 17],
+        stubs: [1, 2, 4, 5, 6, 13, 14, 15, 17],
         translations: {
             eng: 'The others don\'t know that she is his daughter. And she doesn\'t want to tell them on any account.'
         },
@@ -2347,17 +2349,16 @@ export default [
         ]
     },
     {
-        text: 'Sie hat ihm nicht gleich gesagt, dass sie schwanger ist.',
-        stubs: [2, 4, 5, 6],
+        text: 'Sie hat ihm nicht gesagt, dass sie schwanger ist.',
+        stubs: [2, 4, 5, 8],
         translations: {
-            eng: 'She hasn\'t already told him that she\'s pregnant.'
+            eng: 'She hasn\'t said to him that she\'s pregnant.'
         },
         tags: [
             'sagen',
             'pronoun',
             'pronoun-dative',
-            ', dass',
-            'gleich'
+            ', dass'
         ]
     },
     {
@@ -2953,7 +2954,7 @@ export default [
         text: 'Manche Wissenschaftler glauben nicht, dass man mit den automatisierten Accounts die Meinung des Volkes verändern kann.',
         stubs: [0, 2, 4, 6, 7, 8, 10, 12, 14, 15],
         translations: {
-            eng: 'Some scientists don\'t think that one can alter the opinion of the public with the automated accounts.'
+            eng: 'Some scientists don\'t believe that one can alter, with the automated accounts, the opinion of the public.'
         },
         tags: [
             'glauben',
@@ -3428,7 +3429,7 @@ export default [
         text: 'Aber außerhalb der Wochenenden nutzt fast niemand diesen Bus, außer Fred, der oft zu seiner Bibliothek fährt.',
         stubs: [0, 1, 2, 4, 7, 9, 11, 13, 14, 16],
         translations: {
-            eng: 'But apart from weekends, almost noone uses the bus except for Fred, who often goes to the library.'
+            eng: 'But apart from weekends, almost noone uses this bus except for Fred, who often goes to his library.'
         },
         tags: [
             ', aber',
@@ -3825,7 +3826,7 @@ export default [
         text: 'Ich habe gesagt, dass ich nicht gestört werden wollte.',
         stubs: [1, 2, 3, 6, 7, 8],
         translations: {
-            eng: 'I said that I didn\'t want to be bothered.'
+            eng: 'I had said that I didn\'t want to be bothered.'
         },
         tags: [
             ', dass',
@@ -3991,5 +3992,300 @@ export default [
             'passive-voice',
             'passive-past'
         ]
+    },
+    {
+        text: 'Ich hätte dich abholen können, wenn ich es gewusst hätte.',
+        stubs: [1, 2, 3, 4, 5, 8, 9],
+        translations: {
+            eng: 'I couldv\'e picked you up if I wouldv\'e known.'
+        },
+        tags: [
+            'hätten',
+            'ab-',
+            '-holen',
+            'abholen',
+            'können',
+            ', wenn'
+        ]
+    },
+    {
+        text: 'Nein, natürlich nur wegen des Studiums.',
+        stubs: [3, 4],
+        translations: {
+            eng: 'No, of course only because of the studies.'
+        },
+        tags: [
+            'wegen',
+            'genitive'
+        ]
+    },
+    {
+        text: 'Ich habe keine Lust, das immer alleine zu machen.',
+        stubs: [4, 7, 8],
+        translations: {
+            eng: 'I have no desire to always do that alone.'
+        },
+        tags: [
+            'haben',
+            ', article',
+            'zu',
+            'machen'
+        ]
+    },
+    {
+        text: 'Im sozialen Netzwerken im Internet kann man leicht Menschen mit gleichen Interessen finden.',
+        stubs: [0, 1, 3, 5, 9, 10, 12],
+        translations: {
+            eng: 'In social networks on the internet, one can easily find people with similar interests.'
+        },
+        tags: [
+            'in',
+            'dative',
+            'mit',
+            'finden',
+            'können'
+        ]
+    },
+    {
+        text: 'Sie ist unglücklich, obwohl sie die Aufnahmeprüfung bestanden hat.',
+        stubs: [3, 7, 8],
+        translations: {
+            eng: 'She is unhappy though she passed the entrance exam.'
+        },
+        tags: [
+            ', obwohl',
+            'be-',
+            '-standen',
+            'bestanden',
+            'haben'
+        ]
+    },
+    {
+        text: 'Sie zeigt jetzt ihr wahres Gesicht.',
+        stubs: [1, 3, 4],
+        translations: {
+            eng: 'She is now showing her true face.'
+        },
+        tags: [
+            'pronoun-dative',
+            'zeigen'
+        ]
+    },
+    {
+        text: 'Hier müssen wir zwischen zwei verschiedenen Spielformen im Islamismus unterschieden.',
+        stubs: [1, 3, 5, 7, 9],
+        translations: {
+            eng: 'Here we need to distinguish between to different variations of Islamism.'
+        },
+        tags: [
+            'dative',
+            'unter-',
+            '-schieden',
+            'unterschieden',
+            'müssen',
+            'zwischen'
+        ]
+    },
+    {
+        text: 'Sie drängen auf einen Marsch durch die Institutionen.',
+        stubs: [1, 2, 3, 5, 6],
+        translations: {
+            eng: 'They are pushing for a march through the institutions.'
+        },
+        tags: [
+            'drängen',
+            'auf',
+            'durch'
+        ]
+    },
+    {
+        text: 'Beide dieser islamistischen Spielformen haben aber ein gemeinsames Ziel: die Etablierung eines islamischen Staates, dessen Verfassung der Scharia beruht.',
+        stubs: [0, 1, 4, 5, 6, 7, 11, 14, 16, 18],
+        translations: {
+            eng: 'But both of these Islamist variations have a common goal: the establishment of an Islamic state whose constitution is based on Sharia law.'
+        },
+        tags: [
+            'aber',
+            'genitive',
+            'dessen',
+            '-ruhen',
+            'be-',
+            'beruhen'
+        ]
+    },
+    {
+        text: 'Der Westen hätte Erdogan mit mehr Vorsicht begegnen sollen?',
+        stubs: [0, 2, 4, 7, 8],
+        translations: {
+            eng: 'Should the West have met Erdogan with more caution?'
+        },
+        tags: [
+            'hätten',
+            'mit',
+            'begegnen',
+            'sollen'
+        ]
+    },
+    {
+        text: 'Am 18. September können die Berlinerinnen und Berliner ihre Wahl treffen, wie sie sich ihre Stadt der Zukunft vorstellen.',
+        stubs: [0, 3, 4, 8, 19, 11, 13, 14, 16, 18],
+        translations: {
+            eng: 'On September 18 (female and male) Berliners can choose how they imagine their city of the future.'
+        },
+        tags: [
+            'an',
+            'können',
+            'treffen',
+            ', wie',
+            'sich',
+            'vor-',
+            '-stellen',
+            'vorstellen'
+        ]
+    },
+    {
+        text: 'Der Blick in die Sterne hat die Menschen seit jeher fasziniert und ihnen Hoffnung gegeben.',
+        stubs: [2, 3, 5, 6, 8, 9, 10, 12, 14],
+        translations: {
+            eng: 'The view of the stars has always fascinated mankind and given them hope.'
+        },
+        tags: [
+            'in',
+            'haben',
+            'seit',
+            'jeher',
+            'faszinieren',
+            'geben',
+            'present-perfect'
+        ]
+    },
+    {
+        text: 'Die Weiten des Weltalls spiegeln unsere Geschichte.',
+        stubs: [2, 4, 5],
+        translations: {
+            eng: 'The vastness of the universe reflects our history.'
+        },
+        tags: [
+            'genitive',
+            'spiegeln'
+        ]
+    },
+    {
+        text: 'Unser Nahverkehr muss mit der Bevölkerung mitwächst.',
+        stubs: [2, 3, 4, 6],
+        translations: {
+            eng: 'Our mass transit must grow along with the population.'
+        },
+        tags: [
+            'müssen',
+            'mit',
+            'mit-',
+            '-wachsen'
+        ]
+    },
+    {
+        text: 'Wir müssen endlich Brücken, Fahradwege und Krankenhäuser sanieren.',
+        stubs: [1, 7],
+        translations: {
+            eng: 'We must finally rehabilitate bridges, bike paths and hospitals.'
+        },
+        tags: [
+            'müssen',
+            'sanieren'
+        ]
+    },
+    {
+        text: 'Steuergeld muss gerechter ausgegeben werden.',
+        stubs: [1, 2, 3, 4],
+        translations: {
+            eng: 'Tax money must be spent more equitably.'
+        },
+        tags: [
+            'comparison',
+            'müssen',
+            'werden',
+            'aus-',
+            '-geben',
+            'ausgeben'
+        ]
+    },
+    {
+        text: 'Diese Stadt gehört niemandem, auch keiner Partei.',
+        stubs: [0, 2, 3, 4, 5],
+        translations: {
+            eng: 'This city doesn\'t belong to anyone, also to no party.'
+        },
+        tags: [
+            'gehören',
+            'ge-',
+            '-hören',
+            'niemand',
+            'auch',
+            'dative'
+        ]
+    },
+    {
+        text: 'Die größte Aufgabe des nächsten Jahrzehnts besteht in der Integration der geflüchteten Menschen.',
+        stubs: [1, 3, 4, 6, 7, 8, 10],
+        translations: {
+            eng: 'The largest task of the next decade consists of the integration of the refuged people.'
+        },
+        tags: [
+            'comparison',
+            'genitive',
+            'be-',
+            '-stehen',
+            'bestehen',
+            'in',
+            'dative'
+        ]
+    },
+    {
+        text: 'Gerade jetzt erfahren wir sehr deutlich, dass wir Teil einer globalisierten Welt sind.',
+        stubs: [0, 1, 2, 6, 9, 12],
+        translations: {
+            eng: 'Right now we are very explicitly finding out that we are part of a globalized world.'
+        },
+        tags: [
+            'gerade',
+            'er-',
+            '-fahren',
+            'erfahren',
+            ', dass',
+            'genitive'
+        ]
+    },
+    {
+        text: 'Natürlich leben wir längst in einer vielfältigen und multikulturellen Gesellschaft.',
+        stubs: [1, 2, 3, 4, 5, 6],
+        translations: {
+            eng: 'Of course, we have been living for a long time in a diverse and multicultural society.'
+        },
+        tags: [
+            'leben',
+            'in',
+            'dative'
+        ]
+    },
+    {
+        text: 'Andere Metropolen aufmachen, Vorreiter für eine moderne Energieversorgung zu sein, Fahrradstadt zu werden und grüne Oasen in verdichteten Innenstädten zu schaffen.',
+        stubs: [0, 2, 4, 5, 6, 8, 9, 11, 12, 16, 17, 19, 20],
+        translations: {
+            eng: 'Other metropoles are rising to be a pioneer for a modern energy supply, to becoming a cycling city and to creating green oases in dense inner cities.'
+        },
+        tags: [
+            'auf-',
+            '-machen',
+            'aufmachen',
+            'vor-',
+            '-reiter',
+            'für',
+            'zu',
+            'sein',
+            'werden',
+            'ver-',
+            'schaffen'
+        ]
     }
+
 ];

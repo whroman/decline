@@ -11,7 +11,7 @@ const tags = [
     '-rufen',
     'sagen',
     '-sagen',
-    'nennenv'
+    'nennen'
 ]
 
 const exercises = verbsWithPrepositions.filter((exercise) =>

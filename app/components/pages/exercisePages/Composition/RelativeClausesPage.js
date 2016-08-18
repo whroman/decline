@@ -3,9 +3,13 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const item = ', article';
+const items = [', article', ', wo'];
 
-const exercises = verbsWithPrepositions.filter((exercise) => exercise.tags.includes(item));
+const exercises = verbsWithPrepositions.filter(
+    (exercise) => items.some(
+        (item) => exercise.tags.includes(item)
+    )
+);
 
 export default function () {
     const props = {

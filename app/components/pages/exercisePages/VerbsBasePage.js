@@ -68,8 +68,8 @@ class VerbExercise extends Component {
     constructor() {
         super();
         this.state = {
-            showTranslationTooltip: false,
-            showAnswerTooltip: false
+            showAnswerTooltip: false,
+            isSelected: false
         };
 
         this.showAnswerTooltip = this.showAnswerTooltip.bind(this);
@@ -86,9 +86,52 @@ class VerbExercise extends Component {
         selectExercise(index);
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.setState({ isSelected: this.props.index === nextProps.selectedExercise });
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        const tooltipChanged = this.state.showAnswerTooltip !== nextState.showAnswerTooltip;
+        if (tooltipChanged) return true;
+        return this.state.isSelected !== nextState.isSelected;
+    }
+
+    componentDidUpdate() {
+        const { index, selectedExercise } = this.props;
+        if (index === selectedExercise)
+            this.refs.sentence
+                .querySelector('.VerbExercise-translation')
+                .scrollIntoViewIfNeeded();
+    }
+
+    renderSentence() {
+        const { wordList, translations, index, selectedExercise, selectExercise } = this.props;
+
+        return (
+            <div
+                className='VerbExercise-sentence'
+                ref='sentence'
+            >
+                {
+                    wordList.map((word, wordIndex) => {
+                        const props = Object.assign(word, {
+                            index: wordIndex,
+                            exerciseIndex: index,
+                            key: word.answer + wordIndex,
+                            selectExercise,
+                            selectedExercise
+                        });
+                        return (<VerbWord { ...props } />);
+                    })
+                }
+                <div className='VerbExercise-translation'> { translations.eng } </div>
+            </div>
+        );
+    }
+
     render() {
-        const { text, wordList, translations, index, selectedExercise, selectExercise } = this.props;
-        const selectedClass = index === selectedExercise ? 'selected' : '';
+        const { text, index } = this.props;
+        const selectedClass = this.state.isSelected ? 'selected' : '';
         const props = {
             className: `VerbExercise ${selectedClass}`,
             onClick: this.handleClick
@@ -111,25 +154,7 @@ class VerbExercise extends Component {
                         onMouseOut={ () => this.showAnswerTooltip(false) }
                     />
                 </div>
-
-                <div
-                    className='VerbExercise-sentence'
-                    ref='sentence'
-                >
-                    {
-                        wordList.map((word, wordIndex) => {
-                            const props = Object.assign(word, {
-                                index: wordIndex,
-                                exerciseIndex: index,
-                                key: word.answer + wordIndex,
-                                selectExercise,
-                                selectedExercise
-                            });
-                            return (<VerbWord { ...props } />);
-                        })
-                    }
-                    <div className='VerbExercise-translation'> { translations.eng } </div>
-                </div>
+                { this.renderSentence.call(this) }
             </div>
         );
     }
@@ -148,8 +173,8 @@ export class Verbs extends Component {
         this.selectExercise = this.selectExercise.bind(this);
     }
 
-    selectExercise(index) {
-        this.setState({ selectedExercise: index });
+    selectExercise(selectedExercise) {
+        this.setState({ selectedExercise });
     }
 
     render() {
@@ -178,8 +203,8 @@ export class Verbs extends Component {
         return props.exercises.map((item, index) => {
             const props = Object.assign(item, {
                 index,
-                selectedExercise,
                 selectExercise,
+                selectedExercise,
                 key: item.text
             });
             return (<VerbExercise { ...props } />);

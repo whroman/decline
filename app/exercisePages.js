@@ -9,9 +9,11 @@ import DaAdverbsPage from './components/pages/exercisePages/Adverbs/DaAdverbsPag
 import WieAlsPage from './components/pages/exercisePages/Adverbs/WieAlsPage';
 import LassenPage from './components/pages/exercisePages/Verbs/LassenPage';
 import SpeechPage from './components/pages/exercisePages/Verbs/SpeechPage';
+import KnowledgePage from './components/pages/exercisePages/Verbs/KnowledgePage';
 import StellenPage from './components/pages/exercisePages/Verbs/StellenPage';
 import ErVerVorPage from './components/pages/exercisePages/Prefixes/ErVerVorPage';
 import AufAusHerausPage from './components/pages/exercisePages/Prefixes/AufAusHerausPage';
+import BeEinErPage from './components/pages/exercisePages/Prefixes/BeEinErPage';
 import CristinaVocabPage from './components/pages/exercisePages/Vocab/CristinaVocabPage';
 import AkkDatPage from './components/pages/exercisePages/Pronouns/AkkDatPage';
 import SubordinatingPage from './components/pages/exercisePages/Composition/SubordinatingPage';
@@ -19,6 +21,7 @@ import RelativeClausesPage from './components/pages/exercisePages/Composition/Re
 import ArticleClausesPage from './components/pages/exercisePages/Composition/ArticleClausesPage';
 import PresentPerfectPage from './components/pages/exercisePages/Composition/PresentPerfectPage';
 import FuturePerfectPage from './components/pages/exercisePages/Composition/FuturePerfectPage';
+import FutureImperfectPage from './components/pages/exercisePages/Composition/FutureImperfectPage';
 
 export default [
     {
@@ -55,6 +58,12 @@ export default [
         name: 'Speech Verbs',
         path: '/practice/verbs/speech',
         component: SpeechPage,
+        tags: ['verb']
+    },
+    {
+        name: 'Knowledge Verbs',
+        path: '/practice/verbs/knowledge',
+        component: KnowledgePage,
         tags: ['verb']
     },
     {
@@ -106,6 +115,12 @@ export default [
         tags: ['composition']
     },
     {
+        name: 'Future Imperfect Tense',
+        path: '/practice/composition/future-imperfect',
+        component: FutureImperfectPage,
+        tags: ['composition']
+    },
+    {
         name: '"da-" Adverbs',
         path: '/practice/adverbs/da-words',
         component: DaAdverbsPage,
@@ -118,7 +133,7 @@ export default [
         tags: ['adverb']
     },
     {
-        name: 'Werden, Worden, Geworden, War',
+        name: 'Werden, Worden, Wurden, War',
         path: '/vocab/verbs/werden',
         component: WerdenPage,
         tags: ['verb']
@@ -127,6 +142,12 @@ export default [
         name: '"er", "vor", "ver" Prefixes',
         path: '/vocab/prefixes/er-ver-vor',
         component: ErVerVorPage,
+        tags: ['prefix']
+    },
+    {
+        name: '"be", "ein", "er" Prefixes',
+        path: '/vocab/prefixes/be-ein-er',
+        component: BeEinErPage,
         tags: ['prefix']
     },
     {
