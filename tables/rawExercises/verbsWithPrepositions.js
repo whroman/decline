@@ -2336,7 +2336,7 @@ export default [
         text: 'Ihr Vater hat sie als Fotografin für das Projekt empfohlen!',
         stubs: [0, 3, 4, 6, 7, 9],
         translations: {
-            eng: 'Her father has chosen her as the photographer for the project.'
+            eng: 'Her father has recommended her as the photographer for the project.'
         },
         tags: [
             'accusative',
