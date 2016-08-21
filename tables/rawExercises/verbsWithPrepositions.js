@@ -29,7 +29,8 @@ export default [
         },
         tags: [
             'helfen',
-            'bei'
+            'bei',
+            'dies'
         ]
     },
     {
@@ -52,7 +53,7 @@ export default [
         tags: [
             'informieren',
             'bei',
-            'sich',
+            'reflexive',
             'haben'
         ]
     },
@@ -138,7 +139,7 @@ export default [
         tags: [
             'freuen',
             'auf',
-            'sich'
+            'reflexive'
         ]
     },
     {
@@ -151,7 +152,7 @@ export default [
             'present-perfect',
             'freuen',
             'auf',
-            'sich',
+            'reflexive',
             'haben'
         ]
     },
@@ -222,7 +223,7 @@ export default [
             'be-',
             'bedanken',
             'für',
-            'sich',
+            'reflexive',
             'möchten'
         ]
     },
@@ -236,7 +237,7 @@ export default [
             'be-',
             'bedanken',
             'bei',
-            'sich',
+            'reflexive',
             'möchten'
         ]
     },
@@ -413,7 +414,7 @@ export default [
         text: 'Die alten Ägypter glaubten an ein Weiterleben nach dem Tod und an eine Art Seele, die im Augenblick des Todes den Körper verlässt.',
         stubs: [3, 4, 5, 7, 8, 10, 11, 12, 15, 16, 18, 20, 22],
         translations: {
-            eng: 'The ancient Egyptians believed in a life after death and a kind of soul that leaves the body at the moment of death.'
+            eng: 'The ancient Egyptians believed in a life after death and a kind of soul which leaves the body at the moment of death.'
         },
         tags: [
             'glauben',
@@ -475,7 +476,8 @@ export default [
             'strömen',
             'aus',
             'auf',
-            'an'
+            'an',
+            'all'
         ]
     },
     {
@@ -515,7 +517,7 @@ export default [
             '-sprechen',
             'sprechen',
             'für',
-            'sich'
+            'reflexive'
         ]
     },
     {
@@ -564,7 +566,7 @@ export default [
             'trennen',
             'von',
             'haben',
-            'sich'
+            'reflexive'
         ]
     },
     {
@@ -576,7 +578,7 @@ export default [
         tags: [
             'treffen',
             'mit',
-            'sich'
+            'reflexive'
         ]
     },
     {
@@ -749,7 +751,7 @@ export default [
             'present-perfect',
             'zanken',
             'haben',
-            'sich'
+            'reflexive'
         ]
     },
     {
@@ -774,7 +776,7 @@ export default [
         tags: [
             'present-perfect',
             'haben',
-            'sich',
+            'reflexive',
             'duschen'
         ]
     },
@@ -1060,7 +1062,7 @@ export default [
         tags: [
             'da-',
             'erinnern',
-            'sich',
+            'reflexive',
             'dass',
             'kochen',
             'helfen',
@@ -1082,7 +1084,7 @@ export default [
     },
     {
         text: 'Die Idee, dass ich plötzlich für alles verantwortlich sein sollte, war mir neu.',
-        stubs: [2, 5, 8, 9, 10, 11],
+        stubs: [2, 5, 6, 8, 9, 10, 11],
         translations: {
             eng: 'The idea that I was suddenly supposed to be responsible for everything was new to me.'
         },
@@ -1090,7 +1092,8 @@ export default [
             'dass',
             'sein',
             'war',
-            'sollten'
+            'sollten',
+            'all'
         ]
     },
     {
@@ -1101,7 +1104,8 @@ export default [
         },
         tags: [
             'dass',
-            'für'
+            'für',
+            'dies'
         ]
     },
 
@@ -1117,13 +1121,14 @@ export default [
     },
     {
         text: 'Der Organisation, die mich an diese Projekt vermittelt hat, muss ich eine Gebühr von 100 Euro bezahlen.',
-        stubs: [2, 7, 12],
+        stubs: [2, 5, 7, 12],
         translations: {
             eng: 'I have to pay the organization that organized this project a 100 Euro fee.'
         },
         tags: [
             ', article',
-            'vocab-cristina'
+            'vocab-cristina',
+            'dies'
         ]
     },
     {
@@ -1183,11 +1188,11 @@ export default [
         text: 'Das Auto lässt sich leicht reparieren.',
         stubs: [2, 3, 5],
         translations: {
-            eng: 'The car can be repaired easily.'
+            eng: 'The car can (literally: lets itself) be repaired easily.'
         },
         tags: [
             'lassen',
-            'sich',
+            'reflexive',
             'reparieren'
         ]
     },
@@ -1246,7 +1251,8 @@ export default [
         },
         tags: [
             'lassen',
-            'bei'
+            'bei',
+            'all'
         ]
     },
     {
@@ -1338,7 +1344,7 @@ export default [
         },
         tags: [
             'machen',
-            'sich',
+            'reflexive',
             'wegen',
             'während'
         ]
@@ -1371,7 +1377,7 @@ export default [
             'auf',
             'vor-',
             'vorbereiten',
-            'sich'
+            'reflexive'
         ]
     },
     {
@@ -1381,6 +1387,7 @@ export default [
             eng: 'Some athletes believe that, during the Olympics, it could become dangerous.'
         },
         tags: [
+            'manch',
             'glauben',
             'dass',
             'während',
@@ -1431,16 +1438,17 @@ export default [
             'vorbereiten',
             'in',
             'auf',
-            'sich'
+            'reflexive'
         ]
     },
     {
         text: 'Welche Wörter müssen in die Lücken eingesetzt werden?',
-        stubs: [2, 3, 4, 6, 7],
+        stubs: [0, 2, 3, 4, 6, 7],
         translations: {
             eng: 'Which words need to be inserted in the gaps?'
         },
         tags: [
+            'welch',
             'müssen',
             'in',
             'einsetzen',
@@ -1528,7 +1536,8 @@ export default [
             'vor-',
             'um',
             ', aber',
-            'in'
+            'in',
+            'dies'
         ]
     },
     {
@@ -1541,7 +1550,8 @@ export default [
             'finden',
             'weil',
             'brauchen',
-            'haben'
+            'haben',
+            'jed'
         ]
     },
     {
@@ -1629,7 +1639,8 @@ export default [
             eng: 'Journalists have a difficult task in such incidents.'
         },
         tags: [
-            'bei'
+            'bei',
+            'solch'
         ]
     },
     {
@@ -1690,6 +1701,7 @@ export default [
         },
         tags: [
             'stehen',
+            'solch',
             'bei',
             'wie',
             'in',
@@ -1740,7 +1752,8 @@ export default [
             'unter',
             'zu',
             'zeigen',
-            'von'
+            'von',
+            'dies'
         ]
     },
     {
@@ -1789,7 +1802,7 @@ export default [
     },
     {
         text: 'Sie denken alles, was in Deutschland passiert betrifft mich, weil sie sich nicht über die deutsche Geographie auskennen.',
-        stubs: [1, 3, 4, 6, 7, 8, 9, 10, 11, 13, 14, 15, 17],
+        stubs: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 13, 14, 15, 17],
         translations: {
             eng: 'They think everything which occurs in Germany applies to me because they don\'t know anything about German geography.'
         },
@@ -1800,8 +1813,9 @@ export default [
             'betriffen',
             'weil',
             ', weil',
-            'sich',
+            'reflexive',
             'über',
+            'all',
             'auskennen'
         ]
     },
@@ -1832,7 +1846,7 @@ export default [
         text: 'Ich gehe nach Hause, damit ich nicht nass werde.',
         stubs: [1, 2, 4, 8],
         translations: {
-            eng: 'I\'m going home in order to not get wet.'
+            eng: 'I\'m going home in order to not become wet.'
         },
         tags: [
             'gehen',
@@ -1938,7 +1952,7 @@ export default [
             'er-',
             '-kälten',
             'erkälten',
-            'sich'
+            'reflexive'
         ]
     },
     {
@@ -2032,7 +2046,8 @@ export default [
         tags: [
             ', dass',
             'in',
-            'werden'
+            'werden',
+            'solch'
         ]
     },
     {
@@ -2071,7 +2086,8 @@ export default [
             ', warum',
             'auf',
             'setzen',
-            'dative'
+            'dative',
+            'dies'
         ]
     },
     {
@@ -2152,7 +2168,7 @@ export default [
         text: 'Es kann passieren, dass Bots die Beliebtheit eines Politikers größer erscheinen lassen.',
         stubs: [2, 3, 5, 7, 9, 10, 11],
         translations: {
-            eng: 'It\'s possible for bots to make the popularity of a politician appear higher.'
+            eng: 'It\'s possible (literally: it can occur) for bots to make (literally: to let) the popularity of a politician appear larger.'
         },
         tags: [
             'können',
@@ -2400,7 +2416,7 @@ export default [
             eng: 'She has fallen in love with someone that she has never seen.'
         },
         tags: [
-            'sich',
+            'reflexive',
             'ver-',
             '-lieben',
             'verlieben',
@@ -2437,14 +2453,15 @@ export default [
     },
     {
         text: 'Hier merkt sie, dass in Deutschland nicht alle Leute freundlich sind.',
-        stubs: [3, 4, 10],
+        stubs: [3, 4, 7, 10],
         translations: {
             eng: 'Here she takes note that in Germany not all people are friendly.'
         },
         tags: [
             'merken',
             ', dass',
-            'in'
+            'in',
+            'all'
         ]
     },
     {
@@ -2545,7 +2562,7 @@ export default [
             spa: 'He visto la pelicula.'
         },
         tags: [
-            'sich',
+            'reflexive',
             'haben',
             'present-perfect',
             'an-',
@@ -2605,7 +2622,7 @@ export default [
             spa: 'Hemos conversado durante mocho tiempo.'
         },
         tags: [
-            'sich',
+            'reflexive',
             'haben',
             'unter-',
             '-halten',
@@ -2841,7 +2858,7 @@ export default [
             eng: 'Almost every user of a social network eventually encounters bots - which are programs that work without human assistance.'
         },
         tags: [
-            'jede',
+            'jed',
             'begegnen',
             'irgend-',
             ', article',
@@ -2963,7 +2980,8 @@ export default [
             'verändern',
             'ver-',
             '-ändern',
-            'können'
+            'können',
+            'manch'
         ]
     },
     {
@@ -3192,7 +3210,7 @@ export default [
             eng: 'He has recently broken up with his girlfriend.'
         },
         tags: [
-            'sich',
+            'reflexive',
             'present-perfect',
             'vor',
             'von',
@@ -3336,7 +3354,7 @@ export default [
             'vor-',
             '-stellen',
             'vorstellen',
-            'sich'
+            'reflexive'
         ]
     },
     {
@@ -3355,7 +3373,7 @@ export default [
             'ver-',
             '-suchen',
             'versuchen',
-            'sich',
+            'reflexive',
             'suchen'
         ]
     },
@@ -3401,7 +3419,7 @@ export default [
             '-finden',
             'befinden',
             'außerhalb',
-            'sich',
+            'reflexive',
             'genitive',
             ', aber',
             'können',
@@ -3437,7 +3455,8 @@ export default [
             'außer',
             ', article',
             'zu',
-            'fahren'
+            'fahren',
+            'dies'
         ]
     },
     {
@@ -3497,7 +3516,7 @@ export default [
         text: 'Ich werde dir das Buch morgen zurückgeben.',
         stubs: [1, 2, 3, 6],
         translations: {
-            eng: 'I\'ll give you back the book tomorrow.'
+            eng: 'I\'ll give back the book to you tomorrow.'
         },
         tags: [
             'pronoun-dative',
@@ -3516,7 +3535,7 @@ export default [
         },
         tags: [
             'wenn',
-            'sich',
+            'reflexive',
             'be-',
             '-eilen',
             'beeilen',
@@ -3605,7 +3624,7 @@ export default [
     },
     {
         text: 'Bevor wir nach Hause kommen, werden sie alles aufgegessen haben.',
-        stubs: [0, 2, 4, 5, 8, 9],
+        stubs: [0, 2, 4, 5, 7, 8, 9],
         translations: {
             eng: 'Before we get home they will have eaten everything up.'
         },
@@ -3618,7 +3637,8 @@ export default [
             '-essen',
             'aufessen',
             'haben',
-            'future-perfect'
+            'future-perfect',
+            'all'
         ]
     },
     {
@@ -3658,7 +3678,7 @@ export default [
         text: 'Er wird das wohl gewusst haben.',
         stubs: [1, 4, 5],
         translations: {
-            eng: 'He will probably have already known that.'
+            eng: 'He will probably have known that.'
         },
         tags: [
             'werden',
@@ -3875,7 +3895,7 @@ export default [
             eng: 'Here, every electron enters a bond with another particle and creates a molecule.'
         },
         tags: [
-            'jede',
+            'jed',
             'ver-',
             'mit',
             'ein-',
@@ -4110,7 +4130,8 @@ export default [
             'dessen',
             '-ruhen',
             'be-',
-            'beruhen'
+            'beruhen',
+            'dies'
         ]
     },
     {
@@ -4137,7 +4158,7 @@ export default [
             'können',
             'treffen',
             ', wie',
-            'sich',
+            'reflexive',
             'vor-',
             '-stellen',
             'vorstellen'
@@ -4286,6 +4307,222 @@ export default [
             'ver-',
             'schaffen'
         ]
+    },
+    {
+        text: 'Ich trinke vor der Arbeit Kaffee.',
+        stubs: [1, 2, 3],
+        translations: {
+            eng: 'I drink coffee before work.'
+        },
+        tags: [
+            'vor',
+            'dative',
+            'trinken'
+        ]
+    },
+    {
+        text: 'Ich trinke vor dem Büro Kaffee.',
+        stubs: [1, 2, 3],
+        translations: {
+            eng: 'I drink coffee in front of the office.'
+        },
+        tags: [
+            'vor',
+            'dative',
+            'trinken'
+        ]
+    },
+    {
+        text: 'Ich klebe ein paar Aufkleber auf meine Vase.',
+        stubs: [1, 5, 6],
+        translations: {
+            eng: 'I\'m sticking a few stickers on my vase.'
+        },
+        tags: [
+            'kleben',
+            'auf'
+        ]
+    },
+    {
+        text: 'Ich beklebe meine Vase mit ein paar Stickern.',
+        stubs: [1, 2, 4],
+        translations: {
+            eng: 'I\'m pasting my vase up with some stickers.'
+        },
+        tags: [
+            '-kleben',
+            'be-',
+            'bekleben',
+            'mit'
+        ]
+    },
+    {
+        text: 'Ich lege Käse auf meine Pizza.',
+        stubs: [1, 3, 4],
+        translations: {
+            eng: 'I\'m putting cheese on my pizza.'
+        },
+        tags: [
+            'legen',
+            'auf'
+        ]
+    },
+    {
+        text: 'Ich belege meine Pizza mit Käse',
+        stubs: [1, 2, 4],
+        translations: {
+            eng: 'I\'m topping my pizza with cheese.'
+        },
+        tags: [
+            'be-',
+            '-legen',
+            'belegen',
+            'mit'
+        ]
+    },
+    {
+        text: 'Ich begreife nicht, wieso du dir schon wieder ein neues Auto gekauft hast.',
+        stubs: [1, 3, 5, 8, 9, 11, 12],
+        translations: {
+            eng: 'I don’t grasp why you bought yourself a new car once again.'
+        },
+        tags: [
+            ', wieso',
+            'be-',
+            '-greifen',
+            'begreifen',
+            'pronoun-dative',
+            'kaufen',
+            'present-perfect'
+        ]
+    },
+    {
+        text: 'Sie beschweren sich immer über das Wetter.',
+        stubs: [1, 2, 4, 5],
+        translations: {
+            eng: 'They always complain about the weather.'
+        },
+        tags: [
+            'be-',
+            '-schweren',
+            'beschweren',
+            'reflexive',
+            'über'
+        ]
+    },
+    {
+        text: 'Eine Frau wird im Industriegebiet tot aufgefunden.',
+        stubs: [0, 2, 3, 6],
+        translations: {
+            eng: 'A woman is discovered dead in the industrial area.'
+        },
+        tags: [
+            'werden',
+            'in',
+            'auf-',
+            '-finden',
+            'auffinden',
+            'present-perfect'
+        ]
+    },
+    {
+        text: 'Der Wagen hat sie seitlich und mit voller Wucht erfasst.',
+        stubs: [2, 6, 7, 9],
+        translations: {
+            eng: 'The car struck her laterally and with full force.'
+        },
+        tags: [
+            'present-perfect',
+            'erfassen',
+            'er-',
+            '-fassen',
+            'mit'
+        ]
+    },
+    {
+        text: 'Sie wurde vermutlich kurz vor ihrem Tod geschlagen.',
+        stubs: [1, 4, 5, 7],
+        translations: {
+            eng: 'She was probably beaten shortly before her death.'
+        },
+        tags: [
+            'wurden',
+            'vor',
+            'dative',
+            'schlagen'
+        ]
+    },
+    {
+        text: 'Ich dachte, ich hätte ihn, aber meine Zeugin wurde überfahren.',
+        stubs: [1, 3, 4, 5, 8, 9],
+        translations: {
+            eng: 'I thought I had him but my witness was run over.'
+        },
+        tags: [
+            'hätten',
+            ', aber',
+            'wurden',
+            'überfahren',
+            'über-',
+            '-fahren',
+            'dachten'
+        ]
+    },
+    {
+        text: 'Lass uns jetzt nicht über Arbeit reden.',
+        stubs: [0, 4, 6],
+        translations: {
+            eng: 'Let\'s not talk about work right now.'
+        },
+        tags: [
+            'lassen',
+            'über',
+            'reden'
+        ]
+    },
+    {
+        text: 'Wir sind uns nach seiner Einstellung vielleicht zwei, drei Mal begegnet.',
+        stubs: [1, 2, 3, 4, 10],
+        translations: {
+            eng: 'We met over his attitude maybe two or three times.'
+        },
+        tags: [
+            'nach',
+            'dative',
+            'be-',
+            '-gegen',
+            'begegnen'
+        ]
+    },
+    {
+        text: 'Entscheide, ob du ein Reflexivpronomen verwenden musst oder nicht.',
+        stubs: [0, 1, 5, 6],
+        translations: {
+            eng: 'Decide whether you need to utilize a reflexive pronoun or not.'
+        },
+        tags: [
+            'ent-',
+            '-scheiden',
+            'entscheiden',
+            'ob',
+            'ver-',
+            '-wenden',
+            'verwenden',
+            'müssen'
+        ]
+    },
+    {
+        text: 'Hast du dir schon etwas zu essen bestellt?',
+        stubs: [0, 2, 5, 7],
+        translations: {
+            eng: 'Have you already ordered something to eat?'
+        },
+        tags: [
+            'pronoun-dative',
+            'zu',
+            'be-',
+            '-stellen',
+            'bestellen'
+        ]
     }
-
 ];
