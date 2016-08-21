@@ -4368,7 +4368,7 @@ export default [
         ]
     },
     {
-        text: 'Ich belege meine Pizza mit Käse',
+        text: 'Ich belege meine Pizza mit Käse.',
         stubs: [1, 2, 4],
         translations: {
             eng: 'I\'m topping my pizza with cheese.'
