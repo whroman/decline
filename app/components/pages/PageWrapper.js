@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { get } from 'axios';
+import { random } from 'lodash';
 
 export default class PageWrapper extends Component {
 
@@ -10,11 +11,46 @@ export default class PageWrapper extends Component {
         };
     }
 
-    componentWillMount () {
-        get('https://natgeoapi.herokuapp.com/api/dailyphoto')
-            .then((response) => {
-                document.body.style.backgroundImage = `url('${response.data.src}')`;
+    applyBGImage (imageUrl) {
+        document.body.style.backgroundImage = `url('${imageUrl}')`;
+        const dateOfToday = (new Date).getDate();
+        localStorage.setItem('potd', JSON.stringify({
+            date: dateOfToday,
+            url: imageUrl
+        }))
+    }
+
+    requestRandomBGImage () {
+        const today = new Date();
+        const apiKey = 'wTOvHOBQWXzc8rlGtCxU16RxOJocS2lLumsKk35k';
+        // Offset date because pics of today are posted after today.
+        const dateString = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate() - 2}`;
+        const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${dateString}&api_key=${apiKey}`
+        get(url).then((response) => {
+                const { photos } = response.data;
+                const photoIndex = random(photos.length);
+                const imageUrl = photos[photoIndex].img_src;
+                console.log(imageUrl)
+                this.applyBGImage(imageUrl);
             });
+    }
+
+    componentWillMount () {
+        const todayAtMidnight = new Date();
+        todayAtMidnight.getDate();
+
+        const dateOfToday = (new Date).getDate();
+        const potd = JSON.parse(localStorage.getItem('potd'));
+        console.log(potd)
+        if (potd) {
+            if (potd.date < dateOfToday) {
+                this.requestRandomBGImage();
+            } else {
+                this.applyBGImage(potd.url)
+            }
+        } else {
+            this.requestRandomBGImage();
+        }
     }
 
     renderRight () {
