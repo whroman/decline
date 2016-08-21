@@ -47,6 +47,8 @@ export function getRandomPhrases({ amount, kasus, nounKategorie, adjectiveKatego
             adjectiveCategory: adjectiveKategorie,
             nounCategory: nounKategorie
         });
+
+        console.log(phrase);
         return phrase;
     });
 
