@@ -16,6 +16,7 @@ import AufAusHerausPage from './components/pages/exercisePages/Prefixes/AufAusHe
 import BeEinErPage from './components/pages/exercisePages/Prefixes/BeEinErPage';
 import CristinaVocabPage from './components/pages/exercisePages/Vocab/CristinaVocabPage';
 import AkkDatPage from './components/pages/exercisePages/Pronouns/AkkDatPage';
+import AdjectivalPronounsPage from './components/pages/exercisePages/Pronouns/AdjectivalPronounsPage';
 import SubordinatingPage from './components/pages/exercisePages/Composition/SubordinatingPage';
 import RelativeClausesPage from './components/pages/exercisePages/Composition/RelativeClausesPage';
 import ArticleClausesPage from './components/pages/exercisePages/Composition/ArticleClausesPage';
@@ -160,6 +161,12 @@ export default [
         name: 'Accusative & Dative Pronouns',
         path: '/vocab/pronouns/akk-dat',
         component: AkkDatPage,
+        tags: ['pronoun']
+    },
+    {
+        name: 'Adjectival Pronouns',
+        path: '/vocab/pronouns/adjectival',
+        component: AdjectivalPronounsPage,
         tags: ['pronoun']
     },
     {

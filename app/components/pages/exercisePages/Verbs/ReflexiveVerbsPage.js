@@ -4,7 +4,7 @@ import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
 const reflexiveVerbExercises = verbsWithPrepositions
-    .filter((exercise) => exercise.tags.includes('sich'));
+    .filter((exercise) => exercise.tags.includes('reflexive'));
 
 export default function () {
     const props = {
