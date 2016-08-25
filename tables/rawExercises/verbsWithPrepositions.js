@@ -3853,7 +3853,8 @@ export default [
         tags: [
             'werden',
             'haben',
-            'future-perfect'
+            'future-perfect',
+            'active-voice'
         ]
     },
     {
@@ -3867,7 +3868,8 @@ export default [
             'in',
             'gewesen',
             'sein',
-            'future-perfect'
+            'future-perfect',
+            'active-voice'
         ]
     },
     {
@@ -3881,6 +3883,7 @@ export default [
             'werden',
             ', werden',
             'future-perfect',
+            'active-voice',
             'packen',
             'zurückkommen',
             'zurück-',
@@ -3904,7 +3907,8 @@ export default [
             'inzwischen',
             'kommen',
             'sein',
-            'future-perfect'
+            'future-perfect',
+            'active-voice'
         ]
     },
     {
@@ -3923,6 +3927,7 @@ export default [
             'aufessen',
             'haben',
             'future-perfect',
+            'active-voice',
             'all'
         ]
     },
@@ -3939,6 +3944,7 @@ export default [
             '-gehen',
             'weggehen',
             'sein',
+            'active-voice',
             'future-perfect'
         ]
     },
@@ -3956,6 +3962,7 @@ export default [
             'ab-',
             '-holen',
             'abholen',
+            'active-voice',
             'future-perfect'
         ]
     },
@@ -3969,6 +3976,7 @@ export default [
             'werden',
             'wissen',
             'haben',
+            'active-voice',
             'future-perfect'
         ]
     },
@@ -4167,7 +4175,7 @@ export default [
             'present-perfect',
             'active-voice',
             'passive-voice',
-            'preterite-tense',
+            'preterite',
             'stören',
             'werden',
             'wollten'
@@ -4299,7 +4307,7 @@ export default [
             'wurden',
             'sehen',
             'passive-voice',
-            'preterite-tense'
+            'preterite'
         ]
     },
     {
@@ -4314,7 +4322,7 @@ export default [
             '-gehen',
             'begehen',
             'passive-voice',
-            'preterite-tense'
+            'preterite'
         ]
     },
     {
@@ -4330,7 +4338,7 @@ export default [
             '-bauen',
             'erbauen',
             'passive-voice',
-            'preterite-tense'
+            'preterite'
         ]
     },
     {
@@ -4342,7 +4350,7 @@ export default [
         tags: [
             'lesen',
             'active-voice',
-            'preterite-tense',
+            'preterite',
             'past-simple'
         ]
     },
@@ -4358,7 +4366,7 @@ export default [
             'von',
             'pronoun-dative',
             'passive-voice',
-            'preterite-tense',
+            'preterite',
             'past-perfect'
         ]
     },
@@ -4370,7 +4378,8 @@ export default [
         },
         tags: [
             'hatten',
-            'preterite-tense',
+            'preterite',
+            'active-voice',
             'past-perfect'
         ]
     },
@@ -4383,9 +4392,9 @@ export default [
         tags: [
             'in',
             'machten',
-            'preterite-tense',
+            'preterite',
             'past-simple',
-            'past-action'
+            'active-voice'
         ]
     },
     {
@@ -4398,8 +4407,7 @@ export default [
             'in',
             'machen',
             'present-perfect',
-            'active-voice',
-            'past-action'
+            'active-voice'
         ]
     },
     {
@@ -4410,8 +4418,9 @@ export default [
         },
         tags: [
             'waren',
-            'preterite-tense',
-            'past-condition'
+            'preterite',
+            'past-simple',
+            'active-voice'
         ]
     },
     {
@@ -4422,7 +4431,7 @@ export default [
         },
         tags: [
             'hatten',
-            'preterite-tense',
+            'preterite',
             'active-voice',
             'arbeiten',
             'past-perfect'
@@ -4440,7 +4449,7 @@ export default [
             '-stehen',
             'aufstehen',
             'frühstücken',
-            'preterite-tense',
+            'preterite',
             'active-voice',
             'past-perfect'
         ]

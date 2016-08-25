@@ -1,4 +1,5 @@
 import { assert } from 'chai';
+import { intersection } from 'lodash';
 import exercises from './verbsWithPrepositions';
 
 describe('exercises', () => {
@@ -37,11 +38,38 @@ describe('exercises', () => {
             });
         });
 
-        it('should have a populated array declared for `tags` in each exercise', () => {
-            exercises.forEach((exercise) => {
-                assert.equal(exercise.tags instanceof Array, true, JSON.stringify(exercise));
-                assert.isAtLeast(exercise.tags.length, 1);
+        describe('`tags` property', () => {
+            it('should be declared as a populated array in each exercise', () => {
+                exercises.forEach((exercise) => {
+                    assert.equal(exercise.tags instanceof Array, true, JSON.stringify(exercise));
+                    assert.isAtLeast(exercise.tags.length, 1);
+                });
             });
+
+            context('when it contains a "tense" tag', () => {
+                it('should also have a "voice" tag', () => {
+                    const tenseTags = [
+                        'present-simple',
+                        'present-perfect',
+                        'present-simple',
+                        'past-perfect',
+                        'present-simple',
+                        'future-perfect'
+                    ];
+
+                    const voiceTags = [
+                        'passive-voice',
+                        'active-voice'
+                    ];
+
+                    exercises.forEach((exercise) => {
+                        const declaredTenseTags = intersection(tenseTags, exercise.tags);
+                        if (declaredTenseTags.length === 0) return;
+                        const declaredVoiceTags = intersection(voiceTags, exercise.tags);
+                        assert.isAtLeast(declaredVoiceTags.length, 1, JSON.stringify(exercise));
+                    });
+                });
+            })
         });
     });
 })
