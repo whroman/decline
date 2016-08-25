@@ -125,6 +125,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'sprechen',
             'von',
             'haben'
@@ -150,6 +151,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'freuen',
             'auf',
             'reflexive',
@@ -164,6 +166,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'helfen',
             'bei'
         ]
@@ -345,6 +348,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'fallen',
             'auf',
             'sein'
@@ -405,6 +409,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'schlüpfen',
             'aus',
             'dass'
@@ -414,7 +419,7 @@ export default [
         text: 'Die alten Ägypter glaubten an ein Weiterleben nach dem Tod und an eine Art Seele, die im Augenblick des Todes den Körper verlässt.',
         stubs: [3, 4, 5, 7, 8, 10, 11, 12, 15, 16, 18, 20, 22],
         translations: {
-            eng: 'The ancient Egyptians believed in a life after death and a kind of soul which leaves the body at the moment of death.'
+            eng: 'The ancient Egyptians believed in a life after death and a kind of soul which abandons the body at the moment of death.'
         },
         tags: [
             'glauben',
@@ -539,6 +544,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'sterben',
             'an',
             'sein'
@@ -552,7 +558,9 @@ export default [
         },
         tags: [
             'teilen',
-            'in'
+            'in',
+            'present-simple',
+            'active-voice'
         ]
     },
     {
@@ -563,6 +571,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'trennen',
             'von',
             'haben',
@@ -576,6 +585,8 @@ export default [
             eng: 'I\'m meeting with my husband later.'
         },
         tags: [
+            'present-simple',
+            'active-voice',
             'treffen',
             'mit',
             'reflexive'
@@ -659,6 +670,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'passive-voice',
             'fragen',
             'sein',
             'worden'
@@ -672,6 +684,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'sein',
             'in',
             'gewesen'
@@ -685,9 +698,23 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'sein',
             'bleiben',
             'bei'
+        ]
+    },
+    {
+        text: 'Es ist dunkel geworden.',
+        stubs: [1, 3],
+        translations: {
+            eng: 'It has become dark.'
+        },
+        tags: [
+            'present-perfect',
+            'active-voice',
+            'sein',
+            'geworden'
         ]
     },
     {
@@ -698,6 +725,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'sein',
             'geworden'
         ]
@@ -710,6 +738,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'sein',
             'durch',
             'tanzen'
@@ -723,6 +752,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'haben',
             'in',
             'tanzen'
@@ -738,6 +768,8 @@ export default [
             'haben',
             'kaufen',
             'wollen',
+            'active-voice',
+            'present-perfect',
             'double-infinitive'
         ]
     },
@@ -749,6 +781,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'zanken',
             'haben',
             'reflexive'
@@ -762,6 +795,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'sein',
             'nach',
             'reisen'
@@ -774,6 +808,7 @@ export default [
             eng: 'He showered.'
         },
         tags: [
+            'active-voice',
             'present-perfect',
             'haben',
             'reflexive',
@@ -787,6 +822,7 @@ export default [
             eng: 'Did you (formal) buy the car?'
         },
         tags: [
+            'active-voice',
             'present-perfect',
             'haben',
             'kaufen'
@@ -802,6 +838,8 @@ export default [
             'haben',
             'sagen',
             'dürfen',
+            'active-voice',
+            'present-perfect',
             'double-infinitive'
         ]
     },
@@ -815,6 +853,8 @@ export default [
             'haben',
             'wissen',
             'können',
+            'active-voice',
+            'present-perfect',
             'double-infinitive'
         ]
     },
@@ -828,6 +868,8 @@ export default [
             'haben',
             'helfen',
             'müssen',
+            'present-perfect',
+            'active-voice',
             'double-infinitive'
         ]
     },
@@ -841,6 +883,8 @@ export default [
             'haben',
             'tun',
             'sollen',
+            'present-perfect',
+            'active-voice',
             'double-infinitive'
         ]
     },
@@ -854,6 +898,8 @@ export default [
             'haben',
             'machen',
             'wollen',
+            'present-perfect',
+            'active-voice',
             'double-infinitive'
         ]
     },
@@ -867,6 +913,8 @@ export default [
             'haben',
             'tragen',
             'müssen',
+            'present-perfect',
+            'active-voice',
             'double-infinitive'
         ]
     },
@@ -881,7 +929,8 @@ export default [
             'haben',
             'sagen',
             'dürfen',
-            'double-infinitive'
+            'present-perfect',
+            'active-voice'
         ]
     },
     {
@@ -893,7 +942,9 @@ export default [
         tags: [
             'gehen',
             'in',
-            'weil'
+            'weil',
+            'present-simple',
+            'active-voice'
         ]
     },
     {
@@ -909,7 +960,66 @@ export default [
             'aufstehen',
             'auf-',
             '-stehen',
-            'müssen'
+            'müssen',
+            'past-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Sie wollte bewundert werden.',
+        stubs: [1, 2, 3],
+        translations: {
+            eng: 'She wanted to be admired.'
+        },
+        tags: [
+            'wollten',
+            'bewundern',
+            'werden',
+            'past-simple',
+            'passive-voice'
+        ]
+    },
+    {
+        text: 'Die Wohnung sollte geräumt werden.',
+        stubs: [2, 3, 4],
+        translations: {
+            eng: 'The flat was supposed to be cleaned.'
+        },
+        tags: [
+            'sollten',
+            'räumen',
+            'werden',
+            'past-simple',
+            'passive-voice',
+        ]
+    },
+    {
+        text: 'Ihm konnte nicht geholfen werden.',
+        stubs: [0, 1, 3, 4],
+        translations: {
+            eng: 'He could not be helped.'
+        },
+        tags: [
+            'pronoun-dative',
+            'konnten',
+            'helfen',
+            'werden',
+            'past-simple',
+            'passive-voice'
+        ]
+    },
+    {
+        text: 'Das wird repariert werden müssen.',
+        stubs: [1, 2, 3, 4],
+        translations: {
+            eng: 'That will need to be repaired.'
+        },
+        tags: [
+            'werden',
+            'reparieren',
+            'müssen',
+            'future-simple',
+            'passive-voice'
         ]
     },
     {
@@ -920,7 +1030,92 @@ export default [
         },
         tags: [
             'essen',
-            'weil'
+            'weil',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Es werden viele Häuser aus Holz gebaut.',
+        stubs: [0, 1, 3, 5, 7],
+        translations: {
+            eng: 'There are many houses built out of wood.'
+        },
+        tags: [
+            'werden',
+            'aus',
+            'bauen',
+            'present-simple',
+            'passive-voice'
+        ]
+    },
+    {
+        text: 'Heute werden viele Häuser aus Holz gebaut.',
+        stubs: [1, 2, 4, 6],
+        translations: {
+            eng: 'Today many houses are built out of wood.'
+        },
+        tags: [
+            'werden',
+            'aus',
+            'bauen',
+            'present-simple',
+            'passive-voice'
+        ]
+    },
+    {
+        text: 'Es wird uns geholfen.',
+        stubs: [0, 1, 3],
+        translations: {
+            eng: 'We are being helped.'
+        },
+        tags: [
+            'werden',
+            'helfen',
+            'present-simple',
+            'passive-voice'
+        ]
+    },
+    {
+        text: 'Ich kann dir leider nicht helfen.',
+        stubs: [1, 2, 5],
+        translations: {
+            eng: 'Unfortunately, I can\'t help you.'
+        },
+        tags: [
+            'können',
+            'helfen',
+            'pronoun-dative',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Mir wird geholfen.',
+        stubs: [1, 2],
+        translations: {
+            eng: 'I am being helped.'
+        },
+        tags: [
+            'werden',
+            'geholfen',
+            'present-simple',
+            'passive-voice'
+        ]
+    },
+    {
+        text: 'Das wird von den Kindern gemacht werden können.',
+        stubs: [1, 2, 3, 5, 6, 7],
+        translations: {
+            eng: 'That will be able to be done by the children.'
+        },
+        tags: [
+            'von',
+            'werden',
+            'machen',
+            'können',
+            'future-simple',
+            'passive-voice'
         ]
     },
     {
@@ -1032,6 +1227,8 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
+            'double-infinitive',
             'sein',
             'gehen',
             'weil',
@@ -1047,6 +1244,10 @@ export default [
             eng: 'He didn\'t have any more money, because he had had a new house built.'
         },
         tags: [
+            'preterite',
+            'past-perfect',
+            'active-voice',
+            'double-infinitive',
             'weil',
             'bauen',
             'lassen',
@@ -1057,7 +1258,7 @@ export default [
         text: 'Sie erinnert sich nicht daran, dass ich ihr habe kochen helfen.',
         stubs: [1, 2, 4, 5, 7, 8, 9, 10],
         translations: {
-            eng: 'She doesn\'t remember that I helped her cook.'
+            eng: 'She doesn\'t remember that I had helped her cook.'
         },
         tags: [
             'da-',
@@ -1066,7 +1267,11 @@ export default [
             'dass',
             'kochen',
             'helfen',
-            'pronoun-dative'
+            'pronoun-dative',
+            'present-simple',
+            'present-perfect',
+            'active-voice',
+            'double-infinitive'
         ]
     },
     {
@@ -1076,6 +1281,8 @@ export default [
             eng: 'I want you to clean up your room.'
         },
         tags: [
+            'present-simple',
+            'active-voice',
             'wollen',
             'dass',
             'aufräumen',
@@ -1238,6 +1445,7 @@ export default [
         },
         tags: [
             'present-perfect',
+            'active-voice',
             'lassen',
             'in',
             'haben'
@@ -1263,7 +1471,8 @@ export default [
         },
         tags: [
             'lassen',
-            'machen'
+            'machen',
+            'ander'
         ]
     },
     {
@@ -1312,7 +1521,7 @@ export default [
         text: 'Tabakrauch enthält über 70 Stoffe, die erwiesenermaßen krebserregend sind.',
         stubs: [1, 2, 5, 6, 8],
         translations: {
-            eng: 'Tobacco smoke contains more than 70 substances that have been proved to be carcinogenic.'
+            eng: 'Tobacco smoke contains over 70 substances that are evidently carcinogenic.'
         },
         tags: [
             'enthalten',
@@ -1353,7 +1562,7 @@ export default [
         text: 'Das wusste er schon vor den Anschlägen, die sich in den Monaten davor in Europa ereignet hatten.',
         stubs: [1, 4, 5, 7, 8, 9, 10, 12, 13, 15, 16],
         translations: {
-            eng: 'He was already aware of that before the attacks that have occurred in recent months in Europe.'
+            eng: 'He already knew that before the attacks that have occurred in recent months in Europe.'
         },
         tags: [
             'wissen',
@@ -1487,7 +1696,7 @@ export default [
         text: 'Die Bürokratie war sehr hoch, sodass ich die Entscheidung getroffen habe, in einer anderen Firma zu arbeiten.',
         stubs: [2, 5, 9, 10, 11, 12, 13, 15, 16],
         translations: {
-            eng: 'The bureaucracy was very strong, so I made the decision to work with another company.'
+            eng: 'The bureaucracy was very strong (literally: high), so I made the decision to work with another company.'
         },
         tags: [
             'war',
@@ -1497,7 +1706,8 @@ export default [
             'in',
             'zu',
             'arbeiten',
-            'vocab-walter'
+            'vocab-walter',
+            'ander'
         ]
     },
     {
@@ -1602,7 +1812,8 @@ export default [
             'weil',
             'für',
             'sein',
-            'werden'
+            'werden',
+            'ander'
         ]
     },
     {
@@ -1614,7 +1825,8 @@ export default [
         tags: [
             'weil',
             'für',
-            'war'
+            'war',
+            'ander'
         ]
 
     },
@@ -2361,7 +2573,8 @@ export default [
             'auf',
             'er-',
             '-zählen',
-            'erzählen'
+            'erzählen',
+            'ander'
         ]
     },
     {
@@ -2405,8 +2618,8 @@ export default [
             'vergessen',
             ', article',
             'in',
-            '-brachen',
-            'verbrachen'
+            '-bringen',
+            'verbringen'
         ]
     },
     {
@@ -2510,6 +2723,7 @@ export default [
         tags: [
             'nehmen',
             'present-perfect',
+            'active-voice',
             'haben'
         ]
     },
@@ -2523,6 +2737,7 @@ export default [
         tags: [
             'jemand',
             'present-perfect',
+            'active-voice',
             'finden',
             'haben'
         ]
@@ -2538,6 +2753,7 @@ export default [
             'niemand',
             'haben',
             'present-perfect',
+            'active-voice',
             'helfen'
         ]
     },
@@ -2545,13 +2761,81 @@ export default [
         text: 'Das Wetter ist besser geworden.',
         stubs: [2, 4],
         translations: {
-            eng: 'The weather\'s improved.',
+            eng: 'The weather\'s improved (literally: has become better).',
             spa: 'El clima ha mejorado.'
         },
         tags: [
             'sein',
             'present-perfect',
+            'active-voice',
             'geworden'
+        ]
+    },
+    {
+        text: 'Er ist zu Hause geblieben.',
+        stubs: [1, 2, 4],
+        translations: {
+            eng: 'He has stayed at home.'
+        },
+        tags: [
+            'sein',
+            'present-perfect',
+            'active-voice',
+            'bleiben'
+        ]
+    },
+    {
+        text: 'Es ist immer so gewesen.',
+        stubs: [2, 5],
+        translations: {
+            eng: 'It has always been so.'
+        },
+        tags: [
+            'sein',
+            'present-perfect',
+            'active-voice',
+            'gewesen'
+        ]
+    },
+    {
+        text: 'Der Mann ist mir nach Hause gefolgt.',
+        stubs: [2, 3, 4, 6],
+        translations: {
+            eng: 'The man has followed me home.'
+        },
+        tags: [
+            'sein',
+            'pronoun-dative',
+            'nach',
+            'folgen',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Wir sind nach Madrid geflogen.',
+        stubs: [1, 2, 4],
+        translations: {
+            eng: 'We have flown to Madrid.'
+        },
+        tags: [
+            'sein',
+            'nach',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Der Pilot hat das Flugzeug allein geflogen.',
+        stubs: [2, 6],
+        translations: {
+            eng: 'The pilot has flown the plane alone.'
+        },
+        tags: [
+            'haben',
+            'fliegen',
+            'present-perfect',
+            'active-voice'
         ]
     },
     {
@@ -2564,6 +2848,7 @@ export default [
         tags: [
             'reflexive',
             'haben',
+            'active-voice',
             'present-perfect',
             'an-',
             '-sehen',
@@ -2578,6 +2863,7 @@ export default [
         },
         tags: [
             'haben',
+            'active-voice',
             'present-perfect',
             'mit-',
             '-nehmen',
@@ -2596,6 +2882,7 @@ export default [
             'weiter-',
             '-schreiben',
             'weiterschreiben',
+            'active-voice',
             'present-perfect'
         ]
     },
@@ -2609,6 +2896,7 @@ export default [
         tags: [
             'haben',
             'present-perfect',
+            'active-voice',
             'be-',
             '-kommen',
             'bekommen'
@@ -2627,7 +2915,8 @@ export default [
             'unter-',
             '-halten',
             'unterhalten',
-            'present-perfect'
+            'present-perfect',
+            'active-voice'
         ]
     },
     {
@@ -2642,7 +2931,8 @@ export default [
             'verbieten',
             'ver-',
             '-bieten',
-            'present-perfect'
+            'present-perfect',
+            'active-voice'
 
         ]
     },
@@ -2658,6 +2948,7 @@ export default [
             'an',
             'sein',
             'present-perfect',
+            'active-voice',
             'in',
             'fahren'
         ]
@@ -2672,6 +2963,7 @@ export default [
         tags: [
             'sein',
             'present-perfect',
+            'active-voice',
             'mit',
             'ab-',
             '-fahren',
@@ -2689,6 +2981,7 @@ export default [
         tags: [
             'sein',
             'present-perfect',
+            'active-voice',
             'kommen'
         ]
     },
@@ -2702,6 +2995,7 @@ export default [
         tags: [
             'sein',
             'present-perfect',
+            'active-voice',
             'mit-',
             '-kommen',
             'mitkommen'
@@ -2718,18 +3012,20 @@ export default [
             'sein',
             'um',
             'laufen',
-            'present-perfect'
+            'present-perfect',
+            'active-voice'
         ]
     },
     {
         text: 'Oma ist die Treppe hinuntergefallen.',
         stubs: [1, 2, 4],
         translations: {
-            eng: 'Grandma fell down the stairs.'
+            eng: 'Grandma has fallen down the stairs.'
         },
         tags: [
             'sein',
-            'present-perfect',
+            'present-peerfect',
+            'active-voice',
             'hin-',
             'unter-',
             'fallen',
@@ -2747,6 +3043,7 @@ export default [
             'sein',
             'in',
             'gehen',
+            'active-voice',
             'present-perfect'
         ]
     },
@@ -2763,6 +3060,7 @@ export default [
             'auf-',
             '-stehen',
             'aufstehen',
+            'active-voice',
             'present-perfect'
         ]
     },
@@ -2776,6 +3074,7 @@ export default [
         tags: [
             'sein',
             'present-perfect',
+            'active-voice',
             'in',
             'pronoun-dative',
             'begegnen'
@@ -2791,6 +3090,7 @@ export default [
         tags: [
             'sein',
             'present-perfect',
+            'active-voice',
             'fliegen',
             'nach'
         ]
@@ -2805,6 +3105,7 @@ export default [
         tags: [
             'sein',
             'reisen',
+            'active-voice',
             'present-perfect'
         ]
     },
@@ -2816,6 +3117,7 @@ export default [
         },
         tags: [
             'sein',
+            'active-voice',
             'present-perfect',
             'ein-',
             '-schlafen',
@@ -2835,6 +3137,7 @@ export default [
             'aufwachen',
             'sein',
             'present-perfect',
+            'active-voice',
             'um'
         ]
     },
@@ -2848,7 +3151,7 @@ export default [
             'sein',
             'wachsen',
             'present-perfect',
-            'passive-voice'
+            'active-voice'
         ]
     },
     {
@@ -3033,6 +3336,7 @@ export default [
         tags: [
             'haben',
             'present-perfect',
+            'active-voice',
             'machen',
             'pronoun-accusative'
         ]
@@ -3059,12 +3363,13 @@ export default [
         tags: [
             ', ob',
             'present-perfect',
+            'active-voice',
             'sagen'
         ]
     },
     {
         text: 'Wir haben keinen Bot identifizieren können, der die öffentliche Meinung in einer bestimmten Frage in eine besondere Richtung drehen konnte.',
-        stubs: [1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 14, 15, 16, 17, 18, 19],
+        stubs: [1, 2, 4, 5, 6, 7, 8, 10, 11, 12, 14, 15, 16, 18, 19],
         translations: {
             eng: 'We haven\'t been able to identify a bot that could turn the public opinion of a specific issue in a particular direction.',
         },
@@ -3088,7 +3393,8 @@ export default [
             'in',
             ', dass',
             'sagen',
-            'present-perfect'
+            'present-perfect',
+            'active-voice'
         ]
     },
     {
@@ -3100,6 +3406,7 @@ export default [
         tags: [
             ', warum',
             'present-perfect',
+            'active-voice',
             'nennen'
         ]
     },
@@ -3120,6 +3427,7 @@ export default [
             ', weil',
             'da-',
             'sagen',
+            'active-voice',
             'present-perfect'
         ]
     },
@@ -3134,6 +3442,7 @@ export default [
             'einfetten',
             'ein-',
             '-fetten',
+            'active-voice',
             'present-perfect'
         ]
     },
@@ -3181,25 +3490,7 @@ export default [
             'suchen',
             'in',
             'mieten',
-            'present-perfect'
-        ]
-    },
-    {
-        text: 'Er möchte nicht, dass sie in die Wohnung einzieht, weil er schlechte Erfahrungen mit Frauen gemacht hat.',
-        stubs: [1, 3, 5, 8, 9, 11, 13, 15, 16],
-        translations: {
-            eng: 'He wouldn\'t like that she moves in to the flat because he has had bad experiences with women.'
-        },
-        tags: [
-            'möchten',
-            ', dass',
-            'in',
-            'ein-',
-            '-ziehen',
-            'einziehen',
-            ', weil',
-            'mit',
-            'machen',
+            'active-voice',
             'present-perfect'
         ]
     },
@@ -3212,6 +3503,7 @@ export default [
         tags: [
             'reflexive',
             'present-perfect',
+            'active-voice',
             'vor',
             'von',
             'trennen'
@@ -3221,7 +3513,7 @@ export default [
         text: 'Am Ende darf er bleiben, weil sie dringend Geld brauchen, um die Miete zu bezahlen.',
         stubs: [0, 2, 4, 5, 9, 10, 13, 14],
         translations: {
-            eng: 'In the end he\'s allowed to stay because they desperately need the money in order to pay the rent.'
+            eng: 'By the end he\'s allowed to stay because they desperately need the money in order to pay the rent.'
         },
         tags: [
             'dürfen',
@@ -3249,7 +3541,8 @@ export default [
             'dar-',
             '-stellen',
             'darstellen',
-            'present-perfect'
+            'present-perfect',
+            'active-voice'
         ]
     },
     {
@@ -3291,7 +3584,8 @@ export default [
             'in',
             'aus-',
             'zu-',
-            'füllen',
+            'auszu-',
+            '-füllen',
             'auszufüllen'
         ]
     },
@@ -3315,7 +3609,9 @@ export default [
         },
         tags: [
             'lohnen',
+            'active-voice',
             'present-perfect',
+            'active-voice',
             'ja'
         ]
     },
@@ -3345,19 +3641,6 @@ export default [
         ]
     },
     {
-        text: 'Das kann ich mir vorstellen, dass das kompliziert ist.',
-        stubs: [3, 4, 5, 6, 8],
-        translations: {
-            eng: 'I can imagine that that\'s complicated.'
-        },
-        tags: [
-            'vor-',
-            '-stellen',
-            'vorstellen',
-            'reflexive'
-        ]
-    },
-    {
         text: 'Wer durchfällt, muss sein Glück an einer anderen Hochschule versuchen oder sich einen anderen Studiengang suchen.',
         stubs: [0, 1, 2, 5, 6, 7, 9, 11, 12, 13, 15],
         translations: {
@@ -3374,7 +3657,8 @@ export default [
             '-suchen',
             'versuchen',
             'reflexive',
-            'suchen'
+            'suchen',
+            'ander'
         ]
     },
     {
@@ -3412,7 +3696,7 @@ export default [
         text: 'Das Hotel befindet sich außerhalb des Stadtzentrums, aber die Touristen können mit dem Bus in die Stadt fahren.',
         stubs: [2, 3, 4, 5, 7, 8, 10, 11, 12, 14, 15, 17],
         translations: {
-            eng: 'The hotel is located outside the city center but the tourists can ride the bus to the city.'
+            eng: 'The hotel is located outside the city center but the tourists can ride with the bus to the city.'
         },
         tags: [
             'be-',
@@ -3440,14 +3724,15 @@ export default [
             ', also',
             'müssen',
             'über',
-            'gehen'
+            'gehen',
+            'ander'
         ]
     },
     {
         text: 'Aber außerhalb der Wochenenden nutzt fast niemand diesen Bus, außer Fred, der oft zu seiner Bibliothek fährt.',
         stubs: [0, 1, 2, 4, 7, 9, 11, 13, 14, 16],
         translations: {
-            eng: 'But apart from weekends, almost noone uses this bus except for Fred, who often goes to his library.'
+            eng: 'But apart from weekends, almost noone takes this bus except for Fred, who often goes to his library.'
         },
         tags: [
             ', aber',
@@ -3481,7 +3766,7 @@ export default [
             'an',
             'in',
             'werden',
-            'future-imperfect',
+            'future-simple',
             'fahren'
         ]
     },
@@ -3495,7 +3780,7 @@ export default [
             'werden',
             'be-',
             '-stehen',
-            'future-imperfect',
+            'future-simple',
             'bestehen'
         ]
     },
@@ -3509,7 +3794,7 @@ export default [
             'werden',
             'noch',
             'comparison',
-            'future-imperfect'
+            'future-simple'
         ]
     },
     {
@@ -3523,7 +3808,7 @@ export default [
             'werden',
             'zurückgeben',
             'zurück-',
-            'future-imperfect',
+            'future-simple',
             '-geben'
         ]
     },
@@ -3542,7 +3827,7 @@ export default [
             'werden',
             'ver-',
             '-passen',
-            'future-imperfect',
+            'future-simple',
             'verpassen'
         ]
     },
@@ -3553,7 +3838,7 @@ export default [
             eng: 'The children will probably already be home.'
         },
         tags: [
-            'future-imperfect',
+            'future-simple',
             'werden',
             'zu',
             'sein'
@@ -3718,6 +4003,7 @@ export default [
         },
         tags: [
             'wen',
+            'active-voice',
             'present-perfect',
             'sehen'
         ]
@@ -3742,6 +4028,7 @@ export default [
         },
         tags: [
             'wen',
+            'active-voice',
             'present-perfect',
             'ein-',
             'laden',
@@ -3756,6 +4043,7 @@ export default [
         },
         tags: [
             'wem',
+            'active-voice',
             'present-perfect',
             'geben'
         ]
@@ -3843,6 +4131,32 @@ export default [
         ]
     },
     {
+        text: 'Das Spiel ist um 8 Uhr gewesen.',
+        stubs: [2, 3, 6],
+        translations: {
+            eng: 'The game has been at 8 a.m.'
+        },
+        tags: [
+            'sein',
+            'present-perfect',
+            'active-voice',
+            'um'
+        ]
+    },
+    {
+        text: 'Das Spiel war um 8 Uhr.',
+        stubs: [2, 3],
+        translations: {
+            eng: 'The game was at 8 a.m.'
+        },
+        tags: [
+            'war',
+            'um',
+            'past-simple',
+            'active-voice'
+        ]
+    },
+    {
         text: 'Ich habe gesagt, dass ich nicht gestört werden wollte.',
         stubs: [1, 2, 3, 6, 7, 8],
         translations: {
@@ -3851,6 +4165,9 @@ export default [
         tags: [
             ', dass',
             'present-perfect',
+            'active-voice',
+            'passive-voice',
+            'preterite-tense',
             'stören',
             'werden',
             'wollten'
@@ -3869,6 +4186,7 @@ export default [
             ', wo',
             'verdunsten',
             'ver-',
+            'ander',
             '-dunsten'
         ]
     },
@@ -3885,7 +4203,8 @@ export default [
             'auf-',
             'auftauchen',
             'wieder',
-            'an'
+            'an',
+            'ander'
         ]
     },
     {
@@ -3901,7 +4220,8 @@ export default [
             'ein-',
             '-gehen',
             'eingehen',
-            'bilden'
+            'bilden',
+            'ander'
         ]
     },
     {
@@ -3979,7 +4299,7 @@ export default [
             'wurden',
             'sehen',
             'passive-voice',
-            'passive-past'
+            'preterite-tense'
         ]
     },
     {
@@ -3994,7 +4314,7 @@ export default [
             '-gehen',
             'begehen',
             'passive-voice',
-            'passive-past'
+            'preterite-tense'
         ]
     },
     {
@@ -4010,7 +4330,208 @@ export default [
             '-bauen',
             'erbauen',
             'passive-voice',
-            'passive-past'
+            'preterite-tense'
+        ]
+    },
+    {
+        text: 'Er las ein Buch.',
+        stubs: [1],
+        translations: {
+            eng: 'He read a book.'
+        },
+        tags: [
+            'lesen',
+            'active-voice',
+            'preterite-tense',
+            'past-simple'
+        ]
+    },
+    {
+        text: 'Ein Buch wurde von ihm gelesen.',
+        stubs: [2, 3, 4, 5],
+        translations: {
+            eng: 'A book was read by him.'
+        },
+        tags: [
+            'lesen',
+            'wurden',
+            'von',
+            'pronoun-dative',
+            'passive-voice',
+            'preterite-tense',
+            'past-perfect'
+        ]
+    },
+    {
+        text: 'Ich hatte ein Buch gelesen.',
+        stubs: [1, 4],
+        translations: {
+            eng: 'I had read a book.'
+        },
+        tags: [
+            'hatten',
+            'preterite-tense',
+            'past-perfect'
+        ]
+    },
+    {
+        text: 'Im letzten Jahr machte ich Urlaub in Deutschland.',
+        stubs: [0, 1, 3, 6],
+        translations: {
+            eng: 'In the last year I took a (literally: made) vacation in Germany.'
+        },
+        tags: [
+            'in',
+            'machten',
+            'preterite-tense',
+            'past-simple',
+            'past-action'
+        ]
+    },
+    {
+        text: 'Im letzten Jahr habe ich Urlaub in Deutschland gemacht.',
+        stubs: [0, 1, 3, 6, 8],
+        translations: {
+            eng: 'In the last year I had taken a (literally: had made) vacation in Germany.'
+        },
+        tags: [
+            'in',
+            'machen',
+            'present-perfect',
+            'active-voice',
+            'past-action'
+        ]
+    },
+    {
+        text: 'Die Strecke war fantastisch.',
+        stubs: [2],
+        translations: {
+            eng: 'The route was fantastic.'
+        },
+        tags: [
+            'waren',
+            'preterite-tense',
+            'past-condition'
+        ]
+    },
+    {
+        text: 'Ich hatte den ganzen Tag gearbeitet.',
+        stubs: [1, 2, 3, 5],
+        translations: {
+            eng: 'I had worked all day.'
+        },
+        tags: [
+            'hatten',
+            'preterite-tense',
+            'active-voice',
+            'arbeiten',
+            'past-perfect'
+        ]
+    },
+    {
+        text: 'Nachdem sie aufgestanden war, hat sie gefrühstückt.',
+        stubs: [0, 2, 3, 4, 6],
+        translations: {
+            eng: 'After she had gotten up, she had breakfast.'
+        },
+        tags: [
+            'nachdem',
+            'auf-',
+            '-stehen',
+            'aufstehen',
+            'frühstücken',
+            'preterite-tense',
+            'active-voice',
+            'past-perfect'
+        ]
+    },
+    {
+        text: 'Ich musste geküsst werden.',
+        stubs: [1, 2, 3],
+        translations: {
+            eng: 'I had to be kissed.'
+        },
+        tags: [
+            'preterite',
+            'past-simple',
+            'passive-voice',
+            'küssen',
+            'mussten',
+            'werden'
+        ]
+    },
+    {
+        text: 'Er kann die Fragen nicht beantworten.',
+        stubs: [1, 2, 5],
+        translations: {
+            eng: 'He can\'t answer the questions.',
+        },
+        tags: [
+            'können',
+            'be-',
+            '-antworten',
+            'beantworten',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Die Fragen können von ihm nicht beantwortet werden.',
+        stubs: [2, 3, 4, 6, 7],
+        translations: {
+            eng: 'The questions can\'t be answered by him.'
+        },
+        tags: [
+            'können',
+            'von',
+            'pronoun-dative',
+            'be-',
+            '-antworten',
+            'beantworten',
+            'passive-voice',
+            'werden'
+        ]
+    },
+    {
+        text: 'Unsere Freunde konnten das Haus günstig kaufen.',
+        stubs: [2, 3, 6],
+        translations: {
+            eng: 'Our friends could buy the house on good terms.'
+        },
+        tags: [
+            'unser',
+            'konnten',
+            'kaufen',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Das Haus konnte von unseren Freunden günstig gekauft werden.',
+        stubs: [2, 3, 4, 7, 8],
+        translations: {
+            eng: 'The house could be bought on good terms by our friends.'
+        },
+        tags: [
+            'konnten',
+            'von',
+            'unser',
+            'kaufen',
+            'werden',
+            'passive-voice',
+            'preterite'
+        ]
+    },
+    {
+        text: 'Ich muss die Rechnung bezahlen.',
+        stubs: [1, 4],
+        translations: {
+            eng: 'I need to pay the bill.'
+        },
+        tags: [
+            'müssen',
+            'bezahlen',
+            'be-',
+            '-zahlen',
+            'active-voice'
         ]
     },
     {
@@ -4151,7 +4672,7 @@ export default [
         text: 'Am 18. September können die Berlinerinnen und Berliner ihre Wahl treffen, wie sie sich ihre Stadt der Zukunft vorstellen.',
         stubs: [0, 3, 4, 8, 19, 11, 13, 14, 16, 18],
         translations: {
-            eng: 'On September 18 (female and male) Berliners can choose how they imagine their city of the future.'
+            eng: 'On September 18 (female and male) Berliners can make (literally: meet) their choice, how they imagine their city of the future.'
         },
         tags: [
             'an',
@@ -4177,7 +4698,8 @@ export default [
             'jeher',
             'faszinieren',
             'geben',
-            'present-perfect'
+            'present-perfect',
+            'active-voice'
         ]
     },
     {
@@ -4305,7 +4827,8 @@ export default [
             'sein',
             'werden',
             'ver-',
-            'schaffen'
+            'schaffen',
+            'ander'
         ]
     },
     {
@@ -4393,6 +4916,7 @@ export default [
             'begreifen',
             'pronoun-dative',
             'kaufen',
+            'active-voice',
             'present-perfect'
         ]
     },
@@ -4411,27 +4935,13 @@ export default [
         ]
     },
     {
-        text: 'Eine Frau wird im Industriegebiet tot aufgefunden.',
-        stubs: [0, 2, 3, 6],
-        translations: {
-            eng: 'A woman is discovered dead in the industrial area.'
-        },
-        tags: [
-            'werden',
-            'in',
-            'auf-',
-            '-finden',
-            'auffinden',
-            'present-perfect'
-        ]
-    },
-    {
         text: 'Der Wagen hat sie seitlich und mit voller Wucht erfasst.',
         stubs: [2, 6, 7, 9],
         translations: {
             eng: 'The car struck her laterally and with full force.'
         },
         tags: [
+            'active-voice',
             'present-perfect',
             'erfassen',
             'er-',
@@ -4523,6 +5033,401 @@ export default [
             'be-',
             '-stellen',
             'bestellen'
+        ]
+    },
+    {
+        text: 'Private Wohnungen sollen vollständig als Ferienwohnung vermietet werden dürfen.',
+        stubs: [2, 4, 6, 7, 8],
+        translations: {
+            eng: 'Private flats should be fully allowed to be rented out as vacation flats.'
+        },
+        tags: [
+            'sollen',
+            'double-infinitive',
+            'als',
+            'vermieten',
+            'ver-',
+            '-mieten',
+            'werden',
+            'dürfen'
+        ]
+    },
+    {
+        text: 'Alle Spätis sollen auch sonntags öffnen dürfen.',
+        stubs: [0, 2, 5, 6],
+        translations: {
+            eng: 'All Spätis should be allowed to be open on Sundays as well.'
+        },
+        tags: [
+            'all',
+            'sollen',
+            'öffnen',
+            'dürfen'
+        ]
+    },
+    {
+        text: 'Hier sollen Förderschulen für Kinder und Jugendliche mit Behinderungen langfristig erhalten bleiben.',
+        stubs: [1, 3, 7, 10, 11],
+        translations: {
+            eng: 'Here, special schools for children and teenagers with disabilities should be preserved (literally: stay preserved) in the long run.'
+        },
+        tags: [
+            'erhalten',
+            'er-',
+            '-halten',
+            'für',
+            'mit',
+            'bleiben'
+        ]
+    },
+    {
+        text: 'Es soll ein kostenfreies Mittagessen für alle Schülerinnen und Schüler an Schulen geben.',
+        stubs: [0, 1, 2, 3, 5, 6, 10, 12],
+        translations: {
+            eng: 'There should be a free lunch for all schoolchildren in schools.'
+        },
+        tags: [
+            'sollen',
+            'für',
+            'an',
+            'geben'
+        ]
+    },
+    {
+        text: 'Das Land soll sich für ein bedingungsloses Grundeinkommen einsetzen.',
+        stubs: [2, 3, 4, 5, 6, 8],
+        translations: {
+            eng: 'The country should advocate (literally: apply itself for) an unconditional basic income.'
+        },
+        tags: [
+            'sollen',
+            'für',
+            'ein-',
+            '-setzen',
+            'einsetzen',
+            'reflexive'
+        ]
+    },
+    {
+        text: 'Die Polizei soll den Einsatz von Kameras, die am Körper getragen werden, erproben.',
+        stubs: [2, 3, 5, 7, 8, 10, 11, 12],
+        translations: {
+            eng: 'The police should test the use of cameras which are worn on the body.'
+        },
+        tags: [
+            'sollen',
+            'von',
+            ', article',
+            'an',
+            'tragen',
+            'werden',
+            'present-simple',
+            'passive-voice'
+        ]
+    },
+    {
+        text: 'Der Anbau von Cannabis für den Eigenbedarf soll generell erlaubt sein.',
+        stubs: [2, 4, 5, 7, 9, 10],
+        translations: {
+            eng: 'The cultivation of cannabis for personal use should generally be permitted.'
+        },
+        tags: [
+            'von',
+            'für',
+            'sollen',
+            'erlauben',
+            'er-',
+            '-lauben',
+            'sein'
+        ]
+    },
+    {
+        text: 'Die Anzahl der erforderlichen Stimmen bei Volksentscheiden soll gesenkt werden.',
+        stubs: [2, 3, 5, 7, 8, 9],
+        translations: {
+            eng: 'The number of required votes in referendums should be lowered.'
+        },
+        tags: [
+            'er-',
+            '-fordern',
+            'bei',
+            'volk-',
+            'ent-',
+            '-scheiden',
+            'sollen',
+            'senken',
+            'werden'
+        ]
+    },
+    {
+        text: 'Bei der Ausweisung neuer Wohngebiete soll ein höherer Anteil von Sozialwohnungen vorgeschrieben werden.',
+        stubs: [0, 1, 3, 5, 6, 7, 9, 11, 12],
+        translations: {
+            eng: 'In the designation of new housing zones, a higher percentage of public housing should be mandated (literally: prescribed).'
+        },
+        tags: [
+            'bei',
+            'sollen',
+            'von',
+            'vor-',
+            '-schreiben',
+            'vorschreiben',
+            'werden'
+        ]
+    },
+    {
+        text: 'In Berlin soll die Nutzung des öffentlichen Personennahverkehrs entgeltfrei sein.',
+        stubs: [0, 2, 5, 6, 9],
+        translations: {
+            eng: 'In Berlin, the usage of local public transit should be free of charge (literally: fee-less).'
+        },
+        tags: [
+            'in',
+            'sollen',
+            'sein'
+        ]
+    },
+    {
+        text: 'Über Esperanto sind leider eine Reihe von populären Irrtümern in Umlauf, die immer wieder auch in Zeitungen und anderen Medien auftauchen.',
+        stubs: [0, 2, 4, 6, 7, 9, 11, 15, 20],
+        translations: {
+            eng: 'About Esperanto are, unfortunately, a series of popular errors in circulation, which consistently surface also in newspapers and other media.'
+        },
+        tags: [
+            'über',
+            'von',
+            'in',
+            ', article',
+            'ander'
+        ]
+    },
+    {
+        text: 'Zu den Grundsätzen einer Demokratie gehört es, miteinander zu reden und Konflikte verbal auszutragen.',
+        stubs: [0, 1, 3, 5, 6, 8, 9, 13],
+        translations: {
+            eng: 'It belongs to the principles of a democracy, talking with each other and resolving conflicts verbally.'
+        },
+        tags: [
+            'zu',
+            'hören',
+            'reden',
+            'aus-',
+            'zu-',
+            'auszu-',
+            '-tragen',
+            'auszutragen'
+        ]
+    },
+    {
+        text: 'Daher wirkt es auf den ersten Blick durchaus legitim, wenn Rechtsextreme fordern, dass auch mit ihnen geredet wird.',
+        stubs: [0, 1, 3, 4, 5, 9, 11, 12, 14, 15, 16, 17],
+        translations: {
+            eng: 'Therefore, it seems thoroughly legitimate on first glance when right-wing extremists demand that they, as well, be spoken with.'
+        },
+        tags: [
+            'da-',
+            'wirken',
+            'auf',
+            ', wenn',
+            ', dass',
+            'fordern',
+            'mit',
+            'pronoun-dative',
+            'reden',
+            'werden'
+        ]
+    },
+    {
+        text: 'Immer wieder stehen Demokraten vor der Frage, ob sie dem nachkommen wollen.',
+        stubs: [2, 4, 5, 7, 8, 9, 10, 11],
+        translations: {
+            eng: 'Democratic people are consistently faced with the question, whether they want to comply with them.'
+        },
+        tags: [
+            'stehen',
+            'vor',
+            ', ob',
+            'pronoun-accusative',
+            'nachkommen',
+            'wollen'
+        ]
+    },
+    {
+        text: 'Manche lehnen dies ab, mit Verweis auf die undemokratischen Ansichten des Gegenübers, oder aus Sorge, sie durch das Gespräch aufzuwerten.',
+        stubs: [0, 1, 3, 4, 6, 7, 10, 12, 13, 15, 17, 19],
+        translations: {
+            eng: 'Some reject this, with reference to the undemocratic views of their counterparts or out of concern of empowering them through the discussion.'
+        },
+        tags: [
+            'manch',
+            '-lehnen',
+            'ab-',
+            'ablehnen',
+            'mit',
+            'auf',
+            'genitive',
+            'auf-',
+            'zu-',
+            'aufzu',
+            '-werten',
+            'aufzuwerten'
+        ]
+    },
+    {
+        text: 'Das ist der Bus, worauf wir alle warten.',
+        stubs: [1, 4, 6, 7],
+        translations: {
+            eng: 'That\'s the bus on which we\'re all waiting.'
+        },
+        tags: [
+            ', worauf',
+            'all',
+            'auf',
+            'warten'
+        ]
+    },
+    {
+        text: 'Das Erste, wovon sie gesprochen hat, war die Situation in den Schulen.',
+        stubs: [2, 4, 5, 6, 9, 10],
+        translations: {
+            eng: 'The first thing of which she spoke was the situation in the schools.'
+        },
+        tags: [
+            ', wovon',
+            'sprechen',
+            'von',
+            ', war',
+            'in'
+        ]
+    },
+    {
+        text: 'Das Auto womit wir gefahren sind, war ziemlich alt.',
+        stubs: [2, 3, 4, 5, 6],
+        translations: {
+            eng: 'The car with which we had driven was quite old.'
+        },
+        tags: [
+            'womit',
+            'fahren',
+            ', war'
+        ]
+    },
+    {
+        text: 'Ich gebe dir morgen Bescheid.',
+        stubs: [1, 2, 4],
+        translations: {
+            eng: 'I\'ll let you know tomorrow (literally: I give you information tomorrow)'
+        },
+        tags: [
+            'geben',
+            'pronoun-dative'
+        ]
+    },
+    {
+        text: 'Ich habe etwas, was ich dir geben möchte.',
+        stubs: [3, 5, 6, 7],
+        translations: {
+            eng: 'I have something which I\'d like to give you.'
+        },
+        tags: [
+            ', was',
+            'pronoun-dative',
+            'möchten',
+            'geben'
+        ]
+    },
+    {
+        text: 'Es gibt nichts, was er jetzt sagen könnte.',
+        stubs: [1, 2, 3, 6, 7],
+        translations: {
+            eng: 'There is nothing which he could say now.'
+        },
+        tags: [
+            ', was',
+            'geben',
+            'sagen',
+            'könnten'
+        ]
+    },
+    {
+        text: 'Ich habe nur wenig, was ich Ihnen bieten könnte.',
+        stubs: [1, 4, 6, 7, 8],
+        translations: {
+            eng: 'I have only little which I could offer you (formal).'
+        },
+        tags: [
+            ', was',
+            'pronoun-dative',
+            'bieten',
+            'könnten'
+        ]
+    },
+    {
+        text: 'Es gibt viel, was Sie für ihn tun könnten.',
+        stubs: [1, 3, 5, 6, 7, 8],
+        translations: {
+            eng: 'There is a lot which you (formal) could do for him.'
+        },
+        tags: [
+            'geben',
+            ', was',
+            'für',
+            'tun',
+            'könnten',
+            'pronoun-accusative'
+        ]
+    },
+    {
+        text: 'Das ist das Klügste, was du in dieser Situation tun könntest.',
+        stubs: [2, 4, 6, 7, 9, 10],
+        translations: {
+            eng: 'That is the smartest thing which you could do in this situation.'
+        },
+        tags: [
+            ', was',
+            'dies',
+            'tun',
+            'könnten'
+        ]
+    },
+    {
+        text: 'Das ist das Letzte, was ich für dich wollte.',
+        stubs: [2, 4, 6, 7, 8],
+        translations: {
+            eng: 'That is the last thing which I would want for you.'
+        },
+        tags: [
+            ', was',
+            'für',
+            'pronoun-accusative',
+            'wollten'
+        ]
+    },
+    {
+        text: 'Der Ort, wo er wohnt, ist ziemlich klein.',
+        stubs: [2, 4, 5],
+        translations: {
+            eng: 'The place where he lives is quite small.'
+        },
+        tags: [
+            ', wo',
+            'wohnen',
+            ', sein'
+        ]
+    },
+    {
+        text: 'Ich möchte in einer Stadt arbeiten, wo ich kein Auto brauche.',
+        stubs: [1, 2, 3, 5, 6, 8, 10],
+        translations: {
+            eng: 'I would like to work in a city, where I don\'t need a car.'
+        },
+        tags: [
+            'möchten',
+            'in',
+            'arbeiten',
+            ', wo',
+            'kein',
+            'brauchen'
         ]
     }
 ];
