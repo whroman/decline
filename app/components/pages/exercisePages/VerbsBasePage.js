@@ -178,6 +178,9 @@ export class Verbs extends Component {
     }
 
     render() {
+        const { title, subtitle } = this.props;
+        const subtitleElement = subtitle ? (<h3>{ subtitle }</h3>) : null;
+
         return (
             <div className='Verbs'>
                 <div className='row'>
@@ -185,7 +188,8 @@ export class Verbs extends Component {
                         <br />
                         <div className='row'>
                             <div className='column small-11 small-centered'>
-                                <h1>{ this.props.title }</h1>
+                                <h1>{ title }</h1>
+                                { subtitleElement }
                                 <hr />
                                 { this.renderExercises.call(this) }
                             </div>

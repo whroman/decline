@@ -18,7 +18,7 @@ import CristinaVocabPage from './components/pages/exercisePages/Vocab/CristinaVo
 import AkkDatPage from './components/pages/exercisePages/Pronouns/AkkDatPage';
 import AdjectivalPronounsPage from './components/pages/exercisePages/Pronouns/AdjectivalPronounsPage';
 import SubordinatingPage from './components/pages/exercisePages/Composition/SubordinatingPage';
-import RelativeClausesPage from './components/pages/exercisePages/Composition/RelativeClausesPage';
+import RelativePronounClausesPage from './components/pages/exercisePages/Composition/RelativePronounClausesPage';
 import ArticleClausesPage from './components/pages/exercisePages/Composition/ArticleClausesPage';
 import PresentPerfectPage from './components/pages/exercisePages/Composition/PresentPerfectPage';
 import FuturePerfectPage from './components/pages/exercisePages/Composition/FuturePerfectPage';
@@ -92,9 +92,9 @@ export default [
         tags: ['composition']
     },
     {
-        name: 'Relative Clauses',
-        path: '/practice/composition/relative',
-        component: RelativeClausesPage,
+        name: 'Relative Pronoun Clauses',
+        path: '/practice/composition/relative-pronoun-clauses',
+        component: RelativePronounClausesPage,
         tags: ['composition']
     },
     {

@@ -11,6 +11,7 @@ const exercises = verbsWithPrepositions.filter((exercise) => twoWayPrepositions.
 export default function () {
     const props = {
         title: 'Two-Way Prepositions',
+        subtitle: twoWayPrepositions.map((text) => `"${text}"`).join(', '),
         exercises: presentVerbExercises(exercises)
     };
     return (<VerbBasePage { ...props } />);

@@ -21,6 +21,14 @@ const exercises = verbsWithPrepositions.filter((exercise) =>
 export default function () {
     const props = {
         title: 'Speech Verbs',
+        subtitle: [
+            'sprechen',
+            'erklären',
+            'erzählen',
+            'sagen',
+            'rufen',
+            'nennen'
+        ].map((text) => `"${text}"`).join(', '),
         exercises: presentVerbExercises(exercises)
     };
     return (<VerbBasePage { ...props } />);

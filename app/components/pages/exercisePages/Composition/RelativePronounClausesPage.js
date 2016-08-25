@@ -3,7 +3,7 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const items = [', article', ', wo'];
+const items = [', wer', ', wo', ', was', ', wovon', ', womit', ',worauf'];
 
 const exercises = verbsWithPrepositions.filter(
     (exercise) => items.some(
@@ -13,7 +13,7 @@ const exercises = verbsWithPrepositions.filter(
 
 export default function () {
     const props = {
-        title: 'Relative Clauses',
+        title: 'Relative Pronoun Clauses',
         exercises: presentVerbExercises(exercises)
     };
     return (<VerbBasePage { ...props } />);

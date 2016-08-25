@@ -30,7 +30,6 @@ export default class PageWrapper extends Component {
                 const { photos } = response.data;
                 const photoIndex = random(photos.length);
                 const imageUrl = photos[photoIndex].img_src;
-                console.log(imageUrl)
                 this.applyBGImage(imageUrl);
             });
     }
@@ -41,7 +40,6 @@ export default class PageWrapper extends Component {
 
         const dateOfToday = (new Date).getDate();
         const potd = JSON.parse(localStorage.getItem('potd'));
-        console.log(potd)
         if (potd) {
             if (potd.date < dateOfToday) {
                 this.requestRandomBGImage();
