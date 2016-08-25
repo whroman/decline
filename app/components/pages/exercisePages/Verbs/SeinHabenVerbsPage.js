@@ -3,10 +3,10 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const verbs = ['sein', 'haben'];
+const tags = ['sein', 'haben'];
 
 const exercises = verbsWithPrepositions.filter(
-    (exercise) => verbs.some(
+    (exercise) => tags.some(
         (item) => exercise.tags.includes(item)
     )
 );

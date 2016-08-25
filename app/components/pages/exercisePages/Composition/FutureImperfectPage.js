@@ -3,7 +3,7 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const tags = ['future-imperfect'];
+const tags = ['future-simple'];
 
 const exercises = verbsWithPrepositions.filter(
     (exercise) => tags.some(

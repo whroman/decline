@@ -3,13 +3,18 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const reflexiveVerbExercises = verbsWithPrepositions
-    .filter((exercise) => exercise.tags.includes('reflexive'));
+const tags = ['reflexive'];
+
+const exercises = verbsWithPrepositions.filter(
+    (exercise) => tags.some(
+        (item) => exercise.tags.includes(item)
+    )
+);
 
 export default function () {
     const props = {
         title: 'Reflexive Verbs',
-        exercises: presentVerbExercises(reflexiveVerbExercises)
+        exercises: presentVerbExercises(exercises)
     };
     return (<VerbBasePage { ...props } />);
 }

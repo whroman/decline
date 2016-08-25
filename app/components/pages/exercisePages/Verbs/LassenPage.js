@@ -3,11 +3,12 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const exercises = verbsWithPrepositions
-    .filter((exercise) => (
-        exercise.tags.includes('lassen') ||
-        exercise.tags.includes('-lassen')
-    ));
+const tags = ['lassen', '-lassen'];
+const exercises = verbsWithPrepositions.filter(
+    (exercise) => tags.some(
+        (item) => exercise.tags.includes(item)
+    )
+);
 
 export default function () {
     const props = {

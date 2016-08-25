@@ -6,13 +6,16 @@ import twoWayPrepositions from './twoWayPrepositions'
 import accusativePrepositions from './accusativePrepositions'
 import dativePrepositions from './dativePrepositions'
 
-const prepositions = twoWayPrepositions
+const tags = twoWayPrepositions
     .concat(accusativePrepositions)
     .concat(dativePrepositions);
 
-const exercises = verbsWithPrepositions.filter((exercise) => prepositions.some(
+const exercises = verbsWithPrepositions.filter(
+    (exercise) => tags.some(
         (item) => exercise.tags.includes(item)
-    ));
+    )
+);
+
 
 export default function () {
     const props = {

@@ -3,7 +3,7 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const verbs = [
+const tags = [
     'stellen',
     '-stellen',
     'stehen',
@@ -14,9 +14,11 @@ const verbs = [
     '-legen'
 ];
 
-const exercises = verbsWithPrepositions.filter((exercise) => verbs.some(
+const exercises = verbsWithPrepositions.filter(
+    (exercise) => tags.some(
         (item) => exercise.tags.includes(item)
-    ));
+    )
+);
 
 export default function () {
     const props = {

@@ -4,10 +4,13 @@ import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 import dativePrepositions from './dativePrepositions'
 
-const exercises = verbsWithPrepositions.filter((exercise) => dativePrepositions.some(
-        (item) => exercise.tags.includes(item)
-    ));
+const tags = dativePrepositions;
 
+const exercises = verbsWithPrepositions.filter(
+    (exercise) => tags.some(
+        (item) => exercise.tags.includes(item)
+    )
+);
 export default function () {
     const props = {
         title: 'Dative Prepositions',

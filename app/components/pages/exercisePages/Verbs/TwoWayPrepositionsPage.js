@@ -4,9 +4,12 @@ import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 import twoWayPrepositions from './twoWayPrepositions'
 
-const exercises = verbsWithPrepositions.filter((exercise) => twoWayPrepositions.some(
+const tags = twoWayPrepositions;
+const exercises = verbsWithPrepositions.filter(
+    (exercise) => tags.some(
         (item) => exercise.tags.includes(item)
-    ));
+    )
+);
 
 export default function () {
     const props = {

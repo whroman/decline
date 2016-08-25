@@ -3,10 +3,10 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const items = [', wer', ', wo', ', was', ', wovon', ', womit', ',worauf'];
+const tags = [', wer', ', wo', ', was', ', wovon', ', womit', ',worauf'];
 
 const exercises = verbsWithPrepositions.filter(
-    (exercise) => items.some(
+    (exercise) => tags.some(
         (item) => exercise.tags.includes(item)
     )
 );

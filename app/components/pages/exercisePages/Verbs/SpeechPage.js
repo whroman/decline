@@ -14,8 +14,10 @@ const tags = [
     'nennen'
 ]
 
-const exercises = verbsWithPrepositions.filter((exercise) =>
-    tags.some((item) => exercise.tags.includes(item))
+const exercises = verbsWithPrepositions.filter(
+    (exercise) => tags.some(
+        (item) => exercise.tags.includes(item)
+    )
 );
 
 export default function () {

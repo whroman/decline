@@ -3,14 +3,16 @@ import VerbBasePage from '../VerbsBasePage';
 import presentVerbExercises from '../presentVerbExercises';
 import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
 
-const pronouns = [
+const tags = [
     'pronoun-dative',
     'pronoun-accusative'
 ];
 
-const exercises = verbsWithPrepositions.filter((exercise) => pronouns.some(
+const exercises = verbsWithPrepositions.filter(
+    (exercise) => tags.some(
         (item) => exercise.tags.includes(item)
-    ));
+    )
+);
 
 export default function () {
     const props = {
