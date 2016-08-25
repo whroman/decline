@@ -1,7 +1,5 @@
 import React from 'react';
-import VerbBasePage from '../VerbsBasePage';
-import presentVerbExercises from '../presentVerbExercises';
-import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
+import BasePage from '../BasePage';
 
 const tags = [
     'erfahren',
@@ -12,17 +10,13 @@ const tags = [
     'denken'
 ];
 
-const exercises = verbsWithPrepositions.filter(
-    (exercise) => tags.some(
-        (item) => exercise.tags.includes(item)
-    )
-);
+
 
 export default function () {
     const props = {
         title: 'Knowledge Verbs',
         subtitle: tags.map((text) => `"${text}"`).join(', '),
-        exercises: presentVerbExercises(exercises)
+        tags
     };
-    return (<VerbBasePage { ...props } />);
+    return (<BasePage { ...props } />);
 }

@@ -1,7 +1,5 @@
 import React from 'react';
-import VerbBasePage from '../VerbsBasePage';
-import presentVerbExercises from '../presentVerbExercises';
-import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
+import BasePage from '../BasePage';
 
 const tags = [
     'sprechen',
@@ -14,11 +12,7 @@ const tags = [
     'nennen'
 ]
 
-const exercises = verbsWithPrepositions.filter(
-    (exercise) => tags.some(
-        (item) => exercise.tags.includes(item)
-    )
-);
+
 
 export default function () {
     const props = {
@@ -31,7 +25,7 @@ export default function () {
             'rufen',
             'nennen'
         ].map((text) => `"${text}"`).join(', '),
-        exercises: presentVerbExercises(exercises)
+        tags
     };
-    return (<VerbBasePage { ...props } />);
+    return (<BasePage { ...props } />);
 }

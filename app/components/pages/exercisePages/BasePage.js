@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Tooltip from 'app/components/Tooltip//Tooltip';
-import './VerbsPage.scss';
+import rawExercises from 'tables/rawExercises/verbsWithPrepositions';
+import presentExercises from './presentExercises';
+import './BasePage.scss';
+
+const presentedExercises = presentExercises(rawExercises);
 
 class VerbWord extends Component {
 
@@ -165,12 +169,27 @@ class VerbExercise extends Component {
 
 }
 
-export class Verbs extends Component {
+export class BasePage extends Component {
 
     constructor() {
         super();
-        this.state = { selectedExercise: null };
+
+        this.state = {
+            selectedExercise: null,
+            exercises: []
+        };
+
         this.selectExercise = this.selectExercise.bind(this);
+    }
+
+    componentWillMount() {
+        const exercises = presentedExercises.filter(
+            (exercise) => this.props.tags.some(
+                (item) => exercise.tags.includes(item)
+            )
+        );
+
+        this.setState({ exercises });
     }
 
     selectExercise(selectedExercise) {
@@ -182,7 +201,7 @@ export class Verbs extends Component {
         const subtitleElement = subtitle ? (<h3>{ subtitle }</h3>) : null;
 
         return (
-            <div className='Verbs'>
+            <div className='BasePage'>
                 <div className='row'>
                     <div className='modal column small-10 small-centered  '>
                         <br />
@@ -202,9 +221,12 @@ export class Verbs extends Component {
     }
 
     renderExercises() {
-        const { props, selectExercise } = this;
-        const { selectedExercise } = this.state;
-        return props.exercises.map((item, index) => {
+        const {
+            selectExercise,
+            state: { selectedExercise, exercises }
+        } = this;
+
+        return exercises.map((item, index) => {
             const props = Object.assign(item, {
                 index,
                 selectExercise,
@@ -217,4 +239,6 @@ export class Verbs extends Component {
 
 }
 
-export default Verbs;
+
+
+export default BasePage;

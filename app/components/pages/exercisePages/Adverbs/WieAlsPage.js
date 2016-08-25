@@ -1,20 +1,12 @@
 import React from 'react';
-import VerbBasePage from '../VerbsBasePage';
-import presentVerbExercises from '../presentVerbExercises';
-import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
+import BasePage from '../BasePage';
 
 const tags = ['wie', 'als'];
-
-const exercises = verbsWithPrepositions.filter(
-    (exercise) => tags.some(
-        (item) => exercise.tags.includes(item)
-    )
-);
 
 export default function () {
     const props = {
         title: 'Wie & Als',
-        exercises: presentVerbExercises(exercises)
+        tags
     };
-    return (<VerbBasePage { ...props } />);
+    return (<BasePage { ...props } />);
 }

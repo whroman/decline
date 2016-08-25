@@ -1,7 +1,5 @@
 import React from 'react';
-import VerbBasePage from '../VerbsBasePage';
-import presentVerbExercises from '../presentVerbExercises';
-import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
+import BasePage from '../BasePage';
 
 const tags = [
     'stellen',
@@ -14,16 +12,10 @@ const tags = [
     '-legen'
 ];
 
-const exercises = verbsWithPrepositions.filter(
-    (exercise) => tags.some(
-        (item) => exercise.tags.includes(item)
-    )
-);
-
 export default function () {
     const props = {
         title: 'Uses of "stellen", "stehen", "legen", "liegen"',
-        exercises: presentVerbExercises(exercises)
+        tags
     };
-    return (<VerbBasePage { ...props } />);
+    return (<BasePage { ...props } />);
 }
