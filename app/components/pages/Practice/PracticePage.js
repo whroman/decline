@@ -7,12 +7,16 @@ import './PracticePage.scss';
 
 const groups = [
     {
-        tag: 'verb',
-        title: 'Verbs'
+        tag: 'tenses',
+        title: 'Tenses'
     },
     {
         tag: 'composition',
         title: 'Composition'
+    },
+    {
+        tag: 'verb',
+        title: 'Verbs'
     },
     {
         tag: 'adverb',
@@ -76,7 +80,7 @@ export class Practice extends Component {
         return pageGroups.map(({ tag, title, pages }) => (
             <div key={ tag }>
                 <br/>
-                <h3>{ title }</h3>
+                <div className='PageGroup-title'>{ title }</div>
                 <div className='row'>
                     { pages.map(({ path, name }) => (
                         <div key={ path } className='column small-6 float-left'>

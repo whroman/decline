@@ -1,28 +1,39 @@
 import AdjectivesTrainerPage from './components/pages/exercisePages/AdjectiveDeclension/AdjectivesTrainer/AdjectivesTrainerPage';
+
 import VerbsWithPrepositionsPage from './components/pages/exercisePages/Verbs/VerbsWithPrepositionsPage';
-import TwoWayPrepositionsPage from './components/pages/exercisePages/Verbs/TwoWayPrepositionsPage';
-import DativePrepositionsPage from './components/pages/exercisePages/Verbs/DativePrepositionsPage';
-import ReflexiveVerbsPage from './components/pages/exercisePages/Verbs/ReflexiveVerbsPage';
-import WerdenPage from './components/pages/exercisePages/Verbs/WerdenPage';
-import SeinHabenVerbsPage from './components/pages/exercisePages/Verbs/SeinHabenVerbsPage';
-import DaAdverbsPage from './components/pages/exercisePages/Adverbs/DaAdverbsPage';
-import WieAlsPage from './components/pages/exercisePages/Adverbs/WieAlsPage';
-import LassenPage from './components/pages/exercisePages/Verbs/LassenPage';
-import SpeechPage from './components/pages/exercisePages/Verbs/SpeechPage';
-import KnowledgePage from './components/pages/exercisePages/Verbs/KnowledgePage';
-import StellenPage from './components/pages/exercisePages/Verbs/StellenPage';
-import ErVerVorPage from './components/pages/exercisePages/Prefixes/ErVerVorPage';
+import TwoWayPrepositionsPage   from './components/pages/exercisePages/Verbs/TwoWayPrepositionsPage';
+import DativePrepositionsPage   from './components/pages/exercisePages/Verbs/DativePrepositionsPage';
+import ReflexiveVerbsPage       from './components/pages/exercisePages/Verbs/ReflexiveVerbsPage';
+import WerdenPage               from './components/pages/exercisePages/Verbs/WerdenPage';
+import SeinHabenVerbsPage       from './components/pages/exercisePages/Verbs/SeinHabenVerbsPage';
+
+import DaAdverbsPage    from './components/pages/exercisePages/Adverbs/DaAdverbsPage';
+import WieAlsPage       from './components/pages/exercisePages/Adverbs/WieAlsPage';
+
+import LassenPage       from './components/pages/exercisePages/Verbs/LassenPage';
+import SpeechPage       from './components/pages/exercisePages/Verbs/SpeechPage';
+import KnowledgePage    from './components/pages/exercisePages/Verbs/KnowledgePage';
+import StellenPage      from './components/pages/exercisePages/Verbs/StellenPage';
+
+import ErVerVorPage     from './components/pages/exercisePages/Prefixes/ErVerVorPage';
 import AufAusHerausPage from './components/pages/exercisePages/Prefixes/AufAusHerausPage';
-import BeEinErPage from './components/pages/exercisePages/Prefixes/BeEinErPage';
+import BeEinErPage      from './components/pages/exercisePages/Prefixes/BeEinErPage';
+
 import CristinaVocabPage from './components/pages/exercisePages/Vocab/CristinaVocabPage';
-import AkkDatPage from './components/pages/exercisePages/Pronouns/AkkDatPage';
-import AdjectivalPronounsPage from './components/pages/exercisePages/Pronouns/AdjectivalPronounsPage';
-import SubordinatingPage from './components/pages/exercisePages/Composition/SubordinatingPage';
-import RelativePronounClausesPage from './components/pages/exercisePages/Composition/RelativePronounClausesPage';
-import ArticleClausesPage from './components/pages/exercisePages/Composition/ArticleClausesPage';
-import PresentPerfectPage from './components/pages/exercisePages/Composition/PresentPerfectPage';
-import FuturePerfectPage from './components/pages/exercisePages/Composition/FuturePerfectPage';
-import FutureImperfectPage from './components/pages/exercisePages/Composition/FutureImperfectPage';
+
+import AkkDatPage               from './components/pages/exercisePages/Pronouns/AkkDatPage';
+import AdjectivalPronounsPage   from './components/pages/exercisePages/Pronouns/AdjectivalPronounsPage';
+
+import SubordinatingPage            from './components/pages/exercisePages/Composition/SubordinatingPage';
+import ArticleClausesPage           from './components/pages/exercisePages/Composition/ArticleClausesPage';
+import RelativePronounClausesPage   from './components/pages/exercisePages/Composition/RelativePronounClausesPage';
+
+import FuturePerfectPage    from './components/pages/exercisePages/Tenses/FuturePerfectPage';
+import FutureSimplePage     from './components/pages/exercisePages/Tenses/FutureSimplePage';
+import PastSimplePage       from './components/pages/exercisePages/Tenses/PastSimplePage';
+import PastPerfectPage      from './components/pages/exercisePages/Tenses/PastPerfectPage';
+import PresentSimplePage    from './components/pages/exercisePages/Tenses/PresentSimplePage';
+import PresentPerfectPage   from './components/pages/exercisePages/Tenses/PresentPerfectPage';
 
 export default [
     {
@@ -111,15 +122,39 @@ export default [
     },
     {
         name: 'Future Perfect Tense',
-        path: '/practice/composition/future-perfect',
+        path: '/practice/tenses/future-perfect',
         component: FuturePerfectPage,
-        tags: ['composition']
+        tags: ['tenses']
     },
     {
         name: 'Future Imperfect Tense',
-        path: '/practice/composition/future-imperfect',
-        component: FutureImperfectPage,
-        tags: ['composition']
+        path: '/practice/tenses/future-imperfect',
+        component: FutureSimplePage,
+        tags: ['tenses']
+    },
+    {
+        name: 'Simple Present Tense',
+        path: '/practice/tenses/present-simple',
+        component: PresentSimplePage,
+        tags: ['tenses']
+    },
+    {
+        name: 'Present Perfect Tense',
+        path: '/practice/tenses/present-perfect',
+        component: PresentPerfectPage,
+        tags: ['tenses']
+    },
+    {
+        name: 'Simple Past Tense',
+        path: '/practice/tenses/past-simple',
+        component: PastSimplePage,
+        tags: ['tenses']
+    },
+    {
+        name: 'Past Perfect Tense',
+        path: '/practice/tenses/past-perfect',
+        component: PastPerfectPage,
+        tags: ['tenses']
     },
     {
         name: '"da-" Adverbs',
