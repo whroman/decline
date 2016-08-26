@@ -14,6 +14,7 @@ import LassenPage       from './components/pages/exercisePages/Verbs/LassenPage'
 import SpeechPage       from './components/pages/exercisePages/Verbs/SpeechPage';
 import KnowledgePage    from './components/pages/exercisePages/Verbs/KnowledgePage';
 import StellenPage      from './components/pages/exercisePages/Verbs/StellenPage';
+import DativeVerbsPage  from './components/pages/exercisePages/Verbs/DativeVerbsPage';
 
 import ErVerVorPage     from './components/pages/exercisePages/Prefixes/ErVerVorPage';
 import AufAusHerausPage from './components/pages/exercisePages/Prefixes/AufAusHerausPage';
@@ -34,6 +35,7 @@ import PastSimplePage       from './components/pages/exercisePages/Tenses/PastSi
 import PastPerfectPage      from './components/pages/exercisePages/Tenses/PastPerfectPage';
 import PresentSimplePage    from './components/pages/exercisePages/Tenses/PresentSimplePage';
 import PresentPerfectPage   from './components/pages/exercisePages/Tenses/PresentPerfectPage';
+import FuturesAndSimplePresentPage   from './components/pages/exercisePages/Tenses/FuturesAndSimplePresentPage';
 
 export default [
     {
@@ -97,6 +99,12 @@ export default [
         tags: ['verb']
     },
     {
+        name: 'Dative Direct Object Verbs',
+        path: '/practice/verbs/dative-direct-objects',
+        component: DativeVerbsPage,
+        tags: ['verb']
+    },
+    {
         name: 'Subordinating Conjunctions',
         path: '/practice/composition/subordinating-conjunctions',
         component: SubordinatingPage,
@@ -138,6 +146,7 @@ export default [
         component: PresentSimplePage,
         tags: ['tenses']
     },
+
     {
         name: 'Present Perfect Tense',
         path: '/practice/tenses/present-perfect',
@@ -154,6 +163,12 @@ export default [
         name: 'Past Perfect Tense',
         path: '/practice/tenses/past-perfect',
         component: PastPerfectPage,
+        tags: ['tenses']
+    },
+    {
+        name: 'Tenses with Werden',
+        path: '/practice/tenses/futures-and-present-simple',
+        component: FuturesAndSimplePresentPage,
         tags: ['tenses']
     },
     {

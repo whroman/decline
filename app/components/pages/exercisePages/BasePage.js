@@ -185,7 +185,18 @@ export class BasePage extends Component {
     componentWillMount() {
         const exercises = presentedExercises.filter(
             (exercise) => this.props.tags.some(
-                (item) => exercise.tags.includes(item)
+                (item) => {
+                    if (typeof item === 'string') {
+                        const result = exercise.tags.includes(item);
+                        return result;
+                    }
+
+                    const result = item.every((dependantTag) => {
+                        return exercise.tags.includes(dependantTag);
+                    });
+
+                    return result;
+                }
             )
         );
 
