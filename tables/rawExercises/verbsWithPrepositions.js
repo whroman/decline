@@ -403,7 +403,7 @@ export default [
     },
     {
         text: 'Die Perser glaubten sogar, dass die Erde aus einem riesigen Ei geschlüpft ist.',
-        stubs: [4, 7, 8, 11, 12],
+        stubs: [2, 4, 7, 8, 11, 12],
         translations: {
             eng: 'The Persians even believed that Earth hatched from a giant egg.'
         },
@@ -412,7 +412,10 @@ export default [
             'active-voice',
             'schlüpfen',
             'aus',
-            'dass'
+            'dass',
+            ', dass',
+            'glauben',
+            'preterite'
         ]
     },
     {
@@ -1633,7 +1636,7 @@ export default [
         text: 'Er will zeigen, dass Rio nicht so gefährlich ist, wie die Welt glaubt.',
         stubs: [1, 2, 3, 8, 9, 12],
         translations: {
-            eng: 'He wants to demonstrate that Rio is not as dangerious as the world thinks.'
+            eng: 'He wants to demonstrate that Rio is not as dangerous as the world thinks.'
         },
         tags: [
             'wollen',
@@ -1836,7 +1839,7 @@ export default [
         text: 'Es ist falsch, weil er für andere Veranstaltungen verantwortlich war.',
         stubs: [3, 5, 6, 9],
         translations: {
-            eng: 'That\'s false because he has been in charge of other events before.'
+            eng: 'That\'s false because he used to be (literally: was) in charge of other events.'
         },
         tags: [
             'weil',
@@ -1844,13 +1847,12 @@ export default [
             'war',
             'ander'
         ]
-
     },
     {
-        text: 'Wir haben die Chance zu zeigen, dass wir nicht nur die gewalttätige Stadt sind, wie uns die Welt kennt.',
+        text: 'Wir haben die Chance zu zeigen, dass wir nicht nur die gefährliche Stadt sind, wie uns die Welt kennt.',
         stubs: [4, 5, 6, 10, 11, 13, 14, 15, 18],
         translations: {
-            eng: 'We have the chance to show that we\'re not just the violent city that the world knows us as.'
+            eng: 'We have the chance to show that we\'re not just the dangerous city that the world knows us as.'
         },
         tags: [
             'zu',
@@ -2034,7 +2036,7 @@ export default [
         text: 'Sie denken alles, was in Deutschland passiert betrifft mich, weil sie sich nicht über die deutsche Geographie auskennen.',
         stubs: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 13, 14, 15, 17],
         translations: {
-            eng: 'They think everything which occurs in Germany applies to me because they don\'t know anything about German geography.'
+            eng: 'They think everything which occurs in Germany applies to me because they don\'t know about German geography.'
         },
         tags: [
             'denken',
@@ -2340,7 +2342,6 @@ export default [
             ', warum',
             'auf',
             'setzen',
-            'dative',
             'dies'
         ]
     },
@@ -2551,7 +2552,6 @@ export default [
         tags: [
             'accusative',
             'pronoun-accusative',
-            'dative',
             'pronoun-dative',
             'auf',
             'ver-',
@@ -2567,7 +2567,6 @@ export default [
             eng: 'He hadn\'t told her that she is his ex-girlfriend.'
         },
         tags: [
-            'dative',
             'pronoun-dative',
             'er-',
             '-zählen',
@@ -2582,7 +2581,6 @@ export default [
             eng: 'There is something that he hasn\'t told her'
         },
         tags: [
-            'dative',
             'pronoun-dative',
             'sagen',
             ', article'
@@ -2611,7 +2609,6 @@ export default [
             eng: 'The others don\'t know that she is his daughter. And she doesn\'t want to tell them on any account.'
         },
         tags: [
-            'dative',
             'pronoun-dative',
             ', dass',
             'auf',
@@ -3251,7 +3248,7 @@ export default [
         text: 'Automatisierte Accounts können als Follower die Unterstützung eines Politikers höher erscheinen lassen, als sie tatsächlich ist.',
         stubs: [0, 2, 3, 5, 7, 9, 10, 11, 12, 13, 15],
         translations: {
-            eng: 'Automated accounts can, as a follower, make the support of a politician appear larger than it really is.'
+            eng: 'Automated accounts can, as a follower, make the support of a politician appear larger (literally: higher) than it really is.'
         },
         tags: [
             'können',
@@ -3783,7 +3780,7 @@ export default [
         text: 'Aber außerhalb der Wochenenden nutzt fast niemand diesen Bus, außer Fred, der oft zu seiner Bibliothek fährt.',
         stubs: [0, 1, 2, 4, 7, 9, 11, 13, 14, 16],
         translations: {
-            eng: 'But apart from weekends, almost no one uses this bus except for Fred, who often goes to his library.'
+            eng: 'But apart from weekends, almost no one uses this bus except for Fred, who often goes (literally: rides) to his library.'
         },
         tags: [
             ', aber',
@@ -4520,7 +4517,7 @@ export default [
             'pronoun-dative',
             'passive-voice',
             'preterite',
-            'past-perfect'
+            'past-simple'
         ]
     },
     {
@@ -4540,7 +4537,7 @@ export default [
         text: 'Im letzten Jahr machte ich Urlaub in Deutschland.',
         stubs: [0, 1, 3, 6],
         translations: {
-            eng: 'In the last year I took a (literally: made) vacation in Germany.'
+            eng: 'In the last year I took a vacation (literally: made vacation)  in Germany.'
         },
         tags: [
             'in',
@@ -4743,7 +4740,6 @@ export default [
         },
         tags: [
             'in',
-            'dative',
             'mit',
             'finden',
             'können'
@@ -4781,7 +4777,6 @@ export default [
             eng: 'Here we need to distinguish between to different variations of Islamism.'
         },
         tags: [
-            'dative',
             'unter-',
             '-schieden',
             'unterschieden',
@@ -5001,7 +4996,6 @@ export default [
         },
         tags: [
             'vor',
-            'dative',
             'trinken'
         ]
     },
@@ -5013,7 +5007,6 @@ export default [
         },
         tags: [
             'vor',
-            'dative',
             'trinken'
         ]
     },
@@ -5120,7 +5113,6 @@ export default [
         tags: [
             'wurden',
             'vor',
-            'dative',
             'schlagen',
             'past-simple',
             'passive-voice'
@@ -5164,7 +5156,6 @@ export default [
         },
         tags: [
             'nach',
-            'dative',
             'be-',
             '-gegen',
             'begegnen'
@@ -5392,7 +5383,7 @@ export default [
         text: 'Daher wirkt es auf den ersten Blick durchaus legitim, wenn Rechtsextreme fordern, dass auch mit ihnen geredet wird.',
         stubs: [0, 1, 3, 4, 5, 9, 11, 12, 14, 15, 16, 17],
         translations: {
-            eng: 'Therefore, it seems thoroughly legitimate on first glance when right-wing extremists demand that they, as well, be spoken with.'
+            eng: 'Therefore, it seems, on first glance, thoroughly legitimate when right-wing extremists demand that they, as well, be discour with.'
         },
         tags: [
             'da-',
@@ -5645,6 +5636,351 @@ export default [
             'von',
             'past-simple',
             'passive-voice'
+        ]
+    },
+    {
+        text: 'Daher empfehle ich die Verwendung von Hilfsverben.',
+        stubs: [0, 1, 5],
+        translations: {
+            eng: 'Therefore, I recommend the use of auxiliary verbs.'
+        },
+        tags: [
+            'daher',
+            'empfehlen',
+            'emp-',
+            '-fehlen',
+            'von',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Dieses Buch kann ich dir sehr empfehlen.',
+        stubs: [0, 2, 4, 6],
+        translations: {
+            eng: 'I can really recommend to book to you.'
+        },
+        tags: [
+            'können',
+            'pronoun-dative',
+            'emp-',
+            '-fehlen',
+            'empfehlen',
+            'dies-',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Der Arzt hat mir empfohlen, viel Wasser zu trinken.',
+        stubs: [3, 4, 7, 8],
+        translations: {
+            eng: 'The doctor has advised me to drink a lot of water.'
+        },
+        tags: [
+            'pronoun-dative',
+            'emp-',
+            '-fehlen',
+            'empfehlen',
+            'zu',
+            'trinken',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Die Milch ist schlecht geworden, sie ist nicht mehr zu verwenden.',
+        stubs: [4, 5, 9, 10],
+        translations: {
+            eng: 'The milk has gone (literally: become) bad, it\'s not to be used anymore.'
+        },
+        tags: [
+            'geworden',
+            'ver-',
+            '-wenden',
+            'verwenden',
+            'zu'
+        ]
+    },
+    {
+        text: 'Das große Haus wird von ihnen gebaut.',
+        stubs: [3, 4, 5, 6],
+        translations: {
+            eng: 'The large house is being built by them.'
+        },
+        tags: [
+            'passive-voice',
+            'present-simple',
+            'pronoun-dative',
+            'von',
+            'werden',
+            'bauen'
+        ]
+    },
+    {
+        text: 'Das große Haus ist von ihnen gebaut worden.',
+        stubs: [3, 4, 5, 6, 7],
+        translations: {
+            eng: 'The large house has been built by them.'
+        },
+        tags: [
+            'von',
+            'pronoun-dative',
+            'bauen',
+            'worden',
+            'passive-voice',
+            'present-perfect'
+        ]
+    },
+    {
+        text: 'Das große Haus wurde von ihnen gebaut.',
+        stubs: [3, 4, 5, 6],
+        translations: {
+            eng: 'The large house was built by them.'
+        },
+        tags: [
+            'von',
+            'wurden',
+            'passive-voice',
+            'past-simple',
+            'bauen',
+            'pronoun-dative'
+        ]
+    },
+    {
+        text: 'Das große Haus war von ihnen gebaut worden.',
+        stubs: [3, 4, 5, 6, 7],
+        translations: {
+            eng: 'The large house had been built by them.'
+        },
+        tags: [
+            'passive-voice',
+            'past-perfect',
+            'waren',
+            'bauen',
+            'worden',
+            'von',
+            'pronoun-dative'
+        ]
+    },
+    {
+        text: 'Das große Haus wird von ihnen gebaut werden.',
+        stubs: [3, 4, 5, 6],
+        translations: {
+            eng: 'The large house will be built by them.'
+        },
+        tags: [
+            'passive-voice',
+            'future-simple',
+            'werden',
+            'von',
+            'pronoun-dative',
+            'bauen',
+            'werden'
+        ]
+    },
+    {
+        text: 'Das große Haus wird von ihnen gebaut werden sein.',
+        stubs: [3, 4, 5, 6, 7, 8],
+        translations: {
+            eng: 'The large house will have been built by them.'
+        },
+        tags: [
+            'passive-voice',
+            'future-perfect',
+            'werden',
+            'von',
+            'bauen',
+            'pronoun-dative'
+        ]
+    },
+    {
+        text: 'Sie bauen das große Haus.',
+        stubs: [1],
+        translations: {
+            eng: 'They are building the large house.'
+        },
+        tags: [
+            'active-voice',
+            'present-simple',
+            'bauen'
+        ]
+    },
+    {
+        text: 'Sie haben das große Haus gebaut.',
+        stubs: [1, 5],
+        translations: {
+            eng: 'The have built the large house.'
+        },
+        tags: [
+            'active-voice',
+            'present-perfect',
+            'bauen'
+        ]
+    },
+    {
+        text: 'Sie bauten das große Haus.',
+        stubs: [1],
+        translations: {
+            eng: 'They built the large house.'
+        },
+        tags: [
+            'bauen',
+            'preterite',
+            'active-voice',
+            'past-simple'
+        ]
+    },
+    {
+        text: 'Sie hatten das große Haus gebaut.',
+        stubs: [1, 5],
+        translations: {
+            eng: 'They had built the large house.'
+        },
+        tags: [
+            'bauen',
+            'hatten',
+            'preterite',
+            'active-voice',
+            'past-perfect'
+        ]
+    },
+    {
+        text: 'Sie werden das große Haus bauen.',
+        stubs: [1, 5],
+        translations: {
+            eng: 'They will build the large house.'
+        },
+        tags: [
+            'werden',
+            'bauen',
+            'active-voice',
+            'future-simple'
+        ]
+    },
+    {
+        text: 'Sie werden das große Haus gebaut haben.',
+        stubs: [1, 5, 6],
+        translations: {
+            eng: 'They will have built the large house.'
+        },
+        tags: [
+            'werden',
+            'bauen',
+            'active-voice',
+            'future-perfect'
+        ]
+    },
+    {
+        text: 'Es ist nie langweilig, mit ihr zussamen zu sein.',
+        stubs: [4, 5, 7, 8],
+        translations: {
+            eng: 'It\'s never boring to be together with her.'
+        },
+        tags: [
+            ', preposition',
+            'mit',
+            'zu',
+            'zu verb',
+            'sein',
+            'pronoun-dative'
+        ]
+    },
+    {
+        text: 'Es war uns nicht möglich, in München zu übernachten.',
+        stubs: [1, 2, 5, 7, 8],
+        translations: {
+            eng: 'It was not possible for us to stay the night in Munich.'
+        },
+        tags: [
+            ', preposition',
+            'in',
+            'zu',
+            'zu verb',
+            'past-simple',
+            'active-voice',
+            'waren',
+            'über-',
+            '-nachten',
+            'übernachten'
+        ]
+    },
+    {
+        text: 'Es ist teuer, ein Auto zu mieten.',
+        stubs: [3, 5, 6],
+        translations: {
+            eng: 'It\'s expensive to rent a car.'
+        },
+        tags: [
+            ', article',
+            'zu verb',
+            'mieten'
+        ]
+    },
+    {
+        text: 'Meine Mutter hat das Kind alleine zu Hause gelassen.',
+        stubs: [6, 8],
+        translations: {
+            eng: 'My mother has left the child alone at the house.'
+        },
+        tags: [
+            'lassen',
+            'zu'
+        ]
+    },
+    {
+        text: 'Sie haben mich kommen lassen.',
+        stubs: [2, 3, 4],
+        translations: {
+            eng: 'They are letting me come.'
+        },
+        tags: [
+            'lassen',
+            'kommen'
+        ]
+    },
+    {
+        text: 'Sie lassen die Kinder zu Hause.',
+        stubs: [1, 4],
+        translations: {
+            eng: 'They are leaving the children at home.'
+        },
+        tags: [
+            'lassen',
+            'zu'
+        ]
+    },
+    {
+        text: 'Wir lassen den Artzt kommen.',
+        stubs: [1, 4],
+        translations: {
+            eng: 'We are having (literally: letting) the doctor come.'
+        },
+        tags: [
+            'lassen',
+            'kommen'
+        ]
+    },
+    {
+        text: 'Sie lässt sich eine Tasse Kaffee machen.',
+        stubs: [1, 2, 6],
+        translations: {
+            eng: 'She\'s having a cup of coffee made for her.'
+        },
+        tags: [
+            'lassen',
+            'machen'
+        ]
+    },
+    {
+        text: 'Sie lässt ihn den Tisch decken.',
+        stubs: [1, 2, 3, 5],
+        translations: {
+            eng: 'She is having him set the table.'
+        },
+        tags: [
+            'lassen',
+            'decken'
         ]
     }
 ];
