@@ -35,6 +35,7 @@ import PastSimplePage       from './components/pages/exercisePages/Tenses/PastSi
 import PastPerfectPage      from './components/pages/exercisePages/Tenses/PastPerfectPage';
 import PresentSimplePage    from './components/pages/exercisePages/Tenses/PresentSimplePage';
 import PresentPerfectPage   from './components/pages/exercisePages/Tenses/PresentPerfectPage';
+import PassivePerfectPage   from './components/pages/exercisePages/Tenses/PassivePerfectPage';
 import FuturesAndSimplePresentPage   from './components/pages/exercisePages/Tenses/FuturesAndSimplePresentPage';
 
 export default [
@@ -166,9 +167,15 @@ export default [
         tags: ['tenses']
     },
     {
-        name: 'Tenses with Werden',
+        name: 'Tenses with "werden"',
         path: '/practice/tenses/futures-and-present-simple',
         component: FuturesAndSimplePresentPage,
+        tags: ['tenses']
+    },
+    {
+        name: 'Tenses with "worden"',
+        path: '/practice/tenses/passive-perfect',
+        component: PassivePerfectPage,
         tags: ['tenses']
     },
     {

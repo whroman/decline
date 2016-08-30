@@ -3852,7 +3852,7 @@ export default [
         text: 'Ich werde dir das Buch morgen zurückgeben.',
         stubs: [1, 2, 3, 6],
         translations: {
-            eng: 'I\'ll give back the book to you tomorrow.'
+            eng: 'I\'ll give you back the book tomorrow.'
         },
         tags: [
             'pronoun-dative',
@@ -4071,7 +4071,7 @@ export default [
         text: 'Werden Sie das gemacht haben, bevor wir Sie abholen?',
         stubs: [0, 3, 4, 5, 8],
         translations: {
-            eng: 'Will you have done that before we pick you up?'
+            eng: 'Will you (formal) have done that before we pick you up?'
         },
         tags: [
             'werden',
@@ -5490,7 +5490,7 @@ export default [
         text: 'Ich habe etwas, was ich dir geben möchte.',
         stubs: [3, 5, 6, 7],
         translations: {
-            eng: 'I have something which I\'d like to give you.'
+            eng: 'I have something which I\'d like to give to you.'
         },
         tags: [
             ', was',
@@ -5658,7 +5658,7 @@ export default [
         text: 'Dieses Buch kann ich dir sehr empfehlen.',
         stubs: [0, 2, 4, 6],
         translations: {
-            eng: 'I can really recommend to book to you.'
+            eng: 'I can really recommend this book to you.'
         },
         tags: [
             'können',
@@ -5765,7 +5765,7 @@ export default [
     },
     {
         text: 'Das große Haus wird von ihnen gebaut werden.',
-        stubs: [3, 4, 5, 6],
+        stubs: [3, 4, 5, 6, 7],
         translations: {
             eng: 'The large house will be built by them.'
         },
@@ -5981,6 +5981,419 @@ export default [
         tags: [
             'lassen',
             'decken'
+        ]
+    },
+    {
+        text: 'Die Mieten sind in den letzten fünf Jahren stark gestiegen.',
+        stubs: [2, 3, 4, 5, 9],
+        translations: {
+            eng: 'The rents have risen sharply in the last five years.'
+        },
+        tags: [
+            'in',
+            'present-perfect',
+            'active-voice',
+            'stiegen'
+        ]
+    },
+    {
+        text: 'Wer einen ausländischen Staatschef beleidigt, kann angeklagt werden. Aber nur, wenn das andere Land die deutsche Regierung darum bittet. Und nur, wenn die Regierung einwilligt.',
+        stubs: [4, 5, 6, 7, 8, 10, 17, 18, 19, 21, 24],
+        translations: {
+            eng: 'Anyone who offends a foreign can be charged. But only if the other country asks the German government for it. And only if the government agrees.'
+        },
+        tags: [
+            'wer',
+            'beleidigen',
+            'anklagen',
+            'an-',
+            '-klagen',
+            'werden',
+            'können',
+            'da-',
+            'bitten',
+            'einwilligen',
+            'ein-',
+            '-willigen'
+        ]
+    },
+    {
+        text: 'Ich habe ein neues Fahrrad und ich fahre gern damit rum.',
+        stubs: [2, 3, 7, 9],
+        translations: {
+            eng: 'I have a new bike and I enjoy riding around with it.'
+        },
+        tags: [
+            'fahren',
+            'da-',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Sie träumt davon, Präsident zu werden.',
+        stubs: [1, 2, 4, 5],
+        translations: {
+            eng: 'She dreams of becoming president.'
+        },
+        tags: [
+            'träumen',
+            'da-',
+            'zu verb'
+        ]
+    },
+    {
+        text: 'Es hat viel geregnet, aber wir hatten Spaß.',
+        stubs: [3, 4, 5, 6, 7],
+        translations: {
+            eng: 'It rained a lot but we had fun.'
+        },
+        tags: [
+            'regnen',
+            ', aber',
+            'hatten'
+        ]
+    },
+    {
+        text: 'Obwohl es viel regegnet hat, hatten wir Spaß.',
+        stubs: [0, 3, 4, 5, 6, 7],
+        translations: {
+            eng: 'Although it rained a lot, we had fun.'
+        },
+        tags: [
+            'regnen',
+            'obwohl',
+            'hatten',
+            ', verb'
+        ]
+    },
+    {
+        text: 'Obwohl wir viele Probleme hatten, hatten wir Spaß.',
+        stubs: [0, 2, 4, 5, 6, 7],
+        translations: {
+            eng: 'Although we had many problems, we had fun.'
+        },
+        tags: [
+            'obwohl',
+            ', verb',
+            'hatten'
+        ]
+    },
+    {
+        text: 'Wir gehen aus, obwohl es regnet.',
+        stubs: [1, 2, 3, 5],
+        translations: {
+            eng: 'We are going out, although it\'s raining.'
+        },
+        tags: [
+            'aus-',
+            '-gehen',
+            'ausgehen',
+            'obwohl',
+            'regnen'
+        ]
+    },
+    {
+        text: 'Wir gehen nicht aus, weil es regnet.',
+        stubs: [1, 3, 4, 6],
+        translations: {
+            eng: 'We aren\'t going out because it\'s raining.'
+        },
+        tags: [
+            'aus-',
+            '-gehen',
+            'ausgehen',
+            'obwohl',
+            'regnen'
+        ]
+    },
+    {
+        text: 'Trotz des Regens hatten wir Spaß.',
+        stubs: [0, 1, 3],
+        translations: {
+            eng: 'Despite the rain we had fun.'
+        },
+        tags: [
+            'trotz',
+            'hatten',
+            'past-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Trotz vieler Probleme hatten wir Spaß im Urlaub.',
+        stubs: [0, 1, 3, 6],
+        translations: {
+            eng: 'Despite many problems we had fun on vacation.'
+        },
+        tags: [
+            'trotz',
+            'hatten',
+            'in'
+        ]
+    },
+    {
+        text: 'Trotz des Regens gehen wir aus.',
+        stubs: [0, 1, 3, 5],
+        translations: {
+            eng: 'Despite the rain we are going out.'
+        },
+        tags: [
+            'trotz',
+            'aus-',
+            '-gehen',
+            'ausgehen'
+        ]
+    },
+    {
+        text: 'Wegen des Regens gehen wir nicht aus.',
+        stubs: [0, 1, 3, 6],
+        translations: {
+            eng: 'Due to the rain we aren\'t going out.'
+        },
+        tags: [
+            'wegen',
+            'aus-',
+            '-gehen',
+            'ausgehen'
+        ]
+    },
+    {
+        text: 'Obwohl es viel geregnet hat, haben wir unseren Urlaub genossen.',
+        stubs: [0, 3, 4, 5, 7, 9],
+        translations: {
+            eng: 'Although it has rained a lot, we have enjoyed our vacation.'
+        },
+        tags: [
+            'obwohl',
+            'regnen',
+            'haben',
+            'genießen',
+            'unser'
+        ]
+    },
+    {
+        text: 'Es regnet. Trotzdem gehe ich spazieren.',
+        stubs: [1, 2, 3, 5],
+        translations: {
+            eng: 'It\'s raining. Nevertheless, I\'ll go walking.'
+        },
+        tags: [
+            'trotzdem',
+            'regnen',
+            'gehen',
+            'spazieren'
+        ]
+    },
+    {
+        text: 'Trotz des heftigen Regens führen wir weiter.',
+        stubs: [0, 1, 2, 4],
+        translations: {
+            eng: 'Despite the heavy rain we drove on.'
+        },
+        tags: [
+            'trotz',
+            'führen'
+        ]
+    },
+    {
+        text: 'Vor dem Spiel gehen wir ein Eis essen.',
+        stubs: [0, 1, 3, 7],
+        translations: {
+            eng: 'Before the game we are going to eat ice cream.'
+        },
+        tags: [
+            'vor',
+            'essen',
+            'gehen'
+        ]
+    },
+    {
+        text: 'Bevor das Spiel beginnt, gehen wir ein Eis essen.',
+        stubs: [0, 1, 3, 4, 8],
+        translations: {
+            eng: 'Before the game begins we are going to east ice cream.'
+        },
+        tags: [
+            ', bevor',
+            'beginnen',
+            'gehen',
+            'essen'
+        ]
+    },
+    {
+        text: 'Während man isst, sollte man nicht lesen.',
+        stubs: [0, 2, 3, 6],
+        translations: {
+            eng: 'While one eats, one should not read.'
+        },
+        tags: [
+            ', während',
+            'essen',
+            'sollten',
+            'preterite',
+            'lesen'
+        ]
+    },
+    {
+        text: 'Während die Gewinner jubelten, verließen die Verlierer enttäuscht das Feld.',
+        stubs: [0, 1, 3, 4, 5, 7, 9],
+        translations: {
+            eng: 'While the winners cheered, the losers left the field disappointed.'
+        },
+        tags: [
+            ', während',
+            'jubelten',
+            'preterite',
+            'verließen',
+            'enttäuschen',
+            'ent-',
+            '-täuschen'
+        ]
+    },
+    {
+        text: 'Ich esse eine Pizza, denn ich habe Hunger.',
+        stubs: [4, 5, 6],
+        translations: {
+            eng: 'I\'m eating pizza because I\'m hungry (literally: have hunger).',
+        },
+        tags: [
+            ', denn',
+            'haben'
+        ]
+    },
+    {
+        text: 'Ich esse eine Pizza, weil ich Hunger habe.',
+        stubs: [4, 5, 6],
+        translations: {
+            eng: 'I\'m eating pizza because I\'m hungry (literally: have hunger).',
+        },
+        tags: [
+            ', weil',
+            'haben'
+        ]
+    },
+    {
+        text: 'Ich esse, weil ich Hunger habe, eine Pizza.',
+        stubs: [2, 3, 4, 5],
+        translations: {
+            eng: 'I\'m eating, because I\'m hungry, a pizza.'
+        },
+        tags: [
+            ', weil',
+            'haben'
+        ]
+    },
+    {
+        text: 'Weil ich Hunger habe, esse ich eine Pizza.',
+        stubs: [0, 3, 4, 5],
+        translations: {
+            eng: 'Because I\'m hungry, I\'m eating a pizza.'
+        },
+        tags: [
+            ', weil',
+            'haben'
+        ]
+    },
+    {
+        text: 'Ich weinte, denn ich hatte kein Geld.',
+        stubs: [2, 3, 4, 5, 6],
+        translations: {
+            eng: 'I cried because I had no money.'
+        },
+        tags: [
+            ', denn',
+            'hatten',
+            'preterite'
+        ]
+    },
+    {
+        text: 'Sie arbeitet heute nicht, weil sie krank ist.',
+        stubs: [4, 5, 6, 7],
+        translations: {
+            eng: 'She isn\'t working today because she\'s sick.'
+        },
+        tags: [
+            ', weil'
+        ]
+    },
+    {
+        text: 'Ich weiß nicht, wie ich es auf Deutsch sagen kann.',
+        stubs: [3, 4, 5, 8, 9],
+        translations: {
+            eng: 'I don\'t know how I can say that in German.'
+        },
+        tags: [
+            ', wie',
+            'sagen',
+            'können'
+        ]
+    },
+    {
+        text: 'Als ich Kind war, wohnte ich in München.',
+        stubs: [0, 1, 2, 3],
+        translations: {
+            eng: 'When I was a child (literally: as a child) I lived in Munich.'
+        },
+        tags: [
+            ', als',
+            'waren'
+        ]
+    },
+    {
+        text: 'Woran denkst du, bevor du einschläfst?',
+        stubs: [3, 4, 5],
+        translations: {
+            eng: 'What do you think about before you fall asleep?'
+        },
+        tags: [
+            ', bevor'
+        ]
+    },
+    {
+        text: 'Das Haus ist nicht alt, sondern neu.',
+        stubs: [5],
+        translations: {
+            eng: 'The house is not old, but new.'
+        },
+        tags: [
+            ', sondern'
+        ]
+    },
+    {
+        text: 'Ich bin nicht mit dem Auto gefahren, sondern zu Fuß gegangen.',
+        stubs: [7, 8, 9, 10],
+        translations: {
+            eng: 'I didn\'t go by car (literally: I didn\'t drive with the car), but rather by foot.'
+        },
+        tags: [
+            ', sondern',
+            'gehen'
+        ]
+    },
+    {
+        text: 'Ich gehe nicht ins Kino, sondern zum Park.',
+        stubs: [5, 6, 7],
+        translations: {
+            eng: 'I\'m not going to the cinema, rather to the park.'
+        },
+        tags: [
+            'gehen',
+            'in',
+            'zu',
+            ', sondern'
+        ]
+    },
+    {
+        text: 'Bevor du ins Bett gehst, sollst du dir die Zähne putzen.',
+        stubs: [0, 1, 2, 3, 4],
+        translations: {
+            eng: 'Before you go to bed, you should clean your teeth.'
+        },
+        tags: [
+            ', bevor',
+            'in',
+            'gehen'
         ]
     }
 ];
