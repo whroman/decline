@@ -1916,8 +1916,7 @@ export default [
             eng: 'Both citizens and also the media continued to place images on the Internet or to broadcast them live.'
         },
         tags: [
-            'sowohl',
-            'als',
+            'sowohl...als',
             'stellen',
             'senden',
             'in'
@@ -3356,6 +3355,18 @@ export default [
         tags: [
             'können',
             'von',
+            'trotzdem'
+        ]
+    },
+    {
+        text: 'Die Sonne schien, aber trotzdem war es kalt.',
+        stubs: [3, 4, 5, 6, 7],
+        translations: {
+            eng: 'The sun had shone, but nevertheless it was cold.'
+        },
+        tags: [
+            'scheinen',
+            ', aber',
             'trotzdem'
         ]
     },
@@ -6395,5 +6406,218 @@ export default [
             'in',
             'gehen'
         ]
+    },
+    {
+        text: 'Sie ist sowohl Sängerin als auch Schauspielerin.',
+        stubs: [2, 4, 5],
+        translations: {
+            eng: 'She is both a singer and also an actress.'
+        },
+        tags: [
+            'sowohl...als',
+        ]
+    },
+    {
+        text: 'Ich mag sowohl die Berge als auch das Meer.',
+        stubs: [2, 5, 6],
+        translations: {
+            eng: 'I like both the mountains and also the sea.'
+        },
+        tags: [
+            'sowohl...als'
+        ]
+    },
+    {
+        text: 'Er hat den ganzen Nachmittag gespielt, anstatt zu lernen.',
+        stubs: [6, 7, 8],
+        translations: {
+            eng: 'He has played all afternoon instead of learning.'
+        },
+        tags: [
+            'anstatt zu'
+        ]
+    },
+    {
+        text: 'Er kam anstatt seiner Frau.',
+        stubs: [2, 3],
+        translations: {
+            eng: 'He came in place of his wife.'
+        },
+        tags: [
+            'anstatt'
+        ]
+    },
+    {
+        text: 'Anstatt einer Haftstrafe erhielt der Angeklagte eine Geldstrafe.',
+        stubs: [0, 1],
+        translations: {
+            eng: 'Instead of a prison sentence, the defendant received a fine.'
+        },
+        tags: [
+            'anstatt'
+        ]
+    },
+    {
+        text: 'Ausserhalb der Sprechstunden wenden Sie sich bitte an den Notdienst.',
+        stubs: [0, 1],
+        translations: {
+            eng: 'Outside of office hours, please utilize the emergency service.'
+        },
+        tags: [
+            'außerhalb'
+        ]
+    },
+    {
+        text: 'Der Schiedsrichter sah das Foulspiel außerhalb des Strafraums und gab daher keinen Elfmeter.',
+        stubs: [5, 6],
+        translations: {
+            eng: 'The referee saw the foul play outside of the penalty area and therefore did not award a penalty kick.'
+        },
+        tags: [
+            'außerhalb'
+        ]
+    },
+    {
+        text: 'Bitte die Rechnung innerhalb von zwei Wochen begleichen.',
+        stubs: [3, 4],
+        translations: {
+            eng: 'Please pay the bill within two weeks.'
+        },
+        tags: [
+            'innerhalb'
+        ]
+    },
+    {
+        text: 'Trotz aller Proteste will er im Amt bleiben.',
+        stubs: [0, 1],
+        translations: {
+            eng: 'Despite all of the protests he wants to stay in the office.'
+        },
+        tags: [
+            'trotz',
+            'all'
+        ]
+    },
+    {
+        text: 'Während des Festes haben wir uns gestritten.',
+        stubs: [0, 1],
+        translations: {
+            eng: 'We had argued during the party.'
+        },
+        tags: [
+            'während'
+        ]
+    },
+    {
+        text: 'Die Kinder waren während der Sommerferien bei ihren Grosseltern auf dem Land.',
+        stubs: [3, 4],
+        translations: {
+            eng: 'The children were, during the summer holidays, with their grandparents in the country.'
+        },
+        tags: [
+            'während'
+        ]
+    },
+    {
+        text: 'Wegen des defekten Wagens würde die Strasse blockiert.',
+        stubs: [0, 1, 2],
+        translations: {
+            eng: 'Due to the broken-down car, the street was blocked.'
+        },
+        tags: [
+            'wegen'
+        ]
+    },
+    {
+        text: 'Wir mussten wegen des schlechten Wetters zu Hause bleiben.',
+        stubs: [2, 3],
+        translations: {
+            eng: 'We had to stay at home due to the bad weather.'
+        },
+        tags: [
+            'wegen'
+        ]
+    },
+    {
+        text: 'Du brauchst dir meinetwegen keine Sorgen zu machen.',
+        stubs: [3],
+        translations: {
+            eng: 'You don’t need to worry about me.'
+        },
+        tags: [
+            'wegen',
+            'meinetwegen'
+        ]
+    },
+    {
+        text: 'Trotz der schweren Grippe ging der Franziska ins Büro.',
+        stubs: [0, 1, 2],
+        translations: {
+            eng: 'Despite the severe flu, Franziska went to the office.'
+        },
+        tags: [
+            'trotz'
+        ]
+    },
+    {
+        text: 'Während des Fussballspiels sahen die Leute einen Streit zwischen zwei Männern.',
+        stubs: [0, 1],
+        translations: {
+            eng: 'During the football game, the people saw a dispute between two men.'
+        },
+        tags: [
+            'während'
+        ]
+    },
+    {
+        text: 'Wegen des schlechten Wetters blieben die Mitarbeiter zu Hause.',
+        stubs: [0, 1, 2],
+        translations: {
+            eng: 'Due to the severe weather, the coworkers stayed at home.'
+        },
+        tags: [
+            'wegen'
+        ]
+    },
+    {
+        text: 'Während des Skikurses gab es keinen Unfall.',
+        stubs: [0, 1],
+        translations: {
+            eng: 'There were no accident during the ski course.'
+        },
+        tags: [
+            'während'
+        ]
+    },
+    {
+        text: 'Anstatt der guten Zeitung las er ein schlechtes Magazin.',
+        stubs: [0, 1, 2],
+        translations: {
+            eng: 'Instead of the good newspaper, he read a poor-quality magazine.'
+        },
+        tags: [
+            'anstatt'
+        ]
+    },
+    {
+        text: 'Wegen meiner kranken Oma fahre ich heute ins Spital.',
+        stubs: [0, 1, 2],
+        translations: {
+            eng: 'I\'m driving to the hospital today because of my sick grandmother.'
+        },
+        tags: [
+            'wegen'
+        ]
+    },
+    {
+        text: 'Sie rauchten außerhalb der festgesetzten Arbeitszeit.',
+        stubs: [2, 3],
+        translations: {
+            eng: 'They smoked outside of the fixed working hours.'
+        },
+        tags: [
+            'außerhalb'
+        ]
     }
+
 ];
