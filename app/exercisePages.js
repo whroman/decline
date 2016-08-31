@@ -1,15 +1,16 @@
 import AdjectivesTrainerPage from './components/pages/exercisePages/AdjectiveDeclension/AdjectivesTrainer/AdjectivesTrainerPage';
 
-import VerbsWithPrepositionsPage from './components/pages/exercisePages/Verbs/VerbsWithPrepositionsPage';
-import TwoWayPrepositionsPage   from './components/pages/exercisePages/Verbs/TwoWayPrepositionsPage';
-import DativePrepositionsPage   from './components/pages/exercisePages/Verbs/DativePrepositionsPage';
-import ReflexiveVerbsPage       from './components/pages/exercisePages/Verbs/ReflexiveVerbsPage';
-import WerdenPage               from './components/pages/exercisePages/Verbs/WerdenPage';
-import SeinHabenVerbsPage       from './components/pages/exercisePages/Verbs/SeinHabenVerbsPage';
+import TwoWayPrepositionsPage     from './components/pages/exercisePages/Prepositions/TwoWayPrepositionsPage';
+import AccusativePrepositionsPage from './components/pages/exercisePages/Prepositions/AccusativePrepositionsPage';
+import DativePrepositionsPage     from './components/pages/exercisePages/Prepositions/DativePrepositionsPage';
+import GenitivePrepositionsPage     from './components/pages/exercisePages/Prepositions/GenitivePrepositionsPage';
 
 import DaAdverbsPage    from './components/pages/exercisePages/Adverbs/DaAdverbsPage';
 import WieAlsPage       from './components/pages/exercisePages/Adverbs/WieAlsPage';
 
+import ReflexiveVerbsPage       from './components/pages/exercisePages/Verbs/ReflexiveVerbsPage';
+import WerdenPage               from './components/pages/exercisePages/Verbs/WerdenPage';
+import SeinHabenVerbsPage       from './components/pages/exercisePages/Verbs/SeinHabenVerbsPage';
 import LassenPage       from './components/pages/exercisePages/Verbs/LassenPage';
 import SpeechPage       from './components/pages/exercisePages/Verbs/SpeechPage';
 import KnowledgePage    from './components/pages/exercisePages/Verbs/KnowledgePage';
@@ -46,21 +47,27 @@ export default [
         tags: ['adjective']
     },
     {
-        name: 'Verbs & Prepositions',
-        path: '/practice/verbs/prepositions',
-        component: VerbsWithPrepositionsPage,
-        tags: ['preposition']
-    },
-    {
-        name: 'Two-Way Prepositions',
-        path: '/practice/verbs/two-way-prepositions',
-        component: TwoWayPrepositionsPage,
+        name: 'Accusative Prepositions',
+        path: '/practice/prepositions/accusative',
+        component: AccusativePrepositionsPage,
         tags: ['preposition']
     },
     {
         name: 'Dative Prepositions',
-        path: '/practice/verbs/dative-prepositions',
+        path: '/practice/prepositions/dative',
         component: DativePrepositionsPage,
+        tags: ['preposition']
+    },
+    {
+        name: 'Two-Way Prepositions',
+        path: '/practice/prepositions/two-way',
+        component: TwoWayPrepositionsPage,
+        tags: ['preposition']
+    },
+    {
+        name: 'Genitive Prepositions',
+        path: '/practice/prepositions/genitive',
+        component: GenitivePrepositionsPage,
         tags: ['preposition']
     },
     {

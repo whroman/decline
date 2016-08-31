@@ -800,7 +800,7 @@ export default [
         text: 'Ich bin nach Italien gereist.',
         stubs: [1, 2, 4],
         translations: {
-            eng: 'I traveled to Italy.'
+            eng: 'I have traveled to Italy.'
         },
         tags: [
             'present-perfect',
@@ -1560,7 +1560,7 @@ export default [
         text: 'Viele Athleten machen sich ernste Sorgen wegen der Sicherheit während der Spiele.',
         stubs: [2, 3, 6, 7, 9, 10],
         translations: {
-            eng: 'Many athletes are seriously concerned about security during the games.'
+            eng: 'Many athletes are seriously concerned due to the security during the games.'
         },
         tags: [
             'machen',
@@ -1897,7 +1897,7 @@ export default [
             eng: 'While the police were deployed there, they strongly urged the public through Twitter: "Place no videos or images of the deployed police forces online. Do not help the perpetrators!"'
         },
         tags: [
-            'während',
+            ', während',
             'in',
             'war',
             'auffordern',
@@ -1916,7 +1916,7 @@ export default [
             eng: 'Both citizens and also the media continued to place images on the Internet or to broadcast them live.'
         },
         tags: [
-            'sowohl...als',
+            'sowohl als',
             'stellen',
             'senden',
             'in'
@@ -2829,7 +2829,7 @@ export default [
     },
     {
         text: 'Es ist immer so gewesen.',
-        stubs: [2, 5],
+        stubs: [1, 4],
         translations: {
             eng: 'It has always been so.'
         },
@@ -2996,23 +2996,23 @@ export default [
             'fahren'
         ]
     },
-    {
-        text: 'Der Zug ist mit Verspätung abgefahren.',
-        stubs: [2, 3, 5],
-        translations: {
-            eng: 'The train departed with a delay.',
-            spa: 'El tren ha salido con retraso.'
-        },
-        tags: [
-            'sein',
-            'present-perfect',
-            'active-voice',
-            'mit',
-            'ab-',
-            '-fahren',
-            'abfahren'
-        ]
-    },
+    // {
+    //     text: 'Der Zug ist mit Verspätung abgefahren.',
+    //     stubs: [2, 3, 5],
+    //     translations: {
+    //         eng: 'The train departed with a delay.',
+    //         spa: 'El tren ha salido con retraso.'
+    //     },
+    //     tags: [
+    //         'sein',
+    //         'present-perfect',
+    //         'active-voice',
+    //         'mit',
+    //         'ab-',
+    //         '-fahren',
+    //         'abfahren'
+    //     ]
+    // },
     {
         text: 'Heute sind nicht viele Schüler gekommen.',
         stubs: [1, 3, 5],
@@ -3172,7 +3172,7 @@ export default [
         text: 'Wir sind um 11 Uhr aufgewacht.',
         stubs: [1, 2, 5],
         translations: {
-            eng: 'We woke up at 11 am.'
+            eng: 'We woke up at 11 a.m.'
         },
         tags: [
             'auf-',
@@ -4837,6 +4837,18 @@ export default [
         ]
     },
     {
+        text: 'Der Westen hatte Erdogan mit Vorsicht begegnet.',
+        stubs: [0, 2, 4, 7],
+        translations: {
+            eng: 'The west had met Erdogan with caution.'
+        },
+        tags: [
+            'hatten',
+            'mit',
+            'begegnen'
+        ]
+    },
+    {
         text: 'Am 18. September können die Berlinerinnen und Berliner ihre Wahl treffen, wie sie sich ihre Stadt der Zukunft vorstellen.',
         stubs: [0, 3, 4, 8, 19, 11, 13, 14, 16, 18],
         translations: {
@@ -6414,7 +6426,7 @@ export default [
             eng: 'She is both a singer and also an actress.'
         },
         tags: [
-            'sowohl...als',
+            'sowohl als',
         ]
     },
     {
@@ -6424,17 +6436,7 @@ export default [
             eng: 'I like both the mountains and also the sea.'
         },
         tags: [
-            'sowohl...als'
-        ]
-    },
-    {
-        text: 'Er hat den ganzen Nachmittag gespielt, anstatt zu lernen.',
-        stubs: [6, 7, 8],
-        translations: {
-            eng: 'He has played all afternoon instead of learning.'
-        },
-        tags: [
-            'anstatt zu'
+            'sowohl als'
         ]
     },
     {
@@ -6467,16 +6469,16 @@ export default [
             'außerhalb'
         ]
     },
-    {
-        text: 'Der Schiedsrichter sah das Foulspiel außerhalb des Strafraums und gab daher keinen Elfmeter.',
-        stubs: [5, 6],
-        translations: {
-            eng: 'The referee saw the foul play outside of the penalty area and therefore did not award a penalty kick.'
-        },
-        tags: [
-            'außerhalb'
-        ]
-    },
+    // {
+    //     text: 'Der Schiedsrichter sah das Foulspiel außerhalb des Strafraums und gab daher keinen Elfmeter.',
+    //     stubs: [5, 6],
+    //     translations: {
+    //         eng: 'The referee saw the foul play outside of the penalty area and therefore did not award a penalty kick.'
+    //     },
+    //     tags: [
+    //         'außerhalb'
+    //     ]
+    // },
     {
         text: 'Bitte die Rechnung innerhalb von zwei Wochen begleichen.',
         stubs: [3, 4],
@@ -6617,6 +6619,47 @@ export default [
         },
         tags: [
             'außerhalb'
+        ]
+    },
+    {
+        text: 'Den Fluss entlang stehen Bäume.',
+        stubs: [0, 2],
+        translations: {
+            eng: 'There are trees along the river.'
+        },
+        tags: [
+            'entlang'
+        ]
+    },
+    {
+        text: 'Er spazierte die Allee entlang.',
+        stubs: [2, 4],
+        translations: {
+            eng: 'He walked along the boulevard.'
+        },
+        tags: [
+            'entlang'
+        ]
+    },
+    {
+        text: 'Er lehnte sich gegen die Wand.',
+        stubs: [3, 4],
+        translations: {
+            eng: 'He leaned against the wall.'
+        },
+        tags: [
+            'gegen'
+        ]
+    },
+    {
+        text: 'Er fliegt in 80 Tagen mit einem Luftballon um die Welt.',
+        stubs: [5, 6, 8, 9],
+        translations: {
+            eng: 'He\'s flying around the world in 80 days with a hot air balloon.'
+        },
+        tags: [
+            'mit',
+            'um'
         ]
     }
 

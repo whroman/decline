@@ -19,6 +19,10 @@ const groups = [
         title: 'Verbs'
     },
     {
+        tag: 'preposition',
+        title: 'Prepositions'
+    },
+    {
         tag: 'adverb',
         title: 'Adverbs'
     },
