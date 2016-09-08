@@ -1622,11 +1622,12 @@ export default [
     },
     {
         text: 'Die schwierigste Aufgabe ist es, während der Spiele die Polizeigewalt zu verhindern.',
-        stubs: [5, 6, 8, 10, 11],
+        stubs: [1, 5, 6, 8, 10, 11],
         translations: {
-            eng: 'The most difficult task is to prevent police violence during the game.'
+            eng: 'The most difficult task is to avoid police violence during the game.'
         },
         tags: [
+            'adjective-nominative',
             'während',
             ', während',
             'verhindern',
@@ -1938,6 +1939,21 @@ export default [
         ]
     },
     {
+        text: 'Lernen erfordert ständige Wiederholung.',
+        stubs: [1, 3],
+        translations: {
+            eng: 'Learning requires constant repetition.'
+        },
+        tags: [
+            'erfordern',
+            'er-',
+            '-fordern',
+            'wiederholen',
+            'wieder-',
+            '-holen'
+        ]
+    },
+    {
         text: 'Sowohl Bürger als auch Medien stellten weiter Bilder ins Internet oder sendeten sie live.',
         stubs: [0, 2, 5, 8, 11, 12],
         translations: {
@@ -1984,35 +2000,67 @@ export default [
         ]
     },
     {
+        //     0   1            2     3  4  5     6         7   8        9    10  11   12       13            14 15        16      17    18       19
         text: 'Die Journalisten haben in so einer Situation das Problem, dass sie ihre Aufgabe, Informationen zu besorgen, einfach nicht erfüllen können.',
-        stubs: [0, 2, 3, 4, 5, 7, 9, 10, 11, 14, 15, 18, 19],
+        stubs: [0, 2, 3, 4, 5, 7],
         translations: {
             eng: 'The journalists have, in such a situation, the problem that they simply can\'t fulfill their duty to obtain information.'
         },
         tags: [
+            'definite-article-nominative',
             'in',
-            'dass',
+            'indefinite-article-dative',
+            'wo?',
+            'definite-article-accusative'
+        ]
+    },
+    {
+        //     0   1            2     3  4  5     6         7   8        9    10  11   12       13            14 15        16      17    18       19
+        text: 'Die Journalisten haben in so einer Situation das Problem, dass sie ihre Aufgabe, Informationen zu besorgen, einfach nicht erfüllen können.',
+        stubs: [9, 10, 11, 14, 15, 18, 19],
+        translations: {
+            eng: 'The journalists have, in such a situation, the problem that they simply can\'t fulfill their duty to obtain information.'
+        },
+        tags: [
             ', dass',
+            'pronoun-dative',
             'zu',
+            'zu verb',
+            ', adverb',
             'besorgen',
             'be-',
+            '-sorgen',
             'erfüllen',
             'er-',
+            '-füllen',
             'können'
         ]
     },
     {
+        //     0     1      2     3   4   5          6     7         8             9      10 11      12    13  14    15   16  17  18
         text: 'Unter diesem Druck ist die Versuchung groß, besonders sensationelle Bilder zu zeigen: etwas vom Täter oder von den Opfern.',
-        stubs: [0, 1, 3, 4, 8, 10, 11, 13, 16, 17],
+        stubs: [0, 1, 3, 4, 8, 10, 11],
         translations: {
             eng: 'Under this pressure, the temptation is great to show especially sensational images: something from the perpetrator or the victims.'
         },
         tags: [
             'unter',
+            'dies',
             'zu',
-            'zeigen',
+            'zu verb',
+            'zeigen'
+        ]
+    },
+    {
+        //     0     1      2     3   4   5          6     7         8             9      10 11      12    13  14    15   16  17  18
+        text: 'Unter diesem Druck ist die Versuchung groß, besonders sensationelle Bilder zu zeigen: etwas vom Täter oder von den Opfern.',
+        stubs: [13, 16, 17],
+        translations: {
+            eng: 'Under this pressure, the temptation is great to show especially sensational images: something from the perpetrator or the victims.'
+        },
+        tags: [
             'von',
-            'dies'
+            'definite-article-dative'
         ]
     },
     {
@@ -2060,22 +2108,38 @@ export default [
         ]
     },
     {
+        //     0   1      2      3   4  5           6        7        8     9    10  11   12    13   14  15       16         17
         text: 'Sie denken alles, was in Deutschland passiert betrifft mich, weil sie sich nicht über die deutsche Geographie auskennen.',
-        stubs: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 13, 14, 15, 17],
+        stubs: [1, 2, 3, 4, 6, 7, 8],
         translations: {
             eng: 'They think everything which occurs in Germany applies to me because they don\'t know about German geography.'
         },
         tags: [
             'denken',
+            'all',
             ', was',
+            'in',
+            'wo?',
             'passieren',
-            'betriffen',
-            'weil',
+            'betreffen',
+            'pronoun-accusative'
+        ]
+    },
+    {
+        //     0   1      2      3   4  5           6        7        8     9    10  11   12    13   14  15       16         17
+        text: 'Sie denken alles, was in Deutschland passiert betrifft mich, weil sie sich nicht über die deutsche Geographie auskennen.',
+        stubs: [9, 10, 11, 13, 14, 15, 17],
+        translations: {
+            eng: 'They think everything which occurs in Germany applies to me because they don\'t know about German geography.'
+        },
+        tags: [
             ', weil',
             'reflexive',
             'über',
-            'all',
-            'auskennen'
+            'adjective-accusative',
+            'auskennen',
+            'aus-',
+            '-kennen'
         ]
     },
     {
@@ -2092,13 +2156,14 @@ export default [
     },
     {
         text: 'Es ist falsch, weil es nicht die Aufgabe der Polizei ist.',
-        stubs: [3, 6, 8, 10],
+        stubs: [3, 8, 10],
         translations: {
             eng: 'That\'s false because that\'s not the duty of the police.'
         },
         tags: [
             'weil',
-            ', weil'
+            ', weil',
+            'definite-article-genitive'
         ]
     },
     {
@@ -2265,8 +2330,9 @@ export default [
         ]
     },
     {
+        //     0         1        2   3     4  5   6       7   8      9  10           11     12 13           14   15 16  17   18      19 20
         text: 'Politiker benutzen sie auch, um die Meinung des Volkes in umstrittenen Fragen zu beeinflussen oder um für sich Werbung zu machen.',
-        stubs: [1, 4, 5, 7, 9, 10, 12, 13, 15, 16, 17, 19, 20],
+        stubs: [1, 4, 7, 9, 12, 13],
         translations: {
             eng: 'Politicians also make use of them in order to influence the public\'s opinion in controversial issues or in order to advertise themselves.'
         },
@@ -2274,13 +2340,24 @@ export default [
             'be-',
             '-nutzen',
             'nutzen',
-            ', preposition',
-            'um zu',
+            ', um zu',
+            'definite-article-genitive',
             'in',
             'be-',
             'ein-',
             '-flussen',
-            'beeinflussen',
+            'beeinflussen'
+        ]
+    },
+    {
+        //     0         1        2   3     4  5   6       7   8      9  10           11     12 13           14   15 16  17   18      19 20
+        text: 'Politiker benutzen sie auch, um die Meinung des Volkes in umstrittenen Fragen zu beeinflussen oder um für sich Werbung zu machen.',
+        stubs: [15, 16, 17, 19, 20],
+        translations: {
+            eng: 'Politicians also make use of them in order to influence the public\'s opinion in controversial issues or in order to advertise themselves.'
+        },
+        tags: [
+            ',um zu',
             'für',
             'machen'
         ]
@@ -4093,7 +4170,7 @@ export default [
             eng: 'Before we arrive at home they will have eaten everything up.'
         },
         tags: [
-            'bevor',
+            ', bevor',
             'nach',
             'kommen',
             'werden',
@@ -4133,7 +4210,7 @@ export default [
             'werden',
             'machen',
             'haben',
-            'bevor',
+            ', bevor',
             'ab-',
             '-holen',
             'abholen',
@@ -4422,8 +4499,9 @@ export default [
         ]
     },
     {
+        //     0    1    2     3        4    5          6   7     8       9        10  11  12     13  14
         text: 'Hier geht jedes Elektron eine Verbindung mit einem anderen Teilchen ein und bildet ein Molekül.',
-        stubs: [0, 1, 2, 4, 6, 7, 8, 9, 12, 15],
+        stubs: [0, 1, 2, 4, 6, 7, 8, 10],
         translations: {
             eng: 'Here, every electron enters a bond with another particle and creates a molecule.'
         },
@@ -4431,11 +4509,23 @@ export default [
             'jed',
             'ver-',
             'mit',
+            'indefinite-article-dative',
+            'ander',
             'ein-',
             '-gehen',
-            'eingehen',
+            'eingehen'
+        ]
+    },
+    {
+        //     0    1    2     3        4    5          6   7     8       9        10  11  12     13  14
+        text: 'Hier geht jedes Elektron eine Verbindung mit einem anderen Teilchen ein und bildet ein Molekül.',
+        stubs: [12, 13],
+        translations: {
+            eng: 'Here, every electron enters a bond with another particle and creates a molecule.'
+        },
+        tags: [
             'bilden',
-            'ander'
+            'indefinite-article-accusative'
         ]
     },
     {
@@ -6139,7 +6229,7 @@ export default [
         },
         tags: [
             'regnen',
-            'obwohl',
+            ', obwohl',
             'hatten',
             ', verb'
         ]
@@ -6151,7 +6241,7 @@ export default [
             eng: 'Although we had many problems, we had fun.'
         },
         tags: [
-            'obwohl',
+            ', obwohl',
             ', verb',
             'hatten'
         ]
@@ -6166,7 +6256,7 @@ export default [
             'aus-',
             '-gehen',
             'ausgehen',
-            'obwohl',
+            ', obwohl',
             'regnen'
         ]
     },
@@ -6180,7 +6270,7 @@ export default [
             'aus-',
             '-gehen',
             'ausgehen',
-            'obwohl',
+            ', obwohl',
             'regnen'
         ]
     },
@@ -6242,7 +6332,7 @@ export default [
             eng: 'Although it has rained a lot, we have enjoyed our vacation.'
         },
         tags: [
-            'obwohl',
+            ', obwohl',
             'regnen',
             'haben',
             'genießen',
@@ -6827,18 +6917,33 @@ export default [
         ]
     },
     {
+        //     0         1      2    3        4      5     6         7        8  9     10
         text: 'Innerhalb kurzer Zeit erwachte jedoch meine kindliche Fantasie zu neuem Leben.',
-        stubs: [0, 1, 3, 4, 8, 9, 10],
+        stubs: [0, 1, 5, 6],
         translations: {
-            eng: 'Within a short time, however, my childhood fantasy was revived.'
+            eng: 'Within a short time, however, my childhood fantasy came alive (literally: had awoken to a new life).'
         },
         tags: [
             'innerhalb',
+            'adjective-genitive',
+            'mein',
+            'adjective-nominative',
+        ]
+    },
+    {
+        //     0         1      2    3        4      5     6         7        8  9     10
+        text: 'Innerhalb kurzer Zeit erwachte jedoch meine kindliche Fantasie zu neuem Leben.',
+        stubs: [3, 4, 8, 9, 10],
+        translations: {
+            eng: 'Within a short time, however, my childhood fantasy came alive (literally: had awoken to a new life).'
+        },
+        tags: [
             'erwachen',
             'er-',
             '-wachen',
             'jedoch',
-            'zu'
+            'zu',
+            'adjective-dative'
         ]
     },
     {
@@ -6859,15 +6964,32 @@ export default [
     {
         //     0     1    2   3    4    5   6           7  8   9     10  11   12   13   14  15  16         17     18    19  20  21   22      23
         text: 'Daher muss ich mich eine neue Geschichte in der Regel nur drei oder vier Mal ins Gedächtnis rufen, bevor ich das Wort einfach weiß.',
-        stubs: [0, 1, 2, 3, 7, 8, 15, 17],
+        stubs: [0, 1, 2, 3, 4, 5],
         translations: {
             eng: 'Therefore, I only have to recall (literally: call at the brain) a new story, as a rule of thumb (literally: in the rule), three or four times before I simply know the word.'
         },
         tags: [
             'daher',
             'müssen',
+            'pronoun-accusative',
+            'indefinite-article-accusative',
+            'article-accusative'
+        ]
+    },
+    {
+        //     0     1    2   3    4    5   6           7  8   9     10  11   12   13   14  15  16         17     18    19  20  21   22      23
+        text: 'Daher muss ich mich eine neue Geschichte in der Regel nur drei oder vier Mal ins Gedächtnis rufen, bevor ich das Wort einfach weiß.',
+        stubs: [7, 8, 15, 17, 18],
+        translations: {
+            eng: 'Therefore, I only have to recall (literally: call at the brain) a new story, as a rule of thumb (literally: in the rule), three or four times before I simply know the word.'
+        },
+        tags: [
             'in',
-            'rufen'
+            'definite-article-dative',
+            'wo?',
+            'definite-article-accusative',
+            'rufen',
+            ', bevor'
         ]
     },
     {
@@ -8421,5 +8543,291 @@ export default [
             'active-voice'
         ]
     },
+    {
+        text: 'Aktivisten kämpfen dagegen, dass in Deutschland Braunkohle gefördert wird.',
+        stubs: [1, 2, 3, 4, 7, 8],
+        translations: {
+            eng: 'Activists are fighting against the fact that brown coal is mined in Germany.'
+        },
+        tags: [
+            'kämpfen',
+            'da-',
+            'gegen',
+            ', dass',
+            'in',
+            'fordern',
+            'werden',
+            'present-simple',
+            'passive-voice'
+
+        ]
+    },
+    {
+        text: 'Nach einem harten Arbeitstag ruhe ich mich gern am Abend aus.',
+        stubs: [0, 1, 2, 4, 6, 8, 10],
+        translations: {
+            eng: 'After a hard day of work, I like to relax in the evening.'
+        },
+        tags: [
+            'nach',
+            'indefinite-article-dative',
+            'adjective-dative',
+            'aus-',
+            '-ruhen',
+            'ausruhen',
+            'reflexive',
+            'an',
+            'definite-article-dative',
+            'pronoun-accusative',
+            'present-simple',
+            'active-voice',
+            'wann?'
+        ]
+    },
+    {
+        text: 'Zu Silvester gibt es normalerweise viele Partys.',
+        stubs: [0, 2, 3, 5],
+        translations: {
+            eng: 'On New Year\'s Eve, there are usually many parties.'
+        },
+        tags: [
+            'zu',
+            'viel',
+            'wann?'
+        ]
+    },
+    {
+        text: 'Ich habe jetzt keine Zeit. Ich bin gerade bei Fritz.',
+        stubs: [1, 2, 3, 6, 7, 8],
+        translations: {
+            eng: 'I have no time now. I\'m with Fritz right now.'
+        },
+        tags: [
+            'jetzt',
+            'kein',
+            'gerade',
+            'bei',
+            'wo?',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Die Adresse steht auf der Rückseite des Briefes',
+        stubs: [2, 3, 4, 6],
+        translations: {
+            eng: 'The address is on the backside of the letter.'
+        },
+        tags: [
+            'stehen',
+            'auf',
+            'wo?',
+            'definite-article-dative',
+            'definite-article-genitive'
+        ]
+    },
+    {
+        text: 'Er sitzt den ganzen Tag am Fenster in der Küche.',
+        stubs: [1, 2, 3, 5, 7, 8],
+        translations: {
+            eng: 'He sits the whole day by the window in the kitchen.'
+        },
+        tags: [
+            'sitzen',
+            'definite-article-accusative',
+            'an',
+            'wo?',
+            'in',
+            'definite-article-dative'
+        ]
+    },
+    {
+        text: 'Ich mag das Bild, das an der Wand im Flur hängt.',
+        stubs: [1, 2, 4, 5, 6, 8, 10],
+        translations: {
+            eng: 'I like the picture that hangs on the wall in the hallway.'
+        },
+        tags: [
+            'mögen',
+            'definite-article-accusative',
+            ', article',
+            'an',
+            'wo?',
+            'definite-article-dative',
+            'in',
+            'hängen',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Gestern gab es einen Unfall an dieser Kreuzung.',
+        stubs: [1, 2, 3, 5, 6],
+        translations: {
+            eng: 'Yesterday there was an accident at this intersection.'
+        },
+        tags: [
+            'indefinite-article-accusative',
+            'an',
+            'wo?',
+            'dies'
+        ]
+    },
+    {
+        text: 'Du findest die Sportnachrichten auf Seite 3.',
+        stubs: [1, 2, 4],
+        translations: {
+            eng: 'You can find the sports news on page 3.'
+        },
+        tags: [
+            'finden',
+            'definite-article-accusative',
+            'auf',
+            'wo?',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Der Mann, den die Polizei sucht, hat eine Narbe auf der linken Wange.',
+        stubs: [0, 2, 3, 5, 6, 7, 9, 10, 11],
+        translations: {
+            eng: 'The man that the police are looking for has a scar on the left cheek.'
+        },
+        tags: [
+            'definite-article-nominative',
+            ', article',
+            'definite-article-accusative',
+            'suchen',
+            ', verb',
+            'indefinite-article-accusative',
+            'auf',
+            'wo?',
+            'definite-article-dative',
+            'adjective-dative',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Ich weiß, wo der Schlüssel ist, den die Mutter sucht.',
+        stubs: [1, 2, 3, 5, 6, 7, 9],
+        translations: {
+            eng: 'I know where the key is that the mother is looking for.'
+        },
+        tags: [
+            'wissen',
+            ', wo',
+            'definite-article-nominative',
+            ', article',
+            'definite-article-accusative',
+            'suchen',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Das ist mein Freund, dessen Foto dir so gut gefallen hat.',
+        stubs: [2, 4, 6, 9, 10],
+        translations: {
+            eng: 'That\'s my friend whose photo you liked so much.'
+        },
+        tags: [
+            'mein',
+            ', article',
+            'definite-article-genitive',
+            'pronoun-dative',
+            'gefallen',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Ich wollte mit dem Bus, dessen Fahrer betrunken war, nicht weiterfahren.',
+        stubs: [1, 2, 3, 5, 8, 10],
+        translations: {
+            eng: 'I didn\'t want to ride further with the bus whose driver was drunk.'
+        },
+        tags: [
+            'wollten',
+            'mit',
+            'definite-article-dative',
+            'definite-article-genitive',
+            ', article',
+            'waren',
+            'weiterfahren',
+            'weiter-',
+            '-fahren',
+            'preterite',
+            'past-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Das ist der Mann, dessen Tochter gestern hier war.',
+        stubs: [2, 4, 8],
+        translations: {
+            eng: 'That\'s the man whose daughter was here yesterday.'
+        },
+        tags: [
+            'definite-article-nominative',
+            'definite-article-genitive',
+            ', article',
+            'waren'
+        ]
+    },
+    {
+        text: 'Für mich ist mein Hund ein Freund, mit dem ich mich unterhalten kann.',
+        stubs: [0, 1, 3, 5, 7, 8, 10, 11, 12],
+        translations: {
+            eng: 'For me, my dog is a friend with whom I can talk to.'
+        },
+        tags: [
+            'für',
+            'pronoun-accusative',
+            'mein',
+            'indefinite-article-nominative',
+            ', preposition',
+            'definite-article-dative',
+            'unterhalten',
+            'reflexive',
+            'können',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Wo ist das Mädchen, dem du geholfen hast?',
+        stubs: [2, 4, 6, 7],
+        translations: {
+            eng: 'Where is the girl that you helped?'
+        },
+        tags: [
+            'definite-article-nominative',
+            ', article',
+            'definite-article-dative',
+            'helfen',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Ich bereite mich auf die Prüfungen vor, indem ich regelmäßig den Stoff wiederhole.',
+        stubs: [1, 2, 3, 4, 6, 7, 10, 12],
+        translations: {
+            eng: 'I\'m preparing myself for the exams by repeating the (learning) material regularly.'
+        },
+        tags: [
+            'vor-',
+            '-bereiten',
+            'vorbereiten',
+            'auf',
+            'definite-article-accusative',
+            ', indem',
+            'wieder-',
+            '-holen',
+            'wiederholen'
+        ]
+    }
 
 ];

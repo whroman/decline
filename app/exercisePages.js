@@ -29,6 +29,7 @@ import AdjectivalPronounsPage   from './components/pages/exercisePages/Pronouns/
 import SubordinatingPage            from './components/pages/exercisePages/Composition/SubordinatingPage';
 import ArticleClausesPage           from './components/pages/exercisePages/Composition/ArticleClausesPage';
 import RelativePronounClausesPage   from './components/pages/exercisePages/Composition/RelativePronounClausesPage';
+import vorBevorDavorVorherPage from './components/pages/exercisePages/Composition/vorBevorDavorVorherPage';
 
 import FuturePerfectPage    from './components/pages/exercisePages/Tenses/FuturePerfectPage';
 import FutureSimplePage     from './components/pages/exercisePages/Tenses/FutureSimplePage';
@@ -38,7 +39,7 @@ import PresentSimplePage    from './components/pages/exercisePages/Tenses/Presen
 import PresentPerfectPage   from './components/pages/exercisePages/Tenses/PresentPerfectPage';
 import PassivePerfectPage   from './components/pages/exercisePages/Tenses/PassivePerfectPage';
 import FuturesAndSimplePresentPage   from './components/pages/exercisePages/Tenses/FuturesAndSimplePresentPage';
-import ActiveVoicePage   from './components/pages/exercisePages/Tenses/ActiveVoicePage';
+import SimpleTensesActiveVoicePage   from './components/pages/exercisePages/Tenses/SimpleTensesActiveVoicePage';
 
 export default [
     {
@@ -174,9 +175,9 @@ export default [
         tags: ['tenses']
     },
     {
-        name: 'Active Voice',
+        name: 'Simple Tenses in the Active Voice',
         path: '/practice/tenses/active-voice',
-        component: ActiveVoicePage,
+        component: SimpleTensesActiveVoicePage,
         tags: ['tenses']
     },
     {
@@ -202,6 +203,12 @@ export default [
         path: '/practice/adverbs/wie-als',
         component: WieAlsPage,
         tags: ['adverb']
+    },
+    {
+        name: 'Vor, Bevor, Davor, Vorher',
+        path: '/practice/adverbs/vor-bevor-davor-vorher',
+        component: vorBevorDavorVorherPage,
+        tags: ['composition']
     },
     {
         name: 'Werden, Worden, Wurden, War',
