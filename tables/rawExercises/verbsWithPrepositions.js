@@ -415,7 +415,8 @@ export default [
             'dass',
             ', dass',
             'glauben',
-            'preterite'
+            'preterite',
+            'wo?'
         ]
     },
     {
@@ -764,7 +765,8 @@ export default [
             'active-voice',
             'haben',
             'in',
-            'tanzen'
+            'tanzen',
+            'wo?'
         ]
     },
     {
@@ -960,7 +962,7 @@ export default [
         text: 'Mein Vater geht früh ins Bett, weil er morgen aufstehen muss.',
         stubs: [0, 2, 4, 6, 9, 10],
         translations: {
-            eng: 'My dad is going to bed early because he has to wake up early.'
+            eng: 'My dad is going to bed early because he has to get up early.'
         },
         tags: [
             'gehen',
@@ -1891,22 +1893,48 @@ export default [
         ]
     },
     {
+        //     0       1   2       3    4  5       6    7        8   9   10             11   12      13       14   15     16     17   18     19  20             21 22      23     24
         text: 'Während die Polizei dort im Einsatz war, forderte sie die Öffentlichkeit über Twitter dringend auf: <Keine Videos oder Bilder von Polizeikräften im Einsatz online stellen. Helft nicht den Tätern!".',
-        stubs: [0, 1, 4, 6, 7, 8, 9, 11, 14, 19, 21, 24, 25, 27],
+        stubs: [0, 1, 4, 6],
         translations: {
             eng: 'While the police were deployed there, they strongly urged the public through Twitter: "Place no videos or images of the deployed police forces online. Do not help the perpetrators!"'
         },
         tags: [
             ', während',
+            'definite-article-nominative',
             'in',
-            'war',
+            'waren'
+        ]
+    },
+    {
+        //     0       1   2       3    4  5       6    7        8   9   10             11   12      13       14   15     16     17   18     19  20             21 22      23     24
+        text: 'Während die Polizei dort im Einsatz war, forderte sie die Öffentlichkeit über Twitter dringend auf: <Keine Videos oder Bilder von Polizeikräften im Einsatz online stellen. Helft nicht den Tätern!".',
+        stubs: [7, 8, 9, 11, 14],
+        translations: {
+            eng: 'While the police were deployed there, they strongly urged the public through Twitter: "Place no videos or images of the deployed police forces online. Do not help the perpetrators!"'
+        },
+        tags: [
             'auffordern',
             'auf-',
             '-fordern',
             'über',
+            'definite-article-accusative'
+        ]
+    },
+    {
+        //     0       1   2       3    4  5       6    7        8   9   10             11   12      13       14   15     16     17   18     19  20             21 22      23     24
+        text: 'Während die Polizei dort im Einsatz war, forderte sie die Öffentlichkeit über Twitter dringend auf: <Keine Videos oder Bilder von Polizeikräften im Einsatz online stellen. Helft nicht den Tätern!".',
+        stubs: [19, 21, 24, 25, 27],
+        translations: {
+            eng: 'While the police were deployed there, they strongly urged the public through Twitter: "Place no videos or images of the deployed police forces online. Do not help the perpetrators!"'
+        },
+        tags: [
+            'über',
             'von',
+            'in',
             'stellen',
-            'helfen'
+            'helfen',
+            'definite-article-dative'
         ]
     },
     {
@@ -2082,7 +2110,7 @@ export default [
         tags: [
             'gehen',
             'nach',
-            'da-',
+            ', damit',
             'werden',
             'present-simple',
             'active-voice'
@@ -2161,7 +2189,7 @@ export default [
         text: 'Wann stehst du normalerweise auf?',
         stubs: [0, 1, 4],
         translations: {
-            eng: 'When do you normally wake up?'
+            eng: 'When do you normally get up?'
         },
         tags: [
             'auf-',
@@ -2446,7 +2474,7 @@ export default [
         text: 'Die Frage ist, ob in Zukunft nur die Parteien mit den besseren Bots gewinnen werden.',
         stubs: [3, 4, 7, 9, 10, 11, 13, 14],
         translations: {
-            eng: 'The question is whether, in the future, only the parties with the best bots will win.',
+            eng: 'The question is whether, in the future, only the parties with the better bots will win.',
         },
         tags: [
             ', ob',
@@ -2996,23 +3024,39 @@ export default [
             'fahren'
         ]
     },
-    // {
-    //     text: 'Der Zug ist mit Verspätung abgefahren.',
-    //     stubs: [2, 3, 5],
-    //     translations: {
-    //         eng: 'The train departed with a delay.',
-    //         spa: 'El tren ha salido con retraso.'
-    //     },
-    //     tags: [
-    //         'sein',
-    //         'present-perfect',
-    //         'active-voice',
-    //         'mit',
-    //         'ab-',
-    //         '-fahren',
-    //         'abfahren'
-    //     ]
-    // },
+    {
+        text: 'Der Zug ist mit Verspätung abgefahren.',
+        stubs: [2, 3, 5],
+        translations: {
+            eng: 'The train departed behind schedule.',
+            spa: 'El tren ha salido con retraso.'
+        },
+        tags: [
+            'sein',
+            'present-perfect',
+            'active-voice',
+            'mit',
+            'ab-',
+            '-fahren',
+            'abfahren'
+        ]
+    },
+    {
+        text: 'Der Zug ist mit einer Verspätung abgefahren.',
+        stubs: [2, 3, 4, 6],
+        translations: {
+            eng: 'The train departed with a delay.'
+        },
+        tags: [
+            'sein',
+            'present-perfect',
+            'active-voice',
+            'mit',
+            'ab-',
+            '-fahren',
+            'abfahren'
+        ]
+    },
     {
         text: 'Heute sind nicht viele Schüler gekommen.',
         stubs: [1, 3, 5],
@@ -3091,18 +3135,18 @@ export default [
         ]
     },
     {
-        text: 'Er ist um 6 Uhr aufgestanden.',
+        text: 'Er ist um 6 Uhr aufgewacht.',
         stubs: [1, 2, 5],
         translations: {
             eng: 'He woke up at 6 am.',
-            spa: 'Él se ha levantado a las 6.'
+            spa: 'Él se ha despertado a las 6.'
         },
         tags: [
             'sein',
             'um',
             'auf-',
-            '-stehen',
-            'aufstehen',
+            '-wachen',
+            'aufwachen',
             'active-voice',
             'present-perfect'
         ]
@@ -3120,7 +3164,8 @@ export default [
             'active-voice',
             'in',
             'pronoun-dative',
-            'begegnen'
+            'begegnen',
+            'wo?'
         ]
     },
     {
@@ -3188,7 +3233,7 @@ export default [
         text: 'Das Unkraut ist schnell gewachsen.',
         stubs: [2, 4],
         translations: {
-            eng: 'The weed grew quickly.'
+            eng: 'The weed has grown quickly.'
         },
         tags: [
             'sein',
@@ -3819,7 +3864,7 @@ export default [
         text: 'Am Wochenende werden wir in die Berge fahren.',
         stubs: [0, 2, 4, 5, 7],
         translations: {
-            eng: 'On the weekend we\'ll go to the mountains.'
+            eng: 'On the weekend we\'ll go (literally: ride) to the mountains.'
         },
         tags: [
             'an',
@@ -4329,7 +4374,7 @@ export default [
         text: 'Ich habe gesagt, dass ich nicht gestört werden wollte.',
         stubs: [1, 2, 3, 6, 7, 8],
         translations: {
-            eng: 'I had said that I didn\'t want to be bothered.'
+            eng: 'I said that I didn\'t want to be bothered.'
         },
         tags: [
             ', dass',
@@ -4869,7 +4914,7 @@ export default [
         text: 'Der Blick in die Sterne hat die Menschen seit jeher fasziniert und ihnen Hoffnung gegeben.',
         stubs: [2, 3, 5, 6, 8, 9, 10, 12, 14],
         translations: {
-            eng: 'The view of the stars has always fascinated mankind and given them hope.'
+            eng: 'The glance to the stars has always fascinated mankind and given them hope.'
         },
         tags: [
             'in',
@@ -5323,7 +5368,7 @@ export default [
     },
     {
         text: 'Die Anzahl der erforderlichen Stimmen bei Volksentscheiden soll gesenkt werden.',
-        stubs: [2, 3, 5, 7, 8, 9],
+        stubs: [2, 3, 5, 6],
         translations: {
             eng: 'The number of required votes in referendums should be lowered.'
         },
@@ -5333,7 +5378,16 @@ export default [
             'bei',
             'volk-',
             'ent-',
-            '-scheiden',
+            '-scheiden'
+        ]
+    },
+    {
+        text: 'Die Anzahl der erforderlichen Stimmen bei Volksentscheiden soll gesenkt werden.',
+        stubs: [7, 8, 9],
+        translations: {
+            eng: 'The number of required votes in referendums should be lowered.'
+        },
+        tags: [
             'sollen',
             'senken',
             'werden',
@@ -5421,23 +5475,23 @@ export default [
             'werden'
         ]
     },
-    {
-        text: 'Immer wieder stehen Demokraten vor der Frage, ob sie dem nachkommen wollen.',
-        stubs: [2, 4, 5, 7, 8, 9, 10, 11],
-        translations: {
-            eng: 'Democratic people are consistently faced with the question, whether they want to comply with them.'
-        },
-        tags: [
-            'stehen',
-            'vor',
-            ', ob',
-            'pronoun-accusative',
-            'nachkommen',
-            'wollen',
-            'present-simple',
-            'active-voice'
-        ]
-    },
+    // {
+    //     text: 'Immer wieder stehen Demokraten vor der Frage, ob sie dem nachkommen wollen.',
+    //     stubs: [2, 4, 5, 7, 8, 9, 10, 11],
+    //     translations: {
+    //         eng: 'Democratic people are consistently faced with the question, whether they want to comply with them.'
+    //     },
+    //     tags: [
+    //         'stehen',
+    //         'vor',
+    //         ', ob',
+    //         'pronoun-accusative',
+    //         'nachkommen',
+    //         'wollen',
+    //         'present-simple',
+    //         'active-voice'
+    //     ]
+    // },
     {
         text: 'Manche lehnen dies ab, mit Verweis auf die undemokratischen Ansichten des Gegenübers, oder aus Sorge, sie durch das Gespräch aufzuwerten.',
         stubs: [0, 1, 3, 4, 6, 7, 10, 12, 13, 15, 17, 19],
@@ -6469,16 +6523,16 @@ export default [
             'außerhalb'
         ]
     },
-    // {
-    //     text: 'Der Schiedsrichter sah das Foulspiel außerhalb des Strafraums und gab daher keinen Elfmeter.',
-    //     stubs: [5, 6],
-    //     translations: {
-    //         eng: 'The referee saw the foul play outside of the penalty area and therefore did not award a penalty kick.'
-    //     },
-    //     tags: [
-    //         'außerhalb'
-    //     ]
-    // },
+    {
+        text: 'Der Schiedsrichter sah das Foulspiel außerhalb des Strafraums und gab daher keinen Elfmeter.',
+        stubs: [5, 6],
+        translations: {
+            eng: 'The referee saw the foul play outside of the penalty area and therefore didn\'t award a penalty kick.'
+        },
+        tags: [
+            'außerhalb'
+        ]
+    },
     {
         text: 'Bitte die Rechnung innerhalb von zwei Wochen begleichen.',
         stubs: [3, 4],
@@ -6661,6 +6715,1711 @@ export default [
             'mit',
             'um'
         ]
-    }
+    },
+    {
+        text: 'Ich möchte in Deutschland leben, deshalb lerne ich gerade Deutsch.',
+        stubs: [2, 5, 6, 7, 8],
+        translations: {
+            eng: 'I\'d like to live in Germany, thus I\'m learning German.'
+        },
+        tags: [
+            'deshalb',
+            'gerade',
+            'lernen'
+        ]
+    },
+    {
+        text: 'Ich habe nicht daran gedacht.',
+        stubs: [1, 3, 4],
+        translations: {
+            eng: 'I hadn\'t thought about that.'
+        },
+        tags: [
+            'haben',
+            'denken',
+            'da-'
+        ]
+    },
+    {
+        //     0   1     2   3   4      5         6   7   8    9   10      11   12  13  14   15   16   17      18       19         20 21        22   23  24      25     26    27  28 29     30
+        text: 'Ein Wort, das ich häufig brauchte, war das Wort für <Ziel>, weil ich oft über mein Ziel sprach, fließend Chinesisch zu sprechen, wenn ich gefragt wurde, warum ich in Taiwan sei.',
+        stubs: [2, 3, 4, 5],
+        translations: {
+            eng: 'A word that I needed often was the word for "goal" because I often talked about my goal to speak Chinese fluently when I was asked why I was in Taiwan.'
+        },
+        tags: [
+            ', article',
+            'brauchen',
+            'preterite'
+        ]
+    },
+    {
+        //     0   1     2   3   4      5         6   7   8    9   10      11   12  13  14   15   16   17      18       19         20 21        22   23  24      25     26    27  28 29     30
+        text: 'Ein Wort, das ich häufig brauchte, war das Wort für <Ziel>, weil ich oft über mein Ziel sprach, fließend Chinesisch zu sprechen, wenn ich gefragt wurde, warum ich in Taiwan sei.',
+        stubs: [11, 12, 13, 14, 15, 16, 17],
+        translations: {
+            eng: 'A word that I had needed often was the word for "goal" because I often talked about my goal to speak Chinese fluently when I was asked why I was in Taiwan.'
+        },
+        tags: [
+            ', weil',
+            'sprechen',
+            'über',
+            'mein',
+            'preterite'
+        ]
+    },
+    {
+        //     0   1     2   3   4      5         6   7   8    9   10      11   12  13  14   15   16   17      18       19         20 21        22   23  24      25     26    27  28 29     30
+        text: 'Ein Wort, das ich häufig brauchte, war das Wort für <Ziel>, weil ich oft über mein Ziel sprach, fließend Chinesisch zu sprechen, wenn ich gefragt wurde, warum ich in Taiwan sei.',
+        stubs: [18, 19, 20, 21],
+        translations: {
+            eng: 'A word that I needed often was the word for "goal" because I often talked about my goal to speak Chinese fluently when I was asked why was in Taiwan.'
+        },
+        tags: [
+            'zu verb'
+        ]
+    },
+    {
+        //     0   1     2   3   4      5         6   7   8    9   10      11   12  13  14   15   16   17      18       19         20 21        22   23  24      25     26    27  28 29     30
+        text: 'Ein Wort, das ich häufig brauchte, war das Wort für <Ziel>, weil ich oft über mein Ziel sprach, fließend Chinesisch zu sprechen, wenn ich gefragt wurde, warum ich in Taiwan sei.',
+        stubs: [22, 23, 24, 25],
+        translations: {
+            eng: 'A word that I needed often was the word for "goal" because I often talked about my goal to speak Chinese fluently when I was asked why was in Taiwan.'
+        },
+        tags: [
+            ', wenn',
+            'wurden',
+            'past-simple',
+            'passive-voice'
+        ]
+    },
+    {
+        //     0     1      2   3                 4   5   6     7   8        9  10   11       12   13  14   15   16     17  18     19   20         21
+        text: 'Falls jedoch die Stichwort-Methode für Sie nicht das Richtige zu sein scheint, habe ich auch viel Erfolg mit echten oder virtuellen Karteikarten.',
+        stubs: [0, 1, 4, 8, 9, 10, 11],
+        translations: {
+            eng: 'However, in case the keyword method doesn\'t seem to be the right one for you (formal), I also have a lot of success with real or virtual index cards.'
+        },
+        tags: [
+            'falls',
+            'jedoch',
+            'zu verb',
+            'scheinen',
+            'für',
+            'pronoun-accusative'
+        ]
+    },
+    {
+        text: 'Wenn wir uns die Liste das nächste Mal anschauen, fangen wir wieder vorne an.',
+        stubs: [0, 1, 2, 8, 9, 12, 13],
+        translations: {
+            eng: 'When we look at the list the next time, we start over again.'
+        },
+        tags: [
+            ', wenn',
+            'an-',
+            '-schauen',
+            'anschauen',
+            'anfangen',
+            '-fangen',
+            'wieder',
+            'vorn'
+        ]
+    },
+    {
+        text: 'Innerhalb kurzer Zeit erwachte jedoch meine kindliche Fantasie zu neuem Leben.',
+        stubs: [0, 1, 3, 4, 8, 9, 10],
+        translations: {
+            eng: 'Within a short time, however, my childhood fantasy was revived.'
+        },
+        tags: [
+            'innerhalb',
+            'erwachen',
+            'er-',
+            '-wachen',
+            'jedoch',
+            'zu'
+        ]
+    },
+    {
+        text: 'Es stimmt, dass es anfangs ein oder zwei Minuten dauert, bis man sich eine Geschichte für ein neues Wort ausgedacht hat.',
+        stubs: [2, 3, 4, 9, 15, 16, 17, 19, 20],
+        translations: {
+            eng: 'It\'s true that it initially takes one or two minutes until one has come up with a story for a new word.'
+        },
+        tags: [
+            ', dass',
+            'dauern',
+            'für',
+            'aus-',
+            '-denken',
+            'ausdenken'
+        ]
+    },
+    {
+        //     0     1    2   3    4    5   6           7  8   9     10  11   12   13   14  15  16         17     18    19  20  21   22      23
+        text: 'Daher muss ich mich eine neue Geschichte in der Regel nur drei oder vier Mal ins Gedächtnis rufen, bevor ich das Wort einfach weiß.',
+        stubs: [0, 1, 2, 3, 7, 8, 15, 17],
+        translations: {
+            eng: 'Therefore, I only have to recall (literally: call at the brain) a new story, as a rule of thumb (literally: in the rule), three or four times before I simply know the word.'
+        },
+        tags: [
+            'daher',
+            'müssen',
+            'in',
+            'rufen'
+        ]
+    },
+    {
+        text: 'Es ist ein Teil von mir geworden wie die Entsprechung in meiner Muttersprache.',
+        stubs: [4, 5, 6, 10, 11],
+        translations: {
+            eng: 'It has become a part of me, like the counterpart in my mother tongue.'
+        },
+        tags: [
+            'von',
+            'pronoun-dative',
+            'geworden',
+            'in',
+            'mein',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Als ich diesen Ansatz das erste Mal ausprobierte, stellte ich fest, dass ich die Assoziation zu einem neuen Wort viel langsamer ausarbeitete, als ich gewollt hätte.',
+        stubs: [0, 2, 7, 8, 10],
+        translations: {
+            eng: 'When I tried out this approach for the first time, I realized that I had worked out the association for a new word much slower than I would\'ve liked.'
+        },
+        tags: [
+            ', als',
+            'dies',
+            'aus-',
+            '-probieren',
+            'ausprobieren',
+            'fest-',
+            '-stellen'
+        ]
+    },
+    {
+        text: 'Anstelle dieses Wortes können wir ein anderes Wort benutzen.',
+        stubs: [0, 1, 2, 3, 4],
+        translations: {
+            eng: 'Instead of this word we can use another word.'
+        },
+        tags: [
+            'anstelle',
+            'dies',
+            'können',
+            'pronoun-nominative'
+        ]
+    },
+    {
+        text: 'Mein Portmonaie ist mir aus meiner Tasche gefallen. Danach hat mich eine Frau darauf aufmerksam gemacht.',
+        stubs: [0, 2, 3, 4, 5, 7],
+        translations: {
+            eng: 'My wallet fell out of my bag. After that, a woman called my attention to that.'
+        },
+        tags: [
+            'mein',
+            'pronoun-dative',
+            'aus',
+            'fallen',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Welcher Satz wird öfter im gesprochenen Deutsch verwendet?',
+        stubs: [0, 2, 3, 4, 5, 7],
+        translations: {
+            eng: 'Which sentence is used more often in spoken German?'
+        },
+        tags: [
+            'present-simple',
+            'passive-voice'
+        ]
+    },
+    {
+        text: 'Im Vergleich zu diesem Hund ist mein Hund dunkel.',
+        stubs: [0, 2, 3, 5, 6],
+        translations: {
+            eng: 'In comparison to this dog, my dog is dark.'
+        },
+        tags: [
+            'in',
+            'zu',
+            'dies',
+            'mein'
+        ]
+    },
+    {
+        text: 'Am liebsten mag ich Erdbeeren, am wenigsten Äpfel.',
+        stubs: [0, 1, 5, 6],
+        translations: {
+            eng: 'I like strawberries best, apples the least.'
+        },
+        tags: [
+            'present-simple',
+            'active-voice',
+            'an',
+            'liebsten',
+            'wenigsten'
+        ]
+    },
+    {
+        text: 'Was für Kuchen haben Sie heute?',
+        stubs: [0, 1, 3],
+        translations: {
+            eng: 'What types of cake do you (formal) have today?'
+        },
+        tags: [
+            'für',
+            'haben'
+        ]
+    },
+    {
+        text: 'Können Sie mir bitte einen Kuchen empfehlen?',
+        stubs: [0, 2, 4, 6],
+        translations: {
+            eng: 'Can you please recommend me a cake?'
+        },
+        tags: [
+            'pronoun-dative',
+            'emp-',
+            '-fehlen',
+            'empfehlen',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Claudia und Tobias heiraten, sobald er eine Stelle hat.',
+        stubs: [4, 8],
+        translations: {
+            eng: 'Claudia and Tobias will marry as soon as he has a job.'
+        },
+        tags: [
+            ', sobald'
+        ]
+    },
+    {
+        text: 'Sobald Tobias eine Stelle hat, heiraten sie.',
+        stubs: [0, 4, 5, 6],
+        translations: {
+            eng: 'As soon as Tobias has a job, they will marry.'
+        },
+        tags: [
+            ', sobald',
+            'verb'
+        ]
+    },
+    {
+        text: 'Pedro war froh, als er endlich zu Hause angekommen ist.',
+        stubs: [3, 6, 8, 9],
+        translations: {
+            eng: 'Pedro was glad when we finally arrived at home.'
+        },
+        tags: [
+            ', als',
+            'zu',
+            'ankommen',
+            'an-',
+            '-kommen'
+        ]
+    },
+    {
+        text: 'Als Pedro endlich zu Hause angekommen ist, war er froh.',
+        stubs: [0, 3, 5, 6, 7, 8, 9],
+        translations: {
+            eng: 'When Pedro finally arrived at home, he was glad.'
+        },
+        tags: [
+            ', als',
+            'zu',
+            'ankommen',
+            'an-',
+            '-kommen',
+            ', verb'
+        ]
+    },
+    {
+        text: 'Wir sind zu Hause geblieben, obwohl die Sonne schien.',
+        stubs: [1, 2, 4, 5, 8],
+        translations: {
+            eng: 'We stayed at home even though the sun shone.'
+        },
+        tags: [
+            ', obwohl',
+            'bleiben',
+            'zu',
+            'preterite',
+            'scheinen'
+        ]
+    },
+    {
+        text: 'Obwohl die Sonne schien, sind wir zu Hause geblieben.',
+        stubs: [0, 3, 4, 5, 6, 8],
+        translations: {
+            eng: 'Even though the sun shone, we stayed at home.'
+        },
+        tags: [
+            ', obwohl',
+            'scheinen',
+            'preterite',
+            'zu',
+            'bleiben',
+            ', verb'
+        ]
+    },
+    {
+        text: 'Ich muss mich beeilen, weil die Vorlesung gleich beginnt.',
+        stubs: [1, 2, 3, 4, 7, 8],
+        translations: {
+            eng: 'I need to hurry because the lecture starts soon.'
+        },
+        tags: [
+            'müssen',
+            'beeilene',
+            ', weil',
+            'beginnen',
+            'adverb'
+        ]
+    },
+    {
+        text: 'Weil die Vorlesung gleich beginnt, muss ich mich beeilen.',
+        stubs: [0, 3, 4, 5, 6, 7, 8],
+        translations: {
+            eng: 'Because the lecture begins soon, I need to hurry.'
+        },
+        tags: [
+            'müssen',
+            'beeilene',
+            ', weil',
+            'beginnen',
+            'adverb',
+            ', verb'
+        ]
+    },
+    {
+        text: 'Christine lag zwei Wochen im Krankenhaus, weil sie die Gelbsucht hatte.',
+        stubs: [1, 4, 6, 10],
+        translations: {
+            eng: 'Christine was hospitalized for two weeks because she had jaundice.'
+        },
+        tags: [
+            'liegen',
+            'preterite',
+            ', weil',
+            'hatten',
+            'in'
+        ]
+    },
+    {
+        text: 'Weil Christine die Gelbsucht hatte, lag sie zwei Wochen im Krankenhaus.',
+        stubs: [0, 4, 5, 6, 9],
+        translations: {
+            eng: 'Because Christine had jaundice, she was hospitalized for two weeks.'
+        },
+        tags: [
+            'liegen',
+            'preterite',
+            ', weil',
+            'hatten',
+            'in',
+            ', verb'
+        ]
+    },
+    {
+        text: 'Anke ist ins Theater gegangen, während ihre Schwester zu Hause blieb.',
+        stubs: [1, 2, 4, 5, 6, 8, 10],
+        translations: {
+            eng: 'Anke went to (literally: in) the theater while her sister stayed at home.'
+        },
+        tags: [
+            'in',
+            'gehen',
+            ', während',
+            'zu',
+            'bleiben',
+            'preterite'
+        ]
+    },
+    {
+        text: 'Während Ankes Schwester zu Hause blieb, ist Anke ins Theater gegangen.',
+        stubs: [0, 3, 5, 6, 8, 10],
+        translations: {
+            eng: 'While Anke\'s sister stayed at home, Anke went to the (literally: in) theater.'
+        },
+        tags: [
+            'in',
+            'gehen',
+            ', während',
+            'zu',
+            'bleiben',
+            'preterite',
+            ', verb'
+        ]
+    },
+    {
+        text: 'Trotz vorsichtiger Planung sind viele Sachen schiefgegangen.',
+        stubs: [0, 1, 3, 4, 6],
+        translations: {
+            eng: 'Despite careful plannng, many things have gone wrong.'
+        },
+        tags: [
+            'trotz',
+            'schief-',
+            '-gehen',
+            'schiefgehen',
+            'viel'
+        ]
+    },
+    {
+        text: 'Obwohl wir alles vorsichtig geplant hatten, sind viele Sachen schiefgegangen.',
+        stubs: [0, 2, 4, 5, 6, 7, 9],
+        translations: {
+            eng: 'Even though we had planned everything carefully, many things have gone wrong.'
+        },
+        tags: [
+            ', obwohl',
+            'all',
+            'plannen',
+            'hatten',
+            'preterite',
+            'viel',
+            'schief-',
+            '-gehen',
+            'schiefgehen'
+        ]
+    },
+    {
+        text: 'Ich bin früher nach Hause gegangen, weil ich mich schlecht gefühlt habe.',
+        stubs: [1, 2, 3, 5, 6, 7, 8, 10, 11],
+        translations: {
+            eng: 'I went home earlier because I felt sick (literally: bad).'
+        },
+        tags: [
+            'gehen',
+            'nach',
+            ', weil',
+            'fühlen',
+            'reflexive'
+        ]
+    },
+    {
+        text: 'Am nächsten Tag bin ich arbeiten gegangen, obwohl ich mich immer noch schlecht gefühlt habe.',
+        stubs: [0, 1, 3, 5, 6, 7, 8, 9, 13, 14],
+        translations: {
+            eng: 'The next day I went to work even though I still (regretably) felt sick (literally: bad).'
+        },
+        tags: [
+            'an',
+            'arbeiten',
+            'gehen',
+            ', obwohl',
+            'fühlen',
+            ', article'
+        ]
+    },
+    {
+        text: 'Sie hat den Job wegen des Gehalts, das sehr gut war, genommen.',
+        stubs: [1, 2, 4, 5, 7, 10, 11],
+        translations: {
+            eng: 'She took the job due to the salary, which was very good.'
+        },
+        tags: [
+            'wegen',
+            ', article',
+            'nehmen'
+        ]
+    },
+    {
+        text: 'Sie hat den Job trotz des Gehalts, das nicht gut war, genommen.',
+        stubs: [1, 2, 4, 5, 7, 10, 11],
+        translations: {
+            eng: 'She took the job despite the salary, which was not good.'
+        },
+        tags: [
+            'trotz',
+            ', article',
+            'nehmen',
+        ]
+    },
+    {
+        text: 'Ich konnte schlafen, obwohl es sehr laut war.',
+        stubs: [1, 2, 3, 4, 7],
+        translations: {
+            eng: 'I could sleep, even though it was very noisy.'
+        },
+        tags: [
+            'könnten',
+            'schlafen',
+            ', obwohl'
+        ]
+    },
+    {
+        text: 'Ich konnte wegen des Lärms nicht schlafen.',
+        stubs: [1, 2, 3, 6],
+        translations: {
+            eng: 'I could not sleep despite the noise.'
+        },
+        tags: [
+            'könnten',
+            'wegen',
+            'schlafen'
+        ]
+    },
+    {
+        text: 'Obwohl ich müde war, konnte ich nicht schlafen.',
+        stubs: [0, 3, 4, 7],
+        translations: {
+            eng: 'Even though I was tired, I couldn\'t sleep.'
+        },
+        tags: [
+            'könnten',
+            'schlafen',
+            ', obwohl',
+            ', verb'
+        ]
+    },
+    {
+        text: 'Obwohl mein Fuß verletzt war, konnte ich zum nächsten Dorf laufen.',
+        stubs: [0, 1, 4, 5, 7, 8, 10],
+        translations: {
+            eng: 'Even though my foot hurt, I could walk to the next village.'
+        },
+        tags: [
+            ', obwohl',
+            'mein',
+            'könnten',
+            'zu',
+            'laufen',
+            ', verb'
+        ]
+    },
+    {
+        text: 'Trotz der dummen Handlung habe ich den Film gesehen.',
+        stubs: [0, 1, 2, 4, 6, 8],
+        translations: {
+            eng: 'Despite the stupid plot, I watched the film.'
+        },
+        tags: [
+            'trotz',
+            'sehen',
+            ', preposition'
+        ]
+    },
+    {
+        text: 'Obwohl ich einen Regenschirm hatte, wurde ich nass im Regen.',
+        stubs: [0, 2, 4, 5, 8],
+        translations: {
+            eng: 'Even though I had an umbrella, I got (literally: became) wet in the rain.'
+        },
+        tags: [
+            ', obwohl',
+            'hatten',
+            'wurden',
+            ', verb',
+            'in'
+        ]
+    },
+    {
+        text: 'Ich schütze meine Augen, indem ich eine Sonnenbrille trage.',
+        stubs: [1, 2, 4, 8],
+        translations: {
+            eng: 'I protect my eyes by wearing sunglasses.'
+        },
+        tags: [
+            ', indem',
+            'tragen',
+            'schützen'
+        ]
+    },
+    {
+        text: 'Meine Eltern empfinden immer noch viel füreinander.',
+        stubs: [1, 2, 4, 6],
+        translations: {
+            eng: 'My parents still feel a lot for each other.'
+        },
+        tags: [
+            'emp-',
+            '-finden',
+            'empfinden',
+            'possesive-pronoun-nominative',
+            'noch',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Ich empfehle dieses Buch jedem, der an Geschichte interessiert ist.',
+        stubs: [1, 2, 4],
+        translations: {
+            eng: 'I recommend this book to anyone interested in history.'
+        },
+        tags: [
+            'je',
+            'emp-',
+            '-fehlen',
+            'empfehlen',
+            'dies',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Wenn Maria eine Rezeptidee braucht, wendet sie sich an ihre Cousine.',
+        stubs: [5, 6, 7, 8, 9],
+        translations: {
+            eng: 'When Maria needs a recipe idea, she turns to her cousin.'
+        },
+        tags: [
+            'wenden',
+            'an',
+            'reflexive'
+        ]
+    },
+    {
+        text: 'Bitte nur im Freien verwenden.',
+        stubs: [2, 4],
+        translations: {
+            eng: 'Please only use outside.'
+        },
+        tags: [
+            'in',
+            'wo?',
+            'verwenden',
+            'ver-',
+            '-wenden'
+        ]
+    },
+    {
+        text: 'Ich wende mich dir zu.',
+        stubs: [1, 2, 3, 4],
+        translations: {
+            eng: 'I\'m turning (literally: giving my attention) to you.'
+        },
+        tags: [
+            'zuwenden',
+            'zu-',
+            '-wenden',
+            'reflexive',
+            'pronoun-dative'
+        ]
+    },
+    {
+        text: 'Das Unternehmen hat die Pleite gerade noch abgewendet.',
+        stubs: [5, 6, 7],
+        translations: {
+            eng: 'The company managed to just barely avert bankruptcy.'
+        },
+        tags: [
+            'abwenden',
+            'ab-',
+            '-wenden',
+            'gerade',
+            'noch'
+        ]
+    },
+    {
+        text: 'Nudeln selber zu machen, ist mir zu aufwendig.',
+        stubs: [1, 2, 3, 5, 6, 7],
+        translations: {
+            eng: 'Making pasta myself is too much work for me.'
+        },
+        tags: [
+            'selber',
+            'zu verb',
+            'machen',
+            'aufwenden',
+            'auf-',
+            '-wenden',
+            'pronoun-dative'
+        ]
+    },
+    {
+        text: 'Der Aufwand für diese eine kurze Szene war obszön.',
+        stubs: [0, 1, 2, 3, 4, 5],
+        translations: {
+            eng: 'The effort for this one short scene was obscene.'
+        },
+        tags: [
+            'aufwenden',
+            'auf-',
+            '-wenden',
+            'dies',
+            'für'
+        ]
+    },
+    {
+        text: 'Er lädt die neue Kollegin unter einem Vorwand zum Dinner ein.',
+        stubs: [1, 5, 6, 7, 8, 10],
+        translations: {
+            eng: 'He invited the new colleague to dinner under false pretenses.'
+        },
+        tags: [
+            'einladen',
+            'ein-',
+            '-laden',
+            'unter',
+            'zu',
+            'vor-',
+            '-wenden',
+            'vorwenden'
+        ]
+    },
+    {
+        text: 'In der Grundschule mussten wir Gedichte auswendig lernen.',
+        stubs: [0, 1, 6],
+        translations: {
+            eng: 'In elementary school he had to learn poems by heart.'
+        },
+        tags: [
+            'in',
+            'wo?',
+            'aus-',
+            '-wenden',
+            'auswenden'
+        ]
+    },
+    {
+        text: 'Ich lege mir eine Decke um die Schultern.',
+        stubs: [1, 2, 3, 5, 6],
+        translations: {
+            eng: 'I put a blanket around my shoulders.'
+        },
+        tags: [
+            'legen',
+            'pronoun-dative',
+            'um',
+            'decken'
+        ]
+    },
+    {
+        text: 'Mein Chef gibt mir Rückendeckung für mein Projekt.',
+        stubs: [3, 4, 5, 6],
+        translations: {
+            eng: 'My boss supports me on (literally: gives me support for) this project.'
+        },
+        tags: [
+            'pronoun-dative',
+            'decken',
+            'für'
+        ]
+    },
+    {
+        text: 'Das deckt die Kosten nicht.',
+        stubs: [1],
+        translations: {
+            eng: 'That doesn\'t cover the costs.'
+        },
+        tags: [
+            'decken'
+        ]
+    },
+    {
+        text: 'Deine Story deckt sich mit dem, was Thomas erzählt hat.',
+        stubs: [2, 3, 4, 5, 6, 8, 9],
+        translations: {
+            eng: 'Your story matches up with what Thomas has said.'
+        },
+        tags: [
+            'reflexive',
+            'decken',
+            'mit',
+            'erzählen'
+        ]
+    },
+    {
+        text: 'Schnee bedeckt das Land.',
+        stubs: [1],
+        translations: {
+            eng: 'Snow covers the land.'
+        },
+        tags: [
+            'be-',
+            '-decken'
+        ]
+    },
+    {
+        text: 'Ich habe das Blech mit Frischhaltefolie abgedeckt und auf den Balkon gestellt.',
+        stubs: [6, 8, 9, 11],
+        translations: {
+            eng: 'I have covered the baking tray with plastic wrap and set it on the balcony.'
+        },
+        tags: [
+            'ab-',
+            '-decken',
+            'abdecken',
+            'stellen',
+            'auf'
+        ]
+    },
+    {
+        text: 'Wir haben die Gartenmöbel abgedeckt, damit sie nicht nass werden.',
+        stubs: [4, 5, 9],
+        translations: {
+            eng: 'We have covered the garden furniture so that it doesn\'t get (literally: become) wet.'
+        },
+        tags: [
+            'ab-',
+            '-decken',
+            'abdecken',
+            'da-',
+            'werden'
+        ]
+    },
+    {
+        text: 'Das neue Hause verdeckt mir die Sicht auf den Sonnenuntergang.',
+        stubs: [3, 4, 7, 8],
+        translations: {
+            eng: 'The new house blocks my view of the sunset.'
+        },
+        tags: [
+            'ver-',
+            '-decken',
+            'verdecken',
+            'pronoun-dative',
+            'auf'
+        ]
+    },
+    {
+        text: 'Ich mache die Folie weg, mit der ich den Kuchen abgedeckt hatte.',
+        stubs: [1, 4, 5, 6, 10, 11],
+        translations: {
+            eng: 'I am removing the foil, with which I had covered the cake.'
+        },
+        tags: [
+            'weg-',
+            '-machen',
+            'ab-',
+            '-decken',
+            'hatten',
+            ', preposition'
+        ]
+    },
+    {
+        text: 'Aufgrund unserer besonnenen Analyse jeder Situation sind wir unschlagbar.',
+        stubs: [0, 1, 2, 4],
+        translations: {
+            eng: 'Based on our circumspect analysis of every siutation, we are unbeatable.'
+        },
+        tags: [
+            'aufgrund',
+            'unser',
+            'be-',
+            '-sonnen',
+            'jed'
+        ]
+    },
+    {
+        text: 'Ich wette, dass das Geheimnis ihrer Intuition damit zusammenhängt, wie sie ausgebrütet werden.',
+        stubs: [1, 2, 5, 7, 8],
+        translations: {
+            eng: 'I bet that the secret of their intuition is related to how they are hatched.'
+        },
+        tags: [
+            'wetten',
+            ', dass',
+            'damit',
+            'zusammen-',
+            '-hängen',
+            'zusammenhängen'
+        ]
+    },
+    {
+        text: 'Ich wette, dass das Geheimnis ihrer Intuition damit zusammenhängt, wie sie ausgebrütet werden.',
+        stubs: [9, 10, 11, 12],
+        translations: {
+            eng: 'I bet that the secret of their intuition are related to how they are hatched.'
+        },
+        tags: [
+            ', wie',
+            'aus-',
+            '-brüten',
+            'werden',
+            'present-simple',
+            'passive-voice'
+        ]
+    },
+    {
+        text: 'Sie freuen sich schon, dich als Teammitglied begrüßen zu dürfen.',
+        stubs: [4, 5, 7, 8, 9],
+        translations: {
+            eng: 'They\'re looking forward to welcoming you as a team-member.'
+        },
+        tags: [
+            ', pronoun',
+            'als',
+            'begrüßen',
+            'be-',
+            '-grüßen',
+            'zu verb',
+            'dürfen'
+        ]
+    },
+    {
+        text: 'Dein Reich möchte, dass du die größtmögliche Stadt baust.',
+        stubs: [3, 4, 5, 6, 8],
+        translations: {
+            eng: 'Your empire wants you to build the greatest possible city.'
+        },
+        tags: [
+            ', dass',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Klicke auf ein leeres Feld und platziere das Gras, das du hältst.',
+        stubs: [1, 2, 3, 6, 11],
+        translations: {
+            eng: 'Click on an empty field and place the grass that you are holding.'
+        },
+        tags: [
+            'auf',
+            'platzieren',
+            'hälten'
+        ]
+    },
+    {
+        text: 'Entwickle dein Land weiter, indem du drei einfache Objekte verbindest, um ein wertvolleres Objekt zu erschaffen.',
+        stubs: [4, 5, 9],
+        translations: {
+            eng: 'Develop your land further by connecting three simple items in order to create a more valuable object.'
+        },
+        tags: [
+            ', indem',
+            'verbinden',
+            'ver-',
+            '-binden'
+        ]
+    },
+    {
+        text: 'Entwickle dein Land weiter, indem du drei einfache Objekte verbindest, um ein wertvolleres Objekt zu erschaffen.',
+        stubs: [10, 11, 12, 14, 15],
+        translations: {
+            eng: 'Develop your land further by connecting three simple items in order to create a more valuable object.'
+        },
+        tags: [
+            ', um zu',
+            'zu verb',
+            'erschaffen',
+            'er-',
+            '-schaffen'
+        ]
+    },
+    {
+        text: 'Ich vergaß, den Drucker mit dem Computer zu verbinden.',
+        stubs: [1],
+        translations: {
+            eng: 'I forgot to connect the printer with the computer.'
+        },
+        tags: [
+            'vergessen',
+            'preterite'
+        ]
+    },
+    {
+        text: 'Ich vergaß, den Drucker mit dem Computer zu verbinden.',
+        stubs: [2, 4, 5, 7, 8],
+        translations: {
+            eng: 'I forgot to connect the printer with the computer.'
+        },
+        tags: [
+            ', article',
+            'mit',
+            'zu verb',
+            'verbinden',
+            'ver-',
+            '-binden',
+            'verbinden'
+        ]
+    },
+    {
+        text: 'Das Museum stellt viele wertvolle Gemälde aus.',
+        stubs: [2, 3, 4, 6],
+        translations: {
+            eng: 'The museum exhibits many valuable paintings.'
+        },
+        tags: [
+            '-stellen',
+            'aus-',
+            'ausstellen',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Wollen wir uns dann Mittwoch um 11:00 treffen und vielleicht für zwei Stunden?',
+        stubs: [0, 1, 2, 3, 5, 7],
+        translations: {
+            eng: 'Shall we meet then Wednesday at 11 a.m. and perhaps for two hours?'
+        },
+        tags: [
+            'wollen',
+            'dann',
+            'um',
+            'treffen',
+            'reflexive'
+        ]
+    },
+    {
+        text: 'Doppelkombos erscheinen, wenn du mehrere Verbindungen in einem Zug kreierst.',
+        stubs: [1, 2, 6, 7, 9],
+        translations: {
+            eng: 'Double combos appear when you create more connections in a line.'
+        },
+        tags: [
+            'er-',
+            '-scheinen',
+            ', wenn',
+            'in',
+            'kreieren'
+        ]
+    },
+    {
+        text: 'Er wurde für sein ausgezeichnetes Verhalten an der Schule beglückwünscht.',
+        stubs: [1, 2, 3, 4, 5, 6, 7],
+        translations: {
+            eng: 'He was congratulated for his excellent conduct at school.'
+        },
+        tags: [
+            'wurden',
+            'für',
+            'an',
+            'aus-',
+            '-zeichnen',
+            'auszeichnen',
+            'ver-',
+            '-halten',
+            'verhalten',
+            'past-simple',
+            'passive-voice'
+        ]
+    },
+    {
+        text: 'Diese verhalten sich wie gewöhnliche Objekte, sind aber doppelt so viele Punkte wert.',
+        stubs: [0, 1, 2, 4, 6, 7, 8, 12],
+        translations: {
+            eng: 'These conduct themselves like ordinary items, but count for twice as many points.'
+        },
+        tags: [
+            'dies',
+            'ver-',
+            '-halten',
+            'verhalten',
+            'wohnen',
+            'aber',
+            'werten'
+        ]
+    },
+    {
+        text: 'Sie laufen herum und behindern dich beim Bauen.',
+        stubs: [1, 2, 4, 5, 6],
+        translations: {
+            eng: 'They run around and hinder you with the construction.'
+        },
+        tags: [
+            'behindern',
+            'be-',
+            '-hindern',
+            'herum',
+            'laufen',
+            'bei',
+            'pronoun-accusative'
+        ]
+    },
+    {
+        text: 'Der Hersteller bringt die fertigen Produkte in einem Lager unter.',
+        stubs: [1, 2, 6, 7, 9],
+        translations: {
+            eng: 'The manufacturer stores the finished products in a warehouse.'
+        },
+        tags: [
+            'her-',
+            '-stellen',
+            'herstellen',
+            'in',
+            'unter-',
+            '-bringen',
+            'unterbringen'
+        ]
+    },
+    {
+        text: 'Im Lager kannst du Objekten für den späteren Gebrauch ablegen.',
+        stubs: [0, 5, 6, 7, 8, 9],
+        translations: {
+            eng: 'In the warehouse you can set aside items for (literally: for the) later use.'
+        },
+        tags: [
+            'in',
+            'für',
+            'ge-',
+            '-brauchen',
+            'gebrauchen',
+            'ab-',
+            '-legen',
+            'ablegen'
+        ]
+    },
+    {
+        text: 'Im Laden kannst du Objekte aus dem kaiserlichen Vorrat kaufen.',
+        stubs: [0, 5, 6, 7],
+        translations: {
+            eng: 'In the shop you can buy items from the imperial reserve.'
+        },
+        tags: [
+            'in',
+            'aus',
+            'woher?'
+        ]
+    },
+    {
+        text: 'Lass uns ein paar unserer Münzen benutzen, um einen Kaffee zu kaufen.',
+        stubs: [0, 1, 4, 6, 7, 8, 10],
+        translations: {
+            eng: 'Let\'s utilize some of our coins in order to buy a coffee.'
+        },
+        tags: [
+            'lassen',
+            ', um zu',
+            'unser',
+            'be-',
+            '-nutzen',
+            'benutzen'
+        ]
+    },
+    {
+        text: 'Mein Mann weiß, dass er mir vertrauen kann.',
+        stubs: [3, 5, 6, 7],
+        translations: {
+            eng: 'My husband knows that he can trust me.'
+        },
+        tags: [
+            'ver-',
+            '-trauen',
+            'vertrauen',
+            ', dass',
+            'pronoun-dative'
+        ]
+    },
+    {
+        text: 'Geschäftspartner müssen einander vertrauen.',
+        stubs: [1, 2, 3],
+        translations: {
+            eng: 'Business partners have to trust each other.'
+        },
+        tags: [
+            'vertrauen',
+            'ver-',
+            '-trauen'
+        ]
+    },
+    // {
+    //     //     0   1    2      3    4   5   6     7            8    9   10    11    12      13 14     15   16       17
+    //     text: 'Vor zwei Wochen habe ich mit Ihnen telefoniert, weil ich viele nasse Stellen an meiner Wand gefunden hatte.',
+    //     stubs: [0, 3, 5, 6, 7],
+    //     translations: {
+    //         eng: 'Two weeks ago I was on the phone with you because I '
+    //     }
+    // }
+    {
+        text: 'Sie haben das Dach decken lassen.',
+        stubs: [1, 2, 4, 5],
+        translations: {
+            eng: 'They had someone cover the roof.'
+        },
+        tags: [
+            'decken',
+            'lassen',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Wir haben das hier gelassen.',
+        stubs: [1, 4],
+        translations: {
+            eng: 'We left it here.'
+        },
+        tags: [
+            'lassen',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Er hat die Hausaufgabe im Auto gelassen.',
+        stubs: [1, 2, 4, 6],
+        translations: {
+            eng: 'He left the homework in the car.'
+        },
+        tags: [
+            'in',
+            'lassen',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Er lässt das Geld auf dem Tisch liegen.',
+        stubs: [1, 2, 4, 5, 7],
+        translations: {
+            eng: 'He forgot the money (literally: he left the money laying) on the table.'
+        },
+        tags: [
+            'lassen',
+            'auf',
+            'wo?',
+            'liegen'
+        ]
+    },
+    {
+        //     0   1      2    3     4  5     6              7          8   9       10   11 12  13   14 15    16   17 18
+        text: 'Ich musste eine Email an meine Hausverwaltung schreiben, die besagt, dass es ein Leck in einer Wand in meiner Wohnung gibt.',
+        stubs: [1, 2, 4, 5, 7, 8, 9],
+        translations: {
+            eng: 'I had to write an email to my property manager which stated that there\'s a leak in a wall in my apartment.'
+        },
+        tags: [
+            'musste',
+            'an',
+            'possesive-pronoun-accusative',
+            'schreiben',
+            'indefinite-article-accusative',
+            ', article',
+            'besagen',
+            'be-',
+            '-sagen'
+        ]
+    },
+    {
+        text: 'Können Sie bitte den Heimwerker noch mal kontaktieren und einen neuen Termin vereinbaren?',
+        stubs: [0, 3, 7, 9, 10, 12],
+        translations: {
+            eng: 'May you please contact the handyman again and schedule a new appointment?'
+        },
+        tags: [
+            'können',
+            'definite-article-accusative',
+            'indefinite-article-accusative',
+            'kontaktieren',
+            'adjective-accusative',
+            'ver-',
+            'verein-',
+            '-baren',
+            '-vereinbaren'
+        ]
+    },
+    {
+        text: 'Letztes Mal sind wir bis hier gekommen.',
+        stubs: [0, 2, 3, 4, 6],
+        translations: {
+            eng: 'Last time, we came up to here.'
+        },
+        tags: [
+            'letzt',
+            'kommen',
+            'bis',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Ich habe den Rest der Übungen gemacht.',
+        stubs: [1, 2, 4, 6],
+        translations: {
+            eng: 'I did the rest of the exercises.'
+        },
+        tags: [
+            'definite-article-genitive',
+            'machen',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Ich habe die Zeitformen viel geübt.',
+        stubs: [1, 2, 4, 5],
+        translations: {
+            eng: 'I have practiced the (linguistic) tenses a lot.'
+        },
+        tags: [
+            'form',
+            'viel',
+            'üben',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Ich hoffe, dass ich diese Übungen richtig gemacht habe.',
+        stubs: [1, 2, 4, 7, 8],
+        translations: {
+            eng: 'I hope that I did these exercises correctly.'
+        },
+        tags: [
+            'hoffen',
+            ', dass',
+            'dies',
+            'machen',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Gestern habe ich mich mit meiner Chefin getroffen.',
+        stubs: [1, 2, 3, 4, 5, 7],
+        translations: {
+            eng: 'Yesterday I met with my (female) boss.'
+        },
+        tags: [
+            'mit',
+            'present-perfect',
+            'active-voice',
+            'possesive-pronoun-dative'
+        ]
+    },
+    {
+        text: 'Gestern habe ich meinem Chef getroffen und dann haben wir einen Kaffee getrunken.',
+        stubs: [1, 2, 3, 5, 7, 8, 10, 12],
+        translations: {
+            eng: 'Yesterday I ran into my boss (literally: I met my boss) and then we had a coffee (literally: we drank a coffee).'
+        },
+        tags: [
+            'possesive-pronoun-dative',
+            'treffen',
+            'present-perfect',
+            'active-voice',
+            'dann',
+            'trinken',
+            'indefinite-article-accusative'
+        ]
+    },
+    {
+        text: 'Können wir das Schritt für Schritt machen?',
+        stubs: [0, 4, 6],
+        translations: {
+            eng: 'Can we do it step-by-step?'
+        },
+        tags: [
+            'können',
+            'für',
+            'machen',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Jetzt fühle ich mich, als würde ich Schach spielen.',
+        stubs: [1, 2, 3, 4, 5, 8],
+        translations: {
+            eng: 'Now I feel as if I were playing chess.'
+        },
+        tags: [
+            'jetzt',
+            'fühlen',
+            'reflexive',
+            ', als',
+            'würden',
+            'spielen'
+        ]
+    },
+    {
+        text: 'Mein Ziel ist es, Deutsch zum Vergnügen zu lesen.',
+        stubs: [0, 2, 3, 5, 7, 8],
+        translations: {
+            eng: 'My goal is to read German for pleasure.'
+        },
+        tags: [
+            'mein',
+            'zu',
+            'lesen',
+            'zu verb'
+        ]
+    },
+    {
+        text: 'Das Leben ändert sich, aber manche Dinge bleiben gleich.',
+        stubs: [2, 3, 4, 5, 7],
+        translations: {
+            eng: 'Life changes, but some things stay the same.'
+        },
+        tags: [
+            'ändern',
+            'reflexive',
+            ', aber',
+            'manch',
+            'bleiben',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Jetzt lerne ich Deutsch, sodass ich in der Lage bin, Deutsch zu meinem Vergnügen zu lesen.',
+        stubs: [0, 1, 4, 6, 7, 9],
+        translations: {
+            eng: 'Right now I\'m learning German so that I can (literally: be in the position to) read German for my own pleasure.'
+        },
+        tags: [
+            'lernen',
+            'jetzt',
+            ', sodass',
+            'in',
+            'wo?',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Jetzt lerne ich Deutsch, sodass ich in der Lage bin, Deutsch zu meinem Vergnügen zu lesen.',
+        stubs: [11, 12, 14, 15],
+        translations: {
+            eng: 'Right now I\'m learning German so that I can (literally: be in the position to) read German for my own pleasure.'
+        },
+        tags: [
+            'zu',
+            'possesive-pronoun-dative',
+            'zu verb',
+            ', noun',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Jetzt lerne ich Deutsch, weil ich es gerne zu meinem Vergnügen lesen möchte.',
+        stubs: [0, 1, 3, 4, 8, 9, 11, 12],
+        translations: {
+            eng: 'Right now I\'m learning German because I\'d like to read it for my own pleasure.'
+        },
+        tags: [
+            'lernen',
+            'jetzt',
+            ', weil',
+            'zu',
+            'possesive-pronoun-dative',
+            'lesen',
+            'möchten',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Vor unserem nächsten Treffen, werde ich diese Übungen machen.',
+        stubs: [0, 1, 2, 4, 6, 8],
+        translations: {
+            eng: 'Before our next meeting, I\'ll do these exercises.'
+        },
+        tags: [
+            'vor',
+            'unser',
+            'adjective-dative',
+            'future-simple',
+            'active-voice',
+            'dies'
+        ]
+    },
+    {
+        text: 'Diese Übungen mache ich, bevor wir uns das nächste Mal treffen.',
+        stubs: [0, 2, 3, 4, 5, 6, 7, 8, 10],
+        translations: {
+            eng: 'I\'ll do these exercises before the next time we meet.'
+        },
+        tags: [
+            'dies',
+            'machen',
+            ', bevor',
+            'treffen',
+            'reflexive',
+            'adjective-accusative'
+        ]
+    },
+    {
+        text: 'Ich habe letzte Woche viele Sätze geschrieben, die ich gern mit dir durchgehen möchte.',
+        stubs: [2, 4, 6, 7, 8, 10, 11, 13],
+        translations: {
+            eng: 'Last week I wrote many sentences that I\'d like to go through with you.'
+        },
+        tags: [
+            'viel',
+            'schreiben',
+            ', article',
+            'mit',
+            'pronoun-dative',
+            'möchten'
+        ]
+    },
+    {
+        text: 'Letzten Monat habe ich einen Deutsch-Sprachtest gemacht und mein Ergebnis war B1.',
+        stubs: [0, 4, 6, 8, 10],
+        translations: {
+            eng: 'Last month I took (literally: I did) a German language test and my result was B1.'
+        },
+        tags: [
+            'indefinite-article-accusative',
+            'present-perfect',
+            'active-voice',
+            'possesive-pronoun-nominative',
+            'war',
+            'machen'
+        ]
+    },
+    {
+        text: 'Ich bin noch nicht so viel durch Deutschland gereist.',
+        stubs: [1, 2, 3, 6, 8],
+        translations: {
+            eng: 'I haven\'t traveled very much yet throughout Germany.'
+        },
+        tags: [
+            'noch',
+            'present-perfect',
+            'active-voice',
+            'durch',
+            'viel',
+            'reisen'
+        ]
+    },
+    {
+        text: 'Ich habe noch nicht so viel von Deutschland gesehen.',
+        stubs: [1, 2, 3, 6, 8],
+        translations: {
+            eng: 'I haven\'t seen very much of Germany yet.'
+        },
+        tags: [
+            'noch',
+            'viel',
+            'present-perfect',
+            'active-voice',
+            'sehen',
+            'von'
+        ]
+    },
+    {
+        text: 'Lass mich wissen, wenn du angekommen bist.',
+        stubs: [0, 1, 2],
+        translations: {
+            eng: 'Let me know when you\'ve arrived.'
+        },
+        tags: [
+            'lassen',
+            'wissen',
+            'pronoun-accusative',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Lass mich wissen, wenn du angekommen bist.',
+        stubs: [3, 4, 5, 6],
+        translations: {
+            eng: 'Let me know when you\'ve arrived.'
+        },
+        tags: [
+            ', wenn',
+            'an-',
+            '-kommen',
+            'ankommen',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Sag mir Bescheid, wenn du angekommen bist.',
+        stubs: [3, 4, 5, 6],
+        translations: {
+            eng: 'Let me know (literally: tell me a note) when you\'ve arrived.'
+        },
+        tags: [
+            ', wenn',
+            'an-',
+            '-kommen',
+            'ankommen',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Deutsch ist so geschrieben, wie man es spricht.',
+        stubs: [1, 2, 3, 4, 5, 6, 7],
+        translations: {
+            eng: 'German is written as how one speaks it.'
+        },
+        tags: [
+            'so',
+            'schreiben',
+            'present-perfect',
+            'active-voice',
+            ', wie',
+            'sprechen'
+        ]
+    },
+    {
+        text: 'Ich warte hier in der Schlange, um etwas zu bestellen.',
+        stubs: [1, 3, 4, 6, 8, 9],
+        translations: {
+            eng: 'I\'m waiting in line here in order to order something.',
+        },
+        tags: [
+            'warten',
+            'in',
+            'definite-article-dative',
+            'wo?',
+            ', um zu',
+            'bestellen',
+            'be-',
+            '-stellen',
+            'present-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Er hat mich gefragt, ob dies mein erstes Mal hier ist.',
+        stubs: [1, 2, 3, 4, 5, 6, 7, 10],
+        translations: {
+            eng: 'He asked me whether this is my first time here.'
+        },
+        tags: [
+            'present-perfect',
+            'active-voice',
+            ', ob',
+            'dies',
+            'possesive-pronoun-nominative',
+            'adjective-nominative'
+        ]
+    },
+    {
+        text: 'Dies ist schon mein zweites Mal hier.',
+        stubs: [0, 2, 3, 4, 6],
+        translations: {
+            eng: 'This is already my second time here.'
+        },
+        tags: [
+            'present-simple',
+            'active-voice',
+            'possesive-pronoun-nominative',
+            'adjective-nominative',
+            'dies'
+        ]
+    },
+    {
+        text: 'Ich habe ein einfaches Buch von der Bibliothek ausgeliehen.',
+        stubs: [1, 2, 3, 5, 6, 8],
+        translations: {
+            eng: 'I borrowed a simple book from the library.'
+        },
+        tags: [
+            'indefinite-article-accusative',
+            'adjective-accusative',
+            'von',
+            'definite-article-dative',
+            'aus-',
+            'liehen',
+            'ausliehen',
+            'present-perfect',
+            'active-voice'
+        ]
+    },
 
 ];

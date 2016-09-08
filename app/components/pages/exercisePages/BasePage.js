@@ -237,12 +237,12 @@ export class BasePage extends Component {
             state: { selectedExercise, exercises }
         } = this;
 
-        return exercises.map((item, index) => {
+        return exercises.slice(0, 20).map((item, index) => {
             const props = Object.assign(item, {
                 index,
                 selectExercise,
                 selectedExercise,
-                key: item.text
+                key: item.text + item.stubs.join('')
             });
             return (<VerbExercise { ...props } />);
         });

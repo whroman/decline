@@ -24,7 +24,8 @@ const verbs = [
     'erlauben',
     'einfallen',
     'trauen',
-    'gleichen'
+    'gleichen',
+    'verboten'
 ];
 
 const tags = verbs.reduce((memo, item) => {

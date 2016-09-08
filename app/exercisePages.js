@@ -38,6 +38,7 @@ import PresentSimplePage    from './components/pages/exercisePages/Tenses/Presen
 import PresentPerfectPage   from './components/pages/exercisePages/Tenses/PresentPerfectPage';
 import PassivePerfectPage   from './components/pages/exercisePages/Tenses/PassivePerfectPage';
 import FuturesAndSimplePresentPage   from './components/pages/exercisePages/Tenses/FuturesAndSimplePresentPage';
+import ActiveVoicePage   from './components/pages/exercisePages/Tenses/ActiveVoicePage';
 
 export default [
     {
@@ -137,24 +138,11 @@ export default [
         tags: ['composition']
     },
     {
-        name: 'Future Perfect Tense',
-        path: '/practice/tenses/future-perfect',
-        component: FuturePerfectPage,
-        tags: ['tenses']
-    },
-    {
-        name: 'Future Imperfect Tense',
-        path: '/practice/tenses/future-imperfect',
-        component: FutureSimplePage,
-        tags: ['tenses']
-    },
-    {
         name: 'Simple Present Tense',
         path: '/practice/tenses/present-simple',
         component: PresentSimplePage,
         tags: ['tenses']
     },
-
     {
         name: 'Present Perfect Tense',
         path: '/practice/tenses/present-perfect',
@@ -171,6 +159,24 @@ export default [
         name: 'Past Perfect Tense',
         path: '/practice/tenses/past-perfect',
         component: PastPerfectPage,
+        tags: ['tenses']
+    },
+    {
+        name: 'Future Perfect Tense',
+        path: '/practice/tenses/future-perfect',
+        component: FuturePerfectPage,
+        tags: ['tenses']
+    },
+    {
+        name: 'Future Imperfect Tense',
+        path: '/practice/tenses/future-imperfect',
+        component: FutureSimplePage,
+        tags: ['tenses']
+    },
+    {
+        name: 'Active Voice',
+        path: '/practice/tenses/active-voice',
+        component: ActiveVoicePage,
         tags: ['tenses']
     },
     {

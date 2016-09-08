@@ -4,5 +4,7 @@ export default [
     'anstatt',
     'während',
     'außerhalb',
-    'innerhalb'
+    'innerhalb',
+    'anstelle',
+    'aufgrund'
 ];

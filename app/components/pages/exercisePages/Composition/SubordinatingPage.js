@@ -1,7 +1,18 @@
 import React from 'react';
 import BasePage from '../BasePage';
 
-const tags = ['dass', 'weil', ', dass', ', weil', ', aber', ', sodass', ', als'];
+const tags = [
+    ', dass',
+    ', weil',
+    ', aber',
+    ', sodass',
+    ', als',
+    ', obwohl',
+    ', während',
+    ', damit',
+    ', sobald',
+    ', indem'
+];
 
 
 
