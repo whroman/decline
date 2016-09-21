@@ -1346,9 +1346,7 @@ export default [
             eng: 'I have to pay the organization that organized this project a 100 Euro fee.'
         },
         tags: [
-            ', article',
-            'vocab-cristina',
-            'dies'
+            'vocab-cristina'
         ]
     },
     {
@@ -1582,7 +1580,7 @@ export default [
             'wussten',
             'ereignen',
             'vor',
-            'da-',
+            'davor',
             'in',
             'hatten',
             ', article'
@@ -3477,7 +3475,7 @@ export default [
         tags: [
             'können',
             'von',
-            'trotzdem'
+            ', trotzdem'
         ]
     },
     {
@@ -6222,7 +6220,7 @@ export default [
         ]
     },
     {
-        text: 'Obwohl es viel regegnet hat, hatten wir Spaß.',
+        text: 'Obwohl es viel geregnet hat, hatten wir Spaß.',
         stubs: [0, 3, 4, 5, 6, 7],
         translations: {
             eng: 'Although it rained a lot, we had fun.'
@@ -6346,7 +6344,7 @@ export default [
             eng: 'It\'s raining. Nevertheless, I\'ll go walking.'
         },
         tags: [
-            'trotzdem',
+            ', trotzdem',
             'regnen',
             'gehen',
             'spazieren'
@@ -8827,6 +8825,46 @@ export default [
             'wieder-',
             '-holen',
             'wiederholen'
+        ]
+    },
+    {
+        text: 'Ich werde warten und sehen, was geschieht.',
+        stubs: [1, 5, 6],
+        translations: {
+            eng: 'I\'ll wait and see what happens.'
+        },
+        tags: [
+            'geschehen',
+            'ge-',
+            '-schehen',
+            ', was',
+            'werden',
+            'future-simple',
+            'active-voice'
+        ]
+    },
+    {
+        text: 'Ich rufe dich nachher an, aber vorher muss ich essen.',
+        stubs: [3, 6],
+        translations: {
+            eng: 'I\'ll call you later, but first I need to eat.'
+        },
+        tags: [
+            'nachher',
+            'vorher'
+        ]
+    },
+    {
+        text: 'Das stecke ich in meine Tasche.',
+        stubs: [1, 3, 4],
+        translations: {
+            eng: 'I am sticking that in my bag.'
+        },
+        tags: [
+            'stecken',
+            'in',
+            'wohin?',
+            'possesive-pronoun-accusative'
         ]
     }
 

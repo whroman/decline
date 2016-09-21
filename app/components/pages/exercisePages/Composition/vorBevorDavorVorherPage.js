@@ -3,7 +3,10 @@ import BasePage from '../BasePage';
 
 const tags = [
     'vor',
-    'bevor'
+    'bevor',
+    ', bevor',
+    'vorher',
+    'davor'
 ];
 
 export default function () {

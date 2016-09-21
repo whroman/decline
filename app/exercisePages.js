@@ -29,7 +29,8 @@ import AdjectivalPronounsPage   from './components/pages/exercisePages/Pronouns/
 import SubordinatingPage            from './components/pages/exercisePages/Composition/SubordinatingPage';
 import ArticleClausesPage           from './components/pages/exercisePages/Composition/ArticleClausesPage';
 import RelativePronounClausesPage   from './components/pages/exercisePages/Composition/RelativePronounClausesPage';
-import vorBevorDavorVorherPage from './components/pages/exercisePages/Composition/vorBevorDavorVorherPage';
+import vorBevorDavorVorherPage      from './components/pages/exercisePages/Composition/vorBevorDavorVorherPage';
+import obwohlTrotzdemWegenTrotzPage from './components/pages/exercisePages/Composition/obwohlTrotzdemWegenTrotzPage';
 
 import FuturePerfectPage    from './components/pages/exercisePages/Tenses/FuturePerfectPage';
 import FutureSimplePage     from './components/pages/exercisePages/Tenses/FutureSimplePage';
@@ -127,12 +128,6 @@ export default [
         tags: ['composition']
     },
     {
-        name: 'Present Perfect Tense',
-        path: '/practice/composition/present-perfect',
-        component: PresentPerfectPage,
-        tags: ['composition']
-    },
-    {
         name: 'Clauses Begun By An Article',
         path: '/practice/composition/article',
         component: ArticleClausesPage,
@@ -208,6 +203,12 @@ export default [
         name: 'Vor, Bevor, Davor, Vorher',
         path: '/practice/adverbs/vor-bevor-davor-vorher',
         component: vorBevorDavorVorherPage,
+        tags: ['composition']
+    },
+    {
+        name: 'Obwohl, Trotzdem, Wegen, Trotz',
+        path: '/practice/adverbs/obwohl-trotzdem-wegen-trotz',
+        component: obwohlTrotzdemWegenTrotzPage,
         tags: ['composition']
     },
     {
