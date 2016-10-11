@@ -39,7 +39,7 @@ export default class PageWrapper extends Component {
 
         get(url).then((response) => {
             const { photos } = response.data;
-            const photoIndex = random(photos.length);
+            const photoIndex = random(photos.length - 1);
             const imageUrl = photos[photoIndex].img_src;
             this.applyBGImage(imageUrl);
         }, () => {
