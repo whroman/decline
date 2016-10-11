@@ -1213,7 +1213,7 @@ export default [
         text: 'Ich bestehe darauf, dass du dich entschuldigst.',
         stubs: [2],
         translations: {
-            eng: 'I am insisting (thereon), that you apologize.'
+            eng: 'I\'m insisting that you apologize.'
         },
         tags: [
             'da-'
@@ -6165,7 +6165,7 @@ export default [
         text: 'Wer einen ausländischen Staatschef beleidigt, kann angeklagt werden. Aber nur, wenn das andere Land die deutsche Regierung darum bittet. Und nur, wenn die Regierung einwilligt.',
         stubs: [4, 5, 6, 7, 8, 10, 17, 18, 19, 21, 24],
         translations: {
-            eng: 'Anyone who offends a foreign can be charged. But only if the other country asks the German government for it. And only if the government agrees.'
+            eng: 'Anyone who offends a foreign leader can be charged. But only if the other country asks the German government for it. And only if the government consents.'
         },
         tags: [
             'wer',
@@ -8866,6 +8866,20 @@ export default [
             'wohin?',
             'possesive-pronoun-accusative'
         ]
+    },
+    {
+        text: 'Wir haben Ihren Bestellschein erhalten und die Zahlreise von monatlich auf jährlich gewechselt.',
+        stubs: [4, 8, 10, 12],
+        translations: {
+            eng: 'We have received your (formal) order form and have changed the payment method from monthly to yearly.'
+        },
+        tags: [
+            'erhalten',
+            'er-',
+            '-halten',
+            'von',
+            'auf',
+            'wechseln'
+        ]
     }
-
 ];
