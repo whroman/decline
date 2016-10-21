@@ -13,9 +13,11 @@ import WerdenPage               from './components/pages/exercisePages/Verbs/Wer
 import SeinHabenVerbsPage       from './components/pages/exercisePages/Verbs/SeinHabenVerbsPage';
 import LassenPage       from './components/pages/exercisePages/Verbs/LassenPage';
 import SpeechPage       from './components/pages/exercisePages/Verbs/SpeechPage';
+import CreationPage     from './components/pages/exercisePages/Verbs/CreationPage';
 import KnowledgePage    from './components/pages/exercisePages/Verbs/KnowledgePage';
 import StellenPage      from './components/pages/exercisePages/Verbs/StellenPage';
 import DativeVerbsPage  from './components/pages/exercisePages/Verbs/DativeVerbsPage';
+import GewesenVsGewordenPage  from './components/pages/exercisePages/Verbs/GewesenVsGewordenPage';
 
 import ErVerVorPage     from './components/pages/exercisePages/Prefixes/ErVerVorPage';
 import AufAusHerausPage from './components/pages/exercisePages/Prefixes/AufAusHerausPage';
@@ -26,7 +28,8 @@ import CristinaVocabPage from './components/pages/exercisePages/Vocab/CristinaVo
 import AkkDatPage               from './components/pages/exercisePages/Pronouns/AkkDatPage';
 import AdjectivalPronounsPage   from './components/pages/exercisePages/Pronouns/AdjectivalPronounsPage';
 
-import SubordinatingPage            from './components/pages/exercisePages/Composition/SubordinatingPage';
+import SubordinatingConjunctionsPage from './components/pages/exercisePages/Composition/SubordinatingConjunctionsPage';
+import CoordinatingConjunctionsPage  from './components/pages/exercisePages/Composition/CoordinatingConjunctionsPage';
 import ArticleClausesPage           from './components/pages/exercisePages/Composition/ArticleClausesPage';
 import RelativePronounClausesPage   from './components/pages/exercisePages/Composition/RelativePronounClausesPage';
 import vorBevorDavorVorherPage      from './components/pages/exercisePages/Composition/vorBevorDavorVorherPage';
@@ -86,6 +89,12 @@ export default [
         tags: ['verb']
     },
     {
+        name: 'Creation Verbs',
+        path: '/practice/verbs/creation',
+        component: CreationPage,
+        tags: ['verb']
+    },
+    {
         name: 'Knowledge Verbs',
         path: '/practice/verbs/knowledge',
         component: KnowledgePage,
@@ -116,9 +125,21 @@ export default [
         tags: ['verb']
     },
     {
+        name: '"gewesen" vs "geworden"',
+        path: '/practice/verbs/gewesen-vs-geworden',
+        component: GewesenVsGewordenPage,
+        tags: ['verb']
+    },
+    {
         name: 'Subordinating Conjunctions',
         path: '/practice/composition/subordinating-conjunctions',
-        component: SubordinatingPage,
+        component: SubordinatingConjunctionsPage,
+        tags: ['composition']
+    },
+    {
+        name: 'Coordinating Conjunctions',
+        path: '/practice/composition/coordinating-conjunctions',
+        component: CoordinatingConjunctionsPage,
         tags: ['composition']
     },
     {

@@ -3343,7 +3343,8 @@ export default [
             'nutzen',
             'present-perfect',
             'passive-voice',
-            'bei'
+            'bei',
+            ', doch'
         ]
     },
     {
@@ -4050,7 +4051,7 @@ export default [
         tags: [
             'past-perfect',
             'active-voice',
-            'nachdem',
+            ', nachdem',
             'frühstücken',
             'hatten',
             'zu',
@@ -5123,27 +5124,27 @@ export default [
             'dative'
         ]
     },
-    {
-        text: 'Andere Metropolen aufmachen, Vorreiter für eine moderne Energieversorgung zu sein, Fahrradstadt zu werden und grüne Oasen in verdichteten Innenstädten zu schaffen.',
-        stubs: [0, 2, 4, 5, 6, 8, 9, 11, 12, 16, 17, 19, 20],
-        translations: {
-            eng: 'Other metropoles are rising to be a pioneer for a modern energy supply, to becoming a cycling city and to creating green oases in dense inner cities.'
-        },
-        tags: [
-            'auf-',
-            '-machen',
-            'aufmachen',
-            'vor-',
-            '-reiter',
-            'für',
-            'zu',
-            'sein',
-            'werden',
-            'ver-',
-            'schaffen',
-            'ander'
-        ]
-    },
+    // {
+    //     text: 'Andere Metropolen aufmachen, Vorreiter für eine moderne Energieversorgung zu sein, Fahrradstadt zu werden und grüne Oasen in verdichteten Innenstädten zu schaffen.',
+    //     stubs: [0, 2, 4, 5, 6, 8, 9, 11, 12, 16, 17, 19, 20],
+    //     translations: {
+    //         eng: 'Other metropoles are rising to be pioneers for a modern energy supply, to becoming a cycling city and to creating green oases in dense inner cities.'
+    //     },
+    //     tags: [
+    //         'auf-',
+    //         '-machen',
+    //         'aufmachen',
+    //         'vor-',
+    //         '-reiter',
+    //         'für',
+    //         'zu',
+    //         'sein',
+    //         'werden',
+    //         'ver-',
+    //         'schaffen',
+    //         'ander'
+    //     ]
+    // },
     {
         text: 'Ich trinke vor der Arbeit Kaffee.',
         stubs: [1, 2, 3],
@@ -5410,7 +5411,7 @@ export default [
         text: 'Das Land soll sich für ein bedingungsloses Grundeinkommen einsetzen.',
         stubs: [2, 3, 4, 5, 6, 8],
         translations: {
-            eng: 'The country should advocate (literally: apply itself for) an unconditional basic income.'
+            eng: 'The country should support (literally: apply itself for) an unconditional basic income.'
         },
         tags: [
             'sollen',
@@ -5548,7 +5549,7 @@ export default [
         text: 'Daher wirkt es auf den ersten Blick durchaus legitim, wenn Rechtsextreme fordern, dass auch mit ihnen geredet wird.',
         stubs: [0, 1, 3, 4, 5, 9, 11, 12, 14, 15, 16, 17],
         translations: {
-            eng: 'Therefore, it seems, on first glance, thoroughly legitimate when right-wing extremists demand that they, as well, be discour with.'
+            eng: 'Therefore, it seems, on first glance, thoroughly legitimate when right-wing extremists demand that they, as well, be discoursed with.'
         },
         tags: [
             'da-',
@@ -5598,7 +5599,8 @@ export default [
             'zu-',
             'aufzu-',
             '-werten',
-            'aufzuwerten'
+            'aufzuwerten',
+            ', oder'
         ]
     },
     {
@@ -5831,7 +5833,7 @@ export default [
             'emp-',
             '-fehlen',
             'empfehlen',
-            'dies-',
+            'dies',
             'present-simple',
             'active-voice'
         ]
@@ -6420,7 +6422,7 @@ export default [
         text: 'Ich esse eine Pizza, denn ich habe Hunger.',
         stubs: [4, 5, 6],
         translations: {
-            eng: 'I\'m eating pizza because I\'m hungry (literally: have hunger).',
+            eng: 'I\'m eating a pizza because I\'m hungry (literally: have hunger).',
         },
         tags: [
             ', denn',
@@ -6870,13 +6872,14 @@ export default [
     {
         //     0   1     2   3   4      5         6   7   8    9   10      11   12  13  14   15   16   17      18       19         20 21        22   23  24      25     26    27  28 29     30
         text: 'Ein Wort, das ich häufig brauchte, war das Wort für <Ziel>, weil ich oft über mein Ziel sprach, fließend Chinesisch zu sprechen, wenn ich gefragt wurde, warum ich in Taiwan sei.',
-        stubs: [22, 23, 24, 25],
+        stubs: [22, 23, 24, 25, 26],
         translations: {
             eng: 'A word that I needed often was the word for "goal" because I often talked about my goal to speak Chinese fluently when I was asked why was in Taiwan.'
         },
         tags: [
             ', wenn',
             'wurden',
+            ', warum',
             'past-simple',
             'passive-voice'
         ]
@@ -6991,10 +6994,10 @@ export default [
         ]
     },
     {
-        text: 'Es ist ein Teil von mir geworden wie die Entsprechung in meiner Muttersprache.',
-        stubs: [4, 5, 6, 10, 11],
+        text: 'Das Fremdwort ist ein Teil von mir geworden wie die Entsprechung in meiner Muttersprache.',
+        stubs: [5, 6, 7, 11, 12],
         translations: {
-            eng: 'It has become a part of me, like the counterpart in my mother tongue.'
+            eng: 'The foreign word becomes a part of me, like the equivalent in my mother tongue.'
         },
         tags: [
             'von',
@@ -8001,7 +8004,7 @@ export default [
         text: 'Lass uns ein paar unserer Münzen benutzen, um einen Kaffee zu kaufen.',
         stubs: [0, 1, 4, 6, 7, 8, 10],
         translations: {
-            eng: 'Let\'s utilize some of our coins in order to buy a coffee.'
+            eng: 'Let\'s use some of our coins in order to buy a coffee.'
         },
         tags: [
             'lassen',
@@ -8880,6 +8883,194 @@ export default [
             'von',
             'auf',
             'wechseln'
+        ]
+    },
+    {
+        text: 'Ich trinke meinen Kaffee nicht mit Zucker, sondern mit Honig.',
+        stubs: [2, 7],
+        translations: {
+            eng: 'I don’t drink my coffee with sugar but with honey.'
+        },
+        tags: [
+            'possesive-pronoun-accusative',
+            ', sondern'
+        ]
+    },
+    {
+        text: 'Die Diskussion war nicht mehr sachlich, sondern emotional.',
+        stubs: [6],
+        translations: {
+            eng: 'The discussion was no longer factual but emotional.'
+        },
+        tags: [
+            ', sondern'
+        ]
+    },
+    {
+        text: 'Ich habe nicht nur mein Zimmer aufgeräumt, sondern auch die Küche und das Bad.',
+        stubs: [4, 6, 7],
+        translations: {
+            eng: 'Not only did I clean my room but also the kitchen and the bathroom.'
+        },
+        tags: [
+            'auf-',
+            'aufräumen',
+            ', sondern',
+            'possesive-pronoun-accusative'
+        ]
+    },
+    {
+        text: 'Manchmal fühlt es sich an, als ob sich die ganze Welt gegen mich verschwört.',
+        stubs: [1, 4, 5, 6, 7, 11, 12, 13],
+        translations: {
+            eng: 'Sometimes it feels like the whole world is plotting against me.'
+        },
+        tags: [
+            'an-',
+            '-fühlen',
+            'anfühlen',
+            ', als ob',
+            'verschwören',
+            'ver-',
+            '-schwören',
+            'gegen'
+        ]
+    },
+    {
+        text: 'In diesem Spiel kann man seinen eigenen Charakter erstellen.',
+        stubs: [0, 1, 5, 6, 8],
+        translations: {
+            eng: 'In this game you can create your own character.'
+        },
+        tags: [
+            'wo?',
+            'dies',
+            'possesive-pronoun-accusative',
+            'er-',
+            '-stellen',
+            'erstellen',
+            'adjective-accusative'
+        ]
+    },
+    {
+        text: 'Jedes Land hat Gesetze, um Ordnung zu schaffen.',
+        stubs: [0, 4, 6, 7],
+        translations: {
+            eng: 'Every country has laws to create order.'
+        },
+        tags: [
+            'jed',
+            ', um zu',
+            'schaffen'
+        ]
+    },
+    {
+        //     0      1  2     3   4     5    6       7     8       9    10  11          12
+        text: 'Kinder im Alter von einem Jahr stellen einen kleinen Teil der Bevölkerung dar.',
+        stubs: [1, 3, 6, 12],
+        translations: {
+            eng: 'Children at the age of one constitute a small part of the population.'
+        },
+        tags: [
+            'in',
+            'von',
+            '-stellen',
+            'dar-',
+            'darstellen'
+        ]
+    },
+    {
+        text: 'Der Gewinn des Unternehmens wird in einem Diagramm dargestellt.',
+        stubs: [4, 5, 6, 8],
+        translations: {
+            eng: 'The company\'s profits are presented in a chart.'
+        },
+        tags: [
+            'werden',
+            'in',
+            'indefinite-article-dative',
+            '-stellen',
+            'dar-',
+            'darstellen'
+        ]
+    },
+    {
+        text: 'Diese Grafik stellt die Ergebnisse deutlich dar.',
+        stubs: [1, 2, 6],
+        translations: {
+            eng: 'This graph shows the results clearly.'
+        },
+        tags: [
+            'dies',
+            '-stellen',
+            'dar-',
+            'darstellen'
+        ]
+    },
+    {
+        text: 'Der Sturm stellt keine Gefahr mehr für die Stadt dar.',
+        stubs: [2, 3, 6, 7, 9],
+        translations: {
+            eng: 'The storm no longer poses a threat to the city.'
+        },
+        tags: [
+            'kein',
+            '-stellen',
+            'dar-',
+            'darstellen',
+            'definite-article-accusative',
+            'für'
+        ]
+    },
+    {
+        text: 'Der Schauspieler stellte den legendären Boxer sehr realistisch dar.',
+        stubs: [2, 8],
+        translations: {
+            eng: 'The actor portrayed the legendary boxer very realistically.'
+        },
+        tags: [
+            '-stellen',
+            'dar-',
+            'darstellen'
+        ]
+    },
+    {
+        text: 'Er legte die Gründe für seine Entscheidung dar.',
+        stubs: [1, 4, 5, 7],
+        translations: {
+            eng: 'He stated the reasons for his decision.'
+        },
+        tags: [
+            '-legen',
+            'dar-',
+            'darlegen',
+            'für',
+            'sein'
+        ]
+    },
+    {
+        text: 'Das Internet ist zu einem wichtigen Teil des Alltags geworden.',
+        stubs: [2, 3, 4, 5, 7, 9],
+        translations: {
+            eng: 'The internet has become an essential part of everyday life.'
+        },
+        tags: [
+            'zu',
+            'indefinite-article-dative',
+            'adjective-dative',
+            'definite-article-genitive',
+            'geworden'
+        ]
+    },
+    {
+        text: 'Mein Freund und ich sind zusammen alt geworden.',
+        stubs: [0, 4, 7],
+        translations: {
+            eng: 'My friend and I have grown old together.'
+        },
+        tags: [
+            'mein',
+            'geworden'
         ]
     }
 ];

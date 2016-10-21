@@ -2,18 +2,14 @@ import React from 'react';
 import BasePage from '../BasePage';
 
 const tags = [
-    'sprechen',
-    'erklären',
-    'erzählen',
-    'sagen',
-    'rufen',
-    'nennen'
+    'geworden',
+    'gewesen'
 ];
 
 export default function () {
     const props = {
-        title: 'Speech Verbs',
-        subtitle: tags.map((text) => `"${text}"`).join(', '),
+        title: '"gewesen" vs "geworden"',
+        subtitle: 'or "has been" vs "has become"',
         tags: tags.reduce((arr, text) => {
             return arr.concat(text, `-${text}`);
         }, [])

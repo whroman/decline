@@ -2,16 +2,25 @@ import React from 'react';
 import BasePage from '../BasePage';
 
 const tags = [
-    ', dass',
-    ', weil',
-    ', aber',
-    ', sodass',
     ', als',
-    ', obwohl',
-    ', während',
+    ', als ob',
     ', damit',
+    ', dass',
+    ', indem',
+    ', nachdem',
+    ', obwohl',
     ', sobald',
-    ', indem'
+    ', sodass',
+    ', um zu',
+    ', während',
+    ', was',
+    ', wie',
+    ', wo',
+    ', woher',
+    ', wohin',
+    ', warum',
+    ', weil',
+    ', wenn'
 ];
 
 
