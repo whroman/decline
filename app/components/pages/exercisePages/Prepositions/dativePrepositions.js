@@ -1,4 +1,5 @@
 export default [
+    'ab',
     'aus',
     'außer',
     'bei',
@@ -7,6 +8,5 @@ export default [
     'seit',
     'von',
     'zu',
-    'gegenüber',
-    'ab'
+    'gegenüber'
 ];

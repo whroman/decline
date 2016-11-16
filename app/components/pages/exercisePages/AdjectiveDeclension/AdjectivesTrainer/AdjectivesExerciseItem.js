@@ -116,7 +116,7 @@ export default class AdjectivesExerciseItem extends Component {
         return (
             <div className='actions'>
                 <Link
-                    to={ `detail/${uid}` }
+                    to={ `/practice/adjective-declension/detail/${uid}` }
                     className='detail-link'
                 >
                     <i className='wr-ico wr-ico-info-circle wr-ico-fw' />

@@ -39,8 +39,8 @@ export class About extends Component {
                         <span>{ '.' }</span>
                     </h3>
                     <br /><br />
-                    <span>{ 'The daily background image is NatGeo\'s ' }</span>
-                    <a href="http://photography.nationalgeographic.com/photography/photo-of-the-day/">{ 'photo of the day' }</a>
+                    <span>{ 'The daily background image is a random image taken in the last 48 hours by a NASA rover on Mars. Credit goes to ' }</span>
+                    <a href="https://api.nasa.gov/api.html#MarsPhotos">{ 'NASA\'s awesome RESTful API' }</a>
                     <span>{ '.' }</span>
                     <br /><br />
                     <span>{ 'Questions? Comments? Feedback? Send a note to ' }</span>

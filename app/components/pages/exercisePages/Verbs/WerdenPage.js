@@ -1,20 +1,14 @@
 import React from 'react';
-import VerbBasePage from '../VerbsBasePage';
-import presentVerbExercises from '../presentVerbExercises';
-import verbsWithPrepositions from 'tables/rawExercises/verbsWithPrepositions';
+import BasePage from '../BasePage';
 
-const verbs = ['werden', 'worden', 'geworden', 'war'];
+const tags = ['werden', 'worden', 'wurden', 'geworden', 'war', 'gewesen'];
 
-const exercises = verbsWithPrepositions.filter(
-    (exercise) => verbs.some(
-        (item) => exercise.tags.includes(item)
-    )
-);
+
 
 export default function () {
     const props = {
-        title: 'Werden, Worden, Geworden, War',
-        exercises: presentVerbExercises(exercises)
+        title: 'Werden, Worden, Wurden, Geworden, Gewesen, War',
+        tags
     };
-    return (<VerbBasePage { ...props } />);
+    return (<BasePage { ...props } />);
 }

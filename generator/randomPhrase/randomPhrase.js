@@ -46,10 +46,11 @@ const randomPhrase = {
 
         const key = statement.reduce((memo, item) => (memo += item.text), '');
 
-        const { adjective } = objectGroup.compose(kasus);
+        const composedObjectGroup = objectGroup.compose(kasus);
+        const { noun, article, adjective } = composedObjectGroup;
         const values = { 5: adjective.chunks[1].text };
+        const present = { key, values, statement, noun, article, adjective };
 
-        const present = { key, values, statement };
         return present;
     },
 
@@ -76,6 +77,7 @@ const randomPhrase = {
             type: 'start',
             text: randomAkkStart
         });
+
         return sentence;
     },
 
@@ -98,8 +100,10 @@ const randomPhrase = {
         ]);
 
         const key = statement.reduce((memo, item) => (memo += item.text), '');
-        const values = { 5: indirectObjectGroup.compose(kasus).adjective.chunks[1].text };
-        const present = { key, values, statement };
+        const composedIndirectObjectGroup = indirectObjectGroup.compose(kasus);
+        const { noun, article, adjective } = composedIndirectObjectGroup;
+        const values = { 5: adjective.chunks[1].text };
+        const present = { key, values, statement, noun, article, adjective };
         return present;
     },
 

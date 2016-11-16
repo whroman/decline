@@ -1,6 +1,6 @@
-import create from './beginningGenerator';
+import beginningGenerator from './beginningGenerator';
 
-export default create([
+export default beginningGenerator([
     'schickte',
     'schickst',
     'schickt',
@@ -8,7 +8,7 @@ export default create([
     'schicken',
     'schickt',
     'schicken',
-]).concat([
+//
     'schenke',
     'schenkst',
     'schenkt',
@@ -16,7 +16,7 @@ export default create([
     'schenken',
     'schenkt',
     'schenken',
-]).concat([
+//
     'zeige',
     'zeigst',
     'zeigt',
@@ -24,7 +24,7 @@ export default create([
     'zeigen',
     'zeigt',
     'zeigen',
-]).concat([
+//
     'gebe',
     'gibst',
     'gibt',

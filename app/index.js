@@ -14,7 +14,6 @@ ReactGA.initialize(process.env.DECLINE_GOOGLE_ANALYTICS_TOKEN);
 
 const history = syncHistoryWithStore(hashHistory, store);
 history.listen((location) => {
-    console.log(location.pathname);
     ReactGA.pageview(location.pathname);
 });
 

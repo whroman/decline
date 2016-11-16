@@ -29,6 +29,10 @@ h1 {
     font-size: 22px;
 }
 
+h3 {
+    font-size: 16px;
+}
+
 li {
     list-style: none;
 }
@@ -50,7 +54,7 @@ hr {
     border-color: rgba(0,0,0,0.5);
 }
 
-h1 {
+h1, h2, h3 {
     margin: 0;
 }
 

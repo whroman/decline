@@ -1,7 +1,14 @@
 $correct-bg: rgba(68, 157, 54, 0.3);
 $incorrect-bg: rgba(171, 32, 15, 0.3);
 $placeholder-bg: rgba(255, 255, 255, 0.6);
+$row-hover-bg: rgba(200, 200, 200, 0.4);
 $row-focused-bg: rgba(100, 100, 100, 0.4);
+
+.BasePage {
+    h3 {
+        margin-top: 1em;
+    }
+}
 
 .VerbExercise {
     position: relative;
@@ -9,10 +16,17 @@ $row-focused-bg: rgba(100, 100, 100, 0.4);
     background-color: transparent;
     float: left;
     clear: left;
-    margin-bottom: 0.5em;
     cursor: pointer;
+    width: 100%;
+    box-sizing: content-box;
+    padding: 15px 14px 14px 14px;
+    margin: 0 -14px;
 
     &:hover {
+        background-color: $row-hover-bg;
+    }
+
+    &.selected {
         background-color: $row-focused-bg;
     }
 
@@ -27,12 +41,8 @@ $row-focused-bg: rgba(100, 100, 100, 0.4);
             right: initial;
         }
 
-        &.translation {
-            left: 222px;
-        }
-
         &.answer {
-            left: 186px;
+            left: 192px;
         }
 
     }
@@ -59,11 +69,16 @@ $row-focused-bg: rgba(100, 100, 100, 0.4);
 
     .VerbExercise-details {
         float: left;
-        width: 106px;
+        width: 66px;
+    }
+
+    .VerbExercise-translation {
+        margin-top: 1em;
+        font-size: 14px;
     }
 
     .VerbExercise-sentence {
-        margin-left: 120px;
+        margin-left: 80px;
     }
 }
 

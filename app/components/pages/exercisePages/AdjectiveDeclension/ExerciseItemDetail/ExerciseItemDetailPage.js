@@ -80,7 +80,7 @@ export class ExerciseItemDetail extends Component {
                                 <br />
                                 <Link
                                     className='button'
-                                    to='#'
+                                    to='/practice/adjective-declension'
                                 >{ 'Züruck' }</Link>
                             </div>
                         </div>

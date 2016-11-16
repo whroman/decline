@@ -202,7 +202,7 @@ export default class CreationForm extends Component {
         };
 
         this.props.create(createParams);
-        hashHistory.push('#');
+        hashHistory.push('/practice/adjective-declension');
     }
 
 }
