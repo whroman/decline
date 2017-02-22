@@ -2603,7 +2603,7 @@ export default [
         text: 'Ich lege die Gabel auf den Tisch.',
         stubs: [1, 2, 4, 5],
         translations: {
-            eng: 'I\'m placing (horizontally) the fork on the table'
+            eng: 'I\'m placing (horizontally) the fork on the table.'
         },
         tags: [
             'legen',
@@ -4527,28 +4527,39 @@ export default [
             'indefinite-article-accusative'
         ]
     },
-    {
-        text: 'Dazwischen entstehen Hohlräume, die das für uns sichtbare Licht ungehindert durchdringen kann.',
-        stubs: [0, 1, 3, 4, 5, 7, 9, 10, 11],
-        translations: {
-            eng: 'Cavities form in between, where light that\'s visible to us can penetrate unhindered.'
-        },
-        tags: [
-            'dazwischen',
-            'ent-',
-            '-stehen',
-            'entstehen',
-            ', article',
-            'für',
-            'un-',
-            '-hindern',
-            'unhindern',
-            'durch-',
-            '-dringen',
-            'durchdringen',
-            'können'
-        ]
-    },
+    // {
+    //     //     0          1         2          3   4   5   6   7         8     9           10           11
+    //     text: 'Dazwischen entstehen Hohlräume, die das für uns sichtbare Licht ungehindert durchdringen kann.',
+    //     stubs: [0, 1],
+    //     translations: {
+    //         eng: 'Cavities form in between, where light that\'s visible to us can penetrate unhindered.'
+    //     },
+    //     tags: [
+    //         'dazwischen',
+    //         'ent-',
+    //         '-stehen',
+    //         'entstehen'
+    //     ]
+    // },
+    // {
+    //     //     0          1         2          3   4   5   6   7         8     9           10           11
+    //     text: 'Dazwischen entstehen Hohlräume, die das für uns sichtbare Licht ungehindert durchdringen kann.',
+    //     stubs: [3, 4, 5, 7, 9, 10, 11],
+    //     translations: {
+    //         eng: 'Cavities form in between, where light that\'s visible to us can penetrate unhindered.'
+    //     },
+    //     tags: [
+    //         ', article',
+    //         'für',
+    //         'un-',
+    //         '-hindern',
+    //         'unhindern',
+    //         'durch-',
+    //         '-dringen',
+    //         'durchdringen',
+    //         'können'
+    //     ]
+    // },
     {
         text: 'Du wirst beobachtet.',
         stubs: [1, 2],
@@ -4955,19 +4966,6 @@ export default [
             'be-',
             'beruhen',
             'dies'
-        ]
-    },
-    {
-        text: 'Der Westen hätte Erdogan mit mehr Vorsicht begegnen sollen?',
-        stubs: [0, 2, 4, 7, 8],
-        translations: {
-            eng: 'Should the West have met Erdogan with more caution?'
-        },
-        tags: [
-            'hätten',
-            'mit',
-            'begegnen',
-            'sollen'
         ]
     },
     {
@@ -6216,6 +6214,8 @@ export default [
             eng: 'It rained a lot but we had fun.'
         },
         tags: [
+            'past-perfect',
+            'active-voice',
             'regnen',
             ', aber',
             'hatten'
@@ -6228,6 +6228,8 @@ export default [
             eng: 'Although it rained a lot, we had fun.'
         },
         tags: [
+            'past-perfect',
+            'active-voice',
             'regnen',
             ', obwohl',
             'hatten',
@@ -7226,10 +7228,10 @@ export default [
         ]
     },
     {
-        text: 'Christine lag zwei Wochen im Krankenhaus, weil sie die Gelbsucht hatte.',
+        text: 'Sie lag zwei Wochen im Krankenhaus, weil sie die Gelbsucht hatte.',
         stubs: [1, 4, 6, 10],
         translations: {
-            eng: 'Christine was hospitalized for two weeks because she had jaundice.'
+            eng: 'She was hospitalized for two weeks because she had jaundice.'
         },
         tags: [
             'liegen',
@@ -7240,10 +7242,10 @@ export default [
         ]
     },
     {
-        text: 'Weil Christine die Gelbsucht hatte, lag sie zwei Wochen im Krankenhaus.',
+        text: 'Weil sie die Gelbsucht hatte, lag sie zwei Wochen im Krankenhaus.',
         stubs: [0, 4, 5, 6, 9],
         translations: {
-            eng: 'Because Christine had jaundice, she was hospitalized for two weeks.'
+            eng: 'Because she had jaundice, she was hospitalized for two weeks.'
         },
         tags: [
             'liegen',
@@ -7307,6 +7309,8 @@ export default [
         },
         tags: [
             ', obwohl',
+            'past-perfect',
+            'active-voice',
             'all',
             'plannen',
             'hatten',
@@ -7670,7 +7674,7 @@ export default [
         text: 'Ich habe das Blech mit Frischhaltefolie abgedeckt und auf den Balkon gestellt.',
         stubs: [6, 8, 9, 11],
         translations: {
-            eng: 'I have covered the baking tray with plastic wrap and set it on the balcony.'
+            eng: 'I have covered the baking tray with plastic wrap and placed it on the balcony.'
         },
         tags: [
             'ab-',
@@ -7712,7 +7716,7 @@ export default [
         text: 'Ich mache die Folie weg, mit der ich den Kuchen abgedeckt hatte.',
         stubs: [1, 4, 5, 6, 10, 11],
         translations: {
-            eng: 'I am removing the foil, with which I had covered the cake.'
+            eng: 'I\'m removing the foil, with which I had covered the cake.'
         },
         tags: [
             'weg-',
@@ -7720,7 +7724,9 @@ export default [
             'ab-',
             '-decken',
             'hatten',
-            ', preposition'
+            ', preposition',
+            'past-perfect',
+            'active-voice'
         ]
     },
     {
@@ -8091,7 +8097,7 @@ export default [
         text: 'Er lässt das Geld auf dem Tisch liegen.',
         stubs: [1, 2, 4, 5, 7],
         translations: {
-            eng: 'He forgot the money (literally: he left the money laying) on the table.'
+            eng: 'He forgot the money (literally: he let the money lay) on the table.'
         },
         tags: [
             'lassen',
@@ -8614,7 +8620,7 @@ export default [
         ]
     },
     {
-        text: 'Die Adresse steht auf der Rückseite des Briefes',
+        text: 'Die Adresse steht auf der Rückseite des Briefes.',
         stubs: [2, 3, 4, 6],
         translations: {
             eng: 'The address is on the backside of the letter.'
@@ -8996,7 +9002,7 @@ export default [
     },
     {
         text: 'Diese Grafik stellt die Ergebnisse deutlich dar.',
-        stubs: [1, 2, 6],
+        stubs: [0, 2, 6],
         translations: {
             eng: 'This graph shows the results clearly.'
         },
@@ -9052,7 +9058,7 @@ export default [
         text: 'Das Internet ist zu einem wichtigen Teil des Alltags geworden.',
         stubs: [2, 3, 4, 5, 7, 9],
         translations: {
-            eng: 'The internet has become an essential part of everyday life.'
+            eng: 'The internet has become an important part of everyday life.'
         },
         tags: [
             'zu',
@@ -9071,6 +9077,216 @@ export default [
         tags: [
             'mein',
             'geworden'
+        ]
+    },
+    {
+        text: 'Es war bestimmt nicht einfach, die Treppe schnell hinabzusteigen.',
+        stubs: [5, 8],
+        translations: {
+            eng: 'It was certainly not easy to step down the staircase quickly.'
+        },
+        tags: [
+            'zu verb',
+            'hin-',
+            'ab-',
+            '-stiegen',
+            'hinabsteigen',
+            ', article'
+        ]
+    },
+    {
+        text: 'Ich konnte die breiten Stufen besser sehen, die in das Dunkel hinabführten.',
+        stubs: [7, 8, 9, 11],
+        translations: {
+            eng: 'I could better see the wide steps that led down into the darkness.'
+        },
+        tags: [
+            'hin-',
+            'ab-',
+            '-führen',
+            ', article',
+            'in',
+            'wohin?',
+            'definite-article-accusative'
+        ]
+    },
+    {
+        text: 'In seinen Büchern beschreibt der Autor eine magische Welt.',
+        stubs: [0, 1, 3],
+        translations: {
+            eng: 'In his books, the author depicts a magical world.'
+        },
+        tags: [
+            'be-',
+            '-schreiben',
+            'beschreiben',
+            'in',
+            'wo?',
+            'possesive-pronoun-dative'
+        ]
+    },
+    {
+        text: 'Es stehen immer noch zwei Lieferungen aus.',
+        stubs: [1, 6],
+        translations: {
+            eng: 'There are still two deliveries pending.',
+        },
+        tags: [
+            'aus-',
+            '-stehen',
+            'ausstehen'
+        ]
+    },
+    {
+        text: 'Er legte seinen Mantel und Regenschirm ab.',
+        stubs: [1, 2, 6],
+        translations: {
+            eng: 'He put down his coat and umbrella.'
+        },
+        tags: [
+            'ab-',
+            '-legen',
+            'ablegen',
+            'sein'
+        ]
+    },
+    {
+        text: 'Mit der Maus kann ich Dateien einfach ziehen und ablegen.',
+        stubs: [0, 1, 7, 9],
+        translations: {
+            eng: 'I can easily drag and drop files with the mouse.'
+        },
+        tags: [
+            'mit',
+            'definite-article-dative',
+            'ziehen',
+            'ablegen',
+            'ab-',
+            '-legen'
+        ]
+    },
+    {
+        text: 'Ich hoffe, dass ich gut mit meinen neuen Kollegen auskommen werde.',
+        stubs: [5, 6, 7, 9],
+        translations: {
+            eng: 'I hope to get along with my new colleagues.'
+        },
+        tags: [
+            'mit',
+            'possesive-pronoun-dative',
+            'aus-',
+            '-kommen',
+            'auskommen',
+            'werden',
+            ', dass',
+            'adjective-dative'
+        ]
+    },
+    {
+        text: 'Woran denkst du gerade?',
+        stubs: [0, 1],
+        translations: {
+            eng: 'What are you thinking about at the moment?'
+        },
+        tags: [
+            'wo-',
+            '-an',
+            'denken'
+        ]
+    },
+    {
+        text: 'Wovor hast du manchmal Angst?',
+        stubs: [0, 1, 4],
+        translations: {
+            eng: 'What do you worry about now and then?'
+        },
+        tags: [
+            'wo-',
+            '-vor',
+            'angst haben'
+        ]
+    },
+    {
+        text: 'Worüber denkst du oft nach?',
+        stubs: [0, 1, 4],
+        translations: {
+            eng: 'What do you often reflect on?'
+        },
+        tags: [
+            'wo-',
+            '-über',
+            'nach-',
+            '-denken',
+            'nachdenken'
+        ]
+    },
+    {
+        text: 'Worauf freust du dich besonders?',
+        stubs: [0, 1, 3],
+        translations: {
+            eng: 'What are you looking forward to in particular?'
+        },
+        tags: [
+            'wo-',
+            '-auf',
+            'freuen',
+            'reflexive'
+        ]
+    },
+    {
+        text: 'Womit beshäftigst du dich in deiner Freizeit?',
+        stubs: [0, 1, 3, 4, 5],
+        translations: {
+            eng: 'What do you keep yourself busy with in your free time?'
+        },
+        tags: [
+            'wo-',
+            '-mit',
+            'beschäftigen',
+            'reflexive',
+            'in',
+            'possesive-pronoun-dative'
+        ]
+    },
+    {
+        text: 'Womit möchtest du etwas beginnen?',
+        stubs: [0, 1, 4],
+        translations: {
+            eng: 'What do you want to set out to do?'
+        },
+        tags: [
+            'wo-',
+            '-mit',
+            'möchten',
+            'beginnen'
+        ]
+    },
+    {
+        text: 'Womit kannst du im nächsten Jahr ganz sicher rechnen?',
+        stubs: [0, 1, 3, 4, 8],
+        translations: {
+            eng: 'What can you definitely expect in the next year?'
+        },
+        tags: [
+            'wo-',
+            '-mit',
+            'können',
+            'in',
+            'wann?',
+            'adjective-dative',
+            'rechnen'
+        ]
+    },
+    {
+        text: 'Wovon träumst du ab und zu?',
+        stubs: [0, 1],
+        translations: {
+            eng: 'What do you dream about every now and then?'
+        },
+        tags: [
+            'wo-',
+            '-von',
+            'träumen'
         ]
     }
 ];

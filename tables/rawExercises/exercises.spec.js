@@ -2,8 +2,8 @@ import { assert } from 'chai';
 import { intersection } from 'lodash';
 import exercises from './verbsWithPrepositions';
 
-describe('exercises', () => {
-    describe('a list of valid exercise objects', () => {
+describe('exercises :', () => {
+    describe('list of valid exercise objects :', () => {
         it('should have a string declared for `text` in each exercise', () => {
             exercises.forEach((exercise) => {
                 assert.equal(typeof exercise.text, 'string');
