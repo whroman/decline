@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { create, load } from 'app/dux/adjectiveTrainer';
+import { create, load } from 'app/dux/AdjectiveTrainer';
 
 import CreationForm from './CreationForm';
 

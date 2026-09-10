@@ -20,7 +20,7 @@ import DativeVerbsPage  from './components/pages/exercisePages/Verbs/DativeVerbs
 import GewesenVsGewordenPage  from './components/pages/exercisePages/Verbs/GewesenVsGewordenPage';
 
 import ErVerVorPage     from './components/pages/exercisePages/Prefixes/ErVerVorPage';
-import AufAusHerausPage from './components/pages/exercisePages/Prefixes/AufAusHerausPage';
+import AufAusHerausPage from './components/pages/exercisePages/Prefixes/aufAusHerausPage';
 import BeEinErPage      from './components/pages/exercisePages/Prefixes/BeEinErPage';
 
 import CristinaVocabPage from './components/pages/exercisePages/Vocab/CristinaVocabPage';

@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link, hashHistory } from 'react-router';
 import { connect } from 'react-redux';
 
-import { create } from 'app/dux/adjectiveTrainer';
+import { create } from 'app/dux/AdjectiveTrainer';
 import exerciseDetail from 'app/presenters/exerciseDetail';
 import './ExerciseItemDetail.scss';
 
