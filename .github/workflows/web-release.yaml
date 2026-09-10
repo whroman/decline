@@ -39,7 +39,7 @@ jobs:
 
       - name: Store immutable release artifact
         id: artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: web-release-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
           path: dist
