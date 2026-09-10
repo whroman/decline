@@ -3,10 +3,22 @@
   "version": "0.3.19",
   "description": "",
   "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "app-e2e"
+  ],
   "scripts": {
-    "start": "webpack-dev-server --port 8000 --progress --config tasks/dev.webpack.config.js",
-    "build": "webpack --progress --config tasks/build.webpack.config.js",
-    "test": "mocha --compilers js:babel-register $(find ./generator ./app ./tables -name '*.spec.js')",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "BABEL_DISABLE_CACHE=1 mocha --compilers js:babel-register $(find ./generator ./app ./tables -name '*.spec.js')",
+    "check:imports": "node ./tasks/checkImportCasing.mjs",
+    "verify": "npm run check:imports && npm test",
+    "test:e2e": "npm --workspace @decline/web-e2e test",
+    "test:e2e:local": "npm run build && npm run test:e2e",
+    "deploy:bootstrap:preview": "npm run build && wrangler deploy --env preview",
+    "deploy:bootstrap:staging": "npm run build && wrangler deploy --env staging",
+    "deploy:bootstrap:production": "npm run build && wrangler deploy --env production",
     "test:watch": "npm test -- --watch",
     "tdd": "npm run test:watch",
     "lint": "npm run lint:client && npm run lint:specs",
@@ -18,6 +30,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "dependencies": {
     "axios": "0.11.0",
     "foundation-sites": "6.2.1",
@@ -36,7 +51,6 @@
   },
   "devDependencies": {
     "babel-eslint": "6.0.4",
-    "babel-loader": "6.2.4",
     "babel-plugin-lodash": "3.1.4",
     "babel-plugin-webpack-alias": "1.3.1",
     "babel-polyfill": "6.8.0",
@@ -44,21 +58,18 @@
     "babel-preset-react": "6.5.0",
     "babel-register": "6.9.0",
     "chai": "3.4.1",
-    "css-loader": "0.23.1",
     "eslint": "2.10.2",
     "eslint-plugin-babel": "3.2.0",
     "eslint-plugin-mocha": "2.2.0",
     "eslint-plugin-react": "5.1.1",
     "eslint-watch": "2.1.11",
-    "extract-text-webpack-plugin": "1.0.1",
     "mocha": "2.3.4",
-    "node-sass": "3.7.0",
     "npm-run-all": "2.1.1",
     "proxyquire": "1.7.9",
     "rewire": "2.5.1",
-    "sass-loader": "3.2.0",
+    "sass": "1.104.0",
     "sinon": "1.17.4",
-    "webpack": "1.13.0",
-    "webpack-dev-server": "1.14.1"
+    "vite": "8.2.2",
+    "wrangler": "^4.102.0"
   }
 }

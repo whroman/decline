@@ -1,0 +1,123 @@
+name: web.preview
+
+on:
+  pull_request:
+    branches:
+      - master
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+permissions:
+  contents: read
+
+concurrency:
+  group: web-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Verify and build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PR integration candidate
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify
+        run: npm run verify
+
+      - name: Build disposable preview
+        run: npm run build
+
+      - name: Store preview build
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-preview-${{ github.event.pull_request.number }}-${{ github.run_attempt }}
+          path: dist
+          if-no-files-found: error
+          retention-days: 7
+
+  preview:
+    name: Upload and smoke
+    needs: build
+
+    # Pull requests from forks do not receive deployment credentials.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+
+    runs-on: ubuntu-latest
+    environment:
+      name: preview
+      url: ${{ steps.upload.outputs.preview_url }}
+
+    steps:
+      - name: Checkout PR integration candidate
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore preview build
+        uses: actions/download-artifact@v4
+        with:
+          name: web-preview-${{ github.event.pull_request.number }}-${{ github.run_attempt }}
+          path: dist
+
+      - name: Upload undeployed Worker version
+        id: upload
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          WRANGLER_OUTPUT_FILE_PATH: ${{ runner.temp }}/wrangler-preview.ndjson
+          RELEASE_TAG: pr-${{ github.event.pull_request.number }}-${{ github.run_id }}-${{ github.run_attempt }}
+          PREVIEW_ALIAS: pr-${{ github.event.pull_request.number }}
+        shell: bash
+        run: |
+          npm exec -- wrangler versions upload \
+            --env preview \
+            --tag "$RELEASE_TAG" \
+            --preview-alias "$PREVIEW_ALIAS" \
+            --message "PR #${{ github.event.pull_request.number }} ${GITHUB_SHA}"
+
+          PREVIEW_URL="$(
+            jq -r 'select(.type == "version-upload") | .preview_alias_url // .preview_url // empty' \
+              "$WRANGLER_OUTPUT_FILE_PATH" | tail -n 1
+          )"
+
+          test -n "$PREVIEW_URL"
+          echo "preview_url=$PREVIEW_URL" >> "$GITHUB_OUTPUT"
+
+      - name: Install Playwright Chromium
+        run: npm exec --workspace=@decline/web-e2e -- playwright install --with-deps chromium
+
+      - name: Smoke preview with Playwright
+        env:
+          BASE_URL: ${{ steps.upload.outputs.preview_url }}
+        run: npm run test:e2e
+
+      - name: Publish preview summary
+        env:
+          PREVIEW_URL: ${{ steps.upload.outputs.preview_url }}
+        run: |
+          {
+            echo "## Frontend preview"
+            echo
+            echo "- Source: \`${GITHUB_SHA}\`"
+            echo "- Preview: $PREVIEW_URL"
+          } >> "$GITHUB_STEP_SUMMARY"

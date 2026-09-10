@@ -121,13 +121,48 @@ All nouns have been entered manually.
 
 ## Development
 
+Requires Node.js `>=22.12.0`; CI uses Node.js 22 from `.node-version`.
+
 #### Executables
 
 ```bash
 npm install # Install project dependencies
-npm start   # Run a dev server at http://localhost:8080
+npm start   # Run a dev server at http://localhost:8000
 npm test    # Run unit tests once
 npm lint    # Lint all JS files
 npm tdd     # Run unit tests when a JS file is changed
-npm build   # Compile JS and CSS and dump them into `./dist`
+npm build   # Compile the production site into `./dist`
+npm preview # Preview the production build locally
+npm run test:e2e:local # Build and run the Playwright smoke test locally
 ```
+
+## Cloudflare delivery
+
+The site is deployed as Cloudflare Workers Static Assets. Pull requests build a
+disposable preview and smoke-test it with Playwright. Commits on `master` build the
+site once, deploy that artifact to staging, run the smoke test, and then promote
+the exact same artifact to production after the production environment gate.
+
+The delivery design and invariants are documented in
+[`ARCHITECTURE.md`](./ARCHITECTURE.md).
+
+### One-time Cloudflare bootstrap
+
+Authenticate Wrangler locally, then create each named Worker once:
+
+```bash
+npm run deploy:bootstrap:preview
+npm run deploy:bootstrap:staging
+npm run deploy:bootstrap:production
+```
+
+These create `decline-web-preview`, `decline-web-staging`, and
+`decline-web-production`. Normal releases use immutable Worker versions rather
+than `wrangler deploy`.
+
+### GitHub environments
+
+Create `preview`, `staging`, and `production` environments. Give each environment
+the `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` secrets. Set a
+`WEB_BASE_URL` variable on staging and production to the corresponding deployed
+URL, and configure the desired reviewer/policy gate on production.

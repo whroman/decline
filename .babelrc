@@ -3,7 +3,7 @@
     "lodash",
     [
       "babel-plugin-webpack-alias", {
-        "config": "./tasks/build.webpack.config.js"
+        "config": "./tasks/moduleAliases.js"
       }
     ]
   ],

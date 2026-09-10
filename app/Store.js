@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import createLogger from 'redux-logger';
 
-import adjectiveTrainerReducer from './dux/adjectiveTrainer';
+import adjectiveTrainerReducer from './dux/AdjectiveTrainer';
 
 const middleware = [];
 if (process.env.NODE_ENV !== 'production') middleware.push(createLogger());

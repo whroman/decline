@@ -1,0 +1,257 @@
+name: web.release
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build release
+    runs-on: ubuntu-latest
+
+    outputs:
+      artifact_digest: ${{ steps.artifact.outputs.artifact-digest }}
+
+    steps:
+      - name: Checkout release source
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify
+        run: npm run verify
+
+      # DELIVERY-INV-02: this is the only Vite build in the release workflow.
+      - name: Build frontend exactly once
+        run: npm run build
+
+      - name: Store immutable release artifact
+        id: artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: web-release-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: dist
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Release identity
+        env:
+          ARTIFACT_DIGEST: ${{ steps.artifact.outputs.artifact-digest }}
+        run: |
+          {
+            echo "## Frontend release candidate"
+            echo
+            echo "- Source SHA: \`${GITHUB_SHA}\`"
+            echo "- GitHub artifact digest: \`$ARTIFACT_DIGEST\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  staging:
+    name: Stage release
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: staging
+      url: ${{ vars.WEB_BASE_URL }}
+
+    concurrency:
+      group: web-staging
+      cancel-in-progress: true
+
+    env:
+      RELEASE_TAG: release-${{ github.run_id }}-${{ github.run_attempt }}
+
+    steps:
+      - name: Checkout release source
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install deployment and test tooling
+        run: npm ci
+
+      - name: Restore release artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: web-release-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: dist
+
+      - name: Upload staging Worker version
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          npm exec -- wrangler versions upload \
+            --env staging \
+            --tag "$RELEASE_TAG" \
+            --message "staging ${GITHUB_SHA}" \
+            --strict
+
+      - name: Deploy exact staging version tag
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          npm exec -- wrangler versions deploy \
+            --env staging \
+            --version-tag "$RELEASE_TAG" \
+            --percentage 100 \
+            --message "staging ${GITHUB_SHA}" \
+            -y
+
+      - name: Smoke staging over HTTP
+        env:
+          BASE_URL: ${{ vars.WEB_BASE_URL }}
+        run: |
+          curl \
+            --fail \
+            --silent \
+            --show-error \
+            --location \
+            --retry 4 \
+            --retry-all-errors \
+            "$BASE_URL/"
+
+      - name: Install Playwright Chromium
+        run: npm exec --workspace=@decline/web-e2e -- playwright install --with-deps chromium
+
+      - name: Run staging Playwright smoke test
+        env:
+          BASE_URL: ${{ vars.WEB_BASE_URL }}
+        run: npm run test:e2e
+
+  production:
+    name: Promote exact application artifact
+    needs:
+      - build
+      - staging
+    runs-on: ubuntu-latest
+
+    # Configure protection rules/reviewers on this environment in GitHub.
+    environment:
+      name: production
+      url: ${{ vars.WEB_BASE_URL }}
+
+    concurrency:
+      group: web-production
+      cancel-in-progress: false
+
+    env:
+      RELEASE_TAG: release-${{ github.run_id }}-${{ github.run_attempt }}
+      PREVIEW_ALIAS: rc-${{ github.run_id }}-${{ github.run_attempt }}
+
+    steps:
+      - name: Checkout release source
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install deployment tooling
+        run: npm ci
+
+      - name: Restore exact release artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: web-release-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: dist
+
+      - name: Upload undeployed production candidate
+        id: candidate
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          WRANGLER_OUTPUT_FILE_PATH: ${{ runner.temp }}/wrangler-production.ndjson
+        shell: bash
+        run: |
+          npm exec -- wrangler versions upload \
+            --env production \
+            --tag "$RELEASE_TAG" \
+            --preview-alias "$PREVIEW_ALIAS" \
+            --message "production candidate ${GITHUB_SHA}" \
+            --strict
+
+          PREVIEW_URL="$(
+            jq -r 'select(.type == "version-upload") | .preview_alias_url // .preview_url // empty' \
+              "$WRANGLER_OUTPUT_FILE_PATH" | tail -n 1
+          )"
+
+          test -n "$PREVIEW_URL"
+          echo "preview_url=$PREVIEW_URL" >> "$GITHUB_OUTPUT"
+
+      - name: Smoke exact production candidate
+        env:
+          PREVIEW_URL: ${{ steps.candidate.outputs.preview_url }}
+        run: |
+          curl \
+            --fail \
+            --silent \
+            --show-error \
+            --location \
+            --retry 4 \
+            --retry-all-errors \
+            "$PREVIEW_URL/"
+
+      - name: Deploy exact production version tag
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          npm exec -- wrangler versions deploy \
+            --env production \
+            --version-tag "$RELEASE_TAG" \
+            --percentage 100 \
+            --message "production ${GITHUB_SHA}" \
+            -y
+
+      - name: Smoke production
+        env:
+          BASE_URL: ${{ vars.WEB_BASE_URL }}
+        run: |
+          curl \
+            --fail \
+            --silent \
+            --show-error \
+            --location \
+            --retry 4 \
+            --retry-all-errors \
+            "$BASE_URL/"
+
+      - name: Publish release summary
+        env:
+          ARTIFACT_DIGEST: ${{ needs.build.outputs.artifact_digest }}
+          PREVIEW_URL: ${{ steps.candidate.outputs.preview_url }}
+          BASE_URL: ${{ vars.WEB_BASE_URL }}
+        run: |
+          {
+            echo "## Production deployment"
+            echo
+            echo "- Source SHA: \`${GITHUB_SHA}\`"
+            echo "- GitHub artifact digest: \`$ARTIFACT_DIGEST\`"
+            echo "- Cloudflare version tag: \`$RELEASE_TAG\`"
+            echo "- Candidate preview: $PREVIEW_URL"
+            echo "- Production: $BASE_URL"
+          } >> "$GITHUB_STEP_SUMMARY"
