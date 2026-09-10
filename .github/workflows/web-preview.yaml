@@ -56,7 +56,9 @@ jobs:
     if: github.event.pull_request.head.repo.full_name == github.repository
 
     runs-on: ubuntu-latest
-    environment: preview
+    environment:
+      name: preview
+      url: ${{ steps.upload.outputs.preview_url }}
 
     steps:
       - name: Checkout PR integration candidate
