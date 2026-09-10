@@ -1,4 +1,4 @@
-name: web / preview
+name: web.preview
 
 on:
   pull_request:
@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   build:
-    name: Verify and build disposable preview
+    name: Verify and build
     runs-on: ubuntu-latest
 
     steps:
@@ -49,7 +49,7 @@ jobs:
           retention-days: 7
 
   preview:
-    name: Upload and smoke Cloudflare preview
+    name: Upload and smoke
     needs: build
 
     # Pull requests from forks do not receive deployment credentials.

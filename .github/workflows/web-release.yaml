@@ -1,4 +1,4 @@
-name: web / release
+name: web.release
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   build:
-    name: Build release artifact once
+    name: Build release
     runs-on: ubuntu-latest
 
     outputs:
@@ -58,7 +58,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
   staging:
-    name: Stage exact application artifact
+    name: Stage release
     needs: build
     runs-on: ubuntu-latest
 
