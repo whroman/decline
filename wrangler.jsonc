@@ -1,0 +1,31 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "decline-web",
+  "compatibility_date": "2026-09-10",
+
+  // The unnamed top-level Worker is not a deployment target.
+  "workers_dev": false,
+  "preview_urls": false,
+
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  },
+
+  // Named environments create decline-web-{preview,staging,production}.
+  // Add Custom Domains later as an explicit infrastructure change.
+  "env": {
+    "preview": {
+      "workers_dev": true,
+      "preview_urls": true
+    },
+    "staging": {
+      "workers_dev": true,
+      "preview_urls": true
+    },
+    "production": {
+      "workers_dev": true,
+      "preview_urls": true
+    }
+  }
+}

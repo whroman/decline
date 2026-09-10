@@ -8614,7 +8614,7 @@ export default [
         ]
     },
     {
-        text: 'Die Adresse steht auf der Rückseite des Briefes',
+        text: 'Die Adresse steht auf der Rückseite des Briefes.',
         stubs: [2, 3, 4, 6],
         translations: {
             eng: 'The address is on the backside of the letter.'

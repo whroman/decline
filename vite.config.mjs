@@ -39,6 +39,9 @@ function legacyJsxInJavaScript(command) {
 
 export default defineConfig(({ command }) => ({
     base: './',
+    // The same browser artifact is promoted through staging and production.
+    envDir: false,
+    envPrefix: [],
     plugins: [legacyJsxInJavaScript(command)],
     define: legacyGlobalDefine,
     resolve: moduleAliases.resolve,

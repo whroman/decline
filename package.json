@@ -3,11 +3,21 @@
   "version": "0.3.19",
   "description": "",
   "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "app-e2e"
+  ],
   "scripts": {
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "mocha --compilers js:babel-register $(find ./generator ./app ./tables -name '*.spec.js')",
+    "test": "BABEL_DISABLE_CACHE=1 mocha --compilers js:babel-register $(find ./generator ./app ./tables -name '*.spec.js')",
+    "verify": "npm test",
+    "test:e2e": "npm --workspace @decline/web-e2e test",
+    "test:e2e:local": "npm run build && npm run test:e2e",
+    "deploy:bootstrap:preview": "npm run build && wrangler deploy --env preview",
+    "deploy:bootstrap:staging": "npm run build && wrangler deploy --env staging",
+    "deploy:bootstrap:production": "npm run build && wrangler deploy --env production",
     "test:watch": "npm test -- --watch",
     "tdd": "npm run test:watch",
     "lint": "npm run lint:client && npm run lint:specs",
@@ -20,7 +30,7 @@
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": "^20.19.0 || >=22.12.0"
+    "node": ">=22.12.0"
   },
   "dependencies": {
     "axios": "0.11.0",
@@ -58,6 +68,7 @@
     "rewire": "2.5.1",
     "sass": "1.104.0",
     "sinon": "1.17.4",
-    "vite": "8.2.2"
+    "vite": "8.2.2",
+    "wrangler": "^4.102.0"
   }
 }
