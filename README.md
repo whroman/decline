@@ -121,13 +121,16 @@ All nouns have been entered manually.
 
 ## Development
 
+Requires Node.js `^20.19.0` or `>=22.12.0`.
+
 #### Executables
 
 ```bash
 npm install # Install project dependencies
-npm start   # Run a dev server at http://localhost:8080
+npm start   # Run a dev server at http://localhost:8000
 npm test    # Run unit tests once
 npm lint    # Lint all JS files
 npm tdd     # Run unit tests when a JS file is changed
-npm build   # Compile JS and CSS and dump them into `./dist`
+npm build   # Compile the production site into `./dist`
+npm preview # Preview the production build locally
 ```
