@@ -89,7 +89,7 @@ jobs:
         run: npm ci
 
       - name: Restore release artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: web-release-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
           path: dist
@@ -174,7 +174,7 @@ jobs:
         run: npm ci
 
       - name: Restore exact release artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: web-release-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
           path: dist

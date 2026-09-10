@@ -74,7 +74,7 @@ jobs:
         run: npm ci
 
       - name: Restore preview build
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: web-preview-${{ github.event.pull_request.number }}-${{ github.run_attempt }}
           path: dist
