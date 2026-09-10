@@ -68,7 +68,6 @@ export default class PageWrapper extends Component {
     renderRight () {
         return (
             <div className='right-links'>
-                <Link to='/practice'>{ 'Practice' }</Link>
                 <Link to='/about'>{ 'About' }</Link>
             </div>
         );
@@ -80,7 +79,7 @@ export default class PageWrapper extends Component {
                 <div className='header'>
                     <div className='row collapse'>
                         <div className='column small-12'>
-                            <h1 className='float-left header-title'>{ 'Tägliches Deutsch' }</h1>
+                            <Link to='/practice' className='float-left header-title'>{ 'Tägliches Deutsch' }</Link>
                             { this.renderRight() }
                         </div>
                     </div>
