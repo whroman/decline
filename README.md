@@ -143,7 +143,7 @@ disposable preview and smoke-test it with Playwright. Commits on `master` build 
 site once, deploy that artifact to staging, run the smoke test, and then promote
 the exact same artifact to production after the production environment gate.
 
-The delivery design and invariants are documented in
+The delivery contract is enforced by executable architecture checks indexed in
 [`ARCHITECTURE.md`](./ARCHITECTURE.md).
 
 ### One-time Cloudflare bootstrap

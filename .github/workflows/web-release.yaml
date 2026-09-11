@@ -33,7 +33,6 @@ jobs:
       - name: Verify
         run: npm run verify
 
-      # DELIVERY-INV-02: this is the only Vite build in the release workflow.
       - name: Build frontend exactly once
         run: npm run build
 

@@ -13,7 +13,8 @@
     "preview": "vite preview",
     "test": "BABEL_DISABLE_CACHE=1 mocha --compilers js:babel-register $(find ./generator ./app ./tables -name '*.spec.js')",
     "check:imports": "node ./tasks/checkImportCasing.mjs",
-    "verify": "npm run check:imports && npm test",
+    "architecture:check": "node --test architecture/*.spec.mjs",
+    "verify": "npm run check:imports && npm run architecture:check && npm test",
     "test:e2e": "npm --workspace @decline/web-e2e test",
     "test:e2e:local": "npm run build && npm run test:e2e",
     "deploy:bootstrap:preview": "npm run build && wrangler deploy --env preview",
@@ -63,6 +64,7 @@
     "eslint-plugin-mocha": "2.2.0",
     "eslint-plugin-react": "5.1.1",
     "eslint-watch": "2.1.11",
+    "jsonc-parser": "^3.3.1",
     "mocha": "2.3.4",
     "npm-run-all": "2.1.1",
     "proxyquire": "1.7.9",
@@ -70,6 +72,7 @@
     "sass": "1.104.0",
     "sinon": "1.17.4",
     "vite": "8.2.2",
-    "wrangler": "^4.102.0"
+    "wrangler": "^4.102.0",
+    "yaml": "^2.9.0"
   }
 }
