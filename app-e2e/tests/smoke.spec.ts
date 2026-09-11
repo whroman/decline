@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('WEB-DEPLOY-01 application shell loads', async ({ page }) => {
+test('WEB-DEPLOY-01 application shell loads @allure.label.story:web.shell @allure.id:web.shell-loads', async ({ page }) => {
   const response = await page.goto('/');
 
   expect(response?.ok()).toBe(true);

@@ -37,6 +37,10 @@ jobs:
       - name: Verify
         run: npm run verify
 
+      - name: Record unit and engineering contracts
+        if: ${{ !cancelled() }}
+        run: npm run checks -- run all --runner mocha,node
+
       - name: Build disposable preview
         run: npm run build
 
@@ -46,6 +50,15 @@ jobs:
           name: web-preview-${{ github.event.pull_request.number }}-${{ github.run_attempt }}
           path: dist
           if-no-files-found: error
+          retention-days: 7
+
+      - name: Preserve test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checks-preview-build-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .checks
+          include-hidden-files: true
           retention-days: 7
 
   preview:
@@ -110,6 +123,21 @@ jobs:
         env:
           BASE_URL: ${{ steps.upload.outputs.preview_url }}
         run: npm run test:e2e
+
+      - name: Record browser contracts
+        if: ${{ !cancelled() && steps.upload.outputs.preview_url != '' }}
+        env:
+          BASE_URL: ${{ steps.upload.outputs.preview_url }}
+        run: npm run checks -- run all --runner playwright
+
+      - name: Preserve browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checks-preview-browser-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .checks
+          include-hidden-files: true
+          retention-days: 7
 
       - name: Publish preview summary
         env:

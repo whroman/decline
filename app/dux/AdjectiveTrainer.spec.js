@@ -19,7 +19,7 @@ describe('Dux', () => describe('AdjectiveTrainer', () => {
 
     describe('#mergeCreationParams(state, payload)', () => {
         context('when all payload keys are defined', () => {
-            it('returns `payload`', () => {
+            it('returns `payload` @allure.label.story:adjectives.settings @allure.id:settings.explicit', () => {
                 const payload = {
                     amount: 10,
                     gender: null,
@@ -35,7 +35,7 @@ describe('Dux', () => describe('AdjectiveTrainer', () => {
         });
 
         context('when all payload keys are undefined', () => {
-            it('returns a merged object between `state` and `payload`', () => {
+            it('returns a merged object between `state` and `payload` @allure.label.story:adjectives.settings @allure.id:settings.defaults', () => {
                 const payload = {
                     amount: undefined,
                     gender: undefined,
@@ -58,11 +58,11 @@ describe('Dux', () => describe('AdjectiveTrainer', () => {
     });
 
     describe('#loadState', () => {
-        it('returns an empty object if localStorage is not available', () => {
+        it('returns an empty object if localStorage is not available @allure.label.story:adjectives.settings @allure.id:settings.no-storage', () => {
             assert.deepEqual(loadState(), {})
         });
 
-        it('returns a parsed JSON from localStorage if localStorage is available', () => {
+        it('returns a parsed JSON from localStorage if localStorage is available @allure.label.story:adjectives.settings @allure.id:settings.load', () => {
             const json = { testKey: 'testVal' };
             AdjectiveTrainer.__with__({
                 window: {

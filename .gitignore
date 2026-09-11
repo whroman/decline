@@ -4,3 +4,6 @@ dist
 playwright-report
 test-results
 .DS_Store
+.checks/
+allure-results/
+allure-report/

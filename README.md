@@ -134,7 +134,12 @@ npm tdd     # Run unit tests when a JS file is changed
 npm build   # Compile the production site into `./dist`
 npm preview # Preview the production build locally
 npm run test:e2e:local # Build and run the Playwright smoke test locally
+npm run checks -- list # Discover behavior contracts and associated checks
+npm run checks -- run adjectives.settings # Verify one behavior across runners
 ```
+
+See [the testing harness guide](./docs/testing.md) for Allure reports, failure
+inspection, native reruns, metadata, coverage limits, and CI artifacts.
 
 ## Cloudflare delivery
 

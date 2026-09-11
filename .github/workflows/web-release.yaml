@@ -33,6 +33,10 @@ jobs:
       - name: Verify
         run: npm run verify
 
+      - name: Record unit and engineering contracts
+        if: ${{ !cancelled() }}
+        run: npm run checks -- run all --runner mocha,node
+
       - name: Build frontend exactly once
         run: npm run build
 
@@ -44,6 +48,15 @@ jobs:
           path: dist
           if-no-files-found: error
           retention-days: 30
+
+      - name: Preserve test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checks-release-build-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .checks
+          include-hidden-files: true
+          retention-days: 7
 
       - name: Release identity
         env:
@@ -136,6 +149,21 @@ jobs:
         env:
           BASE_URL: ${{ vars.WEB_BASE_URL }}
         run: npm run test:e2e
+
+      - name: Record browser contracts
+        if: ${{ !cancelled() }}
+        env:
+          BASE_URL: ${{ vars.WEB_BASE_URL }}
+        run: npm run checks -- run all --runner playwright
+
+      - name: Preserve browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checks-staging-browser-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .checks
+          include-hidden-files: true
+          retention-days: 7
 
   production:
     name: Promote exact application artifact
