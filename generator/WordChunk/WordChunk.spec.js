@@ -12,12 +12,12 @@ describe('Generator', () => describe('WordChunk', () => {
                 wordChunk = new WordChunk(TEXT);
             });
 
-            it('binds `text', () => {
+            it('preserves the supplied text', () => {
                 assert.equal(wordChunk.text, TEXT);
             });
 
 
-            it('binds `text', () => {
+            it('creates one placeholder per character', () => {
                 const stubLength = wordChunk.stub
                     .split('')
                     .filter((letter) => letter === '_')

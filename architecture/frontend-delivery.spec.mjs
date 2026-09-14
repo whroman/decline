@@ -1,13 +1,15 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import test from 'node:test';
+import { testsFor } from '../tasks/checks/node-test.mjs';
 import { fileURLToPath } from 'node:url';
 
 import jsoncParser from 'jsonc-parser';
-import { parse as parseYaml } from 'yaml';
+import { parse as parseYaml, parseAllDocuments } from 'yaml';
 
 import viteConfigDefinition from '../vite.config.mjs';
+
+const test = testsFor(import.meta.url, 'web.delivery');
 
 /*
     This file is the normative frontend delivery contract.
@@ -72,7 +74,7 @@ function stepIndex(job, pattern) {
     return job.steps.findIndex((step) => pattern.test(step.run ?? ''));
 }
 
-test('pull requests follow the build -> preview delivery graph', () => {
+test('pull requests follow the build -> preview delivery graph @allure.id:delivery.preview-graph', () => {
     assert.deepEqual(jobGraph(previewWorkflow), {
         build: [],
         preview: ['build']
@@ -85,7 +87,7 @@ test('pull requests follow the build -> preview delivery graph', () => {
     ]);
 });
 
-test('releases follow the build -> staging -> production delivery graph', () => {
+test('releases follow the build -> staging -> production delivery graph @allure.id:delivery.release-graph', () => {
     assert.deepEqual(jobGraph(releaseWorkflow), {
         build: [],
         staging: ['build'],
@@ -94,16 +96,16 @@ test('releases follow the build -> staging -> production delivery graph', () => 
     assert.deepEqual(releaseWorkflow.on.push.branches, ['master']);
 });
 
-test('a release builds the frontend exactly once', () => {
+test('a release builds the frontend exactly once @allure.id:delivery.build-once', () => {
     const buildCommands = allRunCommands(releaseWorkflow).filter((command) =>
-        /(^|\n)\s*npm run build\s*($|\n)/.test(command)
+        /(^|\n)\s*pnpm run build\s*($|\n)/.test(command)
     );
 
     assert.equal(buildCommands.length, 1);
-    assert.match(releaseWorkflow.jobs.build.steps.find((step) => step.run === 'npm run build').name, /exactly once/i);
+    assert.match(releaseWorkflow.jobs.build.steps.find((step) => step.run === 'pnpm run build').name, /exactly once/i);
 });
 
-test('staging and production restore the same immutable release artifact', () => {
+test('staging and production restore the same immutable release artifact @allure.id:delivery.immutable-artifact', () => {
     const upload = findStep(
         releaseWorkflow.jobs.build,
         (step) => step.uses?.startsWith('actions/upload-artifact@'),
@@ -136,13 +138,13 @@ test('staging and production restore the same immutable release artifact', () =>
     assert.doesNotMatch(read('.github/workflows/web-release.yaml'), /web-preview-/);
 });
 
-test('the browser artifact is environment-neutral', () => {
+test('the browser artifact is environment-neutral @allure.id:delivery.environment-neutral', () => {
     assert.equal(viteConfig.envDir, false);
     assert.deepEqual(viteConfig.envPrefix, []);
     assert.equal(viteConfig.build.outDir, 'dist');
 });
 
-test('Cloudflare serves one SPA artifact through separate named environments', () => {
+test('Cloudflare serves one SPA artifact through separate named environments @allure.id:delivery.environments', () => {
     assert.equal(wranglerConfig.name, 'decline-web');
     assert.deepEqual(wranglerConfig.assets, {
         directory: './dist',
@@ -167,7 +169,7 @@ test('Cloudflare serves one SPA artifact through separate named environments', (
     assert.equal(wranglerConfig.routes, undefined);
 });
 
-test('pull-request previews are version uploads with a visible deployment URL', () => {
+test('pull-request previews are version uploads with a visible deployment URL @allure.id:delivery.preview-url', () => {
     const previewJob = previewWorkflow.jobs.preview;
     const upload = findRunStep(
         previewJob,
@@ -181,12 +183,12 @@ test('pull-request previews are version uploads with a visible deployment URL', 
     assert.match(upload.run, /--preview-alias "\$PREVIEW_ALIAS"/);
     assert.ok(
         stepIndex(previewJob, /wrangler versions upload/) <
-            stepIndex(previewJob, /npm run test:e2e/),
+            stepIndex(previewJob, /pnpm run test:e2e/),
         'Playwright must smoke-test the uploaded preview'
     );
 });
 
-test('staging is deployed by version tag and validated before production', () => {
+test('staging is deployed by version tag and validated before production @allure.id:delivery.staging-validation', () => {
     const stagingJob = releaseWorkflow.jobs.staging;
     const upload = findRunStep(
         stagingJob,
@@ -207,12 +209,12 @@ test('staging is deployed by version tag and validated before production', () =>
     assert.match(deploy.run, /--percentage 100/);
     assert.ok(
         stepIndex(stagingJob, /wrangler versions deploy/) <
-            stepIndex(stagingJob, /npm run test:e2e/),
+            stepIndex(stagingJob, /pnpm run test:e2e/),
         'Playwright must validate the deployed staging version'
     );
 });
 
-test('production deploys the smoke-tested candidate atomically and serially', () => {
+test('production deploys the smoke-tested candidate atomically and serially @allure.id:delivery.production-promotion', () => {
     const productionJob = releaseWorkflow.jobs.production;
     const upload = findRunStep(
         productionJob,
@@ -249,8 +251,27 @@ test('production deploys the smoke-tested candidate atomically and serially', ()
     );
 });
 
-test('normal releases never create and deploy a version in one operation', () => {
+test('normal releases never create and deploy a version in one operation @allure.id:delivery.no-direct-deploy', () => {
     for (const command of allRunCommands(releaseWorkflow)) {
         assert.doesNotMatch(command, /wrangler\s+deploy(?:\s|\\|$)/);
+    }
+});
+
+test('local development and every CI job use the pinned pnpm workspace and frozen lockfile @allure.id:delivery.toolchain', () => {
+    const manifest = JSON.parse(read('package.json'));
+    assert.match(manifest.packageManager, /^pnpm@\d+\.\d+\.\d+$/);
+    assert.deepEqual(readYaml('pnpm-workspace.yaml').packages, ['app-e2e']);
+    assert.ok(parseAllDocuments(read('pnpm-lock.yaml')).some(document => document.toJSON().importers?.['app-e2e']));
+    assert.equal(fs.existsSync(path.join(projectRoot, 'package-lock.json')), false);
+    for (const command of Object.values(manifest.scripts)) assert.doesNotMatch(command, /\b(?:npm|npx|yarn)\b/);
+    for (const workflow of [previewWorkflow, releaseWorkflow]) {
+        for (const job of Object.values(workflow.jobs)) {
+            findRunStep(job, /^pnpm install --frozen-lockfile$/, 'a reproducible pnpm install');
+            findStep(job, step => step.uses?.startsWith('pnpm/setup@'), 'pnpm setup from the package manifest');
+            const node = findStep(job, step => step.uses?.startsWith('actions/setup-node@'), 'the supported Node runtime');
+            assert.equal(node.with['node-version-file'], '.node-version');
+            assert.equal(node.with.cache, 'pnpm');
+        }
+        for (const command of allRunCommands(workflow)) assert.doesNotMatch(command, /\b(?:npm|npx|yarn)\b/);
     }
 });

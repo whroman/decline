@@ -3,10 +3,6 @@ import randomPhrase from 'generator/randomPhrase/randomPhrase';
 import { find, range, random } from 'lodash';
 import kasusData from './../data/kasus';
 
-// window is declared here for testing purposes.
-const window = global.window;
-
-
 // Action Types
 export const TRACKS_CREATE = 'TRACKS_CREATE';
 export const TRACKS_REPLACE = 'TRACKS_REPLACE';
@@ -29,7 +25,7 @@ export const initialState = {
 };
 
 export function localStorageExists () {
-    return (window && window.localStorage);
+    return global.window && global.window.localStorage;
 }
 
 export function getRandomKasusName () {
@@ -55,17 +51,17 @@ export function getRandomPhrases({ amount, kasus, nounKategorie, adjectiveKatego
     return phrases;
 }
 
-export function saveState (state) {
+export function saveState (state, storage = localStorageExists()) {
     const { kasus, nounKategorie, adjectiveKategorie, gender } = state;
     const stateToSave = { kasus, nounKategorie, adjectiveKategorie, gender };
     const stringState = JSON.stringify(stateToSave);
-    if (localStorageExists()) window.localStorage.setItem('conjugate', stringState);
+    if (storage) storage.setItem('conjugate', stringState);
     return stateToSave;
 }
 
-export function loadState () {
-    if (!localStorageExists()) return {};
-    return JSON.parse(window.localStorage.getItem('conjugate'));
+export function loadState (storage = localStorageExists()) {
+    if (!storage) return {};
+    return JSON.parse(storage.getItem('conjugate'));
 }
 
 export function mergeCreationParams (state, payload) {

@@ -6,11 +6,13 @@ import { spawnSync } from 'node:child_process';
 import { validateCatalog, reconcile, failureKind } from './model.mjs';
 import Mocha from 'mocha';
 import metadataModule from './metadata.cjs';
+import { createRequire } from 'node:module';
 
 const root = process.cwd();
 const base = path.join(root, '.checks/adapter-tests');
 fs.mkdirSync(base, { recursive: true });
-const bin = name => path.join(root, 'node_modules/.bin', name);
+const browserRequire = createRequire(path.join(root, 'app-e2e/package.json'));
+const bin = name => path.join(root, name === 'playwright' ? 'app-e2e/node_modules/.bin' : 'node_modules/.bin', name);
 const results = dir => fs.readdirSync(dir).filter(f => f.endsWith('-result.json')).map(f => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')));
 const id = result => result.labels.find(l => l.name === 'ALLURE_ID')?.value;
 const env = extra => {
@@ -67,9 +69,9 @@ test('real Playwright discovery and plans preserve project/case identity before 
     const discovery = path.join(dir, 'discovery.json');
     const plan = path.join(dir, 'testplan.json');
     fs.writeFileSync(config, `module.exports = { testDir: '.', projects: [{name:'alpha'}, {name:'beta'}],
-      reporter: [['allure-playwright', {resultsDir: process.env.ALLURE_RESULTS_DIR}]] };`);
+      reporter: [[${JSON.stringify(browserRequire.resolve('allure-playwright'))}, {resultsDir: process.env.ALLURE_RESULTS_DIR}]] };`);
     fs.writeFileSync(path.join(dir, 'fixture.spec.cjs'), `
-      const {test, expect} = require('@playwright/test');
+      const {test, expect} = require(${JSON.stringify(browserRequire.resolve('@playwright/test'))});
       for (const value of [1, 2]) test('parameter ' + value + ' @allure.label.story:fixture @allure.id:parameter.' + value, () => expect(value).toBeGreaterThan(0));
       test.skip('skip @allure.label.story:fixture @allure.id:skip', () => { throw Error('skipped body ran'); });
       test.describe('setup group', () => {
@@ -100,16 +102,19 @@ test('real Playwright discovery and plans preserve project/case identity before 
     }
 });
 
-test('engineering wrapper really executes architecture subtests inside a Node test worker', () => {
+test('delivery specifications are discovered and reported individually by the native Node runner', () => {
     const dir = fs.mkdtempSync(path.join(base, 'node-'));
-    const outcome = invoke(process.execPath, ['--test', '--test-name-pattern', '^delivery.architecture ',
-        '--test-reporter', 'allure-node-test/reporter', 'tasks/checks/engineering.test.mjs'], { ALLURE_RESULTS_DIR: dir });
+    const discovery = path.join(dir, 'discovery.json');
+    let outcome = invoke(process.execPath, ['--test', '--test-name-pattern', '^$', 'architecture/frontend-delivery.spec.mjs'],
+        { CHECKS_DISCOVERY_FILE: discovery });
+    assert.equal(outcome.status, 0, outcome.stdout + outcome.stderr);
+    const catalog = validateCatalog(JSON.parse(fs.readFileSync(discovery, 'utf8')).checks);
+    assert.ok(catalog.length > 1);
+    assert.equal(catalog.every(c => c.contracts.includes('web.delivery')), true);
+    outcome = invoke(process.execPath, ['--test', '--test-reporter', 'allure-node-test/reporter',
+        'architecture/frontend-delivery.spec.mjs'], { ALLURE_RESULTS_DIR: dir });
     assert.equal(outcome.status, 0, outcome.stdout + outcome.stderr);
     const actual = results(dir);
-    assert.equal(actual.length, 1);
-    assert.equal(id(actual[0]), 'delivery.architecture');
-    const attachments = fs.readdirSync(dir).filter(f => f.includes('attachment')).map(f => fs.readFileSync(path.join(dir, f), 'utf8')).join('\n');
-    assert.match(attachments, /pull requests follow the build/);
-    assert.match(attachments, /tests [1-9][0-9]*/);
-    assert.doesNotMatch(attachments, /being called recursively/);
+    assert.deepEqual(actual.map(id).sort(), catalog.map(c => c.allureId).sort());
+    assert.equal(actual.every(r => r.status === 'passed'), true);
 });

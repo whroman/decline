@@ -58,39 +58,46 @@ function importCandidates(target) {
         );
 }
 
-const importPattern = /(?:\bimport\s+(?:[^'";]*?\s+from\s+)?|\bexport\s+[^'";]*?\s+from\s+|\b(?:require|rewire)\s*\(\s*)['"]([^'"]+)['"]/g;
-const failures = [];
+const importPattern = /(?:\bimport\s+(?:[^'";]*?\s+from\s+)?|\bexport\s+[^'";]*?\s+from\s+|\brequire\s*\(\s*)['"]([^'"]+)['"]/g;
+export function checkImportCasing() {
+    const failures = [];
 
-for (const importingFile of sourceRoots
-    .flatMap((sourceRoot) => walk(path.join(projectRoot, sourceRoot)))
-    .filter((filename) => filename.endsWith('.js'))) {
-    const source = fs.readFileSync(importingFile, 'utf8');
+    for (const importingFile of sourceRoots
+        .flatMap((sourceRoot) => walk(path.join(projectRoot, sourceRoot)))
+        .filter((filename) => filename.endsWith('.js'))) {
+        const source = fs.readFileSync(importingFile, 'utf8');
 
-    for (const match of source.matchAll(importPattern)) {
-        const specifier = match[1];
-        const target = resolveLocalImport(importingFile, specifier);
-        if (!target) continue;
+        for (const match of source.matchAll(importPattern)) {
+            const specifier = match[1];
+            const target = resolveLocalImport(importingFile, specifier);
+            if (!target) continue;
 
-        const resolvesExactly = importCandidates(target).some((candidate) => {
-            try {
-                return exactPathExists(candidate);
-            } catch {
-                return false;
+            const resolvesExactly = importCandidates(target).some((candidate) => {
+                try {
+                    return exactPathExists(candidate);
+                } catch {
+                    return false;
+                }
+            });
+
+            if (!resolvesExactly) {
+                const relativeFile = path.relative(projectRoot, importingFile);
+                const lineNumber = source.slice(0, match.index).split('\n').length;
+                failures.push(`${relativeFile}:${lineNumber}: ${specifier}`);
             }
-        });
-
-        if (!resolvesExactly) {
-            const relativeFile = path.relative(projectRoot, importingFile);
-            const lineNumber = source.slice(0, match.index).split('\n').length;
-            failures.push(`${relativeFile}:${lineNumber}: ${specifier}`);
         }
     }
+
+    return failures;
 }
 
-if (failures.length) {
-    console.error('Imports that do not resolve with exact filename casing:');
-    console.error(failures.join('\n'));
-    process.exitCode = 1;
-} else {
-    console.log('All local imports resolve with exact filename casing.');
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+    const failures = checkImportCasing();
+    if (failures.length) {
+        console.error('Imports that do not resolve with exact filename casing:');
+        console.error(failures.join('\n'));
+        process.exitCode = 1;
+    } else {
+        console.log('All local imports resolve with exact filename casing.');
+    }
 }

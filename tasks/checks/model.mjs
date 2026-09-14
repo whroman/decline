@@ -23,15 +23,15 @@ export function reconcile(ledger, results) {
         return { ...check, status, flaky: status === 'passed' && attempts.some(a => ['failed', 'broken'].includes(a.status)), attempts };
     });
     const processErrors = ledger.suites.filter(s => s.state !== 'completed' || s.exitCode !== 0 || s.signal || s.error);
+    const reportingError = ledger.report && (ledger.report.exitCode !== 0 || ledger.report.signal || ledger.report.error);
     const complete = ledger.state === 'completed' && !unexpected.length && !processErrors.length && checks.every(c => c.status !== 'unreported');
     const contracts = [...new Set(ledger.selected.flatMap(c => c.contracts))].map(id => {
         const expected = ledger.catalog.filter(c => c.contracts.includes(id));
         const selected = checks.filter(c => c.contracts.includes(id));
         const fullSelection = expected.every(c => selected.some(s => c.id === s.id));
         return { id, expected: expected.length, selected: selected.length, fullSelection,
-            verified: complete && fullSelection && selected.every(c => c.status === 'passed') };
+            verified: complete && !reportingError && fullSelection && selected.every(c => c.status === 'passed') };
     });
-    const reportingError = ledger.report && (ledger.report.exitCode !== 0 || ledger.report.signal || ledger.report.error);
     const ok = complete && !reportingError && checks.length > 0 && checks.every(c => c.status === 'passed');
     return { schemaVersion: 1, run: ledger.run, state: ledger.state, source: ledger.source,
         scope: ledger.scope, complete, ok, contracts, checks, processErrors, unexpected,

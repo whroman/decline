@@ -1,3 +1,6 @@
+packages:
+  - app-e2e
+
 allowBuilds:
   '@parcel/watcher': false
   core-js: false

@@ -64,7 +64,9 @@ for (const status of ['failed', 'broken', 'skipped', 'unknown']) {
 test('failed processes, interruption and unfinished report generation override passing results', () => {
     for (const change of [{ suites: [{ state: 'completed', exitCode: 1 }] }, { suites: [{ state: 'completed', exitCode: null, signal: 'SIGTERM' }] },
         { state: 'running' }, { state: 'reporting' }, { report: { exitCode: 1 } }]) {
-        assert.equal(reconcile({ ...ledger(), ...change }, passed).ok, false);
+        const summary = reconcile({ ...ledger(), ...change }, passed);
+        assert.equal(summary.ok, false);
+        assert.equal(summary.contracts[0].verified, false);
     }
 });
 

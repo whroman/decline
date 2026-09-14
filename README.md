@@ -126,20 +126,17 @@ Requires Node.js `>=22.12.0`; CI uses Node.js 22 from `.node-version`.
 #### Executables
 
 ```bash
-npm install # Install project dependencies
-npm start   # Run a dev server at http://localhost:8000
-npm test    # Run unit tests once
-npm lint    # Lint all JS files
-npm tdd     # Run unit tests when a JS file is changed
-npm build   # Compile the production site into `./dist`
-npm preview # Preview the production build locally
-npm run test:e2e:local # Build and run the Playwright smoke test locally
-npm run checks -- list # Discover behavior contracts and associated checks
-npm run checks -- run adjectives.settings # Verify one behavior across runners
+pnpm install # Install project dependencies
+pnpm start   # Run a dev server at http://localhost:8000
+pnpm test    # Run unit tests once
+pnpm lint    # Lint all JS files
+pnpm tdd     # Run unit tests when a JS file is changed
+pnpm build   # Compile the production site into `./dist`
+pnpm preview # Preview the production build locally
+pnpm run test:e2e:local # Build and run the Playwright smoke test locally
+pnpm checks list # Discover behavior contracts and associated checks
+pnpm checks run adjectives.settings # Verify one behavior across runners
 ```
-
-See [the testing harness guide](./docs/testing.md) for Allure reports, failure
-inspection, native reruns, metadata, coverage limits, and CI artifacts.
 
 ## Cloudflare delivery
 
@@ -156,9 +153,9 @@ The delivery contract is enforced by executable architecture checks indexed in
 Authenticate Wrangler locally, then create each named Worker once:
 
 ```bash
-npm run deploy:bootstrap:preview
-npm run deploy:bootstrap:staging
-npm run deploy:bootstrap:production
+pnpm run deploy:bootstrap:preview
+pnpm run deploy:bootstrap:staging
+pnpm run deploy:bootstrap:production
 ```
 
 These create `decline-web-preview`, `decline-web-staging`, and

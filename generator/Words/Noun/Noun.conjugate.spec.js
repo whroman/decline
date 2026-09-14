@@ -127,7 +127,7 @@ describe('#conjugate', () => {
         const props = { gender, grammarCase, root };
         const noun = new Noun(props);
         const actual = noun.conjugate(grammarCase);
-        it('returns conjugated text', () => {
+        it(`conjugates ${root} with gender ${gender} and case ${grammarCase} to ${conjugation}`, () => {
             expect(actual).to.equal(conjugation, JSON.stringify(props));
         });
     });

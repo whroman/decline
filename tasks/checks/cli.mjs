@@ -2,14 +2,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawn, spawnSync } from 'node:child_process';
-import { createHash } from 'node:crypto';
+import output from './output.cjs';
 import net from 'node:net';
-import { engineering, engineeringTitle } from './engineering.mjs';
 import { validateCatalog, selectChecks, reconcile, escapeRegex, shellQuote, failureKind } from './model.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 process.chdir(root);
-const bin = name => path.join(root, 'node_modules/.bin', name);
+const bin = name => path.join(root, name === 'playwright' ? 'app-e2e/node_modules/.bin' : 'node_modules/.bin', name);
 const read = file => JSON.parse(fs.readFileSync(file, 'utf8'));
 const write = (file, value) => {
     // Atomic ledger snapshots remain readable after interruption.
@@ -50,6 +49,10 @@ async function discover() {
         { command: [process.execPath, 'tasks/checks/discover-mocha.cjs', mochaFile], file: mochaFile, env: cleanEnv() },
         { command: [bin('playwright'), 'test', '--config', 'app-e2e/playwright.config.ts', '--list', '--reporter', './tasks/checks/discover-playwright.cjs'],
             file: playwrightFile, env: { ...cleanEnv(), CHECKS_DISCOVERY_FILE: playwrightFile, CHECKS_SUITE_DIR: path.join(dir, 'playwright') } },
+        ...fs.readdirSync('architecture').filter(file => file.endsWith('.spec.mjs')).sort().map(file => ({
+            command: [process.execPath, '--test', '--test-name-pattern', '^$', `architecture/${file}`],
+            file: path.join(dir, `${file}.json`), env: { ...cleanEnv(), CHECKS_DISCOVERY_FILE: path.join(dir, `${file}.json`) }
+        })),
     ];
     const outcomes = await Promise.all(probes.map(async probe => {
         const log = `${probe.file}.log`;
@@ -57,9 +60,8 @@ async function discover() {
         if (result.exitCode !== 0 || result.error || !fs.existsSync(probe.file)) throw new Error(`Discovery failed; see ${log}`);
         return read(probe.file);
     }));
-    const commands = engineering.map(c => ({ ...c, runner: 'node', project: '', file: 'tasks/checks/engineering.test.mjs', title: engineeringTitle(c) }));
-    return { checks: validateCatalog([...outcomes.flatMap(o => o.checks), ...commands]),
-        ungrouped: { mocha: outcomes[0].ungrouped, playwright: outcomes[1].ungrouped },
+    return { checks: validateCatalog(outcomes.flatMap(o => o.checks)),
+        ungrouped: { mocha: outcomes[0].ungrouped, playwright: outcomes[1].ungrouped, node: outcomes.slice(2).reduce((sum, o) => sum + o.ungrouped, 0) },
         unavailable: ['Storybook/component isolation: no Storybook, stories, or component runner configured'], discovery: path.relative(root, dir) };
 }
 
@@ -71,15 +73,15 @@ function nativeCommand(checks) {
         ...new Set(checks.map(c => c.file)), ...(check.project ? ['--project', check.project] : [])];
     return [process.execPath, '--test', '--test-name-pattern', `^(?:${checks.map(c => escapeRegex(c.title)).join('|')})$`,
         '--test-reporter', 'spec', '--test-reporter-destination', 'stdout',
-        '--test-reporter', 'allure-node-test/reporter', '--test-reporter-destination', 'stdout', 'tasks/checks/engineering.test.mjs'];
+        '--test-reporter', 'allure-node-test/reporter', '--test-reporter-destination', 'stdout', ...new Set(checks.map(c => c.file))];
 }
 
 function reproduction(check) {
-    if (check.command) return check.command.map(shellQuote).join(' ');
+    if (check.runner === 'node') return ['node', '--test', '--test-name-pattern', `^${escapeRegex(check.title)}$`, check.file].map(shellQuote).join(' ');
     const command = check.runner === 'mocha'
-        ? ['npm', 'exec', '--', 'mocha', '--no-config', '--require', 'babel-register', '--forbid-only', check.file, '--grep', `^${escapeRegex(check.title)}$`]
-        : ['npm', 'exec', '--', 'playwright', 'test', '--config', 'app-e2e/playwright.config.ts',
-            check.file, '--grep', escapeRegex(check.title) + '$', ...(check.project ? ['--project', check.project] : [])];
+        ? ['pnpm', 'exec', 'mocha', '--no-config', '--require', 'babel-register', '--forbid-only', check.file, '--grep', `^${escapeRegex(check.title)}$`]
+        : ['pnpm', '--filter', '@decline/web-e2e', 'exec', 'playwright', 'test',
+            path.relative('app-e2e', check.file), '--grep', escapeRegex(check.title) + '$', ...(check.project ? ['--project', check.project] : [])];
     return `BABEL_DISABLE_CACHE=1 ${command.map(shellQuote).join(' ')}`;
 }
 
@@ -133,15 +135,8 @@ async function freePort() {
 
 async function run(catalog, selected, scope) {
     const dir = uniqueDir(path.join(root, '.checks/runs'));
-    const git = args => {
-        const result = spawnSync('git', args, { cwd: root, encoding: 'utf8' });
-        if (result.status !== 0) throw new Error(`Cannot record source: ${result.stderr}`);
-        return result.stdout.trim();
-    };
-    const status = git(['status', '--porcelain=v1']);
     const ledger = { schemaVersion: 1, run: path.basename(dir), state: 'running', started: new Date().toISOString(),
-        source: { revision: git(['rev-parse', 'HEAD']), dirty: !!status, status, node: process.version,
-            lockHash: createHash('sha256').update(fs.readFileSync('package-lock.json')).digest('hex') },
+        source: output.sourceInfo(),
         scope, catalog: catalog.checks, selected, suites: [],
         artifacts: { ledger: 'run.json', summary: 'summary.json', agent: 'agent/index.md', humanReport: 'agent/awesome/index.html' } };
     const save = () => write(path.join(dir, 'run.json'), ledger);
@@ -217,8 +212,21 @@ async function run(catalog, selected, scope) {
 
 async function main() {
     const [command, target, ...rest] = process.argv.slice(2);
+    if (command === '--help') {
+        console.log('checks list\nchecks run CONTRACT|all [--runner mocha,playwright,node]\nchecks inspect RUN_DIRECTORY [CHECK_ID]\nchecks inspect AGENT_DIRECTORY [ALLURE_TEST_ID]\nchecks rerun RUN_DIRECTORY CHECK_ID\nchecks agent ...  (native Allure Agent commands, including query and select)');
+        return 0;
+    }
+    if (command === 'agent') return spawnSync(bin('allure'), ['agent', ...process.argv.slice(3)], { stdio: 'inherit' }).status ?? 1;
     if (command === 'inspect') {
         if (!target || rest.length > 1) throw new Error('Usage: checks inspect RUN_DIRECTORY [CHECK_ID]');
+        const nativeManifest = path.join(path.resolve(target), 'manifest/run.json');
+        if (fs.existsSync(nativeManifest)) {
+            const result = spawnSync(bin('allure'), ['agent', 'query', '--from', path.resolve(target),
+                ...(rest[0] ? ['test', '--test', rest[0], '--include-markdown'] : ['summary'])], { stdio: 'inherit' });
+            const run = read(nativeManifest);
+            const stats = run.summary.stats;
+            return result.status || (run.phase === 'done' && run.actual_exit_code === 0 && stats.total > 0 && stats.passed === stats.total ? 0 : 1);
+        }
         const summary = inspect(path.resolve(target));
         if (rest[0]) {
             const check = summary.checks.find(c => c.id === rest[0]);
@@ -227,7 +235,7 @@ async function main() {
         } else console.log(JSON.stringify({ ...summary, checks: summary.checks.map(c => ({ ...c, attempts: c.status === 'passed' && !c.flaky ? c.attempts.map(a => ({ status: a.status, result: a.result })) : c.attempts })) }, null, 2));
         return summary.ok ? 0 : 1;
     }
-    if (!['list', 'run', 'rerun'].includes(command)) throw new Error('Usage: npm run checks -- list | run CONTRACT|all [--runner mocha,playwright,node] | inspect RUN [CHECK_ID] | rerun RUN CHECK_ID');
+    if (!['list', 'run', 'rerun'].includes(command)) throw new Error('Usage: pnpm checks list | run CONTRACT|all [--runner mocha,playwright,node] | inspect RUN [CHECK_ID] | rerun RUN CHECK_ID');
     if (command === 'list' && (target || rest.length)) throw new Error('Usage: checks list');
     const catalog = await discover();
     if (command === 'list') {

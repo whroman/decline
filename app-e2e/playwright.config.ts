@@ -14,7 +14,7 @@ export default defineConfig({
   webServer: externalBaseURL
     ? undefined
     : {
-        command: process.env.CHECKS_PREVIEW_COMMAND || 'npm --prefix .. run preview -- --host 127.0.0.1',
+        command: process.env.CHECKS_PREVIEW_COMMAND || 'pnpm --dir .. run preview --host 127.0.0.1',
         url: baseURL,
         reuseExistingServer: !process.env.CHECKS_SUITE_DIR,
       },
