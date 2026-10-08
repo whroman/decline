@@ -41,7 +41,7 @@ jobs:
         run: npm run build
 
       - name: Store preview build
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: web-preview-${{ github.event.pull_request.number }}-${{ github.run_attempt }}
           path: dist
